@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-11-05T17:54:12.464Z",
-  "totalRaw": 20353,
-  "totalUnique": 14342,
-  "totalAlive": 4084,
+  "generatedAt": "2026-11-05T23:15:08.581Z",
+  "totalRaw": 20298,
+  "totalUnique": 14277,
+  "totalAlive": 4035,
   "probe": {
     "enabled": true,
-    "probed": 14342,
-    "alive": 4084,
-    "ms": 152102
+    "probed": 14277,
+    "alive": 4035,
+    "ms": 151513
   },
   "regions": {
-    "美国": 986,
-    "新加坡": 51,
-    "香港": 38,
-    "台湾": 3,
-    "日本": 52,
-    "德国": 143,
-    "英国": 99,
-    "韩国": 21
+    "美国": 946,
+    "香港": 32,
+    "新加坡": 52,
+    "台湾": 4,
+    "日本": 51,
+    "德国": 138,
+    "英国": 100,
+    "韩国": 22
   },
   "byType": {
-    "vless": 2061,
-    "ss": 211,
-    "vmess": 1323,
+    "trojan": 368,
+    "ss": 214,
+    "vless": 2000,
+    "vmess": 1341,
     "anytls": 1,
-    "hysteria2": 22,
-    "trojan": 373,
-    "http": 88,
+    "hysteria2": 21,
+    "http": 85,
     "ssr": 2,
     "socks5": 3
   },
@@ -34,7 +34,7 @@
     {
       "source": "Pawdroid/Free-servers",
       "kind": "uri-list",
-      "count": 9,
+      "count": 7,
       "ok": true
     },
     {
@@ -52,19 +52,19 @@
     {
       "source": "ermaozi01/free_clash_vpn",
       "kind": "clash-yaml",
-      "count": 28,
+      "count": 19,
       "ok": true
     },
     {
       "source": "anaer/Sub",
       "kind": "clash-yaml",
-      "count": 2263,
+      "count": 2247,
       "ok": true
     },
     {
       "source": "peasoft/NoMoreWalls",
       "kind": "clash-yaml",
-      "count": 94,
+      "count": 96,
       "ok": true
     },
     {
@@ -88,19 +88,19 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4321,
+      "count": 4270,
       "ok": true
     },
     {
       "source": "mahdibland/V2RayAggregator",
       "kind": "uri-list",
-      "count": 4532,
+      "count": 4551,
       "ok": true
     },
     {
       "source": "zhuhaiuk/free-nodes",
       "kind": "clash-yaml",
-      "count": 30,
+      "count": 32,
       "ok": true
     },
     {
