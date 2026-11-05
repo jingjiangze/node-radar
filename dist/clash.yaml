@@ -5,54 +5,62 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
+  - name: 美国+CloudFlare节点
+    type: vless
+    server: 104.18.26.90
+    port: 443
+    uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
+    udp: true
+    tls: true
+    servername: u.srilankangrill.online
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: u.srilankangrill.online
   - name: 新西兰+V2CROSS.COM
     type: ss
-    server: 202.50.253.45
+    server: 202.50.253.72
     port: 19999
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     udp: true
   - name: 新西兰+V2CROSS.COM-2
     type: ss
-    server: 202.50.253.63
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: 巴西+V2CROSS.COM
-    type: vless
-    server: swedenafteraventura.space
-    port: 443
-    uuid: 50a87e21-f0e2-4b53-a787-91adfe748f63
-    udp: true
-    tls: true
-    servername: swedenafteraventura.space
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: TyuIIquHoesD9YwMQJHda0YZ3Hy9Dh123dQ00iGK0QY
-  - name: 新西兰+V2CROSS.COM-3
-    type: ss
     server: 202.50.253.27
     port: 19999
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     udp: true
-  - name: 智利+V2CROSS.COM
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
-    client-fingerprint: chrome
-  - name: 新西兰+V2CROSS.COM-4
+  - name: 新西兰+V2CROSS.COM-3
     type: ss
-    server: 202.50.253.36
+    server: 202.50.253.54
     port: 19999
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     udp: true
+  - name: 新西兰+V2CROSS.COM-4
+    type: ss
+    server: 202.50.253.45
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: 新加坡+V2CROSS.COM
+    type: vless
+    server: 103.25.202.25
+    port: 443
+    uuid: b8d8a5b0-867f-4491-b4e4-30edc04bb10e
+    udp: true
+    tls: true
+    servername: u.srilankangrill.online
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: u.srilankangrill.online
   - name: 未知 SS-01 | free-nodes
     type: ss
     server: 46.17.46.27
@@ -67,16 +75,17 @@ proxies:
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     udp: true
-  - name: 未知 SS-06 | free-nodes
-    type: ss
-    server: 202.50.253.54
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  - name: HK VLESS-04 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
     udp: true
-  - name: 未知 SS-07 | free-nodes
+    tls: true
+    servername: hk010.zestapp778.com
+  - name: 未知 SS-05 | free-nodes
     type: ss
-    server: 202.50.253.72
+    server: 202.50.253.63
     port: 19999
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -91,6 +100,20 @@ proxies:
   - name: 未知 SS-09 | free-nodes
     type: ss
     server: 202.50.253.99
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: 未知 SS-11 | free-nodes
+    type: ss
+    server: 202.50.253.36
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: 未知 SS-12 | free-nodes
+    type: ss
+    server: 202.50.253.81
     port: 19999
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -632,6 +655,19 @@ proxies:
       headers:
         Host: ov-france1.09vpn.com
       path: /vless/
+  - name: '🏳[www.v2nodes.com] vless- #32'
+    client-fingerprint: chrome
+    network: ws
+    port: 443
+    server: cf.130519.xyz
+    servername: ccc.010304.xyz
+    tls: true
+    type: vless
+    uuid: d342d11e-d224-4463-b982-532309285094
+    ws-opts:
+      headers:
+        Host: ccc.010304.xyz
+      path: /
   - name: '🏳[www.v2nodes.com] vless- #11'
     client-fingerprint: chrome
     network: ws
@@ -761,20 +797,6 @@ proxies:
       headers:
         Host: 38.76.180.144
       path: /vless-ws
-  - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
-    client-fingerprint: chrome
-    encryption: none
-    network: ws
-    port: 443
-    server: px2.5ibtc.cn
-    servername: px2.5ibtc.cn
-    tls: true
-    type: vless
-    uuid: 326227e2-f2d1-4f43-8715-9da854f5f4c0
-    ws-opts:
-      headers:
-        Host: px2.5ibtc.cn
-      path: /326227e2-f2d1-4f43-8715-9da854f5f4c0
   - name: 🇲🇾[www.v2nodes.com] vless-MY-5...
     client-fingerprint: chrome
     encryption: none
@@ -907,29 +929,6 @@ proxies:
     uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
     ws-opts:
       path: /
-  - name: '🏳[www.v2nodes.com] vless- #24'
-    encryption: none
-    network: ws
-    port: 8080
-    server: support.zoom.us
-    tls: false
-    type: vless
-    uuid: 990bf436-f1b9-4e7f-857d-14378acc4ae5
-    ws-opts:
-      headers:
-        Host: Free.nadun.store
-      path: /
-  - name: 🇱🇰[www.v2nodes.com] vless-LK-6...
-    alpn:
-      - h2
-      - http/1.1
-    client-fingerprint: chrome
-    port: 443
-    server: free.vkehi.store
-    servername: zoom.com
-    tls: true
-    type: vless
-    uuid: e4d1298a-1f21-42e2-a53e-1b22c0645c48
   - name: 🇲🇩[www.v2nodes.com] vless-MD-4...
     client-fingerprint: chrome
     encryption: none
@@ -980,12 +979,6 @@ proxies:
       headers:
         Host: nguyxejonb.rucdncomp.pro
       path: /service/telemetry/0294da469190/
-  - name: '🇳🇱[www.v2nodes.com] vless-NL-1... #2'
-    port: 443
-    server: app-mi-26.spbstudentlife.com
-    tls: false
-    type: vless
-    uuid: 07680ffb-0666-4836-b6ad-ec0de62bc38f
   - name: '🇵🇱[www.v2nodes.com] vless-PL-1... #3'
     client-fingerprint: chrome
     port: 2087
@@ -994,20 +987,6 @@ proxies:
     tls: true
     type: vless
     uuid: b9fdc03f-389b-4cda-9be4-155b623bee15
-  - name: '🇵🇱[www.v2nodes.com] vless-PL-1... #4'
-    alpn:
-      - h2
-      - http/1.1
-    client-fingerprint: chrome
-    grpc-opts:
-      grpc-service-name: beru-pl
-    network: grpc
-    port: 8445
-    server: ru1.radiolumens.uk
-    servername: ru1.radiolumens.uk
-    tls: true
-    type: vless
-    uuid: 36cf792c-f07d-4500-97ea-a395e5178deb
   - name: '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
     alpn:
       - h2
@@ -2144,6 +2123,20 @@ proxies:
     xhttp-opts:
       path: /3d2576c5bb04
       host: 15c838x.de27.h1clayd.click
+    udp: true
+  - name: 🇪🇪 爱沙尼亚 | EST
+    server: 147.45.245.17
+    port: 443
+    type: vless
+    uuid: 7ad63b26-bf70-4872-8fab-ebaf73a1e19d
+    tls: true
+    flow: xtls-rprx-vision
+    reality-opts:
+      public-key: 4GpOXPkTdvuF1mgBH6n9AFYRvGEh7K2ETgE8asmNASY
+      short-id: 38146bd64aece7a5
+    servername: defs-64.topp-con.xyz
+    client-fingerprint: firefox
+    network: tcp
     udp: true
   - name: 🇳🇱 荷兰 | NLD
     server: 79.141.164.124
@@ -5844,19 +5837,6 @@ proxies:
     tls: false
     alterId: 0
     cipher: auto
-  - name: 韩国 016
-    type: vmess
-    network: ws
-    server: 132.145.80.230
-    port: 80
-    uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-    udp: true
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: kr02.a0a.xyz
-      path: /cctv13.m3u8
   - name: 以色列 002
     type: vmess
     network: tcp
@@ -20994,6 +20974,14 @@ proxies:
     udp: true
     tls: true
     servername: xmfhlpy.com
+  - name: KR 🇰🇷 | @Raydikalx | E9F97A
+    type: vmess
+    server: 140.238.2.250
+    port: 443
+    uuid: 41a7089a-040b-4538-8b8d-010902405bde
+    alterId: 0
+    cipher: auto
+    udp: true
   - name: JP 🇯🇵 | @Raydikalx | E6D44D
     type: vmess
     server: 140.238.55.84
@@ -22284,14 +22272,6 @@ proxies:
     server: 176.65.151.175
     port: 26047
     uuid: 1b5dd3f4-34b6-4e43-8265-c64d7858ac79
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: DE 🇩🇪 | @Raydikalx | D9E7C7
-    type: vmess
-    server: 178.105.168.171
-    port: 2110
-    uuid: 06d4d001-4168-4876-9416-7caecf578f40
     alterId: 0
     cipher: auto
     udp: true
@@ -23916,14 +23896,6 @@ proxies:
       path: /htun
       headers:
         Host: d7pu5mzr9c4b0.cloudfront.net
-  - name: IE 🇮🇪 | @Raydikalx | 03760D
-    type: vmess
-    server: 54.229.151.97
-    port: 59236
-    uuid: 2387bfbc-10a6-4bd7-dc55-7cba954ce6e8
-    alterId: 0
-    cipher: auto
-    udp: true
   - name: GB 🇬🇧 | @Raydikalx | B8FD16
     type: vmess
     server: 57.128.164.21
@@ -24907,6 +24879,17 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: hub.v1.ApiService
+  - name: 🆔vpnbaz 🔒 VL-TCP- 🇵🇱 PL 199ms
+    type: vless
+    server: 54.37.136.194
+    port: 2053
+    uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
+      short-id: 50ba05992b05c1c3
   - name: 🆔vpnbaz 🔒 VL-GRPC- 🇷🇸 RS 170ms
     type: vless
     server: 150.40.126.22
@@ -25522,6 +25505,18 @@ proxies:
     tls: true
     servername: parad2.vethilis.ru
     client-fingerprint: firefox
+  - name: 🆔ar14n24b 🔒 VL-TCP- ❔ XX 112ms
+    type: vless
+    server: 104.253.216.227
+    port: 443
+    uuid: 106d20f6-d70a-40e2-b69b-8e82baf8d117
+    udp: true
+    tls: true
+    servername: www.microsoft.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: FjcEZNQ8t5E4R04_11T6ghsOutdqwKKrelkuadakoQg
+      short-id: 60500a63ad12
   - name: 🆔ar14n24b 🔒 VL-TCP- 🇳🇱 NL 109ms
     type: vless
     server: 51.158.206.93
@@ -26264,18 +26259,6 @@ proxies:
     reality-opts:
       public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
       short-id: '01'
-  - name: 🆔v2ray1_ng 🔒 VL-TCP- ❔ XX 106ms
-    type: vless
-    server: 193.124.17.190
-    port: 443
-    uuid: fad0b9a6-187d-4fcc-96fc-498bc5b3135a
-    udp: true
-    tls: true
-    servername: www.foxsports.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: J-dv-HrWfQ_IOoyutv0Kg-rO8QwoRwc02dS1dS_tblk
-      short-id: 8325360e8bd2
   - name: 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 7ms
     type: vless
     server: 104.18.40.100
@@ -27115,6 +27098,13 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
+  - name: 🇭🇰HK-103.149.182.79-5774
+    type: ss
+    server: 103.149.182.79
+    port: 8388
+    cipher: chacha20-ietf
+    password: asd123456
+    udp: true
   - name: 🇰🇷KR-211.178.105.134-0226
     type: ss
     server: 211.178.105.134
@@ -27178,13 +27168,6 @@ proxies:
     password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
     udp: true
     sni: courses.discovergreatjobsandadvanceyourcareer.com
-  - name: 🇨🇴CO-149.104.107.41-0202
-    type: ss
-    server: 149.104.107.41
-    port: 8090
-    cipher: aes-256-gcm
-    password: PCnnH6SQSnfoS27
-    udp: true
   - name: 🇨🇦CA-216.152.147.48-0088
     type: trojan
     server: 216.152.147.48
@@ -27192,13 +27175,6 @@ proxies:
     password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
     udp: true
     sni: courses.connectingpeoplewithgreatjobs.com
-  - name: 🇰🇷KR-141.164.45.187-0209
-    type: ss
-    server: 141.164.45.187
-    port: 9090
-    cipher: aes-256-gcm
-    password: Y6R9pAtvxxzmGC
-    udp: true
   - name: 🇭🇰HK-219.76.13.181-0068
     type: trojan
     server: 219.76.13.181
@@ -28115,13 +28091,6 @@ proxies:
     network: ws
     ws-opts:
       path: /9JZFDTKE
-  - name: 🇿🇦ZA-139.84.247.164-2914
-    type: ss
-    server: 139.84.247.164
-    port: 8388
-    cipher: chacha20-ietf-poly1305
-    password: tfAcRikawhNoZAhu
-    udp: true
   - name: 🇺🇸US-192.96.204.250-2963
     type: vmess
     server: 192.96.204.250
@@ -28839,13 +28808,6 @@ proxies:
     port: 443
     password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
     udp: true
-  - name: 🇰🇷KR-141.164.45.187-5778
-    type: ss
-    server: 141.164.45.187
-    port: 6679
-    cipher: aes-256-gcm
-    password: TEzjfAYq2IjtuoS
-    udp: true
   - name: 🇯🇵JP-18.179.31.199-5780
     type: trojan
     server: 18.179.31.199
@@ -29182,19 +29144,19 @@ proxies:
     cipher: aes-256-cfb
     password: S7KwUu7yBy58S3Ga
     udp: true
-  - name: 🇪🇸ES-5.188.181.201-7961
+  - name: 🇪🇸ES-5.188.181.201-7958
     type: ss
     server: 5.188.181.201
-    port: 9031
+    port: 9041
     cipher: aes-256-cfb
-    password: BwcAUZk8hUFAkDGN
+    password: U6qnYRhfyDmn8sgn
     udp: true
-  - name: 🇪🇸ES-5.188.181.201-7962
+  - name: 🇪🇸ES-5.188.181.201-7960
     type: ss
     server: 5.188.181.201
-    port: 9030
+    port: 9037
     cipher: aes-256-cfb
-    password: GeregetR8cvQHzYr
+    password: TN2YqghxeFDKZfLU
     udp: true
   - name: 🇺🇸US-47.88.104.186-7977
     type: vmess
@@ -32962,7 +32924,6 @@ proxies:
     server: 162.249.125.133
     port: 443
     password: QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s
-    obfs: salamander
   - name: 🐸96@oneclickvpnkeys
     type: hysteria2
     server: 192.255.128.123
@@ -33102,13 +33063,6 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: znEtjgHLXH4FBLic
     udp: true
-  - name: '@FarazV2ray-2'
-    type: ss
-    server: 20.107.184.151
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: zziXHDOFXc4qRjoj
-    udp: true
   - name: '@FarazV2ray -4'
     type: ss
     server: 57.129.113.16
@@ -33123,7 +33077,7 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: QCXDxuDlTTMD7jtgHUjIoj
     udp: true
-  - name: '@FarazV2ray-3'
+  - name: '@FarazV2ray-2'
     type: ss
     server: 188.119.149.27
     port: 1080
@@ -33168,20 +33122,6 @@ proxies:
   - name: T.me/SafeNet_Server 💚🤍❤
     type: ss
     server: 82.38.31.185
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: '@FarazV2ray-4'
-    type: ss
-    server: 82.38.31.200
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚'
-    type: ss
-    server: 82.38.31.201
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -33298,13 +33238,6 @@ proxies:
     cipher: aes-256-gcm
     password: RexnBgU7EV5ADxG
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-2
-    type: ss
-    server: 141.164.45.187
-    port: 7002
-    cipher: aes-256-gcm
-    password: RexnBgU7EV5ADxG
-    udp: true
   - name: 🇹🇷𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
     type: ss
     server: 172.105.39.124
@@ -33312,21 +33245,14 @@ proxies:
     cipher: aes-256-gcm
     password: RexnBgU7EV5ADxG
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-3
+  - name: 🇰🇷 Seoul, 11, South Korea-2
     type: ss
     server: 141.164.45.187
     port: 8008
     cipher: aes-256-gcm
     password: XKFKl2rULjIp74
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-4
-    type: ss
-    server: 141.164.45.187
-    port: 5001
-    cipher: aes-256-gcm
-    password: Y6R9pAtvxxzmGC
-    udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-5
+  - name: 🇰🇷 Seoul, 11, South Korea-3
     type: ss
     server: 141.164.45.187
     port: 8888
@@ -33340,7 +33266,7 @@ proxies:
     cipher: aes-256-gcm
     password: Y6R9pAtvxxzmGC
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-6
+  - name: 🇰🇷 Seoul, 11, South Korea-4
     type: ss
     server: 141.164.45.187
     port: 8119
@@ -33459,7 +33385,7 @@ proxies:
     port: 443
     password: 86957ec0-b213-433b-a43b-51f2175e0ec3
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-2'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚'
     type: trojan
     server: 104.19.242.85
     port: 443
@@ -33507,7 +33433,7 @@ proxies:
     port: 443
     password: MITIVPN
     udp: true
-  - name: '@FarazV2ray-5'
+  - name: '@FarazV2ray-3'
     type: trojan
     server: 104.18.152.225
     port: 443
@@ -33623,7 +33549,7 @@ proxies:
     port: 443
     password: MiTiVPN
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-3'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-2'
     type: trojan
     server: 151.101.56.255
     port: 443
@@ -33635,7 +33561,7 @@ proxies:
     port: 443
     password: MiTiVPN
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-4'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-3'
     type: trojan
     server: 151.101.56.9
     port: 443
@@ -33701,7 +33627,7 @@ proxies:
     port: 443
     password: dQDQCtns4R
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-5'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-4'
     type: trojan
     server: 188.114.98.0
     port: 443
@@ -33804,7 +33730,7 @@ proxies:
     password: humanity
     udp: true
     skip-cert-verify: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-6'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-5'
     type: trojan
     server: 104.18.35.86
     port: 443
@@ -33840,7 +33766,7 @@ proxies:
     port: 443
     password: humanity
     udp: true
-  - name: '@FarazV2ray-6'
+  - name: '@FarazV2ray-4'
     type: trojan
     server: 130.250.137.171
     port: 443
@@ -33877,13 +33803,13 @@ proxies:
     port: 443
     password: humanity
     udp: true
-  - name: '@FarazV2ray-7'
+  - name: '@FarazV2ray-5'
     type: trojan
     server: 172.66.40.99
     port: 443
     password: humanity
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-7'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-6'
     type: trojan
     server: 172.67.139.14
     port: 443
@@ -34098,7 +34024,7 @@ proxies:
     port: 20205
     uuid: 00000000-0000-4000-8000-000000000000
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-8'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-7'
     type: vless
     server: 172.67.182.80
     port: 443
@@ -34206,7 +34132,7 @@ proxies:
     port: 443
     uuid: 0617eade-fb92-422f-9b59-c9a4b65b2906
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-9'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-8'
     type: vless
     server: 188.114.97.6
     port: 443
@@ -34226,7 +34152,7 @@ proxies:
     udp: true
     tls: true
     reality-opts: {}
-  - name: '@FarazV2ray-8'
+  - name: '@FarazV2ray-6'
     type: vless
     server: 158.160.160.21
     port: 443
@@ -34234,7 +34160,7 @@ proxies:
     udp: true
     tls: true
     reality-opts: {}
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-10'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-9'
     type: vless
     server: 199.232.78.159
     port: 443
@@ -34384,7 +34310,7 @@ proxies:
     port: 443
     uuid: 0ac0a6f0-d3f0-47f1-8de4-ce785e515a5c
     udp: true
-  - name: '@FarazV2ray-9'
+  - name: '@FarazV2ray-7'
     type: vless
     server: 162.159.38.119
     port: 443
@@ -34579,7 +34505,7 @@ proxies:
     port: 2053
     uuid: 0eed6293-8cf1-4e77-ac10-9c3d50d0b2f8
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-11'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-10'
     type: vless
     server: 188.114.97.6
     port: 443
@@ -34790,7 +34716,7 @@ proxies:
     port: 443
     uuid: 15b154c3-b4f9-435d-9b46-bd096dec4be1
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-12'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-11'
     type: vless
     server: 69.46.46.10
     port: 443
@@ -34802,7 +34728,7 @@ proxies:
     port: 8080
     uuid: 162ae8ff-0122-45f7-9e74-576bd90db552
     udp: true
-  - name: '@FarazV2ray-10'
+  - name: '@FarazV2ray-8'
     type: vless
     server: 188.72.103.3
     port: 443
@@ -35182,7 +35108,7 @@ proxies:
     udp: true
     tls: true
     reality-opts: {}
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-13'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-12'
     type: vless
     server: 200.165.235.78
     port: 443
@@ -35196,7 +35122,7 @@ proxies:
     port: 443
     uuid: 2412bd96-925b-43f2-81d1-0ed4f0793699
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-14'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-13'
     type: vless
     server: 195.231.37.150
     port: 443
@@ -35204,7 +35130,7 @@ proxies:
     udp: true
     tls: true
     reality-opts: {}
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-15'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-14'
     type: vless
     server: 84.32.100.149
     port: 443
@@ -35260,7 +35186,7 @@ proxies:
     port: 80
     uuid: 25f86cb1-2140-4085-abcb-c3a0ea7a4be0
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-16'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-15'
     type: vless
     server: 188.114.97.6
     port: 443
@@ -35284,7 +35210,7 @@ proxies:
     port: 8880
     uuid: 26beb784-a664-4c3e-becf-0f0c12568b62
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-17'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-16'
     type: vless
     server: 69.46.46.200
     port: 443
@@ -35358,7 +35284,7 @@ proxies:
     port: 443
     uuid: 2a12bb81-f3a3-41bb-99ab-36febf676b4a
     udp: true
-  - name: '@FarazV2ray-11'
+  - name: '@FarazV2ray-9'
     type: vless
     server: 188.255.236.213
     port: 443
@@ -35378,7 +35304,7 @@ proxies:
     port: 80
     uuid: 2ac6e527-6410-48ce-b9ba-cc8135ee2a3b
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-18'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-17'
     type: vless
     server: 159.195.137.29
     port: 8443
@@ -35518,7 +35444,7 @@ proxies:
     port: 443
     uuid: 2f35965a-9a9b-45fd-ba32-987296dfb6be
     udp: true
-  - name: '@FarazV2ray-12'
+  - name: '@FarazV2ray-10'
     type: vless
     server: 45.9.156.27
     port: 443
@@ -35778,7 +35704,7 @@ proxies:
     port: 443
     uuid: 338efc17-02d7-433b-902a-e7d4771dc802
     udp: true
-  - name: '@FarazV2ray-13'
+  - name: '@FarazV2ray-11'
     type: vless
     server: 82.152.223.82
     port: 443
@@ -35805,7 +35731,7 @@ proxies:
     port: 8443
     uuid: 352ff568-f971-4613-bf48-92997a5d44ed
     udp: true
-  - name: '@FarazV2ray-14'
+  - name: '@FarazV2ray-12'
     type: vless
     server: 185.241.208.241
     port: 8443
@@ -35831,14 +35757,6 @@ proxies:
     port: 2052
     uuid: 363a6072-05d7-48d5-8f19-312b05fdd9cd
     udp: true
-  - name: Tel@V2rayng_Fast 🩵
-    type: vless
-    server: 66.90.115.124
-    port: 2090
-    uuid: 3644635c-f8c4-449c-a665-fce1897a7bf3
-    udp: true
-    tls: true
-    reality-opts: {}
   - name: 🍄‍🟫75@oneclickvpnkeys
     type: vless
     server: 91.107.188.129
@@ -35933,6 +35851,12 @@ proxies:
     port: 443
     uuid: 39473ed8-fa83-4ef3-8aa6-92b865b6cb4f
     udp: true
+  - name: ⏰11@oneclickvpnkeys
+    type: vless
+    server: 185.229.191.171
+    port: 8443
+    uuid: 394f6981-a782-4779-9a85-e6cf22935d93
+    udp: true
   - name: 🦀88@oneclickvpnkeys
     type: vless
     server: 45.159.12.163
@@ -35957,7 +35881,7 @@ proxies:
     port: 443
     uuid: 399f9850-428a-b00a-6688-01d24438f959
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-19'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-18'
     type: vless
     server: 69.46.46.101
     port: 443
@@ -35981,7 +35905,7 @@ proxies:
     port: 443
     uuid: 3b0637f3-916e-470c-aa32-2e2b2b0de1b9
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-20'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-19'
     type: vless
     server: 188.114.97.6
     port: 443
@@ -36019,7 +35943,7 @@ proxies:
     port: 443
     uuid: 3ccb1d2a-d169-443a-ad5d-3f5f11759695
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-21'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-20'
     type: vless
     server: 146.75.57.111
     port: 443
@@ -36129,7 +36053,7 @@ proxies:
     port: 443
     uuid: 413ed615-9ecf-40b9-8a2e-e294395a3566
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-22'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-21'
     type: vless
     server: 188.114.97.6
     port: 443
@@ -36177,7 +36101,7 @@ proxies:
     port: 45647
     uuid: 431fe973-a43a-4fac-bf83-2a772e0d0625
     udp: true
-  - name: '@FarazV2ray-15'
+  - name: '@FarazV2ray-13'
     type: vless
     server: 182.16.61.4
     port: 45647
@@ -36359,7 +36283,7 @@ proxies:
     port: 443
     uuid: 46c1e2a4-4379-46a8-8177-6ffd630ec27a
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-23'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-22'
     type: vless
     server: 150.40.117.221
     port: 8443
@@ -36931,7 +36855,7 @@ proxies:
     port: 7443
     uuid: 541b92a5-7a97-4b6b-a6be-bd4f5a5b0911
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-24'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-23'
     type: vless
     server: 188.114.97.6
     port: 443
@@ -37121,7 +37045,7 @@ proxies:
     port: 443
     uuid: 5910d5d4-d670-4cf2-b875-72bfef693c56
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-25'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-24'
     type: vless
     server: 195.252.179.1
     port: 443
@@ -37169,7 +37093,7 @@ proxies:
     port: 443
     uuid: 5bf12aea-0a92-41fb-ab2d-0e034b9f57a2
     udp: true
-  - name: '@FarazV2ray-16'
+  - name: '@FarazV2ray-14'
     type: vless
     server: 82.40.62.229
     port: 443
@@ -37808,7 +37732,7 @@ proxies:
     port: 443
     uuid: 6e34f2c5-6c71-4010-c292-10d05ef4a9a2
     udp: true
-  - name: '@FarazV2ray-17'
+  - name: '@FarazV2ray-15'
     type: vless
     server: 69.46.46.30
     port: 443
@@ -37939,6 +37863,12 @@ proxies:
     server: 190.93.245.176
     port: 443
     uuid: 7493883f-6047-46a7-8d95-f59e137ffaec
+    udp: true
+  - name: 🎡83@oneclickvpnkeys
+    type: vless
+    server: 82.40.62.3
+    port: 443
+    uuid: 7499f0a0-3670-4cf6-a31c-ad4cd943cf18
     udp: true
   - name: 🐲30@oneclickvpnkeys
     type: vless
@@ -38080,13 +38010,13 @@ proxies:
     port: 80
     uuid: 794990ea-dc34-4eff-8a43-020a92fec381
     udp: true
-  - name: '@FarazV2ray-18'
+  - name: '@FarazV2ray-16'
     type: vless
     server: 104.16.72.50
     port: 443
     uuid: 7968c546-02dc-4f8c-b791-934591a94cb2
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-26'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-25'
     type: vless
     server: 151.101.56.6
     port: 443
@@ -38151,7 +38081,7 @@ proxies:
     port: 2053
     uuid: 7d0fd363-16d2-43ce-9d6d-ed2c15d2cb7c
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-27'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-26'
     type: vless
     server: 185.147.26.175
     port: 443
@@ -38165,7 +38095,7 @@ proxies:
     port: 80
     uuid: 7d90f043-ed7f-40c9-ac2f-352987904958
     udp: true
-  - name: '@FarazV2ray-19'
+  - name: '@FarazV2ray-17'
     type: vless
     server: 104.16.47.58
     port: 443
@@ -38177,7 +38107,7 @@ proxies:
     port: 443
     uuid: 7dedf505-609f-43df-b31a-1e4f3ef87102
     udp: true
-  - name: '@FarazV2ray-20'
+  - name: '@FarazV2ray-18'
     type: vless
     server: 172.67.176.15
     port: 443
@@ -38213,7 +38143,7 @@ proxies:
     port: 443
     uuid: 7e544a9d-7667-413b-bbb0-b3bb1aac6d77
     udp: true
-  - name: '@FarazV2ray-21'
+  - name: '@FarazV2ray-19'
     type: vless
     server: 104.16.72.2
     port: 443
@@ -38265,7 +38195,7 @@ proxies:
     udp: true
     tls: true
     reality-opts: {}
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-28'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-27'
     type: vless
     server: 144.31.171.233
     port: 443
@@ -38318,7 +38248,7 @@ proxies:
     port: 443
     uuid: 817e27c8-76aa-43d0-aefb-1e8a372835b1
     udp: true
-  - name: '@FarazV2ray-22'
+  - name: '@FarazV2ray-20'
     type: vless
     server: 69.46.46.11
     port: 443
@@ -38360,7 +38290,7 @@ proxies:
     port: 2096
     uuid: 832c8f42-7fe1-4aa4-9171-eb9dddbf6fef
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-29'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-28'
     type: vless
     server: 104.16.117.43
     port: 443
@@ -38571,7 +38501,7 @@ proxies:
     port: 443
     uuid: 8892e34a-339b-4526-b88d-cf68c516231c
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-30'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-29'
     type: vless
     server: 69.46.46.112
     port: 443
@@ -38583,14 +38513,14 @@ proxies:
     port: 443
     uuid: 8942a00b-2fdf-53f7-a1c9-887fa5615dce
     udp: true
-  - name: '@FarazV2ray-23'
+  - name: '@FarazV2ray-21'
     type: vless
     server: 199.232.78.159
     port: 443
     uuid: 8957414e-9e89-45bc-ac4b-ea2f561eed6c
     udp: true
     tls: true
-  - name: '@FarazV2ray-24'
+  - name: '@FarazV2ray-22'
     type: vless
     server: 31.76.80.69
     port: 443
@@ -38665,13 +38595,13 @@ proxies:
     port: 8443
     uuid: 8bf3e040-8ac9-5d0e-304f-9b735e145de8
     udp: true
-  - name: '@FarazV2ray-25'
+  - name: '@FarazV2ray-23'
     type: vless
     server: 80.76.43.245
     port: 443
     uuid: 8c105407-82fb-4dd1-8df4-916d34a7d3fe
     udp: true
-  - name: '@FarazV2ray-26'
+  - name: '@FarazV2ray-24'
     type: vless
     server: 69.46.46.39
     port: 443
@@ -38703,7 +38633,7 @@ proxies:
     port: 443
     uuid: 8e1a5f40-f3ad-41da-96b6-f6d0f0d95f55
     udp: true
-  - name: Tel@V2rayng_Fast 🩵-2
+  - name: Tel@V2rayng_Fast 🩵
     type: vless
     server: 199.232.239.239
     port: 443
@@ -38827,7 +38757,7 @@ proxies:
     port: 443
     uuid: 932b2343-2a3b-45c2-9699-7642a85abdc1
     udp: true
-  - name: '@FarazV2ray-27'
+  - name: '@FarazV2ray-25'
     type: vless
     server: 199.232.78.159
     port: 443
@@ -38881,7 +38811,7 @@ proxies:
     port: 443
     uuid: 974c2588-c1cd-43ac-8823-ce3d879b09fd
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-31'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-30'
     type: vless
     server: 188.114.97.6
     port: 443
@@ -38932,7 +38862,7 @@ proxies:
     port: 443
     uuid: 9b0ae636-a50b-4667-bbe0-22a0600610a5
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-32'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-31'
     type: vless
     server: 104.21.33.59
     port: 443
@@ -39112,7 +39042,7 @@ proxies:
     port: 443
     uuid: 9f2ecebe-3a52-460e-80ac-74a21fffdaf7
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-33'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-32'
     type: vless
     server: 188.114.97.6
     port: 443
@@ -39148,25 +39078,25 @@ proxies:
     port: 443
     uuid: 'ID TEL : V2XNET'
     udp: true
-  - name: '@FarazV2ray-28'
+  - name: '@FarazV2ray-26'
     type: vless
     server: 50.62.88.2
     port: 443
     uuid: Telegram🇨🇳 @WangCai2
     udp: true
-  - name: '@FarazV2ray-29'
+  - name: '@FarazV2ray-27'
     type: vless
     server: 199.232.78.160
     port: 443
     uuid: XlnTeam-36
     udp: true
-  - name: '@FarazV2ray-30'
+  - name: '@FarazV2ray-28'
     type: vless
     server: 140.248.186.45
     port: 443
     uuid: XpnTeam-13
     udp: true
-  - name: '@FarazV2ray-31'
+  - name: '@FarazV2ray-29'
     type: vless
     server: 199.232.78.170
     port: 443
@@ -39298,7 +39228,7 @@ proxies:
     udp: true
     tls: true
     reality-opts: {}
-  - name: '@FarazV2ray-32'
+  - name: '@FarazV2ray-30'
     type: vless
     server: 83.168.71.216
     port: 443
@@ -39373,7 +39303,7 @@ proxies:
     port: 4443
     uuid: a365fd78-80d4-4a2e-83e2-66019eab0eed
     udp: true
-  - name: '@FarazV2ray-33'
+  - name: '@FarazV2ray-31'
     type: vless
     server: 172.67.73.180
     port: 2053
@@ -39385,7 +39315,7 @@ proxies:
     port: 2087
     uuid: a4a951b9-901d-4db8-8a7d-6df82c4b5c23
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-34'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-33'
     type: vless
     server: 69.46.46.103
     port: 443
@@ -39397,14 +39327,14 @@ proxies:
     port: 443
     uuid: a5ea9247-79f3-4655-aece-3fb51e1e669e
     udp: true
-  - name: '@FarazV2ray-34'
+  - name: '@FarazV2ray-32'
     type: vless
     server: 188.42.88.24
     port: 2053
     uuid: a625ba9c-9bfd-44b0-954e-6e88ed1df2cb
     udp: true
     tls: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-35'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-34'
     type: vless
     server: 188.130.209.227
     port: 8443
@@ -39499,7 +39429,7 @@ proxies:
     port: 443
     uuid: aa817985-4a53-47c0-bbaf-0c121f117685
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-36'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-35'
     type: vless
     server: 199.232.78.159
     port: 443
@@ -39687,13 +39617,13 @@ proxies:
     port: 443
     uuid: b0a05ac4-eade-4f26-a514-bdae074bd63b
     udp: true
-  - name: Tel@V2rayng_Fast 🩵-3
+  - name: Tel@V2rayng_Fast 🩵-2
     type: vless
     server: 188.114.97.6
     port: 443
     uuid: b0a100ee-c397-43f2-bdae-2adfb7a0d4e5
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-37'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-36'
     type: vless
     server: 188.114.98.0
     port: 443
@@ -39866,7 +39796,7 @@ proxies:
     port: 443
     uuid: b2bf3e70-e99f-47ed-9802-5c8d264ecc0c
     udp: true
-  - name: '@FarazV2ray-35'
+  - name: '@FarazV2ray-33'
     type: vless
     server: 69.46.46.31
     port: 443
@@ -39878,7 +39808,7 @@ proxies:
     port: 443
     uuid: b2e8f455-3bd9-477c-b8f0-a3198f601565
     udp: true
-  - name: '@FarazV2ray-36'
+  - name: '@FarazV2ray-34'
     type: vless
     server: 162.159.38.119
     port: 443
@@ -39938,7 +39868,7 @@ proxies:
     port: 443
     uuid: b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb
     udp: true
-  - name: '@FarazV2ray-37'
+  - name: '@FarazV2ray-35'
     type: vless
     server: 213.130.137.150
     port: 443
@@ -39962,25 +39892,25 @@ proxies:
     port: 443
     uuid: b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb
     udp: true
-  - name: '@FarazV2ray-38'
+  - name: '@FarazV2ray-36'
     type: vless
     server: 213.130.137.40
     port: 443
     uuid: b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb
     udp: true
-  - name: '@FarazV2ray-39'
+  - name: '@FarazV2ray-37'
     type: vless
     server: 213.130.137.50
     port: 443
     uuid: b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb
     udp: true
-  - name: '@FarazV2ray-40'
+  - name: '@FarazV2ray-38'
     type: vless
     server: 213.130.137.60
     port: 443
     uuid: b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb
     udp: true
-  - name: '@FarazV2ray-41'
+  - name: '@FarazV2ray-39'
     type: vless
     server: 213.130.137.80
     port: 443
@@ -40033,12 +39963,6 @@ proxies:
     server: 178.172.227.228
     port: 10444
     uuid: b6e5dc56-836f-48c1-9163-b0b0b43b647d
-    udp: true
-  - name: ✈️69@oneclickvpnkeys
-    type: vless
-    server: 87.242.95.77
-    port: 7444
-    uuid: b6e8587e-b82f-488b-bc3f-b1c3bb1a628b
     udp: true
   - name: Free x369 @Outline_Vpn
     type: vless
@@ -40194,6 +40118,12 @@ proxies:
     port: 3090
     uuid: bc15fdad-571a-4898-ac56-8f3a67754536
     udp: true
+  - name: 俄罗斯(v2clash.blog 2026-10.3更新)
+    type: vless
+    server: 78.159.246.110
+    port: 443
+    uuid: bc5ec86c-3e65-4272-994c-59a924c72a68
+    udp: true
   - name: 🫒74@oneclickvpnkeys
     type: vless
     server: 31.77.227.6
@@ -40230,7 +40160,7 @@ proxies:
     port: 8080
     uuid: bd9ff08b-d042-3650-48e4-c4b400000000
     udp: true
-  - name: '@FarazV2ray-42'
+  - name: '@FarazV2ray-40'
     type: vless
     server: 104.167.197.22
     port: 443
@@ -40488,7 +40418,7 @@ proxies:
     port: 443
     uuid: c2331311-c9fd-4af9-8f34-7a9edcee3b92
     udp: true
-  - name: '@FarazV2ray-43'
+  - name: '@FarazV2ray-41'
     type: vless
     server: 31.43.191.39
     port: 443
@@ -40797,7 +40727,7 @@ proxies:
     port: 443
     uuid: ca52e2b6-fb9f-4dac-b6dc-49da9923f251
     udp: true
-  - name: '@FarazV2ray-44'
+  - name: '@FarazV2ray-42'
     type: vless
     server: 199.232.78.159
     port: 443
@@ -40946,7 +40876,7 @@ proxies:
     port: 443
     uuid: cf39fab0-bb85-42cb-9945-2ad69d78e575
     udp: true
-  - name: '@FarazV2ray-45'
+  - name: '@FarazV2ray-43'
     type: vless
     server: 173.245.59.1
     port: 443
@@ -41013,12 +40943,6 @@ proxies:
     server: 80.240.18.227
     port: 10051
     uuid: d161dcf1-fde2-44cc-b08d-d8944895e842
-    udp: true
-  - name: 5✅@oneclickvpnkeys
-    type: vless
-    server: 66.70.179.198
-    port: 2053
-    uuid: d165fa7e-fa7a-414f-8c75-15f18bce5105
     udp: true
   - name: '@V2rayng_Fast 🇸🇪-4'
     type: vless
@@ -41296,7 +41220,7 @@ proxies:
     port: 443
     uuid: d65cc14c-f53f-4fe2-b262-97856601319c
     udp: true
-  - name: '@FarazV2ray-46'
+  - name: '@FarazV2ray-44'
     type: vless
     server: 199.232.78.159
     port: 443
@@ -41318,7 +41242,7 @@ proxies:
     udp: true
     tls: true
     reality-opts: {}
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-38'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-37'
     type: vless
     server: 2.26.93.130
     port: 443
@@ -41390,7 +41314,7 @@ proxies:
     port: 443
     uuid: d7d8af23-36cd-4c66-a42a-4469c177210f
     udp: true
-  - name: '@FarazV2ray-47'
+  - name: '@FarazV2ray-45'
     type: vless
     server: 49.12.45.2
     port: 443
@@ -41454,7 +41378,7 @@ proxies:
     port: 2053
     uuid: da4747a6-be0d-4c1b-90f4-d82ec3012be2
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-39'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-38'
     type: vless
     server: 151.101.56.7
     port: 443
@@ -41584,7 +41508,7 @@ proxies:
     port: 443
     uuid: e0ef0fb4-f18a-4284-bcf3-f5b3e738c594
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-40'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-39'
     type: vless
     server: 194.58.41.39
     port: 443
@@ -41651,7 +41575,7 @@ proxies:
     port: 443
     uuid: e3f0c894-0f76-4683-a751-6a93da8fd14d
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-41'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-40'
     type: vless
     server: 69.46.46.104
     port: 443
@@ -41711,7 +41635,7 @@ proxies:
     port: 2082
     uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
     udp: true
-  - name: '@FarazV2ray-48'
+  - name: '@FarazV2ray-46'
     type: vless
     server: 104.18.28.234
     port: 443
@@ -41780,7 +41704,7 @@ proxies:
     port: 2096
     uuid: e6b59d15-364c-4025-899a-84efa291d651
     udp: true
-  - name: '@FarazV2ray-49'
+  - name: '@FarazV2ray-47'
     type: vless
     server: 45.88.13.3
     port: 8443
@@ -41844,7 +41768,7 @@ proxies:
     port: 443
     uuid: e8227d30-9e54-4c7f-935f-b1874817d5b3
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-42'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-41'
     type: vless
     server: 167.82.76.31
     port: 443
@@ -42047,7 +41971,7 @@ proxies:
     port: 443
     uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
     udp: true
-  - name: '@FarazV2ray-50'
+  - name: '@FarazV2ray-48'
     type: vless
     server: 104.21.47.19
     port: 443
@@ -42090,13 +42014,13 @@ proxies:
     port: 443
     uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
     udp: true
-  - name: '@FarazV2ray-51'
+  - name: '@FarazV2ray-49'
     type: vless
     server: 172.64.149.209
     port: 443
     uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
     udp: true
-  - name: '@FarazV2ray-52'
+  - name: '@FarazV2ray-50'
     type: vless
     server: 172.64.150.130
     port: 443
@@ -42156,7 +42080,7 @@ proxies:
     port: 443
     uuid: ef8f93e0-c98e-4c05-acaa-71f5b0f7353c
     udp: true
-  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-43'
+  - name: '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-42'
     type: vless
     server: 199.232.78.159
     port: 443
@@ -42296,6 +42220,12 @@ proxies:
     port: 8880
     uuid: f55a75a7-5aa6-4df7-814a-99da0edb5c86
     udp: true
+  - name: 🛕95@oneclickvpnkeys
+    type: vless
+    server: 147.45.60.160
+    port: 8444
+    uuid: f55e9aba-7b14-4f6f-b59a-d5b3d45c9309
+    udp: true
   - name: '[-58'
     type: vless
     server: 104.17.25.32
@@ -42324,12 +42254,6 @@ proxies:
     udp: true
     tls: true
     reality-opts: {}
-  - name: Free 245 @Outline_Vpn
-    type: vless
-    server: 144.31.218.18
-    port: 443
-    uuid: f692629b-3557-488a-9c9b-60775331e423
-    udp: true
   - name: 🐻72@oneclickvpnkeys
     type: vless
     server: 150.241.101.230
@@ -42424,7 +42348,7 @@ proxies:
     port: 443
     uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
     udp: true
-  - name: '@FarazV2ray-53'
+  - name: '@FarazV2ray-51'
     type: vless
     server: 92.53.189.140
     port: 80
@@ -42789,12 +42713,12 @@ proxy-groups:
     proxies:
       - ♻️ 全部-自动
       - ☝️ 全部-手动
-      - 📍 新加坡
-      - 📍 德国
       - 📍 美国
+      - 📍 新加坡
+      - 📍 香港
+      - 📍 德国
       - 📍 日本
       - 📍 英国
-      - 📍 香港
       - 📍 韩国
       - DIRECT
   - name: ♻️ 全部-自动
@@ -42804,18 +42728,20 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - 美国+CloudFlare节点
       - 新西兰+V2CROSS.COM
       - 新西兰+V2CROSS.COM-2
-      - 巴西+V2CROSS.COM
       - 新西兰+V2CROSS.COM-3
-      - 智利+V2CROSS.COM
       - 新西兰+V2CROSS.COM-4
+      - 新加坡+V2CROSS.COM
       - 未知 SS-01 | free-nodes
       - 未知 SS-03 | free-nodes
-      - 未知 SS-06 | free-nodes
-      - 未知 SS-07 | free-nodes
+      - HK VLESS-04 | free-nodes
+      - 未知 SS-05 | free-nodes
       - 未知 SS-08 | free-nodes
       - 未知 SS-09 | free-nodes
+      - 未知 SS-11 | free-nodes
+      - 未知 SS-12 | free-nodes
       - CA VMESS-13 | free-nodes
       - CA VMESS-14 | free-nodes
       - FR VLESS-15 | free-nodes
@@ -42863,6 +42789,7 @@ proxy-groups:
       - '🇫🇷[www.v2nodes.com] vless-FR-1... #3'
       - '🇫🇷[www.v2nodes.com] vless-FR-1... #5'
       - '🏳[www.v2nodes.com] vless- #9'
+      - '🏳[www.v2nodes.com] vless- #32'
       - '🏳[www.v2nodes.com] vless- #11'
       - '🏳[www.v2nodes.com] vless- #12'
       - '🏳[www.v2nodes.com] vless- #13'
@@ -42873,7 +42800,6 @@ proxy-groups:
       - '🇬🇧[www.v2nodes.com] vless-GB-1... #3'
       - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
       - 🇲🇾[www.v2nodes.com] vless-MY-5...
       - 🇮🇳[www.v2nodes.com] vless-IN-1...
       - '🇮🇳[www.v2nodes.com] vless-IN-1... #1'
@@ -42885,15 +42811,11 @@ proxy-groups:
       - '🏳[www.v2nodes.com] vless- #34'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
       - 🇰🇷[www.v2nodes.com] vless-KR-1...
-      - '🏳[www.v2nodes.com] vless- #24'
-      - 🇱🇰[www.v2nodes.com] vless-LK-6...
       - 🇲🇩[www.v2nodes.com] vless-MD-4...
       - 🇲🇾[www.v2nodes.com] vless-MY-1...
       - '🇳🇱[www.v2nodes.com] vless-NL-1... #1'
       - '🏳[www.v2nodes.com] vless- #26'
-      - '🇳🇱[www.v2nodes.com] vless-NL-1... #2'
       - '🇵🇱[www.v2nodes.com] vless-PL-1... #3'
-      - '🇵🇱[www.v2nodes.com] vless-PL-1... #4'
       - '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
       - '🇸🇪[www.v2nodes.com] vless-SE-1... #1'
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
@@ -43042,6 +42964,7 @@ proxy-groups:
       - US_speednode_0039
       - US_speednode_0041
       - 🇩🇪 德国 | DEU 4
+      - 🇪🇪 爱沙尼亚 | EST
       - 🇳🇱 荷兰 | NLD
       - 🇳🇱 荷兰 | NLD 3
       - 🇳🇱 荷兰 | NLD 4
@@ -43335,7 +43258,6 @@ proxy-groups:
       - 瑞士 003
       - 美国 332
       - 乌克兰 003
-      - 韩国 016
       - 以色列 002
       - 美国 338
       - 日本 056
@@ -44418,6 +44340,7 @@ proxy-groups:
       - FI 🇫🇮 | @Raydikalx | DC0D7D
       - CA 🇨🇦 | @Raydikalx | 3E7C3F
       - SE 🇸🇪 | @Raydikalx | 913FEF
+      - KR 🇰🇷 | @Raydikalx | E9F97A
       - JP 🇯🇵 | @Raydikalx | E6D44D
       - JP 🇯🇵 | @Raydikalx | 102B75
       - US 🇺🇸 | @Raydikalx | C2EDAF
@@ -44523,7 +44446,6 @@ proxy-groups:
       - CA 🇨🇦 | @Raydikalx | 176CD9
       - CA 🇨🇦 | @Raydikalx | 134099
       - NL 🇳🇱 | @Raydikalx | 1AEAAC
-      - DE 🇩🇪 | @Raydikalx | D9E7C7
       - DE 🇩🇪 | @Raydikalx | C971ED
       - LV 🇱🇻 | @Raydikalx | 593E77
       - DE 🇩🇪 | @Raydikalx | C797DA
@@ -44655,7 +44577,6 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 4C5D05
       - US 🇺🇸 | @Raydikalx | 77BD3A
       - US 🇺🇸 | @Raydikalx | 3E8C43
-      - IE 🇮🇪 | @Raydikalx | 03760D
       - GB 🇬🇧 | @Raydikalx | B8FD16
       - SE 🇸🇪 | @Raydikalx | B239B4
       - DE 🇩🇪 | @Raydikalx | 7E7BBF
@@ -44732,6 +44653,7 @@ proxy-groups:
       - 🆔surfboardv2ray 🔒 VL-TCP- 🇵🇱 PL 135ms
       - 🆔surfboardv2ray 🔒 VL-GRPC- 🇲🇩 MD 157ms
       - 🆔surfboardv2ray 🔒 VL-GRPC- 🇲🇩 MD 166ms
+      - 🆔vpnbaz 🔒 VL-TCP- 🇵🇱 PL 199ms
       - 🆔vpnbaz 🔒 VL-GRPC- 🇷🇸 RS 170ms
       - 🆔capoit 🔒 VL-XHTTP-N/A ❔ XX 9ms
       - 🆔capoit 🔓 VL-HTTPUPGRADE-N/A ❔ XX 11ms
@@ -44781,6 +44703,7 @@ proxy-groups:
       - 🆔ar14n24b 🔒 VL-WS-N/A 🇳🇱 NL 133ms
       - 🆔ar14n24b 🔒 VL-WS-N/A 🇩🇪 DE 134ms
       - 🆔ar14n24b 🔒 VL-TCP-N/A 🇳🇱 NL 126ms
+      - 🆔ar14n24b 🔒 VL-TCP- ❔ XX 112ms
       - 🆔ar14n24b 🔒 VL-TCP- 🇳🇱 NL 109ms
       - 🆔ar14n24b 🔒 VL-TCP- ❔ XX 125ms
       - 🆔ar14n24b 🔓 VL-TCP-N/A 🇩🇪 DE 120ms
@@ -44842,7 +44765,6 @@ proxy-groups:
       - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 18ms
       - 🆔v2ray1_ng 🔒 VL-TCP- 🇳🇱 NL 112ms
       - 🆔v2ray1_ng 🔒 VL-TCP- 🇳🇱 NL 120ms
-      - 🆔v2ray1_ng 🔒 VL-TCP- ❔ XX 106ms
       - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 7ms
       - 🆔v2ray1_ng 🔒 VL-TCP- ❔ XX 119ms
       - 🆔madshopx 🔒 VL-WS-N/A ❔ XX 14ms
@@ -44950,6 +44872,7 @@ proxy-groups:
       - 🇺🇸US-156.146.38.167-0207
       - 🇺🇸US-156.146.38.170-0168
       - 🇬🇧GB-82.38.31.190-0131
+      - 🇭🇰HK-103.149.182.79-5774
       - 🇰🇷KR-211.178.105.134-0226
       - 🇯🇵JP-84.247.155.196-0225
       - 🇬🇧GB-141.98.101.181-0220
@@ -44959,9 +44882,7 @@ proxy-groups:
       - 🇺🇸US-66.163.122.26-0160
       - 🇨🇦CA-137.184.174.93-0156
       - 🇪🇸ES-66.163.118.62-0154
-      - 🇨🇴CO-149.104.107.41-0202
       - 🇨🇦CA-216.152.147.48-0088
-      - 🇰🇷KR-141.164.45.187-0209
       - 🇭🇰HK-219.76.13.181-0068
       - 🏁RELAY-141.101.115.20-0046
       - 🇦🇺AU-51.161.152.180-0045
@@ -45040,7 +44961,6 @@ proxy-groups:
       - 🏁RELAY-173.245.49.141-2803
       - 🇨🇳CN-124.222.189.225-2830
       - 🏁RELAY-172.67.127.250-2838
-      - 🇿🇦ZA-139.84.247.164-2914
       - 🇺🇸US-192.96.204.250-2963
       - 🏁RELAY-104.16.23.3-2990
       - 🏁RELAY-172.67.204.84-3000
@@ -45115,7 +45035,6 @@ proxy-groups:
       - 🇳🇱NL-158.173.20.171-5728
       - 🇯🇵JP-54.65.177.190-5776
       - 🇯🇵JP-167.179.108.225-5777
-      - 🇰🇷KR-141.164.45.187-5778
       - 🇯🇵JP-18.179.31.199-5780
       - 🇭🇰HK-83.229.121.78-5783
       - 🇺🇸US-216.105.168.18-5819
@@ -45158,8 +45077,8 @@ proxy-groups:
       - 🇳🇱NL-51.15.19.206-7951
       - 🇳🇱NL-51.15.19.206-7952
       - 🇪🇸ES-5.188.181.201-7957
-      - 🇪🇸ES-5.188.181.201-7961
-      - 🇪🇸ES-5.188.181.201-7962
+      - 🇪🇸ES-5.188.181.201-7958
+      - 🇪🇸ES-5.188.181.201-7960
       - 🇺🇸US-47.88.104.186-7977
       - 🇺🇸US-47.254.89.211-7980
       - 🇺🇸US-47.254.17.235-7982
@@ -45529,18 +45448,15 @@ proxy-groups:
       - '['
       - 🇫🇷 France
       - '[.'
-      - '@FarazV2ray-2'
       - '@FarazV2ray -4'
       - '@FarazV2ray -5'
-      - '@FarazV2ray-3'
+      - '@FarazV2ray-2'
       - 🦄58@oneclickvpnkeys
       - '@FarazV2ray -6'
       - 𝗝𝗼𝗶𝗻 ➠ @proxy_kafee ☄️
       - '@FarazV2ray -7'
       - 🇷🇺 Russia
       - T.me/SafeNet_Server 💚🤍❤
-      - '@FarazV2ray-4'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚'
       - YFZ 113 @Outline_Vpn
       - '@Vpn_Tehran 🤍 کانال تلگرام'
       - 🇳🇱 The Netherlands
@@ -45557,13 +45473,11 @@ proxy-groups:
       - Free x54 @Outline_Vpn
       - 🇺🇸 Seattle, WA, United States-2
       - 🇰🇷 Seoul, 11, South Korea
-      - 🇰🇷 Seoul, 11, South Korea-2
       - 🇹🇷𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
-      - 🇰🇷 Seoul, 11, South Korea-4
-      - 🇰🇷 Seoul, 11, South Korea-5
       - '@FarazV2ray -10'
-      - 🇰🇷 Seoul, 11, South Korea-6
+      - 🇰🇷 Seoul, 11, South Korea-4
       - '@Vpn_Tehran 💌 کانال تلگرام'
       - 🇸🇨 Seychelles
       - '@FarazV2ray -11'
@@ -45581,7 +45495,7 @@ proxy-groups:
       - '@FarazV2ray -12'
       - 🦖95@oneclickvpnkeys
       - ⛳59@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-2'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚'
       - NormanV2ray-11
       - 🛖67@oneclickvpnkeys
       - Telegram@DarkVPNpro | کانفیگ های پرسرعت بیشتر⚡️
@@ -45589,7 +45503,7 @@ proxy-groups:
       - 🎡7@oneclickvpnkeys
       - 🍏85@oneclickvpnkeys
       - '[-4'
-      - '@FarazV2ray-5'
+      - '@FarazV2ray-3'
       - ⚡️ 𝗡𝗲𝗧𝗠𝗲𝗹𝗶 ⚡️ | @prrofile_purple-2
       - ⚙️58@oneclickvpnkeys
       - 🇺🇸Telegram👉@v2rayNG_Matsuri
@@ -45608,9 +45522,9 @@ proxy-groups:
       - 🫟18@oneclickvpnkeys
       - 🧩54@oneclickvpnkeys
       - ⛽41@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-3'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-2'
       - 🔥34@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-4'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-3'
       - 🇺🇸@V2rayng_Fast
       - '@prrofile_purple  ♥️👈 تلگرام-5'
       - ProxyMtpVPN-20
@@ -45621,7 +45535,7 @@ proxy-groups:
       - 🦄24@oneclickvpnkeys
       - filembad-52
       - Suren TM
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-5'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-4'
       - 🐊29@oneclickvpnkeys
       - 🪼77@oneclickvpnkeys
       - ProxyMtpVPN-104
@@ -45638,20 +45552,20 @@ proxy-groups:
       - CA加拿大(v2clash.blog 2026-8.15更新)
       - FR法国(v2clash.blog 2026-9.17更新)
       - GB英国(v2clash.blog 2026-10.13更新)
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-6'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-5'
       - Server 170
       - '@FarazV2ray -13'
       - 🇧🇻@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - US美国(v2clash.blog 2026-9.17更新)-2
       - lrnbymaa
-      - '@FarazV2ray-6'
+      - '@FarazV2ray-4'
       - 🛸36@oneclickvpnkeys
       - 🍎63@oneclickvpnkeys
       - '[-5'
       - VIP 107 @v2ray_vpn_ir
       - '@FarazV2ray -14'
-      - '@FarazV2ray-7'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-7'
+      - '@FarazV2ray-5'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-6'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - US美国(v2clash.blog 2026-9.22更新)
       - telegram➠@v2rayNG_Matsuri
@@ -45686,7 +45600,7 @@ proxy-groups:
       - ♦️63@oneclickvpnkeys
       - '@V2rayng_Fast 🇮🇹'
       - US美国(v2clash.blog 2026-6.7更新)
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-8'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-7'
       - V2rayng_Fast
       - Tel@V2rayng_Fast 🇮🇹
       - '[-9'
@@ -45703,11 +45617,11 @@ proxy-groups:
       - ✅85@oneclickvpnkeys
       - FR法国(v2clash.blog 2026-8.4更新)
       - '@SERVERNETT جوین بدید'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-9'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-8'
       - ⛲57@oneclickvpnkeys
       - Free x300 @Outline_Vpn
-      - '@FarazV2ray-8'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-10'
+      - '@FarazV2ray-6'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-9'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - 🥉87@oneclickvpnkeys
       - '[-10'
@@ -45731,7 +45645,7 @@ proxy-groups:
       - '@proxy_kafee-2'
       - filembad-91
       - '@Vpn_Tehran 🇦🇷 تلگرام'
-      - '@FarazV2ray-9'
+      - '@FarazV2ray-7'
       - vless-217.25.56.173
       - NL荷兰(v2clash.blog 2026-10.25更新)
       - 🤩92@oneclickvpnkeys
@@ -45762,7 +45676,7 @@ proxy-groups:
       - filembad-79
       - ⛽28@oneclickvpnkeys
       - 🍎68@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-11'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-10'
       - '@V2rayng_Fast 🇺🇸'
       - '@Napsternetvirani-2'
       - '@V2rayng_Fast 🇩🇪-2'
@@ -45795,9 +45709,9 @@ proxy-groups:
       - 'Channel : @proxy_kafee-4'
       - '@prrofile_purple | ViP ⚡'
       - '@Napsternetvirani-3'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-12'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-11'
       - '[-15'
-      - '@FarazV2ray-10'
+      - '@FarazV2ray-8'
       - '@FarazV2ray -20'
       - 🛠️97@oneclickvpnkeys
       - ⛵22@oneclickvpnkeys
@@ -45858,10 +45772,10 @@ proxy-groups:
       - '@v2rayngninja'
       - '@prrofile_purple | ViP ⚡-2'
       - 'Channel : @proxy_kafee -2'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-13'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-12'
       - 😊91@oneclickvpnkeys
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-13'
       - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-14'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-15'
       - 🫑1@oneclickvpnkeys
       - Telegram👉@v2rayNG_Matsuri-2
       - 🏀38@oneclickvpnkeys
@@ -45870,11 +45784,11 @@ proxy-groups:
       - 'Channel : @proxy_kafee-5'
       - V2rayngninja
       - 🐦62@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-16'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-15'
       - 🛠️4@oneclickvpnkeys
       - Telegram@DarkVPNpro | کانفیگ های پرسرعت بیشتر⚡️-2
       - US美国(v2clash.blog 2026-10.2更新)
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-17'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-16'
       - '@V2rayng_Fast-2'
       - 🍄‍🟫69@oneclickvpnkeys
       - 'Channel : @proxy_kafee-6'
@@ -45886,10 +45800,10 @@ proxy-groups:
       - 🎒78@oneclickvpnkeys
       - Free 265 @Outline_Vpn
       - ✨42@oneclickvpnkeys
-      - '@FarazV2ray-11'
+      - '@FarazV2ray-9'
       - کانال+:+@V2rayNGvpni-3
       - 🪺2@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-18'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-17'
       - 🍂7@oneclickvpnkeys
       - ⛽57@oneclickvpnkeys
       - '@V2rayng_Fast 🇩🇪-3'
@@ -45911,7 +45825,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇫🇷-2'
       - '@V2rayng_Fast 🇧🇷-2'
       - Server 320
-      - '@FarazV2ray-12'
+      - '@FarazV2ray-10'
       - '@V2rayng_Fast 🩵'
       - '[-17'
       - US美国(v2clash.blog 2026-10.5更新)
@@ -45951,15 +45865,14 @@ proxy-groups:
       - filembad-148
       - 🇺🇸 美国 夏威夷州
       - '@V2rayng_Fast-3'
-      - '@FarazV2ray-13'
+      - '@FarazV2ray-11'
       - US美国(v2clash.blog 2026-10.9更新)
       - filembad-177
       - 💡95@oneclickvpnkeys
-      - '@FarazV2ray-14'
+      - '@FarazV2ray-12'
       - Server 60
       - 🐞26@oneclickvpnkeys
       - 🐤2@oneclickvpnkeys
-      - Tel@V2rayng_Fast 🩵
       - 🍄‍🟫75@oneclickvpnkeys
       - '@ShadowProxy66 🇺🇸-2'
       - 🇫🇮𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
@@ -45975,21 +45888,22 @@ proxy-groups:
       - Server 35
       - Tel@V2rayng_Fast 🇮🇹-4
       - 🇩🇪telegram➠@v2rayNG_Matsuri
+      - ⏰11@oneclickvpnkeys
       - 🦀88@oneclickvpnkeys
       - 4🌊@oneclickvpnkeys
       - 🛠️12@oneclickvpnkeys
       - 'Channel : @proxy_kafee-7'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-19'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-18'
       - Free x267 @Outline_Vpn
       - 'Channel : @proxy_kafee-8'
       - 🦜33@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-20'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-19'
       - 'Channel : @proxy_kafee -5'
       - YFZ 56 @Outline_Vpn
       - YFZ 59 @Outline_Vpn
       - '@FarazV2ray -26'
       - '@V2rayng_Fast 🇩🇪-5'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-21'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-20'
       - 🐙33@oneclickvpnkeys
       - ⛽71@oneclickvpnkeys
       - '@Vpn_Tehran 💚 کانال تلگرام-2'
@@ -46006,7 +45920,7 @@ proxy-groups:
       - 🏠28@oneclickvpnkeys
       - 🫡96@oneclickvpnkeys
       - '@V2rayng_Fast-4'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-22'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-21'
       - Internet4Iran-mahsa
       - ✈️9@oneclickvpnkeys
       - 🫡32@oneclickvpnkeys
@@ -46014,7 +45928,7 @@ proxy-groups:
       - 🍑53@oneclickvpnkeys
       - US美国(v2clash.blog 2026-10.9更新)-2
       - 🇧🇻@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-      - '@FarazV2ray-15'
+      - '@FarazV2ray-13'
       - ⛽77@oneclickvpnkeys
       - '[-18'
       - '[-19'
@@ -46043,7 +45957,7 @@ proxy-groups:
       - Free x129 @Outline_Vpn
       - 🔖68@oneclickvpnkeys
       - ☸️38@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-23'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-22'
       - 🎡26@oneclickvpnkeys
       - vless-104.17.234.128-2
       - 🍷@vless_vmess x | همه اپراتورها
@@ -46137,7 +46051,7 @@ proxy-groups:
       - 🫧68@oneclickvpnkeys
       - 阿拉伯(v2clash.blog 2026-10.10更新)
       - '@proxy_kafee-7'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-24'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-23'
       - '@FarazV2ray -29'
       - '@ShadowProxy66 🇺🇸-3'
       - '@ShadowProxy66 🇺🇸-4'
@@ -46168,14 +46082,14 @@ proxy-groups:
       - vless-104.17.234.114-2
       - 🫡62@oneclickvpnkeys
       - '@Napsternetvirani -2'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-25'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-24'
       - https://t.me/XHer0_bot
       - '@FarazV2ray -34'
       - Tel@V2rayng_Fast 🇩🇪-2
       - '@FarazV2ray -35'
       - '@proxy_kafee - 🫜9'
       - 🐙100@oneclickvpnkeys
-      - '@FarazV2ray-16'
+      - '@FarazV2ray-14'
       - ⛽13@oneclickvpnkeys
       - '@V2rayng_Fast 🇫🇷-4'
       - ProxyMtpVPN-152
@@ -46277,7 +46191,7 @@ proxy-groups:
       - NL荷兰(v2clash.blog 2026-10.22更新)-2
       - US美国(v2clash.blog 2026-8.3更新)
       - کانال+:+@V2rayNGvpni-5
-      - '@FarazV2ray-17'
+      - '@FarazV2ray-15'
       - '@V2rayng_Fast 🇮🇹-2'
       - vless-106.75.143.18
       - 🪞9@oneclickvpnkeys
@@ -46298,6 +46212,7 @@ proxy-groups:
       - 芬兰(v2clash.blog 2026-10.18更新)
       - 'Channel : @proxy_kafee -8'
       - ⛽32@oneclickvpnkeys
+      - 🎡83@oneclickvpnkeys
       - 🐲30@oneclickvpnkeys
       - Free x196 @Outline_Vpn
       - US美国(v2clash.blog 2026-7.31更新)
@@ -46320,8 +46235,8 @@ proxy-groups:
       - '@prrofile_purple | ViP ⚡-4'
       - filembad-261
       - filembad-258
-      - '@FarazV2ray-18'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-26'
+      - '@FarazV2ray-16'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-25'
       - '@FarazV2ray -40'
       - Server 37
       - 📊95@oneclickvpnkeys
@@ -46331,17 +46246,17 @@ proxy-groups:
       - '[-34'
       - 🕊️53@oneclickvpnkeys
       - 🫑14@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-27'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-26'
       - 😊32@oneclickvpnkeys
-      - '@FarazV2ray-19'
+      - '@FarazV2ray-17'
       - '@V2rayng_Fast-8'
-      - '@FarazV2ray-20'
+      - '@FarazV2ray-18'
       - '@prrofile_purple | ViP ⚡-5'
       - 🤩70@oneclickvpnkeys
       - '@prrofile_purple | ViP ⚡-6'
       - ☮️33@oneclickvpnkeys
       - T.me/SafeNet_Server 💚🤍❤-4
-      - '@FarazV2ray-21'
+      - '@FarazV2ray-19'
       - T.me/SafeNet_Server 💚🤍❤-5
       - T.me/SafeNet_Server 💚🤍❤-6
       - 🍷@vless_vmess x | همه اپراتورها-2
@@ -46349,7 +46264,7 @@ proxy-groups:
       - lrnbymaa-2
       - lrnbymaa-3
       - lrnbymaa-4
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-28'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-27'
       - V2rayng_Fast@
       - '@ShadowProxy66 🇸🇪'
       - 🍷@vless_vmess x | همه اپراتورها-3
@@ -46357,14 +46272,14 @@ proxy-groups:
       - 🎡77@oneclickvpnkeys
       - Server 256
       - '@proxy_kafee-9'
-      - '@FarazV2ray-22'
+      - '@FarazV2ray-20'
       - 🏀19@oneclickvpnkeys
       - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
       - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞-2
       - ProxyMtpVPN-240
       - 🛠️99@oneclickvpnkeys
       - '@ShadowProxy66 🇺🇸-5'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-29'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-28'
       - 🧮12@oneclickvpnkeys
       - '@proxy_kafee : کانال تلگرام-2'
       - 🎗️26@oneclickvpnkeys
@@ -46397,10 +46312,10 @@ proxy-groups:
       - ✅39@oneclickvpnkeys
       - 🖲️37@oneclickvpnkeys
       - 🐙31@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-30'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-29'
       - ✅34@oneclickvpnkeys
-      - '@FarazV2ray-23'
-      - '@FarazV2ray-24'
+      - '@FarazV2ray-21'
+      - '@FarazV2ray-22'
       - 🐞48@oneclickvpnkeys
       - '[-36'
       - YFZ 5 @Outline_Vpn
@@ -46412,13 +46327,13 @@ proxy-groups:
       - 'Channel : @proxy_kafee -10'
       - '@proxy_kafee-10'
       - ☸️78@oneclickvpnkeys
-      - '@FarazV2ray-25'
-      - '@FarazV2ray-26'
+      - '@FarazV2ray-23'
+      - '@FarazV2ray-24'
       - Tel-@NapsterNetvIrani🥹 1
       - vless-104.17.234.128-6
       - 🐊18@oneclickvpnkeys
       - lrnbymaa-5
-      - Tel@V2rayng_Fast 🩵-2
+      - Tel@V2rayng_Fast 🩵
       - 🍂94@oneclickvpnkeys
       - filembad-315
       - ProxyMtpVPN-276
@@ -46437,7 +46352,7 @@ proxy-groups:
       - 🇧🇷@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - 🍎12@oneclickvpnkeys
       - '@FarazV2ray -50'
-      - '@FarazV2ray-27'
+      - '@FarazV2ray-25'
       - 🎨69@oneclickvpnkeys
       - DE德国(v2clash.blog 2026-9.12新)
       - vless-104.17.234.128-7
@@ -46446,7 +46361,7 @@ proxy-groups:
       - 🍄44@oneclickvpnkeys
       - vless-104.17.234.128-8
       - US美国(v2clash.blog 2026-10.10更新)-2
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-31'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-30'
       - 📀100@oneclickvpnkeys
       - 'چنل : RivenVpn'
       - '@V2rayng_Fast 🇸🇪-2'
@@ -46454,7 +46369,7 @@ proxy-groups:
       - 'Channel : @proxy_kafee -11'
       - '[-38'
       - '@prrofile_purple | ViP ⚡-7'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-32'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-31'
       - '@FarazV2ray -51'
       - 'Telegram : @proxy_kafee-2'
       - 🪁26@oneclickvpnkeys
@@ -46483,16 +46398,16 @@ proxy-groups:
       - Tel-@NapsterNetvIrani😴 2
       - Tel-@NapsterNetvIrani😇 1
       - '[-39'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-33'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-32'
       - 🌟35@oneclickvpnkeys
       - Free x453 @Outline_Vpn
       - 🍥63@oneclickvpnkeys
       - کانال+:+@V2rayNGvpni-6
       - https://t.me/v2rayNG_Matsuri-2
+      - '@FarazV2ray-26'
+      - '@FarazV2ray-27'
       - '@FarazV2ray-28'
       - '@FarazV2ray-29'
-      - '@FarazV2ray-30'
-      - '@FarazV2ray-31'
       - '@V2rayng_Fast-9'
       - '@FarazV2ray -52'
       - 'Channel : @proxy_kafee -12'
@@ -46513,7 +46428,7 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-3
       - 🪀33@oneclickvpnkeys
       - Free 126 @Outline_Vpn
-      - '@FarazV2ray-32'
+      - '@FarazV2ray-30'
       - '[-41'
       - vless-185.143.234.122
       - 南非(v2clash.blog 2026-10.16更新)
@@ -46525,12 +46440,12 @@ proxy-groups:
       - 🛩️72@oneclickvpnkeys
       - '[-42'
       - 🤩45@oneclickvpnkeys
-      - '@FarazV2ray-33'
+      - '@FarazV2ray-31'
       - US美国(v2clash.blog 2026-10.4更新)-2
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-34'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-33'
       - 🐙30@oneclickvpnkeys
-      - '@FarazV2ray-34'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-35'
+      - '@FarazV2ray-32'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-34'
       - '@FarazV2ray -61'
       - '@prrofile_purple | ViP ⚡-8'
       - '@prrofile_purple | ViP ⚡-9'
@@ -46545,7 +46460,7 @@ proxy-groups:
       - '@proxy_kafee : کانال تلگرام-3'
       - 🫡42@oneclickvpnkeys
       - vless-69.46.46.123
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-36'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-35'
       - '[-44'
       - 🌍11@oneclickvpnkeys
       - 🌍8@oneclickvpnkeys
@@ -46575,8 +46490,8 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-4
       - 🐒43@oneclickvpnkeys
       - 🦜5@oneclickvpnkeys
-      - Tel@V2rayng_Fast 🩵-3
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-37'
+      - Tel@V2rayng_Fast 🩵-2
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-36'
       - 🛕37@oneclickvpnkeys
       - 📪86@oneclickvpnkeys
       - YFZ 17 @Outline_Vpn
@@ -46604,9 +46519,9 @@ proxy-groups:
       - V2rayng_Fast-3
       - 🇨🇦@V2rayng_Fast-2
       - '@Napsternetvirani-23'
-      - '@FarazV2ray-35'
+      - '@FarazV2ray-33'
       - 🦁74@oneclickvpnkeys
-      - '@FarazV2ray-36'
+      - '@FarazV2ray-34'
       - 🌍67@oneclickvpnkeys
       - 🫡34@oneclickvpnkeys
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -46616,14 +46531,14 @@ proxy-groups:
       - 🛸97@oneclickvpnkeys
       - 🔒21@oneclickvpnkeys
       - 🚘30@oneclickvpnkeys
-      - '@FarazV2ray-37'
+      - '@FarazV2ray-35'
       - 🚘64@oneclickvpnkeys
       - '@Napsternetvirani-24'
       - 'Channel: @0proxy_kafee'
+      - '@FarazV2ray-36'
+      - '@FarazV2ray-37'
       - '@FarazV2ray-38'
       - '@FarazV2ray-39'
-      - '@FarazV2ray-40'
-      - '@FarazV2ray-41'
       - ProxyMtpVPN-319
       - YFZ 85 @Outline_Vpn
       - 🕊️47@oneclickvpnkeys
@@ -46632,7 +46547,6 @@ proxy-groups:
       - 🔒57@oneclickvpnkeys
       - 🐲47@oneclickvpnkeys
       - 白俄罗斯(v2clash.blog 2026-10.15更新)
-      - ✈️69@oneclickvpnkeys
       - Free x369 @Outline_Vpn
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - 🐸71@oneclickvpnkeys
@@ -46658,13 +46572,14 @@ proxy-groups:
       - ⛑️100@oneclickvpnkeys
       - 🍄‍🟫38@oneclickvpnkeys
       - 🛸2@oneclickvpnkeys
+      - 俄罗斯(v2clash.blog 2026-10.3更新)
       - 🫒74@oneclickvpnkeys
       - 💡53@oneclickvpnkeys
       - 'Channel : @proxy_kafee-18'
       - ☸️42@oneclickvpnkeys
       - vless-185.218.139.138
       - 👝48@oneclickvpnkeys
-      - '@FarazV2ray-42'
+      - '@FarazV2ray-40'
       - '@ShadowProxy66 🇺🇸-6'
       - 🧬63@oneclickvpnkeys
       - filembad-325
@@ -46705,7 +46620,7 @@ proxy-groups:
       - 🇭🇰香港专线01 下载专用
       - 🇨🇳台湾专线02 gpt专用
       - 🫑66@oneclickvpnkeys
-      - '@FarazV2ray-43'
+      - '@FarazV2ray-41'
       - '@V2rayng_Fast-10'
       - 🐙5@oneclickvpnkeys
       - 🌍40@oneclickvpnkeys
@@ -46754,7 +46669,7 @@ proxy-groups:
       - 🫧35@oneclickvpnkeys
       - 🫧34@oneclickvpnkeys
       - 🌍91@oneclickvpnkeys
-      - '@FarazV2ray-44'
+      - '@FarazV2ray-42'
       - filembad-384
       - 0.aq0.ccwu.cc tls WS CDN vless § 443 34
       - 5.qq1-0.kdns.fr tls WS CDN vless § 443 29
@@ -46777,7 +46692,7 @@ proxy-groups:
       - '@FarazV2ray -66'
       - 'Channel : @proxy_kafee-24'
       - '@proxy_kafee-14'
-      - '@FarazV2ray-45'
+      - '@FarazV2ray-43'
       - '@Vpn_Tehran 💜 کانال تلگرام'
       - '[-50'
       - 💡35@oneclickvpnkeys
@@ -46788,7 +46703,6 @@ proxy-groups:
       - '@Vpn_Tehran ⚘️ تلگرام'
       - '@V2rayng_Fast 🇩🇪-11'
       - ☸️22@oneclickvpnkeys
-      - 5✅@oneclickvpnkeys
       - '@V2rayng_Fast 🇸🇪-4'
       - 🍁70@oneclickvpnkeys
       - '@prrofile_purple | ViP ⚡-11'
@@ -46834,10 +46748,10 @@ proxy-groups:
       - 🐦‍🔥71@oneclickvpnkeys
       - 🪙93@oneclickvpnkeys
       - 🍁71@oneclickvpnkeys
-      - '@FarazV2ray-46'
+      - '@FarazV2ray-44'
       - '@V2rayng_Fast -5'
       - '@v2rayNG_Matsuri-2'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-38'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-37'
       - '@v2rayNG_Matsuri-3'
       - '@V2rayng_Fast 🇩🇪-13'
       - 🐦35@oneclickvpnkeys
@@ -46848,7 +46762,7 @@ proxy-groups:
       - 🫧64@oneclickvpnkeys
       - ⭐️76@oneclickvpnkeys
       - ⚙️42@oneclickvpnkeys
-      - '@FarazV2ray-47'
+      - '@FarazV2ray-45'
       - Telegram👉@v2rayNG_Matsuri-4
       - Server 49
       - Server 40-2
@@ -46857,7 +46771,7 @@ proxy-groups:
       - 𝗡𝗲𝗧𝗠𝗲𝗹𝗶⚡️@prrofile_purple 🌩
       - 🐦91@oneclickvpnkeys
       - canfingV2rayNG-359
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-39'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-38'
       - 🇫🇮Telegram👉@v2rayNG_Matsuri
       - RU俄罗斯(v2clash.blog 2026-10.16更新)
       - '@Napsternetvirani-26'
@@ -46877,7 +46791,7 @@ proxy-groups:
       - '[-51'
       - '@V2rayng_Fast 🇩🇪-14'
       - 'Channel : @proxy_kafee-25'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-40'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-39'
       - ⛲97@oneclickvpnkeys
       - '@V2rayng_Fast-12'
       - '@FarazV2ray -67'
@@ -46888,7 +46802,7 @@ proxy-groups:
       - '@FarazV2ray -68'
       - filembad-410
       - 🛠️100@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-41'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-40'
       - https://t.me/v2rayNG_Matsuri-3
       - '@Napsternetvirani-28'
       - Moldova WorkTitans
@@ -46898,7 +46812,7 @@ proxy-groups:
       - 🫑61@oneclickvpnkeys
       - lrnbymaa-9
       - '@Napsternetvirani-29'
-      - '@FarazV2ray-48'
+      - '@FarazV2ray-46'
       - '@proxy_kafee-16'
       - Free 171 @Outline_Vpn
       - '[-54'
@@ -46909,7 +46823,7 @@ proxy-groups:
       - ProxyMtpVPN-371
       - 🛩️34@oneclickvpnkeys
       - Telegram👉@v2rayNG_Matsuri-5
-      - '@FarazV2ray-49'
+      - '@FarazV2ray-47'
       - '@FarazV2ray -70'
       - '@V2rayng_Fast 🇳🇱-4'
       - 🫑33@oneclickvpnkeys
@@ -46919,7 +46833,7 @@ proxy-groups:
       - '@FarazV2ray -71'
       - vless-104.17.234.114-4
       - '@FarazV2ray -72'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-42'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-41'
       - 🛠️8@oneclickvpnkeys
       - 🍅34@oneclickvpnkeys
       - Free x619 @Outline_Vpn
@@ -46951,15 +46865,15 @@ proxy-groups:
       - 🌊5@oneclickvpnkeys
       - Server 106
       - Free 132 @Outline_Vpn
-      - '@FarazV2ray-50'
+      - '@FarazV2ray-48'
       - 🎴18@oneclickvpnkeys
       - 🇺🇸@V2rayng_Fast-2
       - NetMeli9-416
       - 🕹️5@oneclickvpnkeys
       - '@prrofile_purple  ♥️👈 تلگرام-6'
       - '@prrofile_purple  ♥️👈 تلگرام-7'
-      - '@FarazV2ray-51'
-      - '@FarazV2ray-52'
+      - '@FarazV2ray-49'
+      - '@FarazV2ray-50'
       - 📊63@oneclickvpnkeys
       - '@proxy_kafee : کانال تلگرام-7'
       - 🎡58@oneclickvpnkeys
@@ -46969,7 +46883,7 @@ proxy-groups:
       - ⭐️57@oneclickvpnkeys
       - 🇦🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - '[-56'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-43'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-42'
       - '@FarazV2ray -74'
       - '@Napsternetvirani-32'
       - Tel@V2rayng_Fast 🇮🇹-6
@@ -46991,11 +46905,11 @@ proxy-groups:
       - 🧿22@oneclickvpnkeys
       - '[-57'
       - filembad-456
+      - 🛕95@oneclickvpnkeys
       - '[-58'
       - 🔖11@oneclickvpnkeys
       - canfingV2rayNG-353
       - '@Napsternetvirani-33'
-      - Free 245 @Outline_Vpn
       - 🐻72@oneclickvpnkeys
       - filembad-454
       - 🇩🇪
@@ -47011,7 +46925,7 @@ proxy-groups:
       - ✈️6@oneclickvpnkeys
       - 🌍10@oneclickvpnkeys
       - 🫧92@oneclickvpnkeys
-      - '@FarazV2ray-53'
+      - '@FarazV2ray-51'
       - 🔰 @prrofile_purple (تلگرام)-3
       - 🔰 @prrofile_purple (تلگرام)-4
       - 🔰 @prrofile_purple (تلگرام)-5
@@ -47061,18 +46975,20 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
+      - 美国+CloudFlare节点
       - 新西兰+V2CROSS.COM
       - 新西兰+V2CROSS.COM-2
-      - 巴西+V2CROSS.COM
       - 新西兰+V2CROSS.COM-3
-      - 智利+V2CROSS.COM
       - 新西兰+V2CROSS.COM-4
+      - 新加坡+V2CROSS.COM
       - 未知 SS-01 | free-nodes
       - 未知 SS-03 | free-nodes
-      - 未知 SS-06 | free-nodes
-      - 未知 SS-07 | free-nodes
+      - HK VLESS-04 | free-nodes
+      - 未知 SS-05 | free-nodes
       - 未知 SS-08 | free-nodes
       - 未知 SS-09 | free-nodes
+      - 未知 SS-11 | free-nodes
+      - 未知 SS-12 | free-nodes
       - CA VMESS-13 | free-nodes
       - CA VMESS-14 | free-nodes
       - FR VLESS-15 | free-nodes
@@ -47120,6 +47036,7 @@ proxy-groups:
       - '🇫🇷[www.v2nodes.com] vless-FR-1... #3'
       - '🇫🇷[www.v2nodes.com] vless-FR-1... #5'
       - '🏳[www.v2nodes.com] vless- #9'
+      - '🏳[www.v2nodes.com] vless- #32'
       - '🏳[www.v2nodes.com] vless- #11'
       - '🏳[www.v2nodes.com] vless- #12'
       - '🏳[www.v2nodes.com] vless- #13'
@@ -47130,7 +47047,6 @@ proxy-groups:
       - '🇬🇧[www.v2nodes.com] vless-GB-1... #3'
       - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
       - 🇲🇾[www.v2nodes.com] vless-MY-5...
       - 🇮🇳[www.v2nodes.com] vless-IN-1...
       - '🇮🇳[www.v2nodes.com] vless-IN-1... #1'
@@ -47142,15 +47058,11 @@ proxy-groups:
       - '🏳[www.v2nodes.com] vless- #34'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
       - 🇰🇷[www.v2nodes.com] vless-KR-1...
-      - '🏳[www.v2nodes.com] vless- #24'
-      - 🇱🇰[www.v2nodes.com] vless-LK-6...
       - 🇲🇩[www.v2nodes.com] vless-MD-4...
       - 🇲🇾[www.v2nodes.com] vless-MY-1...
       - '🇳🇱[www.v2nodes.com] vless-NL-1... #1'
       - '🏳[www.v2nodes.com] vless- #26'
-      - '🇳🇱[www.v2nodes.com] vless-NL-1... #2'
       - '🇵🇱[www.v2nodes.com] vless-PL-1... #3'
-      - '🇵🇱[www.v2nodes.com] vless-PL-1... #4'
       - '🇷🇺[www.v2nodes.com] vless-RU-1... #1'
       - '🇸🇪[www.v2nodes.com] vless-SE-1... #1'
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
@@ -47299,6 +47211,7 @@ proxy-groups:
       - US_speednode_0039
       - US_speednode_0041
       - 🇩🇪 德国 | DEU 4
+      - 🇪🇪 爱沙尼亚 | EST
       - 🇳🇱 荷兰 | NLD
       - 🇳🇱 荷兰 | NLD 3
       - 🇳🇱 荷兰 | NLD 4
@@ -47592,7 +47505,6 @@ proxy-groups:
       - 瑞士 003
       - 美国 332
       - 乌克兰 003
-      - 韩国 016
       - 以色列 002
       - 美国 338
       - 日本 056
@@ -48675,6 +48587,7 @@ proxy-groups:
       - FI 🇫🇮 | @Raydikalx | DC0D7D
       - CA 🇨🇦 | @Raydikalx | 3E7C3F
       - SE 🇸🇪 | @Raydikalx | 913FEF
+      - KR 🇰🇷 | @Raydikalx | E9F97A
       - JP 🇯🇵 | @Raydikalx | E6D44D
       - JP 🇯🇵 | @Raydikalx | 102B75
       - US 🇺🇸 | @Raydikalx | C2EDAF
@@ -48780,7 +48693,6 @@ proxy-groups:
       - CA 🇨🇦 | @Raydikalx | 176CD9
       - CA 🇨🇦 | @Raydikalx | 134099
       - NL 🇳🇱 | @Raydikalx | 1AEAAC
-      - DE 🇩🇪 | @Raydikalx | D9E7C7
       - DE 🇩🇪 | @Raydikalx | C971ED
       - LV 🇱🇻 | @Raydikalx | 593E77
       - DE 🇩🇪 | @Raydikalx | C797DA
@@ -48912,7 +48824,6 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 4C5D05
       - US 🇺🇸 | @Raydikalx | 77BD3A
       - US 🇺🇸 | @Raydikalx | 3E8C43
-      - IE 🇮🇪 | @Raydikalx | 03760D
       - GB 🇬🇧 | @Raydikalx | B8FD16
       - SE 🇸🇪 | @Raydikalx | B239B4
       - DE 🇩🇪 | @Raydikalx | 7E7BBF
@@ -48989,6 +48900,7 @@ proxy-groups:
       - 🆔surfboardv2ray 🔒 VL-TCP- 🇵🇱 PL 135ms
       - 🆔surfboardv2ray 🔒 VL-GRPC- 🇲🇩 MD 157ms
       - 🆔surfboardv2ray 🔒 VL-GRPC- 🇲🇩 MD 166ms
+      - 🆔vpnbaz 🔒 VL-TCP- 🇵🇱 PL 199ms
       - 🆔vpnbaz 🔒 VL-GRPC- 🇷🇸 RS 170ms
       - 🆔capoit 🔒 VL-XHTTP-N/A ❔ XX 9ms
       - 🆔capoit 🔓 VL-HTTPUPGRADE-N/A ❔ XX 11ms
@@ -49038,6 +48950,7 @@ proxy-groups:
       - 🆔ar14n24b 🔒 VL-WS-N/A 🇳🇱 NL 133ms
       - 🆔ar14n24b 🔒 VL-WS-N/A 🇩🇪 DE 134ms
       - 🆔ar14n24b 🔒 VL-TCP-N/A 🇳🇱 NL 126ms
+      - 🆔ar14n24b 🔒 VL-TCP- ❔ XX 112ms
       - 🆔ar14n24b 🔒 VL-TCP- 🇳🇱 NL 109ms
       - 🆔ar14n24b 🔒 VL-TCP- ❔ XX 125ms
       - 🆔ar14n24b 🔓 VL-TCP-N/A 🇩🇪 DE 120ms
@@ -49099,7 +49012,6 @@ proxy-groups:
       - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 18ms
       - 🆔v2ray1_ng 🔒 VL-TCP- 🇳🇱 NL 112ms
       - 🆔v2ray1_ng 🔒 VL-TCP- 🇳🇱 NL 120ms
-      - 🆔v2ray1_ng 🔒 VL-TCP- ❔ XX 106ms
       - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 7ms
       - 🆔v2ray1_ng 🔒 VL-TCP- ❔ XX 119ms
       - 🆔madshopx 🔒 VL-WS-N/A ❔ XX 14ms
@@ -49207,6 +49119,7 @@ proxy-groups:
       - 🇺🇸US-156.146.38.167-0207
       - 🇺🇸US-156.146.38.170-0168
       - 🇬🇧GB-82.38.31.190-0131
+      - 🇭🇰HK-103.149.182.79-5774
       - 🇰🇷KR-211.178.105.134-0226
       - 🇯🇵JP-84.247.155.196-0225
       - 🇬🇧GB-141.98.101.181-0220
@@ -49216,9 +49129,7 @@ proxy-groups:
       - 🇺🇸US-66.163.122.26-0160
       - 🇨🇦CA-137.184.174.93-0156
       - 🇪🇸ES-66.163.118.62-0154
-      - 🇨🇴CO-149.104.107.41-0202
       - 🇨🇦CA-216.152.147.48-0088
-      - 🇰🇷KR-141.164.45.187-0209
       - 🇭🇰HK-219.76.13.181-0068
       - 🏁RELAY-141.101.115.20-0046
       - 🇦🇺AU-51.161.152.180-0045
@@ -49297,7 +49208,6 @@ proxy-groups:
       - 🏁RELAY-173.245.49.141-2803
       - 🇨🇳CN-124.222.189.225-2830
       - 🏁RELAY-172.67.127.250-2838
-      - 🇿🇦ZA-139.84.247.164-2914
       - 🇺🇸US-192.96.204.250-2963
       - 🏁RELAY-104.16.23.3-2990
       - 🏁RELAY-172.67.204.84-3000
@@ -49372,7 +49282,6 @@ proxy-groups:
       - 🇳🇱NL-158.173.20.171-5728
       - 🇯🇵JP-54.65.177.190-5776
       - 🇯🇵JP-167.179.108.225-5777
-      - 🇰🇷KR-141.164.45.187-5778
       - 🇯🇵JP-18.179.31.199-5780
       - 🇭🇰HK-83.229.121.78-5783
       - 🇺🇸US-216.105.168.18-5819
@@ -49415,8 +49324,8 @@ proxy-groups:
       - 🇳🇱NL-51.15.19.206-7951
       - 🇳🇱NL-51.15.19.206-7952
       - 🇪🇸ES-5.188.181.201-7957
-      - 🇪🇸ES-5.188.181.201-7961
-      - 🇪🇸ES-5.188.181.201-7962
+      - 🇪🇸ES-5.188.181.201-7958
+      - 🇪🇸ES-5.188.181.201-7960
       - 🇺🇸US-47.88.104.186-7977
       - 🇺🇸US-47.254.89.211-7980
       - 🇺🇸US-47.254.17.235-7982
@@ -49786,18 +49695,15 @@ proxy-groups:
       - '['
       - 🇫🇷 France
       - '[.'
-      - '@FarazV2ray-2'
       - '@FarazV2ray -4'
       - '@FarazV2ray -5'
-      - '@FarazV2ray-3'
+      - '@FarazV2ray-2'
       - 🦄58@oneclickvpnkeys
       - '@FarazV2ray -6'
       - 𝗝𝗼𝗶𝗻 ➠ @proxy_kafee ☄️
       - '@FarazV2ray -7'
       - 🇷🇺 Russia
       - T.me/SafeNet_Server 💚🤍❤
-      - '@FarazV2ray-4'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚'
       - YFZ 113 @Outline_Vpn
       - '@Vpn_Tehran 🤍 کانال تلگرام'
       - 🇳🇱 The Netherlands
@@ -49814,13 +49720,11 @@ proxy-groups:
       - Free x54 @Outline_Vpn
       - 🇺🇸 Seattle, WA, United States-2
       - 🇰🇷 Seoul, 11, South Korea
-      - 🇰🇷 Seoul, 11, South Korea-2
       - 🇹🇷𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
-      - 🇰🇷 Seoul, 11, South Korea-4
-      - 🇰🇷 Seoul, 11, South Korea-5
       - '@FarazV2ray -10'
-      - 🇰🇷 Seoul, 11, South Korea-6
+      - 🇰🇷 Seoul, 11, South Korea-4
       - '@Vpn_Tehran 💌 کانال تلگرام'
       - 🇸🇨 Seychelles
       - '@FarazV2ray -11'
@@ -49838,7 +49742,7 @@ proxy-groups:
       - '@FarazV2ray -12'
       - 🦖95@oneclickvpnkeys
       - ⛳59@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-2'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚'
       - NormanV2ray-11
       - 🛖67@oneclickvpnkeys
       - Telegram@DarkVPNpro | کانفیگ های پرسرعت بیشتر⚡️
@@ -49846,7 +49750,7 @@ proxy-groups:
       - 🎡7@oneclickvpnkeys
       - 🍏85@oneclickvpnkeys
       - '[-4'
-      - '@FarazV2ray-5'
+      - '@FarazV2ray-3'
       - ⚡️ 𝗡𝗲𝗧𝗠𝗲𝗹𝗶 ⚡️ | @prrofile_purple-2
       - ⚙️58@oneclickvpnkeys
       - 🇺🇸Telegram👉@v2rayNG_Matsuri
@@ -49865,9 +49769,9 @@ proxy-groups:
       - 🫟18@oneclickvpnkeys
       - 🧩54@oneclickvpnkeys
       - ⛽41@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-3'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-2'
       - 🔥34@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-4'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-3'
       - 🇺🇸@V2rayng_Fast
       - '@prrofile_purple  ♥️👈 تلگرام-5'
       - ProxyMtpVPN-20
@@ -49878,7 +49782,7 @@ proxy-groups:
       - 🦄24@oneclickvpnkeys
       - filembad-52
       - Suren TM
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-5'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-4'
       - 🐊29@oneclickvpnkeys
       - 🪼77@oneclickvpnkeys
       - ProxyMtpVPN-104
@@ -49895,20 +49799,20 @@ proxy-groups:
       - CA加拿大(v2clash.blog 2026-8.15更新)
       - FR法国(v2clash.blog 2026-9.17更新)
       - GB英国(v2clash.blog 2026-10.13更新)
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-6'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-5'
       - Server 170
       - '@FarazV2ray -13'
       - 🇧🇻@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - US美国(v2clash.blog 2026-9.17更新)-2
       - lrnbymaa
-      - '@FarazV2ray-6'
+      - '@FarazV2ray-4'
       - 🛸36@oneclickvpnkeys
       - 🍎63@oneclickvpnkeys
       - '[-5'
       - VIP 107 @v2ray_vpn_ir
       - '@FarazV2ray -14'
-      - '@FarazV2ray-7'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-7'
+      - '@FarazV2ray-5'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-6'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - US美国(v2clash.blog 2026-9.22更新)
       - telegram➠@v2rayNG_Matsuri
@@ -49943,7 +49847,7 @@ proxy-groups:
       - ♦️63@oneclickvpnkeys
       - '@V2rayng_Fast 🇮🇹'
       - US美国(v2clash.blog 2026-6.7更新)
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-8'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-7'
       - V2rayng_Fast
       - Tel@V2rayng_Fast 🇮🇹
       - '[-9'
@@ -49960,11 +49864,11 @@ proxy-groups:
       - ✅85@oneclickvpnkeys
       - FR法国(v2clash.blog 2026-8.4更新)
       - '@SERVERNETT جوین بدید'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-9'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-8'
       - ⛲57@oneclickvpnkeys
       - Free x300 @Outline_Vpn
-      - '@FarazV2ray-8'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-10'
+      - '@FarazV2ray-6'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-9'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - 🥉87@oneclickvpnkeys
       - '[-10'
@@ -49988,7 +49892,7 @@ proxy-groups:
       - '@proxy_kafee-2'
       - filembad-91
       - '@Vpn_Tehran 🇦🇷 تلگرام'
-      - '@FarazV2ray-9'
+      - '@FarazV2ray-7'
       - vless-217.25.56.173
       - NL荷兰(v2clash.blog 2026-10.25更新)
       - 🤩92@oneclickvpnkeys
@@ -50019,7 +49923,7 @@ proxy-groups:
       - filembad-79
       - ⛽28@oneclickvpnkeys
       - 🍎68@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-11'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-10'
       - '@V2rayng_Fast 🇺🇸'
       - '@Napsternetvirani-2'
       - '@V2rayng_Fast 🇩🇪-2'
@@ -50052,9 +49956,9 @@ proxy-groups:
       - 'Channel : @proxy_kafee-4'
       - '@prrofile_purple | ViP ⚡'
       - '@Napsternetvirani-3'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-12'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-11'
       - '[-15'
-      - '@FarazV2ray-10'
+      - '@FarazV2ray-8'
       - '@FarazV2ray -20'
       - 🛠️97@oneclickvpnkeys
       - ⛵22@oneclickvpnkeys
@@ -50115,10 +50019,10 @@ proxy-groups:
       - '@v2rayngninja'
       - '@prrofile_purple | ViP ⚡-2'
       - 'Channel : @proxy_kafee -2'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-13'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-12'
       - 😊91@oneclickvpnkeys
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-13'
       - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-14'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-15'
       - 🫑1@oneclickvpnkeys
       - Telegram👉@v2rayNG_Matsuri-2
       - 🏀38@oneclickvpnkeys
@@ -50127,11 +50031,11 @@ proxy-groups:
       - 'Channel : @proxy_kafee-5'
       - V2rayngninja
       - 🐦62@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-16'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-15'
       - 🛠️4@oneclickvpnkeys
       - Telegram@DarkVPNpro | کانفیگ های پرسرعت بیشتر⚡️-2
       - US美国(v2clash.blog 2026-10.2更新)
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-17'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-16'
       - '@V2rayng_Fast-2'
       - 🍄‍🟫69@oneclickvpnkeys
       - 'Channel : @proxy_kafee-6'
@@ -50143,10 +50047,10 @@ proxy-groups:
       - 🎒78@oneclickvpnkeys
       - Free 265 @Outline_Vpn
       - ✨42@oneclickvpnkeys
-      - '@FarazV2ray-11'
+      - '@FarazV2ray-9'
       - کانال+:+@V2rayNGvpni-3
       - 🪺2@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-18'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-17'
       - 🍂7@oneclickvpnkeys
       - ⛽57@oneclickvpnkeys
       - '@V2rayng_Fast 🇩🇪-3'
@@ -50168,7 +50072,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇫🇷-2'
       - '@V2rayng_Fast 🇧🇷-2'
       - Server 320
-      - '@FarazV2ray-12'
+      - '@FarazV2ray-10'
       - '@V2rayng_Fast 🩵'
       - '[-17'
       - US美国(v2clash.blog 2026-10.5更新)
@@ -50208,15 +50112,14 @@ proxy-groups:
       - filembad-148
       - 🇺🇸 美国 夏威夷州
       - '@V2rayng_Fast-3'
-      - '@FarazV2ray-13'
+      - '@FarazV2ray-11'
       - US美国(v2clash.blog 2026-10.9更新)
       - filembad-177
       - 💡95@oneclickvpnkeys
-      - '@FarazV2ray-14'
+      - '@FarazV2ray-12'
       - Server 60
       - 🐞26@oneclickvpnkeys
       - 🐤2@oneclickvpnkeys
-      - Tel@V2rayng_Fast 🩵
       - 🍄‍🟫75@oneclickvpnkeys
       - '@ShadowProxy66 🇺🇸-2'
       - 🇫🇮𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
@@ -50232,21 +50135,22 @@ proxy-groups:
       - Server 35
       - Tel@V2rayng_Fast 🇮🇹-4
       - 🇩🇪telegram➠@v2rayNG_Matsuri
+      - ⏰11@oneclickvpnkeys
       - 🦀88@oneclickvpnkeys
       - 4🌊@oneclickvpnkeys
       - 🛠️12@oneclickvpnkeys
       - 'Channel : @proxy_kafee-7'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-19'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-18'
       - Free x267 @Outline_Vpn
       - 'Channel : @proxy_kafee-8'
       - 🦜33@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-20'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-19'
       - 'Channel : @proxy_kafee -5'
       - YFZ 56 @Outline_Vpn
       - YFZ 59 @Outline_Vpn
       - '@FarazV2ray -26'
       - '@V2rayng_Fast 🇩🇪-5'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-21'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-20'
       - 🐙33@oneclickvpnkeys
       - ⛽71@oneclickvpnkeys
       - '@Vpn_Tehran 💚 کانال تلگرام-2'
@@ -50263,7 +50167,7 @@ proxy-groups:
       - 🏠28@oneclickvpnkeys
       - 🫡96@oneclickvpnkeys
       - '@V2rayng_Fast-4'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-22'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-21'
       - Internet4Iran-mahsa
       - ✈️9@oneclickvpnkeys
       - 🫡32@oneclickvpnkeys
@@ -50271,7 +50175,7 @@ proxy-groups:
       - 🍑53@oneclickvpnkeys
       - US美国(v2clash.blog 2026-10.9更新)-2
       - 🇧🇻@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-      - '@FarazV2ray-15'
+      - '@FarazV2ray-13'
       - ⛽77@oneclickvpnkeys
       - '[-18'
       - '[-19'
@@ -50300,7 +50204,7 @@ proxy-groups:
       - Free x129 @Outline_Vpn
       - 🔖68@oneclickvpnkeys
       - ☸️38@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-23'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-22'
       - 🎡26@oneclickvpnkeys
       - vless-104.17.234.128-2
       - 🍷@vless_vmess x | همه اپراتورها
@@ -50394,7 +50298,7 @@ proxy-groups:
       - 🫧68@oneclickvpnkeys
       - 阿拉伯(v2clash.blog 2026-10.10更新)
       - '@proxy_kafee-7'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-24'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-23'
       - '@FarazV2ray -29'
       - '@ShadowProxy66 🇺🇸-3'
       - '@ShadowProxy66 🇺🇸-4'
@@ -50425,14 +50329,14 @@ proxy-groups:
       - vless-104.17.234.114-2
       - 🫡62@oneclickvpnkeys
       - '@Napsternetvirani -2'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-25'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-24'
       - https://t.me/XHer0_bot
       - '@FarazV2ray -34'
       - Tel@V2rayng_Fast 🇩🇪-2
       - '@FarazV2ray -35'
       - '@proxy_kafee - 🫜9'
       - 🐙100@oneclickvpnkeys
-      - '@FarazV2ray-16'
+      - '@FarazV2ray-14'
       - ⛽13@oneclickvpnkeys
       - '@V2rayng_Fast 🇫🇷-4'
       - ProxyMtpVPN-152
@@ -50534,7 +50438,7 @@ proxy-groups:
       - NL荷兰(v2clash.blog 2026-10.22更新)-2
       - US美国(v2clash.blog 2026-8.3更新)
       - کانال+:+@V2rayNGvpni-5
-      - '@FarazV2ray-17'
+      - '@FarazV2ray-15'
       - '@V2rayng_Fast 🇮🇹-2'
       - vless-106.75.143.18
       - 🪞9@oneclickvpnkeys
@@ -50555,6 +50459,7 @@ proxy-groups:
       - 芬兰(v2clash.blog 2026-10.18更新)
       - 'Channel : @proxy_kafee -8'
       - ⛽32@oneclickvpnkeys
+      - 🎡83@oneclickvpnkeys
       - 🐲30@oneclickvpnkeys
       - Free x196 @Outline_Vpn
       - US美国(v2clash.blog 2026-7.31更新)
@@ -50577,8 +50482,8 @@ proxy-groups:
       - '@prrofile_purple | ViP ⚡-4'
       - filembad-261
       - filembad-258
-      - '@FarazV2ray-18'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-26'
+      - '@FarazV2ray-16'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-25'
       - '@FarazV2ray -40'
       - Server 37
       - 📊95@oneclickvpnkeys
@@ -50588,17 +50493,17 @@ proxy-groups:
       - '[-34'
       - 🕊️53@oneclickvpnkeys
       - 🫑14@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-27'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-26'
       - 😊32@oneclickvpnkeys
-      - '@FarazV2ray-19'
+      - '@FarazV2ray-17'
       - '@V2rayng_Fast-8'
-      - '@FarazV2ray-20'
+      - '@FarazV2ray-18'
       - '@prrofile_purple | ViP ⚡-5'
       - 🤩70@oneclickvpnkeys
       - '@prrofile_purple | ViP ⚡-6'
       - ☮️33@oneclickvpnkeys
       - T.me/SafeNet_Server 💚🤍❤-4
-      - '@FarazV2ray-21'
+      - '@FarazV2ray-19'
       - T.me/SafeNet_Server 💚🤍❤-5
       - T.me/SafeNet_Server 💚🤍❤-6
       - 🍷@vless_vmess x | همه اپراتورها-2
@@ -50606,7 +50511,7 @@ proxy-groups:
       - lrnbymaa-2
       - lrnbymaa-3
       - lrnbymaa-4
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-28'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-27'
       - V2rayng_Fast@
       - '@ShadowProxy66 🇸🇪'
       - 🍷@vless_vmess x | همه اپراتورها-3
@@ -50614,14 +50519,14 @@ proxy-groups:
       - 🎡77@oneclickvpnkeys
       - Server 256
       - '@proxy_kafee-9'
-      - '@FarazV2ray-22'
+      - '@FarazV2ray-20'
       - 🏀19@oneclickvpnkeys
       - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
       - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞-2
       - ProxyMtpVPN-240
       - 🛠️99@oneclickvpnkeys
       - '@ShadowProxy66 🇺🇸-5'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-29'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-28'
       - 🧮12@oneclickvpnkeys
       - '@proxy_kafee : کانال تلگرام-2'
       - 🎗️26@oneclickvpnkeys
@@ -50654,10 +50559,10 @@ proxy-groups:
       - ✅39@oneclickvpnkeys
       - 🖲️37@oneclickvpnkeys
       - 🐙31@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-30'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-29'
       - ✅34@oneclickvpnkeys
-      - '@FarazV2ray-23'
-      - '@FarazV2ray-24'
+      - '@FarazV2ray-21'
+      - '@FarazV2ray-22'
       - 🐞48@oneclickvpnkeys
       - '[-36'
       - YFZ 5 @Outline_Vpn
@@ -50669,13 +50574,13 @@ proxy-groups:
       - 'Channel : @proxy_kafee -10'
       - '@proxy_kafee-10'
       - ☸️78@oneclickvpnkeys
-      - '@FarazV2ray-25'
-      - '@FarazV2ray-26'
+      - '@FarazV2ray-23'
+      - '@FarazV2ray-24'
       - Tel-@NapsterNetvIrani🥹 1
       - vless-104.17.234.128-6
       - 🐊18@oneclickvpnkeys
       - lrnbymaa-5
-      - Tel@V2rayng_Fast 🩵-2
+      - Tel@V2rayng_Fast 🩵
       - 🍂94@oneclickvpnkeys
       - filembad-315
       - ProxyMtpVPN-276
@@ -50694,7 +50599,7 @@ proxy-groups:
       - 🇧🇷@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - 🍎12@oneclickvpnkeys
       - '@FarazV2ray -50'
-      - '@FarazV2ray-27'
+      - '@FarazV2ray-25'
       - 🎨69@oneclickvpnkeys
       - DE德国(v2clash.blog 2026-9.12新)
       - vless-104.17.234.128-7
@@ -50703,7 +50608,7 @@ proxy-groups:
       - 🍄44@oneclickvpnkeys
       - vless-104.17.234.128-8
       - US美国(v2clash.blog 2026-10.10更新)-2
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-31'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-30'
       - 📀100@oneclickvpnkeys
       - 'چنل : RivenVpn'
       - '@V2rayng_Fast 🇸🇪-2'
@@ -50711,7 +50616,7 @@ proxy-groups:
       - 'Channel : @proxy_kafee -11'
       - '[-38'
       - '@prrofile_purple | ViP ⚡-7'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-32'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-31'
       - '@FarazV2ray -51'
       - 'Telegram : @proxy_kafee-2'
       - 🪁26@oneclickvpnkeys
@@ -50740,16 +50645,16 @@ proxy-groups:
       - Tel-@NapsterNetvIrani😴 2
       - Tel-@NapsterNetvIrani😇 1
       - '[-39'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-33'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-32'
       - 🌟35@oneclickvpnkeys
       - Free x453 @Outline_Vpn
       - 🍥63@oneclickvpnkeys
       - کانال+:+@V2rayNGvpni-6
       - https://t.me/v2rayNG_Matsuri-2
+      - '@FarazV2ray-26'
+      - '@FarazV2ray-27'
       - '@FarazV2ray-28'
       - '@FarazV2ray-29'
-      - '@FarazV2ray-30'
-      - '@FarazV2ray-31'
       - '@V2rayng_Fast-9'
       - '@FarazV2ray -52'
       - 'Channel : @proxy_kafee -12'
@@ -50770,7 +50675,7 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-3
       - 🪀33@oneclickvpnkeys
       - Free 126 @Outline_Vpn
-      - '@FarazV2ray-32'
+      - '@FarazV2ray-30'
       - '[-41'
       - vless-185.143.234.122
       - 南非(v2clash.blog 2026-10.16更新)
@@ -50782,12 +50687,12 @@ proxy-groups:
       - 🛩️72@oneclickvpnkeys
       - '[-42'
       - 🤩45@oneclickvpnkeys
-      - '@FarazV2ray-33'
+      - '@FarazV2ray-31'
       - US美国(v2clash.blog 2026-10.4更新)-2
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-34'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-33'
       - 🐙30@oneclickvpnkeys
-      - '@FarazV2ray-34'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-35'
+      - '@FarazV2ray-32'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-34'
       - '@FarazV2ray -61'
       - '@prrofile_purple | ViP ⚡-8'
       - '@prrofile_purple | ViP ⚡-9'
@@ -50802,7 +50707,7 @@ proxy-groups:
       - '@proxy_kafee : کانال تلگرام-3'
       - 🫡42@oneclickvpnkeys
       - vless-69.46.46.123
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-36'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-35'
       - '[-44'
       - 🌍11@oneclickvpnkeys
       - 🌍8@oneclickvpnkeys
@@ -50832,8 +50737,8 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-4
       - 🐒43@oneclickvpnkeys
       - 🦜5@oneclickvpnkeys
-      - Tel@V2rayng_Fast 🩵-3
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-37'
+      - Tel@V2rayng_Fast 🩵-2
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-36'
       - 🛕37@oneclickvpnkeys
       - 📪86@oneclickvpnkeys
       - YFZ 17 @Outline_Vpn
@@ -50861,9 +50766,9 @@ proxy-groups:
       - V2rayng_Fast-3
       - 🇨🇦@V2rayng_Fast-2
       - '@Napsternetvirani-23'
-      - '@FarazV2ray-35'
+      - '@FarazV2ray-33'
       - 🦁74@oneclickvpnkeys
-      - '@FarazV2ray-36'
+      - '@FarazV2ray-34'
       - 🌍67@oneclickvpnkeys
       - 🫡34@oneclickvpnkeys
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -50873,14 +50778,14 @@ proxy-groups:
       - 🛸97@oneclickvpnkeys
       - 🔒21@oneclickvpnkeys
       - 🚘30@oneclickvpnkeys
-      - '@FarazV2ray-37'
+      - '@FarazV2ray-35'
       - 🚘64@oneclickvpnkeys
       - '@Napsternetvirani-24'
       - 'Channel: @0proxy_kafee'
+      - '@FarazV2ray-36'
+      - '@FarazV2ray-37'
       - '@FarazV2ray-38'
       - '@FarazV2ray-39'
-      - '@FarazV2ray-40'
-      - '@FarazV2ray-41'
       - ProxyMtpVPN-319
       - YFZ 85 @Outline_Vpn
       - 🕊️47@oneclickvpnkeys
@@ -50889,7 +50794,6 @@ proxy-groups:
       - 🔒57@oneclickvpnkeys
       - 🐲47@oneclickvpnkeys
       - 白俄罗斯(v2clash.blog 2026-10.15更新)
-      - ✈️69@oneclickvpnkeys
       - Free x369 @Outline_Vpn
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - 🐸71@oneclickvpnkeys
@@ -50915,13 +50819,14 @@ proxy-groups:
       - ⛑️100@oneclickvpnkeys
       - 🍄‍🟫38@oneclickvpnkeys
       - 🛸2@oneclickvpnkeys
+      - 俄罗斯(v2clash.blog 2026-10.3更新)
       - 🫒74@oneclickvpnkeys
       - 💡53@oneclickvpnkeys
       - 'Channel : @proxy_kafee-18'
       - ☸️42@oneclickvpnkeys
       - vless-185.218.139.138
       - 👝48@oneclickvpnkeys
-      - '@FarazV2ray-42'
+      - '@FarazV2ray-40'
       - '@ShadowProxy66 🇺🇸-6'
       - 🧬63@oneclickvpnkeys
       - filembad-325
@@ -50962,7 +50867,7 @@ proxy-groups:
       - 🇭🇰香港专线01 下载专用
       - 🇨🇳台湾专线02 gpt专用
       - 🫑66@oneclickvpnkeys
-      - '@FarazV2ray-43'
+      - '@FarazV2ray-41'
       - '@V2rayng_Fast-10'
       - 🐙5@oneclickvpnkeys
       - 🌍40@oneclickvpnkeys
@@ -51011,7 +50916,7 @@ proxy-groups:
       - 🫧35@oneclickvpnkeys
       - 🫧34@oneclickvpnkeys
       - 🌍91@oneclickvpnkeys
-      - '@FarazV2ray-44'
+      - '@FarazV2ray-42'
       - filembad-384
       - 0.aq0.ccwu.cc tls WS CDN vless § 443 34
       - 5.qq1-0.kdns.fr tls WS CDN vless § 443 29
@@ -51034,7 +50939,7 @@ proxy-groups:
       - '@FarazV2ray -66'
       - 'Channel : @proxy_kafee-24'
       - '@proxy_kafee-14'
-      - '@FarazV2ray-45'
+      - '@FarazV2ray-43'
       - '@Vpn_Tehran 💜 کانال تلگرام'
       - '[-50'
       - 💡35@oneclickvpnkeys
@@ -51045,7 +50950,6 @@ proxy-groups:
       - '@Vpn_Tehran ⚘️ تلگرام'
       - '@V2rayng_Fast 🇩🇪-11'
       - ☸️22@oneclickvpnkeys
-      - 5✅@oneclickvpnkeys
       - '@V2rayng_Fast 🇸🇪-4'
       - 🍁70@oneclickvpnkeys
       - '@prrofile_purple | ViP ⚡-11'
@@ -51091,10 +50995,10 @@ proxy-groups:
       - 🐦‍🔥71@oneclickvpnkeys
       - 🪙93@oneclickvpnkeys
       - 🍁71@oneclickvpnkeys
-      - '@FarazV2ray-46'
+      - '@FarazV2ray-44'
       - '@V2rayng_Fast -5'
       - '@v2rayNG_Matsuri-2'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-38'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-37'
       - '@v2rayNG_Matsuri-3'
       - '@V2rayng_Fast 🇩🇪-13'
       - 🐦35@oneclickvpnkeys
@@ -51105,7 +51009,7 @@ proxy-groups:
       - 🫧64@oneclickvpnkeys
       - ⭐️76@oneclickvpnkeys
       - ⚙️42@oneclickvpnkeys
-      - '@FarazV2ray-47'
+      - '@FarazV2ray-45'
       - Telegram👉@v2rayNG_Matsuri-4
       - Server 49
       - Server 40-2
@@ -51114,7 +51018,7 @@ proxy-groups:
       - 𝗡𝗲𝗧𝗠𝗲𝗹𝗶⚡️@prrofile_purple 🌩
       - 🐦91@oneclickvpnkeys
       - canfingV2rayNG-359
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-39'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-38'
       - 🇫🇮Telegram👉@v2rayNG_Matsuri
       - RU俄罗斯(v2clash.blog 2026-10.16更新)
       - '@Napsternetvirani-26'
@@ -51134,7 +51038,7 @@ proxy-groups:
       - '[-51'
       - '@V2rayng_Fast 🇩🇪-14'
       - 'Channel : @proxy_kafee-25'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-40'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-39'
       - ⛲97@oneclickvpnkeys
       - '@V2rayng_Fast-12'
       - '@FarazV2ray -67'
@@ -51145,7 +51049,7 @@ proxy-groups:
       - '@FarazV2ray -68'
       - filembad-410
       - 🛠️100@oneclickvpnkeys
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-41'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-40'
       - https://t.me/v2rayNG_Matsuri-3
       - '@Napsternetvirani-28'
       - Moldova WorkTitans
@@ -51155,7 +51059,7 @@ proxy-groups:
       - 🫑61@oneclickvpnkeys
       - lrnbymaa-9
       - '@Napsternetvirani-29'
-      - '@FarazV2ray-48'
+      - '@FarazV2ray-46'
       - '@proxy_kafee-16'
       - Free 171 @Outline_Vpn
       - '[-54'
@@ -51166,7 +51070,7 @@ proxy-groups:
       - ProxyMtpVPN-371
       - 🛩️34@oneclickvpnkeys
       - Telegram👉@v2rayNG_Matsuri-5
-      - '@FarazV2ray-49'
+      - '@FarazV2ray-47'
       - '@FarazV2ray -70'
       - '@V2rayng_Fast 🇳🇱-4'
       - 🫑33@oneclickvpnkeys
@@ -51176,7 +51080,7 @@ proxy-groups:
       - '@FarazV2ray -71'
       - vless-104.17.234.114-4
       - '@FarazV2ray -72'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-42'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-41'
       - 🛠️8@oneclickvpnkeys
       - 🍅34@oneclickvpnkeys
       - Free x619 @Outline_Vpn
@@ -51208,15 +51112,15 @@ proxy-groups:
       - 🌊5@oneclickvpnkeys
       - Server 106
       - Free 132 @Outline_Vpn
-      - '@FarazV2ray-50'
+      - '@FarazV2ray-48'
       - 🎴18@oneclickvpnkeys
       - 🇺🇸@V2rayng_Fast-2
       - NetMeli9-416
       - 🕹️5@oneclickvpnkeys
       - '@prrofile_purple  ♥️👈 تلگرام-6'
       - '@prrofile_purple  ♥️👈 تلگرام-7'
-      - '@FarazV2ray-51'
-      - '@FarazV2ray-52'
+      - '@FarazV2ray-49'
+      - '@FarazV2ray-50'
       - 📊63@oneclickvpnkeys
       - '@proxy_kafee : کانال تلگرام-7'
       - 🎡58@oneclickvpnkeys
@@ -51226,7 +51130,7 @@ proxy-groups:
       - ⭐️57@oneclickvpnkeys
       - 🇦🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - '[-56'
-      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-43'
+      - '@prrofile_purple | 𝗙𝗮𝗦𝗧 💚-42'
       - '@FarazV2ray -74'
       - '@Napsternetvirani-32'
       - Tel@V2rayng_Fast 🇮🇹-6
@@ -51248,11 +51152,11 @@ proxy-groups:
       - 🧿22@oneclickvpnkeys
       - '[-57'
       - filembad-456
+      - 🛕95@oneclickvpnkeys
       - '[-58'
       - 🔖11@oneclickvpnkeys
       - canfingV2rayNG-353
       - '@Napsternetvirani-33'
-      - Free 245 @Outline_Vpn
       - 🐻72@oneclickvpnkeys
       - filembad-454
       - 🇩🇪
@@ -51268,7 +51172,7 @@ proxy-groups:
       - ✈️6@oneclickvpnkeys
       - 🌍10@oneclickvpnkeys
       - 🫧92@oneclickvpnkeys
-      - '@FarazV2ray-53'
+      - '@FarazV2ray-51'
       - 🔰 @prrofile_purple (تلگرام)-3
       - 🔰 @prrofile_purple (تلگرام)-4
       - 🔰 @prrofile_purple (تلگرام)-5
@@ -51315,6 +51219,1001 @@ proxy-groups:
       - '[🇨🇦]t.me/ConfigsHub'
       - 🇺🇸_US_美国_3
       - '@CloudCityy'
+  - name: 📍 美国
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - 美国+CloudFlare节点
+      - US VLESS-25 | free-nodes
+      - 🇺🇸_US_美国_IPV4 (5)
+      - 🇺🇸206889 | ⚡️Telegram = t.me/L...
+      - '🇺🇸[www.v2nodes.com] vless-US-1... #2'
+      - '🇺🇸[www.v2nodes.com] vless-US-1... #3'
+      - '🇺🇸[www.v2nodes.com] vless-US-1... #4'
+      - '🇺🇸[www.v2nodes.com] vless-US-1... #5'
+      - 🇺🇸[www.v2nodes.com] ss-US-1614...
+      - '🇺🇸[www.v2nodes.com] ss-US-1614... #1'
+      - 🇺🇸[www.v2nodes.com] ss-US-1612...
+      - 🇺🇸[www.v2nodes.com] trojan-US-...
+      - '🇺🇸[www.v2nodes.com] trojan-US-... #3'
+      - '🇺🇸[www.v2nodes.com] trojan-US-... #2'
+      - 🇺🇸US_2|2.4MB/s
+      - 🇺🇸US_3|4.1MB/s
+      - 🇺🇸US_4|1.0MB/s
+      - 🇺🇸US_5|1.6MB/s
+      - 🇺🇸US_6|1.4MB/s
+      - '🇺🇸 美国 | USA #4'
+      - '🇺🇸 美国 | USA #5'
+      - '🇺🇸 美国 | USA #6'
+      - 🇺🇸 美国 | USA 2
+      - 🇺🇸_US_美国_IPV4 (3)
+      - 美国 001
+      - 美国 002
+      - 美国 005
+      - 美国 007
+      - 美国 008
+      - 美国 016
+      - 美国 017
+      - 美国 025
+      - 美国 029
+      - 美国 031
+      - 美国 032
+      - 美国 035
+      - 美国 036
+      - 美国 037
+      - 美国 038
+      - 美国 039
+      - 美国 040
+      - 美国 041
+      - 美国 042
+      - 美国 044
+      - 美国 046
+      - 美国 047
+      - 美国 048
+      - 美国 049
+      - 美国 052
+      - 美国 053
+      - 美国 056
+      - 美国 057
+      - 美国 058
+      - 美国 059
+      - 美国 060
+      - 美国 062
+      - 美国 064
+      - 美国 065
+      - 美国 067
+      - 美国 069
+      - 美国 070
+      - 美国 071
+      - 美国 073
+      - 美国 074
+      - 美国 077
+      - 美国 083
+      - 美国 087
+      - 美国 088
+      - 美国 091
+      - 美国 092
+      - 美国 096
+      - 美国 099
+      - 美国 100
+      - 美国 103
+      - 美国 104
+      - 美国 106
+      - 美国 112
+      - 美国 114
+      - 美国 117
+      - 美国 123
+      - 美国 128
+      - 美国 131
+      - 美国 132
+      - 美国 134
+      - 美国 135
+      - 美国 136
+      - 美国 137
+      - 美国 138
+      - 美国 144
+      - 美国 145
+      - 美国 147
+      - 美国 148
+      - 美国 151
+      - 美国 152
+      - 美国 154
+      - 美国 155
+      - 美国 156
+      - 美国 158
+      - 美国 159
+      - 美国 160
+      - 美国 162
+      - 美国 163
+      - 美国 164
+      - 美国 168
+      - 美国 169
+      - 美国 178
+      - 美国 180
+      - 美国 181
+      - 美国 182
+      - 美国 183
+      - 美国 184
+      - 美国 185
+      - 美国 186
+      - 美国 187
+      - 美国 188
+      - 美国 189
+      - 美国 190
+      - 美国 191
+      - 美国 192
+      - 美国 194
+      - 美国 195
+      - 美国 196
+      - 美国 197
+      - 美国 199
+      - 美国 200
+      - 美国 201
+      - 美国 202
+      - 美国 203
+      - 美国 204
+      - 美国 205
+      - 美国 206
+      - 美国 207
+      - 美国 208
+      - 美国 209
+      - 美国 210
+      - 美国 211
+      - 美国 212
+      - 美国 213
+      - 美国 215
+      - 美国 216
+      - 美国 217
+      - 美国 219
+      - 美国 220
+      - 美国 222
+      - 美国 226
+      - 美国 229
+      - 美国 233
+      - 美国 235
+      - 美国 237
+      - 美国 242
+      - 美国 243
+      - 美国 244
+      - 美国 245
+      - 美国 248
+      - 美国 249
+      - 美国 254
+      - 美国 255
+      - 美国 256
+      - 美国 257
+      - 美国 258
+      - 美国 259
+      - 美国 260
+      - 美国 261
+      - 美国 262
+      - 美国 264
+      - 美国 265
+      - 美国 267
+      - 美国 268
+      - 美国 269
+      - 美国 271
+      - 美国 274
+      - 美国 275
+      - 美国 278
+      - 美国 279
+      - 美国 282
+      - 美国 283
+      - 美国 284
+      - 美国 286
+      - 美国 287
+      - 美国 288
+      - 美国 289
+      - 美国 290
+      - 美国 291
+      - 美国 292
+      - 美国 293
+      - 美国 294
+      - 美国 295
+      - 美国 296
+      - 美国 298
+      - 美国 299
+      - 美国 300
+      - 美国 302
+      - 美国 303
+      - 美国 304
+      - 美国 305
+      - 美国 306
+      - 美国 307
+      - 美国 308
+      - 美国 309
+      - 美国 310
+      - 美国 313
+      - 美国 314
+      - 美国 315
+      - 美国 316
+      - 美国 317
+      - 美国 319
+      - 美国 320
+      - 美国 321
+      - 美国 323
+      - 美国 329
+      - 美国 332
+      - 美国 338
+      - 美国 342
+      - 美国 343
+      - 美国 345
+      - 美国 346
+      - 美国 349
+      - 美国 350
+      - 美国 351
+      - 美国 352
+      - 美国 353
+      - 美国 354
+      - 美国 355
+      - 美国 356
+      - 美国 358
+      - 美国 359
+      - 美国 360
+      - 美国 361
+      - 美国 362
+      - 美国 363
+      - 美国 364
+      - 美国 366
+      - 美国 369
+      - 美国 370
+      - 美国 371
+      - 美国 372
+      - 美国 373
+      - 美国 375
+      - 美国 378
+      - 美国 388
+      - 美国 389
+      - 美国 394
+      - 美国 402
+      - 美国 410
+      - 美国 419
+      - 美国 420
+      - 美国 424
+      - 美国 426
+      - 美国 428
+      - 美国 429
+      - 美国 430
+      - 美国 431
+      - 美国 434
+      - 美国 443
+      - 美国 447
+      - 美国 448
+      - 美国 449
+      - 美国 450
+      - 美国 451
+      - 美国 453
+      - 美国 459
+      - 美国 466
+      - 美国 470
+      - 美国 476
+      - 美国 504
+      - 美国 505
+      - 美国 506
+      - 美国 507
+      - 美国 508
+      - 美国 509
+      - 美国 510
+      - 美国 511
+      - 美国 512
+      - 美国 513
+      - 美国 514
+      - 美国 515
+      - 美国 516
+      - 美国 517
+      - 美国 518
+      - 美国 519
+      - 美国 520
+      - 美国 523
+      - 美国 525
+      - 美国 531
+      - 美国 534
+      - 美国 535
+      - 美国 536
+      - 美国 537
+      - 美国 538
+      - 美国 539
+      - 美国 540
+      - 美国 546
+      - 美国 547
+      - 美国 548
+      - 美国 554
+      - 美国 555
+      - 美国 559
+      - 美国 560
+      - 美国 562
+      - 美国 563
+      - 美国 564
+      - 美国 565
+      - 美国 567
+      - 美国 577
+      - 美国 578
+      - 美国 579
+      - 美国 580
+      - 美国 581
+      - 美国 582
+      - 美国 583
+      - 美国 584
+      - 美国 585
+      - 美国 586
+      - 美国 587
+      - 美国 589
+      - 美国 592
+      - 美国 596
+      - 美国 597
+      - 美国 599
+      - 美国 600
+      - 美国 602
+      - 美国 603
+      - 美国 604
+      - 美国 605
+      - 美国 608
+      - 美国 609
+      - 美国 610
+      - 美国 613
+      - 美国 614
+      - 美国 615
+      - 美国 618
+      - 美国 619
+      - 美国 622
+      - 美国 624
+      - 美国 625
+      - 美国 626
+      - 美国 627
+      - 美国 628
+      - 美国 632
+      - 美国 633
+      - 美国 635
+      - 美国 638
+      - 美国 639
+      - 美国 640
+      - 美国 642
+      - 美国 643
+      - 美国 644
+      - 美国 645
+      - 美国 647
+      - 美国 649
+      - 美国 650
+      - 美国 651
+      - 美国 652
+      - 美国 653
+      - 美国 654
+      - 美国 657
+      - 美国 659
+      - 美国 661
+      - 美国 663
+      - 美国 664
+      - 美国 665
+      - 美国 667
+      - 美国 668
+      - 美国 670
+      - 美国 672
+      - 美国 673
+      - 美国 675
+      - 美国 676
+      - 美国 677
+      - 美国 679
+      - 美国 680
+      - 美国 681
+      - 美国 683
+      - 美国 685
+      - 美国 688
+      - 美国 689
+      - 美国 691
+      - 美国 693
+      - 美国 694
+      - 美国 695
+      - 美国 696
+      - 美国 697
+      - 美国 699
+      - 美国 701
+      - 美国 702
+      - 美国 703
+      - 美国 705
+      - 美国 711
+      - 美国 712
+      - 美国 715
+      - 美国 757
+      - 美国 760
+      - 美国 787
+      - 美国 789
+      - 美国 790
+      - 美国 791
+      - 美国 792
+      - 美国 813
+      - 美国 814
+      - 美国 815
+      - 美国 817
+      - 美国 818
+      - 美国 819
+      - 美国 820
+      - 美国 821
+      - 美国 822
+      - 美国 826
+      - 美国 828
+      - 美国 830
+      - 美国 831
+      - 美国 832
+      - 美国 833
+      - 美国 834
+      - 美国 835
+      - 美国 838
+      - 美国 839
+      - 美国 840
+      - 美国 841
+      - 美国 842
+      - 美国 843
+      - 美国 844
+      - 美国 845
+      - 美国 847
+      - 美国 848
+      - 美国 849
+      - 美国 851
+      - 美国 852
+      - 美国 853
+      - 美国 854
+      - 美国 856
+      - 美国 857
+      - 美国 858
+      - 美国 859
+      - 美国 861
+      - 美国 863
+      - 美国 864
+      - 美国 865
+      - 美国 866
+      - 美国 867
+      - 美国 868
+      - 美国 869
+      - 美国 870
+      - 美国 871
+      - 美国 872
+      - 美国 873
+      - 美国 874
+      - 美国 875
+      - 美国 876
+      - 美国 877
+      - 美国 878
+      - 美国 879
+      - 美国 880
+      - 美国 881
+      - 美国 882
+      - 美国 884
+      - 美国 885
+      - 美国 886
+      - 美国 887
+      - 美国 888
+      - 美国 889
+      - 美国 890
+      - 美国 891
+      - 美国 894
+      - 美国 895
+      - 美国 896
+      - 美国 897
+      - 美国 898
+      - 美国 899
+      - 美国 900
+      - 美国 901
+      - 美国 902
+      - 美国 903
+      - 美国 904
+      - 美国 905
+      - 美国 906
+      - 美国 907
+      - 美国 908
+      - 美国 909
+      - 美国 911
+      - 美国 912
+      - 美国 913
+      - 美国 914
+      - 美国 915
+      - 美国 917
+      - 美国 918
+      - 美国 920
+      - 美国 921
+      - 美国 922
+      - 美国 923
+      - 美国 924
+      - 美国 925
+      - 美国 926
+      - 美国 927
+      - 美国 928
+      - 美国 929
+      - 美国 931
+      - 美国 932
+      - 美国 933
+      - 美国 936
+      - 美国 937
+      - 美国 938
+      - 美国 940
+      - 美国 941
+      - 美国 943
+      - 美国 944
+      - 美国 945
+      - 美国 946
+      - 美国 947
+      - 美国 948
+      - 美国 949
+      - 美国 950
+      - 美国 951
+      - 美国 952
+      - 美国 953
+      - 美国 954
+      - 美国 955
+      - 美国 956
+      - 美国 957
+      - 美国 958
+      - 美国 959
+      - 美国 960
+      - 美国 962
+      - 美国 963
+      - 美国 964
+      - 美国 965
+      - 美国 966
+      - 美国 967
+      - 美国 968
+      - 美国 969
+      - 美国 970
+      - 美国 971
+      - 美国 972
+      - 美国 973
+      - 美国 974
+      - 美国 975
+      - 美国 976
+      - 美国 977
+      - 美国 978
+      - 美国 979
+      - 美国 980
+      - 美国 981
+      - 美国 982
+      - 美国 983
+      - 美国 985
+      - 美国 986
+      - 美国 987
+      - 美国 988
+      - 美国 989
+      - 美国 991
+      - 美国 992
+      - 美国 993
+      - 美国 994
+      - 美国 995
+      - 美国 998
+      - 美国 999
+      - 美国 1000
+      - 美国 1001
+      - 美国 1002
+      - 美国 1003
+      - 美国 1004
+      - 美国 1005
+      - 美国 1006
+      - 美国 1007
+      - 美国 1008
+      - 美国 1009
+      - 美国 1010
+      - 美国 1011
+      - 美国 1012
+      - 美国 1013
+      - 美国 1014
+      - 美国 1015
+      - 美国 1016
+      - 美国 1023
+      - 美国 1024
+      - 美国 1025
+      - 美国 1026
+      - 美国 1027
+      - 美国 1028
+      - 美国 1029
+      - 美国 1030
+      - 美国 1031
+      - 美国 1032
+      - 美国 1033
+      - 美国 1034
+      - 美国 1035
+      - 美国 1036
+      - 美国 1037
+      - 美国 1038
+      - 美国 1039
+      - 美国 1040
+      - 美国 1041
+      - 美国 1042
+      - 美国 1043
+      - 美国 1044
+      - 美国 1045
+      - 美国 1046
+      - 美国 1047
+      - 美国 1048
+      - 美国 1049
+      - 美国 1050
+      - 美国 1051
+      - 美国 1052
+      - 美国 1053
+      - 美国 1054
+      - 美国 1055
+      - 美国 1056
+      - 美国 1057
+      - 美国 1058
+      - 美国 1059
+      - 美国 1060
+      - 美国 1061
+      - 美国 1062
+      - 美国 1063
+      - 美国 1064
+      - 美国 1065
+      - 美国 1066
+      - 美国 1067
+      - 美国 1071
+      - 美国 1072
+      - 美国 1073
+      - 美国 1074
+      - 美国 1075
+      - 美国 1076
+      - 美国 1077
+      - 美国 1078
+      - 美国 1079
+      - 美国 1080
+      - 美国 1081
+      - 美国 1082
+      - 美国 1083
+      - 美国 1084
+      - 美国 1085
+      - 美国 1086
+      - 美国 1087
+      - 美国 1088
+      - 美国 1089
+      - 美国 1090
+      - 美国 1091
+      - 美国 1092
+      - 美国 1093
+      - 美国 1094
+      - 美国 1095
+      - 美国 1097
+      - 美国 1098
+      - 美国 1099
+      - 美国 1100
+      - 美国 1101
+      - 美国 1102
+      - 美国 1103
+      - 美国 1104
+      - 美国 1105
+      - 美国 1106
+      - 美国 1107
+      - 美国 1108
+      - 美国 1109
+      - 美国 1110
+      - 美国 1111
+      - 美国 1112
+      - 美国 1113
+      - 美国 1115
+      - 美国 1116
+      - 美国 1117
+      - 美国 1118
+      - 美国 1120
+      - 美国 1121
+      - 美国 1124
+      - 美国 1125
+      - 美国 1126
+      - 美国 1127
+      - 美国 1128
+      - 美国 1129
+      - 美国 1130
+      - 美国 1131
+      - 美国 1132
+      - 美国 1133
+      - 美国 1134
+      - 美国 1135
+      - 美国 1138
+      - 美国 1139
+      - 美国 1140
+      - 美国 1141
+      - 美国 1142
+      - 美国 1143
+      - 美国 1144
+      - 美国 1145
+      - 美国 1147
+      - 美国 1148
+      - 美国 1173
+      - 美国 1174
+      - 美国 1175
+      - 美国 1176
+      - 美国 1177
+      - 美国 1178
+      - 美国 1179
+      - 美国 1180
+      - 美国 1181
+      - 美国 1182
+      - 美国 1183
+      - 美国 1186
+      - 美国 1187
+      - 美国 1188
+      - 美国 1190
+      - 美国 1191
+      - 美国 1192
+      - 美国 1193
+      - 美国 1194
+      - 美国 1195
+      - 美国 1196
+      - 美国 1197
+      - 🇺🇸 US02|@ripaojiedian
+      - 🇺🇸 US03|@ripaojiedian
+      - 🇺🇸 US04|@ripaojiedian
+      - 🇺🇸 US05|@ripaojiedian
+      - 🇺🇸 US06|@ripaojiedian
+      - 🇺🇸 US07|@ripaojiedian
+      - SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990
+      - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
+      - US 🇺🇸 | @Raydikalx | CFAE6C
+      - US 🇺🇸 | @Raydikalx | E221A0
+      - US 🇺🇸 | @Raydikalx | 22C1B3
+      - US 🇺🇸 | @Raydikalx | 9B4F83
+      - US 🇺🇸 | @Raydikalx | C2EDAF
+      - US 🇺🇸 | @Raydikalx | 2D4470
+      - US 🇺🇸 | @Raydikalx | AB18BF
+      - US 🇺🇸 | @Raydikalx | F6BBC9
+      - US 🇺🇸 | @Raydikalx | 8E0066
+      - US 🇺🇸 | @Raydikalx | 737919
+      - US 🇺🇸 | @Raydikalx | 375870
+      - US 🇺🇸 | @Raydikalx | EA9EF9
+      - US 🇺🇸 | @Raydikalx | 39928D
+      - US 🇺🇸 | @Raydikalx | A21CA4
+      - US 🇺🇸 | @Raydikalx | C3E30F
+      - US 🇺🇸 | @Raydikalx | 072F29
+      - US 🇺🇸 | @Raydikalx | 60BC4E
+      - US 🇺🇸 | @Raydikalx | 6DB3A4
+      - US 🇺🇸 | @Raydikalx | A8D213
+      - US 🇺🇸 | @Raydikalx | 457A0D
+      - US 🇺🇸 | @Raydikalx | 10C589
+      - US 🇺🇸 | @Raydikalx | 7AA8C3
+      - US 🇺🇸 | @Raydikalx | 67B835
+      - US 🇺🇸 | @Raydikalx | D57391
+      - US 🇺🇸 | @Raydikalx | F55BCB
+      - US 🇺🇸 | @Raydikalx | 53FCC0
+      - US 🇺🇸 | @Raydikalx | 55BE05
+      - US 🇺🇸 | @Raydikalx | 2334B9
+      - US 🇺🇸 | @Raydikalx | 586AD0
+      - US 🇺🇸 | @Raydikalx | 676D28
+      - US 🇺🇸 | @Raydikalx | 032847
+      - US 🇺🇸 | @Raydikalx | 7CD213
+      - US 🇺🇸 | @Raydikalx | 7DE6C1
+      - US 🇺🇸 | @Raydikalx | FBF6EC
+      - US 🇺🇸 | @Raydikalx | A8EEF5
+      - US 🇺🇸 | @Raydikalx | 2D3F12
+      - US 🇺🇸 | @Raydikalx | B05884
+      - US 🇺🇸 | @Raydikalx | 42BF00
+      - US 🇺🇸 | @Raydikalx | 9A86CA
+      - US 🇺🇸 | @Raydikalx | C10152
+      - US 🇺🇸 | @Raydikalx | EF1279
+      - US 🇺🇸 | @Raydikalx | 0B7B7C
+      - US 🇺🇸 | @Raydikalx | 92D70D
+      - US 🇺🇸 | @Raydikalx | 943FAE
+      - US 🇺🇸 | @Raydikalx | 882A7F
+      - US 🇺🇸 | @Raydikalx | 7DD8C0
+      - US 🇺🇸 | @Raydikalx | 572B79
+      - US 🇺🇸 | @Raydikalx | E7611E
+      - US 🇺🇸 | @Raydikalx | 766FED
+      - US 🇺🇸 | @Raydikalx | 923D7E
+      - US 🇺🇸 | @Raydikalx | FC978E
+      - US 🇺🇸 | @Raydikalx | 64D2F8
+      - US 🇺🇸 | @Raydikalx | C286F0
+      - US 🇺🇸 | @Raydikalx | 565AA4
+      - US 🇺🇸 | @Raydikalx | 0CBFCD
+      - US 🇺🇸 | @Raydikalx | 853160
+      - US 🇺🇸 | @Raydikalx | F44C8D
+      - US 🇺🇸 | @Raydikalx | 6D6C73
+      - US 🇺🇸 | @Raydikalx | 77BD3A
+      - US 🇺🇸 | @Raydikalx | 3E8C43
+      - US 🇺🇸 | @Raydikalx | A9927A
+      - US 🇺🇸 | @Raydikalx | 7CF2F0
+      - US 🇺🇸 | @Raydikalx | AD2F7C
+      - US 🇺🇸 | @Raydikalx | F4AE80
+      - US 🇺🇸 | @Raydikalx | 4452C9
+      - US 🇺🇸 | @Raydikalx | 3EFFD1
+      - US 🇺🇸 | @Raydikalx | B9C716
+      - US 🇺🇸 | @Raydikalx | D8C1A6
+      - US 🇺🇸 | @Raydikalx | 723EDE
+      - US 🇺🇸 | @Raydikalx | B58698
+      - US 🇺🇸 | @Raydikalx | 2314F7
+      - US 🇺🇸 | @Raydikalx | 6D2CCE
+      - US 🇺🇸 | @Raydikalx | 5A1BD6
+      - US 🇺🇸 | @Raydikalx | 7E0A95
+      - US 🇺🇸 | @Raydikalx | B021CB
+      - 🇺🇸 US 👻
+      - 🇺🇸 New York
+      - 🆔configfa 🔒 VL-WS-N/A 🇺🇸 US 123ms
+      - 🆔surfboardv2ray 🔒 VL-TCP- 🇺🇸 US 35ms
+      - 🆔surfboardv2ray 🔒 VL-TCP- 🇺🇸 US 33ms
+      - 🆔capoit 🔒 VL-WS-N/A 🇺🇸 US 14ms
+      - 🆔capoit 🔒 VL-WS-N/A 🇺🇸 US 16ms
+      - 🆔capoit 🔒 VL-WS-N/A 🇺🇸 US 13ms
+      - 🆔conectvpn10 🔒 VL-WS-N/A 🇺🇸 US 12ms
+      - 🆔conectvpn10 🔒 VL-WS-N/A 🇺🇸 US 37ms
+      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 8ms
+      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 27ms
+      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 34ms
+      - 🆔ar14n24b 🔒 VL-XHTTP-N/A 🇺🇸 US 16ms
+      - 🆔ar14n24b 🔒 VL-XHTTP-N/A 🇺🇸 US 19ms
+      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 14ms
+      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 9ms
+      - 🆔ar14n24b 🔒 VL-TCP- 🇺🇸 US 36ms
+      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 16ms
+      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 42ms
+      - 🆔ar14n24b 🔒 VL-TCP- 🇺🇸 US 196ms
+      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 12ms
+      - 🆔ar14n24b 🔒 VL-TCP- 🇺🇸 US 215ms
+      - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 16ms
+      - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 18ms
+      - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 7ms
+      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 15ms
+      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 19ms
+      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 15ms-2
+      - 🆔vpnserverrr 🔒 VL-WS-N/A 🇺🇸 US 14ms
+      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 14ms
+      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 19ms-2
+      - 🇺🇸US-193.151.160.9-0080
+      - 🇺🇸US-193.151.163.18-0081
+      - 🇺🇸US-193.151.160.18-0086
+      - 🇺🇸US-37.19.198.236-0140
+      - 🇺🇸US-37.19.198.243-0142
+      - 🇺🇸US-169.197.140.218-0084
+      - 🇺🇸US-185.230.230.18-0091
+      - 🇺🇸US-37.19.198.244-0137
+      - 🇺🇸US-66.163.112.13-0178
+      - 🇺🇸US-66.163.112.121-0196
+      - 🇺🇸US-216.152.155.176-0107
+      - 🇺🇸US-45.86.51.18-0079
+      - 🇺🇸US-138.199.42.68-0240
+      - 🇺🇸US-167.88.61.198-0090
+      - 🇺🇸US-216.152.155.23-0096
+      - 🇺🇸US-216.152.155.54-0138
+      - 🇺🇸US-170.101.101.53-0124
+      - 🇺🇸US-216.152.156.81-0133
+      - 🇺🇸US-216.152.155.158-0121
+      - 🇺🇸US-37.19.198.160-0134
+      - 🇺🇸US-216.152.156.65-0098
+      - 🇺🇸US-170.101.101.67-0128
+      - 🇺🇸US-173.244.56.6-0078
+      - 🇺🇸US-170.101.101.19-0085
+      - 🇺🇸US-216.152.156.42-0101
+      - 🇺🇸US-173.244.56.9-0077
+      - 🇺🇸US-95.215.201.18-0151
+      - 🇺🇸US-66.163.114.166-0162
+      - 🇺🇸US-66.163.114.114-0153
+      - 🇺🇸US-66.163.114.132-0155
+      - 🇺🇸US-15.204.247.206-5816
+      - 🇺🇸US-156.146.38.169-0147
+      - 🇺🇸US-156.146.38.168-0206
+      - 🇺🇸US-156.146.38.167-0207
+      - 🇺🇸US-156.146.38.170-0168
+      - 🇺🇸US-198.98.53.130-0229
+      - 🇺🇸US-66.163.122.7-0161
+      - 🇺🇸US-66.163.122.26-0160
+      - 🇺🇸US-165.215.250.14-0488
+      - 🇺🇸US-129.146.190.42-1883
+      - 🇺🇸US-192.96.204.250-2963
+      - 🇺🇸US-52.88.161.5-3029
+      - 🇺🇸US-51.81.220.195-3451
+      - 🇺🇸US-51.81.220.34-4754
+      - 🇺🇸US-45.9.10.103-5314
+      - 🇺🇸US-167.88.62.68-5645
+      - 🇺🇸US-179.255.132.69-5727
+      - 🇺🇸US-216.105.168.18-5819
+      - 🇺🇸US-66.23.203.21-5824
+      - 🇺🇸US-192.236.151.43-5826
+      - 🇺🇸US-156.146.38.163-5998
+      - 🇺🇸US-167.88.62.62-6047
+      - 🇺🇸US-142.202.48.52-6481
+      - 🇺🇸US-167.88.61.14-6617
+      - 🇺🇸US-38.68.135.123-6673
+      - 🇺🇸US-167.88.61.50-6785
+      - 🇺🇸US-167.88.62.68-6855
+      - 🇺🇸US-142.202.48.52-6871
+      - 🇺🇸US-167.88.61.175-6989
+      - 🇺🇸US-167.88.63.44-7018
+      - 🇺🇸US-66.241.124.93-7917
+      - 🇺🇸US-47.88.104.186-7977
+      - 🇺🇸US-47.254.89.211-7980
+      - 🇺🇸US-47.254.17.235-7982
+      - 🇺🇸US-47.254.17.235-7983
+      - 🇺🇸US-47.254.121.68-7986
+      - 🇺🇸US-47.253.60.200-7989
+      - 🇺🇸US-47.253.55.72-7990
+      - 🇺🇸US-198.2.208.69-8211
+      - 🇺🇸US-198.2.208.68-8213
+      - 🇺🇸US-15.204.210.176-8538
+      - 🇺🇸US-142.4.112.7-8557
+      - 🇺🇸US-135.148.148.4-8590
+      - 🇺🇸US-135.148.148.4-8596
+      - US - zhuhai.uk
+      - US - zhuhai.uk 03
+      - US - zhuhai.uk 05
+      - US - zhuhai.uk 06
+      - US - zhuhai.uk 07
+      - US - zhuhai.uk 08
+      - US - zhuhai.uk 09
+      - 🇺🇸 Chicago, IL, United States
+      - 🇺🇸 Seattle, WA, United States
+      - 🇺🇸 Los Angeles, CA, United States
+      - 🇺🇸 Seattle, WA, United States-2
+      - 🇺🇸
+      - US美国(v2clash.blog 2026-10.25更新)
+      - 🇺🇸Telegram👉@v2rayNG_Matsuri
+      - 🇺🇸Telegram👉@v2rayNG_Matsuri-2
+      - 🇺🇸@V2rayng_Fast
+      - US美国(mibei77.com 米贝节点分享)
+      - US美国(v2clash.blog 2026-9.17更新)
+      - US美国(v2clash.blog 2026-9.5)
+      - US美国(v2clash.blog 2026-8.27更新)
+      - US美国(v2clash.blog 2026-9.17更新)-2
+      - US美国(v2clash.blog 2026-9.22更新)
+      - US美国(v2clash.blog 2026-8.15更新)
+      - US美国(v2clash.blog 2026-9.5)-2
+      - US美国(v2clash.blog 2026-6.7更新)
+      - US美国(v2clash.blog 2026-10.4更新)
+      - US美国(v2clash.blog 2026-8.4更新)
+      - 'Channel id: @ShadowProxy66 🇺🇸'
+      - US美国(v2clash.blog 2026-10.13更新)
+      - '@V2rayng_Fast 🇺🇸'
+      - '@ShadowProxy66 🇺🇸'
+      - US美国(v2clash.blog 2026-9.6)
+      - US美国v2clash.blog 2026-9.10)
+      - US美国(v2clash.blog 2026-10.2更新)
+      - US美国v2clash.blog 2026-9.8)
+      - US美国v2clash.blog 2026-9.9)
+      - US美国(v2clash.blog 2026-10.5更新)
+      - 🇺🇸 美国 夏威夷州
+      - US美国(v2clash.blog 2026-10.9更新)
+      - '@ShadowProxy66 🇺🇸-2'
+      - US美国(v2clash.blog 2026-10.9更新)-2
+      - US美国(v2clash.blog 2026-10.22更新)
+      - US美国(v2clash.blog 2026-10.23更新)
+      - US美国(v2clash.blog 2026-10.23更新)-2
+      - US美国(v2clash.blog 2026-10.23更新)-3
+      - US美国(v2clash.blog 2026-10.22更新)-2
+      - US美国(v2clash.blog 2026-10.19更新)
+      - US美国(v2clash.blog 2026-10.10更新)
+      - US美国(v2clash.blog 2026-10.22更新)-3
+      - US美国(v2clash.blog 2026-10.19更新)-2
+      - US美国(v2clash.blog 2026-10.22更新)-4
+      - US美国(v2clash.blog 2026-10.24更新)
+      - '@ShadowProxy66 🇺🇸-3'
+      - '@ShadowProxy66 🇺🇸-4'
+      - eric-us
+      - eric-us-phl
+      - US美国(v2clash.blog 2026-10.13更新)-2
+      - US美国(v2clash.blog 2026-5.26更新)
+      - US美国(v2clash.blog 2026-10.7更新)
+      - US美国(v2clash.blog 2026-10.8更新)
+      - US美国(v2clash.blog 2026-5.4更新)
+      - US美国(v2clash.blog 2026-10.3更新)
+      - US美国(v2clash.blog 2026-10.9更新)-3
+      - US美国(v2clash.blog 2026-10.14更新)
+      - US美国(v2clash.blog 2026-8.3更新)
+      - US美国(v2clash.blog 2026-7.31更新)
+      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞-2
+      - '@ShadowProxy66 🇺🇸-5'
+      - US美国(v2clash.blog 2026-10.5更新)-2
+      - US美国(v2clash.blog 2026-10.10更新)-2
+      - US美国(v2clash.blog 2026-10.4更新)-2
+      - US美国(v2clash.blog 2026-9.6)-2
+      - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
+      - US美国mibei77.com 米贝节点分享)(v2clash.blog 2026-10.9更新)
+      - '@ShadowProxy66 🇺🇸-6'
+      - US美国(v2clash.blog 2026-10.10更新)-3
+      - US美国(v2clash.blog 2026-10.4更新)-3
+      - US美国(v2clash.blog 2026-8.4更新)-2
+      - US美国(v2clash.blog 2026-6.7更新)-2
+      - 🇺🇸-2
+      - '@ShadowProxy66 🇺🇸-7'
+      - 🇺🇸@V2rayng_Fast-2
+      - US美国v2clash.blog 2026-9.10)-2
+      - 🇺🇸@proxy_kafee
+      - 🇺🇸@V2rayng_Fast-3
+      - 🇺🇸_US_美国_2
+      - 🇺🇸_US_美国_4
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国_3
   - name: 📍 新加坡
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -51322,6 +52221,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - 新加坡+V2CROSS.COM
       - SG VLESS-16 | free-nodes
       - 🇸🇬[www.v2nodes.com] vless-SG
       - '🇸🇬[www.v2nodes.com] vless-SG #1'
@@ -51372,6 +52272,50 @@ proxy-groups:
       - SG新加坡(v2clash.blog 2026-10.20更新)
       - SG新加坡(v2clash.blog 2026-10.12更新)
       - SG新加坡(v2clash.blog 2026-10.12更新)-2
+  - name: 📍 香港
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - HK VLESS-04 | free-nodes
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
+      - 🇭🇰HK_1|1.7MB/s
+      - '🇭🇰 香港 | HKG #1'
+      - '🇭🇰 香港 | HKG #2'
+      - 🇭🇰 HK01|@ripaojiedian
+      - 🇭🇰 HK02|@ripaojiedian
+      - 🇭🇰 HK03|@ripaojiedian
+      - 🇭🇰 HK04|@ripaojiedian
+      - 🇭🇰 HK05|@ripaojiedian
+      - 🇭🇰 HK06|@ripaojiedian
+      - 🇭🇰 HK07|@ripaojiedian
+      - 🇭🇰 HK08|@ripaojiedian
+      - 🇭🇰 HK09|@ripaojiedian
+      - HK 🇭🇰 | @Raydikalx | F125F6
+      - HK 🇭🇰 | @Raydikalx | F1F4D7
+      - HK 🇭🇰 | @Raydikalx | B9CBB9
+      - HK 🇭🇰 | @Raydikalx | D755F0
+      - HK 🇭🇰 | @Raydikalx | 6E1CF2
+      - HK 🇭🇰 | @Raydikalx | BB18E3
+      - HK 🇭🇰 | @Raydikalx | E57D3C
+      - HK 🇭🇰 | @Raydikalx | 3F1EE8
+      - HK 🇭🇰 | @Raydikalx | CCD2B6
+      - HK 🇭🇰 | @Raydikalx | B8EF38
+      - HK 🇭🇰 | @Raydikalx | 692BEC
+      - HK 🇭🇰 | @Raydikalx | 5B1771
+      - HK 🇭🇰 | @Raydikalx | 331707
+      - HK 🇭🇰 | @Raydikalx | 4641D1
+      - HK 🇭🇰 | @Raydikalx | 50CD6E
+      - HK 🇭🇰 | @Raydikalx | 79B786
+      - 🆔ar14n24b 🔒 VL-TCP- 🇭🇰 HK 122ms
+      - 🇭🇰HK-103.149.182.79-5774
+      - 🇭🇰HK-219.76.13.181-0068
+      - 🇭🇰HK-159.100.206.88-0041
+      - 🇭🇰HK-20.187.85.198-5267
+      - 🇭🇰HK-83.229.121.78-5783
+      - 🇭🇰香港专线01 下载专用
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -51437,7 +52381,6 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - DE 🇩🇪 | @Raydikalx | 421314
       - DE 🇩🇪 | @Raydikalx | 4769A2
-      - DE 🇩🇪 | @Raydikalx | D9E7C7
       - DE 🇩🇪 | @Raydikalx | C971ED
       - DE 🇩🇪 | @Raydikalx | C797DA
       - DE 🇩🇪 | @Raydikalx | C631BF
@@ -51535,1000 +52478,6 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-15'
       - 🇩🇪
       - '@V2rayng_Fast 🇩🇪-16'
-  - name: 📍 美国
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - US VLESS-25 | free-nodes
-      - 🇺🇸_US_美国_IPV4 (5)
-      - 🇺🇸206889 | ⚡️Telegram = t.me/L...
-      - '🇺🇸[www.v2nodes.com] vless-US-1... #2'
-      - '🇺🇸[www.v2nodes.com] vless-US-1... #3'
-      - '🇺🇸[www.v2nodes.com] vless-US-1... #4'
-      - '🇺🇸[www.v2nodes.com] vless-US-1... #5'
-      - 🇺🇸[www.v2nodes.com] ss-US-1614...
-      - '🇺🇸[www.v2nodes.com] ss-US-1614... #1'
-      - 🇺🇸[www.v2nodes.com] ss-US-1612...
-      - 🇺🇸[www.v2nodes.com] trojan-US-...
-      - '🇺🇸[www.v2nodes.com] trojan-US-... #3'
-      - '🇺🇸[www.v2nodes.com] trojan-US-... #2'
-      - 🇺🇸US_2|2.4MB/s
-      - 🇺🇸US_3|4.1MB/s
-      - 🇺🇸US_4|1.0MB/s
-      - 🇺🇸US_5|1.6MB/s
-      - 🇺🇸US_6|1.4MB/s
-      - '🇺🇸 美国 | USA #4'
-      - '🇺🇸 美国 | USA #5'
-      - '🇺🇸 美国 | USA #6'
-      - 🇺🇸 美国 | USA 2
-      - 🇺🇸_US_美国_IPV4 (3)
-      - 美国 001
-      - 美国 002
-      - 美国 005
-      - 美国 007
-      - 美国 008
-      - 美国 016
-      - 美国 017
-      - 美国 025
-      - 美国 029
-      - 美国 031
-      - 美国 032
-      - 美国 035
-      - 美国 036
-      - 美国 037
-      - 美国 038
-      - 美国 039
-      - 美国 040
-      - 美国 041
-      - 美国 042
-      - 美国 044
-      - 美国 046
-      - 美国 047
-      - 美国 048
-      - 美国 049
-      - 美国 052
-      - 美国 053
-      - 美国 056
-      - 美国 057
-      - 美国 058
-      - 美国 059
-      - 美国 060
-      - 美国 062
-      - 美国 064
-      - 美国 065
-      - 美国 067
-      - 美国 069
-      - 美国 070
-      - 美国 071
-      - 美国 073
-      - 美国 074
-      - 美国 077
-      - 美国 083
-      - 美国 087
-      - 美国 088
-      - 美国 091
-      - 美国 092
-      - 美国 096
-      - 美国 099
-      - 美国 100
-      - 美国 103
-      - 美国 104
-      - 美国 106
-      - 美国 112
-      - 美国 114
-      - 美国 117
-      - 美国 123
-      - 美国 128
-      - 美国 131
-      - 美国 132
-      - 美国 134
-      - 美国 135
-      - 美国 136
-      - 美国 137
-      - 美国 138
-      - 美国 144
-      - 美国 145
-      - 美国 147
-      - 美国 148
-      - 美国 151
-      - 美国 152
-      - 美国 154
-      - 美国 155
-      - 美国 156
-      - 美国 158
-      - 美国 159
-      - 美国 160
-      - 美国 162
-      - 美国 163
-      - 美国 164
-      - 美国 168
-      - 美国 169
-      - 美国 178
-      - 美国 180
-      - 美国 181
-      - 美国 182
-      - 美国 183
-      - 美国 184
-      - 美国 185
-      - 美国 186
-      - 美国 187
-      - 美国 188
-      - 美国 189
-      - 美国 190
-      - 美国 191
-      - 美国 192
-      - 美国 194
-      - 美国 195
-      - 美国 196
-      - 美国 197
-      - 美国 199
-      - 美国 200
-      - 美国 201
-      - 美国 202
-      - 美国 203
-      - 美国 204
-      - 美国 205
-      - 美国 206
-      - 美国 207
-      - 美国 208
-      - 美国 209
-      - 美国 210
-      - 美国 211
-      - 美国 212
-      - 美国 213
-      - 美国 215
-      - 美国 216
-      - 美国 217
-      - 美国 219
-      - 美国 220
-      - 美国 222
-      - 美国 226
-      - 美国 229
-      - 美国 233
-      - 美国 235
-      - 美国 237
-      - 美国 242
-      - 美国 243
-      - 美国 244
-      - 美国 245
-      - 美国 248
-      - 美国 249
-      - 美国 254
-      - 美国 255
-      - 美国 256
-      - 美国 257
-      - 美国 258
-      - 美国 259
-      - 美国 260
-      - 美国 261
-      - 美国 262
-      - 美国 264
-      - 美国 265
-      - 美国 267
-      - 美国 268
-      - 美国 269
-      - 美国 271
-      - 美国 274
-      - 美国 275
-      - 美国 278
-      - 美国 279
-      - 美国 282
-      - 美国 283
-      - 美国 284
-      - 美国 286
-      - 美国 287
-      - 美国 288
-      - 美国 289
-      - 美国 290
-      - 美国 291
-      - 美国 292
-      - 美国 293
-      - 美国 294
-      - 美国 295
-      - 美国 296
-      - 美国 298
-      - 美国 299
-      - 美国 300
-      - 美国 302
-      - 美国 303
-      - 美国 304
-      - 美国 305
-      - 美国 306
-      - 美国 307
-      - 美国 308
-      - 美国 309
-      - 美国 310
-      - 美国 313
-      - 美国 314
-      - 美国 315
-      - 美国 316
-      - 美国 317
-      - 美国 319
-      - 美国 320
-      - 美国 321
-      - 美国 323
-      - 美国 329
-      - 美国 332
-      - 美国 338
-      - 美国 342
-      - 美国 343
-      - 美国 345
-      - 美国 346
-      - 美国 349
-      - 美国 350
-      - 美国 351
-      - 美国 352
-      - 美国 353
-      - 美国 354
-      - 美国 355
-      - 美国 356
-      - 美国 358
-      - 美国 359
-      - 美国 360
-      - 美国 361
-      - 美国 362
-      - 美国 363
-      - 美国 364
-      - 美国 366
-      - 美国 369
-      - 美国 370
-      - 美国 371
-      - 美国 372
-      - 美国 373
-      - 美国 375
-      - 美国 378
-      - 美国 388
-      - 美国 389
-      - 美国 394
-      - 美国 402
-      - 美国 410
-      - 美国 419
-      - 美国 420
-      - 美国 424
-      - 美国 426
-      - 美国 428
-      - 美国 429
-      - 美国 430
-      - 美国 431
-      - 美国 434
-      - 美国 443
-      - 美国 447
-      - 美国 448
-      - 美国 449
-      - 美国 450
-      - 美国 451
-      - 美国 453
-      - 美国 459
-      - 美国 466
-      - 美国 470
-      - 美国 476
-      - 美国 504
-      - 美国 505
-      - 美国 506
-      - 美国 507
-      - 美国 508
-      - 美国 509
-      - 美国 510
-      - 美国 511
-      - 美国 512
-      - 美国 513
-      - 美国 514
-      - 美国 515
-      - 美国 516
-      - 美国 517
-      - 美国 518
-      - 美国 519
-      - 美国 520
-      - 美国 523
-      - 美国 525
-      - 美国 531
-      - 美国 534
-      - 美国 535
-      - 美国 536
-      - 美国 537
-      - 美国 538
-      - 美国 539
-      - 美国 540
-      - 美国 546
-      - 美国 547
-      - 美国 548
-      - 美国 554
-      - 美国 555
-      - 美国 559
-      - 美国 560
-      - 美国 562
-      - 美国 563
-      - 美国 564
-      - 美国 565
-      - 美国 567
-      - 美国 577
-      - 美国 578
-      - 美国 579
-      - 美国 580
-      - 美国 581
-      - 美国 582
-      - 美国 583
-      - 美国 584
-      - 美国 585
-      - 美国 586
-      - 美国 587
-      - 美国 589
-      - 美国 592
-      - 美国 596
-      - 美国 597
-      - 美国 599
-      - 美国 600
-      - 美国 602
-      - 美国 603
-      - 美国 604
-      - 美国 605
-      - 美国 608
-      - 美国 609
-      - 美国 610
-      - 美国 613
-      - 美国 614
-      - 美国 615
-      - 美国 618
-      - 美国 619
-      - 美国 622
-      - 美国 624
-      - 美国 625
-      - 美国 626
-      - 美国 627
-      - 美国 628
-      - 美国 632
-      - 美国 633
-      - 美国 635
-      - 美国 638
-      - 美国 639
-      - 美国 640
-      - 美国 642
-      - 美国 643
-      - 美国 644
-      - 美国 645
-      - 美国 647
-      - 美国 649
-      - 美国 650
-      - 美国 651
-      - 美国 652
-      - 美国 653
-      - 美国 654
-      - 美国 657
-      - 美国 659
-      - 美国 661
-      - 美国 663
-      - 美国 664
-      - 美国 665
-      - 美国 667
-      - 美国 668
-      - 美国 670
-      - 美国 672
-      - 美国 673
-      - 美国 675
-      - 美国 676
-      - 美国 677
-      - 美国 679
-      - 美国 680
-      - 美国 681
-      - 美国 683
-      - 美国 685
-      - 美国 688
-      - 美国 689
-      - 美国 691
-      - 美国 693
-      - 美国 694
-      - 美国 695
-      - 美国 696
-      - 美国 697
-      - 美国 699
-      - 美国 701
-      - 美国 702
-      - 美国 703
-      - 美国 705
-      - 美国 711
-      - 美国 712
-      - 美国 715
-      - 美国 757
-      - 美国 760
-      - 美国 787
-      - 美国 789
-      - 美国 790
-      - 美国 791
-      - 美国 792
-      - 美国 813
-      - 美国 814
-      - 美国 815
-      - 美国 817
-      - 美国 818
-      - 美国 819
-      - 美国 820
-      - 美国 821
-      - 美国 822
-      - 美国 826
-      - 美国 828
-      - 美国 830
-      - 美国 831
-      - 美国 832
-      - 美国 833
-      - 美国 834
-      - 美国 835
-      - 美国 838
-      - 美国 839
-      - 美国 840
-      - 美国 841
-      - 美国 842
-      - 美国 843
-      - 美国 844
-      - 美国 845
-      - 美国 847
-      - 美国 848
-      - 美国 849
-      - 美国 851
-      - 美国 852
-      - 美国 853
-      - 美国 854
-      - 美国 856
-      - 美国 857
-      - 美国 858
-      - 美国 859
-      - 美国 861
-      - 美国 863
-      - 美国 864
-      - 美国 865
-      - 美国 866
-      - 美国 867
-      - 美国 868
-      - 美国 869
-      - 美国 870
-      - 美国 871
-      - 美国 872
-      - 美国 873
-      - 美国 874
-      - 美国 875
-      - 美国 876
-      - 美国 877
-      - 美国 878
-      - 美国 879
-      - 美国 880
-      - 美国 881
-      - 美国 882
-      - 美国 884
-      - 美国 885
-      - 美国 886
-      - 美国 887
-      - 美国 888
-      - 美国 889
-      - 美国 890
-      - 美国 891
-      - 美国 894
-      - 美国 895
-      - 美国 896
-      - 美国 897
-      - 美国 898
-      - 美国 899
-      - 美国 900
-      - 美国 901
-      - 美国 902
-      - 美国 903
-      - 美国 904
-      - 美国 905
-      - 美国 906
-      - 美国 907
-      - 美国 908
-      - 美国 909
-      - 美国 911
-      - 美国 912
-      - 美国 913
-      - 美国 914
-      - 美国 915
-      - 美国 917
-      - 美国 918
-      - 美国 920
-      - 美国 921
-      - 美国 922
-      - 美国 923
-      - 美国 924
-      - 美国 925
-      - 美国 926
-      - 美国 927
-      - 美国 928
-      - 美国 929
-      - 美国 931
-      - 美国 932
-      - 美国 933
-      - 美国 936
-      - 美国 937
-      - 美国 938
-      - 美国 940
-      - 美国 941
-      - 美国 943
-      - 美国 944
-      - 美国 945
-      - 美国 946
-      - 美国 947
-      - 美国 948
-      - 美国 949
-      - 美国 950
-      - 美国 951
-      - 美国 952
-      - 美国 953
-      - 美国 954
-      - 美国 955
-      - 美国 956
-      - 美国 957
-      - 美国 958
-      - 美国 959
-      - 美国 960
-      - 美国 962
-      - 美国 963
-      - 美国 964
-      - 美国 965
-      - 美国 966
-      - 美国 967
-      - 美国 968
-      - 美国 969
-      - 美国 970
-      - 美国 971
-      - 美国 972
-      - 美国 973
-      - 美国 974
-      - 美国 975
-      - 美国 976
-      - 美国 977
-      - 美国 978
-      - 美国 979
-      - 美国 980
-      - 美国 981
-      - 美国 982
-      - 美国 983
-      - 美国 985
-      - 美国 986
-      - 美国 987
-      - 美国 988
-      - 美国 989
-      - 美国 991
-      - 美国 992
-      - 美国 993
-      - 美国 994
-      - 美国 995
-      - 美国 998
-      - 美国 999
-      - 美国 1000
-      - 美国 1001
-      - 美国 1002
-      - 美国 1003
-      - 美国 1004
-      - 美国 1005
-      - 美国 1006
-      - 美国 1007
-      - 美国 1008
-      - 美国 1009
-      - 美国 1010
-      - 美国 1011
-      - 美国 1012
-      - 美国 1013
-      - 美国 1014
-      - 美国 1015
-      - 美国 1016
-      - 美国 1023
-      - 美国 1024
-      - 美国 1025
-      - 美国 1026
-      - 美国 1027
-      - 美国 1028
-      - 美国 1029
-      - 美国 1030
-      - 美国 1031
-      - 美国 1032
-      - 美国 1033
-      - 美国 1034
-      - 美国 1035
-      - 美国 1036
-      - 美国 1037
-      - 美国 1038
-      - 美国 1039
-      - 美国 1040
-      - 美国 1041
-      - 美国 1042
-      - 美国 1043
-      - 美国 1044
-      - 美国 1045
-      - 美国 1046
-      - 美国 1047
-      - 美国 1048
-      - 美国 1049
-      - 美国 1050
-      - 美国 1051
-      - 美国 1052
-      - 美国 1053
-      - 美国 1054
-      - 美国 1055
-      - 美国 1056
-      - 美国 1057
-      - 美国 1058
-      - 美国 1059
-      - 美国 1060
-      - 美国 1061
-      - 美国 1062
-      - 美国 1063
-      - 美国 1064
-      - 美国 1065
-      - 美国 1066
-      - 美国 1067
-      - 美国 1071
-      - 美国 1072
-      - 美国 1073
-      - 美国 1074
-      - 美国 1075
-      - 美国 1076
-      - 美国 1077
-      - 美国 1078
-      - 美国 1079
-      - 美国 1080
-      - 美国 1081
-      - 美国 1082
-      - 美国 1083
-      - 美国 1084
-      - 美国 1085
-      - 美国 1086
-      - 美国 1087
-      - 美国 1088
-      - 美国 1089
-      - 美国 1090
-      - 美国 1091
-      - 美国 1092
-      - 美国 1093
-      - 美国 1094
-      - 美国 1095
-      - 美国 1097
-      - 美国 1098
-      - 美国 1099
-      - 美国 1100
-      - 美国 1101
-      - 美国 1102
-      - 美国 1103
-      - 美国 1104
-      - 美国 1105
-      - 美国 1106
-      - 美国 1107
-      - 美国 1108
-      - 美国 1109
-      - 美国 1110
-      - 美国 1111
-      - 美国 1112
-      - 美国 1113
-      - 美国 1115
-      - 美国 1116
-      - 美国 1117
-      - 美国 1118
-      - 美国 1120
-      - 美国 1121
-      - 美国 1124
-      - 美国 1125
-      - 美国 1126
-      - 美国 1127
-      - 美国 1128
-      - 美国 1129
-      - 美国 1130
-      - 美国 1131
-      - 美国 1132
-      - 美国 1133
-      - 美国 1134
-      - 美国 1135
-      - 美国 1138
-      - 美国 1139
-      - 美国 1140
-      - 美国 1141
-      - 美国 1142
-      - 美国 1143
-      - 美国 1144
-      - 美国 1145
-      - 美国 1147
-      - 美国 1148
-      - 美国 1173
-      - 美国 1174
-      - 美国 1175
-      - 美国 1176
-      - 美国 1177
-      - 美国 1178
-      - 美国 1179
-      - 美国 1180
-      - 美国 1181
-      - 美国 1182
-      - 美国 1183
-      - 美国 1186
-      - 美国 1187
-      - 美国 1188
-      - 美国 1190
-      - 美国 1191
-      - 美国 1192
-      - 美国 1193
-      - 美国 1194
-      - 美国 1195
-      - 美国 1196
-      - 美国 1197
-      - 🇺🇸 US02|@ripaojiedian
-      - 🇺🇸 US03|@ripaojiedian
-      - 🇺🇸 US04|@ripaojiedian
-      - 🇺🇸 US05|@ripaojiedian
-      - 🇺🇸 US06|@ripaojiedian
-      - 🇺🇸 US07|@ripaojiedian
-      - SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990
-      - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080
-      - US 🇺🇸 | @Raydikalx | CFAE6C
-      - US 🇺🇸 | @Raydikalx | E221A0
-      - US 🇺🇸 | @Raydikalx | 22C1B3
-      - US 🇺🇸 | @Raydikalx | 9B4F83
-      - US 🇺🇸 | @Raydikalx | C2EDAF
-      - US 🇺🇸 | @Raydikalx | 2D4470
-      - US 🇺🇸 | @Raydikalx | AB18BF
-      - US 🇺🇸 | @Raydikalx | F6BBC9
-      - US 🇺🇸 | @Raydikalx | 8E0066
-      - US 🇺🇸 | @Raydikalx | 737919
-      - US 🇺🇸 | @Raydikalx | 375870
-      - US 🇺🇸 | @Raydikalx | EA9EF9
-      - US 🇺🇸 | @Raydikalx | 39928D
-      - US 🇺🇸 | @Raydikalx | A21CA4
-      - US 🇺🇸 | @Raydikalx | C3E30F
-      - US 🇺🇸 | @Raydikalx | 072F29
-      - US 🇺🇸 | @Raydikalx | 60BC4E
-      - US 🇺🇸 | @Raydikalx | 6DB3A4
-      - US 🇺🇸 | @Raydikalx | A8D213
-      - US 🇺🇸 | @Raydikalx | 457A0D
-      - US 🇺🇸 | @Raydikalx | 10C589
-      - US 🇺🇸 | @Raydikalx | 7AA8C3
-      - US 🇺🇸 | @Raydikalx | 67B835
-      - US 🇺🇸 | @Raydikalx | D57391
-      - US 🇺🇸 | @Raydikalx | F55BCB
-      - US 🇺🇸 | @Raydikalx | 53FCC0
-      - US 🇺🇸 | @Raydikalx | 55BE05
-      - US 🇺🇸 | @Raydikalx | 2334B9
-      - US 🇺🇸 | @Raydikalx | 586AD0
-      - US 🇺🇸 | @Raydikalx | 676D28
-      - US 🇺🇸 | @Raydikalx | 032847
-      - US 🇺🇸 | @Raydikalx | 7CD213
-      - US 🇺🇸 | @Raydikalx | 7DE6C1
-      - US 🇺🇸 | @Raydikalx | FBF6EC
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - US 🇺🇸 | @Raydikalx | 2D3F12
-      - US 🇺🇸 | @Raydikalx | B05884
-      - US 🇺🇸 | @Raydikalx | 42BF00
-      - US 🇺🇸 | @Raydikalx | 9A86CA
-      - US 🇺🇸 | @Raydikalx | C10152
-      - US 🇺🇸 | @Raydikalx | EF1279
-      - US 🇺🇸 | @Raydikalx | 0B7B7C
-      - US 🇺🇸 | @Raydikalx | 92D70D
-      - US 🇺🇸 | @Raydikalx | 943FAE
-      - US 🇺🇸 | @Raydikalx | 882A7F
-      - US 🇺🇸 | @Raydikalx | 7DD8C0
-      - US 🇺🇸 | @Raydikalx | 572B79
-      - US 🇺🇸 | @Raydikalx | E7611E
-      - US 🇺🇸 | @Raydikalx | 766FED
-      - US 🇺🇸 | @Raydikalx | 923D7E
-      - US 🇺🇸 | @Raydikalx | FC978E
-      - US 🇺🇸 | @Raydikalx | 64D2F8
-      - US 🇺🇸 | @Raydikalx | C286F0
-      - US 🇺🇸 | @Raydikalx | 565AA4
-      - US 🇺🇸 | @Raydikalx | 0CBFCD
-      - US 🇺🇸 | @Raydikalx | 853160
-      - US 🇺🇸 | @Raydikalx | F44C8D
-      - US 🇺🇸 | @Raydikalx | 6D6C73
-      - US 🇺🇸 | @Raydikalx | 77BD3A
-      - US 🇺🇸 | @Raydikalx | 3E8C43
-      - US 🇺🇸 | @Raydikalx | A9927A
-      - US 🇺🇸 | @Raydikalx | 7CF2F0
-      - US 🇺🇸 | @Raydikalx | AD2F7C
-      - US 🇺🇸 | @Raydikalx | F4AE80
-      - US 🇺🇸 | @Raydikalx | 4452C9
-      - US 🇺🇸 | @Raydikalx | 3EFFD1
-      - US 🇺🇸 | @Raydikalx | B9C716
-      - US 🇺🇸 | @Raydikalx | D8C1A6
-      - US 🇺🇸 | @Raydikalx | 723EDE
-      - US 🇺🇸 | @Raydikalx | B58698
-      - US 🇺🇸 | @Raydikalx | 2314F7
-      - US 🇺🇸 | @Raydikalx | 6D2CCE
-      - US 🇺🇸 | @Raydikalx | 5A1BD6
-      - US 🇺🇸 | @Raydikalx | 7E0A95
-      - US 🇺🇸 | @Raydikalx | B021CB
-      - 🇺🇸 US 👻
-      - 🇺🇸 New York
-      - 🆔configfa 🔒 VL-WS-N/A 🇺🇸 US 123ms
-      - 🆔surfboardv2ray 🔒 VL-TCP- 🇺🇸 US 35ms
-      - 🆔surfboardv2ray 🔒 VL-TCP- 🇺🇸 US 33ms
-      - 🆔capoit 🔒 VL-WS-N/A 🇺🇸 US 14ms
-      - 🆔capoit 🔒 VL-WS-N/A 🇺🇸 US 16ms
-      - 🆔capoit 🔒 VL-WS-N/A 🇺🇸 US 13ms
-      - 🆔conectvpn10 🔒 VL-WS-N/A 🇺🇸 US 12ms
-      - 🆔conectvpn10 🔒 VL-WS-N/A 🇺🇸 US 37ms
-      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 8ms
-      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 27ms
-      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 34ms
-      - 🆔ar14n24b 🔒 VL-XHTTP-N/A 🇺🇸 US 16ms
-      - 🆔ar14n24b 🔒 VL-XHTTP-N/A 🇺🇸 US 19ms
-      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 14ms
-      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 9ms
-      - 🆔ar14n24b 🔒 VL-TCP- 🇺🇸 US 36ms
-      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 16ms
-      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 42ms
-      - 🆔ar14n24b 🔒 VL-TCP- 🇺🇸 US 196ms
-      - 🆔ar14n24b 🔒 VL-WS-N/A 🇺🇸 US 12ms
-      - 🆔ar14n24b 🔒 VL-TCP- 🇺🇸 US 215ms
-      - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 16ms
-      - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 18ms
-      - 🆔v2ray1_ng 🔒 VL-WS-N/A 🇺🇸 US 7ms
-      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 15ms
-      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 19ms
-      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 15ms-2
-      - 🆔vpnserverrr 🔒 VL-WS-N/A 🇺🇸 US 14ms
-      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 14ms
-      - 🆔vpnserverrr 🔓 VL-WS-N/A 🇺🇸 US 19ms-2
-      - 🇺🇸US-193.151.160.9-0080
-      - 🇺🇸US-193.151.163.18-0081
-      - 🇺🇸US-193.151.160.18-0086
-      - 🇺🇸US-37.19.198.236-0140
-      - 🇺🇸US-37.19.198.243-0142
-      - 🇺🇸US-169.197.140.218-0084
-      - 🇺🇸US-185.230.230.18-0091
-      - 🇺🇸US-37.19.198.244-0137
-      - 🇺🇸US-66.163.112.13-0178
-      - 🇺🇸US-66.163.112.121-0196
-      - 🇺🇸US-216.152.155.176-0107
-      - 🇺🇸US-45.86.51.18-0079
-      - 🇺🇸US-138.199.42.68-0240
-      - 🇺🇸US-167.88.61.198-0090
-      - 🇺🇸US-216.152.155.23-0096
-      - 🇺🇸US-216.152.155.54-0138
-      - 🇺🇸US-170.101.101.53-0124
-      - 🇺🇸US-216.152.156.81-0133
-      - 🇺🇸US-216.152.155.158-0121
-      - 🇺🇸US-37.19.198.160-0134
-      - 🇺🇸US-216.152.156.65-0098
-      - 🇺🇸US-170.101.101.67-0128
-      - 🇺🇸US-173.244.56.6-0078
-      - 🇺🇸US-170.101.101.19-0085
-      - 🇺🇸US-216.152.156.42-0101
-      - 🇺🇸US-173.244.56.9-0077
-      - 🇺🇸US-95.215.201.18-0151
-      - 🇺🇸US-66.163.114.166-0162
-      - 🇺🇸US-66.163.114.114-0153
-      - 🇺🇸US-66.163.114.132-0155
-      - 🇺🇸US-15.204.247.206-5816
-      - 🇺🇸US-156.146.38.169-0147
-      - 🇺🇸US-156.146.38.168-0206
-      - 🇺🇸US-156.146.38.167-0207
-      - 🇺🇸US-156.146.38.170-0168
-      - 🇺🇸US-198.98.53.130-0229
-      - 🇺🇸US-66.163.122.7-0161
-      - 🇺🇸US-66.163.122.26-0160
-      - 🇺🇸US-165.215.250.14-0488
-      - 🇺🇸US-129.146.190.42-1883
-      - 🇺🇸US-192.96.204.250-2963
-      - 🇺🇸US-52.88.161.5-3029
-      - 🇺🇸US-51.81.220.195-3451
-      - 🇺🇸US-51.81.220.34-4754
-      - 🇺🇸US-45.9.10.103-5314
-      - 🇺🇸US-167.88.62.68-5645
-      - 🇺🇸US-179.255.132.69-5727
-      - 🇺🇸US-216.105.168.18-5819
-      - 🇺🇸US-66.23.203.21-5824
-      - 🇺🇸US-192.236.151.43-5826
-      - 🇺🇸US-156.146.38.163-5998
-      - 🇺🇸US-167.88.62.62-6047
-      - 🇺🇸US-142.202.48.52-6481
-      - 🇺🇸US-167.88.61.14-6617
-      - 🇺🇸US-38.68.135.123-6673
-      - 🇺🇸US-167.88.61.50-6785
-      - 🇺🇸US-167.88.62.68-6855
-      - 🇺🇸US-142.202.48.52-6871
-      - 🇺🇸US-167.88.61.175-6989
-      - 🇺🇸US-167.88.63.44-7018
-      - 🇺🇸US-66.241.124.93-7917
-      - 🇺🇸US-47.88.104.186-7977
-      - 🇺🇸US-47.254.89.211-7980
-      - 🇺🇸US-47.254.17.235-7982
-      - 🇺🇸US-47.254.17.235-7983
-      - 🇺🇸US-47.254.121.68-7986
-      - 🇺🇸US-47.253.60.200-7989
-      - 🇺🇸US-47.253.55.72-7990
-      - 🇺🇸US-198.2.208.69-8211
-      - 🇺🇸US-198.2.208.68-8213
-      - 🇺🇸US-15.204.210.176-8538
-      - 🇺🇸US-142.4.112.7-8557
-      - 🇺🇸US-135.148.148.4-8590
-      - 🇺🇸US-135.148.148.4-8596
-      - US - zhuhai.uk
-      - US - zhuhai.uk 03
-      - US - zhuhai.uk 05
-      - US - zhuhai.uk 06
-      - US - zhuhai.uk 07
-      - US - zhuhai.uk 08
-      - US - zhuhai.uk 09
-      - 🇺🇸 Chicago, IL, United States
-      - 🇺🇸 Seattle, WA, United States
-      - 🇺🇸 Los Angeles, CA, United States
-      - 🇺🇸 Seattle, WA, United States-2
-      - 🇺🇸
-      - US美国(v2clash.blog 2026-10.25更新)
-      - 🇺🇸Telegram👉@v2rayNG_Matsuri
-      - 🇺🇸Telegram👉@v2rayNG_Matsuri-2
-      - 🇺🇸@V2rayng_Fast
-      - US美国(mibei77.com 米贝节点分享)
-      - US美国(v2clash.blog 2026-9.17更新)
-      - US美国(v2clash.blog 2026-9.5)
-      - US美国(v2clash.blog 2026-8.27更新)
-      - US美国(v2clash.blog 2026-9.17更新)-2
-      - US美国(v2clash.blog 2026-9.22更新)
-      - US美国(v2clash.blog 2026-8.15更新)
-      - US美国(v2clash.blog 2026-9.5)-2
-      - US美国(v2clash.blog 2026-6.7更新)
-      - US美国(v2clash.blog 2026-10.4更新)
-      - US美国(v2clash.blog 2026-8.4更新)
-      - 'Channel id: @ShadowProxy66 🇺🇸'
-      - US美国(v2clash.blog 2026-10.13更新)
-      - '@V2rayng_Fast 🇺🇸'
-      - '@ShadowProxy66 🇺🇸'
-      - US美国(v2clash.blog 2026-9.6)
-      - US美国v2clash.blog 2026-9.10)
-      - US美国(v2clash.blog 2026-10.2更新)
-      - US美国v2clash.blog 2026-9.8)
-      - US美国v2clash.blog 2026-9.9)
-      - US美国(v2clash.blog 2026-10.5更新)
-      - 🇺🇸 美国 夏威夷州
-      - US美国(v2clash.blog 2026-10.9更新)
-      - '@ShadowProxy66 🇺🇸-2'
-      - US美国(v2clash.blog 2026-10.9更新)-2
-      - US美国(v2clash.blog 2026-10.22更新)
-      - US美国(v2clash.blog 2026-10.23更新)
-      - US美国(v2clash.blog 2026-10.23更新)-2
-      - US美国(v2clash.blog 2026-10.23更新)-3
-      - US美国(v2clash.blog 2026-10.22更新)-2
-      - US美国(v2clash.blog 2026-10.19更新)
-      - US美国(v2clash.blog 2026-10.10更新)
-      - US美国(v2clash.blog 2026-10.22更新)-3
-      - US美国(v2clash.blog 2026-10.19更新)-2
-      - US美国(v2clash.blog 2026-10.22更新)-4
-      - US美国(v2clash.blog 2026-10.24更新)
-      - '@ShadowProxy66 🇺🇸-3'
-      - '@ShadowProxy66 🇺🇸-4'
-      - eric-us
-      - eric-us-phl
-      - US美国(v2clash.blog 2026-10.13更新)-2
-      - US美国(v2clash.blog 2026-5.26更新)
-      - US美国(v2clash.blog 2026-10.7更新)
-      - US美国(v2clash.blog 2026-10.8更新)
-      - US美国(v2clash.blog 2026-5.4更新)
-      - US美国(v2clash.blog 2026-10.3更新)
-      - US美国(v2clash.blog 2026-10.9更新)-3
-      - US美国(v2clash.blog 2026-10.14更新)
-      - US美国(v2clash.blog 2026-8.3更新)
-      - US美国(v2clash.blog 2026-7.31更新)
-      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
-      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞-2
-      - '@ShadowProxy66 🇺🇸-5'
-      - US美国(v2clash.blog 2026-10.5更新)-2
-      - US美国(v2clash.blog 2026-10.10更新)-2
-      - US美国(v2clash.blog 2026-10.4更新)-2
-      - US美国(v2clash.blog 2026-9.6)-2
-      - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
-      - US美国mibei77.com 米贝节点分享)(v2clash.blog 2026-10.9更新)
-      - '@ShadowProxy66 🇺🇸-6'
-      - US美国(v2clash.blog 2026-10.10更新)-3
-      - US美国(v2clash.blog 2026-10.4更新)-3
-      - US美国(v2clash.blog 2026-8.4更新)-2
-      - US美国(v2clash.blog 2026-6.7更新)-2
-      - 🇺🇸-2
-      - '@ShadowProxy66 🇺🇸-7'
-      - 🇺🇸@V2rayng_Fast-2
-      - US美国v2clash.blog 2026-9.10)-2
-      - 🇺🇸@proxy_kafee
-      - 🇺🇸@V2rayng_Fast-3
-      - 🇺🇸_US_美国_2
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_1
-      - 🇺🇸_US_美国_3
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -52699,49 +52648,6 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - 🇬🇧telegram➠@v2rayNG_Matsuri-3
       - 🇬🇧telegram➠@v2rayNG_Matsuri-4
-  - name: 📍 香港
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
-      - 🇭🇰HK_1|1.7MB/s
-      - '🇭🇰 香港 | HKG #1'
-      - '🇭🇰 香港 | HKG #2'
-      - 🇭🇰 HK01|@ripaojiedian
-      - 🇭🇰 HK02|@ripaojiedian
-      - 🇭🇰 HK03|@ripaojiedian
-      - 🇭🇰 HK04|@ripaojiedian
-      - 🇭🇰 HK05|@ripaojiedian
-      - 🇭🇰 HK06|@ripaojiedian
-      - 🇭🇰 HK07|@ripaojiedian
-      - 🇭🇰 HK08|@ripaojiedian
-      - 🇭🇰 HK09|@ripaojiedian
-      - HK 🇭🇰 | @Raydikalx | F125F6
-      - HK 🇭🇰 | @Raydikalx | F1F4D7
-      - HK 🇭🇰 | @Raydikalx | B9CBB9
-      - HK 🇭🇰 | @Raydikalx | D755F0
-      - HK 🇭🇰 | @Raydikalx | 6E1CF2
-      - HK 🇭🇰 | @Raydikalx | BB18E3
-      - HK 🇭🇰 | @Raydikalx | E57D3C
-      - HK 🇭🇰 | @Raydikalx | 3F1EE8
-      - HK 🇭🇰 | @Raydikalx | CCD2B6
-      - HK 🇭🇰 | @Raydikalx | B8EF38
-      - HK 🇭🇰 | @Raydikalx | 692BEC
-      - HK 🇭🇰 | @Raydikalx | 5B1771
-      - HK 🇭🇰 | @Raydikalx | 331707
-      - HK 🇭🇰 | @Raydikalx | 4641D1
-      - HK 🇭🇰 | @Raydikalx | 50CD6E
-      - HK 🇭🇰 | @Raydikalx | 79B786
-      - 🆔ar14n24b 🔒 VL-TCP- 🇭🇰 HK 122ms
-      - 🇭🇰HK-219.76.13.181-0068
-      - 🇭🇰HK-159.100.206.88-0041
-      - 🇭🇰HK-20.187.85.198-5267
-      - 🇭🇰HK-83.229.121.78-5783
-      - 🇭🇰香港专线01 下载专用
   - name: 📍 韩国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -52756,20 +52662,16 @@ proxy-groups:
       - 韩国 009
       - 韩国 010
       - 韩国 013
-      - 韩国 016
       - 韩国 020
+      - KR 🇰🇷 | @Raydikalx | E9F97A
       - KR 🇰🇷 | @Raydikalx | 9652E1
       - 🇰🇷KR-211.178.105.134-0226
-      - 🇰🇷KR-141.164.45.187-0209
       - 🇰🇷KR-144.24.72.126-3733
       - 🇰🇷KR-3.34.6.217-4792
-      - 🇰🇷KR-141.164.45.187-5778
       - 🇰🇷 Seoul, 11, South Korea
       - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
       - 🇰🇷 Seoul, 11, South Korea-4
-      - 🇰🇷 Seoul, 11, South Korea-5
-      - 🇰🇷 Seoul, 11, South Korea-6
       - KR韩国(v2clash.blog 2026-10.20更新)
 rules:
   - MATCH,🌐 公共节点
