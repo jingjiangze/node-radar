@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -27,6 +27,15 @@ jobs:
 
       - name: Show summary
         run: cat dist/summary.json
+
+      - name: Publish dist back to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p dist
+          git add -f dist/clash.yaml dist/summary.json
+          git diff --cached --quiet || git commit -m "chore: update aggregated subscription"
+          git push
 
       # 私有交付方式一：Actions Artifact（默认仅仓库有权限者可下载）
       - name: Upload artifact
