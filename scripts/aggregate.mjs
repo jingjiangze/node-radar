@@ -62,8 +62,8 @@ function parseVless(u) {
     if (q.get('alpn')) p.alpn = q.get('alpn').split(',');
     if (q.get('allowInsecure') === '1') p['skip-cert-verify'] = true;
     if (q.get('security') === 'reality') {
-      p['reality-opts'] = {};
-      if (q.get('pbk')) p['reality-opts']['public-key'] = q.get('pbk');
+      if (!q.get('pbk')) return null;              // 缺 public-key 的 reality 节点无效
+      p['reality-opts'] = { 'public-key': q.get('pbk') };
       if (q.get('sid')) p['reality-opts']['short-id'] = q.get('sid');
     }
   }
@@ -156,7 +156,9 @@ fs.writeFileSync(new URL('../sources.health.json', import.meta.url), JSON.string
 
 // ---------- 去重 ----------
 const seen = new Set(); const unique = [];
-const invalid = (p) => (p.type === 'hysteria2' || p.type === 'hysteria') && p.obfs && !p['obfs-password'];
+const invalid = (p) =>
+  ((p.type === 'hysteria2' || p.type === 'hysteria') && p.obfs && !p['obfs-password']) ||
+  (p['reality-opts'] && !p['reality-opts']['public-key']);
 for (const p of collected) {
   if (invalid(p)) continue;
   const key = [p.type, p.server, p.port, p.uuid || p.password || p.cipher || ''].join('|').toLowerCase();
