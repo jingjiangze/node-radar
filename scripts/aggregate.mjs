@@ -95,7 +95,8 @@ function parseHysteria2(u) {
   const p = { name: decodeURIComponent(url.hash.slice(1)) || `hy2-${url.hostname}`, type: 'hysteria2', server: url.hostname, port: Number(url.port || 443), password: decodeURIComponent(url.username || '') };
   if (q.get('sni')) p.sni = q.get('sni');
   if (q.get('insecure') === '1') p['skip-cert-verify'] = true;
-  if (q.get('obfs')) { p.obfs = q.get('obfs'); if (q.get('obfs-password')) p['obfs-password'] = q.get('obfs-password'); }
+  const obfs = q.get('obfs'), obfsPwd = q.get('obfs-password');
+  if (obfs && obfsPwd) { p.obfs = obfs; p['obfs-password'] = obfsPwd; } // 缺 password 会导致整份配置加载失败
   return p;
 }
 function parseVmess(u) {
@@ -155,7 +156,9 @@ fs.writeFileSync(new URL('../sources.health.json', import.meta.url), JSON.string
 
 // ---------- 去重 ----------
 const seen = new Set(); const unique = [];
+const invalid = (p) => (p.type === 'hysteria2' || p.type === 'hysteria') && p.obfs && !p['obfs-password'];
 for (const p of collected) {
+  if (invalid(p)) continue;
   const key = [p.type, p.server, p.port, p.uuid || p.password || p.cipher || ''].join('|').toLowerCase();
   if (seen.has(key)) continue;
   seen.add(key); unique.push(p);
