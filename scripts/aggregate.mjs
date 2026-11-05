@@ -1,19 +1,44 @@
 #!/usr/bin/env node
-// 公开节点聚合器：抓取多个公开源 → 解析 → 去重 → 输出一份 Clash 订阅
-// 仅做「格式转换 + 去重」，不做存活探测（探测会拖慢 CI 且节点随时失效）
+// 公开节点聚合器 v2
+// 改进点：
+//   1) 地区分组（按节点名归类，产出独立地区组）
+//   2) 空/异常结果兜底：可用节点少于阈值时不覆盖线上 dist，保留上一版
+//   3) 源健康度：连续失败 3 次的自动源自动剔除（人工策展的 sources.json 不动）
+//   4) 探活只剔除「TCP 连不上」的死服务器，不做排序、不判地区（CI 在美国，判国内可达会误杀）
 
 import fs from 'node:fs';
-import path from 'node:path';
 import yaml from 'js-yaml';
 
-const loadList = (f) => { try { return JSON.parse(fs.readFileSync(new URL(f, import.meta.url), 'utf8')); } catch { return []; } };
+const loadList = (f, fallback = []) => { try { return JSON.parse(fs.readFileSync(new URL(f, import.meta.url), 'utf8')); } catch { return fallback; } };
 const curated = loadList('../sources.json');
 const auto = loadList('../sources.auto.json');
-const seenUrl = new Set();
-const SOURCES = [...curated, ...auto].filter((s) => (seenUrl.has(s.url) ? false : (seenUrl.add(s.url), true)));
+const health = loadList('../sources.health.json', {});
 
-const UA = 'clash-verge/aggregator (+https://github.com/jingjiangze/node-pool-aggregator)';
+const seenUrl = new Set();
+const SOURCES = [...curated, ...auto]
+  .filter((s) => (seenUrl.has(s.url) ? false : (seenUrl.add(s.url), true)))
+  .filter((s) => {
+    const h = health[s.url];
+    // 只对「自动发现」的源做剔除；人工策展的永不自动删
+    const isCurated = curated.some((c) => c.url === s.url);
+    return isCurated || !h || (h.fails || 0) < 3;
+  });
+
+const UA = 'clash-verge/aggregator (+https://github.com/jingjiangze/node-radar)';
 const TIMEOUT_MS = 30000;
+const MIN_HEALTHY = 100;          // 低于这个数认为本次抓取异常，不覆盖线上
+const MIN_REGION = 10;            // 地区组最少节点数
+
+const REGIONS = [
+  ['香港', /香港|🇭🇰|\bHK\b|\bHKG\b|Hong ?Kong/i],
+  ['台湾', /台湾|臺灣|🇹🇼|\bTW\b|Taiwan/i],
+  ['日本', /日本|东京|東京|大阪|🇯🇵|\bJP\b|Japan/i],
+  ['新加坡', /新加坡|狮城|🇸🇬|\bSG\b|Singapore/i],
+  ['韩国', /韩国|韓國|首尔|首爾|🇰🇷|\bKR\b|Korea/i],
+  ['美国', /美国|美國|洛杉矶|圣何塞|西雅图|纽约|芝加哥|达拉斯|硅谷|🇺🇸|\bUS\b|\bUSA\b|United ?States/i],
+  ['英国', /英国|英國|伦敦|倫敦|🇬🇧|\bUK\b|\bGB\b|London/i],
+  ['德国', /德国|德國|法兰克福|🇩🇪|\bDE\b|Germany/i],
+];
 
 async function fetchText(url) {
   const ctrl = new AbortController();
@@ -25,23 +50,11 @@ async function fetchText(url) {
   } finally { clearTimeout(t); }
 }
 
-// ---------- URI → Clash proxy ----------
-function b64d(s) {
-  const norm = s.replace(/[-_]/g, (c) => (c === '-' ? '+' : '/'));
-  return Buffer.from(norm, 'base64').toString('utf8');
-}
+const b64d = (s) => Buffer.from(s.replace(/[-_]/g, (c) => (c === '-' ? '+' : '/')), 'base64').toString('utf8');
 
 function parseVless(u) {
-  const url = new URL(u);
-  const q = url.searchParams;
-  const p = {
-    name: decodeURIComponent(url.hash.slice(1)) || `vless-${url.hostname}`,
-    type: 'vless',
-    server: url.hostname,
-    port: Number(url.port || 443),
-    uuid: decodeURIComponent(url.username),
-    udp: true,
-  };
+  const url = new URL(u); const q = url.searchParams;
+  const p = { name: decodeURIComponent(url.hash.slice(1)) || `vless-${url.hostname}`, type: 'vless', server: url.hostname, port: Number(url.port || 443), uuid: decodeURIComponent(url.username), udp: true };
   if (q.get('security') === 'tls' || q.get('security') === 'reality') {
     p.tls = true;
     if (q.get('sni')) p.servername = q.get('sni');
@@ -55,109 +68,45 @@ function parseVless(u) {
     }
   }
   const net = q.get('type') || 'tcp';
-  if (net === 'ws') {
-    p.network = 'ws';
-    p['ws-opts'] = { path: q.get('path') || '/' };
-    if (q.get('host')) p['ws-opts'].headers = { Host: q.get('host') };
-  } else if (net === 'grpc') {
-    p.network = 'grpc';
-    p['grpc-opts'] = { 'grpc-service-name': q.get('serviceName') || '' };
-  } else if (net === 'h2') {
-    p.network = 'h2';
-    p['h2-opts'] = { path: q.get('path') || '/' };
-    if (q.get('host')) p['h2-opts'].host = [q.get('host')];
-  }
+  if (net === 'ws') { p.network = 'ws'; p['ws-opts'] = { path: q.get('path') || '/' }; if (q.get('host')) p['ws-opts'].headers = { Host: q.get('host') }; }
+  else if (net === 'grpc') { p.network = 'grpc'; p['grpc-opts'] = { 'grpc-service-name': q.get('serviceName') || '' }; }
+  else if (net === 'h2') { p.network = 'h2'; p['h2-opts'] = { path: q.get('path') || '/' }; if (q.get('host')) p['h2-opts'].host = [q.get('host')]; }
   return p;
 }
-
 function parseTrojan(u) {
-  const url = new URL(u);
-  const q = url.searchParams;
-  const p = {
-    name: decodeURIComponent(url.hash.slice(1)) || `trojan-${url.hostname}`,
-    type: 'trojan',
-    server: url.hostname,
-    port: Number(url.port || 443),
-    password: decodeURIComponent(url.username),
-    udp: true,
-  };
+  const url = new URL(u); const q = url.searchParams;
+  const p = { name: decodeURIComponent(url.hash.slice(1)) || `trojan-${url.hostname}`, type: 'trojan', server: url.hostname, port: Number(url.port || 443), password: decodeURIComponent(url.username), udp: true };
   if (q.get('sni')) p.sni = q.get('sni');
   if (q.get('allowInsecure') === '1') p['skip-cert-verify'] = true;
-  if (q.get('type') === 'ws') {
-    p.network = 'ws';
-    p['ws-opts'] = { path: q.get('path') || '/' };
-    if (q.get('host')) p['ws-opts'].headers = { Host: q.get('host') };
-  }
+  if (q.get('type') === 'ws') { p.network = 'ws'; p['ws-opts'] = { path: q.get('path') || '/' }; if (q.get('host')) p['ws-opts'].headers = { Host: q.get('host') }; }
   return p;
 }
-
 function parseSS(u) {
-  // ss://base64(method:pass)@host:port#name  或  ss://base64(method:pass@host:port)#name
   const raw = u.slice(5).split('#')[0];
   const name = u.includes('#') ? decodeURIComponent(u.split('#').slice(1).join('#')) : null;
   let method, password, host, port;
-  if (raw.includes('@')) {
-    const [b64, hostport] = raw.split('@');
-    const dec = b64d(b64);
-    [method, password] = dec.split(':');
-    [host, port] = hostport.split(':');
-  } else {
-    const dec = b64d(raw);
-    const at = dec.lastIndexOf('@');
-    if (at < 0) return null;
-    [host, port] = dec.slice(at + 1).split(':');
-    const mp = dec.slice(0, at);
-    const ci = mp.indexOf(':');
-    method = mp.slice(0, ci);
-    password = mp.slice(ci + 1);
-  }
+  if (raw.includes('@')) { const [b64, hostport] = raw.split('@'); const dec = b64d(b64); [method, password] = dec.split(':'); [host, port] = hostport.split(':'); }
+  else { const dec = b64d(raw); const at = dec.lastIndexOf('@'); if (at < 0) return null; [host, port] = dec.slice(at + 1).split(':'); const mp = dec.slice(0, at); const ci = mp.indexOf(':'); method = mp.slice(0, ci); password = mp.slice(ci + 1); }
   if (!host || !port || !method) return null;
   return { name: name || `ss-${host}`, type: 'ss', server: host, port: Number(port), cipher: method, password, udp: true };
 }
-
 function parseHysteria2(u) {
-  const url = new URL(u);
-  const q = url.searchParams;
-  const p = {
-    name: decodeURIComponent(url.hash.slice(1)) || `hy2-${url.hostname}`,
-    type: 'hysteria2',
-    server: url.hostname,
-    port: Number(url.port || 443),
-    password: decodeURIComponent(url.username || ''),
-  };
+  const url = new URL(u); const q = url.searchParams;
+  const p = { name: decodeURIComponent(url.hash.slice(1)) || `hy2-${url.hostname}`, type: 'hysteria2', server: url.hostname, port: Number(url.port || 443), password: decodeURIComponent(url.username || '') };
   if (q.get('sni')) p.sni = q.get('sni');
   if (q.get('insecure') === '1') p['skip-cert-verify'] = true;
   if (q.get('obfs')) { p.obfs = q.get('obfs'); if (q.get('obfs-password')) p['obfs-password'] = q.get('obfs-password'); }
   return p;
 }
-
 function parseVmess(u) {
-  const b64 = u.slice(8).split('#')[0];
-  let j;
-  try { j = JSON.parse(b64d(b64)); } catch { return null; }
+  let j; try { j = JSON.parse(b64d(u.slice(8).split('#')[0])); } catch { return null; }
   if (!j.add || !j.port || !j.id) return null;
-  const p = {
-    name: j.ps || `vmess-${j.add}`,
-    type: 'vmess',
-    server: j.add,
-    port: Number(j.port),
-    uuid: j.id,
-    alterId: Number(j.aid || 0),
-    cipher: 'auto',
-    udp: true,
-  };
-  if (j.tls === 'tls') { p.tls = true; if (j.sni) p.servername = j.sni; if (j.host) p.servername = p.servername || j.host; }
-  if (j.net === 'ws') {
-    p.network = 'ws';
-    p['ws-opts'] = { path: j.path || '/' };
-    if (j.host) p['ws-opts'].headers = { Host: j.host };
-  } else if (j.net === 'grpc') {
-    p.network = 'grpc';
-    p['grpc-opts'] = { 'grpc-service-name': j.path || '' };
-  }
+  const p = { name: j.ps || `vmess-${j.add}`, type: 'vmess', server: j.add, port: Number(j.port), uuid: j.id, alterId: Number(j.aid || 0), cipher: 'auto', udp: true };
+  if (j.tls === 'tls') { p.tls = true; if (j.sni) p.servername = j.sni; else if (j.host) p.servername = j.host; }
+  if (j.net === 'ws') { p.network = 'ws'; p['ws-opts'] = { path: j.path || '/' }; if (j.host) p['ws-opts'].headers = { Host: j.host }; }
+  else if (j.net === 'grpc') { p.network = 'grpc'; p['grpc-opts'] = { 'grpc-service-name': j.path || '' }; }
   return p;
 }
-
 function parseUri(line) {
   const u = line.trim();
   try {
@@ -170,16 +119,15 @@ function parseUri(line) {
   return null;
 }
 
-// ---------- 主流程 ----------
+// ---------- 抓取 ----------
 const collected = [];
 const stats = [];
+const nextHealth = { ...health };
 
 for (const src of SOURCES) {
   try {
     const text = await fetchText(src.url);
-    let proxies = [];
-    let kind = 'unknown';
-
+    let proxies = [], kind = 'unknown';
     if (/^\s*(proxies|mixed-port|port|socks-port|allow-lan)\s*:/m.test(text)) {
       kind = 'clash-yaml';
       const doc = yaml.load(text);
@@ -187,41 +135,33 @@ for (const src of SOURCES) {
     } else {
       kind = 'uri-list';
       let decoded = text.trim();
-      if (!/^(vless|vmess|trojan|ss|hysteria2|hy2):\/\//m.test(decoded)) {
-        try { decoded = b64d(decoded); } catch { }
-      }
+      if (!/^(vless|vmess|trojan|ss|hysteria2|hy2):\/\//m.test(decoded)) { try { decoded = b64d(decoded); } catch { } }
       proxies = decoded.split(/\r?\n/).map(parseUri).filter(Boolean);
     }
-
     proxies = proxies
       .filter((p) => p && typeof p === 'object' && p.server && p.port && p.type)
-      .map((p) => {
-        const q = { ...p };
-        delete q.name;
-        return { name: String(p.name || `${p.type}-${p.server}`).slice(0, 60), ...q };
-      });
+      .map((p) => { const q = { ...p }; delete q.name; return { name: String(p.name || `${p.type}-${p.server}`).slice(0, 60), ...q }; });
 
     stats.push({ source: src.name, kind, count: proxies.length, ok: true });
     collected.push(...proxies);
+    nextHealth[src.url] = { fails: 0, ok: true, at: new Date().toISOString() };
   } catch (e) {
     stats.push({ source: src.name, ok: false, error: String(e.message || e).slice(0, 80) });
+    const prev = nextHealth[src.url] || { fails: 0 };
+    nextHealth[src.url] = { fails: (prev.fails || 0) + 1, ok: false, at: new Date().toISOString() };
   }
 }
+fs.writeFileSync(new URL('../sources.health.json', import.meta.url), JSON.stringify(nextHealth, null, 2) + '\n');
 
-// 去重：同 type+server+port+凭证 视为同一节点
-const seen = new Set();
-const unique = [];
+// ---------- 去重 ----------
+const seen = new Set(); const unique = [];
 for (const p of collected) {
-  const cred = p.uuid || p.password || p.cipher || '';
-  const key = [p.type, p.server, p.port, cred].join('|').toLowerCase();
+  const key = [p.type, p.server, p.port, p.uuid || p.password || p.cipher || ''].join('|').toLowerCase();
   if (seen.has(key)) continue;
-  seen.add(key);
-  unique.push(p);
+  seen.add(key); unique.push(p);
 }
 
-// ---------- CI 探活：只剔除 TCP 连不上的死服务器 ----------
-// 注意：GitHub runner 在美国，探不到不代表国内用不了（GFW 只影响国内侧），
-// 所以这里只用来剔除「服务器已经挂了」的节点，不做排序、不做地区判断。
+// ---------- 探活（只剔死服务器） ----------
 async function probeTcp(host, port, timeout = 2500) {
   const net = await import('node:net');
   return new Promise((resolve) => {
@@ -233,29 +173,19 @@ async function probeTcp(host, port, timeout = 2500) {
     s.on('error', () => fin(false));
   });
 }
-
-async function probeAll(list, concurrency = 150) {
-  const flags = new Array(list.length).fill(false);
-  let idx = 0;
-  await Promise.all(Array.from({ length: concurrency }, async () => {
-    while (idx < list.length) {
-      const i = idx++;
-      flags[i] = await probeTcp(list[i].server, list[i].port);
-    }
-  }));
-  return flags;
-}
-
-let alive = unique;
-let probeInfo = { enabled: false };
+let alive = unique; let probeInfo = { enabled: false };
 if (process.env.PROBE !== '0') {
   const t0 = Date.now();
-  const flags = await probeAll(unique);
+  const flags = new Array(unique.length).fill(false);
+  let idx = 0;
+  await Promise.all(Array.from({ length: 150 }, async () => {
+    while (idx < unique.length) { const i = idx++; flags[i] = await probeTcp(unique[i].server, unique[i].port); }
+  }));
   alive = unique.filter((_, i) => flags[i]);
   probeInfo = { enabled: true, probed: unique.length, alive: alive.length, ms: Date.now() - t0 };
 }
 
-// 名字去重
+// ---------- 名字去重 ----------
 const nameCount = new Map();
 for (const p of alive) {
   const n = p.name || 'node';
@@ -264,26 +194,33 @@ for (const p of alive) {
   if (c > 0) p.name = `${n}-${c + 1}`;
 }
 
-const groups = [
-  { name: '🚀 聚合选择', type: 'select', proxies: ['♻️ 自动测速', 'DIRECT'] },
-  { name: '♻️ 自动测速', type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 900, tolerance: 100, lazy: true, proxies: alive.map((p) => p.name) },
-];
+// ---------- 地区归类 ----------
+const regionOf = (name) => {
+  for (const [r, re] of REGIONS) if (re.test(name)) return r;
+  return null;
+};
+const byRegion = {};
+for (const p of alive) {
+  const r = regionOf(p.name);
+  if (!r) continue;
+  (byRegion[r] = byRegion[r] || []).push(p.name);
+}
+
+// ---------- 组装 ----------
+const groups = [];
+groups.push({ name: '🌐 公共节点', type: 'select', proxies: ['♻️ 全部-自动', '☝️ 全部-手动', ...Object.keys(byRegion).filter((r) => byRegion[r].length >= MIN_REGION).map((r) => `📍 ${r}`), 'DIRECT'] });
+groups.push({ name: '♻️ 全部-自动', type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 900, tolerance: 100, lazy: true, proxies: alive.map((p) => p.name) });
+groups.push({ name: '☝️ 全部-手动', type: 'select', proxies: alive.map((p) => p.name) });
+for (const [r, names] of Object.entries(byRegion)) {
+  if (names.length < MIN_REGION) continue;
+  groups.push({ name: `📍 ${r}`, type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 1800, tolerance: 100, lazy: true, proxies: names });
+}
 
 const out = {
-  'mixed-port': 7890,
-  'allow-lan': false,
-  mode: 'rule',
-  'log-level': 'warning',
-  'unified-delay': true,
-  'tcp-concurrent': true,
-  proxies: alive,
-  'proxy-groups': groups,
-  rules: ['MATCH,🚀 聚合选择'],
+  'mixed-port': 7890, 'allow-lan': false, mode: 'rule', 'log-level': 'warning',
+  'unified-delay': true, 'tcp-concurrent': true,
+  proxies: alive, 'proxy-groups': groups, rules: ['MATCH,🌐 公共节点'],
 };
-
-const distDir = new URL('../dist/', import.meta.url);
-fs.mkdirSync(distDir, { recursive: true });
-fs.writeFileSync(new URL('clash.yaml', distDir), yaml.dump(out, { lineWidth: 4096, noRefs: true }));
 
 const summary = {
   generatedAt: new Date().toISOString(),
@@ -291,8 +228,22 @@ const summary = {
   totalUnique: unique.length,
   totalAlive: alive.length,
   probe: probeInfo,
+  regions: Object.fromEntries(Object.entries(byRegion).map(([k, v]) => [k, v.length])),
   byType: alive.reduce((a, p) => ((a[p.type] = (a[p.type] || 0) + 1), a), {}),
   sources: stats,
+  degraded: alive.length < MIN_HEALTHY,
 };
+
+// ---------- 兜底：结果异常时不覆盖线上 ----------
+const distDir = new URL('../dist/', import.meta.url);
+fs.mkdirSync(distDir, { recursive: true });
 fs.writeFileSync(new URL('summary.json', distDir), JSON.stringify(summary, null, 2));
-console.log(JSON.stringify(summary, null, 2));
+
+if (summary.degraded) {
+  console.error(`[GUARD] 可用节点只有 ${alive.length} < ${MIN_HEALTHY}，本次不覆盖线上订阅，保留上一版`);
+  fs.writeFileSync(new URL('clash.candidate.yaml', distDir), yaml.dump(out, { lineWidth: 4096, noRefs: true }));
+} else {
+  fs.writeFileSync(new URL('clash.yaml', distDir), yaml.dump(out, { lineWidth: 4096, noRefs: true }));
+  console.log(`发布 ${alive.length} 节点，地区组 ${Object.keys(byRegion).length} 个`);
+}
+console.log(JSON.stringify({ ...summary, sources: undefined }, null, 2));
