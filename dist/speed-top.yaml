@@ -5,37 +5,19 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: 新西兰+V2CROSS.COM-3
+  - name: '@FarazV2ray-4'
     type: ss
-    server: 202.50.253.27
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    server: 82.38.31.200
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: 🇩🇪DE_1|2.2MB/s
-    password: None
-    port: 443
-    server: 149.36.50.157
-    skip-cert-verify: true
-    tls: true
-    type: http
-  - name: 🇩🇪DE_4|1.6MB/s
-    password: None
-    port: 443
-    server: 149.36.50.129
-    skip-cert-verify: true
-    tls: true
-    type: http
-  - name: US 🇺🇸 | @Raydikalx | 072F29
-    type: vmess
-    server: 162.251.61.46
-    port: 1270
-    uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: xmfhlpy.com
+  - name: HK - zhuhai.uk
+    type: socks5
+    server: 47.242.19.215
+    port: 8899
+    username: admin
+    password: admin
   - name: 🇹🇼_TW_台湾_IPV4
     type: anytls
     server: er8u54dh.df6h451rh.xin
@@ -45,6 +27,19 @@ proxies:
     servername: px.ads.linkedin.com
     sni: px.ads.linkedin.com
     skip-cert-verify: true
+  - name: RO - zhuhai.uk 03
+    type: http
+    server: 193.176.84.31
+    port: 9002
+    tls: true
+    skip-cert-verify: true
+  - name: 🇬🇧GB_1|1023KB/s
+    password: None
+    port: 443
+    server: 84.17.50.193
+    skip-cert-verify: true
+    tls: true
+    type: http
 proxy-groups:
   - name: ⚡ 极速
     type: url-test
@@ -52,10 +47,10 @@ proxy-groups:
     interval: 600
     tolerance: 50
     proxies:
-      - 新西兰+V2CROSS.COM-3
-      - 🇩🇪DE_1|2.2MB/s
-      - 🇩🇪DE_4|1.6MB/s
-      - US 🇺🇸 | @Raydikalx | 072F29
+      - '@FarazV2ray-4'
+      - HK - zhuhai.uk
       - 🇹🇼_TW_台湾_IPV4
+      - RO - zhuhai.uk 03
+      - 🇬🇧GB_1|1023KB/s
 rules:
   - MATCH,⚡ 极速

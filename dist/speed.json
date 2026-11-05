@@ -1,94 +1,92 @@
 {
-  "testedAt": "2026-11-05T17:21:33.278Z",
+  "testedAt": "2026-11-05T23:53:02.640Z",
   "vantage": "GitHub Actions (US)",
   "sample": 24,
   "ok": 5,
-  "medianMbps": 1.171,
+  "medianMbps": 0.968,
   "results": [
     {
-      "name": "0-🏁RELAY-104.18.100.193-4826",
-      "node": "🏁RELAY-104.18.100.193-4826",
+      "name": "0-美国 957",
+      "node": "美国 957",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "1-🧿23@oneclickvpnkeys",
-      "node": "🧿23@oneclickvpnkeys",
+      "name": "1-eric-us",
+      "node": "eric-us",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "2-新西兰+V2CROSS.COM-3",
-      "node": "新西兰+V2CROSS.COM-3",
+      "name": "2-美国 1053",
+      "node": "美国 1053",
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "3-🛖12@oneclickvpnkeys",
+      "node": "🛖12@oneclickvpnkeys",
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "4-@prrofile_purple | 𝗙𝗮𝗦𝗧 💚",
+      "node": "@prrofile_purple | 𝗙𝗮𝗦𝗧 💚",
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "5-@FarazV2ray-4",
+      "node": "@FarazV2ray-4",
       "ok": true,
       "http": "200",
-      "mbps": 0.427,
-      "secs": 4.465681
+      "mbps": 1.267,
+      "secs": 1.504971
     },
     {
-      "name": "3-SG VLESS-16 | free-nodes",
-      "node": "SG VLESS-16 | free-nodes",
+      "name": "6-🇭🇰 HK07|@ripaojiedian",
+      "node": "🇭🇰 HK07|@ripaojiedian",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "4-SG新加坡(v2clash.blog 2026-10.20更",
-      "node": "SG新加坡(v2clash.blog 2026-10.20更",
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "5-🇸🇬 SG03|@ripaojiedian",
-      "node": "🇸🇬 SG03|@ripaojiedian",
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "6-🇩🇪DE_1|2.2MB/s",
-      "node": "🇩🇪DE_1|2.2MB/s",
+      "name": "7-HK - zhuhai.uk",
+      "node": "HK - zhuhai.uk",
       "ok": true,
       "http": "200",
-      "mbps": 1.175,
-      "secs": 1.622823
+      "mbps": 0.968,
+      "secs": 1.971093
     },
     {
-      "name": "7-@V2rayng_Fast 🇩🇪-15",
-      "node": "@V2rayng_Fast 🇩🇪-15",
+      "name": "8-HK 🇭🇰 | @Raydikalx | 692BEC",
+      "node": "HK 🇭🇰 | @Raydikalx | 692BEC",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "8-🇩🇪DE_4|1.6MB/s",
-      "node": "🇩🇪DE_4|1.6MB/s",
-      "ok": true,
-      "http": "200",
-      "mbps": 1.171,
-      "secs": 1.628202
-    },
-    {
-      "name": "9-US美国(v2clash.blog 2026-10.2更新)",
-      "node": "US美国(v2clash.blog 2026-10.2更新)",
+      "name": "9-SG 🇸🇬 | @Raydikalx | 6358C7",
+      "node": "SG 🇸🇬 | @Raydikalx | 6358C7",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "10-US 🇺🇸 | @Raydikalx | 072F29",
-      "node": "US 🇺🇸 | @Raydikalx | 072F29",
-      "ok": true,
-      "http": "200",
-      "mbps": 5.845,
-      "secs": 0.326345
+      "name": "10-🇸🇬[www.v2nodes.com] trojan-S",
+      "node": "🇸🇬[www.v2nodes.com] trojan-S",
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
     },
     {
-      "name": "11-美国 1132",
-      "node": "美国 1132",
+      "name": "11-SG新加坡(v2clash.blog 2026-10.12更",
+      "node": "SG新加坡(v2clash.blog 2026-10.12更",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
@@ -101,8 +99,8 @@
       "mbps": 0
     },
     {
-      "name": "13-TW台湾(v2clash.blog 2026-10.24更新",
-      "node": "TW台湾(v2clash.blog 2026-10.24更新",
+      "name": "13-🇨🇳台湾专线01 gpt专用 ",
+      "node": "🇨🇳台湾专线01 gpt专用 ",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
@@ -112,71 +110,73 @@
       "node": "🇹🇼_TW_台湾_IPV4",
       "ok": true,
       "http": "200",
-      "mbps": 0.159,
-      "secs": 11.983989
+      "mbps": 0.522,
+      "secs": 3.656277
     },
     {
-      "name": "15-🇯🇵 JP01|@ripaojiedian",
+      "name": "15-🇯🇵 JP08|@ripaojiedian",
+      "node": "🇯🇵 JP08|@ripaojiedian",
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "16-🇯🇵 JP01|@ripaojiedian",
       "node": "🇯🇵 JP01|@ripaojiedian",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "16-🇯🇵 JP06|@ripaojiedian",
-      "node": "🇯🇵 JP06|@ripaojiedian",
+      "name": "17-🇯🇵[www.v2nodes.com] vless-JP",
+      "node": "🇯🇵[www.v2nodes.com] vless-JP",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "17-JP 🇯🇵 | @Raydikalx | DDA3E3",
-      "node": "JP 🇯🇵 | @Raydikalx | DDA3E3",
+      "name": "18-🇩🇪[www.v2nodes.com] vless-DE",
+      "node": "🇩🇪[www.v2nodes.com] vless-DE",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "18-🇬🇧telegram➠@v2rayNG_Matsuri-",
-      "node": "🇬🇧telegram➠@v2rayNG_Matsuri-",
+      "name": "19-德国 092",
+      "node": "德国 092",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "19-英国 057",
-      "node": "英国 057",
+      "name": "20-DE 🇩🇪 | @Raydikalx | 53A099",
+      "node": "DE 🇩🇪 | @Raydikalx | 53A099",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "20-🇬🇧[www.v2nodes.com] vless-GB",
-      "node": "🇬🇧[www.v2nodes.com] vless-GB",
+      "name": "21-RO - zhuhai.uk 03",
+      "node": "RO - zhuhai.uk 03",
+      "ok": true,
+      "http": "200",
+      "mbps": 0.492,
+      "secs": 3.874752
+    },
+    {
+      "name": "22-🇬🇧GB-82.38.31.189-0123",
+      "node": "🇬🇧GB-82.38.31.189-0123",
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "21-🇭🇰[www.v2nodes.com] vless-HK",
-      "node": "🇭🇰[www.v2nodes.com] vless-HK",
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "22-HK 🇭🇰 | @Raydikalx | E57D3C",
-      "node": "HK 🇭🇰 | @Raydikalx | E57D3C",
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "23-HK 🇭🇰 | @Raydikalx | CCD2B6",
-      "node": "HK 🇭🇰 | @Raydikalx | CCD2B6",
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
+      "name": "23-🇬🇧GB_1|1023KB/s",
+      "node": "🇬🇧GB_1|1023KB/s",
+      "ok": true,
+      "http": "200",
+      "mbps": 1.275,
+      "secs": 1.496052
     }
   ]
 }
