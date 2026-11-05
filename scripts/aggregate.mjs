@@ -6,7 +6,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
 
-const SOURCES = JSON.parse(fs.readFileSync(new URL('../sources.json', import.meta.url), 'utf8'));
+const loadList = (f) => { try { return JSON.parse(fs.readFileSync(new URL(f, import.meta.url), 'utf8')); } catch { return []; } };
+const curated = loadList('../sources.json');
+const auto = loadList('../sources.auto.json');
+const seenUrl = new Set();
+const SOURCES = [...curated, ...auto].filter((s) => (seenUrl.has(s.url) ? false : (seenUrl.add(s.url), true)));
 
 const UA = 'clash-verge/aggregator (+https://github.com/jingjiangze/node-pool-aggregator)';
 const TIMEOUT_MS = 30000;
