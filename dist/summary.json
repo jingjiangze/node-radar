@@ -1,18 +1,22 @@
 {
-  "generatedAt": "2026-11-05T15:46:45.643Z",
-  "totalRaw": 2919,
-  "totalUnique": 2647,
+  "generatedAt": "2026-11-05T16:16:01.866Z",
+  "totalRaw": 12029,
+  "totalUnique": 8883,
+  "totalAlive": 2665,
+  "probe": {
+    "enabled": true,
+    "probed": 8883,
+    "alive": 2665,
+    "ms": 91656
+  },
   "byType": {
-    "hysteria2": 55,
-    "ss": 56,
-    "vless": 1074,
-    "vmess": 993,
-    "hysteria": 12,
-    "anytls": 2,
-    "trojan": 384,
+    "ss": 158,
+    "vless": 856,
+    "vmess": 1314,
+    "hysteria2": 6,
+    "trojan": 261,
     "http": 68,
-    "socks5": 2,
-    "ssr": 1
+    "ssr": 2
   },
   "sources": [
     {
@@ -34,6 +38,12 @@
       "ok": true
     },
     {
+      "source": "ermaozi01/free_clash_vpn",
+      "kind": "clash-yaml",
+      "count": 28,
+      "ok": true
+    },
+    {
       "source": "anaer/Sub",
       "kind": "clash-yaml",
       "count": 2263,
@@ -49,6 +59,30 @@
       "source": "ripaojiedian/freenode",
       "kind": "clash-yaml",
       "count": 83,
+      "ok": true
+    },
+    {
+      "source": "vxiaov/free_proxies",
+      "kind": "clash-yaml",
+      "count": 28,
+      "ok": true
+    },
+    {
+      "source": "ts-sf/fly",
+      "kind": "clash-yaml",
+      "count": 200,
+      "ok": true
+    },
+    {
+      "source": "ALIILAPRO/v2rayNG-Config",
+      "kind": "uri-list",
+      "count": 4322,
+      "ok": true
+    },
+    {
+      "source": "mahdibland/V2RayAggregator",
+      "kind": "uri-list",
+      "count": 4532,
       "ok": true
     }
   ]
