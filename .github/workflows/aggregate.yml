@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   build:
@@ -47,14 +48,24 @@ jobs:
         run: |
           curl -s -m 30 "https://purge.jsdelivr.net/gh/jingjiangze/node-radar@main/dist/clash.yaml" || true
 
+      # 状态持久化：源健康度跨运行累积，否则「连续失败 3 次剔除」形同虚设
       - name: Publish dist back to repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p dist
           git add -f dist/clash.yaml dist/summary.json
+          [ -f sources.health.json ] && git add -f sources.health.json || true
           git diff --cached --quiet || git commit -m "chore: update aggregated subscription"
           git push
+
+      # 冒烟：发布后再从公网取一次，确认线上就是这份
+      - name: Smoke test published file
+        run: |
+          set -e
+          sleep 5
+          curl -fsSL -m 60 -o published.yaml "https://raw.githubusercontent.com/jingjiangze/node-radar/main/dist/clash.yaml"
+          ./mihomo -t -d . -f published.yaml && echo "published OK ($(wc -c < published.yaml) bytes)"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -76,3 +87,32 @@ jobs:
             }).then(async (r) => { if (!r.ok) { console.error(await r.text()); process.exit(1); } })
               .catch((e) => { console.error(e); process.exit(1); });
           '
+
+  notify:
+    needs: build
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '[auto] 聚合流水线失败';
+            const body = [
+              '聚合任务失败，线上订阅保持上一版未覆盖。',
+              '',
+              `- 运行：${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              `- 触发：${context.eventName}`,
+              '',
+              '常见原因：某个源返回异常内容导致内核校验不通过（守卫生效，未发布）。',
+            ].join('\n');
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'pipeline',
+            });
+            const exist = issues.data.find(i => i.title === title);
+            if (exist) {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: exist.number, body });
+            } else {
+              await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels: ['pipeline'] });
+            }
