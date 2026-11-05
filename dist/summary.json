@@ -1,23 +1,24 @@
 {
-  "generatedAt": "2026-11-05T16:38:48.528Z",
-  "totalRaw": 12029,
-  "totalUnique": 8883,
-  "totalAlive": 2666,
+  "generatedAt": "2026-11-05T16:48:34.910Z",
+  "totalRaw": 21836,
+  "totalUnique": 15045,
+  "totalAlive": 4237,
   "probe": {
     "enabled": true,
-    "probed": 8883,
-    "alive": 2666,
-    "ms": 91943
+    "probed": 15045,
+    "alive": 4237,
+    "ms": 160534
   },
   "byType": {
-    "ss": 158,
-    "vless": 855,
-    "vmess": 1315,
+    "ss": 210,
+    "vless": 2218,
+    "vmess": 1320,
     "anytls": 1,
-    "hysteria2": 6,
-    "trojan": 261,
-    "http": 68,
-    "ssr": 2
+    "hysteria2": 22,
+    "trojan": 373,
+    "http": 88,
+    "ssr": 2,
+    "socks5": 3
   },
   "sources": [
     {
@@ -84,6 +85,18 @@
       "source": "mahdibland/V2RayAggregator",
       "kind": "uri-list",
       "count": 4532,
+      "ok": true
+    },
+    {
+      "source": "zhuhaiuk/free-nodes",
+      "kind": "clash-yaml",
+      "count": 30,
+      "ok": true
+    },
+    {
+      "source": "LinVireo/SmartSub",
+      "kind": "uri-list",
+      "count": 9777,
       "ok": true
     }
   ]
