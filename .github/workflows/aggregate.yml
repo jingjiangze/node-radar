@@ -1,0 +1,59 @@
+name: aggregate-nodes
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # 每 6 小时
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GIST_ID: ${{ secrets.GIST_ID }}
+      GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: node scripts/aggregate.mjs
+
+      - name: Show summary
+        run: cat dist/summary.json
+
+      # 私有交付方式一：Actions Artifact（默认仅仓库有权限者可下载）
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: subscription
+          path: dist/clash.yaml
+          retention-days: 14
+
+      # 私有交付方式二（可选）：更新 Secret Gist，需配置 GIST_ID / GIST_TOKEN 两个 secret
+      - name: Publish to secret gist
+        if: env.GIST_ID != '' && env.GIST_TOKEN != ''
+        run: |
+          node -e '
+            const fs = require("fs");
+            const body = { files: { "clash.yaml": { content: fs.readFileSync("dist/clash.yaml", "utf8") } } };
+            fetch(`https://api.github.com/gists/${process.env.GIST_ID}`, {
+              method: "PATCH",
+              headers: {
+                Authorization: `Bearer ${process.env.GIST_TOKEN}`,
+                "Content-Type": "application/json",
+                "User-Agent": "node-pool-aggregator-ci"
+              },
+              body: JSON.stringify(body)
+            }).then(async (r) => {
+              const t = await r.text();
+              console.log("gist status", r.status, t.slice(0, 200));
+              if (!r.ok) process.exit(1);
+            }).catch((e) => { console.error(e); process.exit(1); });
+          '

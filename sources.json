@@ -1,0 +1,8 @@
+[
+  { "name": "Pawdroid/Free-servers",            "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub" },
+  { "name": "aiboboxx/v2rayfree",               "url": "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/sub" },
+  { "name": "ermaozi/get_subscribe",            "url": "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml" },
+  { "name": "anaer/Sub",                        "url": "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml" },
+  { "name": "peasoft/NoMoreWalls",              "url": "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml" },
+  { "name": "ripaojiedian/freenode",            "url": "https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash" }
+]
