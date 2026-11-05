@@ -1,0 +1,33 @@
+name: discover-sources
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"   # 每周一 11:00（北京）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Discover new sources
+        run: node scripts/discover.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f sources.auto.json
+          git diff --cached --quiet || git commit -m "chore: 自动发现新增公开源"
+          git push
+      - name: Show result
+        run: node -e "const s=require('./sources.auto.json');console.log('auto sources:',s.length)"
