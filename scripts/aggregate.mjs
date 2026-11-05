@@ -215,9 +215,45 @@ for (const p of collected) {
   unique.push(p);
 }
 
+// ---------- CI 探活：只剔除 TCP 连不上的死服务器 ----------
+// 注意：GitHub runner 在美国，探不到不代表国内用不了（GFW 只影响国内侧），
+// 所以这里只用来剔除「服务器已经挂了」的节点，不做排序、不做地区判断。
+async function probeTcp(host, port, timeout = 2500) {
+  const net = await import('node:net');
+  return new Promise((resolve) => {
+    const s = net.connect({ host, port });
+    let done = false;
+    const fin = (ok) => { if (done) return; done = true; s.destroy(); resolve(ok); };
+    s.setTimeout(timeout, () => fin(false));
+    s.on('connect', () => fin(true));
+    s.on('error', () => fin(false));
+  });
+}
+
+async function probeAll(list, concurrency = 150) {
+  const flags = new Array(list.length).fill(false);
+  let idx = 0;
+  await Promise.all(Array.from({ length: concurrency }, async () => {
+    while (idx < list.length) {
+      const i = idx++;
+      flags[i] = await probeTcp(list[i].server, list[i].port);
+    }
+  }));
+  return flags;
+}
+
+let alive = unique;
+let probeInfo = { enabled: false };
+if (process.env.PROBE !== '0') {
+  const t0 = Date.now();
+  const flags = await probeAll(unique);
+  alive = unique.filter((_, i) => flags[i]);
+  probeInfo = { enabled: true, probed: unique.length, alive: alive.length, ms: Date.now() - t0 };
+}
+
 // 名字去重
 const nameCount = new Map();
-for (const p of unique) {
+for (const p of alive) {
   const n = p.name || 'node';
   const c = nameCount.get(n) || 0;
   nameCount.set(n, c + 1);
@@ -226,7 +262,7 @@ for (const p of unique) {
 
 const groups = [
   { name: '🚀 聚合选择', type: 'select', proxies: ['♻️ 自动测速', 'DIRECT'] },
-  { name: '♻️ 自动测速', type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 900, tolerance: 100, lazy: true, proxies: unique.map((p) => p.name) },
+  { name: '♻️ 自动测速', type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 900, tolerance: 100, lazy: true, proxies: alive.map((p) => p.name) },
 ];
 
 const out = {
@@ -236,7 +272,7 @@ const out = {
   'log-level': 'warning',
   'unified-delay': true,
   'tcp-concurrent': true,
-  proxies: unique,
+  proxies: alive,
   'proxy-groups': groups,
   rules: ['MATCH,🚀 聚合选择'],
 };
@@ -249,7 +285,9 @@ const summary = {
   generatedAt: new Date().toISOString(),
   totalRaw: collected.length,
   totalUnique: unique.length,
-  byType: unique.reduce((a, p) => ((a[p.type] = (a[p.type] || 0) + 1), a), {}),
+  totalAlive: alive.length,
+  probe: probeInfo,
+  byType: alive.reduce((a, p) => ((a[p.type] = (a[p.type] || 0) + 1), a), {}),
   sources: stats,
 };
 fs.writeFileSync(new URL('summary.json', distDir), JSON.stringify(summary, null, 2));
