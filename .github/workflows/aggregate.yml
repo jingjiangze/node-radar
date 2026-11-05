@@ -26,7 +26,26 @@ jobs:
       - run: node scripts/aggregate.mjs
 
       - name: Show summary
-        run: cat dist/summary.json
+        run: node -e "const s=require('./dist/summary.json');console.log('alive',s.totalAlive,'degraded',s.degraded,'regions',JSON.stringify(s.regions))"
+
+      - name: Install mihomo (for validation)
+        run: |
+          set -e
+          URL=$(curl -sSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+            | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
+          curl -sSL -o mihomo.gz "$URL" && gunzip -f mihomo.gz && chmod +x mihomo
+
+      # 关键兜底：生成物必须能被内核加载，否则不发布（不提交、不覆盖线上）
+      - name: Validate generated config
+        run: |
+          set -e
+          if [ -f dist/clash.yaml ]; then ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"; fi
+          if [ -f dist/speed-top.yaml ]; then ./mihomo -t -d . -f dist/speed-top.yaml && echo "speed-top.yaml OK"; fi
+
+      - name: Purge jsDelivr cache
+        run: |
+          curl -s -m 30 "https://purge.jsdelivr.net/gh/jingjiangze/node-radar@main/dist/clash.yaml" || true
 
       - name: Publish dist back to repo
         run: |
@@ -37,10 +56,6 @@ jobs:
           git diff --cached --quiet || git commit -m "chore: update aggregated subscription"
           git push
 
-      - name: Purge jsDelivr cache
-        run: curl -s -m 30 "https://purge.jsdelivr.net/gh/jingjiangze/node-radar@main/dist/clash.yaml" || true
-
-      # 私有交付方式一：Actions Artifact（默认仅仓库有权限者可下载）
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -48,7 +63,6 @@ jobs:
           path: dist/clash.yaml
           retention-days: 14
 
-      # 私有交付方式二（可选）：更新 Secret Gist，需配置 GIST_ID / GIST_TOKEN 两个 secret
       - name: Publish to secret gist
         if: env.GIST_ID != '' && env.GIST_TOKEN != ''
         run: |
@@ -57,15 +71,8 @@ jobs:
             const body = { files: { "clash.yaml": { content: fs.readFileSync("dist/clash.yaml", "utf8") } } };
             fetch(`https://api.github.com/gists/${process.env.GIST_ID}`, {
               method: "PATCH",
-              headers: {
-                Authorization: `Bearer ${process.env.GIST_TOKEN}`,
-                "Content-Type": "application/json",
-                "User-Agent": "node-pool-aggregator-ci"
-              },
+              headers: { Authorization: `Bearer ${process.env.GIST_TOKEN}`, "Content-Type": "application/json", "User-Agent": "node-radar-ci" },
               body: JSON.stringify(body)
-            }).then(async (r) => {
-              const t = await r.text();
-              console.log("gist status", r.status, t.slice(0, 200));
-              if (!r.ok) process.exit(1);
-            }).catch((e) => { console.error(e); process.exit(1); });
+            }).then(async (r) => { if (!r.ok) { console.error(await r.text()); process.exit(1); } })
+              .catch((e) => { console.error(e); process.exit(1); });
           '
