@@ -1,18 +1,19 @@
 {
-  "generatedAt": "2026-11-05T16:16:01.866Z",
+  "generatedAt": "2026-11-05T16:38:48.528Z",
   "totalRaw": 12029,
   "totalUnique": 8883,
-  "totalAlive": 2665,
+  "totalAlive": 2666,
   "probe": {
     "enabled": true,
     "probed": 8883,
-    "alive": 2665,
-    "ms": 91656
+    "alive": 2666,
+    "ms": 91943
   },
   "byType": {
     "ss": 158,
-    "vless": 856,
-    "vmess": 1314,
+    "vless": 855,
+    "vmess": 1315,
+    "anytls": 1,
     "hysteria2": 6,
     "trojan": 261,
     "http": 68,
