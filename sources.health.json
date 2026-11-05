@@ -1,0 +1,67 @@
+{
+  "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:38.357Z"
+  },
+  "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/sub": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:38.428Z"
+  },
+  "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:38.623Z"
+  },
+  "https://raw.githubusercontent.com/ermaozi01/free_clash_vpn/main/subscribe/clash.yml": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:38.692Z"
+  },
+  "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:38.841Z"
+  },
+  "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:38.900Z"
+  },
+  "https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:38.922Z"
+  },
+  "https://raw.githubusercontent.com/vxiaov/free_proxies/main/clash/clash.provider.yaml": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:38.994Z"
+  },
+  "https://raw.githubusercontent.com/ts-sf/fly/main/clash": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:39.065Z"
+  },
+  "https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:39.471Z"
+  },
+  "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:39.739Z"
+  },
+  "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/clash_config.yaml": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:39.803Z"
+  },
+  "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt": {
+    "fails": 0,
+    "ok": true,
+    "at": "2026-11-05T17:51:40.326Z"
+  }
+}
