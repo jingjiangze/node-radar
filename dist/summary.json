@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-11-05T15:46:45.643Z",
+  "totalRaw": 2919,
+  "totalUnique": 2647,
+  "byType": {
+    "hysteria2": 55,
+    "ss": 56,
+    "vless": 1074,
+    "vmess": 993,
+    "hysteria": 12,
+    "anytls": 2,
+    "trojan": 384,
+    "http": 68,
+    "socks5": 2,
+    "ssr": 1
+  },
+  "sources": [
+    {
+      "source": "Pawdroid/Free-servers",
+      "kind": "uri-list",
+      "count": 9,
+      "ok": true
+    },
+    {
+      "source": "aiboboxx/v2rayfree",
+      "kind": "uri-list",
+      "count": 100,
+      "ok": true
+    },
+    {
+      "source": "ermaozi/get_subscribe",
+      "kind": "clash-yaml",
+      "count": 370,
+      "ok": true
+    },
+    {
+      "source": "anaer/Sub",
+      "kind": "clash-yaml",
+      "count": 2263,
+      "ok": true
+    },
+    {
+      "source": "peasoft/NoMoreWalls",
+      "kind": "clash-yaml",
+      "count": 94,
+      "ok": true
+    },
+    {
+      "source": "ripaojiedian/freenode",
+      "kind": "clash-yaml",
+      "count": 83,
+      "ok": true
+    }
+  ]
+}
