@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-11-05T23:15:08.581Z",
-  "totalRaw": 20298,
-  "totalUnique": 14277,
-  "totalAlive": 4035,
+  "generatedAt": "2026-11-06T03:05:33.255Z",
+  "totalRaw": 20297,
+  "totalUnique": 14278,
+  "totalAlive": 3999,
   "probe": {
     "enabled": true,
-    "probed": 14277,
-    "alive": 4035,
-    "ms": 151513
+    "probed": 14278,
+    "alive": 3999,
+    "ms": 151593
   },
   "regions": {
-    "美国": 946,
-    "香港": 32,
-    "新加坡": 52,
-    "台湾": 4,
-    "日本": 51,
-    "德国": 138,
-    "英国": 100,
-    "韩国": 22
+    "美国": 962,
+    "香港": 26,
+    "新加坡": 49,
+    "台湾": 5,
+    "日本": 44,
+    "德国": 134,
+    "英国": 95,
+    "韩国": 21
   },
   "byType": {
-    "trojan": 368,
-    "ss": 214,
-    "vless": 2000,
-    "vmess": 1341,
+    "ss": 208,
+    "vless": 1935,
     "anytls": 1,
-    "hysteria2": 21,
-    "http": 85,
+    "hysteria2": 22,
+    "trojan": 369,
+    "http": 125,
+    "vmess": 1335,
     "ssr": 2,
-    "socks5": 3
+    "socks5": 2
   },
   "sources": [
     {
@@ -40,13 +40,13 @@
     {
       "source": "aiboboxx/v2rayfree",
       "kind": "uri-list",
-      "count": 100,
+      "count": 95,
       "ok": true
     },
     {
       "source": "ermaozi/get_subscribe",
       "kind": "clash-yaml",
-      "count": 370,
+      "count": 429,
       "ok": true
     },
     {
@@ -70,7 +70,7 @@
     {
       "source": "ripaojiedian/freenode",
       "kind": "clash-yaml",
-      "count": 83,
+      "count": 20,
       "ok": true
     },
     {
@@ -88,7 +88,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4270,
+      "count": 4278,
       "ok": true
     },
     {

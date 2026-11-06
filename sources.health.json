@@ -2,66 +2,66 @@
   "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:35.238Z"
+    "at": "2026-11-06T03:03:00.544Z"
   },
   "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/sub": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:35.325Z"
+    "at": "2026-11-06T03:03:00.597Z"
   },
   "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:35.430Z"
+    "at": "2026-11-06T03:03:00.705Z"
   },
   "https://raw.githubusercontent.com/ermaozi01/free_clash_vpn/main/subscribe/clash.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:35.501Z"
+    "at": "2026-11-06T03:03:00.714Z"
   },
   "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:35.657Z"
+    "at": "2026-11-06T03:03:00.815Z"
   },
   "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:35.761Z"
+    "at": "2026-11-06T03:03:00.844Z"
   },
   "https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:35.786Z"
+    "at": "2026-11-06T03:03:00.868Z"
   },
   "https://raw.githubusercontent.com/vxiaov/free_proxies/main/clash/clash.provider.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:35.864Z"
+    "at": "2026-11-06T03:03:00.876Z"
   },
   "https://raw.githubusercontent.com/ts-sf/fly/main/clash": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:35.935Z"
+    "at": "2026-11-06T03:03:00.950Z"
   },
   "https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:36.243Z"
+    "at": "2026-11-06T03:03:01.045Z"
   },
   "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:36.367Z"
+    "at": "2026-11-06T03:03:01.121Z"
   },
   "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/clash_config.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:36.430Z"
+    "at": "2026-11-06T03:03:01.175Z"
   },
   "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-05T23:12:37.030Z"
+    "at": "2026-11-06T03:03:01.620Z"
   }
 }
