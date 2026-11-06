@@ -157,6 +157,15 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
+    encryption: none
+    network: tcp
+    port: 47878
+    server: 152.69.195.67
+    servername: 152.69.195.67
+    tls: false
+    type: vless
+    uuid: eb8613e3-8393-4cff-a3ad-6501fd4adc63
   - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
     network: ws
     port: 8080
@@ -183,6 +192,15 @@ proxies:
       headers:
         Host: notls.lukongtou.eu.org
       path: Telegram-WangCai2🇨🇳
+  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
+    client-fingerprint: firefox
+    network: tcp
+    port: 443
+    server: 45.76.155.179
+    servername: sg003.zestapp778.com
+    tls: true
+    type: vless
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
   - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #9'
     client-fingerprint: chrome
     encryption: none
@@ -269,6 +287,12 @@ proxies:
     password: shadowsocks
     port: 443
     server: 149.22.87.240
+    type: ss
+  - name: 🇰🇷[www.v2nodes.com] ss-KR-1185...
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    port: 8888
+    server: 141.164.45.187
     type: ss
   - name: 🇸🇬[www.v2nodes.com] trojan-SG-...
     password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
@@ -379,17 +403,6 @@ proxies:
       headers:
         Host: n.bitpulse.me
     udp: true
-  - name: 德国 001
-    type: vless
-    network: ws
-    server: 84.235.244.108
-    port: 22573
-    uuid: 39947382-3212-41c9-bc3a-589574ac8b23
-    tls: false
-    ws-opts:
-      headers:
-        Host: uae.unixzone.us
-      path: /
   - name: 日本 002
     type: vmess
     network: ws
@@ -403,20 +416,6 @@ proxies:
     ws-opts:
       headers:
         Host: 168.138.43.75
-      path: /
-  - name: 韩国 001
-    type: vmess
-    network: ws
-    server: 132.145.80.230
-    port: 80
-    uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-    skip-cert-verify: false
-    tls: false
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: kr02.a0a.xyz
       path: /
   - name: 新加坡 002
     type: trojan
@@ -844,6 +843,24 @@ proxies:
     skip-cert-verify: true
     alterId: 0
     cipher: auto
+  - name: 德国 025
+    type: vmess
+    network: http
+    server: 94.130.25.155
+    port: 443
+    uuid: 6b7cbc41-fb80-41a8-8eb6-b5bdb0e86147
+    skip-cert-verify: true
+    alterId: 0
+    cipher: auto
+  - name: 德国 026
+    type: vmess
+    network: http
+    server: 167.235.136.155
+    port: 443
+    uuid: 6b7cbc41-fb80-41a8-8eb6-b5bdb0e86147
+    skip-cert-verify: true
+    alterId: 0
+    cipher: auto
   - name: 新加坡 021
     type: vless
     network: ws
@@ -957,7 +974,7 @@ proxies:
       headers:
         Host: pan1.global.ssl.fastly.net
       path: /
-  - name: 🇰🇷[www.v2nodes.com] ss-KR-1185...
+  - name: 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
     cipher: aes-256-gcm
     password: Y6R9pAtvxxzmGC
     port: 9090
@@ -1379,19 +1396,6 @@ proxies:
     udp: true
     tls: true
     servername: xmfhlpy.com
-  - name: HK 🇭🇰 | @Raydikalx | F125F6
-    type: vmess
-    server: 156.245.232.239
-    port: 35043
-    uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: 156.245.232.239
   - name: SG 🇸🇬 | @Raydikalx | 7E884C
     type: vmess
     server: 159.223.94.156
@@ -1715,16 +1719,6 @@ proxies:
     udp: true
     tls: true
     servername: 185.204.168.28
-  - name: DE 🇩🇪 | @Raydikalx | 5E3474
-    type: vmess
-    server: 185.204.170.130
-    port: 443
-    uuid: b8136e5f-8ece-4a06-99af-5a207c749bc4
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: 185.204.170.130
   - name: GB 🇬🇧 | @Raydikalx | 6B4B20
     type: vmess
     server: 185.92.74.108
@@ -2321,6 +2315,14 @@ proxies:
       path: /api/v1/gpu-stream/socket
       headers:
         Host: renderer-stream-2-62.mirra.now
+  - name: GB 🇬🇧 | @Raydikalx | 64442B
+    type: vmess
+    server: 51.132.38.134
+    port: 47832
+    uuid: 859cb52d-0a26-4b2f-a9b1-0eb83115c9d1
+    alterId: 0
+    cipher: auto
+    udp: true
   - name: GB 🇬🇧 | @Raydikalx | 4DE8B6
     type: vmess
     server: 51.38.71.147
@@ -2729,23 +2731,9 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: 🇬🇧GB-82.38.31.206-0152
-    type: ss
-    server: 82.38.31.206
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
   - name: 🇬🇧GB-82.38.31.181-0150
     type: ss
     server: 82.38.31.181
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.207-0160
-    type: ss
-    server: 82.38.31.207
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -2854,13 +2842,6 @@ proxies:
     port: 6123
     cipher: aes-256-cfb
     password: qwerREWQ@@
-    udp: true
-  - name: 🇰🇷KR-141.164.45.187-0233
-    type: ss
-    server: 141.164.45.187
-    port: 8000
-    cipher: aes-256-gcm
-    password: KixLvKzwjekG00rm
     udp: true
   - name: 🇰🇷KR-141.164.45.187-5935
     type: ss
@@ -3229,32 +3210,25 @@ proxies:
   - name: 🇰🇷 Seoul, 11, South Korea
     type: ss
     server: 141.164.45.187
-    port: 7002
-    cipher: aes-256-gcm
-    password: RexnBgU7EV5ADxG
-    udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-2
-    type: ss
-    server: 141.164.45.187
     port: 6679
     cipher: aes-256-gcm
     password: TEzjfAYq2IjtuoS
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-3
+  - name: 🇰🇷 Seoul, 11, South Korea-2
     type: ss
     server: 141.164.45.187
     port: 8008
     cipher: aes-256-gcm
     password: XKFKl2rULjIp74
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-4
+  - name: 🇰🇷 Seoul, 11, South Korea-3
     type: ss
     server: 141.164.45.187
     port: 5001
     cipher: aes-256-gcm
     password: Y6R9pAtvxxzmGC
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-5
+  - name: 🇰🇷 Seoul, 11, South Korea-4
     type: ss
     server: 141.164.45.187
     port: 8119
@@ -3960,6 +3934,18 @@ proxies:
       path: /
       headers:
         Host: vms.lifetime29.workers.dev
+  - name: '[zhuhaiuk#014] JP - zhuhai.uk'
+    type: vless
+    server: 106.75.143.18
+    port: 5000
+    uuid: e4e2afbe-1a21-4ca2-a22f-b5417e825687
+    udp: true
+    tls: true
+    servername: buylite.tv.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: _9RItE-b_UsAMkpTgMAJhaiXBl5AUP7jF-OfCDLXKQg
+      short-id: 0c053931
   - name: '[zhuhaiuk#015] JP - zhuhai.uk 02'
     type: vless
     server: 106.75.143.18
@@ -3972,18 +3958,6 @@ proxies:
     reality-opts:
       public-key: jW2ybiAJXOlwel1NPLI6Kmzj7rjSiAyvqiatDlUq6So
       short-id: cde516c9
-  - name: '[zhuhaiuk#018] SG - zhuhai.uk 02'
-    type: vless
-    server: 106.75.143.18
-    port: 4022
-    uuid: e4e2afbe-1a21-4ca2-a22f-b5417e825687
-    udp: true
-    tls: true
-    servername: buylite.tv.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 2g8FZHxPWjphq568-OS8ypk7qb76HiMhWua0UAJfOl8
-      short-id: ace0f99d
   - name: '[free18#025] 🇬🇧_英国 (3)'
     type: vless
     server: 129.151.64.169
@@ -4318,6 +4292,18 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: TunService
+  - name: 14 🇬🇧 британия | mega vpn @vpnsmegabot
+    type: vless
+    server: 82.148.225.244
+    port: 8443
+    uuid: 0fdb1df7-b3b6-4d29-9fd6-2b92fc80b852
+    udp: true
+    tls: true
+    servername: sw2.cloudvienta.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: ndIKnA3ySMv5vBJ-OfP8IhFWVu7mtK0nzhgSil1NaVg
+      short-id: 00f7359d92c884cc
   - name: JP - zhuhai.uk
     type: http
     server: 120.232.204.58
@@ -4468,8 +4454,10 @@ proxy-groups:
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #9'
       - 🇸🇬[www.v2nodes.com] vless-SG-9...
       - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
@@ -4479,6 +4467,7 @@ proxy-groups:
       - 🇯🇵[www.v2nodes.com] ss-JP-1544...
       - 🇯🇵[www.v2nodes.com] ss-JP-5141...
       - 🇯🇵[www.v2nodes.com] ss-JP-1291...
+      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
       - 🇸🇬[www.v2nodes.com] trojan-SG-...
       - '🇸🇬[www.v2nodes.com] trojan-SG-... #1'
       - 🇸🇬SG_1|1.3MB/s
@@ -4489,9 +4478,7 @@ proxy-groups:
       - '🇭🇰 香港 | HKG #3'
       - ProxyPool | 🇩🇪 德国 | DEU 2
       - ProxyPool | 🇺🇸 美国 | USA 7
-      - 德国 001
       - 日本 002
-      - 韩国 001
       - 新加坡 002
       - 日本 004
       - 日本 005
@@ -4524,6 +4511,8 @@ proxy-groups:
       - 英国 036
       - 新加坡 017
       - 德国 023
+      - 德国 025
+      - 德国 026
       - 新加坡 021
       - 英国 041
       - 英国 049
@@ -4532,7 +4521,7 @@ proxy-groups:
       - 日本 055
       - 英国 060
       - 日本 056
-      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
+      - 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
       - 🇭🇰 HK3@ripaojiedian
@@ -4566,7 +4555,6 @@ proxy-groups:
       - US 🇺🇸 | @Raydikalx | 737919
       - US 🇺🇸 | @Raydikalx | 375870
       - SG 🇸🇬 | @Raydikalx | 77AF8A
-      - HK 🇭🇰 | @Raydikalx | F125F6
       - SG 🇸🇬 | @Raydikalx | 7E884C
       - US 🇺🇸 | @Raydikalx | A21CA4
       - DE 🇩🇪 | @Raydikalx | 6CC48B
@@ -4598,7 +4586,6 @@ proxy-groups:
       - GB 🇬🇧 | @Raydikalx | A18C31
       - DE 🇩🇪 | @Raydikalx | B8E86A
       - DE 🇩🇪 | @Raydikalx | 831F91
-      - DE 🇩🇪 | @Raydikalx | 5E3474
       - GB 🇬🇧 | @Raydikalx | 6B4B20
       - GB 🇬🇧 | @Raydikalx | CE841E
       - US 🇺🇸 | @Raydikalx | 7CD213
@@ -4649,6 +4636,7 @@ proxy-groups:
       - HK 🇭🇰 | @Raydikalx | BB18E3
       - HK 🇭🇰 | @Raydikalx | 3F1EE8
       - DE 🇩🇪 | @Raydikalx | 29DD5D
+      - GB 🇬🇧 | @Raydikalx | 64442B
       - GB 🇬🇧 | @Raydikalx | 4DE8B6
       - DE 🇩🇪 | @Raydikalx | 4C5D05
       - US 🇺🇸 | @Raydikalx | 77BD3A
@@ -4683,9 +4671,7 @@ proxy-groups:
       - 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
       - 🇬🇧GB-82.38.31.203-0177
       - 🇬🇧GB-82.38.31.186-0170
-      - 🇬🇧GB-82.38.31.206-0152
       - 🇬🇧GB-82.38.31.181-0150
-      - 🇬🇧GB-82.38.31.207-0160
       - 🇬🇧GB-82.38.31.194-0287
       - 🇬🇧GB-82.38.31.192-0168
       - 🇬🇧GB-82.38.31.191-0159
@@ -4701,7 +4687,6 @@ proxy-groups:
       - 🇬🇧GB-82.38.31.162-0220
       - 🇬🇧GB-82.38.31.180-0155
       - 🇰🇷KR-211.178.105.134-0226
-      - 🇰🇷KR-141.164.45.187-0233
       - 🇰🇷KR-141.164.45.187-5935
       - 🇬🇧GB-82.38.31.199-0236
       - 🇬🇧GB-82.38.31.176-0323
@@ -4750,7 +4735,6 @@ proxy-groups:
       - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
       - 🇰🇷 Seoul, 11, South Korea-4
-      - 🇰🇷 Seoul, 11, South Korea-5
       - GB英国(v2clash.blog 2026-10.13更新)
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '@V2rayng_Fast 🇩🇪'
@@ -4847,8 +4831,8 @@ proxy-groups:
       - '[NoMoreWalls#103] 🇯🇵[www.v2nodes.com] vless-JP-1... #3'
       - '[NoMoreWalls#133] 🇹🇼[www.v2nodes.com] vless-TW-1...'
       - '[AutoMerge#001] 🇸🇬SG_1|1.4MB/s'
+      - '[zhuhaiuk#014] JP - zhuhai.uk'
       - '[zhuhaiuk#015] JP - zhuhai.uk 02'
-      - '[zhuhaiuk#018] SG - zhuhai.uk 02'
       - '[free18#025] 🇬🇧_英国 (3)'
       - '[free18#026] 🇩🇪_德国 (2)'
       - '[free18#031] 🇩🇪_德国 (3)'
@@ -4881,6 +4865,7 @@ proxy-groups:
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #10'
       - 03 🇬🇧 британия | Белые списки | mega vpn @vpnsmegabot
       - 09 🇩🇪 германия | mega vpn @vpnsmegabot
+      - 14 🇬🇧 британия | mega vpn @vpnsmegabot
       - JP - zhuhai.uk
       - LT - zhuhai.uk
       - ID - zhuhai.uk
@@ -4916,8 +4901,10 @@ proxy-groups:
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #9'
       - 🇸🇬[www.v2nodes.com] vless-SG-9...
       - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
@@ -4927,6 +4914,7 @@ proxy-groups:
       - 🇯🇵[www.v2nodes.com] ss-JP-1544...
       - 🇯🇵[www.v2nodes.com] ss-JP-5141...
       - 🇯🇵[www.v2nodes.com] ss-JP-1291...
+      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
       - 🇸🇬[www.v2nodes.com] trojan-SG-...
       - '🇸🇬[www.v2nodes.com] trojan-SG-... #1'
       - 🇸🇬SG_1|1.3MB/s
@@ -4937,9 +4925,7 @@ proxy-groups:
       - '🇭🇰 香港 | HKG #3'
       - ProxyPool | 🇩🇪 德国 | DEU 2
       - ProxyPool | 🇺🇸 美国 | USA 7
-      - 德国 001
       - 日本 002
-      - 韩国 001
       - 新加坡 002
       - 日本 004
       - 日本 005
@@ -4972,6 +4958,8 @@ proxy-groups:
       - 英国 036
       - 新加坡 017
       - 德国 023
+      - 德国 025
+      - 德国 026
       - 新加坡 021
       - 英国 041
       - 英国 049
@@ -4980,7 +4968,7 @@ proxy-groups:
       - 日本 055
       - 英国 060
       - 日本 056
-      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
+      - 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
       - 🇭🇰 HK3@ripaojiedian
@@ -5014,7 +5002,6 @@ proxy-groups:
       - US 🇺🇸 | @Raydikalx | 737919
       - US 🇺🇸 | @Raydikalx | 375870
       - SG 🇸🇬 | @Raydikalx | 77AF8A
-      - HK 🇭🇰 | @Raydikalx | F125F6
       - SG 🇸🇬 | @Raydikalx | 7E884C
       - US 🇺🇸 | @Raydikalx | A21CA4
       - DE 🇩🇪 | @Raydikalx | 6CC48B
@@ -5046,7 +5033,6 @@ proxy-groups:
       - GB 🇬🇧 | @Raydikalx | A18C31
       - DE 🇩🇪 | @Raydikalx | B8E86A
       - DE 🇩🇪 | @Raydikalx | 831F91
-      - DE 🇩🇪 | @Raydikalx | 5E3474
       - GB 🇬🇧 | @Raydikalx | 6B4B20
       - GB 🇬🇧 | @Raydikalx | CE841E
       - US 🇺🇸 | @Raydikalx | 7CD213
@@ -5097,6 +5083,7 @@ proxy-groups:
       - HK 🇭🇰 | @Raydikalx | BB18E3
       - HK 🇭🇰 | @Raydikalx | 3F1EE8
       - DE 🇩🇪 | @Raydikalx | 29DD5D
+      - GB 🇬🇧 | @Raydikalx | 64442B
       - GB 🇬🇧 | @Raydikalx | 4DE8B6
       - DE 🇩🇪 | @Raydikalx | 4C5D05
       - US 🇺🇸 | @Raydikalx | 77BD3A
@@ -5131,9 +5118,7 @@ proxy-groups:
       - 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
       - 🇬🇧GB-82.38.31.203-0177
       - 🇬🇧GB-82.38.31.186-0170
-      - 🇬🇧GB-82.38.31.206-0152
       - 🇬🇧GB-82.38.31.181-0150
-      - 🇬🇧GB-82.38.31.207-0160
       - 🇬🇧GB-82.38.31.194-0287
       - 🇬🇧GB-82.38.31.192-0168
       - 🇬🇧GB-82.38.31.191-0159
@@ -5149,7 +5134,6 @@ proxy-groups:
       - 🇬🇧GB-82.38.31.162-0220
       - 🇬🇧GB-82.38.31.180-0155
       - 🇰🇷KR-211.178.105.134-0226
-      - 🇰🇷KR-141.164.45.187-0233
       - 🇰🇷KR-141.164.45.187-5935
       - 🇬🇧GB-82.38.31.199-0236
       - 🇬🇧GB-82.38.31.176-0323
@@ -5198,7 +5182,6 @@ proxy-groups:
       - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
       - 🇰🇷 Seoul, 11, South Korea-4
-      - 🇰🇷 Seoul, 11, South Korea-5
       - GB英国(v2clash.blog 2026-10.13更新)
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '@V2rayng_Fast 🇩🇪'
@@ -5295,8 +5278,8 @@ proxy-groups:
       - '[NoMoreWalls#103] 🇯🇵[www.v2nodes.com] vless-JP-1... #3'
       - '[NoMoreWalls#133] 🇹🇼[www.v2nodes.com] vless-TW-1...'
       - '[AutoMerge#001] 🇸🇬SG_1|1.4MB/s'
+      - '[zhuhaiuk#014] JP - zhuhai.uk'
       - '[zhuhaiuk#015] JP - zhuhai.uk 02'
-      - '[zhuhaiuk#018] SG - zhuhai.uk 02'
       - '[free18#025] 🇬🇧_英国 (3)'
       - '[free18#026] 🇩🇪_德国 (2)'
       - '[free18#031] 🇩🇪_德国 (3)'
@@ -5329,6 +5312,7 @@ proxy-groups:
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #10'
       - 03 🇬🇧 британия | Белые списки | mega vpn @vpnsmegabot
       - 09 🇩🇪 германия | mega vpn @vpnsmegabot
+      - 14 🇬🇧 британия | mega vpn @vpnsmegabot
       - JP - zhuhai.uk
       - LT - zhuhai.uk
       - ID - zhuhai.uk
@@ -5450,7 +5434,6 @@ proxy-groups:
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
       - 🇭🇰 HK3@ripaojiedian
-      - HK 🇭🇰 | @Raydikalx | F125F6
       - HK 🇭🇰 | @Raydikalx | B9CBB9
       - HK 🇭🇰 | @Raydikalx | 812E02
       - HK 🇭🇰 | @Raydikalx | D755F0
@@ -5481,6 +5464,7 @@ proxy-groups:
       - SG VLESS-15 | free-nodes
       - 🇸🇬[www.v2nodes.com] vless-SG
       - '🇸🇬[www.v2nodes.com] vless-SG #1'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #9'
       - 🇸🇬[www.v2nodes.com] vless-SG-9...
       - '🇸🇬[www.v2nodes.com] vless-SG-9... #1'
@@ -5543,7 +5527,6 @@ proxy-groups:
       - 🇸🇬 3540
       - '[freeSub#420] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_750bc1c1'
       - '[AutoMerge#001] 🇸🇬SG_1|1.4MB/s'
-      - '[zhuhaiuk#018] SG - zhuhai.uk 02'
       - '[free18#076] 🇸🇬_新加坡 (10)'
       - '[free18#078] 🇸🇬_新加坡 (11)'
       - '[free18#081] 🇸🇬_新加坡 (12)'
@@ -5564,6 +5547,7 @@ proxy-groups:
       - 🇯🇵[www.v2nodes.com] vless-JP
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - '🇯🇵 日本 | JPN #1'
@@ -5613,6 +5597,7 @@ proxy-groups:
       - 🇯🇵 adi|freenode1020-JP 10
       - 🇯🇵 adi|freenode1020-JP 11
       - '[NoMoreWalls#103] 🇯🇵[www.v2nodes.com] vless-JP-1... #3'
+      - '[zhuhaiuk#014] JP - zhuhai.uk'
       - '[zhuhaiuk#015] JP - zhuhai.uk 02'
       - '[free18#066] 🇯🇵_日本 (2)'
       - '[free18#067] 🇯🇵_日本 (3)'
@@ -5629,11 +5614,12 @@ proxy-groups:
     lazy: true
     proxies:
       - ProxyPool | 🇩🇪 德国 | DEU 2
-      - 德国 001
       - 德国 008
       - 德国 013
       - 德国 019
       - 德国 023
+      - 德国 025
+      - 德国 026
       - DE 🇩🇪 | @Raydikalx | 3E1586
       - DE 🇩🇪 | @Raydikalx | 3639BA
       - DE 🇩🇪 | @Raydikalx | E94E3F
@@ -5653,7 +5639,6 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | C631BF
       - DE 🇩🇪 | @Raydikalx | B8E86A
       - DE 🇩🇪 | @Raydikalx | 831F91
-      - DE 🇩🇪 | @Raydikalx | 5E3474
       - DE 🇩🇪 | @Raydikalx | 0A7D80
       - DE 🇩🇪 | @Raydikalx | FBF92D
       - DE 🇩🇪 | @Raydikalx | 9CD654
@@ -5729,6 +5714,7 @@ proxy-groups:
       - GB 🇬🇧 | @Raydikalx | A18C31
       - GB 🇬🇧 | @Raydikalx | 6B4B20
       - GB 🇬🇧 | @Raydikalx | CE841E
+      - GB 🇬🇧 | @Raydikalx | 64442B
       - GB 🇬🇧 | @Raydikalx | 4DE8B6
       - GB 🇬🇧 | @Raydikalx | B8FD16
       - GB 🇬🇧 | @Raydikalx | 1D17F2
@@ -5737,9 +5723,7 @@ proxy-groups:
       - 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
       - 🇬🇧GB-82.38.31.203-0177
       - 🇬🇧GB-82.38.31.186-0170
-      - 🇬🇧GB-82.38.31.206-0152
       - 🇬🇧GB-82.38.31.181-0150
-      - 🇬🇧GB-82.38.31.207-0160
       - 🇬🇧GB-82.38.31.194-0287
       - 🇬🇧GB-82.38.31.192-0168
       - 🇬🇧GB-82.38.31.191-0159
@@ -5786,6 +5770,7 @@ proxy-groups:
       - '[free18#228] 🇬🇧_英国 (6)'
       - '[free18#255] 🇬🇧_英国 (9)'
       - 03 🇬🇧 британия | Белые списки | mega vpn @vpnsmegabot
+      - 14 🇬🇧 британия | mega vpn @vpnsmegabot
       - LT - zhuhai.uk
       - ID - zhuhai.uk
       - ES - zhuhai.uk
@@ -5802,20 +5787,19 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - 韩国 001
+      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
       - 韩国 002
       - 韩国 006
       - 韩国 010
       - 韩国 011
       - 韩国 014
-      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
+      - 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
       - 🇰🇷 KR1@ripaojiedian
       - 🇰🇷 KR2@ripaojiedian
       - KR 🇰🇷 | @Raydikalx | 7E8798
       - KR 🇰🇷 | @Raydikalx | E9F97A
       - KR 🇰🇷 | @Raydikalx | 9652E1
       - 🇰🇷KR-211.178.105.134-0226
-      - 🇰🇷KR-141.164.45.187-0233
       - 🇰🇷KR-141.164.45.187-5935
       - 🇰🇷KR-144.24.72.126-3822
       - 🇰🇷KR-3.34.6.217-4881
@@ -5823,7 +5807,6 @@ proxy-groups:
       - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
       - 🇰🇷 Seoul, 11, South Korea-4
-      - 🇰🇷 Seoul, 11, South Korea-5
       - KR韩国(v2clash.blog 2026-10.20更新)
       - 🇰🇷 749
       - 🇰🇷 1172
