@@ -96,11 +96,25 @@ if (!样本.length) { 日志('本轮没有需要测试的节点'); }
 // ---------- 起内核 ----------
 const 目录 = fs.mkdtempSync(path.join(os.tmpdir(), 'verify-'));
 const 名 = 样本.map((p, i) => `${i}|${p.name}`.slice(0, 60));
+
+// 协议自愈第一档：TLS 节点没跳过证书校验时，额外挂一个 #NV 变体。
+// 免费节点大量用自签/过期证书，客户端默认校验必然 SSL 失败（curl 35）——这不是节点坏，是证书配错。
+// 原样测不过才试变体；变体通了就在产物里把该节点的 skip-cert-verify 置 true。
+const 变体 = new Map();
+const 附加节点 = [];
+样本.forEach((p, i) => {
+  if (p.tls && p['skip-cert-verify'] !== true) {
+    const vn = `${名[i]}#NV`.slice(0, 64);
+    变体.set(名[i], vn);
+    附加节点.push({ ...p, name: vn, 'skip-cert-verify': true });
+  }
+});
+
 const 配置 = {
   'mixed-port': 端口, 'allow-lan': false, mode: 'rule', 'log-level': 'silent',
   'external-controller': API.replace('http://', ''),
-  proxies: 样本.map((p, i) => ({ ...p, name: 名[i] })),
-  'proxy-groups': [{ name: 'T', type: 'select', proxies: 名 }],
+  proxies: [...样本.map((p, i) => ({ ...p, name: 名[i] })), ...附加节点],
+  'proxy-groups': [{ name: 'T', type: 'select', proxies: [...名, ...附加节点.map((p) => p.name)] }],
   rules: ['MATCH,T'],
 };
 fs.writeFileSync(path.join(目录, 'verify.yaml'), yaml.dump(配置, { lineWidth: 4096 }));
@@ -145,21 +159,29 @@ const 走代理 = (额外参数) =>
     ...额外参数,
   ], { encoding: 'utf8', timeout: 超时ms + 8000 });
 
-const 结果 = [];
-for (const n of 名) {
-  let ok = false, ms = -1, mbps = null, 原因 = '';
+// 单节点一次真打
+async function 试(n) {
   try {
     await fetch(`${API}/proxies/T`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: n }) });
     await 睡(80);
     const out = 走代理(['-w', '%{http_code} %{time_total}', 测试URL]).trim().split(/\s+/);
     const 码 = Number(out[0]);
-    ok = 码 === 204 || 码 === 200;
-    ms = Math.round(Number(out[1] || 0) * 1000);
-    if (!ok) 原因 = `HTTP ${码 || 'n/a'}`;
+    const ok = 码 === 204 || 码 === 200;
+    return { ok, ms: Math.round(Number(out[1] || 0) * 1000), 原因: ok ? '' : `HTTP ${码 || 'n/a'}` };
   } catch (e) {
-    原因 = `curl=${e.status ?? '?'} out=${String(e.stdout || '').trim().slice(0, 24)}`;
+    return { ok: false, ms: -1, 原因: `curl=${e.status ?? '?'} out=${String(e.stdout || '').trim().slice(0, 24)}` };
   }
-  结果.push({ name: n, ok, ms, mbps, 原因 });
+}
+
+const 结果 = [];
+for (const n of 名) {
+  let r = await 试(n);
+  if (!r.ok && 变体.has(n)) {
+    // 原样失败 → 试「跳过证书校验」变体；通了就记一笔修复（产物里会给该节点补上这个字段）
+    const vr = await 试(变体.get(n));
+    if (vr.ok) r = { ...vr, 修复: 'skip-cert-verify' };
+  }
+  结果.push({ name: n, ...r });
 }
 
 // ---------- 速度抽样（只测通过的，控制成本）----------
@@ -180,7 +202,7 @@ const at = new Date().toISOString();
 for (const r of 结果) {
   const 原名 = r.name.replace(/^\d+\|/, '');
   const h = 健康[原名] || { ok: 0, fail: 0, consecFail: 0, ms: null, at: null };
-  if (r.ok) { h.ok += 1; h.consecFail = 0; h.ms = r.ms; if (r.mbps != null) h.mbps = r.mbps; }
+  if (r.ok) { h.ok += 1; h.consecFail = 0; h.ms = r.ms; if (r.mbps != null) h.mbps = r.mbps; h.repaired = r.修复 || null; }
   else { h.fail += 1; h.consecFail = (h.consecFail || 0) + 1; }
   h.at = at;
   健康[原名] = h;
@@ -213,12 +235,15 @@ try {
   日志('没有 cn-probe.json，本轮不做国内筛选');
 }
 
-const 可用 = 全部.filter((p) => {
-  const h = 健康[p.name];
-  if (!h || h.ok <= 0 || (h.consecFail || 0) >= 最大失败) return false;
-  if (CN不可达.has(`${p.server}:${p.port}`)) return false; // 国内连不上直接排除
-  return true;
-});
+const 可用 = 全部
+  .filter((p) => {
+    const h = 健康[p.name];
+    if (!h || h.ok <= 0 || (h.consecFail || 0) >= 最大失败) return false;
+    if (CN不可达.has(`${p.server}:${p.port}`)) return false; // 国内连不上直接排除
+    return true;
+  })
+  // 自愈过的节点在产物里补上修正字段（名字不变，分组引用不受影响）
+  .map((p) => (健康[p.name]?.repaired === 'skip-cert-verify' ? { ...p, 'skip-cert-verify': true } : p));
 const 按地区 = new Map();
 for (const p of 可用) {
   const r = 地区判定(p.name);
@@ -264,6 +289,7 @@ const 报告 = {
   medianMs: 通过.length ? 通过.map((r) => r.ms).sort((a, b) => a - b)[Math.floor(通过.length / 2)] : null,
   byRegion: Object.fromEntries([...按地区.entries()].map(([r, l]) => [r, l.length])),
   verifiedNodes: 最终.length,
+  repairedThisRound: 结果.filter((r) => r.修复).length,
   healthTracked: Object.keys(健康).length,
   cnProbe: CN信息,
   speed: {
