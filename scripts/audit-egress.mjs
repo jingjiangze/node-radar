@@ -11,7 +11,7 @@ const ROOT = new URL('../', import.meta.url);
 const DIST = new URL('../dist/', import.meta.url);
 const API = 'http://127.0.0.1:9090';
 const PORT = 7890;
-const SAMPLE = Math.max(1, Math.min(48, Number(process.env.EGRESS_SAMPLE || 24)));
+const SAMPLE = Math.max(1, Math.min(24, Number(process.env.EGRESS_SAMPLE || 12)));
 const TIMEOUT = 12;
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const safe = (v, n=160) => String(v ?? '').replace(/[\r\n\t]/g, ' ').slice(0,n);
