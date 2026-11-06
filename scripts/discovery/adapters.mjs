@@ -54,20 +54,30 @@ export const githubCode = {
 /** B. GitHub 仓库搜索（保留原有能力，作为基础入口） */
 export const githubSearch = {
   name: 'github-search',
-  说明: 'GitHub 仓库搜索 + 根目录文件嗅探',
+  说明: 'GitHub 仓库搜索 + 根目录文件嗅探（按真实目录列，不盲猜文件名）',
   async run(ctx) {
     const 查询 = ctx.配置.githubQueries || [];
+    const 名称提示 = /(^|[._-])(sub|subs|subscribe|subscription|clash|list|nodes?|v2ray|proxies|provider)([._-]|$)/i;
+    const 扩展名 = /\.(yaml|yml|txt|json)$/i;
     const out = [];
     for (const q of 查询.slice(0, ctx.上限.repoQueries ?? 5)) {
       try {
         const r = await ctx.gh(`/search/repositories?sort=updated&order=desc&per_page=10&q=${encodeURIComponent(q)}`);
         for (const repo of r.items || []) {
           const br = repo.default_branch || 'main';
-          for (const f of ['clash.yaml', 'clash.yml', 'sub.txt', 'nodes.yaml', 'list.yml', 'clash']) {
-            out.push({
-              url: `https://raw.githubusercontent.com/${repo.full_name}/${br}/${f}`,
-              note: `repo:${repo.full_name}`,
-            });
+          let 文件 = [];
+          try {
+            const listing = await ctx.gh(`/repos/${repo.full_name}/contents/?ref=${br}`);
+            文件 = (Array.isArray(listing) ? listing : [])
+              .filter((f) => f.type === 'file' && 扩展名.test(f.name) && 名称提示.test(f.name))
+              .slice(0, 3)
+              .map((f) => f.name);
+          } catch (e) {
+            // 列目录失败（空仓库/超大仓库）就退化成只试最可能的两个文件名
+            文件 = ['clash.yaml', 'sub.txt'];
+          }
+          for (const f of 文件) {
+            out.push({ url: `https://raw.githubusercontent.com/${repo.full_name}/${br}/${f}`, note: `repo:${repo.full_name}` });
           }
         }
       } catch (e) {
@@ -75,7 +85,7 @@ export const githubSearch = {
       }
       await new Promise((s) => setTimeout(s, 800));
     }
-    return out.slice(0, ctx.上限.perAdapter);
+    return 去重(out.map((x) => x.url)).map((u) => ({ url: u, note: 'github-search' })).slice(0, ctx.上限.perAdapter);
   },
 };
 
