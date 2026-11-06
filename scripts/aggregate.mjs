@@ -246,9 +246,11 @@ async function probeTls(host, port, servername, timeout = 4000) {
 
 // ---------- WS 路径探测（1 个 RTT）：400/426/101 = 路径存在；404 = 路径漂移 ----------
 async function probeWsPath(p, timeout = 4000) {
+  try {
   const http = await import('node:http');
   const https = await import('node:https');
-  const 路径 = (p['ws-opts'] && p['ws-opts'].path) || '/';
+  // 路径里可能有中文/空格，node 的 http.request 要求 ASCII，否则抛 ERR_UNESCAPED_CHARACTERS
+  const 路径 = String((p['ws-opts'] && p['ws-opts'].path) || '/').replace(/[^\x21-\x7E]/g, (c) => encodeURIComponent(c));
   const 头Host = (p['ws-opts'] && p['ws-opts'].headers && p['ws-opts'].headers.Host) || p.server;
   const mod = p.tls ? https : http;
   const opt = {
@@ -270,6 +272,7 @@ async function probeWsPath(p, timeout = 4000) {
     req.on('timeout', () => { try { req.destroy(); } catch { } resolve({ status: 0, ok: false, error: 'timeout' }); });
     req.end();
   });
+  } catch (e) { return { status: 0, ok: false, error: String(e.code || e.message).slice(0, 30) }; }
 }
 
 // ---------- 协议层廉价预筛：TLS → WS 路径 ----------
