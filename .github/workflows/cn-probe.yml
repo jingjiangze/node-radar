@@ -6,8 +6,7 @@ name: cn-probe
 # 所以这里用**分片矩阵**：4 个 runner 并行，各吃自己那份额度 → 每小时 4×110=440 个目标，
 # 全量 4596 个约 10.4 小时扫完一轮。每片 110×2=220 额度，仍在单 IP 250 之内。
 on:
-  schedule:
-    - cron: "20 * * * *"
+  # 定时已收敛到 pipeline.yml（单一流水线按 needs 显式排序）；这里保留手动触发用于排障
   workflow_dispatch:
     inputs:
       budget:
