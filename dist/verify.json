@@ -1,23 +1,29 @@
 {
-  "generatedAt": "2026-11-06T10:46:23.586Z",
+  "generatedAt": "2026-11-06T10:58:14.708Z",
   "source": "clash.yaml",
-  "sourceNodes": 4715,
-  "sampled": 160,
-  "passed": 160,
+  "sourceNodes": 4711,
+  "sampled": 131,
+  "passed": 131,
   "passRate": 100,
-  "medianMs": 95,
+  "medianMs": 103,
   "byRegion": {
-    "香港": 19,
+    "香港": 22,
+    "新加坡": 37,
     "台湾": 8,
-    "新加坡": 19,
-    "日本": 19,
-    "韩国": 19,
-    "德国": 19,
-    "英国": 19,
-    "美国": 19,
-    "其他": 19
+    "德国": 39,
+    "日本": 30,
+    "英国": 38,
+    "美国": 39,
+    "韩国": 27,
+    "其他": 39
   },
-  "verifiedNodes": 160,
-  "healthTracked": 160,
+  "verifiedNodes": 279,
+  "healthTracked": 291,
+  "cnProbe": {
+    "vantage": "globalping-cn",
+    "generatedAt": "2026-11-06T10:37:44.093Z",
+    "ageHours": 0.3,
+    "unreachable": 14
+  },
   "deadThisRound": []
 }
