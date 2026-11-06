@@ -19,13 +19,13 @@ const 根 = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(根, 'dist');
 const 参数 = new Map(process.argv.slice(2).map((a) => { const [k, v = 'true'] = a.replace(/^--/, '').split('='); return [k, v]; }));
 
-const 预算 = Number(参数.get('budget') || 100);
+const 预算 = Number(参数.get('budget') || 120);
 const 探针数 = Number(参数.get('probes') || 2);
-const 并发 = Number(参数.get('concurrency') || 4);
+const 并发 = Number(参数.get('concurrency') || 8);
 const 续跑 = 参数.has('resume');
 const 最多年龄 = Number(参数.get('max-age-hours') || 48);
-const 源 = process.env.SOURCE || path.join(DIST, 'clash-lite.yaml');
-const 输出 = path.join(DIST, 'cn-probe.json');
+const 源 = process.env.SOURCE || path.join(DIST, 'clash.yaml');
+const 输出 = 参数.get('out') || path.join(DIST, 'cn-probe.json');
 const 睡 = (ms) => new Promise((r) => setTimeout(r, ms));
 const 日志 = (...a) => console.log(`[${new Date().toISOString().slice(11, 19)}]`, ...a);
 const UA = 'node-radar/cn-probe (+https://github.com/jingjiangze/node-radar)';
@@ -41,6 +41,9 @@ try { 历史 = JSON.parse(fs.readFileSync(输出, 'utf8')).results || {}; } catc
 const 过期 = Date.now() - 最多年龄 * 3600e3;
 let 目标 = [...唯一.entries()].filter(([k]) => !续跑 || !历史[k] || Date.parse(历史[k].at || 0) < 过期);
 目标.sort((a, b) => (历史[a[0]] ? 1 : 0) - (历史[b[0]] ? 1 : 0));
+const 分片数 = Number(参数.get('shards') || 1);
+const 本片 = Number(参数.get('shard') || 0);
+if (分片数 > 1) 目标 = 目标.filter((_, i) => i % 分片数 === 本片);
 目标 = 目标.slice(0, 预算);
 日志(`源 ${path.basename(源)}：${唯一.size} 个唯一 host:port，本轮测 ${目标.length} 个（每目标 ${探针数} 个大陆探针）`);
 if (!目标.length) { 日志('没有需要探测的目标'); process.exit(0); }
