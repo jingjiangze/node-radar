@@ -343,12 +343,13 @@ for (const p of alive) { for (const k of Object.keys(p)) if (k.startsWith("__"))
 // ---------- 国内可达性剔除（数据来自独立的 cn-probe 工作流）----------
 // 只剔「国内探针明确判不可达」的 host:port；数据缺失/过期就不做这层，避免用陈旧结论误杀。
 let CN不可达 = new Set();
+const CN结果 = new Map();
 let CN信息 = null;
 try {
   const cn = JSON.parse(fs.readFileSync(new URL('../dist/cn-probe.json', import.meta.url), 'utf8'));
   const 年龄h = (Date.now() - Date.parse(cn.generatedAt || 0)) / 3600e3;
   if (年龄h <= Number(process.env.CN_MAX_AGE_HOURS || 36)) {
-    for (const [hp, v] of Object.entries(cn.results || {})) if (v && v.ok === false) CN不可达.add(hp);
+    for (const [hp, v] of Object.entries(cn.results || {})) { if (!v) continue; CN结果.set(hp, v); if (v.ok === false) CN不可达.add(hp); }
     CN信息 = { vantage: cn.vantage, ageHours: Number(年龄h.toFixed(1)), covered: Object.keys(cn.results || {}).length, unreachable: CN不可达.size };
   } else {
     console.log(`[CN] 探测数据过旧（${年龄h.toFixed(1)}h），本轮跳过国内剔除`);
@@ -371,11 +372,21 @@ try {
   for (const r of sp.results || []) if (r.ok && r.mbps > 0) { if (r.server && r.port) SPEED.set(r.server + ':' + r.port, r.mbps); else SPEED.set(String(r.node), r.mbps); }
   console.log(`[速度] 载入 ${SPEED.size} 个实测样本`);
 } catch { }
-const 质量键 = (p) => ({ mb: SPEED.get(p.server + ':' + p.port) ?? SPEED.get(String(p.name)) ?? -1, rtt: RTT.get(`${p.server}:${p.port}`) ?? 99999 });
+const 质量键 = (p) => {
+  const hp = p.server + ':' + p.port;
+  const cn = CN结果.get(hp);
+  const mb = SPEED.get(hp) ?? SPEED.get(String(p.name)) ?? -1;
+  const rtt = RTT.get(hp) ?? 99999;
+  // 分级：国内已验证可达(0) → 未被国内探测(1) → 不可达(2，后面会被剔掉)
+  const tier = cn ? (cn.ok ? 0 : 2) : 1;
+  // 主指标：国内实测 RTT 最快优先；没有就用 CI 侧 MB/s 折算；再没有用 TCP RTT
+  const 主 = cn && cn.ok && cn.ms ? cn.ms : (mb > 0 ? Math.round(1000 / mb) : rtt);
+  return { tier, 主 };
+};
 alive.sort((a, b) => {
   const x = 质量键(a), y = 质量键(b);
-  if (y.mb !== x.mb) return y.mb - x.mb;
-  return x.rtt - y.rtt;
+  if (x.tier !== y.tier) return x.tier - y.tier;
+  return x.主 - y.主;
 });
 const 有速度 = alive.filter((p) => SPEED.has(p.server + ':' + p.port) || SPEED.has(String(p.name))).length;
 console.log(`[排序] ${alive.length} 个节点按「实测速度优先 → RTT 升序」排好（其中 ${有速度} 个有 MB/s 实测）`);
