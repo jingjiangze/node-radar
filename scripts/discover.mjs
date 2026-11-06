@@ -80,7 +80,7 @@ const existing = loadJson(OUT, []);
 const curated = loadJson(new URL('../sources.json', import.meta.url), []);
 const knownUrls = new Set([...existing, ...curated].map((s) => s.url));
 
-const found = [];
+const found = [];\nconst refreshedExisting = [];\nconst curatedUrls = new Set(curated.map((s) => s.url));
 for (const repo of candidates) {
   let items;
   try { items = await ghJson(`/repos/${repo.full}/contents/`); } catch { continue; }
@@ -129,7 +129,7 @@ const promoted = candidates.filter((s) =>
   s.nodes >= MIN_NODES
 );
 const byUrl = new Map(existing.map((s) => [s.url, s]));
-for (const item of promoted) byUrl.set(item.url, {
+for (const item of refreshedExisting) byUrl.set(item.url, item);\nfor (const item of promoted) byUrl.set(item.url, {
   name: item.name, url: item.url, nodes: item.nodes,
   verifiedAt: item.lastSeen, promotedAt: item.firstSeen
 });
