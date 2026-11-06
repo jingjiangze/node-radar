@@ -49,6 +49,7 @@ jobs:
           test -s dist/summary.json
           ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"
           if [ -f dist/clash-lite.yaml ]; then ./mihomo -t -d . -f dist/clash-lite.yaml && echo "clash-lite.yaml OK"; fi
+          if [ -f dist/cf-egress.yaml ]; then ./mihomo -t -d . -f dist/cf-egress.yaml && echo "cf-egress.yaml OK"; fi
           if [ -f dist/speed-top.yaml ]; then ./mihomo -t -d . -f dist/speed-top.yaml && echo "speed-top.yaml OK"; fi
 
       - name: Purge jsDelivr cache
