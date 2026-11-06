@@ -30,16 +30,16 @@ jobs:
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import yaml from 'js-yaml';
-          for (const file of ['sources.json', 'sources.auto.json', 'sources.health.json']) {
+          for (const file of ['sources.json', 'sources.auto.json', 'sources.health.json', 'sources.candidates.json']) {
             if (!fs.existsSync(file)) continue;
             JSON.parse(fs.readFileSync(file, 'utf8'));
           }
-          for (const file of ['dist/clash.yaml', 'dist/clash-lite.yaml', 'dist/speed-top.yaml']) {
+          for (const file of ['dist/clash.yaml', 'dist/clash-lite.yaml', 'dist/speed-top.yaml', 'dist/cf-egress.yaml']) {
             if (!fs.existsSync(file)) continue;
             const parsed = yaml.load(fs.readFileSync(file, 'utf8'));
             if (file.endsWith('clash.yaml') && !Array.isArray(parsed?.proxies)) {
               throw new Error(file + ': missing proxies array');
             }
           }
-          console.log('source manifests and available YAML artifacts are valid');
+          for (const file of ['dist/summary.json', 'dist/egress-audit.json', 'dist/cf-egress.json', 'dist/cf-fronted-endpoints.json', 'dist/datacenter-audit.json']) {\n            if (fs.existsSync(file)) JSON.parse(fs.readFileSync(file, 'utf8'));\n          }\n          console.log('source manifests, audit reports and available YAML artifacts are valid');
           NODE
