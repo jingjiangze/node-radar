@@ -29,10 +29,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // ---------- 读上一版产出 ----------
 let doc;
 try { doc = yaml.load(fs.readFileSync(new URL('../dist/clash.yaml', import.meta.url), 'utf8')); } catch (e) {
-  console.error('读不到 dist/clash.yaml，跳过测速'); process.exit(0);
+  console.error('读不到 dist/clash.yaml，无法进行测速'); process.exit(1);
 }
 const all = (doc.proxies || []).filter((p) => p && p.server && p.port && p.type);
-if (!all.length) { console.error('没有节点，跳过'); process.exit(0); }
+if (!all.length) { console.error('没有可测速节点'); process.exit(1); }
 
 // ---------- 分层抽样：每个地区最多 3 个 ----------
 const buckets = new Map();
@@ -73,7 +73,7 @@ let coreLog = '';
 proc.stdout.on('data', (d) => (coreLog += d.toString()));
 proc.stderr.on('data', (d) => (coreLog += d.toString()));
 
-const die = (msg) => { console.error(msg); try { proc.kill('SIGKILL'); } catch {} process.exit(0); };
+const die = (msg) => { console.error(msg); try { proc.kill('SIGKILL'); } catch {} process.exit(1); };
 
 // 等 API 就绪
 let ready = false;
@@ -143,6 +143,7 @@ if (TOP >= 5) {
   fs.writeFileSync(new URL('speed-top.yaml', distDir), yaml.dump(topCfg, { lineWidth: 4096 }));
   console.log(`发布 speed-top.yaml：${topProxies.length} 个实测可用节点`);
 } else {
-  console.log(`实测可用只有 ${okResults.length} 个，不发布 speed-top.yaml`);
+  fs.rmSync(new URL('speed-top.yaml', distDir), { force: true });
+  console.log(`实测可用只有 ${okResults.length} 个，已移除过期 speed-top.yaml`);
 }
 console.log(JSON.stringify({ ok: okResults.length, medianMbps: report.medianMbps }, null, 0));
