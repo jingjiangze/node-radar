@@ -1,0 +1,60 @@
+{
+  "_说明": "离线夹具：只替换取数据层，适配器/去重/校验/登记表走真实代码",
+  "gh": {
+    "/search/code?*": {
+      "items": [
+        {
+          "path": "clash.yaml",
+          "repository": {
+            "full_name": "fixture/alpha"
+          }
+        }
+      ]
+    },
+    "/repos/fixture/alpha": {
+      "default_branch": "main"
+    },
+    "/search/repositories?*": {
+      "items": [
+        {
+          "full_name": "fixture/beta",
+          "default_branch": "main"
+        }
+      ]
+    }
+  },
+  "fetches": {
+    "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/main/README.md": {
+      "status": 200,
+      "body": "# fixtures\n\n- good: https://fixture.example/sub/good.yaml\n- small: https://fixture.example/sub/small.yaml\n- dup:  https://fixture.example/sub/dup.yaml\n- b64:  https://fixture.example/sub/b64.txt\n- dead: https://fixture.example/404.yaml\n- meta: http://169.254.169.254/sub?token=abc\n"
+    },
+    "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/README.md": {
+      "status": 200,
+      "body": "# fixtures\n\n- good: https://fixture.example/sub/good.yaml\n- small: https://fixture.example/sub/small.yaml\n- dup:  https://fixture.example/sub/dup.yaml\n- b64:  https://fixture.example/sub/b64.txt\n- dead: https://fixture.example/404.yaml\n- meta: http://169.254.169.254/sub?token=abc\n"
+    },
+    "https://raw.githubusercontent.com/fixture/alpha/main/clash.yaml": {
+      "status": 200,
+      "body": "proxies:\n  - {name: a1, type: vless, server: 2.2.2.1, port: 8443}\n  - {name: a2, type: vless, server: 2.2.2.2, port: 8443}\n  - {name: a3, type: vless, server: 2.2.2.3, port: 8443}\n  - {name: a4, type: vless, server: 2.2.2.4, port: 8443}\n  - {name: a5, type: vless, server: 2.2.2.5, port: 8443}\n  - {name: a6, type: vless, server: 2.2.2.6, port: 8443}\n  - {name: a7, type: vless, server: 2.2.2.7, port: 8443}\n  - {name: a8, type: vless, server: 2.2.2.8, port: 8443}\n  - {name: a9, type: vless, server: 2.2.2.9, port: 8443}\n  - {name: a10, type: vless, server: 2.2.2.10, port: 8443}\n  - {name: a11, type: vless, server: 2.2.2.11, port: 8443}\n  - {name: a12, type: vless, server: 2.2.2.12, port: 8443}\n  - {name: a13, type: vless, server: 2.2.2.13, port: 8443}\n  - {name: a14, type: vless, server: 2.2.2.14, port: 8443}\n  - {name: a15, type: vless, server: 2.2.2.15, port: 8443}\n  - {name: a16, type: vless, server: 2.2.2.16, port: 8443}\n  - {name: a17, type: vless, server: 2.2.2.17, port: 8443}\n  - {name: a18, type: vless, server: 2.2.2.18, port: 8443}\n  - {name: a19, type: vless, server: 2.2.2.19, port: 8443}\n  - {name: a20, type: vless, server: 2.2.2.20, port: 8443}\n  - {name: a21, type: vless, server: 2.2.2.21, port: 8443}\n  - {name: a22, type: vless, server: 2.2.2.22, port: 8443}\n  - {name: a23, type: vless, server: 2.2.2.23, port: 8443}\n  - {name: a24, type: vless, server: 2.2.2.24, port: 8443}\n  - {name: a25, type: vless, server: 2.2.2.25, port: 8443}\n  - {name: a26, type: vless, server: 2.2.2.26, port: 8443}\n  - {name: a27, type: vless, server: 2.2.2.27, port: 8443}\n  - {name: a28, type: vless, server: 2.2.2.28, port: 8443}\n  - {name: a29, type: vless, server: 2.2.2.29, port: 8443}\n  - {name: a30, type: vless, server: 2.2.2.30, port: 8443}\nproxy-groups:\n  - {name: G, type: select, proxies: [a1]}\n"
+    },
+    "https://fixture.example/sub/good.yaml": {
+      "status": 200,
+      "body": "proxies:\n  - {name: n1, type: vless, server: 1.1.1.1, port: 443, uuid: 00000000-0000-0000-0000-000000000001}\n  - {name: n2, type: vless, server: 1.1.1.2, port: 443, uuid: 00000000-0000-0000-0000-000000000002}\n  - {name: n3, type: vless, server: 1.1.1.3, port: 443, uuid: 00000000-0000-0000-0000-000000000003}\n  - {name: n4, type: vless, server: 1.1.1.4, port: 443, uuid: 00000000-0000-0000-0000-000000000004}\n  - {name: n5, type: vless, server: 1.1.1.5, port: 443, uuid: 00000000-0000-0000-0000-000000000005}\n  - {name: n6, type: vless, server: 1.1.1.6, port: 443, uuid: 00000000-0000-0000-0000-000000000006}\n  - {name: n7, type: vless, server: 1.1.1.7, port: 443, uuid: 00000000-0000-0000-0000-000000000007}\n  - {name: n8, type: vless, server: 1.1.1.8, port: 443, uuid: 00000000-0000-0000-0000-000000000008}\n  - {name: n9, type: vless, server: 1.1.1.9, port: 443, uuid: 00000000-0000-0000-0000-000000000009}\n  - {name: n10, type: vless, server: 1.1.1.10, port: 443, uuid: 00000000-0000-0000-0000-000000000000}\n  - {name: n11, type: vless, server: 1.1.1.11, port: 443, uuid: 00000000-0000-0000-0000-000000000001}\n  - {name: n12, type: vless, server: 1.1.1.12, port: 443, uuid: 00000000-0000-0000-0000-000000000002}\n  - {name: n13, type: vless, server: 1.1.1.13, port: 443, uuid: 00000000-0000-0000-0000-000000000003}\n  - {name: n14, type: vless, server: 1.1.1.14, port: 443, uuid: 00000000-0000-0000-0000-000000000004}\n  - {name: n15, type: vless, server: 1.1.1.15, port: 443, uuid: 00000000-0000-0000-0000-000000000005}\n  - {name: n16, type: vless, server: 1.1.1.16, port: 443, uuid: 00000000-0000-0000-0000-000000000006}\n  - {name: n17, type: vless, server: 1.1.1.17, port: 443, uuid: 00000000-0000-0000-0000-000000000007}\n  - {name: n18, type: vless, server: 1.1.1.18, port: 443, uuid: 00000000-0000-0000-0000-000000000008}\n  - {name: n19, type: vless, server: 1.1.1.19, port: 443, uuid: 00000000-0000-0000-0000-000000000009}\n  - {name: n20, type: vless, server: 1.1.1.20, port: 443, uuid: 00000000-0000-0000-0000-000000000000}\n  - {name: n21, type: vless, server: 1.1.1.21, port: 443, uuid: 00000000-0000-0000-0000-000000000001}\n  - {name: n22, type: vless, server: 1.1.1.22, port: 443, uuid: 00000000-0000-0000-0000-000000000002}\n  - {name: n23, type: vless, server: 1.1.1.23, port: 443, uuid: 00000000-0000-0000-0000-000000000003}\n  - {name: n24, type: vless, server: 1.1.1.24, port: 443, uuid: 00000000-0000-0000-0000-000000000004}\n  - {name: n25, type: vless, server: 1.1.1.25, port: 443, uuid: 00000000-0000-0000-0000-000000000005}\nproxy-groups:\n  - {name: G, type: select, proxies: [n1]}\n"
+    },
+    "https://fixture.example/sub/dup.yaml": {
+      "status": 200,
+      "body": "proxies:\n  - {name: n1, type: vless, server: 1.1.1.1, port: 443, uuid: 00000000-0000-0000-0000-000000000001}\n  - {name: n2, type: vless, server: 1.1.1.2, port: 443, uuid: 00000000-0000-0000-0000-000000000002}\n  - {name: n3, type: vless, server: 1.1.1.3, port: 443, uuid: 00000000-0000-0000-0000-000000000003}\n  - {name: n4, type: vless, server: 1.1.1.4, port: 443, uuid: 00000000-0000-0000-0000-000000000004}\n  - {name: n5, type: vless, server: 1.1.1.5, port: 443, uuid: 00000000-0000-0000-0000-000000000005}\n  - {name: n6, type: vless, server: 1.1.1.6, port: 443, uuid: 00000000-0000-0000-0000-000000000006}\n  - {name: n7, type: vless, server: 1.1.1.7, port: 443, uuid: 00000000-0000-0000-0000-000000000007}\n  - {name: n8, type: vless, server: 1.1.1.8, port: 443, uuid: 00000000-0000-0000-0000-000000000008}\n  - {name: n9, type: vless, server: 1.1.1.9, port: 443, uuid: 00000000-0000-0000-0000-000000000009}\n  - {name: n10, type: vless, server: 1.1.1.10, port: 443, uuid: 00000000-0000-0000-0000-000000000000}\n  - {name: n11, type: vless, server: 1.1.1.11, port: 443, uuid: 00000000-0000-0000-0000-000000000001}\n  - {name: n12, type: vless, server: 1.1.1.12, port: 443, uuid: 00000000-0000-0000-0000-000000000002}\n  - {name: n13, type: vless, server: 1.1.1.13, port: 443, uuid: 00000000-0000-0000-0000-000000000003}\n  - {name: n14, type: vless, server: 1.1.1.14, port: 443, uuid: 00000000-0000-0000-0000-000000000004}\n  - {name: n15, type: vless, server: 1.1.1.15, port: 443, uuid: 00000000-0000-0000-0000-000000000005}\n  - {name: n16, type: vless, server: 1.1.1.16, port: 443, uuid: 00000000-0000-0000-0000-000000000006}\n  - {name: n17, type: vless, server: 1.1.1.17, port: 443, uuid: 00000000-0000-0000-0000-000000000007}\n  - {name: n18, type: vless, server: 1.1.1.18, port: 443, uuid: 00000000-0000-0000-0000-000000000008}\n  - {name: n19, type: vless, server: 1.1.1.19, port: 443, uuid: 00000000-0000-0000-0000-000000000009}\n  - {name: n20, type: vless, server: 1.1.1.20, port: 443, uuid: 00000000-0000-0000-0000-000000000000}\n  - {name: n21, type: vless, server: 1.1.1.21, port: 443, uuid: 00000000-0000-0000-0000-000000000001}\n  - {name: n22, type: vless, server: 1.1.1.22, port: 443, uuid: 00000000-0000-0000-0000-000000000002}\n  - {name: n23, type: vless, server: 1.1.1.23, port: 443, uuid: 00000000-0000-0000-0000-000000000003}\n  - {name: n24, type: vless, server: 1.1.1.24, port: 443, uuid: 00000000-0000-0000-0000-000000000004}\n  - {name: n25, type: vless, server: 1.1.1.25, port: 443, uuid: 00000000-0000-0000-0000-000000000005}\nproxy-groups:\n  - {name: G, type: select, proxies: [n1]}\n"
+    },
+    "https://fixture.example/sub/small.yaml": {
+      "status": 200,
+      "body": "proxies:\n  - {name: n1, type: vless, server: 1.1.1.1, port: 443, uuid: 00000000-0000-0000-0000-000000000001}\n  - {name: n2, type: vless, server: 1.1.1.2, port: 443, uuid: 00000000-0000-0000-0000-000000000002}\n  - {name: n3, type: vless, server: 1.1.1.3, port: 443, uuid: 00000000-0000-0000-0000-000000000003}\nproxy-groups:\n  - {name: G, type: select, proxies: [n1]}\n"
+    },
+    "https://fixture.example/sub/b64.txt": {
+      "status": 200,
+      "body": "dmxlc3M6Ly91QDEuMS4xLjE6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjI6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjM6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjQ6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjU6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjY6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjc6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjg6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjk6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjEwOjQ0Mz90eXBlPXdzCnZsZXNzOi8vdUAxLjEuMS4xMTo0NDM/dHlwZT13cwp2bGVzczovL3VAMS4xLjEuMTI6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjEzOjQ0Mz90eXBlPXdzCnZsZXNzOi8vdUAxLjEuMS4xNDo0NDM/dHlwZT13cwp2bGVzczovL3VAMS4xLjEuMTU6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjE2OjQ0Mz90eXBlPXdzCnZsZXNzOi8vdUAxLjEuMS4xNzo0NDM/dHlwZT13cwp2bGVzczovL3VAMS4xLjEuMTg6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjE5OjQ0Mz90eXBlPXdzCnZsZXNzOi8vdUAxLjEuMS4yMDo0NDM/dHlwZT13cwp2bGVzczovL3VAMS4xLjEuMjE6NDQzP3R5cGU9d3MKdmxlc3M6Ly91QDEuMS4xLjIyOjQ0Mz90eXBlPXdz"
+    },
+    "https://fixture.example/404.yaml": {
+      "status": 404,
+      "body": "nope"
+    }
+  }
+}
