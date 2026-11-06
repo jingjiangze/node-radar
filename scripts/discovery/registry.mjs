@@ -45,9 +45,17 @@ export function 登记候选(表, { url, channel, now = new Date().toISOString()
     url, channel, firstSeen: now, lastSeen: now,
     ok: 0, fail: 0, consecutiveFail: 0, nodes: 0,
     contentHash: null, status: 'candidate', rejectReason: null,
+    score: 0, mirrorOf: null,
   };
   表.items[url] = 新;
   return 新;
+}
+
+/** 来源信誉分：成功加权、失败重罚、节点数取对数（避免超大源碾压一切） */
+export function 计算分数(项) {
+  const n = Math.max(1, 项.nodes || 0);
+  const 原始 = (项.ok || 0) * 2 - (项.fail || 0) * 3 + Math.log2(n);
+  return Number(原始.toFixed(2));
 }
 
 /**
@@ -63,6 +71,7 @@ export function 记录结果(表, url, { ok, nodes = 0, contentHash = null, reas
     项.nodes = nodes;
     项.contentHash = contentHash;
     项.rejectReason = null;
+    项.mirrorOf = null;
     项.status = 'accepted';
   } else {
     项.fail += 1;
@@ -71,11 +80,37 @@ export function 记录结果(表, url, { ok, nodes = 0, contentHash = null, reas
     if (项.consecutiveFail >= 3) 项.status = 'rejected';
     else if (项.status === 'accepted' && 项.consecutiveFail >= 2) 项.status = 'candidate';
   }
+  项.score = 计算分数(项);
   return 项;
 }
 
+/** 内容哈希相同 = 同一份订阅的镜像；只保留分数最高的一条，其余标 mirror */
+export function 标记镜像(表, urls) {
+  const 按哈希 = new Map();
+  for (const u of urls) {
+    const 项 = 表.items[u];
+    if (!项 || 项.status !== 'accepted' || !项.contentHash) continue;
+    const 组 = 按哈希.get(项.contentHash) || [];
+    组.push(项);
+    按哈希.set(项.contentHash, 组);
+  }
+  let 镜像数 = 0;
+  for (const [, 组] of 按哈希) {
+    if (组.length < 2) continue;
+    组.sort((a, b) => (b.score || 0) - (a.score || 0) || b.nodes - a.nodes || (a.url < b.url ? -1 : a.url > b.url ? 1 : 0));
+    const 主 = 组[0];
+    for (const 项 of 组.slice(1)) {
+      项.status = 'mirror';
+      项.mirrorOf = 主.url;
+      项.rejectReason = `内容与 ${主.url} 相同`;
+      镜像数++;
+    }
+  }
+  return 镜像数;
+}
+
 export function 汇总(表) {
-  const 计数 = { accepted: 0, candidate: 0, rejected: 0 };
+  const 计数 = { accepted: 0, candidate: 0, rejected: 0, mirror: 0 };
   for (const x of Object.values(表.items)) 计数[x.status] = (计数[x.status] || 0) + 1;
   return 计数;
 }
