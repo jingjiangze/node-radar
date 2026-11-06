@@ -128,7 +128,7 @@ for(const row of rows){
   row.endpointNetwork=row.endpointIps.map(ip=>({ip,...classifyNetwork(meta.get(ip)||{})}));
   if(row.egress){
     const m=meta.get(row.egress.ip)||{};
-    row.egress={...row.egress,...classifyNetwork(m),countryCode:m.countryCode||row.egress.country||null,region:safe(m.regionName||''),city:safe(m.city||''),hostingFlag:m.hosting===true,proxyFlag:m.proxy===true};
+    row.egress={...row.egress,...classifyNetwork(m),countryCode:m.countryCode||row.egress.country||null,region:safe(m.regionName||''),city:safe(m.city||''),hostingFlag:m.is_datacenter===true||classifyNetwork(m).hostingSignal,proxyFlag:m.is_proxy===true};
     row.egress.classification = row.egress.warp==='on' ? 'cloudflare-warp-egress' :
       row.egress.cloudflareNetwork ? 'cloudflare-owned-egress-ip' :
       row.egress.colo ? 'cloudflare-edge-observed-egress-owner-unconfirmed' : 'other-or-unclassified-egress';
