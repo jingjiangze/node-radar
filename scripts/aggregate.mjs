@@ -233,14 +233,27 @@ async function probeTls(host, port, servername, timeout = 4000) {
   return new Promise((resolve) => {
     const t0 = Date.now();
     let done = false;
-    const s = tls.connect({ host, port, servername: servername || host, rejectUnauthorized: false, timeout });
-    const fin = (r) => { if (done) return; done = true; try { s.destroy(); } catch { } resolve(r); };
+    let s;
+    // 外部定时器兜底：socket 卡在 TCP 连接阶段时 s.setTimeout 不会触发，会让顶层 await 永远不 settle（exit 13）
+    const 兜底 = setTimeout(() => fin({ ok: false, error: 'timeout' }), timeout + 500);
+    const fin = (r) => {
+      if (done) return;
+      done = true;
+      clearTimeout(兜底);
+      try { s && s.destroy(); } catch { }
+      resolve(r);
+    };
+    try {
+      s = tls.connect({ host, port, servername: servername || host, rejectUnauthorized: false });
+    } catch (e) {
+      fin({ ok: false, error: String(e.code || e.message).slice(0, 40) });
+      return;
+    }
     s.once('secureConnect', () => {
       const c = s.getPeerCertificate() || {};
       fin({ ok: true, ms: Date.now() - t0, cn: c.subject?.CN || null, issuer: c.issuer?.CN || null, validTo: c.valid_to || null });
     });
     s.once('error', (e) => fin({ ok: false, error: String(e.code || e.message).slice(0, 40) }));
-    s.setTimeout(timeout, () => fin({ ok: false, error: 'timeout' }));
   });
 }
 
@@ -262,15 +275,29 @@ async function probeWsPath(p, timeout = 4000) {
   };
   if (p.tls) { opt.rejectUnauthorized = false; if (p.servername) opt.servername = p.servername; }
   return new Promise((resolve) => {
-    const req = mod.request(opt, (res) => {
-      const 码 = res.statusCode;
-      res.resume();
-      // 101 升级成功 / 400 握手被拒 / 426 需要升级 —— 都说明这个路径上确实有 ws 服务
-      resolve({ status: 码, ok: 码 === 101 || 码 === 400 || 码 === 426 });
-    });
-    req.on('error', (e) => resolve({ status: 0, ok: false, error: String(e.code || e.message).slice(0, 30) }));
-    req.on('timeout', () => { try { req.destroy(); } catch { } resolve({ status: 0, ok: false, error: 'timeout' }); });
-    req.end();
+    let done = false;
+    let req;
+    // 同样要外部定时器：连接卡住时 req 的 timeout 事件不一定触发
+    const 兜底 = setTimeout(() => 结束({ status: 0, ok: false, error: 'timeout' }), timeout + 500);
+    const 结束 = (r) => {
+      if (done) return;
+      done = true;
+      clearTimeout(兜底);
+      try { req && req.destroy(); } catch { }
+      resolve(r);
+    };
+    try {
+      req = mod.request(opt, (res) => {
+        const 码 = res.statusCode;
+        res.resume();
+        // 101 升级成功 / 400 握手被拒 / 426 需要升级 —— 都说明这个路径上确实有 ws 服务
+        结束({ status: 码, ok: 码 === 101 || 码 === 400 || 码 === 426 });
+      });
+      req.on('error', (e) => 结束({ status: 0, ok: false, error: String(e.code || e.message).slice(0, 30) }));
+      req.end();
+    } catch (e) {
+      结束({ status: 0, ok: false, error: String(e.code || e.message).slice(0, 30) });
+    }
   });
   } catch (e) { return { status: 0, ok: false, error: String(e.code || e.message).slice(0, 30) }; }
 }
