@@ -30,6 +30,11 @@ const 断言 = (名, fn) => {
 };
 
 console.log('— 第一轮（冷启动）—');
+// 预置一条「旧版本产物」：没有 score 字段，验证历史条目会被回填
+fs.writeFileSync(
+  path.join(临时, 'sources.auto.json'),
+  JSON.stringify([{ name: 'legacy', url: 'https://legacy.example/sub.yaml', nodes: 42, verifiedAt: '2026-01-01T00:00:00.000Z' }], null, 2)
+);
 const 输出1 = 跑(['--fixture=' + 夹具, '--out=' + 临时, '--only=github-code,seeds,recursive', '--budget=20']);
 if (process.env.SHOW_ENGINE_LOG) console.log(输出1);
 
@@ -93,6 +98,13 @@ const 报告1 = 读('discovery-report.json');
   assert.ok(auto1.every((x) => typeof x.score === 'number'), '每条都要有 score');
   const 分数 = auto1.map((x) => x.score);
   assert.deepEqual(分数, [...分数].sort((a, b) => b - a), '应按 score 降序');
+});
+
+断言('历史条目（无 score 的旧产物）被回填', () => {
+  const 旧 = auto1.find((x) => x.url === 'https://legacy.example/sub.yaml');
+  assert.ok(旧, '历史条目应被保留');
+  assert.equal(typeof 旧.score, 'number', 'score 应被回填');
+  assert.equal(旧.nodes, 42, 'nodes 不该被清掉');
 });
 
 console.log('— 第二轮（同一目录重跑，验证持久化与幂等）—');
