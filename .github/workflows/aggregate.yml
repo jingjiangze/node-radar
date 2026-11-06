@@ -75,6 +75,13 @@ jobs:
           curl -fsSL -m 60 -o published.yaml "https://raw.githubusercontent.com/jingjiangze/node-radar/main/dist/clash.yaml"
           ./mihomo -t -d . -f published.yaml && echo "published OK ($(wc -c < published.yaml) bytes)"
 
+      # 中国大陆可达性（Globalping 众包探针，匿名 250 探针次/小时）。失败不阻断主流程：
+      # 拿不到数据时 verify.mjs 会自动跳过国内筛选，而不是把节点全判死。
+      - name: CN reachability probe
+        continue-on-error: true
+        timeout-minutes: 15
+        run: node scripts/cn-probe-gp.mjs --resume --budget=70 --probes=2
+
       # 真机验证：TCP 可达 ≠ 能当代理用。用 mihomo 真打流量，只留跑得通的，并记跨运行健康台账
       - name: Verify nodes for real
         env:
@@ -92,7 +99,7 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/clash-verified.yaml dist/node-health.json dist/verify.json || true
+          git add -f dist/clash-verified.yaml dist/node-health.json dist/verify.json dist/cn-probe.json || true
           git diff --cached --quiet || git commit -m "chore: 真机验证结果与节点健康台账"
           git pull --rebase --autostash origin main || true
           git push
