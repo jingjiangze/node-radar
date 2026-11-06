@@ -227,6 +227,45 @@ if (process.env.PROBE !== '0') {
   probeInfo = { enabled: true, probed: unique.length, alive: alive.length, ms: Date.now() - t0 };
 }
 
+// ---------- DNS 解析检查 ----------
+// 注意：只有 server 必须是可解析的。SNI(servername) / ws Host 只是名字，不需要解析
+// （CF 前置节点就是「连 IP + 用域名做 SNI」），拿它们当剔除条件会误杀，所以只统计不剔除。
+const DNS统计 = { 待解析: 0, 解析失败: 0, 仅私网: 0, sni解析失败: 0, host解析失败: 0 };
+if (process.env.DNS_PROBE !== '0') {
+  const dns = await import('node:dns');
+  const 是IP = (s) => /^\d+\.\d+\.\d+\.\d+$/.test(String(s)) || String(s).includes(':');
+  const 域名集 = new Set();
+  for (const p of alive) {
+    for (const d of [p.server, p.servername, p['ws-opts'] && p['ws-opts'].headers && p['ws-opts'].headers.Host]) {
+      if (d && !是IP(d)) 域名集.add(String(d).toLowerCase());
+    }
+  }
+  DNS统计.待解析 = 域名集.size;
+  const 结果 = new Map();
+  const 列表 = [...域名集];
+  let i = 0;
+  const t0 = Date.now();
+  await Promise.all(Array.from({ length: 50 }, async () => {
+    while (i < 列表.length) {
+      const h = 列表[i++];
+      try { const r = await dns.promises.lookup(h, { all: true }); 结果.set(h, r.map((x) => x.address)); }
+      catch { 结果.set(h, null); }
+    }
+  }));
+  const 私网 = (ip) => /^(10\.|127\.|169\.254\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.|0\.|100\.(6[4-9]|[7-9]\d|1[01]\d|12[0-7])\.)/.test(ip);
+  for (const p of alive) {
+    const s = 结果.get(String(p.server).toLowerCase());
+    if (s === null) { p.__dnsFail = true; DNS统计.解析失败++; continue; }
+    if (s && s.length && s.every(私网)) { p.__dnsFail = true; DNS统计.仅私网++; continue; }
+    if (p.servername && 结果.get(String(p.servername).toLowerCase()) === null) DNS统计.sni解析失败++;
+    const h = p['ws-opts'] && p['ws-opts'].headers && p['ws-opts'].headers.Host;
+    if (h && 结果.get(String(h).toLowerCase()) === null) DNS统计.host解析失败++;
+  }
+  const 前 = alive.length;
+  alive = alive.filter((p) => !p.__dnsFail);
+  console.log(`[DNS] 解析 ${DNS统计.待解析} 个域名（${Date.now() - t0}ms）｜server 解析失败 ${DNS统计.解析失败}、仅私网 ${DNS统计.仅私网} → 剔除 ${前 - alive.length} 个；另 SNI 域名不可解析 ${DNS统计.sni解析失败} 个、Host 不可解析 ${DNS统计.host解析失败} 个（仅统计，不剔除）`);
+}
+
 // ---------- TLS 握手 + 证书（1 个 RTT，能提前判掉必然 SSL 失败的节点）----------
 async function probeTls(host, port, servername, timeout = 4000) {
   const tls = await import('node:tls');
@@ -458,6 +497,7 @@ const summary = {
   totalAlive: alive.length,
   probe: probeInfo,
   protocolProbe: 协议统计,
+  dnsCheck: DNS统计,
   regions: Object.fromEntries(Object.entries(byRegion).map(([k, v]) => [k, v.length])),
   byType: alive.reduce((a, p) => ((a[p.type] = (a[p.type] || 0) + 1), a), {}),
   sources: stats,
