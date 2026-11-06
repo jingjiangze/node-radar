@@ -76,28 +76,6 @@ jobs:
           ./mihomo -t -d . -f published.yaml && echo "published OK ($(wc -c < published.yaml) bytes)"
 
 
-      # 真机验证：TCP 可达 ≠ 能当代理用。用 mihomo 真打流量，只留跑得通的，并记跨运行健康台账
-      - name: Verify nodes for real
-        env:
-          MIHOMO_BIN: ./mihomo
-          BUDGET: 160
-        run: node scripts/verify.mjs
-
-      - name: Validate verified output
-        run: |
-          set -e
-          if [ -f dist/clash-verified.yaml ]; then ./mihomo -t -d . -f dist/clash-verified.yaml && echo "clash-verified.yaml OK"; fi
-
-      - name: Publish verify artifacts
-        run: |
-          set -e
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/clash-verified.yaml dist/node-health.json dist/verify.json dist/cn-probe.json || true
-          git diff --cached --quiet || git commit -m "chore: 真机验证结果与节点健康台账"
-          git pull --rebase --autostash origin main || true
-          git push
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
