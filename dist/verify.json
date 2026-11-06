@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-11-06T10:46:23.586Z",
+  "source": "clash.yaml",
+  "sourceNodes": 4715,
+  "sampled": 160,
+  "passed": 160,
+  "passRate": 100,
+  "medianMs": 95,
+  "byRegion": {
+    "香港": 19,
+    "台湾": 8,
+    "新加坡": 19,
+    "日本": 19,
+    "韩国": 19,
+    "德国": 19,
+    "英国": 19,
+    "美国": 19,
+    "其他": 19
+  },
+  "verifiedNodes": 160,
+  "healthTracked": 160,
+  "deadThisRound": []
+}
