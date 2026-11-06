@@ -44,6 +44,7 @@ const 内置规则集 = [
   ['一分机场', 'r09.list'],
   ['DIRECT', 'r10.list'],
   ['一分机场', 'r11.list'],
+  ['DIRECT', 'r12-common.list'],
 ];
 const 规则集根 = 'https://sub.jiangjiangze.icu/ruleset/';
 
@@ -76,17 +77,29 @@ export async function buildRules(log = console.log) {
   }
 
   try {
-    const rules = [];
-    let 失败 = 0;
-    for (const { target, url } of 条目) {
-      let text;
-      try {
-        text = await fetchText(url);
-      } catch (e) {
-        失败++;
-        log(`[rules] 规则集失败: ${e.message}`);
-        continue;
+    // 多轮重试：runner 启动期前几个连接必超时（实测前 4~5 个 UND_ERR_CONNECT_TIMEOUT），
+    // 等整批跑完再回头重试就能通。最多 3 轮。
+    const 结果 = new Map();
+    let 待办 = 条目.map((x, i) => ({ ...x, i }));
+    for (let 轮 = 1; 轮 <= 3 && 待办.length; 轮++) {
+      if (轮 > 1) await new Promise((s) => setTimeout(s, 4000 * 轮));
+      const 下一轮 = [];
+      for (const item of 待办) {
+        try {
+          结果.set(item.i, await fetchText(item.url));
+        } catch (e) {
+          下一轮.push(item);
+          if (轮 === 3) log(`[rules] 规则集最终失败: ${e.message}`);
+        }
       }
+      待办 = 下一轮;
+    }
+
+    const rules = [];
+    let 失败 = 待办.length;
+    for (const { target, i } of 条目.map((x, i) => ({ ...x, i }))) {
+      const text = 结果.get(i);
+      if (text === undefined) continue;
       for (const raw of text.split(/\r?\n/)) {
         const line = raw.trim();
         if (!line || line.startsWith('#') || line.startsWith(';')) continue;
