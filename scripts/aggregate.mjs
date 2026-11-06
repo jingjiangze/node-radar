@@ -228,42 +228,59 @@ if (process.env.PROBE !== '0') {
 }
 
 // ---------- DNS 解析检查 ----------
-// 注意：只有 server 必须是可解析的。SNI(servername) / ws Host 只是名字，不需要解析
-// （CF 前置节点就是「连 IP + 用域名做 SNI」），拿它们当剔除条件会误杀，所以只统计不剔除。
-const DNS统计 = { 待解析: 0, 解析失败: 0, 仅私网: 0, sni解析失败: 0, host解析失败: 0 };
+// 只有 server 必须是可解析的（否则根本连不上）；SNI(servername) / ws Host 只是名字，
+// 不需要解析（CF 前置节点就是「连 IP + 用域名做 SNI」），拿它们当闸会误杀 → 只抽样统计。
+// 踩过的坑：第一版把 779 个域名全量解析，单个 lookup 卡到超时，整段跑了 345 秒却一个都没剔。
+const DNS统计 = { 必须解析: 0, 解析失败: 0, 仅私网: 0, 抽样: 0, sni解析失败: 0, host解析失败: 0 };
 if (process.env.DNS_PROBE !== '0') {
   const dns = await import('node:dns');
-  const 是IP = (s) => /^\d+\.\d+\.\d+\.\d+$/.test(String(s)) || String(s).includes(':');
-  const 域名集 = new Set();
+  const 是IP = (x) => /^d+.d+.d+.d+$/.test(String(x)) || String(x).includes(':');
+  const 带超时 = (h, ms) => Promise.race([
+    dns.promises.lookup(h, { all: true }),
+    new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms)),
+  ]);
+  const 私网 = (ip) => /^(10.|127.|169.254.|192.168.|172.(1[6-9]|2d|3[01]).|0.|100.(6[4-9]|[7-9]d|1[01]d|12[0-7]).)/.test(ip);
+
+  // 1) 必须解析的：server 是域名的（通常只有个位数，因为 TCP 探活已经隐含验证过）
+  const 必须 = [...new Set(alive.map((p) => p.server).filter((x) => x && !是IP(x)).map((x) => String(x).toLowerCase()))];
+  DNS统计.必须解析 = 必须.length;
+  const 必须结果 = new Map();
+  {
+    let i = 0;
+    await Promise.all(Array.from({ length: 20 }, async () => {
+      while (i < 必须.length) {
+        const h = 必须[i++];
+        try { 必须结果.set(h, (await 带超时(h, 3000)).map((x) => x.address)); } catch { 必须结果.set(h, null); }
+      }
+    }));
+  }
   for (const p of alive) {
-    for (const d of [p.server, p.servername, p['ws-opts'] && p['ws-opts'].headers && p['ws-opts'].headers.Host]) {
-      if (d && !是IP(d)) 域名集.add(String(d).toLowerCase());
+    if (是IP(p.server)) continue;
+    const ips = 必须结果.get(String(p.server).toLowerCase());
+    if (ips === null) { p.__dnsFail = true; DNS统计.解析失败++; }
+    else if (ips && ips.length && ips.every(私网)) { p.__dnsFail = true; DNS统计.仅私网++; }
+  }
+
+  // 2) 只抽样统计 SNI / Host 的解析情况（不作为剔除依据）
+  const 抽样 = [];
+  for (const p of alive) {
+    if (抽样.length >= 120) break;
+    for (const d of [p.servername, p['ws-opts'] && p['ws-opts'].headers && p['ws-opts'].headers.Host]) {
+      if (d && !是IP(d) && !抽样.includes(String(d).toLowerCase())) 抽样.push(String(d).toLowerCase());
     }
   }
-  DNS统计.待解析 = 域名集.size;
-  const 结果 = new Map();
-  const 列表 = [...域名集];
-  let i = 0;
-  const t0 = Date.now();
-  await Promise.all(Array.from({ length: 50 }, async () => {
-    while (i < 列表.length) {
-      const h = 列表[i++];
-      try { const r = await dns.promises.lookup(h, { all: true }); 结果.set(h, r.map((x) => x.address)); }
-      catch { 结果.set(h, null); }
+  DNS统计.抽样 = 抽样.length;
+  let j = 0;
+  await Promise.all(Array.from({ length: 40 }, async () => {
+    while (j < 抽样.length) {
+      const h = 抽样[j++];
+      try { await 带超时(h, 1500); } catch { DNS统计.sni解析失败++; }
     }
   }));
-  const 私网 = (ip) => /^(10\.|127\.|169\.254\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.|0\.|100\.(6[4-9]|[7-9]\d|1[01]\d|12[0-7])\.)/.test(ip);
-  for (const p of alive) {
-    const s = 结果.get(String(p.server).toLowerCase());
-    if (s === null) { p.__dnsFail = true; DNS统计.解析失败++; continue; }
-    if (s && s.length && s.every(私网)) { p.__dnsFail = true; DNS统计.仅私网++; continue; }
-    if (p.servername && 结果.get(String(p.servername).toLowerCase()) === null) DNS统计.sni解析失败++;
-    const h = p['ws-opts'] && p['ws-opts'].headers && p['ws-opts'].headers.Host;
-    if (h && 结果.get(String(h).toLowerCase()) === null) DNS统计.host解析失败++;
-  }
+
   const 前 = alive.length;
   alive = alive.filter((p) => !p.__dnsFail);
-  console.log(`[DNS] 解析 ${DNS统计.待解析} 个域名（${Date.now() - t0}ms）｜server 解析失败 ${DNS统计.解析失败}、仅私网 ${DNS统计.仅私网} → 剔除 ${前 - alive.length} 个；另 SNI 域名不可解析 ${DNS统计.sni解析失败} 个、Host 不可解析 ${DNS统计.host解析失败} 个（仅统计，不剔除）`);
+  console.log(`[DNS] server 域名 ${DNS统计.必须解析} 个（失败 ${DNS统计.解析失败}、仅私网 ${DNS统计.仅私网}）→ 剔除 ${前 - alive.length} 个；抽样 ${DNS统计.抽样} 个 SNI/Host 域名，不可解析 ${DNS统计.sni解析失败} 个（仅统计）`);
 }
 
 // ---------- TLS 握手 + 证书（1 个 RTT，能提前判掉必然 SSL 失败的节点）----------
