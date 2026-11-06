@@ -227,6 +227,89 @@ if (process.env.PROBE !== '0') {
   probeInfo = { enabled: true, probed: unique.length, alive: alive.length, ms: Date.now() - t0 };
 }
 
+// ---------- TLS 握手 + 证书（1 个 RTT，能提前判掉必然 SSL 失败的节点）----------
+async function probeTls(host, port, servername, timeout = 4000) {
+  const tls = await import('node:tls');
+  return new Promise((resolve) => {
+    const t0 = Date.now();
+    let done = false;
+    const s = tls.connect({ host, port, servername: servername || host, rejectUnauthorized: false, timeout });
+    const fin = (r) => { if (done) return; done = true; try { s.destroy(); } catch { } resolve(r); };
+    s.once('secureConnect', () => {
+      const c = s.getPeerCertificate() || {};
+      fin({ ok: true, ms: Date.now() - t0, cn: c.subject?.CN || null, issuer: c.issuer?.CN || null, validTo: c.valid_to || null });
+    });
+    s.once('error', (e) => fin({ ok: false, error: String(e.code || e.message).slice(0, 40) }));
+    s.setTimeout(timeout, () => fin({ ok: false, error: 'timeout' }));
+  });
+}
+
+// ---------- WS 路径探测（1 个 RTT）：400/426/101 = 路径存在；404 = 路径漂移 ----------
+async function probeWsPath(p, timeout = 4000) {
+  const http = await import('node:http');
+  const https = await import('node:https');
+  const 路径 = (p['ws-opts'] && p['ws-opts'].path) || '/';
+  const 头Host = (p['ws-opts'] && p['ws-opts'].headers && p['ws-opts'].headers.Host) || p.server;
+  const mod = p.tls ? https : http;
+  const opt = {
+    host: p.server, port: p.port, path: 路径, method: 'GET', timeout,
+    headers: {
+      Host: 头Host, Connection: 'Upgrade', Upgrade: 'websocket',
+      'Sec-WebSocket-Version': '13', 'Sec-WebSocket-Key': 'dGhlIHNhbXBsZSBub25jZQ==',
+    },
+  };
+  if (p.tls) { opt.rejectUnauthorized = false; if (p.servername) opt.servername = p.servername; }
+  return new Promise((resolve) => {
+    const req = mod.request(opt, (res) => {
+      const 码 = res.statusCode;
+      res.resume();
+      // 101 升级成功 / 400 握手被拒 / 426 需要升级 —— 都说明这个路径上确实有 ws 服务
+      resolve({ status: 码, ok: 码 === 101 || 码 === 400 || 码 === 426 });
+    });
+    req.on('error', (e) => resolve({ status: 0, ok: false, error: String(e.code || e.message).slice(0, 30) }));
+    req.on('timeout', () => { try { req.destroy(); } catch { } resolve({ status: 0, ok: false, error: 'timeout' }); });
+    req.end();
+  });
+}
+
+// ---------- 协议层廉价预筛：TLS → WS 路径 ----------
+const 协议统计 = { tls检查: 0, tls失败: 0, ws检查: 0, ws路径错: 0 };
+if (process.env.PROTO_PROBE !== '0') {
+  const t0 = Date.now();
+  const 并发 = 80;
+  // TLS：只测 tls 节点
+  const tls节点 = alive.filter((p) => p.tls);
+  协议统计.tls检查 = tls节点.length;
+  let i = 0;
+  await Promise.all(Array.from({ length: 并发 }, async () => {
+    while (i < tls节点.length) {
+      const p = tls节点[i++];
+      const r = await probeTls(p.server, p.port, p.servername || (p['ws-opts'] && p['ws-opts'].headers && p['ws-opts'].headers.Host));
+      if (!r.ok) { 协议统计.tls失败++; p.__tlsFail = r.error; }
+      else p.__certIssuer = r.issuer;
+    }
+  }));
+
+  // WS：只测 ws 节点（TLS 已失败的跳过）
+  const ws节点 = alive.filter((p) => p.network === 'ws' && !p.__tlsFail);
+  协议统计.ws检查 = ws节点.length;
+  i = 0;
+  await Promise.all(Array.from({ length: 并发 }, async () => {
+    while (i < ws节点.length) {
+      const p = ws节点[i++];
+      const r = await probeWsPath(p);
+      if (r.status === 404) { 协议统计.ws路径错++; p.__wsPathBad = true; }
+    }
+  }));
+
+  const 前 = alive.length;
+  alive = alive.filter((p) => !p.__tlsFail && !p.__wsPathBad);
+  console.log(`[协议预筛] TLS ${协议统计.tls检查} 个（握手失败 ${协议统计.tls失败}）｜WS ${协议统计.ws检查} 个（路径 404 ${协议统计.ws路径错}）→ 剔除 ${前 - alive.length} 个（${((Date.now() - t0) / 1000).toFixed(0)}s）`);
+}
+
+// 清掉探测用的内部字段，别写进产物
+for (const p of alive) { for (const k of Object.keys(p)) if (k.startsWith("__")) delete p[k]; }
+
 // ---------- 国内可达性剔除（数据来自独立的 cn-probe 工作流）----------
 // 只剔「国内探针明确判不可达」的 host:port；数据缺失/过期就不做这层，避免用陈旧结论误杀。
 let CN不可达 = new Set();
@@ -344,6 +427,7 @@ const summary = {
   totalUnique: unique.length,
   totalAlive: alive.length,
   probe: probeInfo,
+  protocolProbe: 协议统计,
   regions: Object.fromEntries(Object.entries(byRegion).map(([k, v]) => [k, v.length])),
   byType: alive.reduce((a, p) => ((a[p.type] = (a[p.type] || 0) + 1), a), {}),
   sources: stats,
