@@ -41,5 +41,8 @@ jobs:
               throw new Error(file + ': missing proxies array');
             }
           }
-          for (const file of ['dist/summary.json', 'dist/egress-audit.json', 'dist/cf-egress.json', 'dist/cf-fronted-endpoints.json', 'dist/datacenter-audit.json']) {\n            if (fs.existsSync(file)) JSON.parse(fs.readFileSync(file, 'utf8'));\n          }\n          console.log('source manifests, audit reports and available YAML artifacts are valid');
+          for (const file of ['dist/summary.json', 'dist/egress-audit.json', 'dist/cf-egress.json', 'dist/cf-fronted-endpoints.json', 'dist/datacenter-audit.json']) {
+            if (fs.existsSync(file)) JSON.parse(fs.readFileSync(file, 'utf8'));
+          }
+          console.log('source manifests, audit reports and available YAML artifacts are valid');
           NODE
