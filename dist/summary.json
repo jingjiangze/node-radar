@@ -1,34 +1,33 @@
 {
-  "generatedAt": "2026-11-06T12:01:31.817Z",
-  "totalRaw": 23642,
-  "totalUnique": 15963,
-  "totalAlive": 4706,
+  "generatedAt": "2026-11-06T13:01:35.362Z",
+  "totalRaw": 23480,
+  "totalUnique": 15928,
+  "totalAlive": 4596,
   "probe": {
     "enabled": true,
-    "probed": 15963,
-    "alive": 4706,
-    "ms": 166837
+    "probed": 15928,
+    "alive": 4662,
+    "ms": 166619
   },
   "regions": {
-    "美国": 1100,
-    "香港": 28,
-    "新加坡": 77,
-    "台湾": 8,
-    "日本": 61,
-    "德国": 163,
-    "英国": 108,
+    "日本": 52,
+    "德国": 146,
+    "美国": 1056,
+    "香港": 25,
+    "英国": 104,
+    "台湾": 11,
+    "新加坡": 72,
     "韩国": 29
   },
   "byType": {
-    "hysteria2": 21,
-    "ss": 376,
-    "vless": 2069,
-    "anytls": 1,
-    "trojan": 751,
-    "http": 120,
-    "vmess": 1362,
-    "ssr": 2,
-    "socks5": 4
+    "vless": 2084,
+    "trojan": 745,
+    "vmess": 1320,
+    "ss": 366,
+    "hysteria2": 22,
+    "http": 51,
+    "socks5": 6,
+    "anytls": 2
   },
   "sources": [
     {
@@ -40,13 +39,13 @@
     {
       "source": "aiboboxx/v2rayfree",
       "kind": "uri-list",
-      "count": 95,
+      "count": 6,
       "ok": true
     },
     {
       "source": "ermaozi/get_subscribe",
       "kind": "clash-yaml",
-      "count": 429,
+      "count": 356,
       "ok": true
     },
     {
