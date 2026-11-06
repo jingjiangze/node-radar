@@ -141,8 +141,8 @@ for (const item of found) {
   });
 }
 const cutoff = now - 90 * 86400000;
-const candidates = [...candidateByUrl.values()].filter((s) => new Date(s.lastSeen || s.verifiedAt || 0).getTime() > cutoff);
-const promoted = candidates.filter((s) =>
+const validatedCandidates = [...candidateByUrl.values()].filter((s) => new Date(s.lastSeen || s.verifiedAt || 0).getTime() > cutoff);
+const promoted = validatedCandidates.filter((s) =>
   s.successfulRuns >= 3 &&
   now - new Date(s.firstSeen).getTime() >= 48 * 3600000 &&
   s.nodes >= MIN_NODES
@@ -154,6 +154,6 @@ for (const item of promoted) byUrl.set(item.url, {
   verifiedAt: item.lastSeen, promotedAt: item.firstSeen
 });
 const merged = [...byUrl.values()].filter((s) => new Date(s.verifiedAt || 0).getTime() > cutoff);
-fs.writeFileSync(CANDIDATES, JSON.stringify(candidates, null, 2) + '\n');
+fs.writeFileSync(CANDIDATES, JSON.stringify(validatedCandidates, null, 2) + '\n');
 fs.writeFileSync(OUT, JSON.stringify(merged, null, 2) + '\n');
-console.log(`sources.auto.json 共 ${merged.length} 条；候选 ${candidates.length} 条；本轮晋升 ${promoted.length} 条`);
+console.log(`sources.auto.json 共 ${merged.length} 条；候选 ${validatedCandidates.length} 条；本轮晋升 ${promoted.length} 条`);
