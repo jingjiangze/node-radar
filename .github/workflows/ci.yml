@@ -24,7 +24,11 @@ jobs:
       - run: npm ci
       - name: Syntax-check pipeline scripts
         run: |
-          for file in scripts/*.mjs; do node --check "$file"; done
+          for file in scripts/*.mjs scripts/discovery/*.mjs; do node --check "$file"; done
+      # 发现适配器的离线自测：安全判定 / 归一化 / 候选登记表状态机
+      - name: Discovery adapters selftest
+        run: node scripts/discovery/selftest.mjs
+
       - name: Validate source manifests and generated YAML
         run: |
           node --input-type=module <<'NODE'
