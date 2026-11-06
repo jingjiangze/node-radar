@@ -61,7 +61,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p dist
-          git add -f dist/clash.yaml dist/clash-lite.yaml dist/summary.json
+          git add -f dist/clash.yaml dist/clash-lite.yaml dist/summary.json dist/egress-audit.json dist/cf-egress.json dist/cf-fronted-endpoints.json dist/datacenter-audit.json dist/ip-meta-cache.json\n          if [ -f dist/cf-egress.yaml ]; then git add -f dist/cf-egress.yaml; else git rm -f --ignore-unmatch dist/cf-egress.yaml; fi
           [ -f sources.health.json ] && git add -f sources.health.json || true
           git diff --cached --quiet || git commit -m "chore: update aggregated subscription"
           git push
