@@ -1,44 +1,45 @@
 {
-  "generatedAt": "2026-11-06T08:46:39.211Z",
-  "budget": 30,
+  "generatedAt": "2026-11-06T08:54:25.740Z",
+  "budget": 40,
   "channels": {
     "github-code": {
       "产出": 40,
-      "耗时ms": 25490
+      "耗时ms": 24116
     },
     "github-search": {
       "产出": 40,
-      "耗时ms": 6293
+      "耗时ms": 6466
     },
     "seeds": {
       "产出": 40,
-      "耗时ms": 3514
+      "耗时ms": 5325
     },
     "recursive": {
       "产出": 33,
-      "耗时ms": 39
+      "耗时ms": 33
     },
     "telegram": {
       "产出": 0,
-      "耗时ms": 1
+      "耗时ms": 0
     },
     "feed": {
       "产出": 0,
-      "耗时ms": 0
+      "耗时ms": 1
     },
     "search": {
       "产出": 0,
       "耗时ms": 0
     }
   },
-  "candidates": 30,
-  "passed": 6,
+  "candidates": 40,
+  "passed": 7,
   "registry": {
-    "accepted": 6,
-    "candidate": 24,
-    "rejected": 0
+    "accepted": 7,
+    "candidate": 33,
+    "rejected": 0,
+    "mirror": 0
   },
-  "acceptedSources": 8,
+  "acceptedSources": 9,
   "newSources": [
     {
       "url": "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/yaml/Custom_Clash.yaml",
@@ -68,6 +69,11 @@
     {
       "url": "https://raw.githubusercontent.com/ID-10086/freenode/main/adiclash.yml",
       "nodes": 261,
+      "channel": "github-code"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/clashconfig/online/main/Dark_Clash.yml",
+      "nodes": 419,
       "channel": "github-code"
     }
   ],
@@ -166,6 +172,30 @@
     },
     {
       "url": "https://raw.githubusercontent.com/yangxiaoge/tvbox_cust/master/clash/Clash.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/tickmao/Rules/master/Clash/Meta/Clash.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodesfree/v2raynode/main/subscribe/clash.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nodesfree/clashnode/main/subscribe/clash.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/axtyet/Luminous/main/Moli-X/Clash/Clash.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hermanb001/ProxyTest/main/subscribe/clash.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/b1ghawk119/subconverter/main/base/clash.yml.20250906",
       "reason": "节点不足(0)"
     }
   ]
