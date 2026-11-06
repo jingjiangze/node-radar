@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-11-06T10:08:29.806Z",
-  "totalRaw": 23628,
-  "totalUnique": 15956,
-  "totalAlive": 4751,
+  "generatedAt": "2026-11-06T10:45:57.177Z",
+  "totalRaw": 23642,
+  "totalUnique": 15961,
+  "totalAlive": 4715,
   "probe": {
     "enabled": true,
-    "probed": 15956,
-    "alive": 4751,
-    "ms": 166412
+    "probed": 15961,
+    "alive": 4715,
+    "ms": 166237
   },
   "regions": {
-    "美国": 1121,
+    "美国": 1099,
     "香港": 30,
-    "新加坡": 79,
-    "台湾": 9,
-    "日本": 62,
-    "德国": 172,
-    "英国": 103,
-    "韩国": 27
+    "新加坡": 77,
+    "台湾": 8,
+    "日本": 60,
+    "德国": 160,
+    "英国": 107,
+    "韩国": 31
   },
   "byType": {
-    "ss": 372,
-    "trojan": 755,
-    "vless": 2088,
+    "ss": 375,
+    "vless": 2072,
     "anytls": 1,
     "hysteria2": 22,
+    "trojan": 756,
     "http": 120,
-    "vmess": 1387,
+    "vmess": 1361,
     "ssr": 2,
-    "socks5": 4
+    "socks5": 6
   },
   "sources": [
     {
@@ -64,7 +64,7 @@
     {
       "source": "peasoft/NoMoreWalls",
       "kind": "clash-yaml",
-      "count": 96,
+      "count": 104,
       "ok": true
     },
     {
@@ -88,7 +88,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4283,
+      "count": 4287,
       "ok": true
     },
     {
@@ -142,7 +142,7 @@
     {
       "source": "github-code",
       "kind": "clash-yaml",
-      "count": 20,
+      "count": 17,
       "ok": true
     },
     {
@@ -160,7 +160,7 @@
     {
       "source": "github-code",
       "kind": "clash-yaml",
-      "count": 20,
+      "count": 25,
       "ok": true
     },
     {
