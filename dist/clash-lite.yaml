@@ -2004,6 +2004,13 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: 🇰🇷 1172
+    type: trojan
+    server: 158.247.255.150
+    port: 48851
+    password: 5t6i121em5lkmsmk
+    udp: true
+    sni: kr002.zestapp778.com
   - name: JP日本(v2clash.blog 2026-6.9更新)
     type: vless
     server: 151.101.108.223
@@ -4013,13 +4020,6 @@ proxies:
     password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
     udp: true
     sni: exploredigitaljobplatformandfindonlinework.com
-  - name: 🇰🇷 1172
-    type: trojan
-    server: 158.247.255.150
-    port: 48851
-    password: 5t6i121em5lkmsmk
-    udp: true
-    sni: kr002.zestapp778.com
   - name: 🇭🇰 811
     type: ss
     server: 103.36.91.32
