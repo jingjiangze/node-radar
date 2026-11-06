@@ -5,13 +5,14 @@ on:
     - cron: "0 */6 * * *"   # 每 6 小时
   workflow_dispatch:
 
+# 同一时间只跑一个：并发运行会在 push 阶段互相顶掉（! [rejected] main -> main (fetch first)）
+concurrency:
+  group: aggregate-nodes
+  cancel-in-progress: false
+
 permissions:
   contents: write
   issues: write
-
-concurrency:
-  group: node-radar-publish
-  cancel-in-progress: false
 
 jobs:
   build:
@@ -41,26 +42,12 @@ jobs:
             | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
           curl -sSL -o mihomo.gz "$URL" && gunzip -f mihomo.gz && chmod +x mihomo
 
-      - name: Audit actual proxy egress and IP ownership
-        run: node scripts/audit-egress.mjs
-        env:
-          MIHOMO_BIN: ./mihomo
-          EGRESS_SAMPLE: 12
-          IPAPI_KEY: ${{ secrets.IPAPI_KEY }}
-
       # 关键兜底：生成物必须能被内核加载，否则不发布（不提交、不覆盖线上）
       - name: Validate generated config
         run: |
           set -e
-          test -s dist/clash.yaml
-          test -s dist/summary.json
-          test -s dist/egress-audit.json
-          test -s dist/cf-egress.json
-          test -s dist/cf-fronted-endpoints.json
-          test -s dist/datacenter-audit.json
-          ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"
+          if [ -f dist/clash.yaml ]; then ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"; fi
           if [ -f dist/clash-lite.yaml ]; then ./mihomo -t -d . -f dist/clash-lite.yaml && echo "clash-lite.yaml OK"; fi
-          if [ -f dist/cf-egress.yaml ]; then ./mihomo -t -d . -f dist/cf-egress.yaml && echo "cf-egress.yaml OK"; fi
           if [ -f dist/speed-top.yaml ]; then ./mihomo -t -d . -f dist/speed-top.yaml && echo "speed-top.yaml OK"; fi
 
       - name: Purge jsDelivr cache
@@ -73,10 +60,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p dist
-          git add -f dist/clash.yaml dist/clash-lite.yaml dist/summary.json dist/egress-audit.json dist/cf-egress.json dist/cf-fronted-endpoints.json dist/datacenter-audit.json dist/ip-meta-cache.json
-          if [ -f dist/cf-egress.yaml ]; then git add -f dist/cf-egress.yaml; else git rm -f --ignore-unmatch dist/cf-egress.yaml; fi
+          git add -f dist/clash.yaml dist/clash-lite.yaml dist/summary.json
           [ -f sources.health.json ] && git add -f sources.health.json || true
           git diff --cached --quiet || git commit -m "chore: update aggregated subscription"
+          # 远端可能已被别的运行推进过，先 rebase 再推，避免 (fetch first) 直接失败
+          git pull --rebase --autostash origin main || true
           git push
 
       # 冒烟：发布后再从公网取一次，确认线上就是这份
@@ -86,6 +74,28 @@ jobs:
           sleep 5
           curl -fsSL -m 60 -o published.yaml "https://raw.githubusercontent.com/jingjiangze/node-radar/main/dist/clash.yaml"
           ./mihomo -t -d . -f published.yaml && echo "published OK ($(wc -c < published.yaml) bytes)"
+
+      # 真机验证：TCP 可达 ≠ 能当代理用。用 mihomo 真打流量，只留跑得通的，并记跨运行健康台账
+      - name: Verify nodes for real
+        env:
+          MIHOMO_BIN: ./mihomo
+          BUDGET: 160
+        run: node scripts/verify.mjs
+
+      - name: Validate verified output
+        run: |
+          set -e
+          if [ -f dist/clash-verified.yaml ]; then ./mihomo -t -d . -f dist/clash-verified.yaml && echo "clash-verified.yaml OK"; fi
+
+      - name: Publish verify artifacts
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/clash-verified.yaml dist/node-health.json dist/verify.json || true
+          git diff --cached --quiet || git commit -m "chore: 真机验证结果与节点健康台账"
+          git pull --rebase --autostash origin main || true
+          git push
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
