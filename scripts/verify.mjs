@@ -237,14 +237,20 @@ for (const [, list] of 按地区) {
 }
 const 最终 = 精选.slice(0, 产出上限);
 
+// 先算清哪些地区真的有足够成员（>=5）才会生成分组，🌐 公共节点 只引用这些；
+// 否则会引用到不存在的 📍 组 → 内核报 "proxy group: '📍 日本' not found" → 整份产物作废
+const 地区成员 = new Map();
+for (const [r] of 按地区) {
+  const 命中 = 最终.filter((p) => 地区判定(p.name) === r).map((p) => p.name);
+  if (命中.length >= 5) 地区成员.set(r, 命中);
+}
+
 const 分组 = [
-  { name: '🌐 公共节点', type: 'select', proxies: ['♻️ 全部-自动', '☝️ 全部-手动', ...[...按地区.keys()].map((r) => `📍 ${r}`), 'DIRECT'] },
+  { name: '🌐 公共节点', type: 'select', proxies: ['♻️ 全部-自动', '☝️ 全部-手动', ...[...地区成员.keys()].map((r) => `📍 ${r}`), 'DIRECT'] },
   { name: '♻️ 全部-自动', type: 'url-test', url: 测试URL, interval: 900, tolerance: 100, lazy: true, proxies: 最终.map((p) => p.name) },
   { name: '☝️ 全部-手动', type: 'select', proxies: 最终.map((p) => p.name) },
 ];
-for (const [r, list] of 按地区) {
-  const 命中 = 最终.filter((p) => 地区判定(p.name) === r).map((p) => p.name);
-  if (命中.length < 5) continue;
+for (const [r, 命中] of 地区成员) {
   分组.push({ name: `📍 ${r}`, type: 'url-test', url: 测试URL, interval: 1800, tolerance: 100, lazy: true, proxies: 命中 });
 }
 
