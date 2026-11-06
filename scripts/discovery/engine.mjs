@@ -152,6 +152,12 @@ const 主 = async () => {
   for (const [u, item] of Object.entries(注册.items)) {
     if (item.status === 'rejected' || item.status === 'mirror') 合并.delete(u);
   }
+  // 历史条目回填 score（老版本的 sources.auto.json 没有这个字段）
+  for (const [u, x] of 合并) {
+    const 项 = 注册.items[u];
+    if (typeof x.score !== 'number') x.score = 项?.score ?? 0;
+    if (项 && typeof x.nodes !== 'number') x.nodes = 项.nodes;
+  }
   // 按信誉分排序（同分再看节点数）
   const 正式 = [...合并.values()].sort((a, b) => (b.score || 0) - (a.score || 0) || (b.nodes || 0) - (a.nodes || 0));
   日志(`正式源 ${正式.length} 个（本轮新增 ${新增.length}，镜像 ${镜像数}）`);
