@@ -21,6 +21,7 @@ const 参数 = new Map(process.argv.slice(2).map((a) => { const [k, v = 'true'] 
 
 const 预算 = Number(参数.get('budget') || 100);
 const 探针数 = Number(参数.get('probes') || 2);
+const 并发 = Number(参数.get('concurrency') || 4);
 const 续跑 = 参数.has('resume');
 const 最多年龄 = Number(参数.get('max-age-hours') || 48);
 const 源 = process.env.SOURCE || path.join(DIST, 'clash-lite.yaml');
@@ -75,7 +76,26 @@ const 等结果 = async (id) => {
 
 const 本轮 = {};
 let 余量 = -1;
-for (const [hp, t] of 目标) {
+let 停止 = false;
+
+const 记账 = () => {
+  const 合并 = { ...历史, ...本轮 };
+  const 条数 = Object.keys(合并).length;
+  const 可达 = Object.values(合并).filter((x) => x.ok).length;
+  fs.writeFileSync(输出, JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    vantage: 'globalping-cn',
+    scope: path.basename(源),
+    total: 条数,
+    ok: 可达,
+    okRate: Number(((可达 / Math.max(1, 条数)) * 100).toFixed(1)),
+    results: 合并,
+  }, null, 0) + '\n');
+};
+
+const 测一个 = async ([hp, t]) => {
+  if (停止) return;
+  if (余量 >= 0 && 余量 < 探针数) { 停止 = true; 日志('额度不足，停止发起新探测'); return; }
   const { status, json, 余量: rl } = await 请求({
     type: 'ping',
     target: t.host,
@@ -83,18 +103,16 @@ for (const [hp, t] of 目标) {
     measurementOptions: { protocol: 'TCP', port: t.port },
   });
   if (rl >= 0) 余量 = rl;
+  if (status === 429) { 停止 = true; 日志('额度用尽(429)，提前结束本轮'); return; }
   if (status !== 202 || !json.id) {
     日志(`  探测请求被拒(${status}) ${hp} ${JSON.stringify(json).slice(0, 80)}`);
-    if (status === 429) { 日志('额度用尽，提前结束本轮'); break; }
-    continue;
+    return;
   }
   const 结果 = await 等结果(json.id);
-  if (!结果) { 日志(`  超时未出结果 ${hp}`); continue; }
+  if (!结果) { 日志(`  超时未出结果 ${hp}`); return; }
   const 探针 = 结果.results || [];
   const 收到 = 探针.filter((x) => (x.result?.stats?.rcv || 0) > 0);
-  const 平均 = 收到.length
-    ? Math.round(收到.reduce((a, x) => a + (x.result.stats.avg || 0), 0) / 收到.length)
-    : null;
+  const 平均 = 收到.length ? Math.round(收到.reduce((a, x) => a + (x.result.stats.avg || 0), 0) / 收到.length) : null;
   本轮[hp] = {
     ok: 收到.length > 0,
     ms: 平均,
@@ -103,9 +121,17 @@ for (const [hp, t] of 目标) {
     okProbes: 收到.length,
     cities: 探针.map((x) => x.probe?.city).filter(Boolean).slice(0, 4),
   };
-  await 睡(1200);
-  if (余量 === 0) { 日志('额度归零，提前结束本轮'); break; }
-}
+  if (Object.keys(本轮).length % 10 === 0) { 记账(); 日志(`  进度 ${Object.keys(本轮).length}/${目标.length}（额度余 ${余量}）`); }
+};
+
+// 并发执行：额度是按「探针数」扣的，并发不会超支，只是把墙钟时间压下来
+let 指针 = 0;
+await Promise.all(Array.from({ length: Math.max(1, 并发) }, async () => {
+  while (指针 < 目标.length && !停止) {
+    const i = 指针++;
+    await 测一个(目标[i]);
+  }
+}));
 
 // ---------- 合并写盘 ----------
 const 合并 = { ...历史, ...本轮 };
