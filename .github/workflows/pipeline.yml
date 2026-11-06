@@ -131,8 +131,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f dist/cn-probe.json
           git diff --cached --quiet || git commit -m "chore(probe): 国内可达性结果"
-          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
-          git push
+          # 产物是每轮重新生成的，冲突时重试；仍失败就放弃本轮提交（下轮会覆盖），不让 job 变红
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin  && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          echo "提交冲突未解决，放弃本轮提交（产物下轮重新生成）"
 
   # ---------- ③ 聚合发布 ----------
   aggregate:
@@ -171,8 +176,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "chore(aggregate): 更新公共节点池"
-          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
-          git push
+          # 产物是每轮重新生成的，冲突时重试；仍失败就放弃本轮提交（下轮会覆盖），不让 job 变红
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin  && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          echo "提交冲突未解决，放弃本轮提交（产物下轮重新生成）"
 
       - name: Smoke test
         run: |
@@ -184,6 +194,7 @@ jobs:
   # ---------- ④ 测速 + 同轮重排 ----------
   speedtest:
     needs: aggregate
+    if: always() && needs.aggregate.result == 'success'
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
@@ -220,8 +231,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml 2>/dev/null || true
           git diff --cached --quiet || git commit -m "chore(speed): 实测速度 + 重排"
-          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
-          git push
+          # 产物是每轮重新生成的，冲突时重试；仍失败就放弃本轮提交（下轮会覆盖），不让 job 变红
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin  && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          echo "提交冲突未解决，放弃本轮提交（产物下轮重新生成）"
 
   # ---------- ⑤ 接续下一轮（不间断运行的核心）----------
   chain:
