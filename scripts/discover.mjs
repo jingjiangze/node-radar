@@ -83,7 +83,7 @@ const knownUrls = new Set([...existing, ...curated].map((s) => s.url));
 
 const found = [];
 const refreshedExisting = [];
-const curatedUrls = new Set(curated.map((s) => s.url));\nconst refreshedExisting = [];\nconst curatedUrls = new Set(curated.map((s) => s.url));
+const curatedUrls = new Set(curated.map((s) => s.url));
 for (const repo of candidates) {
   let items;
   try { items = await ghJson(`/repos/${repo.full}/contents/`); } catch { continue; }
