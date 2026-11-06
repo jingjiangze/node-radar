@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: node-radar-publish
+  cancel-in-progress: false
+
 jobs:
   speed:
     runs-on: ubuntu-latest
