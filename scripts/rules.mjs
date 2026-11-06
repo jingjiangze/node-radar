@@ -1,6 +1,10 @@
 // 把「一分机场」那套规则搬进公开池订阅
 // 规则真源：ruleset.ini（gist）+ 17 个 .list（sub.jiangjiangze.icu，每行一条、目标组由 .ini 指定）
 // 展开成 Clash 原生 rules，避免客户端再去拉 rule-providers。
+import dns from 'node:dns';
+
+// GitHub runner 上 IPv6 首选会直接 UND_ERR_CONNECT_TIMEOUT（实测前几个规则集全超时），强制 IPv4
+dns.setDefaultResultOrder('ipv4first');
 
 export const RULESET_INI =
   'https://gist.githubusercontent.com/jingjiangze/5521603a73532bae0c53d8a600610e14/raw/ruleset.ini';
