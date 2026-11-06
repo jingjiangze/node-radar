@@ -180,6 +180,7 @@ jobs:
         env:
           MIHOMO_BIN: ./mihomo
           SAMPLE: 60
+          SPEED_CONCURRENCY: 8
         run: node scripts/speedtest.mjs
 
       - name: Commit speed results
@@ -189,6 +190,26 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f dist/speed.json dist/speed-top.yaml 2>/dev/null || true
           git diff --cached --quiet || git commit -m "chore(speed): 更新实测速度"
+          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
+          git push
+
+      # 测速结果要在同一轮内就作用到已发布的池子上（不然要等下一次聚合）
+      - name: Rerank pool with speed data
+        run: node scripts/rerank.mjs
+
+      - name: Validate reranked pool
+        run: |
+          set -e
+          ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"
+          ./mihomo -t -d . -f dist/clash-lite.yaml && echo "clash-lite.yaml OK"
+
+      - name: Commit reranked pool
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/clash.yaml dist/clash-lite.yaml
+          git diff --cached --quiet || git commit -m "chore(rerank): 按国内 RTT + 实测速度重排"
           git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
           git push
 
