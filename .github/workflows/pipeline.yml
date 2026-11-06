@@ -18,10 +18,6 @@ on:
       budget:
         description: "每个探测分片的目标数"
         default: "110"
-      skip_speed:
-        description: "跳过测速"
-        type: boolean
-        default: false
       force_probe:
         description: "强制跑国内探测（忽略新鲜度）"
         type: boolean
@@ -188,7 +184,6 @@ jobs:
   # ---------- ④ 测速 + 同轮重排 ----------
   speedtest:
     needs: aggregate
-    if: ${{ inputs.skip_speed != true }}
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
