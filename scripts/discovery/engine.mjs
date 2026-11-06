@@ -103,8 +103,27 @@ const 主 = async () => {
   const 候选 = [...去重表.values()];
   日志(`去重后候选 ${候选.length} 个`);
 
+  // 2b) 按渠道轮转排序：避免某个高噪声渠道（如盲猜文件名的仓库嗅探）把预算吃光
+  const 渠道顺序 = ['seeds', 'recursive', 'github-code', 'github-search', 'telegram', 'feed', 'search'];
+  const 分桶 = new Map();
+  for (const c of 候选) {
+    const k = c.channel || 'other';
+    if (!分桶.has(k)) 分桶.set(k, []);
+    分桶.get(k).push(c);
+  }
+  const 轮转 = [];
+  let 还有 = true;
+  while (还有) {
+    还有 = false;
+    for (const ch of 渠道顺序) {
+      const 桶 = 分桶.get(ch);
+      if (桶 && 桶.length) { 轮转.push(桶.shift()); 还有 = true; }
+    }
+  }
+  for (const c of 候选) if (!轮转.includes(c)) 轮转.push(c);
+
   // 3) 校验（预算内）
-  const 待验 = 候选.slice(0, 上限.validatePerRun);
+  const 待验 = 轮转.slice(0, 上限.validatePerRun);
   const 已接受URL = new Set(
     (() => { try { return JSON.parse(fs.readFileSync(AUTO, 'utf8')).map((x) => 归一化(x.url)); } catch { return []; } })()
   );
