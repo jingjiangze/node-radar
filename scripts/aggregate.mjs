@@ -255,16 +255,16 @@ if (CN不可达.size) {
 const SPEED = new Map();
 try {
   const sp = JSON.parse(fs.readFileSync(new URL('../dist/speed.json', import.meta.url), 'utf8'));
-  for (const r of sp.results || []) if (r.ok && r.mbps > 0) SPEED.set(String(r.node), r.mbps);
+  for (const r of sp.results || []) if (r.ok && r.mbps > 0) { if (r.server && r.port) SPEED.set(r.server + ':' + r.port, r.mbps); else SPEED.set(String(r.node), r.mbps); }
   console.log(`[速度] 载入 ${SPEED.size} 个实测样本`);
 } catch { }
-const 质量键 = (p) => ({ mb: SPEED.get(String(p.name)) ?? -1, rtt: RTT.get(`${p.server}:${p.port}`) ?? 99999 });
+const 质量键 = (p) => ({ mb: SPEED.get(p.server + ':' + p.port) ?? SPEED.get(String(p.name)) ?? -1, rtt: RTT.get(`${p.server}:${p.port}`) ?? 99999 });
 alive.sort((a, b) => {
   const x = 质量键(a), y = 质量键(b);
   if (y.mb !== x.mb) return y.mb - x.mb;
   return x.rtt - y.rtt;
 });
-const 有速度 = alive.filter((p) => SPEED.has(String(p.name))).length;
+const 有速度 = alive.filter((p) => SPEED.has(p.server + ':' + p.port) || SPEED.has(String(p.name))).length;
 console.log(`[排序] ${alive.length} 个节点按「实测速度优先 → RTT 升序」排好（其中 ${有速度} 个有 MB/s 实测）`);
 
 // ---------- 名字去重 ----------
