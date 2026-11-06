@@ -147,9 +147,34 @@ const 通过 = 结果.filter((r) => r.ok);
 日志(`真机通过 ${通过.length}/${结果.length} = ${((通过.length / Math.max(1, 结果.length)) * 100).toFixed(1)}%`);
 
 // ---------- 产出 verified ----------
+// ---------- 国内可达性（可选输入）----------
+// 数据来源可以是任何探测服务或墙内自建探测机，只要格式是
+//   { generatedAt, vantage, results: { "host:port": { ok: bool } } }
+// 超过 CN_PROBE_MAX_AGE_HOURS 小时的视为过期，不参与筛选（避免用陈旧结论误杀节点）。
+const CN探针文件 = process.env.CN_PROBE || path.join(DIST, 'cn-probe.json');
+const CN最大年龄 = Number(process.env.CN_PROBE_MAX_AGE_HOURS || 36);
+let CN不可达 = new Set();
+let CN信息 = null;
+try {
+  const cn = JSON.parse(fs.readFileSync(CN探针文件, 'utf8'));
+  const 年龄h = (Date.now() - Date.parse(cn.generatedAt || 0)) / 3600e3;
+  if (年龄h <= CN最大年龄 && cn.results) {
+    for (const [hp, v] of Object.entries(cn.results)) if (v && v.ok === false) CN不可达.add(hp);
+    CN信息 = { vantage: cn.vantage, generatedAt: cn.generatedAt, ageHours: Number(年龄h.toFixed(1)), unreachable: CN不可达.size };
+    日志(`国内探测（${cn.vantage}，${年龄h.toFixed(1)}h 前）：${CN不可达.size} 个 host:port 国内不可达`);
+  } else {
+    日志(`国内探测数据过期或缺失（${cn.generatedAt || '无时间戳'}），本轮不做国内筛选`);
+  }
+} catch {
+  CN信息 = null;
+  日志('没有 cn-probe.json，本轮不做国内筛选');
+}
+
 const 可用 = 全部.filter((p) => {
   const h = 健康[p.name];
-  return h && h.ok > 0 && (h.consecFail || 0) < 最大失败;
+  if (!h || h.ok <= 0 || (h.consecFail || 0) >= 最大失败) return false;
+  if (CN不可达.has(`${p.server}:${p.port}`)) return false; // 国内连不上直接排除
+  return true;
 });
 const 按地区 = new Map();
 for (const p of 可用) {
@@ -186,6 +211,7 @@ const 报告 = {
   byRegion: Object.fromEntries([...按地区.entries()].map(([r, l]) => [r, l.length])),
   verifiedNodes: 最终.length,
   healthTracked: Object.keys(健康).length,
+  cnProbe: CN信息,
   deadThisRound: 结果.filter((r) => !r.ok).map((r) => ({ name: r.name.replace(/^\d+\|/, '') })).slice(0, 20),
 };
 
