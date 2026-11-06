@@ -1,29 +1,161 @@
 {
-  "generatedAt": "2026-11-06T10:58:14.708Z",
+  "generatedAt": "2026-11-06T12:14:55.065Z",
   "source": "clash.yaml",
-  "sourceNodes": 4711,
-  "sampled": 131,
-  "passed": 131,
-  "passRate": 100,
-  "medianMs": 103,
+  "sourceNodes": 4706,
+  "sampled": 160,
+  "passed": 46,
+  "passRate": 28.7,
+  "medianMs": 758,
   "byRegion": {
-    "香港": 22,
-    "新加坡": 37,
-    "台湾": 8,
-    "德国": 39,
-    "日本": 30,
-    "英国": 38,
-    "美国": 39,
-    "韩国": 27,
-    "其他": 39
+    "香港": 2,
+    "日本": 3,
+    "英国": 13,
+    "美国": 5,
+    "其他": 2,
+    "德国": 2,
+    "新加坡": 5,
+    "韩国": 7
   },
-  "verifiedNodes": 279,
-  "healthTracked": 291,
+  "verifiedNodes": 39,
+  "healthTracked": 160,
   "cnProbe": {
     "vantage": "globalping-cn",
-    "generatedAt": "2026-11-06T10:37:44.093Z",
-    "ageHours": 0.3,
-    "unreachable": 14
+    "generatedAt": "2026-11-06T11:07:27.838Z",
+    "ageHours": 1.1,
+    "unreachable": 63
   },
-  "deadThisRound": []
+  "speed": {
+    "sampled": 30,
+    "measured": 5,
+    "medianMbps": 0.6,
+    "top": [
+      {
+        "node": "52|🇬🇧GB-82.38.31.171-0206",
+        "mbps": 0.63,
+        "ms": 363
+      },
+      {
+        "node": "94|🇬🇧GB-82.38.31.47-0217",
+        "mbps": 0.63,
+        "ms": 364
+      },
+      {
+        "node": "144|🇺🇸US_16|2.3MB/s",
+        "mbps": 0.6,
+        "ms": 275
+      },
+      {
+        "node": "86|🇬🇧[www.v2nodes.com] ss-GB-1602...",
+        "mbps": 0.54,
+        "ms": 362
+      },
+      {
+        "node": "134|🇬🇧GB-178.83.185.156-0246",
+        "mbps": 0.2,
+        "ms": 351
+      }
+    ]
+  },
+  "deadThisRound": [
+    {
+      "name": "美国 290",
+      "reason": "curl=35 out=000 2.950261",
+      "ms": -1
+    },
+    {
+      "name": "🇭🇰HK-219.76.13.181-0010",
+      "reason": "curl=35 out=000 5.001372",
+      "ms": -1
+    },
+    {
+      "name": "🇸🇬SG-15.235.147.186-0087",
+      "reason": "curl=35 out=000 5.000735",
+      "ms": -1
+    },
+    {
+      "name": "[NoMoreWalls#133] 🇹🇼[www.v2nodes.com] vless-TW-1...",
+      "reason": "curl=35 out=000 5.000914",
+      "ms": -1
+    },
+    {
+      "name": "日本 011",
+      "reason": "curl=35 out=000 5.001302",
+      "ms": -1
+    },
+    {
+      "name": "🇰🇷 KR1@ripaojiedian",
+      "reason": "curl=35 out=000 0.808751",
+      "ms": -1
+    },
+    {
+      "name": "美国 138",
+      "reason": "curl=35 out=000 3.446513",
+      "ms": -1
+    },
+    {
+      "name": "🏁RELAY-104.17.95.4-8819",
+      "reason": "curl=35 out=000 3.289018",
+      "ms": -1
+    },
+    {
+      "name": "HK 🇭🇰 | @Raydikalx | CCD2B6",
+      "reason": "curl=35 out=000 5.001260",
+      "ms": -1
+    },
+    {
+      "name": "TW台湾(v2clash.blog 2026-10.24更新)",
+      "reason": "curl=35 out=000 0.022922",
+      "ms": -1
+    },
+    {
+      "name": "JP - zhuhai.uk",
+      "reason": "curl=35 out=000 5.001666",
+      "ms": -1
+    },
+    {
+      "name": "DE 🇩🇪 | @Raydikalx | 4769A2",
+      "reason": "curl=35 out=000 0.239192",
+      "ms": -1
+    },
+    {
+      "name": "韩国 006",
+      "reason": "curl=35 out=000 5.000838",
+      "ms": -1
+    },
+    {
+      "name": "US美国v2clash.blog 2026-9.9)",
+      "reason": "curl=35 out=000 0.340410",
+      "ms": -1
+    },
+    {
+      "name": "CA 🇨🇦 | @Raydikalx | 84297A",
+      "reason": "curl=35 out=000 3.437084",
+      "ms": -1
+    },
+    {
+      "name": "🇹🇼 1263",
+      "reason": "curl=35 out=000 0.508539",
+      "ms": -1
+    },
+    {
+      "name": "日本 031",
+      "reason": "curl=35 out=000 5.001213",
+      "ms": -1
+    },
+    {
+      "name": "🇩🇪[www.v2nodes.com] vless-DE-1... #5",
+      "reason": "curl=35 out=000 0.165453",
+      "ms": -1
+    },
+    {
+      "name": "美国 100",
+      "reason": "curl=35 out=000 3.107648",
+      "ms": -1
+    },
+    {
+      "name": "🇭🇰 香港 | HKG #3",
+      "reason": "curl=28 out=000 6.002039",
+      "ms": -1
+    }
+  ]
 }
