@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-11-06T03:05:33.255Z",
-  "totalRaw": 20297,
-  "totalUnique": 14278,
-  "totalAlive": 3999,
+  "generatedAt": "2026-11-06T04:53:41.169Z",
+  "totalRaw": 20299,
+  "totalUnique": 14277,
+  "totalAlive": 3986,
   "probe": {
     "enabled": true,
-    "probed": 14278,
-    "alive": 3999,
-    "ms": 151593
+    "probed": 14277,
+    "alive": 3986,
+    "ms": 151710
   },
   "regions": {
-    "美国": 962,
+    "美国": 964,
     "香港": 26,
-    "新加坡": 49,
+    "新加坡": 48,
     "台湾": 5,
-    "日本": 44,
-    "德国": 134,
-    "英国": 95,
-    "韩国": 21
+    "日本": 42,
+    "德国": 133,
+    "英国": 89,
+    "韩国": 25
   },
   "byType": {
-    "ss": 208,
-    "vless": 1935,
+    "ss": 206,
+    "vmess": 1335,
+    "vless": 1924,
     "anytls": 1,
     "hysteria2": 22,
     "trojan": 369,
     "http": 125,
-    "vmess": 1335,
     "ssr": 2,
     "socks5": 2
   },
@@ -88,7 +88,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4278,
+      "count": 4280,
       "ok": true
     },
     {
