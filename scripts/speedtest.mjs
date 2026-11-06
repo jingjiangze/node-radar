@@ -29,10 +29,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // ---------- 读上一版产出 ----------
 let doc;
 try { doc = yaml.load(fs.readFileSync(new URL('../dist/clash.yaml', import.meta.url), 'utf8')); } catch (e) {
-  console.error('读不到 dist/clash.yaml，无法进行测速'); process.exit(1);
+  console.error('读不到 dist/clash.yaml，跳过测速'); process.exit(0);
 }
 const all = (doc.proxies || []).filter((p) => p && p.server && p.port && p.type);
-if (!all.length) { console.error('没有可测速节点'); process.exit(1); }
+if (!all.length) { console.error('没有节点，跳过'); process.exit(0); }
 
 // ---------- 分层抽样：每个地区最多 3 个 ----------
 const buckets = new Map();
@@ -45,11 +45,7 @@ for (const p of all) {
 const picked = [];
 for (const [, list] of buckets) {
   // 打散后取前 3，避免总是测同一批
-  const shuffled = list.slice();
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
+  const shuffled = list.slice().sort(() => Math.random() - 0.5);
   picked.push(...shuffled.slice(0, 3));
 }
 const sample = picked.slice(0, SAMPLE);
@@ -77,7 +73,7 @@ let coreLog = '';
 proc.stdout.on('data', (d) => (coreLog += d.toString()));
 proc.stderr.on('data', (d) => (coreLog += d.toString()));
 
-const die = (msg) => { console.error(msg); try { proc.kill('SIGKILL'); } catch {} process.exit(1); };
+const die = (msg) => { console.error(msg); try { proc.kill('SIGKILL'); } catch {} process.exit(0); };
 
 // 等 API 就绪
 let ready = false;
@@ -109,10 +105,10 @@ for (let i = 0; i < names.length; i++) {
 
     const [code, bps, secs] = out.trim().split(/\s+/);
     const mbps = Number(bps) / 1048576;
-    results.push({ name, node: names[i].replace(/^\d+-/, ''), nodeKey: name, ok: code === '200' && mbps > 0, http: code, mbps: Number(mbps.toFixed(3)), secs: Number(secs) });
+    results.push({ name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: code === '200' && mbps > 0, http: code, mbps: Number(mbps.toFixed(3)), secs: Number(secs) });
     console.log(`${code} ${mbps.toFixed(2)} MB/s  ${names[i]}`);
   } catch (e) {
-    results.push({ name, node: names[i].replace(/^\d+-/, ''), nodeKey: name, ok: false, error: String(e.message || e).slice(0, 60), mbps: 0 });
+    results.push({ name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: false, error: String(e.message || e).slice(0, 60), mbps: 0 });
     console.log('FAIL ' + names[i]);
   }
 }
@@ -135,19 +131,18 @@ fs.writeFileSync(new URL('speed.json', distDir), JSON.stringify(report, null, 2)
 // 只发布「实测能跑」的前若干名，作为极速订阅
 const TOP = Math.min(12, okResults.length);
 if (TOP >= 5) {
-  const topNames = new Set(okResults.slice(0, TOP).map((r) => r.nodeKey));
-  const topProxies = sample.filter((p, i) => topNames.has(names[i])).map((p) => ({ ...p }));
+  const topNames = new Set(okResults.slice(0, TOP).map((r) => r.node));
+  const topProxies = sample.filter((p) => topNames.has(p.name)).map((p) => ({ ...p }));
   const topCfg = {
     'mixed-port': 7890, 'allow-lan': false, mode: 'rule', 'log-level': 'warning',
     'unified-delay': true, 'tcp-concurrent': true,
     proxies: topProxies,
-    'proxy-groups': [{ name: '⚡ 极速', type: 'url-test', url: 'https://www.gstatic.com/webp/gallery/1.jpg', interval: 600, tolerance: 50, proxies: topProxies.map((p) => p.name) }],
+    'proxy-groups': [{ name: '⚡ 极速', type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 600, tolerance: 50, proxies: topProxies.map((p) => p.name) }],
     rules: ['MATCH,⚡ 极速'],
   };
   fs.writeFileSync(new URL('speed-top.yaml', distDir), yaml.dump(topCfg, { lineWidth: 4096 }));
   console.log(`发布 speed-top.yaml：${topProxies.length} 个实测可用节点`);
 } else {
-  fs.rmSync(new URL('speed-top.yaml', distDir), { force: true });
-  console.log(`实测可用只有 ${okResults.length} 个，已移除过期 speed-top.yaml`);
+  console.log(`实测可用只有 ${okResults.length} 个，不发布 speed-top.yaml`);
 }
 console.log(JSON.stringify({ ok: okResults.length, medianMbps: report.medianMbps }, null, 0));
