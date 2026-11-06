@@ -41,12 +41,23 @@ jobs:
             | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
           curl -sSL -o mihomo.gz "$URL" && gunzip -f mihomo.gz && chmod +x mihomo
 
+      - name: Audit actual proxy egress and IP ownership
+        run: node scripts/audit-egress.mjs
+        env:
+          MIHOMO_BIN: ./mihomo
+          EGRESS_SAMPLE: 12
+          IPAPI_KEY: ${{ secrets.IPAPI_KEY }}
+
       # 关键兜底：生成物必须能被内核加载，否则不发布（不提交、不覆盖线上）
       - name: Validate generated config
         run: |
           set -e
           test -s dist/clash.yaml
           test -s dist/summary.json
+          test -s dist/egress-audit.json
+          test -s dist/cf-egress.json
+          test -s dist/cf-fronted-endpoints.json
+          test -s dist/datacenter-audit.json
           ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"
           if [ -f dist/clash-lite.yaml ]; then ./mihomo -t -d . -f dist/clash-lite.yaml && echo "clash-lite.yaml OK"; fi
           if [ -f dist/cf-egress.yaml ]; then ./mihomo -t -d . -f dist/cf-egress.yaml && echo "cf-egress.yaml OK"; fi
@@ -62,7 +73,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p dist
-          git add -f dist/clash.yaml dist/clash-lite.yaml dist/summary.json dist/egress-audit.json dist/cf-egress.json dist/cf-fronted-endpoints.json dist/datacenter-audit.json dist/ip-meta-cache.json\n          if [ -f dist/cf-egress.yaml ]; then git add -f dist/cf-egress.yaml; else git rm -f --ignore-unmatch dist/cf-egress.yaml; fi
+          git add -f dist/clash.yaml dist/clash-lite.yaml dist/summary.json dist/egress-audit.json dist/cf-egress.json dist/cf-fronted-endpoints.json dist/datacenter-audit.json dist/ip-meta-cache.json
+          if [ -f dist/cf-egress.yaml ]; then git add -f dist/cf-egress.yaml; else git rm -f --ignore-unmatch dist/cf-egress.yaml; fi
           [ -f sources.health.json ] && git add -f sources.health.json || true
           git diff --cached --quiet || git commit -m "chore: update aggregated subscription"
           git push
