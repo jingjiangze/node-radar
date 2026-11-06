@@ -238,6 +238,36 @@ const out = {
   proxies: alive, 'proxy-groups': groups, rules: ['MATCH,🌐 公共节点'],
 };
 
+// ---------- 精简池 ----------
+// 客户端一次性对所有节点做健康检查会大面积超时（实测：23 个 1.3s 通过，918 个 8s 仍超时），
+// 所以另出一份按地区分层的精简池给订阅使用；全量池仍保留在 clash.yaml。
+const LITE_PER_REGION = 25;
+const LITE_MAX = 300;
+const liteNames = new Set();
+for (const names of Object.values(byRegion)) {
+  if (liteNames.size >= LITE_MAX) break;
+  for (const n of [...names].sort().slice(0, LITE_PER_REGION)) {
+    if (liteNames.size >= LITE_MAX) break;
+    liteNames.add(n);
+  }
+}
+const liteAlive = alive.filter((p) => liteNames.has(p.name));
+const liteGroups = [
+  { name: '🌐 公共节点', type: 'select', proxies: ['♻️ 全部-自动', '☝️ 全部-手动', ...Object.keys(byRegion).filter((r) => byRegion[r].filter((n) => liteNames.has(n)).length >= MIN_REGION).map((r) => `📍 ${r}`), 'DIRECT'] },
+  { name: '♻️ 全部-自动', type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 900, tolerance: 100, lazy: true, proxies: liteAlive.map((p) => p.name) },
+  { name: '☝️ 全部-手动', type: 'select', proxies: liteAlive.map((p) => p.name) },
+];
+for (const [r, names] of Object.entries(byRegion)) {
+  const inLite = names.filter((n) => liteNames.has(n));
+  if (inLite.length < MIN_REGION) continue;
+  liteGroups.push({ name: `📍 ${r}`, type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 1800, tolerance: 100, lazy: true, proxies: inLite });
+}
+const outLite = {
+  'mixed-port': 7890, 'allow-lan': false, mode: 'rule', 'log-level': 'warning',
+  'unified-delay': true, 'tcp-concurrent': true,
+  proxies: liteAlive, 'proxy-groups': liteGroups, rules: ['MATCH,🌐 公共节点'],
+};
+
 const summary = {
   generatedAt: new Date().toISOString(),
   totalRaw: collected.length,
@@ -260,6 +290,7 @@ if (summary.degraded) {
   fs.writeFileSync(new URL('clash.candidate.yaml', distDir), yaml.dump(out, { lineWidth: 4096, noRefs: true }));
 } else {
   fs.writeFileSync(new URL('clash.yaml', distDir), yaml.dump(out, { lineWidth: 4096, noRefs: true }));
-  console.log(`发布 ${alive.length} 节点，地区组 ${Object.keys(byRegion).length} 个`);
+  fs.writeFileSync(new URL('clash-lite.yaml', distDir), yaml.dump(outLite, { lineWidth: 4096, noRefs: true }));
+  console.log(`发布 ${alive.length} 节点，地区组 ${Object.keys(byRegion).length} 个；精简池 ${liteAlive.length} 节点`);
 }
 console.log(JSON.stringify({ ...summary, sources: undefined }, null, 2));
