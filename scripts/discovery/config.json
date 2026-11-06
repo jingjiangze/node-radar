@@ -1,0 +1,42 @@
+{
+  "minNodes": 20,
+  "limits": {
+    "perAdapter": 40,
+    "codeQueries": 5,
+    "repoQueries": 5,
+    "channels": 5,
+    "perChannel": 3,
+    "feeds": 10,
+    "recursivePages": 5,
+    "linksPerPage": 100,
+    "validatePerRun": 80,
+    "validateConcurrency": 4,
+    "revalidateExisting": 20
+  },
+  "githubQueries": [
+    "免费节点 订阅",
+    "vless 订阅 免费",
+    "clash 订阅 自动更新",
+    "free vless subscription",
+    "clash subscription free nodes"
+  ],
+  "seedRepos": [
+    "chengaopan/AutoMergePublicNodes",
+    "ermaozi/get_subscribe",
+    "lanzm/MetaFetch",
+    "wzdnzd/aggregator",
+    "SHUNZI88/proxysub"
+  ],
+  "recursiveSeeds": [
+    "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/main/README.md",
+    "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/README.md"
+  ],
+  "telegramChannels": [],
+  "feeds": [],
+  "search": { "enabled": false },
+  "_说明": {
+    "telegramChannels": "填公开频道用户名（不含 @）。留空则跳过该适配器。",
+    "feeds": "填 RSS/Atom/JSON Feed 地址。留空则跳过。",
+    "minNodes": "一个订阅至少要解析出这么多节点才允许晋级到 sources.auto.json"
+  }
+}
