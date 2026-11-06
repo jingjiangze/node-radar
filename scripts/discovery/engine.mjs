@@ -6,15 +6,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { 安全抓取 } from './safety.mjs';
 import { 归一化, 内容键, 内容哈希, 像订阅 } from './normalize.mjs';
-import { 读登记表, 写登记表, 登记候选, 记录结果, 汇总 } from './registry.mjs';
+import { 读登记表, 写登记表, 登记候选, 记录结果, 汇总, 标记镜像 } from './registry.mjs';
 import { 全部适配器 } from './adapters.mjs';
 import { 估节点数 } from './parse.mjs';
+import { 建夹具抓取 } from './fixtures.mjs';
 
 const 目录 = path.dirname(fileURLToPath(import.meta.url));
 const 根 = path.resolve(目录, '../..');
-const AUTO = path.join(根, 'sources.auto.json');
-const REGISTRY = path.join(根, 'sources.candidates.json');
-const REPORT = path.join(根, 'discovery-report.json');
 
 const 参数 = new Map(
   process.argv.slice(2).map((a) => {
@@ -24,6 +22,13 @@ const 参数 = new Map(
 );
 const DRY = 参数.has('dry');
 const ONLY = (参数.get('only') || '').split(',').filter(Boolean);
+// --out 让测试写到临时目录，不碰仓库文件
+const 输出目录 = 参数.get('out') ? path.resolve(参数.get('out')) : 根;
+const AUTO = path.join(输出目录, 'sources.auto.json');
+const REGISTRY = path.join(输出目录, 'sources.candidates.json');
+const REPORT = path.join(输出目录, 'discovery-report.json');
+// --fixture 走离线夹具：适配器/去重/校验/登记表全走真实代码，只有取数据这层被替换
+const FIXTURE = 参数.get('fixture') ? path.resolve(参数.get('fixture')) : null;
 
 const 配置 = JSON.parse(fs.readFileSync(path.join(目录, 'config.json'), 'utf8'));
 const 上限 = { ...配置.limits, ...(参数.has('budget') ? { validatePerRun: Number(参数.get('budget')) } : {}) };
@@ -33,7 +38,7 @@ const UA = 'node-radar/discovery (+https://github.com/jingjiangze/node-radar)';
 const 计时 = () => new Date().toISOString().slice(11, 19);
 const 日志 = (...a) => console.log(`[${计时()}]`, ...a);
 
-async function gh(pathname) {
+async function gh真实(pathname) {
   const r = await fetch(`https://api.github.com${pathname}`, {
     headers: { 'User-Agent': UA, Accept: 'application/vnd.github+json', ...(TOKEN ? { Authorization: `Bearer ${TOKEN}` } : {}) },
     signal: AbortSignal.timeout(20000),
@@ -42,7 +47,9 @@ async function gh(pathname) {
   return r.json();
 }
 
-const 抓取 = (url, opt) => 安全抓取(url, opt);
+const 夹具 = FIXTURE ? 建夹具抓取(FIXTURE) : null;
+const 抓取 = 夹具 ? 夹具.抓取 : (url, opt) => 安全抓取(url, opt);
+const gh = 夹具 ? 夹具.gh : gh真实;
 
 
 async function 并发映射(items, n, fn) {
@@ -120,7 +127,11 @@ const 主 = async () => {
     }
   });
 
-  const 新增 = 校验结果.filter((x) => x.ok);
+  // 3b) 内容哈希去重：同一份订阅被多个项目转载时只留一条，其余标 mirror
+  const 镜像数 = 标记镜像(注册, 待验.map((x) => x.url));
+  if (镜像数) 日志(`识别镜像 ${镜像数} 个（内容相同，不重复入库）`);
+
+  const 新增 = 校验结果.filter((x) => x.ok && 注册.items[x.url]?.status === 'accepted');
   日志(`本轮校验：通过 ${新增.length} / ${校验结果.length}`);
 
   // 4) 合并进 sources.auto.json（保留历史通过项）
@@ -128,14 +139,22 @@ const 主 = async () => {
   try { 历史 = JSON.parse(fs.readFileSync(AUTO, 'utf8')); } catch { }
   const 合并 = new Map(历史.map((x) => [归一化(x.url) || x.url, x]));
   for (const x of 新增) {
-    合并.set(x.url, { name: (x.note || x.channel || 'auto').slice(0, 60), url: x.url, nodes: x.nodes, verifiedAt: new Date().toISOString(), channel: x.channel });
+    合并.set(x.url, {
+      name: (x.note || x.channel || 'auto').slice(0, 60),
+      url: x.url,
+      nodes: x.nodes,
+      verifiedAt: new Date().toISOString(),
+      channel: x.channel,
+      score: 注册.items[x.url]?.score ?? 0,
+    });
   }
-  // 登记表里被判 rejected 的同步剔出正式清单
+  // 登记表里被判 rejected / mirror 的同步剔出正式清单
   for (const [u, item] of Object.entries(注册.items)) {
-    if (item.status === 'rejected') 合并.delete(u);
+    if (item.status === 'rejected' || item.status === 'mirror') 合并.delete(u);
   }
-  const 正式 = [...合并.values()].sort((a, b) => (b.nodes || 0) - (a.nodes || 0));
-  日志(`正式源 ${正式.length} 个（本轮新增 ${新增.length}）`);
+  // 按信誉分排序（同分再看节点数）
+  const 正式 = [...合并.values()].sort((a, b) => (b.score || 0) - (a.score || 0) || (b.nodes || 0) - (a.nodes || 0));
+  日志(`正式源 ${正式.length} 个（本轮新增 ${新增.length}，镜像 ${镜像数}）`);
 
   const 报告 = {
     generatedAt: new Date().toISOString(),
