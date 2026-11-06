@@ -6,6 +6,7 @@ import fs from 'node:fs';
 
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
 const OUT = new URL('../sources.auto.json', import.meta.url);
+const CANDIDATES = new URL('../sources.candidates.json', import.meta.url);
 const MIN_NODES = 5;
 const MAX_REPOS = 30;
 const MAX_FILES = 3;
@@ -81,6 +82,8 @@ const curated = loadJson(new URL('../sources.json', import.meta.url), []);
 const knownUrls = new Set([...existing, ...curated].map((s) => s.url));
 
 const found = [];
+const refreshedExisting = [];
+const curatedUrls = new Set(curated.map((s) => s.url));
 for (const repo of candidates) {
   let items;
   try { items = await ghJson(`/repos/${repo.full}/contents/`); } catch { continue; }
@@ -94,7 +97,12 @@ for (const repo of candidates) {
     let hit = null;
     for (const br of [...new Set([repo.branch, 'main', 'master'])].filter(Boolean)) {
       const url = `https://raw.githubusercontent.com/${repo.full}/${br}/${f.path}`;
-      if (knownUrls.has(url)) { hit = { url, n: -1 }; break; }
+      if (curatedUrls.has(url)) continue;
+      if (knownUrls.has(url)) {
+        const n = countNodes(await fetchText(url));
+        if (n >= MIN_NODES) refreshedExisting.push({ name: repo.full, url, nodes: n, verifiedAt: new Date().toISOString() });
+        hit = { url, n: -1 }; break;
+      }
       const n = countNodes(await fetchText(url));
       if (n >= MIN_NODES) { hit = { url, n }; break; }
     }
@@ -107,11 +115,45 @@ for (const repo of candidates) {
   }
 }
 
-// ---------- 3. 合并（历史验证过的保留 90 天） ----------
+// ---------- 3. 候选隔离：连续三轮成功且跨度至少 48 小时才晋升 ----------
+const priorCandidates = loadJson(CANDIDATES, []);
+const candidateByUrl = new Map(priorCandidates.map((s) => [s.url, s]));
+const now = Date.now();
+const foundByUrl = new Map(found.map((s) => [s.url, s]));
+for (const old of priorCandidates) {
+  if (foundByUrl.has(old.url)) continue;
+  const n = countNodes(await fetchText(old.url));
+  if (n >= MIN_NODES) {
+    candidateByUrl.set(old.url, { ...old, nodes: n, successfulRuns: (old.successfulRuns || 0) + 1, lastSeen: new Date(now).toISOString(), lastAttemptAt: new Date(now).toISOString(), status: 'candidate' });
+  } else {
+    candidateByUrl.set(old.url, { ...old, successfulRuns: 0, lastAttemptAt: new Date(now).toISOString(), status: 'candidate' });
+  }
+}
+for (const item of found) {
+  const old = candidateByUrl.get(item.url);
+  candidateByUrl.set(item.url, {
+    ...item,
+    firstSeen: old?.firstSeen || new Date(now).toISOString(),
+    lastSeen: new Date(now).toISOString(),
+    lastAttemptAt: new Date(now).toISOString(),
+    successfulRuns: (old?.successfulRuns || 0) + 1,
+    status: 'candidate'
+  });
+}
+const cutoff = now - 90 * 86400000;
+const validatedCandidates = [...candidateByUrl.values()].filter((s) => new Date(s.lastSeen || s.verifiedAt || 0).getTime() > cutoff);
+const promoted = validatedCandidates.filter((s) =>
+  s.successfulRuns >= 3 &&
+  now - new Date(s.firstSeen).getTime() >= 48 * 3600000 &&
+  s.nodes >= MIN_NODES
+);
 const byUrl = new Map(existing.map((s) => [s.url, s]));
-for (const f of found) byUrl.set(f.url, f);
-const cutoff = Date.now() - 90 * 86400000;
+for (const item of refreshedExisting) byUrl.set(item.url, item);
+for (const item of promoted) byUrl.set(item.url, {
+  name: item.name, url: item.url, nodes: item.nodes,
+  verifiedAt: item.lastSeen, promotedAt: item.firstSeen
+});
 const merged = [...byUrl.values()].filter((s) => new Date(s.verifiedAt || 0).getTime() > cutoff);
-
+fs.writeFileSync(CANDIDATES, JSON.stringify(validatedCandidates, null, 2) + '\n');
 fs.writeFileSync(OUT, JSON.stringify(merged, null, 2) + '\n');
-console.log(`sources.auto.json 共 ${merged.length} 条（新增 ${found.filter((f) => !existing.some((e) => e.url === f.url)).length}）`);
+console.log(`sources.auto.json 共 ${merged.length} 条；候选 ${validatedCandidates.length} 条；本轮晋升 ${promoted.length} 条`);
