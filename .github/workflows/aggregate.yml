@@ -1,8 +1,7 @@
 name: aggregate-nodes
 
 on:
-  schedule:
-    - cron: "0 */6 * * *"   # 每 6 小时
+  # 定时已收敛到 pipeline.yml（单一流水线按 needs 显式排序）；这里保留手动触发用于排障
   workflow_dispatch:
 
 # 同一时间只跑一个：并发运行会在 push 阶段互相顶掉（! [rejected] main -> main (fetch first)）
