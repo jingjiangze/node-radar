@@ -127,6 +127,11 @@ const stats = [];
 const nextHealth = { ...health };
 
 for (const src of SOURCES) {
+  // 自家订阅永不作为公开聚合的源
+  if (/jiangjiangze\.icu/i.test(src.url)) {
+    stats.push({ source: src.name, kind: 'skipped', count: 0, ok: false, reason: '私有源，不参与公开聚合' });
+    continue;
+  }
   try {
     const text = await fetchText(src.url);
     let proxies = [], kind = 'unknown';
@@ -170,12 +175,22 @@ const okReality = (p) => {
 const invalid = (p) =>
   ((p.type === 'hysteria2' || p.type === 'hysteria') && p.obfs && !p['obfs-password']) ||
   !okReality(p);
+
+// ---------- 私有节点硬闸 ----------
+// 这份产物是公开的，绝不能出现自己的 edgetunnel 订阅节点（域名/UUID 都是凭据）。
+// 双保险：采集时剔除 + 落盘前对整份 YAML 再断言一次，命中就让 CI 失败、不发布。
+const 私有标记 = /jiangjiangze\.icu|a5dea14ad4de58|97c109c4c7e4be|82bcf5b8|13c20322|d474812e/i;
+const 是私有节点 = (p) => 私有标记.test(JSON.stringify(p));
+
+let 剔除私有 = 0;
 for (const p of collected) {
+  if (是私有节点(p)) { 剔除私有++; continue; }
   if (invalid(p)) continue;
   const key = [p.type, p.server, p.port, p.uuid || p.password || p.cipher || ''].join('|').toLowerCase();
   if (seen.has(key)) continue;
   seen.add(key); unique.push(p);
 }
+if (剔除私有) console.error(`[GUARD] 剔除了 ${剔除私有} 个命中私有标记的节点`);
 
 // ---------- 探活（只剔死服务器） ----------
 async function probeTcp(host, port, timeout = 2500) {
@@ -289,8 +304,14 @@ if (summary.degraded) {
   console.error(`[GUARD] 可用节点只有 ${alive.length} < ${MIN_HEALTHY}，本次不覆盖线上订阅，保留上一版`);
   fs.writeFileSync(new URL('clash.candidate.yaml', distDir), yaml.dump(out, { lineWidth: 4096, noRefs: true }));
 } else {
-  fs.writeFileSync(new URL('clash.yaml', distDir), yaml.dump(out, { lineWidth: 4096, noRefs: true }));
-  fs.writeFileSync(new URL('clash-lite.yaml', distDir), yaml.dump(outLite, { lineWidth: 4096, noRefs: true }));
+  const 全量YAML = yaml.dump(out, { lineWidth: 4096, noRefs: true });
+  const 精简YAML = yaml.dump(outLite, { lineWidth: 4096, noRefs: true });
+  // 落盘前最后一道：整份文本再断言一次私有标记，命中直接失败（线上保持上一版）
+  for (const [名, 文] of [['clash.yaml', 全量YAML], ['clash-lite.yaml', 精简YAML]]) {
+    if (私有标记.test(文)) throw new Error(`[GUARD] ${名} 命中私有标记，拒绝发布`);
+  }
+  fs.writeFileSync(new URL('clash.yaml', distDir), 全量YAML);
+  fs.writeFileSync(new URL('clash-lite.yaml', distDir), 精简YAML);
   console.log(`发布 ${alive.length} 节点，地区组 ${Object.keys(byRegion).length} 个；精简池 ${liteAlive.length} 节点`);
 }
 console.log(JSON.stringify({ ...summary, sources: undefined }, null, 2));
