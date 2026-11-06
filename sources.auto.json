@@ -1,5 +1,21 @@
 [
   {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
+    "nodes": 10000,
+    "verifiedAt": "2026-11-06T09:07:00.311Z",
+    "channel": "github-search",
+    "score": 15.29
+  },
+  {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.txt",
+    "nodes": 1273,
+    "verifiedAt": "2026-11-06T09:07:00.311Z",
+    "channel": "github-search",
+    "score": 12.31
+  },
+  {
     "name": "github-code",
     "url": "https://raw.githubusercontent.com/ID-10086/freenode/main/adiclash.yml",
     "nodes": 261,
@@ -8,12 +24,44 @@
     "score": 12.03
   },
   {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/yy1588133/proxy-pool/main/v2ray.txt",
+    "nodes": 742,
+    "verifiedAt": "2026-11-06T09:07:00.311Z",
+    "channel": "github-search",
+    "score": 11.54
+  },
+  {
+    "name": "github-code",
+    "url": "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/yaml/Custom_Clash.yaml",
+    "nodes": 34,
+    "verifiedAt": "2026-11-06T09:07:00.311Z",
+    "channel": "github-code",
+    "score": 11.09
+  },
+  {
     "name": "github-code",
     "url": "https://raw.githubusercontent.com/clashconfig/online/main/Dark_Clash.yml",
     "nodes": 419,
     "verifiedAt": "2026-11-06T08:54:25.740Z",
     "channel": "github-code",
     "score": 10.71
+  },
+  {
+    "name": "seed",
+    "url": "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt",
+    "nodes": 399,
+    "verifiedAt": "2026-11-06T09:07:00.311Z",
+    "channel": "seeds",
+    "score": 10.64
+  },
+  {
+    "name": "github-code",
+    "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ua_clash.yaml",
+    "nodes": 20,
+    "verifiedAt": "2026-11-06T09:07:00.311Z",
+    "channel": "github-code",
+    "score": 10.32
   },
   {
     "name": "github-code",
@@ -33,22 +81,6 @@
   },
   {
     "name": "github-code",
-    "url": "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/yaml/Custom_Clash.yaml",
-    "nodes": 34,
-    "verifiedAt": "2026-11-06T08:54:25.739Z",
-    "channel": "github-code",
-    "score": 9.09
-  },
-  {
-    "name": "github-code",
-    "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ua_clash.yaml",
-    "nodes": 20,
-    "verifiedAt": "2026-11-06T08:54:25.740Z",
-    "channel": "github-code",
-    "score": 8.32
-  },
-  {
-    "name": "github-code",
     "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/se_clash.yaml",
     "nodes": 20,
     "verifiedAt": "2026-11-06T08:54:25.740Z",
@@ -56,11 +88,20 @@
     "score": 8.32
   },
   {
-    "name": "LinVireo/SmartSub",
-    "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
-    "nodes": 10000,
-    "verifiedAt": "2026-11-05T16:33:45.369Z",
-    "score": 0
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/v2ray.txt",
+    "nodes": 65,
+    "verifiedAt": "2026-11-06T09:07:00.311Z",
+    "channel": "github-search",
+    "score": 8.02
+  },
+  {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/Andrejewild/hiddify-singbox-configs-ru/main/sub.txt",
+    "nodes": 20,
+    "verifiedAt": "2026-11-06T09:07:00.311Z",
+    "channel": "github-search",
+    "score": 6.32
   },
   {
     "name": "zhuhaiuk/free-nodes",
