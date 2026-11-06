@@ -8,6 +8,7 @@
 
 import fs from 'node:fs';
 import yaml from 'js-yaml';
+import { buildRules, 别名分组 } from './rules.mjs';
 
 const loadList = (f, fallback = []) => { try { return JSON.parse(fs.readFileSync(new URL(f, import.meta.url), 'utf8')); } catch { return fallback; } };
 const curated = loadList('../sources.json');
@@ -180,6 +181,8 @@ const invalid = (p) =>
 // 这份产物是公开的，绝不能出现自己的 edgetunnel 订阅节点（域名/UUID 都是凭据）。
 // 双保险：采集时剔除 + 落盘前对整份 YAML 再断言一次，命中就让 CI 失败、不发布。
 const 私有标记 = /jiangjiangze\.icu|a5dea14ad4de58|97c109c4c7e4be|82bcf5b8|13c20322|d474812e/i;
+// 全文断言只看凭据：规则/分组里会出现 sub./dl.jiangjiangze.icu 这类公开端点，不算凭据
+const 私有凭据 = /a5dea14ad4de58|97c109c4c7e4be|82bcf5b8|13c20322|d474812e|dingyue\.jiangjiangze\.icu|tl2?\.jiangjiangze\.icu/i;
 const 是私有节点 = (p) => 私有标记.test(JSON.stringify(p));
 
 let 剔除私有 = 0;
@@ -247,10 +250,14 @@ for (const [r, names] of Object.entries(byRegion)) {
   groups.push({ name: `📍 ${r}`, type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 1800, tolerance: 100, lazy: true, proxies: names });
 }
 
+// 池订阅也用同一套规则（规则真源见 scripts/rules.mjs）
+groups.push(...别名分组);
+const { rules: 规则, 来源: 规则来源 } = await buildRules();
+
 const out = {
   'mixed-port': 7890, 'allow-lan': false, mode: 'rule', 'log-level': 'warning',
   'unified-delay': true, 'tcp-concurrent': true,
-  proxies: alive, 'proxy-groups': groups, rules: ['MATCH,🌐 公共节点'],
+  proxies: alive, 'proxy-groups': groups, rules: 规则,
 };
 
 // ---------- 精简池 ----------
@@ -280,7 +287,7 @@ for (const [r, names] of Object.entries(byRegion)) {
 const outLite = {
   'mixed-port': 7890, 'allow-lan': false, mode: 'rule', 'log-level': 'warning',
   'unified-delay': true, 'tcp-concurrent': true,
-  proxies: liteAlive, 'proxy-groups': liteGroups, rules: ['MATCH,🌐 公共节点'],
+  proxies: liteAlive, 'proxy-groups': liteGroups.concat(别名分组), rules: 规则,
 };
 
 const summary = {
@@ -308,7 +315,7 @@ if (summary.degraded) {
   const 精简YAML = yaml.dump(outLite, { lineWidth: 4096, noRefs: true });
   // 落盘前最后一道：整份文本再断言一次私有标记，命中直接失败（线上保持上一版）
   for (const [名, 文] of [['clash.yaml', 全量YAML], ['clash-lite.yaml', 精简YAML]]) {
-    if (私有标记.test(文)) throw new Error(`[GUARD] ${名} 命中私有标记，拒绝发布`);
+    if (私有凭据.test(文)) throw new Error(`[GUARD] ${名} 命中私有标记，拒绝发布`);
   }
   fs.writeFileSync(new URL('clash.yaml', distDir), 全量YAML);
   fs.writeFileSync(new URL('clash-lite.yaml', distDir), 精简YAML);
