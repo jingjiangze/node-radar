@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: node-radar-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Syntax-check pipeline scripts
+        run: |
+          for file in scripts/*.mjs; do node --check "$file"; done
+      - name: Validate source manifests and generated YAML
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import yaml from 'js-yaml';
+          for (const file of ['sources.json', 'sources.auto.json', 'sources.health.json']) {
+            if (!fs.existsSync(file)) continue;
+            JSON.parse(fs.readFileSync(file, 'utf8'));
+          }
+          for (const file of ['dist/clash.yaml', 'dist/clash-lite.yaml', 'dist/speed-top.yaml']) {
+            if (!fs.existsSync(file)) continue;
+            const parsed = yaml.load(fs.readFileSync(file, 'utf8'));
+            if (file.endsWith('clash.yaml') && !Array.isArray(parsed?.proxies)) {
+              throw new Error(file + ': missing proxies array');
+            }
+          }
+          console.log('source manifests and available YAML artifacts are valid');
+          NODE
