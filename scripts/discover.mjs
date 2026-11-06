@@ -5,7 +5,8 @@
 import fs from 'node:fs';
 
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
-const OUT = new URL('../sources.auto.json', import.meta.url);\nconst CANDIDATES = new URL('../sources.candidates.json', import.meta.url);
+const OUT = new URL('../sources.auto.json', import.meta.url);
+const CANDIDATES = new URL('../sources.candidates.json', import.meta.url);
 const MIN_NODES = 5;
 const MAX_REPOS = 30;
 const MAX_FILES = 3;
@@ -80,7 +81,9 @@ const existing = loadJson(OUT, []);
 const curated = loadJson(new URL('../sources.json', import.meta.url), []);
 const knownUrls = new Set([...existing, ...curated].map((s) => s.url));
 
-const found = [];\nconst refreshedExisting = [];\nconst curatedUrls = new Set(curated.map((s) => s.url));
+const found = [];
+const refreshedExisting = [];
+const curatedUrls = new Set(curated.map((s) => s.url));\nconst refreshedExisting = [];\nconst curatedUrls = new Set(curated.map((s) => s.url));
 for (const repo of candidates) {
   let items;
   try { items = await ghJson(`/repos/${repo.full}/contents/`); } catch { continue; }
@@ -94,7 +97,12 @@ for (const repo of candidates) {
     let hit = null;
     for (const br of [...new Set([repo.branch, 'main', 'master'])].filter(Boolean)) {
       const url = `https://raw.githubusercontent.com/${repo.full}/${br}/${f.path}`;
-      if (knownUrls.has(url)) { hit = { url, n: -1 }; break; }
+      if (curatedUrls.has(url)) continue;
+      if (knownUrls.has(url)) {
+        const n = countNodes(await fetchText(url));
+        if (n >= MIN_NODES) refreshedExisting.push({ name: repo.full, url, nodes: n, verifiedAt: new Date().toISOString() });
+        hit = { url, n: -1 }; break;
+      }
       const n = countNodes(await fetchText(url));
       if (n >= MIN_NODES) { hit = { url, n }; break; }
     }
@@ -140,7 +148,8 @@ const promoted = candidates.filter((s) =>
   s.nodes >= MIN_NODES
 );
 const byUrl = new Map(existing.map((s) => [s.url, s]));
-for (const item of refreshedExisting) byUrl.set(item.url, item);\nfor (const item of promoted) byUrl.set(item.url, {
+for (const item of refreshedExisting) byUrl.set(item.url, item);
+for (const item of promoted) byUrl.set(item.url, {
   name: item.name, url: item.url, nodes: item.nodes,
   verifiedAt: item.lastSeen, promotedAt: item.firstSeen
 });
