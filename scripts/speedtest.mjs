@@ -58,6 +58,9 @@ console.log(`候选 ${all.length}，抽样 ${sample.length}（${buckets.size} �
 // ---------- 生成临时配置 ----------
 const names = sample.map((p, i) => `${i}-${String(p.name || p.server).slice(0, 30)}`);
 const proxies = sample.map((p, i) => ({ ...p, name: names[i] }));
+// 并发测速：每个 worker 用自己独立的 select 组（共用一个组会互相切走节点）
+const 并发 = Math.max(1, Number(process.env.SPEED_CONCURRENCY || 8));
+const 组名 = Array.from({ length: 并发 }, (_, i) => `W${i}`);
 const cfg = {
   'mixed-port': PORT,
   'allow-lan': false,
@@ -65,8 +68,8 @@ const cfg = {
   'log-level': 'error',
   'external-controller': '127.0.0.1:9090',
   proxies,
-  'proxy-groups': [{ name: 'TEST', type: 'select', proxies: names }],
-  rules: ['MATCH,TEST'],
+  'proxy-groups': 组名.map((g) => ({ name: g, type: 'select', proxies: names })),
+  rules: [`MATCH,${组名[0]}`],
 };
 fs.writeFileSync('speedtest-config.yaml', yaml.dump(cfg, { lineWidth: 4096 }));
 
@@ -87,35 +90,42 @@ for (let i = 0; i < 30; i++) {
 }
 if (!ready) die('内核没起来：' + coreLog.slice(-400));
 
-// ---------- 逐个测速 ----------
-const results = [];
-for (let i = 0; i < names.length; i++) {
-  const name = names[i];
-  try {
-    const sw = await fetch(`${API}/proxies/TEST`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name }),
-    });
-    if (!sw.ok) throw new Error('select ' + sw.status);
-    await sleep(300);
+// ---------- 并发测速（每个 worker 一个独立 select 组）----------
+const results = new Array(names.length);
+let 指针 = 0;
+await Promise.all(Array.from({ length: 并发 }, async (_, w) => {
+  const 组 = 组名[w % 组名.length];
+  for (;;) {
+    const i = 指针++;
+    if (i >= names.length) break;
+    const name = names[i];
+    try {
+      const sw = await fetch(`${API}/proxies/${组}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name }),
+      });
+      if (!sw.ok) throw new Error('select ' + sw.status);
+      await sleep(120);
 
-    const out = execFileSync('curl', [
-      '-s', '-o', '/dev/null', '-x', `http://127.0.0.1:${PORT}`,
-      '--max-time', String(MAX_TIME),
-      '-w', '%{http_code} %{speed_download} %{time_total}',
-      `https://speed.cloudflare.com/__down?bytes=${TEST_BYTES}`,
-    ], { encoding: 'utf8', timeout: (MAX_TIME + 5) * 1000 });
+      const out = execFileSync('curl', [
+        '-s', '-o', '/dev/null', '-x', `http://127.0.0.1:${PORT}`,
+        '--max-time', String(MAX_TIME),
+        '-w', '%{http_code} %{speed_download} %{time_total}',
+        `https://speed.cloudflare.com/__down?bytes=${TEST_BYTES}`,
+      ], { encoding: 'utf8', timeout: (MAX_TIME + 5) * 1000 });
 
-    const [code, bps, secs] = out.trim().split(/\s+/);
-    const mbps = Number(bps) / 1048576;
-    results.push({ name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: code === '200' && mbps > 0, http: code, mbps: Number(mbps.toFixed(3)), secs: Number(secs) });
-    console.log(`${code} ${mbps.toFixed(2)} MB/s  ${names[i]}`);
-  } catch (e) {
-    results.push({ name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: false, error: String(e.message || e).slice(0, 60), mbps: 0 });
-    console.log('FAIL ' + names[i]);
+      const [code, bps, secs] = out.trim().split(/\s+/);
+      const mbps = Number(bps) / 1048576;
+      results[i] = { name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: code === '200' && mbps > 0, http: code, mbps: Number(mbps.toFixed(3)), secs: Number(secs) };
+      console.log(`${code} ${mbps.toFixed(2)} MB/s  ${names[i]}`);
+    } catch (e) {
+      results[i] = { name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: false, error: String(e.message || e).slice(0, 60), mbps: 0 };
+      console.log('FAIL ' + names[i]);
+    }
   }
-}
+}));
+results.splice(0, results.length, ...results.filter(Boolean));
 
 try { proc.kill('SIGKILL'); } catch {}
 
