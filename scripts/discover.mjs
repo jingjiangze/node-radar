@@ -111,12 +111,23 @@ for (const repo of candidates) {
 const priorCandidates = loadJson(CANDIDATES, []);
 const candidateByUrl = new Map(priorCandidates.map((s) => [s.url, s]));
 const now = Date.now();
+const foundByUrl = new Map(found.map((s) => [s.url, s]));
+for (const old of priorCandidates) {
+  if (foundByUrl.has(old.url)) continue;
+  const n = countNodes(await fetchText(old.url));
+  if (n >= MIN_NODES) {
+    candidateByUrl.set(old.url, { ...old, nodes: n, successfulRuns: (old.successfulRuns || 0) + 1, lastSeen: new Date(now).toISOString(), lastAttemptAt: new Date(now).toISOString(), status: 'candidate' });
+  } else {
+    candidateByUrl.set(old.url, { ...old, successfulRuns: 0, lastAttemptAt: new Date(now).toISOString(), status: 'candidate' });
+  }
+}
 for (const item of found) {
   const old = candidateByUrl.get(item.url);
   candidateByUrl.set(item.url, {
     ...item,
     firstSeen: old?.firstSeen || new Date(now).toISOString(),
     lastSeen: new Date(now).toISOString(),
+    lastAttemptAt: new Date(now).toISOString(),
     successfulRuns: (old?.successfulRuns || 0) + 1,
     status: 'candidate'
   });
