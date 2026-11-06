@@ -184,6 +184,7 @@ jobs:
   # ---------- ④ 测速 + 同轮重排 ----------
   speedtest:
     needs: aggregate
+    if: always() && needs.aggregate.result == 'success'
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
