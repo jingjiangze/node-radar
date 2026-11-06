@@ -29,6 +29,10 @@ jobs:
       - name: Discovery adapters selftest
         run: node scripts/discovery/selftest.mjs
 
+      # 夹具驱动的整链路回归：适配器 → 去重 → 校验 → 登记表 → 产物（两轮，不依赖外网）
+      - name: Discovery engine (fixture)
+        run: node scripts/discovery/test-engine.mjs
+
       - name: Validate source manifests and generated YAML
         run: |
           node --input-type=module <<'NODE'
