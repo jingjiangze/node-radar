@@ -188,7 +188,7 @@ jobs:
   # ---------- ④ 测速 + 同轮重排 ----------
   speedtest:
     needs: aggregate
-    if: ${{ !inputs.skip_speed }}
+    if: ${{ inputs.skip_speed != true }}
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
