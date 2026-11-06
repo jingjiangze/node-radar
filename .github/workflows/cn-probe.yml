@@ -6,12 +6,12 @@ name: cn-probe
 # 额度：匿名 250 探针次/小时。本轮 60 目标 × 2 探针 = 120，3 小时一次完全在额度内。
 on:
   schedule:
-    - cron: "20 */3 * * *"
+    - cron: "20 */2 * * *"   # 每 2 小时一批：100 目标 × 2 探针 = 200 额度/批，折合 100/小时，远低于 250/小时上限
   workflow_dispatch:
     inputs:
       budget:
         description: "本轮最多探测多少个 host:port（每个消耗 probes 个额度）"
-        default: "60"
+        default: "100"
       probes:
         description: "每个目标用几个大陆探针（两个都收不到包才判不可达）"
         default: "2"
@@ -42,7 +42,7 @@ jobs:
         run: |
           node scripts/cn-probe-gp.mjs \
             --resume \
-            --budget=${{ inputs.budget || '60' }} \
+            --budget=${{ inputs.budget || '100' }} \
             --probes=${{ inputs.probes || '2' }} \
             --concurrency=5
 
