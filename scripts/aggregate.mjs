@@ -195,29 +195,77 @@ for (const p of collected) {
 }
 if (剔除私有) console.error(`[GUARD] 剔除了 ${剔除私有} 个命中私有标记的节点`);
 
-// ---------- 探活（只剔死服务器） ----------
+// ---------- 探活（只剔死服务器），顺带记 RTT 用于排序 ----------
+// RTT 是「全部节点都有的实测值」，比抽样测速覆盖高得多；有 mbps 的仍然优先用 mbps。
 async function probeTcp(host, port, timeout = 2500) {
   const net = await import('node:net');
   return new Promise((resolve) => {
+    const t0 = Date.now();
     const s = net.connect({ host, port });
     let done = false;
-    const fin = (ok) => { if (done) return; done = true; s.destroy(); resolve(ok); };
+    const fin = (ok) => { if (done) return; done = true; s.destroy(); resolve({ ok, ms: ok ? Date.now() - t0 : null }); };
     s.setTimeout(timeout, () => fin(false));
     s.on('connect', () => fin(true));
     s.on('error', () => fin(false));
   });
 }
 let alive = unique; let probeInfo = { enabled: false };
+const RTT = new Map(); // "host:port" -> ms
 if (process.env.PROBE !== '0') {
   const t0 = Date.now();
   const flags = new Array(unique.length).fill(false);
   let idx = 0;
   await Promise.all(Array.from({ length: 150 }, async () => {
-    while (idx < unique.length) { const i = idx++; flags[i] = await probeTcp(unique[i].server, unique[i].port); }
+    while (idx < unique.length) {
+      const i = idx++;
+      const r = await probeTcp(unique[i].server, unique[i].port);
+      flags[i] = r.ok;
+      if (r.ok) RTT.set(`${unique[i].server}:${unique[i].port}`, r.ms);
+    }
   }));
   alive = unique.filter((_, i) => flags[i]);
   probeInfo = { enabled: true, probed: unique.length, alive: alive.length, ms: Date.now() - t0 };
 }
+
+// ---------- 国内可达性剔除（数据来自独立的 cn-probe 工作流）----------
+// 只剔「国内探针明确判不可达」的 host:port；数据缺失/过期就不做这层，避免用陈旧结论误杀。
+let CN不可达 = new Set();
+let CN信息 = null;
+try {
+  const cn = JSON.parse(fs.readFileSync(new URL('../dist/cn-probe.json', import.meta.url), 'utf8'));
+  const 年龄h = (Date.now() - Date.parse(cn.generatedAt || 0)) / 3600e3;
+  if (年龄h <= Number(process.env.CN_MAX_AGE_HOURS || 36)) {
+    for (const [hp, v] of Object.entries(cn.results || {})) if (v && v.ok === false) CN不可达.add(hp);
+    CN信息 = { vantage: cn.vantage, ageHours: Number(年龄h.toFixed(1)), covered: Object.keys(cn.results || {}).length, unreachable: CN不可达.size };
+  } else {
+    console.log(`[CN] 探测数据过旧（${年龄h.toFixed(1)}h），本轮跳过国内剔除`);
+  }
+} catch {
+  console.log('[CN] 没有 dist/cn-probe.json，本轮跳过国内剔除');
+}
+if (CN不可达.size) {
+  const 前 = alive.length;
+  alive = alive.filter((p) => !CN不可达.has(`${p.server}:${p.port}`));
+  console.log(`[CN] 剔除国内不可达 ${前 - alive.length} 个（覆盖 ${CN信息.covered} 个 host:port，数据 ${CN信息.ageHours}h 前，视角 ${CN信息.vantage}）`);
+}
+
+// ---------- 实测质量排序 ----------
+// 两个信号：① speed.json 里的实测下载 MB/s（抽样，样本少但最准）；② 探活 RTT（全覆盖）。
+// 排序规则：有 MB/s 的按快的在前；没有的按 RTT 升序。精简池按这个顺序取，等于「优先给快的」。
+const SPEED = new Map();
+try {
+  const sp = JSON.parse(fs.readFileSync(new URL('../dist/speed.json', import.meta.url), 'utf8'));
+  for (const r of sp.results || []) if (r.ok && r.mbps > 0) SPEED.set(String(r.node), r.mbps);
+  console.log(`[速度] 载入 ${SPEED.size} 个实测样本`);
+} catch { }
+const 质量键 = (p) => ({ mb: SPEED.get(String(p.name)) ?? -1, rtt: RTT.get(`${p.server}:${p.port}`) ?? 99999 });
+alive.sort((a, b) => {
+  const x = 质量键(a), y = 质量键(b);
+  if (y.mb !== x.mb) return y.mb - x.mb;
+  return x.rtt - y.rtt;
+});
+const 有速度 = alive.filter((p) => SPEED.has(String(p.name))).length;
+console.log(`[排序] ${alive.length} 个节点按「实测速度优先 → RTT 升序」排好（其中 ${有速度} 个有 MB/s 实测）`);
 
 // ---------- 名字去重 ----------
 const nameCount = new Map();
@@ -268,7 +316,7 @@ const LITE_MAX = 900;
 const liteNames = new Set();
 for (const names of Object.values(byRegion)) {
   if (liteNames.size >= LITE_MAX) break;
-  for (const n of [...names].sort().slice(0, LITE_PER_REGION)) {
+  for (const n of names.slice(0, LITE_PER_REGION)) {
     if (liteNames.size >= LITE_MAX) break;
     liteNames.add(n);
   }
