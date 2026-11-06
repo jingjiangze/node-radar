@@ -1,0 +1,249 @@
+name: pipeline
+
+# 一条流水线跑完整个链路，顺序由 needs 显式保证（不再靠 cron 错峰 + git 提交撞运气）：
+#
+#   探测(4 分片) → 合并 → 聚合(剔死/剔墙/排序/发布) → 测速(可选) → 汇总
+#
+# 之前的三个独立工作流用不同并发组（aggregate-nodes vs node-radar-publish），
+# 实际会同时跑、互相顶 push；依赖关系靠 dist/ 里的文件提交传递，谁先跑完谁生效。
+on:
+  schedule:
+    - cron: "20 * * * *"
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: "每个探测分片的目标数（4 片合计 = 4×该值）"
+        default: "110"
+      skip_speed:
+        description: "跳过测速（只更新连通性/国内可达/排序）"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+# 全链路只允许一个实例，避免两个 run 同时改 dist/
+concurrency:
+  group: node-radar-pipeline
+  cancel-in-progress: false
+
+env:
+  NODE_OPTIONS: --max-old-space-size=4096
+
+jobs:
+  # ---------- ① 中国大陆可达性探测（4 个 runner 并行，各自独立 IP 额度）----------
+  probe:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Probe shard ${{ matrix.shard }}
+        continue-on-error: true
+        timeout-minutes: 35
+        run: |
+          node scripts/cn-probe-gp.mjs \
+            --resume \
+            --shard=${{ matrix.shard }} \
+            --shards=4 \
+            --budget=${{ inputs.budget || '110' }} \
+            --probes=2 \
+            --concurrency=8 \
+            --out=dist/cn-probe-${{ matrix.shard }}.json
+
+      - name: Upload shard
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cn-probe-shard-${{ matrix.shard }}
+          path: dist/cn-probe-${{ matrix.shard }}.json
+          if-no-files-found: ignore
+          retention-days: 2
+
+  # ---------- ② 合并分片，落成 dist/cn-probe.json ----------
+  merge-probe:
+    needs: probe
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: cn-probe-shard-*
+          path: dist
+          merge-multiple: true
+
+      - name: Merge shards
+        run: node scripts/merge-probes.mjs
+
+      - name: Commit probe results
+        run: |
+          set -e
+          [ -f dist/cn-probe.json ] || { echo "没有探测结果"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/cn-probe.json
+          git diff --cached --quiet || git commit -m "chore(probe): 国内可达性结果"
+          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
+          git push
+
+  # ---------- ③ 聚合：TCP → TLS → WS 路径 → 国内剔除 → 排序 → 发布 ----------
+  aggregate:
+    needs: merge-probe
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Aggregate
+        run: node scripts/aggregate.mjs
+
+      - name: Install mihomo (config validation)
+        run: |
+          set -e
+          URL=$(curl -sSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+            | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
+          curl -sSL -o mihomo.gz "$URL" && gunzip -f mihomo.gz && chmod +x mihomo
+
+      - name: Validate generated config
+        run: |
+          set -e
+          ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"
+          ./mihomo -t -d . -f dist/clash-lite.yaml && echo "clash-lite.yaml OK"
+
+      - name: Purge jsDelivr
+        run: curl -s -m 30 "https://purge.jsdelivr.net/gh/jingjiangze/node-radar@main/dist/clash.yaml" || true
+
+      - name: Publish
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "chore(aggregate): 更新公共节点池"
+          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
+          git push
+
+      - name: Smoke test published file
+        run: |
+          set -e
+          sleep 5
+          curl -fsSL -m 60 -o published.yaml "https://raw.githubusercontent.com/jingjiangze/node-radar/main/dist/clash.yaml"
+          ./mihomo -t -d . -f published.yaml && echo "published OK ($(wc -c < published.yaml) bytes)"
+
+  # ---------- ④ 测速（可选；只测连通性已过 + 国内可达的那批）----------
+  speedtest:
+    needs: aggregate
+    if: ${{ !inputs.skip_speed }}
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Install mihomo
+        run: |
+          set -e
+          URL=$(curl -sSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+            | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
+          curl -sSL -o mihomo.gz "$URL" && gunzip -f mihomo.gz && chmod +x mihomo
+
+      - name: Speed test
+        env:
+          MIHOMO_BIN: ./mihomo
+          SAMPLE: 60
+        run: node scripts/speedtest.mjs
+
+      - name: Commit speed results
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/speed.json dist/speed-top.yaml 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "chore(speed): 更新实测速度"
+          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
+          git push
+
+  # ---------- ⑤ 汇总：把本轮各阶段数字打到 Job Summary ----------
+  report:
+    needs: [merge-probe, aggregate, speedtest]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Summarize
+        run: |
+          {
+            echo "## 本轮流水线"
+            echo ""
+            echo "| 阶段 | 结果 |"
+            echo "|---|---|"
+            echo "| 国内探测 | ${{ needs.merge-probe.result }} |"
+            echo "| 聚合发布 | ${{ needs.aggregate.result }} |"
+            echo "| 测速 | ${{ needs.speedtest.result }} |"
+            echo ""
+            node -e "
+              const fs=require('fs');
+              const r=(f)=>{try{return JSON.parse(fs.readFileSync(f,'utf8'))}catch{return null}};
+              const cn=r('dist/cn-probe.json'), sp=r('dist/speed.json'), su=r('dist/summary.json');
+              if(su) console.log('- 聚合：'+su.totalAlive+' 节点存活，'+Object.keys(su.regions||{}).length+' 个地区组');
+              if(cn) console.log('- 国内：覆盖 '+(cn.total||0)+' 个 host:port，可达 '+(cn.ok||0)+'（'+cn.okRate+'%）');
+              if(sp) console.log('- 测速：'+sp.ok+'/'+sp.sample+' 可用，中位 '+sp.medianMbps+' MB/s');
+            "
+          } >> $GITHUB_STEP_SUMMARY
+
+  notify:
+    needs: [aggregate]
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '[auto] 流水线失败';
+            const body = [
+              '本轮流水线失败，线上订阅保持上一版未覆盖。',
+              '',
+              `- 运行：${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              '',
+              '常见原因：某个源返回异常内容导致内核校验不通过（守卫生效，未发布）。',
+            ].join('\n');
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'pipeline',
+            });
+            const exist = issues.data.find(i => i.title === title);
+            if (exist) {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: exist.number, body });
+            } else {
+              await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, labels: ['pipeline'], body });
+            }
