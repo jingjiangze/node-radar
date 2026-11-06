@@ -10,8 +10,9 @@
 // 按地区分层抽样，保证各地区都能轮到；全量 4000 个靠多轮轮转覆盖。
 import fs from 'node:fs';
 import path from 'node:path';
+import net from 'node:net';
 import os from 'node:os';
-import { spawn } from 'node:child_process';
+import { spawn, execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 
@@ -30,8 +31,8 @@ const 最大失败 = Number(process.env.MAX_CONSEC_FAIL || 2);
 const 产出上限 = Number(process.env.VERIFIED_MAX || 400);
 const 产出每地区 = Number(process.env.VERIFIED_PER_REGION || 40);
 const BIN = process.env.MIHOMO_BIN || 'mihomo';
-const 端口 = 7892;
-const API = 'http://127.0.0.1:9092';
+const 端口 = Number(process.env.PROXY_PORT || (7800 + Math.floor(Math.random() * 180)));
+const API = `http://127.0.0.1:${端口 + 1000}`;
 const 测试URL = 'https://www.gstatic.com/generate_204';
 
 const 睡 = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -109,26 +110,68 @@ let 内核日志 = '';
 子进程.stdout.on('data', (d) => (内核日志 += d));
 子进程.stderr.on('data', (d) => (内核日志 += d));
 
-let 就绪 = false;
-for (let i = 0; i < 30; i++) { await 睡(1000); try { if ((await fetch(`${API}/version`)).ok) { 就绪 = true; break; } } catch { } }
-if (!就绪) { console.error('内核未就绪：', 内核日志.slice(-400)); 子进程.kill('SIGKILL'); process.exit(0); }
+// 就绪判定：不能只看 RESTful API。API 先于 mixed-port 监听，且端口可能被上一轮残留实例占死，
+// 那样每个 curl 都会瞬间 connection refused，最后被误报成「0% 通过」。
+const 代理端口可连 = () => new Promise((resolve) => {
+  const s = net.connect({ host: '127.0.0.1', port: 端口 });
+  const 完 = (ok) => { try { s.destroy(); } catch { } resolve(ok); };
+  s.setTimeout(500, () => 完(false));
+  s.on('connect', () => 完(true));
+  s.on('error', () => 完(false));
+});
 
-// ---------- 逐个真打 ----------
+let 就绪 = false;
+for (let i = 0; i < 30; i++) {
+  await 睡(1000);
+  try {
+    if ((await fetch(`${API}/version`)).ok && (await 代理端口可连())) { 就绪 = true; break; }
+  } catch { }
+}
+if (!就绪) {
+  console.error(`内核未就绪（或代理端口 ${端口} 未监听）：`, 内核日志.slice(-400));
+  子进程.kill('SIGKILL');
+  process.exit(0);
+}
+日志(`内核就绪：代理 127.0.0.1:${端口}，API ${API}`);
+
+// ---------- 逐个真打（必须走代理！）----------
+// 关键：Node 的 fetch 不认 mixed-port 代理，直接 fetch 测的是「runner 直连目标站」，
+// 跟被选中的节点毫无关系 —— 会得到几乎恒定的 100% 假阳性。必须用 curl -x 走本地代理。
+const 走代理 = (额外参数) =>
+  execFileSync('curl', [
+    '-s', '-o', process.platform === 'win32' ? 'NUL' : '/dev/null',
+    '-x', `http://127.0.0.1:${端口}`,
+    '--max-time', String(Math.round(超时ms / 1000)),
+    ...额外参数,
+  ], { encoding: 'utf8', timeout: 超时ms + 8000 });
+
 const 结果 = [];
 for (const n of 名) {
-  const t0 = Date.now();
-  let ok = false, ms = -1, 原因 = '';
+  let ok = false, ms = -1, mbps = null, 原因 = '';
   try {
     await fetch(`${API}/proxies/T`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: n }) });
     await 睡(80);
-    const r = await fetch(测试URL, { redirect: 'manual', signal: AbortSignal.timeout(超时ms) });
-    ok = r.status === 204;
-    ms = Date.now() - t0;
-    if (!ok) 原因 = `HTTP ${r.status}`;
+    const out = 走代理(['-w', '%{http_code} %{time_total}', 测试URL]).trim().split(/\s+/);
+    const 码 = Number(out[0]);
+    ok = 码 === 204 || 码 === 200;
+    ms = Math.round(Number(out[1] || 0) * 1000);
+    if (!ok) 原因 = `HTTP ${码 || 'n/a'}`;
   } catch (e) {
-    原因 = String(e.message || e).slice(0, 40);
+    原因 = `curl=${e.status ?? '?'} out=${String(e.stdout || '').trim().slice(0, 24)}`;
   }
-  结果.push({ name: n, ok, ms });
+  结果.push({ name: n, ok, ms, mbps, 原因 });
+}
+
+// ---------- 速度抽样（只测通过的，控制成本）----------
+const 测速样本数 = Number(process.env.SPEED_SAMPLE || 30);
+const 测速URL = `https://speed.cloudflare.com/__down?bytes=${Number(process.env.SPEED_BYTES || 1000000)}`;
+const 通过列表 = 结果.filter((r) => r.ok).sort((a, b) => a.ms - b.ms).slice(0, 测速样本数);
+if (通过列表.length) 日志(`速度抽样 ${通过列表.length} 个（下载 ${process.env.SPEED_BYTES || 1000000}B）`);
+for (const r of 通过列表) {
+  try {
+    const out = 走代理(['-m', '15', '-w', '%{http_code} %{speed_download}', 测速URL]).trim().split(/\s+/);
+    if (Number(out[0]) === 200) r.mbps = Number((Number(out[1] || 0) / 1048576).toFixed(2));
+  } catch { }
 }
 子进程.kill('SIGKILL');
 
@@ -137,7 +180,7 @@ const at = new Date().toISOString();
 for (const r of 结果) {
   const 原名 = r.name.replace(/^\d+\|/, '');
   const h = 健康[原名] || { ok: 0, fail: 0, consecFail: 0, ms: null, at: null };
-  if (r.ok) { h.ok += 1; h.consecFail = 0; h.ms = r.ms; }
+  if (r.ok) { h.ok += 1; h.consecFail = 0; h.ms = r.ms; if (r.mbps != null) h.mbps = r.mbps; }
   else { h.fail += 1; h.consecFail = (h.consecFail || 0) + 1; }
   h.at = at;
   健康[原名] = h;
@@ -184,7 +227,12 @@ for (const p of 可用) {
 }
 const 精选 = [];
 for (const [, list] of 按地区) {
-  list.sort((a, b) => (健康[a.name]?.ms ?? 9e9) - (健康[b.name]?.ms ?? 9e9));
+  list.sort((a, b) => {
+    const sa = 健康[a.name] || {}, sb = 健康[b.name] || {};
+    const ma = sa.mbps ?? -1, mb = sb.mbps ?? -1;
+    if (mb !== ma) return mb - ma;              // 有实测速度的排前面，快者优先
+    return (sa.ms ?? 9e9) - (sb.ms ?? 9e9);     // 没速度数据的按延迟
+  });
   精选.push(...list.slice(0, 产出每地区));
 }
 const 最终 = 精选.slice(0, 产出上限);
@@ -212,7 +260,16 @@ const 报告 = {
   verifiedNodes: 最终.length,
   healthTracked: Object.keys(健康).length,
   cnProbe: CN信息,
-  deadThisRound: 结果.filter((r) => !r.ok).map((r) => ({ name: r.name.replace(/^\d+\|/, '') })).slice(0, 20),
+  speed: {
+    sampled: 通过列表.length,
+    measured: 通过列表.filter((r) => r.mbps != null).length,
+    medianMbps: (() => {
+      const v = 通过列表.map((r) => r.mbps).filter((x) => x != null).sort((a, b) => a - b);
+      return v.length ? v[Math.floor(v.length / 2)] : null;
+    })(),
+    top: 通过列表.filter((r) => r.mbps != null).sort((a, b) => b.mbps - a.mbps).slice(0, 8).map((r) => ({ node: r.name.replace(/^d+|/, ''), mbps: r.mbps, ms: r.ms })),
+  },
+  deadThisRound: 结果.filter((r) => !r.ok).map((r) => ({ name: r.name.replace(/^\d+\|/, ''), reason: r.原因, ms: r.ms })).slice(0, 20),
 };
 
 fs.writeFileSync(健康文件, JSON.stringify(健康, null, 0) + '\n');
