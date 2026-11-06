@@ -5,7 +5,7 @@
 import fs from 'node:fs';
 
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
-const OUT = new URL('../sources.auto.json', import.meta.url);
+const OUT = new URL('../sources.auto.json', import.meta.url);\nconst CANDIDATES = new URL('../sources.candidates.json', import.meta.url);
 const MIN_NODES = 5;
 const MAX_REPOS = 30;
 const MAX_FILES = 3;
@@ -107,11 +107,33 @@ for (const repo of candidates) {
   }
 }
 
-// ---------- 3. 合并（历史验证过的保留 90 天） ----------
+// ---------- 3. 候选隔离：连续三轮成功且跨度至少 48 小时才晋升 ----------
+const priorCandidates = loadJson(CANDIDATES, []);
+const candidateByUrl = new Map(priorCandidates.map((s) => [s.url, s]));
+const now = Date.now();
+for (const item of found) {
+  const old = candidateByUrl.get(item.url);
+  candidateByUrl.set(item.url, {
+    ...item,
+    firstSeen: old?.firstSeen || new Date(now).toISOString(),
+    lastSeen: new Date(now).toISOString(),
+    successfulRuns: (old?.successfulRuns || 0) + 1,
+    status: 'candidate'
+  });
+}
+const cutoff = now - 90 * 86400000;
+const candidates = [...candidateByUrl.values()].filter((s) => new Date(s.lastSeen || s.verifiedAt || 0).getTime() > cutoff);
+const promoted = candidates.filter((s) =>
+  s.successfulRuns >= 3 &&
+  now - new Date(s.firstSeen).getTime() >= 48 * 3600000 &&
+  s.nodes >= MIN_NODES
+);
 const byUrl = new Map(existing.map((s) => [s.url, s]));
-for (const f of found) byUrl.set(f.url, f);
-const cutoff = Date.now() - 90 * 86400000;
+for (const item of promoted) byUrl.set(item.url, {
+  name: item.name, url: item.url, nodes: item.nodes,
+  verifiedAt: item.lastSeen, promotedAt: item.firstSeen
+});
 const merged = [...byUrl.values()].filter((s) => new Date(s.verifiedAt || 0).getTime() > cutoff);
-
+fs.writeFileSync(CANDIDATES, JSON.stringify(candidates, null, 2) + '\n');
 fs.writeFileSync(OUT, JSON.stringify(merged, null, 2) + '\n');
-console.log(`sources.auto.json 共 ${merged.length} 条（新增 ${found.filter((f) => !existing.some((e) => e.url === f.url)).length}）`);
+console.log(`sources.auto.json 共 ${merged.length} 条；候选 ${candidates.length} 条；本轮晋升 ${promoted.length} 条`);
