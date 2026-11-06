@@ -18,7 +18,7 @@ import yaml from 'js-yaml';
 
 const 根 = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(根, 'dist');
-const 源文件 = process.env.SOURCE || path.join(DIST, 'clash.yaml');
+const 源文件 = process.env.SOURCE || path.join(DIST, 'clash-lite.yaml'); // 只测订阅真正会用的那批
 const 健康文件 = path.join(DIST, 'node-health.json');
 const 产物 = path.join(DIST, 'clash-verified.yaml');
 const 报告文件 = path.join(DIST, 'verify.json');
