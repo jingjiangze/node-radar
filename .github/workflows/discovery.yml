@@ -1,0 +1,74 @@
+name: discovery-adapters
+
+# 六类发现适配器（GitHub 代码/仓库、种子源、递归、Telegram、Feed、搜索）
+# 与 discover-sources 分工：那个走「仓库搜索 + 根目录嗅探」，这个走「多渠道 + 候选登记表」。
+# 产物：sources.auto.json（只收过关的）、sources.candidates.json（登记表）、discovery-report.json
+on:
+  schedule:
+    - cron: "30 4 * * 2"   # 每周二 12:30（北京），避开周一那轮
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: "本轮最多校验多少个候选"
+        default: "80"
+      only:
+        description: "只跑指定适配器（逗号分隔，如 github-code,seeds）"
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: node-radar-publish
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      # 先跑离线自测：安全判定/归一化/登记表状态机。挂了就别去抓外网
+      - name: Self test (offline)
+        run: node scripts/discovery/selftest.mjs
+
+      - name: Run discovery engine
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/discovery/engine.mjs \
+            --budget=${{ inputs.budget || '80' }} \
+            ${{ inputs.only != '' && format('--only={0}', inputs.only) || '' }}
+
+      - name: Show report
+        run: |
+          node -e "
+            const r = require('./discovery-report.json');
+            console.log('渠道:', JSON.stringify(r.channels));
+            console.log('候选', r.candidates, '通过', r.passed, '登记表', JSON.stringify(r.registry));
+            console.log('正式源', r.acceptedSources);
+          "
+
+      - name: Commit
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          [ -f sources.auto.json ] && git add -f sources.auto.json || true
+          [ -f sources.candidates.json ] && git add -f sources.candidates.json || true
+          [ -f discovery-report.json ] && git add -f discovery-report.json || true
+          git diff --cached --quiet || git commit -m "chore: 多渠道发现更新公开源与候选登记表"
+          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
+          git push
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: discovery-report
+          path: discovery-report.json
+          retention-days: 14
