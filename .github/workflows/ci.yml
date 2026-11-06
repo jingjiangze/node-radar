@@ -1,0 +1,56 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: node-radar-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Syntax-check pipeline scripts
+        run: |
+          for file in scripts/*.mjs scripts/discovery/*.mjs; do node --check "$file"; done
+      # 发现适配器的离线自测：安全判定 / 归一化 / 候选登记表状态机
+      - name: Discovery adapters selftest
+        run: node scripts/discovery/selftest.mjs
+
+      # 夹具驱动的整链路回归：适配器 → 去重 → 校验 → 登记表 → 产物（两轮，不依赖外网）
+      - name: Discovery engine (fixture)
+        run: node scripts/discovery/test-engine.mjs
+
+      - name: Validate source manifests and generated YAML
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import yaml from 'js-yaml';
+          for (const file of ['sources.json', 'sources.auto.json', 'sources.health.json', 'sources.candidates.json']) {
+            if (!fs.existsSync(file)) continue;
+            JSON.parse(fs.readFileSync(file, 'utf8'));
+          }
+          for (const file of ['dist/clash.yaml', 'dist/clash-lite.yaml', 'dist/speed-top.yaml', 'dist/cf-egress.yaml']) {
+            if (!fs.existsSync(file)) continue;
+            const parsed = yaml.load(fs.readFileSync(file, 'utf8'));
+            if (file.endsWith('clash.yaml') && !Array.isArray(parsed?.proxies)) {
+              throw new Error(file + ': missing proxies array');
+            }
+          }
+          for (const file of ['dist/summary.json', 'dist/egress-audit.json', 'dist/cf-egress.json', 'dist/cf-fronted-endpoints.json', 'dist/datacenter-audit.json']) {
+            if (fs.existsSync(file)) JSON.parse(fs.readFileSync(file, 'utf8'));
+          }
+          console.log('source manifests, audit reports and available YAML artifacts are valid');
+          NODE
