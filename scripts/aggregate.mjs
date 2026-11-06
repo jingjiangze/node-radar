@@ -263,8 +263,8 @@ const out = {
 // ---------- 精简池 ----------
 // 客户端一次性对所有节点做健康检查会大面积超时（实测：23 个 1.3s 通过，918 个 8s 仍超时），
 // 所以另出一份按地区分层的精简池给订阅使用；全量池仍保留在 clash.yaml。
-const LITE_PER_REGION = 25;
-const LITE_MAX = 300;
+const LITE_PER_REGION = 80;
+const LITE_MAX = 900;
 const liteNames = new Set();
 for (const names of Object.values(byRegion)) {
   if (liteNames.size >= LITE_MAX) break;
