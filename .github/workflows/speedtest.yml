@@ -36,7 +36,7 @@ jobs:
         run: node scripts/speedtest.mjs
         env:
           MIHOMO_BIN: ./mihomo
-          SAMPLE: 60
+          SAMPLE: 100
 
       - name: Purge jsDelivr
         run: |
