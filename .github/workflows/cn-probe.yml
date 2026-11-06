@@ -1,0 +1,69 @@
+name: cn-probe
+
+# 中国大陆可达性探测（Globalping 众包探针）
+# 单独成流、比聚合更频繁：聚合每 6 小时一轮，探测每 3 小时补一批，
+# 这样「国内连不到」的节点能在下一轮聚合之前就被标记出来。
+# 额度：匿名 250 探针次/小时。本轮 60 目标 × 2 探针 = 120，3 小时一次完全在额度内。
+on:
+  schedule:
+    - cron: "20 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: "本轮最多探测多少个 host:port（每个消耗 probes 个额度）"
+        default: "60"
+      probes:
+        description: "每个目标用几个大陆探针（两个都收不到包才判不可达）"
+        default: "2"
+
+permissions:
+  contents: write
+
+# 与聚合共享同一个发布组，避免两个工作流同时 push 互相顶掉
+concurrency:
+  group: node-radar-publish
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Probe from mainland China
+        # 探测服务挂了不该红掉仓库；拿不到数据时 verify 会自动跳过国内筛选
+        continue-on-error: true
+        timeout-minutes: 25
+        run: |
+          node scripts/cn-probe-gp.mjs \
+            --resume \
+            --budget=${{ inputs.budget || '60' }} \
+            --probes=${{ inputs.probes || '2' }} \
+            --concurrency=5
+
+      - name: Show result
+        if: always()
+        run: |
+          node -e "
+            try {
+              const r = require('./dist/cn-probe.json');
+              console.log('累计', r.total, '条，可达', r.ok, '(' + r.okRate + '%)，本轮', JSON.stringify(r.thisRound || {}));
+            } catch (e) { console.log('本轮没有产出（探测服务不可用或全部未完成）'); }
+          "
+
+      - name: Commit
+        if: always()
+        run: |
+          set -e
+          [ -f dist/cn-probe.json ] || { echo "没有可提交的结果"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/cn-probe.json
+          git diff --cached --quiet || git commit -m "chore: 中国大陆可达性探测结果"
+          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
+          git push
