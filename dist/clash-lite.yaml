@@ -182,20 +182,6 @@ proxies:
       headers:
         Host: 168.138.43.75
       path: /
-  - name: 韩国 001
-    type: vmess
-    network: ws
-    server: 132.145.80.230
-    port: 80
-    uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-    skip-cert-verify: false
-    tls: false
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: kr02.a0a.xyz
-      path: /
   - name: 新加坡 002
     type: trojan
     network: ws
@@ -535,6 +521,37 @@ proxies:
       headers:
         Host: Channel-ELiV2RAY--ELiV2RAY.nET
       path: /Channel-ELiV2RAY---ELiV2RAY?ed=2048
+  - name: 日本 055
+    type: vless
+    network: ws
+    server: 43.249.72.254
+    port: 443
+    uuid: ba33c872-d552-4c44-b0f2-b9bd8669d70c
+    servername: henzooo.global.ssl.fastly.net
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: henzooo.global.ssl.fastly.net
+      path: /
+  - name: 日本 056
+    type: vless
+    network: ws
+    server: 151.101.109.223
+    port: 443
+    uuid: c8541f02-4efd-401d-beb7-dc017b12ee94
+    servername: pan1.global.ssl.fastly.net
+    skip-cert-verify: true
+    tls: true
+    udp: true
+    tfo: false
+    ws-opts:
+      headers:
+        Host: pan1.global.ssl.fastly.net
+      path: /
   - name: 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
     cipher: aes-256-gcm
     password: Y6R9pAtvxxzmGC
@@ -1371,6 +1388,17 @@ proxies:
       path: /
       headers:
         Host: lg30.cfcdn3.xyz
+  - name: 🇸🇬SG-143.198.219.182-2441
+    type: vmess
+    server: 143.198.219.182
+    port: 80
+    uuid: e9c4ce52-9a78-4381-b6f8-23350bc4d606
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /v2ray
   - name: 🇭🇰HK-219.76.13.181-0010
     type: trojan
     server: 219.76.13.181
@@ -1551,28 +1579,6 @@ proxies:
     type: socks5
     server: 123.58.219.171
     port: 10808
-  - name: JP - zhuhai.uk
-    type: vless
-    server: 106.75.143.18
-    port: 5000
-    uuid: e4e2afbe-1a21-4ca2-a22f-b5417e825687
-    tls: true
-    servername: buylite.tv.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: _9RItE-b_UsAMkpTgMAJhaiXBl5AUP7jF-OfCDLXKQg
-      short-id: 0c053931
-  - name: JP - zhuhai.uk 02
-    type: vless
-    server: 106.75.143.18
-    port: 5010
-    uuid: e4e2afbe-1a21-4ca2-a22f-b5417e825687
-    tls: true
-    servername: buylite.tv.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: jW2ybiAJXOlwel1NPLI6Kmzj7rjSiAyvqiatDlUq6So
-      short-id: cde516c9
   - name: KR - zhuhai.uk
     type: socks5
     server: 121.169.46.116
@@ -1589,17 +1595,6 @@ proxies:
     port: 1080
     username: '8888'
     password: '8888'
-  - name: SG - zhuhai.uk 02
-    type: vless
-    server: 106.75.143.18
-    port: 4022
-    uuid: e4e2afbe-1a21-4ca2-a22f-b5417e825687
-    tls: true
-    servername: buylite.tv.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 2g8FZHxPWjphq568-OS8ypk7qb76HiMhWua0UAJfOl8
-      short-id: ace0f99d
   - name: ID - zhuhai.uk
     type: http
     server: 103.86.116.118
@@ -1905,7 +1900,6 @@ proxy-groups:
       - '🇭🇰 香港 | HKG #3'
       - ProxyPool | 🇺🇸 美国 | USA 7
       - 日本 002
-      - 韩国 001
       - 新加坡 002
       - 日本 004
       - 日本 005
@@ -1931,6 +1925,8 @@ proxy-groups:
       - 新加坡 017
       - 新加坡 021
       - 新加坡 023
+      - 日本 055
+      - 日本 056
       - 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
@@ -1996,6 +1992,7 @@ proxy-groups:
       - 🇰🇷KR-141.164.45.187-0233
       - 🇰🇷KR-141.164.45.187-5935
       - 🇭🇰HK-159.100.206.88-0299
+      - 🇸🇬SG-143.198.219.182-2441
       - 🇭🇰HK-219.76.13.181-0010
       - 🇸🇬SG-139.99.61.154-3239
       - 🇸🇬SG-109.123.237.41-3266
@@ -2021,12 +2018,9 @@ proxy-groups:
       - US - zhuhai.uk 11
       - HK - zhuhai.uk
       - HK - zhuhai.uk 02
-      - JP - zhuhai.uk
-      - JP - zhuhai.uk 02
       - KR - zhuhai.uk
       - KR - zhuhai.uk 02
       - SG - zhuhai.uk
-      - SG - zhuhai.uk 02
       - ID - zhuhai.uk
       - ID - zhuhai.uk 02
       - 🇰🇷 Seoul, 11, South Korea
@@ -2088,7 +2082,6 @@ proxy-groups:
       - '🇭🇰 香港 | HKG #3'
       - ProxyPool | 🇺🇸 美国 | USA 7
       - 日本 002
-      - 韩国 001
       - 新加坡 002
       - 日本 004
       - 日本 005
@@ -2114,6 +2107,8 @@ proxy-groups:
       - 新加坡 017
       - 新加坡 021
       - 新加坡 023
+      - 日本 055
+      - 日本 056
       - 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
@@ -2179,6 +2174,7 @@ proxy-groups:
       - 🇰🇷KR-141.164.45.187-0233
       - 🇰🇷KR-141.164.45.187-5935
       - 🇭🇰HK-159.100.206.88-0299
+      - 🇸🇬SG-143.198.219.182-2441
       - 🇭🇰HK-219.76.13.181-0010
       - 🇸🇬SG-139.99.61.154-3239
       - 🇸🇬SG-109.123.237.41-3266
@@ -2204,12 +2200,9 @@ proxy-groups:
       - US - zhuhai.uk 11
       - HK - zhuhai.uk
       - HK - zhuhai.uk 02
-      - JP - zhuhai.uk
-      - JP - zhuhai.uk 02
       - KR - zhuhai.uk
       - KR - zhuhai.uk 02
       - SG - zhuhai.uk
-      - SG - zhuhai.uk 02
       - ID - zhuhai.uk
       - ID - zhuhai.uk 02
       - 🇰🇷 Seoul, 11, South Korea
@@ -2340,10 +2333,10 @@ proxy-groups:
       - SG 🇸🇬 | @Raydikalx | 8DCEC7
       - SG 🇸🇬 | @Raydikalx | 9DDCC3
       - SG 🇸🇬 | @Raydikalx | EB4E2A
+      - 🇸🇬SG-143.198.219.182-2441
       - 🇸🇬SG-139.99.61.154-3239
       - 🇸🇬SG-109.123.237.41-3266
       - SG - zhuhai.uk
-      - SG - zhuhai.uk 02
       - SG新加坡(v2clash.blog 2026-10.5更新)
       - SG新加坡(v2clash.blog 2026-10.13更新)
       - SG新加坡(v2clash.blog 2026-10.20更新)
@@ -2372,11 +2365,11 @@ proxy-groups:
       - 日本 031
       - 日本 036
       - 日本 037
+      - 日本 055
+      - 日本 056
       - JP 🇯🇵 | @Raydikalx | E6D44D
       - JP 🇯🇵 | @Raydikalx | 102B75
       - JP 🇯🇵 | @Raydikalx | DDA3E3
-      - JP - zhuhai.uk
-      - JP - zhuhai.uk 02
       - JP日本(v2clash.blog 2026-10.14更新)
       - JP日本(v2clash.blog 2026-10.23更新)
       - JP日本(v2clash.blog 2026-10.23更新)-2
@@ -2453,7 +2446,6 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇰🇷[www.v2nodes.com] ss-KR-1185...
-      - 韩国 001
       - 韩国 002
       - 韩国 006
       - 韩国 010
@@ -2520,6 +2512,9 @@ proxy-groups:
     interval: 30
     lazy: true
 rules:
+  - DOMAIN-SUFFIX,github.com,GH直连优先
+  - DOMAIN-SUFFIX,github.io,GH直连优先
+  - DOMAIN-SUFFIX,githubassets.com,GH直连优先
   - DOMAIN-KEYWORD,github,GH直连优先
   - DOMAIN-SUFFIX,jiangjiangze.icu,直连优先
   - IP-CIDR,1.1.1.1/32,一分机场,no-resolve
