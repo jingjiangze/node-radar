@@ -59,12 +59,14 @@
     "name": "LinVireo/SmartSub",
     "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
     "nodes": 10000,
-    "verifiedAt": "2026-11-05T16:33:45.369Z"
+    "verifiedAt": "2026-11-05T16:33:45.369Z",
+    "score": 0
   },
   {
     "name": "zhuhaiuk/free-nodes",
     "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/clash_config.yaml",
     "nodes": 31,
-    "verifiedAt": "2026-11-05T16:33:42.078Z"
+    "verifiedAt": "2026-11-05T16:33:42.078Z",
+    "score": 0
   }
 ]

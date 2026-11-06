@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-11-06T08:54:25.740Z",
+  "generatedAt": "2026-11-06T09:02:26.802Z",
   "budget": 40,
   "channels": {
     "github-code": {
-      "产出": 40,
-      "耗时ms": 24116
+      "产出": 0,
+      "耗时ms": 6286
     },
     "github-search": {
       "产出": 40,
-      "耗时ms": 6466
+      "耗时ms": 7890
     },
     "seeds": {
       "产出": 40,
-      "耗时ms": 5325
+      "耗时ms": 6531
     },
     "recursive": {
       "产出": 33,
-      "耗时ms": 33
+      "耗时ms": 11
     },
     "telegram": {
       "产出": 0,
@@ -24,7 +24,7 @@
     },
     "feed": {
       "产出": 0,
-      "耗时ms": 1
+      "耗时ms": 0
     },
     "search": {
       "产出": 0,
@@ -32,171 +32,135 @@
     }
   },
   "candidates": 40,
-  "passed": 7,
+  "passed": 0,
   "registry": {
     "accepted": 7,
-    "candidate": 33,
+    "candidate": 73,
     "rejected": 0,
     "mirror": 0
   },
   "acceptedSources": 9,
-  "newSources": [
-    {
-      "url": "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/yaml/Custom_Clash.yaml",
-      "nodes": 34,
-      "channel": "github-code"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ua_clash.yaml",
-      "nodes": 20,
-      "channel": "github-code"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/se_clash.yaml",
-      "nodes": 20,
-      "channel": "github-code"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0308clash.yml",
-      "nodes": 64,
-      "channel": "github-code"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0314clash.yml",
-      "nodes": 67,
-      "channel": "github-code"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/ID-10086/freenode/main/adiclash.yml",
-      "nodes": 261,
-      "channel": "github-code"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/clashconfig/online/main/Dark_Clash.yml",
-      "nodes": 419,
-      "channel": "github-code"
-    }
-  ],
+  "newSources": [],
   "rejectedSample": [
     {
-      "url": "https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/clash.yaml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/cbusifabcap/daily_free_vpn/main/clash.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/main/LAZY_RULES/clash.yaml",
-      "reason": "节点不足(10)"
+      "url": "https://raw.githubusercontent.com/cbusifabcap/daily_free_vpn/main/clash.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/githubdulong/Script/master/OpenClash.yaml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/cbusifabcap/daily_free_vpn/main/sub.txt",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/ZeroDeng01/sublinkPro/main/template/clash.yaml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/cbusifabcap/daily_free_vpn/main/nodes.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Infatuation-Fei/rule/main/Stash/%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF/Config%20for%20Clash.yaml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/cbusifabcap/daily_free_vpn/main/list.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/dk_clash.yaml",
-      "reason": "节点不足(1)"
+      "url": "https://raw.githubusercontent.com/cbusifabcap/daily_free_vpn/main/clash",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/lt_clash.yaml",
-      "reason": "节点不足(4)"
+      "url": "https://raw.githubusercontent.com/tolinkshare2/tolinkshare2.github.io/main/clash.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/mx_clash.yaml",
-      "reason": "节点不足(3)"
+      "url": "https://raw.githubusercontent.com/tolinkshare2/tolinkshare2.github.io/main/clash.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/id_clash.yaml",
-      "reason": "节点不足(4)"
+      "url": "https://raw.githubusercontent.com/tolinkshare2/tolinkshare2.github.io/main/sub.txt",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/br_clash.yaml",
-      "reason": "节点不足(4)"
+      "url": "https://raw.githubusercontent.com/tolinkshare2/tolinkshare2.github.io/main/nodes.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/cl_clash.yaml",
-      "reason": "节点不足(1)"
+      "url": "https://raw.githubusercontent.com/tolinkshare2/tolinkshare2.github.io/main/list.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/in_clash.yaml",
-      "reason": "节点不足(18)"
+      "url": "https://raw.githubusercontent.com/tolinkshare2/tolinkshare2.github.io/main/clash",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/at_clash.yaml",
-      "reason": "节点不足(10)"
+      "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/clash.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/lv_clash.yaml",
-      "reason": "节点不足(3)"
+      "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/clash.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/gr_clash.yaml",
-      "reason": "节点不足(2)"
+      "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub.txt",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/aq_clash.yaml",
-      "reason": "节点不足(1)"
+      "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/nodes.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/au_clash.yaml",
-      "reason": "节点不足(14)"
+      "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/list.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/clash",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/unreachable/clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/kooker/FreeSubsCheck/main/clash.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/untested/clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/kooker/FreeSubsCheck/main/clash.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/reachable/clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/kooker/FreeSubsCheck/main/sub.txt",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Moli-X/Resources/main/Clash/Clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/kooker/FreeSubsCheck/main/nodes.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/ermaozi01/free_clash_vpn/main/subscribe/clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/kooker/FreeSubsCheck/main/list.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/yangxiaoge/tvbox_cust/master/clash/Clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/kooker/FreeSubsCheck/main/clash",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/tickmao/Rules/master/Clash/Meta/Clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/clash.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/nodesfree/v2raynode/main/subscribe/clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/clash.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/nodesfree/clashnode/main/subscribe/clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/sub.txt",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/axtyet/Luminous/main/Moli-X/Clash/Clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/nodes.yaml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/hermanb001/ProxyTest/main/subscribe/clash.yml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/list.yml",
+      "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/b1ghawk119/subconverter/main/base/clash.yml.20250906",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/clash",
+      "reason": "HTTP 404"
     }
   ]
 }
