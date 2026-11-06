@@ -1,14 +1,56 @@
 [
   {
+    "name": "LinVireo/SmartSub",
+    "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
+    "nodes": 10000,
+    "verifiedAt": "2026-11-05T16:33:45.369Z"
+  },
+  {
+    "name": "github-code",
+    "url": "https://raw.githubusercontent.com/ID-10086/freenode/main/adiclash.yml",
+    "nodes": 261,
+    "verifiedAt": "2026-11-06T08:46:39.211Z",
+    "channel": "github-code"
+  },
+  {
+    "name": "github-code",
+    "url": "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0314clash.yml",
+    "nodes": 67,
+    "verifiedAt": "2026-11-06T08:46:39.211Z",
+    "channel": "github-code"
+  },
+  {
+    "name": "github-code",
+    "url": "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0308clash.yml",
+    "nodes": 64,
+    "verifiedAt": "2026-11-06T08:46:39.211Z",
+    "channel": "github-code"
+  },
+  {
+    "name": "github-code",
+    "url": "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/yaml/Custom_Clash.yaml",
+    "nodes": 34,
+    "verifiedAt": "2026-11-06T08:46:39.211Z",
+    "channel": "github-code"
+  },
+  {
     "name": "zhuhaiuk/free-nodes",
     "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/clash_config.yaml",
     "nodes": 31,
     "verifiedAt": "2026-11-05T16:33:42.078Z"
   },
   {
-    "name": "LinVireo/SmartSub",
-    "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
-    "nodes": 10000,
-    "verifiedAt": "2026-11-05T16:33:45.369Z"
+    "name": "github-code",
+    "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ua_clash.yaml",
+    "nodes": 20,
+    "verifiedAt": "2026-11-06T08:46:39.211Z",
+    "channel": "github-code"
+  },
+  {
+    "name": "github-code",
+    "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/se_clash.yaml",
+    "nodes": 20,
+    "verifiedAt": "2026-11-06T08:46:39.211Z",
+    "channel": "github-code"
   }
 ]
