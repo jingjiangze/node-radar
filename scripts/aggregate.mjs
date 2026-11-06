@@ -62,8 +62,9 @@ function parseVless(u) {
     if (q.get('alpn')) p.alpn = q.get('alpn').split(',');
     if (q.get('allowInsecure') === '1') p['skip-cert-verify'] = true;
     if (q.get('security') === 'reality') {
-      if (!q.get('pbk')) return null;              // 缺 public-key 的 reality 节点无效
-      p['reality-opts'] = { 'public-key': q.get('pbk') };
+      const pbk = q.get('pbk');
+      if (!pbk || !/^[A-Za-z0-9_-]{43}$/.test(pbk)) return null;   // 缺 public-key 或格式非法
+      p['reality-opts'] = { 'public-key': pbk };
       if (q.get('sid')) p['reality-opts']['short-id'] = q.get('sid');
     }
   }
@@ -156,9 +157,19 @@ fs.writeFileSync(new URL('../sources.health.json', import.meta.url), JSON.string
 
 // ---------- 去重 ----------
 const seen = new Set(); const unique = [];
+// REALITY 公钥必须是 32 字节 base64url（43 字符），short-id 必须是 <=16 位 hex；否则内核拒绝加载整份配置
+const okReality = (p) => {
+  const ro = p['reality-opts'];
+  if (!ro) return true;
+  const k = ro['public-key'];
+  if (typeof k !== 'string' || !/^[A-Za-z0-9_-]{43}$/.test(k)) return false;
+  const sid = ro['short-id'];
+  if (sid !== undefined && sid !== null && !/^[0-9a-fA-F]{0,16}$/.test(String(sid))) return false;
+  return true;
+};
 const invalid = (p) =>
   ((p.type === 'hysteria2' || p.type === 'hysteria') && p.obfs && !p['obfs-password']) ||
-  (p['reality-opts'] && !p['reality-opts']['public-key']);
+  !okReality(p);
 for (const p of collected) {
   if (invalid(p)) continue;
   const key = [p.type, p.server, p.port, p.uuid || p.password || p.cipher || ''].join('|').toLowerCase();
