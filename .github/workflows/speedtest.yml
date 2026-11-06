@@ -1,8 +1,7 @@
 name: speedtest
 
 on:
-  schedule:
-    - cron: "45 */6 * * *"   # 每 6 小时，错开聚合任务
+  # 定时已收敛到 pipeline.yml（单一流水线按 needs 显式排序）；这里保留手动触发用于排障
   workflow_dispatch:
 
 permissions:
