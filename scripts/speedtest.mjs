@@ -28,8 +28,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 // ---------- 读上一版产出 ----------
 let doc;
-try { doc = yaml.load(fs.readFileSync(new URL('../dist/clash.yaml', import.meta.url), 'utf8')); } catch (e) {
-  console.error('读不到 dist/clash.yaml，跳过测速'); process.exit(0);
+try {
+  // 只测「连通性已过 + 国内可达」的那批（clash-lite），不是 4600 全量
+  doc = yaml.load(fs.readFileSync(new URL('../dist/clash-lite.yaml', import.meta.url), 'utf8'));
+} catch (e) {
+  console.error('读不到 dist/clash-lite.yaml，跳过测速'); process.exit(0);
 }
 const all = (doc.proxies || []).filter((p) => p && p.server && p.port && p.type);
 if (!all.length) { console.error('没有节点，跳过'); process.exit(0); }
