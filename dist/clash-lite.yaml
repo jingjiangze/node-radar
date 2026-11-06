@@ -535,37 +535,6 @@ proxies:
       headers:
         Host: Channel-ELiV2RAY--ELiV2RAY.nET
       path: /Channel-ELiV2RAY---ELiV2RAY?ed=2048
-  - name: 日本 055
-    type: vless
-    network: ws
-    server: 43.249.72.254
-    port: 443
-    uuid: ba33c872-d552-4c44-b0f2-b9bd8669d70c
-    servername: henzooo.global.ssl.fastly.net
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: henzooo.global.ssl.fastly.net
-      path: /
-  - name: 日本 056
-    type: vless
-    network: ws
-    server: 151.101.109.223
-    port: 443
-    uuid: c8541f02-4efd-401d-beb7-dc017b12ee94
-    servername: pan1.global.ssl.fastly.net
-    skip-cert-verify: true
-    tls: true
-    udp: true
-    tfo: false
-    ws-opts:
-      headers:
-        Host: pan1.global.ssl.fastly.net
-      path: /
   - name: 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
     cipher: aes-256-gcm
     password: Y6R9pAtvxxzmGC
@@ -766,14 +735,6 @@ proxies:
     server: 129.154.61.196
     port: 800
     uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: KR 🇰🇷 | @Raydikalx | E9F97A
-    type: vmess
-    server: 140.238.2.250
-    port: 443
-    uuid: 41a7089a-040b-4538-8b8d-010902405bde
     alterId: 0
     cipher: auto
     udp: true
@@ -1410,17 +1371,6 @@ proxies:
       path: /
       headers:
         Host: lg30.cfcdn3.xyz
-  - name: 🇸🇬SG-143.198.219.182-2441
-    type: vmess
-    server: 143.198.219.182
-    port: 80
-    uuid: e9c4ce52-9a78-4381-b6f8-23350bc4d606
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /v2ray
   - name: 🇭🇰HK-219.76.13.181-0010
     type: trojan
     server: 219.76.13.181
@@ -1593,10 +1543,36 @@ proxies:
     password: 'null'
     tls: true
     skip-cert-verify: true
+  - name: HK - zhuhai.uk
+    type: socks5
+    server: 61.142.113.42
+    port: 6666
   - name: HK - zhuhai.uk 02
     type: socks5
     server: 123.58.219.171
     port: 10808
+  - name: JP - zhuhai.uk
+    type: vless
+    server: 106.75.143.18
+    port: 5000
+    uuid: e4e2afbe-1a21-4ca2-a22f-b5417e825687
+    tls: true
+    servername: buylite.tv.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: _9RItE-b_UsAMkpTgMAJhaiXBl5AUP7jF-OfCDLXKQg
+      short-id: 0c053931
+  - name: JP - zhuhai.uk 02
+    type: vless
+    server: 106.75.143.18
+    port: 5010
+    uuid: e4e2afbe-1a21-4ca2-a22f-b5417e825687
+    tls: true
+    servername: buylite.tv.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: jW2ybiAJXOlwel1NPLI6Kmzj7rjSiAyvqiatDlUq6So
+      short-id: cde516c9
   - name: KR - zhuhai.uk
     type: socks5
     server: 121.169.46.116
@@ -1613,6 +1589,17 @@ proxies:
     port: 1080
     username: '8888'
     password: '8888'
+  - name: SG - zhuhai.uk 02
+    type: vless
+    server: 106.75.143.18
+    port: 4022
+    uuid: e4e2afbe-1a21-4ca2-a22f-b5417e825687
+    tls: true
+    servername: buylite.tv.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 2g8FZHxPWjphq568-OS8ypk7qb76HiMhWua0UAJfOl8
+      short-id: ace0f99d
   - name: ID - zhuhai.uk
     type: http
     server: 103.86.116.118
@@ -1629,25 +1616,32 @@ proxies:
   - name: 🇰🇷 Seoul, 11, South Korea
     type: ss
     server: 141.164.45.187
+    port: 7002
+    cipher: aes-256-gcm
+    password: RexnBgU7EV5ADxG
+    udp: true
+  - name: 🇰🇷 Seoul, 11, South Korea-2
+    type: ss
+    server: 141.164.45.187
     port: 6679
     cipher: aes-256-gcm
     password: TEzjfAYq2IjtuoS
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-2
+  - name: 🇰🇷 Seoul, 11, South Korea-3
     type: ss
     server: 141.164.45.187
     port: 8008
     cipher: aes-256-gcm
     password: XKFKl2rULjIp74
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-3
+  - name: 🇰🇷 Seoul, 11, South Korea-4
     type: ss
     server: 141.164.45.187
     port: 5001
     cipher: aes-256-gcm
     password: Y6R9pAtvxxzmGC
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-4
+  - name: 🇰🇷 Seoul, 11, South Korea-5
     type: ss
     server: 141.164.45.187
     port: 8119
@@ -1830,15 +1824,6 @@ proxies:
     port: 2096
     uuid: bdc5e450-3e2d-4001-928e-e3bc6cecb249
     udp: true
-  - name: 🇭🇰香港专线01 下载专用
-    type: vless
-    server: 103.180.20.108
-    port: 8443
-    uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-    udp: true
-    network: ws
-    ws-opts:
-      path: /
   - name: 🇨🇳台湾专线02 gpt专用
     type: vless
     server: 59.125.69.23
@@ -1946,8 +1931,6 @@ proxy-groups:
       - 新加坡 017
       - 新加坡 021
       - 新加坡 023
-      - 日本 055
-      - 日本 056
       - 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
@@ -1963,7 +1946,6 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 3639BA
       - DE 🇩🇪 | @Raydikalx | 166068
       - KR 🇰🇷 | @Raydikalx | 7E8798
-      - KR 🇰🇷 | @Raydikalx | E9F97A
       - JP 🇯🇵 | @Raydikalx | E6D44D
       - JP 🇯🇵 | @Raydikalx | 102B75
       - SG 🇸🇬 | @Raydikalx | 77AF8A
@@ -2014,7 +1996,6 @@ proxy-groups:
       - 🇰🇷KR-141.164.45.187-0233
       - 🇰🇷KR-141.164.45.187-5935
       - 🇭🇰HK-159.100.206.88-0299
-      - 🇸🇬SG-143.198.219.182-2441
       - 🇭🇰HK-219.76.13.181-0010
       - 🇸🇬SG-139.99.61.154-3239
       - 🇸🇬SG-109.123.237.41-3266
@@ -2038,16 +2019,21 @@ proxy-groups:
       - FR - zhuhai.uk
       - DE - zhuhai.uk 04
       - US - zhuhai.uk 11
+      - HK - zhuhai.uk
       - HK - zhuhai.uk 02
+      - JP - zhuhai.uk
+      - JP - zhuhai.uk 02
       - KR - zhuhai.uk
       - KR - zhuhai.uk 02
       - SG - zhuhai.uk
+      - SG - zhuhai.uk 02
       - ID - zhuhai.uk
       - ID - zhuhai.uk 02
       - 🇰🇷 Seoul, 11, South Korea
       - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
       - 🇰🇷 Seoul, 11, South Korea-4
+      - 🇰🇷 Seoul, 11, South Korea-5
       - GB英国(v2clash.blog 2026-10.13更新)
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '@V2rayng_Fast 🇩🇪'
@@ -2077,7 +2063,6 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - JP日本(v2clash.blog 2026-6.9更新)
       - '@ShadowProxy66 🇺🇸-6'
-      - 🇭🇰香港专线01 下载专用
       - 🇨🇳台湾专线02 gpt专用
       - '@V2rayng_Fast 🇩🇪-6'
       - '@V2rayng_Fast 🇩🇪-7'
@@ -2129,8 +2114,6 @@ proxy-groups:
       - 新加坡 017
       - 新加坡 021
       - 新加坡 023
-      - 日本 055
-      - 日本 056
       - 🇰🇷[www.v2nodes.com] ss-KR-1185...-2
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
@@ -2146,7 +2129,6 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 3639BA
       - DE 🇩🇪 | @Raydikalx | 166068
       - KR 🇰🇷 | @Raydikalx | 7E8798
-      - KR 🇰🇷 | @Raydikalx | E9F97A
       - JP 🇯🇵 | @Raydikalx | E6D44D
       - JP 🇯🇵 | @Raydikalx | 102B75
       - SG 🇸🇬 | @Raydikalx | 77AF8A
@@ -2197,7 +2179,6 @@ proxy-groups:
       - 🇰🇷KR-141.164.45.187-0233
       - 🇰🇷KR-141.164.45.187-5935
       - 🇭🇰HK-159.100.206.88-0299
-      - 🇸🇬SG-143.198.219.182-2441
       - 🇭🇰HK-219.76.13.181-0010
       - 🇸🇬SG-139.99.61.154-3239
       - 🇸🇬SG-109.123.237.41-3266
@@ -2221,16 +2202,21 @@ proxy-groups:
       - FR - zhuhai.uk
       - DE - zhuhai.uk 04
       - US - zhuhai.uk 11
+      - HK - zhuhai.uk
       - HK - zhuhai.uk 02
+      - JP - zhuhai.uk
+      - JP - zhuhai.uk 02
       - KR - zhuhai.uk
       - KR - zhuhai.uk 02
       - SG - zhuhai.uk
+      - SG - zhuhai.uk 02
       - ID - zhuhai.uk
       - ID - zhuhai.uk 02
       - 🇰🇷 Seoul, 11, South Korea
       - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
       - 🇰🇷 Seoul, 11, South Korea-4
+      - 🇰🇷 Seoul, 11, South Korea-5
       - GB英国(v2clash.blog 2026-10.13更新)
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '@V2rayng_Fast 🇩🇪'
@@ -2260,7 +2246,6 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - JP日本(v2clash.blog 2026-6.9更新)
       - '@ShadowProxy66 🇺🇸-6'
-      - 🇭🇰香港专线01 下载专用
       - 🇨🇳台湾专线02 gpt专用
       - '@V2rayng_Fast 🇩🇪-6'
       - '@V2rayng_Fast 🇩🇪-7'
@@ -2330,8 +2315,8 @@ proxy-groups:
       - 🇭🇰HK-219.76.13.181-0010
       - 🇭🇰HK-20.187.85.198-5356
       - 🇭🇰HK-83.229.121.78-5867
+      - HK - zhuhai.uk
       - HK - zhuhai.uk 02
-      - 🇭🇰香港专线01 下载专用
   - name: 📍 新加坡
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -2355,10 +2340,10 @@ proxy-groups:
       - SG 🇸🇬 | @Raydikalx | 8DCEC7
       - SG 🇸🇬 | @Raydikalx | 9DDCC3
       - SG 🇸🇬 | @Raydikalx | EB4E2A
-      - 🇸🇬SG-143.198.219.182-2441
       - 🇸🇬SG-139.99.61.154-3239
       - 🇸🇬SG-109.123.237.41-3266
       - SG - zhuhai.uk
+      - SG - zhuhai.uk 02
       - SG新加坡(v2clash.blog 2026-10.5更新)
       - SG新加坡(v2clash.blog 2026-10.13更新)
       - SG新加坡(v2clash.blog 2026-10.20更新)
@@ -2387,11 +2372,11 @@ proxy-groups:
       - 日本 031
       - 日本 036
       - 日本 037
-      - 日本 055
-      - 日本 056
       - JP 🇯🇵 | @Raydikalx | E6D44D
       - JP 🇯🇵 | @Raydikalx | 102B75
       - JP 🇯🇵 | @Raydikalx | DDA3E3
+      - JP - zhuhai.uk
+      - JP - zhuhai.uk 02
       - JP日本(v2clash.blog 2026-10.14更新)
       - JP日本(v2clash.blog 2026-10.23更新)
       - JP日本(v2clash.blog 2026-10.23更新)-2
@@ -2478,7 +2463,6 @@ proxy-groups:
       - 🇰🇷 KR1@ripaojiedian
       - 🇰🇷 KR2@ripaojiedian
       - KR 🇰🇷 | @Raydikalx | 7E8798
-      - KR 🇰🇷 | @Raydikalx | E9F97A
       - KR 🇰🇷 | @Raydikalx | 9652E1
       - 🇰🇷KR-211.178.105.134-0226
       - 🇰🇷KR-141.164.45.187-0233
@@ -2491,6 +2475,7 @@ proxy-groups:
       - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
       - 🇰🇷 Seoul, 11, South Korea-4
+      - 🇰🇷 Seoul, 11, South Korea-5
       - KR韩国(v2clash.blog 2026-10.20更新)
   - name: ♻️ 自动选择
     type: url-test
@@ -2535,4 +2520,525 @@ proxy-groups:
     interval: 30
     lazy: true
 rules:
-  - MATCH,🌐 公共节点
+  - DOMAIN-KEYWORD,github,GH直连优先
+  - DOMAIN-SUFFIX,jiangjiangze.icu,直连优先
+  - IP-CIDR,1.1.1.1/32,一分机场,no-resolve
+  - IP-CIDR,8.8.8.8/32,一分机场,no-resolve
+  - DOMAIN-SUFFIX,services.googleapis.cn,一分机场
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,一分机场
+  - DOMAIN,safebrowsing.urlsec.qq.com,DIRECT
+  - DOMAIN,safebrowsing.googleapis.com,DIRECT
+  - DOMAIN,developer.apple.com,一分机场
+  - DOMAIN-SUFFIX,digicert.com,一分机场
+  - DOMAIN,ocsp.apple.com,一分机场
+  - DOMAIN,ocsp.comodoca.com,一分机场
+  - DOMAIN,ocsp.usertrust.com,一分机场
+  - DOMAIN,ocsp.sectigo.com,一分机场
+  - DOMAIN,ocsp.verisign.net,一分机场
+  - DOMAIN-SUFFIX,apple-dns.net,一分机场
+  - DOMAIN,testflight.apple.com,一分机场
+  - DOMAIN,sandbox.itunes.apple.com,一分机场
+  - DOMAIN,itunes.apple.com,一分机场
+  - DOMAIN-SUFFIX,apps.apple.com,一分机场
+  - DOMAIN-SUFFIX,blobstore.apple.com,一分机场
+  - DOMAIN,cvws.icloud-content.com,一分机场
+  - DOMAIN-SUFFIX,mzstatic.com,DIRECT
+  - DOMAIN-SUFFIX,itunes.apple.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,icloud-content.com,DIRECT
+  - DOMAIN-SUFFIX,me.com,DIRECT
+  - DOMAIN-SUFFIX,aaplimg.com,DIRECT
+  - DOMAIN-SUFFIX,cdn20.com,DIRECT
+  - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+  - DOMAIN-SUFFIX,akadns.net,DIRECT
+  - DOMAIN-SUFFIX,akamaiedge.net,DIRECT
+  - DOMAIN-SUFFIX,edgekey.net,DIRECT
+  - DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT
+  - DOMAIN-SUFFIX,mwcname.com,DIRECT
+  - DOMAIN-SUFFIX,apple.com,DIRECT
+  - DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+  - DOMAIN-SUFFIX,apple-mapkit.com,DIRECT
+  - DOMAIN,cn.bing.com,DIRECT
+  - DOMAIN-SUFFIX,126.com,DIRECT
+  - DOMAIN-SUFFIX,126.net,DIRECT
+  - DOMAIN-SUFFIX,127.net,DIRECT
+  - DOMAIN-SUFFIX,163.com,DIRECT
+  - DOMAIN-SUFFIX,360buyimg.com,DIRECT
+  - DOMAIN-SUFFIX,36kr.com,DIRECT
+  - DOMAIN-SUFFIX,acfun.tv,DIRECT
+  - DOMAIN-SUFFIX,air-matters.com,DIRECT
+  - DOMAIN-SUFFIX,aixifan.com,DIRECT
+  - DOMAIN-KEYWORD,alicdn,DIRECT
+  - DOMAIN-KEYWORD,alipay,DIRECT
+  - DOMAIN-KEYWORD,taobao,DIRECT
+  - DOMAIN-SUFFIX,amap.com,DIRECT
+  - DOMAIN-SUFFIX,autonavi.com,DIRECT
+  - DOMAIN-KEYWORD,baidu,DIRECT
+  - DOMAIN-SUFFIX,bdimg.com,DIRECT
+  - DOMAIN-SUFFIX,bdstatic.com,DIRECT
+  - DOMAIN-SUFFIX,bilibili.com,DIRECT
+  - DOMAIN-SUFFIX,bilivideo.com,DIRECT
+  - DOMAIN-SUFFIX,caiyunapp.com,DIRECT
+  - DOMAIN-SUFFIX,clouddn.com,DIRECT
+  - DOMAIN-SUFFIX,cnbeta.com,DIRECT
+  - DOMAIN-SUFFIX,cnbetacdn.com,DIRECT
+  - DOMAIN-SUFFIX,cootekservice.com,DIRECT
+  - DOMAIN-SUFFIX,csdn.net,DIRECT
+  - DOMAIN-SUFFIX,ctrip.com,DIRECT
+  - DOMAIN-SUFFIX,dgtle.com,DIRECT
+  - DOMAIN-SUFFIX,dianping.com,DIRECT
+  - DOMAIN-SUFFIX,douban.com,DIRECT
+  - DOMAIN-SUFFIX,doubanio.com,DIRECT
+  - DOMAIN-SUFFIX,duokan.com,DIRECT
+  - DOMAIN-SUFFIX,easou.com,DIRECT
+  - DOMAIN-SUFFIX,ele.me,DIRECT
+  - DOMAIN-SUFFIX,feng.com,DIRECT
+  - DOMAIN-SUFFIX,fir.im,DIRECT
+  - DOMAIN-SUFFIX,frdic.com,DIRECT
+  - DOMAIN-SUFFIX,g-cores.com,DIRECT
+  - DOMAIN-SUFFIX,godic.net,DIRECT
+  - DOMAIN-SUFFIX,gtimg.com,DIRECT
+  - DOMAIN,cdn.hockeyapp.net,DIRECT
+  - DOMAIN-SUFFIX,hongxiu.com,DIRECT
+  - DOMAIN-SUFFIX,hxcdn.net,DIRECT
+  - DOMAIN-SUFFIX,iciba.com,DIRECT
+  - DOMAIN-SUFFIX,ifeng.com,DIRECT
+  - DOMAIN-SUFFIX,ifengimg.com,DIRECT
+  - DOMAIN-SUFFIX,ipip.net,DIRECT
+  - DOMAIN-SUFFIX,iqiyi.com,DIRECT
+  - DOMAIN-SUFFIX,jd.com,DIRECT
+  - DOMAIN-SUFFIX,jianshu.com,DIRECT
+  - DOMAIN-SUFFIX,knewone.com,DIRECT
+  - DOMAIN-SUFFIX,le.com,DIRECT
+  - DOMAIN-SUFFIX,lecloud.com,DIRECT
+  - DOMAIN-SUFFIX,lemicp.com,DIRECT
+  - DOMAIN-SUFFIX,licdn.com,DIRECT
+  - DOMAIN-SUFFIX,luoo.net,DIRECT
+  - DOMAIN-SUFFIX,meituan.com,DIRECT
+  - DOMAIN-SUFFIX,meituan.net,DIRECT
+  - DOMAIN-SUFFIX,mi.com,DIRECT
+  - DOMAIN-SUFFIX,miaopai.com,DIRECT
+  - DOMAIN-SUFFIX,microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,microsoftonline.com,DIRECT
+  - DOMAIN-SUFFIX,miui.com,DIRECT
+  - DOMAIN-SUFFIX,miwifi.com,DIRECT
+  - DOMAIN-SUFFIX,mob.com,DIRECT
+  - DOMAIN-SUFFIX,netease.com,DIRECT
+  - DOMAIN-SUFFIX,office.com,DIRECT
+  - DOMAIN-SUFFIX,office365.com,DIRECT
+  - DOMAIN-KEYWORD,officecdn,DIRECT
+  - DOMAIN-SUFFIX,oschina.net,DIRECT
+  - DOMAIN-SUFFIX,ppsimg.com,DIRECT
+  - DOMAIN-SUFFIX,pstatp.com,DIRECT
+  - DOMAIN-SUFFIX,qcloud.com,DIRECT
+  - DOMAIN-SUFFIX,qdaily.com,DIRECT
+  - DOMAIN-SUFFIX,qdmm.com,DIRECT
+  - DOMAIN-SUFFIX,qhimg.com,DIRECT
+  - DOMAIN-SUFFIX,qhres.com,DIRECT
+  - DOMAIN-SUFFIX,qidian.com,DIRECT
+  - DOMAIN-SUFFIX,qihucdn.com,DIRECT
+  - DOMAIN-SUFFIX,qiniu.com,DIRECT
+  - DOMAIN-SUFFIX,qiniucdn.com,DIRECT
+  - DOMAIN-SUFFIX,qiyipic.com,DIRECT
+  - DOMAIN-SUFFIX,qq.com,DIRECT
+  - DOMAIN-SUFFIX,qqurl.com,DIRECT
+  - DOMAIN-SUFFIX,rarbg.to,DIRECT
+  - DOMAIN-SUFFIX,ruguoapp.com,DIRECT
+  - DOMAIN-SUFFIX,segmentfault.com,DIRECT
+  - DOMAIN-SUFFIX,sinaapp.com,DIRECT
+  - DOMAIN-SUFFIX,smzdm.com,DIRECT
+  - DOMAIN-SUFFIX,snapdrop.net,DIRECT
+  - DOMAIN-SUFFIX,sogou.com,DIRECT
+  - DOMAIN-SUFFIX,sogoucdn.com,DIRECT
+  - DOMAIN-SUFFIX,sohu.com,DIRECT
+  - DOMAIN-SUFFIX,soku.com,DIRECT
+  - DOMAIN-SUFFIX,speedtest.net,DIRECT
+  - DOMAIN-SUFFIX,sspai.com,DIRECT
+  - DOMAIN-SUFFIX,suning.com,DIRECT
+  - DOMAIN-SUFFIX,taobao.com,DIRECT
+  - DOMAIN-SUFFIX,tencent.com,DIRECT
+  - DOMAIN-SUFFIX,tenpay.com,DIRECT
+  - DOMAIN-SUFFIX,tianyancha.com,DIRECT
+  - DOMAIN-SUFFIX,tmall.com,DIRECT
+  - DOMAIN-SUFFIX,tudou.com,DIRECT
+  - DOMAIN-SUFFIX,umetrip.com,DIRECT
+  - DOMAIN-SUFFIX,upaiyun.com,DIRECT
+  - DOMAIN-SUFFIX,upyun.com,DIRECT
+  - DOMAIN-SUFFIX,veryzhun.com,DIRECT
+  - DOMAIN-SUFFIX,weather.com,DIRECT
+  - DOMAIN-SUFFIX,weibo.com,DIRECT
+  - DOMAIN-SUFFIX,xiami.com,DIRECT
+  - DOMAIN-SUFFIX,xiami.net,DIRECT
+  - DOMAIN-SUFFIX,xiaomicp.com,DIRECT
+  - DOMAIN-SUFFIX,ximalaya.com,DIRECT
+  - DOMAIN-SUFFIX,xmcdn.com,DIRECT
+  - DOMAIN-SUFFIX,xunlei.com,DIRECT
+  - DOMAIN-SUFFIX,yhd.com,DIRECT
+  - DOMAIN-SUFFIX,yihaodianimg.com,DIRECT
+  - DOMAIN-SUFFIX,yinxiang.com,DIRECT
+  - DOMAIN-SUFFIX,ykimg.com,DIRECT
+  - DOMAIN-SUFFIX,youdao.com,DIRECT
+  - DOMAIN-SUFFIX,youku.com,DIRECT
+  - DOMAIN-SUFFIX,zealer.com,DIRECT
+  - DOMAIN-SUFFIX,zhihu.com,DIRECT
+  - DOMAIN-SUFFIX,zhimg.com,DIRECT
+  - DOMAIN-SUFFIX,zimuzu.tv,DIRECT
+  - DOMAIN-SUFFIX,zoho.com,DIRECT
+  - DOMAIN-KEYWORD,amazon,一分机场
+  - DOMAIN-KEYWORD,google,一分机场
+  - DOMAIN-KEYWORD,gmail,一分机场
+  - DOMAIN-KEYWORD,youtube,一分机场
+  - DOMAIN-KEYWORD,facebook,一分机场
+  - DOMAIN-SUFFIX,fb.me,一分机场
+  - DOMAIN-SUFFIX,fbcdn.net,一分机场
+  - DOMAIN-KEYWORD,twitter,一分机场
+  - DOMAIN-KEYWORD,instagram,一分机场
+  - DOMAIN-KEYWORD,dropbox,一分机场
+  - DOMAIN-SUFFIX,twimg.com,一分机场
+  - DOMAIN-KEYWORD,blogspot,一分机场
+  - DOMAIN-SUFFIX,youtu.be,一分机场
+  - DOMAIN-KEYWORD,whatsapp,一分机场
+  - DOMAIN-KEYWORD,admarvel,REJECT
+  - DOMAIN-KEYWORD,admaster,REJECT
+  - DOMAIN-KEYWORD,adsage,REJECT
+  - DOMAIN-KEYWORD,adsmogo,REJECT
+  - DOMAIN-KEYWORD,adsrvmedia,REJECT
+  - DOMAIN-KEYWORD,adwords,REJECT
+  - DOMAIN-KEYWORD,adservice,REJECT
+  - DOMAIN-SUFFIX,appsflyer.com,REJECT
+  - DOMAIN-KEYWORD,domob,REJECT
+  - DOMAIN-SUFFIX,doubleclick.net,REJECT
+  - DOMAIN-KEYWORD,duomeng,REJECT
+  - DOMAIN-KEYWORD,dwtrack,REJECT
+  - DOMAIN-KEYWORD,guanggao,REJECT
+  - DOMAIN-KEYWORD,lianmeng,REJECT
+  - DOMAIN-SUFFIX,mmstat.com,REJECT
+  - DOMAIN-KEYWORD,mopub,REJECT
+  - DOMAIN-KEYWORD,omgmta,REJECT
+  - DOMAIN-KEYWORD,openx,REJECT
+  - DOMAIN-KEYWORD,partnerad,REJECT
+  - DOMAIN-KEYWORD,pingfore,REJECT
+  - DOMAIN-KEYWORD,supersonicads,REJECT
+  - DOMAIN-KEYWORD,uedas,REJECT
+  - DOMAIN-KEYWORD,umeng,REJECT
+  - DOMAIN-KEYWORD,usage,REJECT
+  - DOMAIN-SUFFIX,vungle.com,REJECT
+  - DOMAIN-KEYWORD,wlmonitor,REJECT
+  - DOMAIN-KEYWORD,zjtoolbar,REJECT
+  - DOMAIN-SUFFIX,9to5mac.com,一分机场
+  - DOMAIN-SUFFIX,abpchina.org,一分机场
+  - DOMAIN-SUFFIX,adblockplus.org,一分机场
+  - DOMAIN-SUFFIX,adobe.com,一分机场
+  - DOMAIN-SUFFIX,akamaized.net,一分机场
+  - DOMAIN-SUFFIX,alfredapp.com,一分机场
+  - DOMAIN-SUFFIX,amplitude.com,一分机场
+  - DOMAIN-SUFFIX,ampproject.org,一分机场
+  - DOMAIN-SUFFIX,android.com,一分机场
+  - DOMAIN-SUFFIX,angularjs.org,一分机场
+  - DOMAIN-SUFFIX,aolcdn.com,一分机场
+  - DOMAIN-SUFFIX,apkpure.com,一分机场
+  - DOMAIN-SUFFIX,appledaily.com,一分机场
+  - DOMAIN-SUFFIX,appshopper.com,一分机场
+  - DOMAIN-SUFFIX,appspot.com,一分机场
+  - DOMAIN-SUFFIX,arcgis.com,一分机场
+  - DOMAIN-SUFFIX,archive.org,一分机场
+  - DOMAIN-SUFFIX,armorgames.com,一分机场
+  - DOMAIN-SUFFIX,aspnetcdn.com,一分机场
+  - DOMAIN-SUFFIX,att.com,一分机场
+  - DOMAIN-SUFFIX,awsstatic.com,一分机场
+  - DOMAIN-SUFFIX,azureedge.net,一分机场
+  - DOMAIN-SUFFIX,azurewebsites.net,一分机场
+  - DOMAIN-SUFFIX,bing.com,一分机场
+  - DOMAIN-SUFFIX,bintray.com,一分机场
+  - DOMAIN-SUFFIX,bit.com,一分机场
+  - DOMAIN-SUFFIX,bit.ly,一分机场
+  - DOMAIN-SUFFIX,bitbucket.org,一分机场
+  - DOMAIN-SUFFIX,bjango.com,一分机场
+  - DOMAIN-SUFFIX,bkrtx.com,一分机场
+  - DOMAIN-SUFFIX,blog.com,一分机场
+  - DOMAIN-SUFFIX,blogcdn.com,一分机场
+  - DOMAIN-SUFFIX,blogger.com,一分机场
+  - DOMAIN-SUFFIX,blogsmithmedia.com,一分机场
+  - DOMAIN-SUFFIX,blogspot.com,一分机场
+  - DOMAIN-SUFFIX,blogspot.hk,一分机场
+  - DOMAIN-SUFFIX,bloomberg.com,一分机场
+  - DOMAIN-SUFFIX,box.com,一分机场
+  - DOMAIN-SUFFIX,box.net,一分机场
+  - DOMAIN-SUFFIX,cachefly.net,一分机场
+  - DOMAIN-SUFFIX,chromium.org,一分机场
+  - DOMAIN-SUFFIX,cl.ly,一分机场
+  - DOMAIN-SUFFIX,cloudflare.com,一分机场
+  - DOMAIN-SUFFIX,cloudfront.net,一分机场
+  - DOMAIN-SUFFIX,cloudmagic.com,一分机场
+  - DOMAIN-SUFFIX,cmail19.com,一分机场
+  - DOMAIN-SUFFIX,cnet.com,一分机场
+  - DOMAIN-SUFFIX,cocoapods.org,一分机场
+  - DOMAIN-SUFFIX,comodoca.com,一分机场
+  - DOMAIN-SUFFIX,crashlytics.com,一分机场
+  - DOMAIN-SUFFIX,culturedcode.com,一分机场
+  - DOMAIN-SUFFIX,d.pr,一分机场
+  - DOMAIN-SUFFIX,danilo.to,一分机场
+  - DOMAIN-SUFFIX,dayone.me,一分机场
+  - DOMAIN-SUFFIX,db.tt,一分机场
+  - DOMAIN-SUFFIX,deskconnect.com,一分机场
+  - DOMAIN-SUFFIX,disq.us,一分机场
+  - DOMAIN-SUFFIX,disqus.com,一分机场
+  - DOMAIN-SUFFIX,disquscdn.com,一分机场
+  - DOMAIN-SUFFIX,dnsimple.com,一分机场
+  - DOMAIN-SUFFIX,docker.com,一分机场
+  - DOMAIN-SUFFIX,dribbble.com,一分机场
+  - DOMAIN-SUFFIX,droplr.com,一分机场
+  - DOMAIN-SUFFIX,duckduckgo.com,一分机场
+  - DOMAIN-SUFFIX,dueapp.com,一分机场
+  - DOMAIN-SUFFIX,dytt8.net,一分机场
+  - DOMAIN-SUFFIX,edgecastcdn.net,一分机场
+  - DOMAIN-SUFFIX,edgekey.net,一分机场
+  - DOMAIN-SUFFIX,edgesuite.net,一分机场
+  - DOMAIN-SUFFIX,engadget.com,一分机场
+  - DOMAIN-SUFFIX,entrust.net,一分机场
+  - DOMAIN-SUFFIX,eurekavpt.com,一分机场
+  - DOMAIN-SUFFIX,evernote.com,一分机场
+  - DOMAIN-SUFFIX,fabric.io,一分机场
+  - DOMAIN-SUFFIX,fast.com,一分机场
+  - DOMAIN-SUFFIX,fastly.net,一分机场
+  - DOMAIN-SUFFIX,fc2.com,一分机场
+  - DOMAIN-SUFFIX,feedburner.com,一分机场
+  - DOMAIN-SUFFIX,feedly.com,一分机场
+  - DOMAIN-SUFFIX,feedsportal.com,一分机场
+  - DOMAIN-SUFFIX,fiftythree.com,一分机场
+  - DOMAIN-SUFFIX,firebaseio.com,一分机场
+  - DOMAIN-SUFFIX,flexibits.com,一分机场
+  - DOMAIN-SUFFIX,flickr.com,一分机场
+  - DOMAIN-SUFFIX,flipboard.com,一分机场
+  - DOMAIN-SUFFIX,g.co,一分机场
+  - DOMAIN-SUFFIX,gabia.net,一分机场
+  - DOMAIN-SUFFIX,geni.us,一分机场
+  - DOMAIN-SUFFIX,gfx.ms,一分机场
+  - DOMAIN-SUFFIX,ggpht.com,一分机场
+  - DOMAIN-SUFFIX,ghostnoteapp.com,一分机场
+  - DOMAIN-SUFFIX,git.io,一分机场
+  - DOMAIN-KEYWORD,github,一分机场
+  - DOMAIN-SUFFIX,globalsign.com,一分机场
+  - DOMAIN-SUFFIX,gmodules.com,一分机场
+  - DOMAIN-SUFFIX,godaddy.com,一分机场
+  - DOMAIN-SUFFIX,golang.org,一分机场
+  - DOMAIN-SUFFIX,gongm.in,一分机场
+  - DOMAIN-SUFFIX,goo.gl,一分机场
+  - DOMAIN-SUFFIX,goodreaders.com,一分机场
+  - DOMAIN-SUFFIX,goodreads.com,一分机场
+  - DOMAIN-SUFFIX,gravatar.com,一分机场
+  - DOMAIN-SUFFIX,gstatic.com,一分机场
+  - DOMAIN-SUFFIX,gvt0.com,一分机场
+  - DOMAIN-SUFFIX,hockeyapp.net,一分机场
+  - DOMAIN-SUFFIX,hotmail.com,一分机场
+  - DOMAIN-SUFFIX,icons8.com,一分机场
+  - DOMAIN-SUFFIX,ifixit.com,一分机场
+  - DOMAIN-SUFFIX,ift.tt,一分机场
+  - DOMAIN-SUFFIX,ifttt.com,一分机场
+  - DOMAIN-SUFFIX,iherb.com,一分机场
+  - DOMAIN-SUFFIX,imageshack.us,一分机场
+  - DOMAIN-SUFFIX,img.ly,一分机场
+  - DOMAIN-SUFFIX,imgur.com,一分机场
+  - DOMAIN-SUFFIX,imore.com,一分机场
+  - DOMAIN-SUFFIX,instapaper.com,一分机场
+  - DOMAIN-SUFFIX,ipn.li,一分机场
+  - DOMAIN-SUFFIX,is.gd,一分机场
+  - DOMAIN-SUFFIX,issuu.com,一分机场
+  - DOMAIN-SUFFIX,itgonglun.com,一分机场
+  - DOMAIN-SUFFIX,itun.es,一分机场
+  - DOMAIN-SUFFIX,ixquick.com,一分机场
+  - DOMAIN-SUFFIX,j.mp,一分机场
+  - DOMAIN-SUFFIX,js.revsci.net,一分机场
+  - DOMAIN-SUFFIX,jshint.com,一分机场
+  - DOMAIN-SUFFIX,jtvnw.net,一分机场
+  - DOMAIN-SUFFIX,justgetflux.com,一分机场
+  - DOMAIN-SUFFIX,kat.cr,一分机场
+  - DOMAIN-SUFFIX,klip.me,一分机场
+  - DOMAIN-SUFFIX,libsyn.com,一分机场
+  - DOMAIN-SUFFIX,linkedin.com,一分机场
+  - DOMAIN-SUFFIX,line-apps.com,一分机场
+  - DOMAIN-SUFFIX,linode.com,一分机场
+  - DOMAIN-SUFFIX,lithium.com,一分机场
+  - DOMAIN-SUFFIX,littlehj.com,一分机场
+  - DOMAIN-SUFFIX,live.com,一分机场
+  - DOMAIN-SUFFIX,live.net,一分机场
+  - DOMAIN-SUFFIX,livefilestore.com,一分机场
+  - DOMAIN-SUFFIX,llnwd.net,一分机场
+  - DOMAIN-SUFFIX,macid.co,一分机场
+  - DOMAIN-SUFFIX,macromedia.com,一分机场
+  - DOMAIN-SUFFIX,macrumors.com,一分机场
+  - DOMAIN-SUFFIX,mashable.com,一分机场
+  - DOMAIN-SUFFIX,mathjax.org,一分机场
+  - DOMAIN-SUFFIX,medium.com,一分机场
+  - DOMAIN-SUFFIX,mega.co.nz,一分机场
+  - DOMAIN-SUFFIX,mega.nz,一分机场
+  - DOMAIN-SUFFIX,megaupload.com,一分机场
+  - DOMAIN-SUFFIX,microsofttranslator.com,一分机场
+  - DOMAIN-SUFFIX,mindnode.com,一分机场
+  - DOMAIN-SUFFIX,mobile01.com,一分机场
+  - DOMAIN-SUFFIX,modmyi.com,一分机场
+  - DOMAIN-SUFFIX,msedge.net,一分机场
+  - DOMAIN-SUFFIX,myfontastic.com,一分机场
+  - DOMAIN-SUFFIX,name.com,一分机场
+  - DOMAIN-SUFFIX,nextmedia.com,一分机场
+  - DOMAIN-SUFFIX,nsstatic.net,一分机场
+  - DOMAIN-SUFFIX,nssurge.com,一分机场
+  - DOMAIN-SUFFIX,nyt.com,一分机场
+  - DOMAIN-SUFFIX,nytimes.com,一分机场
+  - DOMAIN-SUFFIX,omnigroup.com,一分机场
+  - DOMAIN-SUFFIX,onedrive.com,一分机场
+  - DOMAIN-SUFFIX,onenote.com,一分机场
+  - DOMAIN-SUFFIX,ooyala.com,一分机场
+  - DOMAIN-SUFFIX,openvpn.net,一分机场
+  - DOMAIN-SUFFIX,openwrt.org,一分机场
+  - DOMAIN-SUFFIX,orkut.com,一分机场
+  - DOMAIN-SUFFIX,osxdaily.com,一分机场
+  - DOMAIN-SUFFIX,outlook.com,一分机场
+  - DOMAIN-SUFFIX,ow.ly,一分机场
+  - DOMAIN-SUFFIX,paddleapi.com,一分机场
+  - DOMAIN-SUFFIX,parallels.com,一分机场
+  - DOMAIN-SUFFIX,parse.com,一分机场
+  - DOMAIN-SUFFIX,pdfexpert.com,一分机场
+  - DOMAIN-SUFFIX,periscope.tv,一分机场
+  - DOMAIN-SUFFIX,pinboard.in,一分机场
+  - DOMAIN-SUFFIX,pinterest.com,一分机场
+  - DOMAIN-SUFFIX,pixelmator.com,一分机场
+  - DOMAIN-SUFFIX,pixiv.net,一分机场
+  - DOMAIN-SUFFIX,playpcesor.com,一分机场
+  - DOMAIN-SUFFIX,playstation.com,一分机场
+  - DOMAIN-SUFFIX,playstation.com.hk,一分机场
+  - DOMAIN-SUFFIX,playstation.net,一分机场
+  - DOMAIN-SUFFIX,playstationnetwork.com,一分机场
+  - DOMAIN-SUFFIX,pushwoosh.com,一分机场
+  - DOMAIN-SUFFIX,rime.im,一分机场
+  - DOMAIN-SUFFIX,servebom.com,一分机场
+  - DOMAIN-SUFFIX,sfx.ms,一分机场
+  - DOMAIN-SUFFIX,shadowsocks.org,一分机场
+  - DOMAIN-SUFFIX,sharethis.com,一分机场
+  - DOMAIN-SUFFIX,shazam.com,一分机场
+  - DOMAIN-SUFFIX,skype.com,一分机场
+  - DOMAIN-SUFFIX,smartdns一分机场.com,一分机场
+  - DOMAIN-SUFFIX,smartmailcloud.com,一分机场
+  - DOMAIN-SUFFIX,sndcdn.com,一分机场
+  - DOMAIN-SUFFIX,sony.com,一分机场
+  - DOMAIN-SUFFIX,soundcloud.com,一分机场
+  - DOMAIN-SUFFIX,sourceforge.net,一分机场
+  - DOMAIN-SUFFIX,spotify.com,一分机场
+  - DOMAIN-SUFFIX,squarespace.com,一分机场
+  - DOMAIN-SUFFIX,sstatic.net,一分机场
+  - DOMAIN-SUFFIX,st.luluku.pw,一分机场
+  - DOMAIN-SUFFIX,stackoverflow.com,一分机场
+  - DOMAIN-SUFFIX,startpage.com,一分机场
+  - DOMAIN-SUFFIX,staticflickr.com,一分机场
+  - DOMAIN-SUFFIX,steamcommunity.com,一分机场
+  - DOMAIN-SUFFIX,symauth.com,一分机场
+  - DOMAIN-SUFFIX,symcb.com,一分机场
+  - DOMAIN-SUFFIX,symcd.com,一分机场
+  - DOMAIN-SUFFIX,tapbots.com,一分机场
+  - DOMAIN-SUFFIX,tapbots.net,一分机场
+  - DOMAIN-SUFFIX,tdesktop.com,一分机场
+  - DOMAIN-SUFFIX,techcrunch.com,一分机场
+  - DOMAIN-SUFFIX,techsmith.com,一分机场
+  - DOMAIN-SUFFIX,thepiratebay.org,一分机场
+  - DOMAIN-SUFFIX,theverge.com,一分机场
+  - DOMAIN-SUFFIX,time.com,一分机场
+  - DOMAIN-SUFFIX,timeinc.net,一分机场
+  - DOMAIN-SUFFIX,tiny.cc,一分机场
+  - DOMAIN-SUFFIX,tinypic.com,一分机场
+  - DOMAIN-SUFFIX,tmblr.co,一分机场
+  - DOMAIN-SUFFIX,todoist.com,一分机场
+  - DOMAIN-SUFFIX,trello.com,一分机场
+  - DOMAIN-SUFFIX,trustasiassl.com,一分机场
+  - DOMAIN-SUFFIX,tumblr.co,一分机场
+  - DOMAIN-SUFFIX,tumblr.com,一分机场
+  - DOMAIN-SUFFIX,tweetdeck.com,一分机场
+  - DOMAIN-SUFFIX,tweetmarker.net,一分机场
+  - DOMAIN-SUFFIX,twitch.tv,一分机场
+  - DOMAIN-SUFFIX,txmblr.com,一分机场
+  - DOMAIN-SUFFIX,typekit.net,一分机场
+  - DOMAIN-SUFFIX,ubertags.com,一分机场
+  - DOMAIN-SUFFIX,ublock.org,一分机场
+  - DOMAIN-SUFFIX,ubnt.com,一分机场
+  - DOMAIN-SUFFIX,ulyssesapp.com,一分机场
+  - DOMAIN-SUFFIX,urchin.com,一分机场
+  - DOMAIN-SUFFIX,usertrust.com,一分机场
+  - DOMAIN-SUFFIX,v.gd,一分机场
+  - DOMAIN-SUFFIX,v2ex.com,一分机场
+  - DOMAIN-SUFFIX,vimeo.com,一分机场
+  - DOMAIN-SUFFIX,vimeocdn.com,一分机场
+  - DOMAIN-SUFFIX,vine.co,一分机场
+  - DOMAIN-SUFFIX,vivaldi.com,一分机场
+  - DOMAIN-SUFFIX,vox-cdn.com,一分机场
+  - DOMAIN-SUFFIX,vsco.co,一分机场
+  - DOMAIN-SUFFIX,vultr.com,一分机场
+  - DOMAIN-SUFFIX,w.org,一分机场
+  - DOMAIN-SUFFIX,w3schools.com,一分机场
+  - DOMAIN-SUFFIX,webtype.com,一分机场
+  - DOMAIN-SUFFIX,wikiwand.com,一分机场
+  - DOMAIN-SUFFIX,wikileaks.org,一分机场
+  - DOMAIN-SUFFIX,wikimedia.org,一分机场
+  - DOMAIN-SUFFIX,wikipedia.com,一分机场
+  - DOMAIN-SUFFIX,wikipedia.org,一分机场
+  - DOMAIN-SUFFIX,windows.com,一分机场
+  - DOMAIN-SUFFIX,windows.net,一分机场
+  - DOMAIN-SUFFIX,wire.com,一分机场
+  - DOMAIN-SUFFIX,wordpress.com,一分机场
+  - DOMAIN-SUFFIX,workflowy.com,一分机场
+  - DOMAIN-SUFFIX,wp.com,一分机场
+  - DOMAIN-SUFFIX,wsj.com,一分机场
+  - DOMAIN-SUFFIX,wsj.net,一分机场
+  - DOMAIN-SUFFIX,xda-developers.com,一分机场
+  - DOMAIN-SUFFIX,xeeno.com,一分机场
+  - DOMAIN-SUFFIX,xiti.com,一分机场
+  - DOMAIN-SUFFIX,yahoo.com,一分机场
+  - DOMAIN-SUFFIX,yimg.com,一分机场
+  - DOMAIN-SUFFIX,ying.com,一分机场
+  - DOMAIN-SUFFIX,yoyo.org,一分机场
+  - DOMAIN-SUFFIX,ytimg.com,一分机场
+  - DOMAIN-SUFFIX,telegra.ph,一分机场
+  - DOMAIN-SUFFIX,telegram.org,一分机场
+  - IP-CIDR,91.108.4.0/22,一分机场,no-resolve
+  - IP-CIDR,91.108.8.0/21,一分机场,no-resolve
+  - IP-CIDR,91.108.16.0/22,一分机场,no-resolve
+  - IP-CIDR,91.108.56.0/22,一分机场,no-resolve
+  - IP-CIDR,149.154.160.0/20,一分机场,no-resolve
+  - IP-CIDR6,2001:67c:4e8::/48,一分机场,no-resolve
+  - IP-CIDR6,2001:b28:f23d::/48,一分机场,no-resolve
+  - IP-CIDR6,2001:b28:f23f::/48,一分机场,no-resolve
+  - IP-CIDR,120.232.181.162/32,一分机场,no-resolve
+  - IP-CIDR,120.241.147.226/32,一分机场,no-resolve
+  - IP-CIDR,120.253.253.226/32,一分机场,no-resolve
+  - IP-CIDR,120.253.255.162/32,一分机场,no-resolve
+  - IP-CIDR,120.253.255.34/32,一分机场,no-resolve
+  - IP-CIDR,120.253.255.98/32,一分机场,no-resolve
+  - IP-CIDR,180.163.150.162/32,一分机场,no-resolve
+  - IP-CIDR,180.163.150.34/32,一分机场,no-resolve
+  - IP-CIDR,180.163.151.162/32,一分机场,no-resolve
+  - IP-CIDR,180.163.151.34/32,一分机场,no-resolve
+  - IP-CIDR,203.208.39.0/24,一分机场,no-resolve
+  - IP-CIDR,203.208.40.0/24,一分机场,no-resolve
+  - IP-CIDR,203.208.41.0/24,一分机场,no-resolve
+  - IP-CIDR,203.208.43.0/24,一分机场,no-resolve
+  - IP-CIDR,203.208.50.0/24,一分机场,no-resolve
+  - IP-CIDR,220.181.174.162/32,一分机场,no-resolve
+  - IP-CIDR,220.181.174.226/32,一分机场,no-resolve
+  - IP-CIDR,220.181.174.34/32,一分机场,no-resolve
+  - DOMAIN,injections.adguard.org,DIRECT
+  - DOMAIN,local.adguard.org,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,17.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+  - IP-CIDR6,fe80::/10,DIRECT
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - DOMAIN-KEYWORD,-cn,DIRECT
+  - GEOIP,CN,DIRECT
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOIP,CN,DIRECT
+  - GEOSITE,cn,DIRECT
+  - GEOSITE,private,DIRECT
+  - MATCH,一分机场
