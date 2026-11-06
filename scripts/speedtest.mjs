@@ -37,7 +37,8 @@ try {
 const all = (doc.proxies || []).filter((p) => p && p.server && p.port && p.type);
 if (!all.length) { console.error('没有节点，跳过'); process.exit(0); }
 
-// ---------- 分层抽样：每个地区最多 3 个 ----------
+// ---------- 分层抽样：每地区上限按 SAMPLE 均摊（写死 3 会让总数永远封顶在 地区数×3）----------
+const 每地区上限 = Number(process.env.PER_REGION || Math.max(3, Math.ceil(SAMPLE / Math.max(1, REGIONS.length))));
 const buckets = new Map();
 for (const p of all) {
   let r = '其他';
@@ -49,7 +50,7 @@ const picked = [];
 for (const [, list] of buckets) {
   // 打散后取前 3，避免总是测同一批
   const shuffled = list.slice().sort(() => Math.random() - 0.5);
-  picked.push(...shuffled.slice(0, 3));
+  picked.push(...shuffled.slice(0, 每地区上限));
 }
 const sample = picked.slice(0, SAMPLE);
 console.log(`候选 ${all.length}，抽样 ${sample.length}（${buckets.size} 个地区）`);
