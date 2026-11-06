@@ -1,29 +1,37 @@
 name: pipeline
 
-# 一条流水线跑完整个链路，顺序由 needs 显式保证（不再靠 cron 错峰 + git 提交撞运气）：
+# 持续运行的单一流水线：一轮跑完立刻 dispatch 下一轮，不再等整点 cron。
 #
-#   探测(4 分片) → 合并 → 聚合(剔死/剔墙/排序/发布) → 测速(可选) → 汇总
+#   gate（判断是否需要探测/是否允许接续）
+#     └→ probe(4 分片)  ← 仅当国内数据超过 55 分钟才跑（Globalping 额度按 IP 算，别打爆）
+#          └→ merge-probe
+#               └→ aggregate（TCP → TLS → WS 路径 → 国内剔除 → 排序 → 发布）
+#                    └→ speedtest（并发 8）→ rerank（同轮生效）→ report
+#                         └→ chain（dispatch 下一轮）
 #
-# 之前的三个独立工作流用不同并发组（aggregate-nodes vs node-radar-publish），
-# 实际会同时跑、互相顶 push；依赖关系靠 dist/ 里的文件提交传递，谁先跑完谁生效。
+# 限流：最近 60 分钟内的运行数 >= 6 就不再接续，靠 10 分钟 cron 兜底。
 on:
   schedule:
-    - cron: "20 * * * *"
+    - cron: "*/10 * * * *"
   workflow_dispatch:
     inputs:
       budget:
-        description: "每个探测分片的目标数（4 片合计 = 4×该值）"
+        description: "每个探测分片的目标数"
         default: "110"
       skip_speed:
-        description: "跳过测速（只更新连通性/国内可达/排序）"
+        description: "跳过测速"
+        type: boolean
+        default: false
+      force_probe:
+        description: "强制跑国内探测（忽略新鲜度）"
         type: boolean
         default: false
 
 permissions:
   contents: write
+  actions: write
   issues: write
 
-# 全链路只允许一个实例，避免两个 run 同时改 dist/
 concurrency:
   group: node-radar-pipeline
   cancel-in-progress: false
@@ -32,8 +40,45 @@ env:
   NODE_OPTIONS: --max-old-space-size=4096
 
 jobs:
-  # ---------- ① 中国大陆可达性探测（4 个 runner 并行，各自独立 IP 额度）----------
+  # ---------- ⓪ 决策：要不要探测、能不能接续 ----------
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      need_probe: ${{ steps.g.outputs.need_probe }}
+      allow_chain: ${{ steps.g.outputs.allow_chain }}
+      probe_age: ${{ steps.g.outputs.probe_age }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: g
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let age = 9999;
+            try {
+              const j = JSON.parse(fs.readFileSync('dist/cn-probe.json', 'utf8'));
+              age = (Date.now() - Date.parse(j.generatedAt)) / 60000;
+            } catch {}
+            const force = '${{ inputs.force_probe }}' === 'true';
+            const need = force || age >= 55;
+            core.info(`国内数据 ${age === 9999 ? '缺失' : age.toFixed(0) + ' 分钟前'} → ${need ? '本轮探测' : '跳过探测'}`);
+
+            // 最近 60 分钟跑了多少轮（含当前这轮），超过 6 轮就不再接续
+            const runs = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner, repo: context.repo.repo, workflow_id: 'pipeline.yml', per_page: 20,
+            });
+            const 近一小时 = runs.data.workflow_runs.filter(r => Date.now() - Date.parse(r.created_at) < 3600e3).length;
+            const allow = 近一小时 < 6;
+            core.info(`最近 60 分钟已运行 ${近一小时} 轮 → ${allow ? '允许接续' : '达上限，本轮不接续'}`);
+
+            core.setOutput('need_probe', String(need));
+            core.setOutput('allow_chain', String(allow));
+            core.setOutput('probe_age', String(Math.round(age)));
+
+  # ---------- ① 国内可达性探测（4 分片并行，各自独立 IP 额度）----------
   probe:
+    needs: gate
+    if: needs.gate.outputs.need_probe == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -46,20 +91,14 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-
       - name: Probe shard ${{ matrix.shard }}
         continue-on-error: true
         timeout-minutes: 35
         run: |
           node scripts/cn-probe-gp.mjs \
-            --resume \
-            --shard=${{ matrix.shard }} \
-            --shards=4 \
-            --budget=${{ inputs.budget || '110' }} \
-            --probes=2 \
-            --concurrency=8 \
+            --resume --shard=${{ matrix.shard }} --shards=4 \
+            --budget=${{ inputs.budget || '110' }} --probes=2 --concurrency=8 \
             --out=dist/cn-probe-${{ matrix.shard }}.json
-
       - name: Upload shard
         if: always()
         uses: actions/upload-artifact@v4
@@ -69,9 +108,10 @@ jobs:
           if-no-files-found: ignore
           retention-days: 2
 
-  # ---------- ② 合并分片，落成 dist/cn-probe.json ----------
+  # ---------- ② 合并分片 ----------
   merge-probe:
-    needs: probe
+    needs: [gate, probe]
+    if: always() && needs.gate.outputs.need_probe == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -80,16 +120,13 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-
       - uses: actions/download-artifact@v4
         with:
           pattern: cn-probe-shard-*
           path: dist
           merge-multiple: true
-
       - name: Merge shards
         run: node scripts/merge-probes.mjs
-
       - name: Commit probe results
         run: |
           set -e
@@ -101,14 +138,13 @@ jobs:
           git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
           git push
 
-  # ---------- ③ 聚合：TCP → TLS → WS 路径 → 国内剔除 → 排序 → 发布 ----------
+  # ---------- ③ 聚合发布 ----------
   aggregate:
-    needs: merge-probe
+    needs: [gate, merge-probe]
+    if: always() && (needs.merge-probe.result == 'success' || needs.gate.outputs.need_probe != 'true')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -118,7 +154,7 @@ jobs:
       - name: Aggregate
         run: node scripts/aggregate.mjs
 
-      - name: Install mihomo (config validation)
+      - name: Install mihomo
         run: |
           set -e
           URL=$(curl -sSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
@@ -126,14 +162,11 @@ jobs:
             | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
           curl -sSL -o mihomo.gz "$URL" && gunzip -f mihomo.gz && chmod +x mihomo
 
-      - name: Validate generated config
+      - name: Validate
         run: |
           set -e
           ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"
           ./mihomo -t -d . -f dist/clash-lite.yaml && echo "clash-lite.yaml OK"
-
-      - name: Purge jsDelivr
-        run: curl -s -m 30 "https://purge.jsdelivr.net/gh/jingjiangze/node-radar@main/dist/clash.yaml" || true
 
       - name: Publish
         run: |
@@ -145,14 +178,14 @@ jobs:
           git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
           git push
 
-      - name: Smoke test published file
+      - name: Smoke test
         run: |
           set -e
           sleep 5
           curl -fsSL -m 60 -o published.yaml "https://raw.githubusercontent.com/jingjiangze/node-radar/main/dist/clash.yaml"
           ./mihomo -t -d . -f published.yaml && echo "published OK ($(wc -c < published.yaml) bytes)"
 
-  # ---------- ④ 测速（可选；只测连通性已过 + 国内可达的那批）----------
+  # ---------- ④ 测速 + 同轮重排 ----------
   speedtest:
     needs: aggregate
     if: ${{ !inputs.skip_speed }}
@@ -160,8 +193,6 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -183,39 +214,41 @@ jobs:
           SPEED_CONCURRENCY: 8
         run: node scripts/speedtest.mjs
 
-      - name: Commit speed results
-        run: |
-          set -e
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/speed.json dist/speed-top.yaml 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "chore(speed): 更新实测速度"
-          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
-          git push
-
-      # 测速结果要在同一轮内就作用到已发布的池子上（不然要等下一次聚合）
-      - name: Rerank pool with speed data
+      - name: Rerank
         run: node scripts/rerank.mjs
 
-      - name: Validate reranked pool
+      - name: Validate + commit
         run: |
           set -e
-          ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"
-          ./mihomo -t -d . -f dist/clash-lite.yaml && echo "clash-lite.yaml OK"
-
-      - name: Commit reranked pool
-        run: |
-          set -e
+          ./mihomo -t -d . -f dist/clash-lite.yaml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/clash.yaml dist/clash-lite.yaml
-          git diff --cached --quiet || git commit -m "chore(rerank): 按国内 RTT + 实测速度重排"
+          git add -f dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "chore(speed): 实测速度 + 重排"
           git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
           git push
 
-  # ---------- ⑤ 汇总：把本轮各阶段数字打到 Job Summary ----------
+  # ---------- ⑤ 接续下一轮（不间断运行的核心）----------
+  chain:
+    needs: [gate, aggregate]
+    if: always() && needs.aggregate.result == 'success' && needs.gate.outputs.allow_chain == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            core.info('本轮成功，dispatch 下一轮以保持连续运行');
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'pipeline.yml',
+              ref: 'main',
+              inputs: { budget: '110' },
+            });
+
+  # ---------- ⑥ 汇总 ----------
   report:
-    needs: [merge-probe, aggregate, speedtest]
+    needs: [gate, merge-probe, aggregate, speedtest]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -227,7 +260,7 @@ jobs:
             echo ""
             echo "| 阶段 | 结果 |"
             echo "|---|---|"
-            echo "| 国内探测 | ${{ needs.merge-probe.result }} |"
+            echo "| 国内探测 | ${{ needs.gate.outputs.need_probe == 'true' && needs.merge-probe.result || '跳过（数据新鲜）' }} |"
             echo "| 聚合发布 | ${{ needs.aggregate.result }} |"
             echo "| 测速 | ${{ needs.speedtest.result }} |"
             echo ""
@@ -256,8 +289,6 @@ jobs:
               '本轮流水线失败，线上订阅保持上一版未覆盖。',
               '',
               `- 运行：${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
-              '',
-              '常见原因：某个源返回异常内容导致内核校验不通过（守卫生效，未发布）。',
             ].join('\n');
             const issues = await github.rest.issues.listForRepo({
               owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'pipeline',
