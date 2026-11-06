@@ -122,13 +122,13 @@ for(let i=0;i<sample.length;i++){
 }
 try{proc.kill('SIGKILL');}catch{}
 
-const ips=unique(rows.flatMap(r=>[...r.endpointIps,...(r.egress?.ip?[r.egress.ip]:[])]).filter(isPublicIp));
+const ips=unique([...rows.map(r=>r.egress?.ip),...rows.flatMap(r=>r.endpointIps)].filter(isPublicIp));
 const meta=await lookupIps(ips);
 for(const row of rows){
   row.endpointNetwork=row.endpointIps.map(ip=>({ip,...classifyNetwork(meta.get(ip)||{})}));
   if(row.egress){
     const m=meta.get(row.egress.ip)||{};
-    row.egress={...row.egress,...classifyNetwork(m),countryCode:m.countryCode||row.egress.country||null,region:safe(m.regionName||''),city:safe(m.city||''),hostingFlag:m.is_datacenter===true||classifyNetwork(m).hostingSignal,proxyFlag:m.is_proxy===true};
+    row.egress={...row.egress,...classifyNetwork(m),countryCode:m.countryCode||row.egress.country||null,region:safe(m.regionName||m.region||m.location?.state||''),city:safe(m.city||''),hostingFlag:m.is_datacenter===true||classifyNetwork(m).hostingSignal,proxyFlag:m.is_proxy===true};
     row.egress.classification = row.egress.warp==='on' ? 'cloudflare-warp-egress' :
       row.egress.cloudflareNetwork ? 'cloudflare-owned-egress-ip' :
       row.egress.colo ? 'cloudflare-edge-observed-egress-owner-unconfirmed' : 'other-or-unclassified-egress';
