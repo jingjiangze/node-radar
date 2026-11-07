@@ -5,15 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: JP - zhuhai.uk 02
-    type: http
-    server: 120.232.204.58
-    port: 40583
-    username: 'null'
-    password: 'null'
-    tls: true
-    sni: 120.232.204.58
-    skip-cert-verify: true
   - name: 韩国 009
     type: trojan
     network: ws
@@ -1330,18 +1321,6 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
-  - name: 日本+V2CROSS.COM
-    type: vless
-    server: 43.163.112.174
-    port: 443
-    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
-      short-id: 0123456789abcdef
   - name: 日本 029
     type: trojan
     network: ws
@@ -1522,7 +1501,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - JP - zhuhai.uk 02
       - 韩国 009
       - 🇰🇷 KR2@ripaojiedian
       - 日本 017
@@ -1641,7 +1619,6 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
       - 🇰🇷 KR1@ripaojiedian
-      - 日本+V2CROSS.COM
       - 日本 029
       - 日本 012
       - 🇹🇼 TW@ripaojiedian
@@ -1657,7 +1634,6 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - JP - zhuhai.uk 02
       - 韩国 009
       - 🇰🇷 KR2@ripaojiedian
       - 日本 017
@@ -1776,7 +1752,6 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
       - 🇰🇷 KR1@ripaojiedian
-      - 日本+V2CROSS.COM
       - 日本 029
       - 日本 012
       - 🇹🇼 TW@ripaojiedian
@@ -1796,7 +1771,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - JP - zhuhai.uk 02
       - 日本 017
       - 日本 011
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
@@ -1808,7 +1782,6 @@ proxy-groups:
       - 🇯🇵 JP2@ripaojiedian
       - 日本 003
       - 日本 018
-      - 日本+V2CROSS.COM
       - 日本 029
       - 日本 012
       - 日本 020
