@@ -133,7 +133,8 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(probe): 国内可达性结果"
           # 产物是每轮重新生成的：合并时冲突一律以「本地这份」为准（-X ours），
           # 避免多轮同时改 dist/ 时反复 rebase 冲突导致提交被放弃（测速结果曾因此 7 小时没落地）
-          git fetch origin           if ! git merge -X ours --no-edit origin/; then
+          git fetch origin ${GITHUB_REF_NAME}
+          if ! git merge -X ours --no-edit origin/${GITHUB_REF_NAME}; then
             git merge --abort || true
             echo "合并失败，放弃本轮提交（产物下轮重新生成）"
             exit 0
@@ -179,7 +180,8 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(aggregate): 更新公共节点池"
           # 产物是每轮重新生成的：合并时冲突一律以「本地这份」为准（-X ours），
           # 避免多轮同时改 dist/ 时反复 rebase 冲突导致提交被放弃（测速结果曾因此 7 小时没落地）
-          git fetch origin           if ! git merge -X ours --no-edit origin/; then
+          git fetch origin ${GITHUB_REF_NAME}
+          if ! git merge -X ours --no-edit origin/${GITHUB_REF_NAME}; then
             git merge --abort || true
             echo "合并失败，放弃本轮提交（产物下轮重新生成）"
             exit 0
@@ -235,7 +237,8 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(speed): 实测速度 + 重排"
           # 产物是每轮重新生成的：合并时冲突一律以「本地这份」为准（-X ours），
           # 避免多轮同时改 dist/ 时反复 rebase 冲突导致提交被放弃（测速结果曾因此 7 小时没落地）
-          git fetch origin           if ! git merge -X ours --no-edit origin/; then
+          git fetch origin ${GITHUB_REF_NAME}
+          if ! git merge -X ours --no-edit origin/${GITHUB_REF_NAME}; then
             git merge --abort || true
             echo "合并失败，放弃本轮提交（产物下轮重新生成）"
             exit 0
