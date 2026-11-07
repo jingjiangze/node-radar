@@ -30,7 +30,9 @@ let 改了 = 0;
 for (const f of ['clash.yaml', 'clash-lite.yaml']) {
   const 文件 = path.join(DIST, f);
   if (!fs.existsSync(文件)) continue;
-  const doc = yaml.load(fs.readFileSync(文件, 'utf8'));
+  let doc;
+  try { doc = yaml.load(fs.readFileSync(文件, 'utf8')); }
+  catch (e) { console.error(`[rerank] ${f} 解析失败，跳过（下轮聚合会重写）：${String(e.message).split('\n')[0]}`); continue; }
   if (!Array.isArray(doc.proxies)) continue;
   // 稳定排序：给每个节点带原索引，避免无数据节点被随机打乱
   const 带序 = doc.proxies.map((p, i) => ({ p, i, k: 键(p) }));
