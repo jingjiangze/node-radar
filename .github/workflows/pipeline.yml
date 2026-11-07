@@ -129,16 +129,16 @@ jobs:
           [ -f dist/cn-probe.json ] || { echo "没有探测结果"; exit 0; }
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/cn-probe.json
-          git diff --cached --quiet || git commit -m "chore(probe): 国内可达性结果"
-          # 产物是每轮重新生成的：合并时冲突一律以「本地这份」为准（-X ours），
-          # 避免多轮同时改 dist/ 时反复 rebase 冲突导致提交被放弃（测速结果曾因此 7 小时没落地）
+          # 生成物绝不参与 git 文本合并：两个版本的节点列表自动合并会产生重复键，
+          # mihomo 能容忍但 js-yaml 报 duplicated mapping key，后续 rerank 直接崩。
+          # 做法：备份我们的产物 → 硬重置到远端 → 还原 → 提交。
+          mkdir -p /tmp/keep
+          for f in dist/cn-probe.json; do [ -f "$f" ] && cp "$f" "/tmp/keep/$(basename $f)"; done
           git fetch origin ${GITHUB_REF_NAME}
-          if ! git merge -X ours --no-edit origin/${GITHUB_REF_NAME}; then
-            git merge --abort || true
-            echo "合并失败，放弃本轮提交（产物下轮重新生成）"
-            exit 0
-          fi
+          git reset --hard origin/${GITHUB_REF_NAME}
+          for f in dist/cn-probe.json; do [ -f "/tmp/keep/$(basename $f)" ] && cp "/tmp/keep/$(basename $f)" "$f"; done
+          for f in dist/cn-probe.json; do [ -f "$f" ] && git add -f "$f"; done
+          git diff --cached --quiet || git commit -m "chore(probe): 国内可达性结果"
           git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，产物下轮重新生成"
 
   # ---------- ③ 聚合发布 ----------
@@ -176,18 +176,14 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do
-            [ -f "$f" ] && git add -f "$f"
-          done
-          git diff --cached --quiet || git commit -m "chore(aggregate): 更新公共节点池"
-          # 产物是每轮重新生成的：合并时冲突一律以「本地这份」为准（-X ours），
-          # 避免多轮同时改 dist/ 时反复 rebase 冲突导致提交被放弃（测速结果曾因此 7 小时没落地）
+          # 生成物绝不参与 git 文本合并（会产生重复键 → js-yaml duplicated mapping key）
+          mkdir -p /tmp/keep
+          for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do [ -f "$f" ] && cp "$f" "/tmp/keep/$(basename $f)"; done
           git fetch origin ${GITHUB_REF_NAME}
-          if ! git merge -X ours --no-edit origin/${GITHUB_REF_NAME}; then
-            git merge --abort || true
-            echo "合并失败，放弃本轮提交（产物下轮重新生成）"
-            exit 0
-          fi
+          git reset --hard origin/${GITHUB_REF_NAME}
+          for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do [ -f "/tmp/keep/$(basename $f)" ] && cp "/tmp/keep/$(basename $f)" "$f"; done
+          for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do [ -f "$f" ] && git add -f "$f"; done
+          git diff --cached --quiet || git commit -m "chore(aggregate): 更新公共节点池"
           git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，产物下轮重新生成"
 
       - name: Smoke test
@@ -247,20 +243,15 @@ jobs:
           ./mihomo -t -d . -f dist/clash-lite.yaml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 逐个判存在再 add：git add 只要有一个路径不存在就整体失败，
-          # speed-top.yaml 只有 ≥5 个节点通过时才生成，曾因此让 speed.json 一直没被提交
-          for f in dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml; do
-            [ -f "$f" ] && git add -f "$f"
-          done
-          git diff --cached --quiet || git commit -m "chore(speed): 实测速度 + 重排"
-          # 产物是每轮重新生成的：合并时冲突一律以「本地这份」为准（-X ours），
-          # 避免多轮同时改 dist/ 时反复 rebase 冲突导致提交被放弃（测速结果曾因此 7 小时没落地）
+          # 生成物绝不参与 git 文本合并（会产生重复键 → js-yaml duplicated mapping key）
+          # 逐个判存在再处理：speed-top.yaml 只有 ≥5 个节点通过时才生成
+          mkdir -p /tmp/keep
+          for f in dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml; do [ -f "$f" ] && cp "$f" "/tmp/keep/$(basename $f)"; done
           git fetch origin ${GITHUB_REF_NAME}
-          if ! git merge -X ours --no-edit origin/${GITHUB_REF_NAME}; then
-            git merge --abort || true
-            echo "合并失败，放弃本轮提交（产物下轮重新生成）"
-            exit 0
-          fi
+          git reset --hard origin/${GITHUB_REF_NAME}
+          for f in dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml; do [ -f "/tmp/keep/$(basename $f)" ] && cp "/tmp/keep/$(basename $f)" "$f"; done
+          for f in dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml; do [ -f "$f" ] && git add -f "$f"; done
+          git diff --cached --quiet || git commit -m "chore(speed): 实测速度 + 重排"
           git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，产物下轮重新生成"
 
   # ---------- ⑤ 接续下一轮（不间断运行的核心）----------
