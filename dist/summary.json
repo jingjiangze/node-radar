@@ -1,38 +1,38 @@
 {
-  "generatedAt": "2026-11-07T16:10:55.031Z",
-  "totalRaw": 24799,
-  "totalUnique": 16493,
-  "totalAlive": 3153,
+  "generatedAt": "2026-11-07T16:21:05.245Z",
+  "totalRaw": 25160,
+  "totalUnique": 16228,
+  "totalAlive": 3171,
   "probe": {
     "enabled": true,
-    "probed": 16493,
-    "alive": 4590,
-    "ms": 177462
+    "probed": 16228,
+    "alive": 4774,
+    "ms": 170323
   },
   "protocolProbe": {
-    "tls检查": 1480,
-    "tls失败": 605,
-    "ws检查": 1453,
-    "ws路径错": 624
+    "tls检查": 1717,
+    "tls失败": 636,
+    "ws检查": 1620,
+    "ws路径错": 759
   },
   "regions": {
-    "日本": 31,
-    "德国": 110,
-    "美国": 490,
-    "香港": 30,
-    "韩国": 32,
-    "英国": 82,
-    "新加坡": 47,
+    "香港": 26,
+    "美国": 553,
+    "韩国": 25,
+    "日本": 29,
+    "德国": 115,
+    "英国": 83,
+    "新加坡": 49,
     "台湾": 7
   },
   "byType": {
-    "trojan": 738,
-    "vless": 1565,
-    "vmess": 421,
-    "ss": 385,
+    "vless": 1584,
+    "trojan": 739,
+    "vmess": 419,
+    "ss": 383,
     "http": 23,
-    "hysteria2": 20,
-    "anytls": 1
+    "hysteria2": 21,
+    "anytls": 2
   },
   "sources": [
     {
@@ -62,7 +62,7 @@
     {
       "source": "anaer/Sub",
       "kind": "clash-yaml",
-      "count": 1795,
+      "count": 2188,
       "ok": true
     },
     {
@@ -116,7 +116,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 436,
+      "count": 404,
       "ok": true
     },
     {
