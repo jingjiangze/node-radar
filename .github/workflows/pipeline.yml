@@ -192,10 +192,22 @@ jobs:
 
       - name: Smoke test
         run: |
-          set -e
-          sleep 5
-          curl -fsSL -m 60 -o published.yaml "https://raw.githubusercontent.com/jingjiangze/node-radar/main/dist/clash.yaml"
-          ./mihomo -t -d . -f published.yaml && echo "published OK ($(wc -c < published.yaml) bytes)"
+          # raw.githubusercontent 有 CDN 缓存，刚推完可能取到旧版本（旧版本可能含已修的畸形节点）
+          # 所以带 cache-buster 重试几次，只有连续失败才判真失败
+          for i in 1 2 3 4; do
+            if curl -fsSL -m 60 -o published.yaml "https://raw.githubusercontent.com/jingjiangze/node-radar/main/dist/clash.yaml?cb=$(date +%s)-$i"; then
+              if ./mihomo -t -d . -f published.yaml; then
+                echo "published OK ($(wc -c < published.yaml) bytes)"
+                exit 0
+              fi
+              echo "第 $i 次校验失败（可能是 CDN 旧缓存），重试…"
+            else
+              echo "第 $i 次下载失败，重试…"
+            fi
+            sleep 15
+          done
+          echo "发布文件连续 4 次校验失败"
+          exit 1
 
   # ---------- ④ 测速 + 同轮重排 ----------
   speedtest:
