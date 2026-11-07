@@ -673,22 +673,6 @@ proxies:
     udp: true
     tfo: false
     client-fingerprint: chrome
-  - name: 美国 948
-    type: vless
-    network: ws
-    server: 104.16.10.9
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: unsafe
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: 美国 184
     type: trojan
     network: ws
@@ -1060,6 +1044,12 @@ proxies:
     port: 443
     password: humanity
     udp: true
+  - name: US美国(v2clash.blog 2026-5.26更新)
+    type: vless
+    server: 109.176.239.50
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    udp: true
   - name: 日本 012
     type: trojan
     network: ws
@@ -1355,17 +1345,6 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-    type: vless
-    server: 38.47.96.220
-    port: 11424
-    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
-    udp: true
-    network: ws
-    ws-opts:
-      path: Telegram-WangCai2🇨🇳security=tls
-      headers:
-        Host: notls.lukongtou.eu.org
 proxy-groups:
   - name: 🌐 公共节点
     type: select
@@ -1442,7 +1421,6 @@ proxy-groups:
       - 美国 191
       - 美国 235
       - 美国 913
-      - 美国 948
       - 美国 184
       - 美国 990
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -1478,6 +1456,7 @@ proxy-groups:
       - 美国 180
       - 美国 226
       - US美国(v2clash.blog 2026-8.15更新)
+      - US美国(v2clash.blog 2026-5.26更新)
       - 日本 012
       - 日本 021
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
@@ -1509,7 +1488,6 @@ proxy-groups:
       - 新加坡 006
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: ☝️ 全部-手动
     type: select
     proxies:
@@ -1572,7 +1550,6 @@ proxy-groups:
       - 美国 191
       - 美国 235
       - 美国 913
-      - 美国 948
       - 美国 184
       - 美国 990
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -1608,6 +1585,7 @@ proxy-groups:
       - 美国 180
       - 美国 226
       - US美国(v2clash.blog 2026-8.15更新)
+      - US美国(v2clash.blog 2026-5.26更新)
       - 日本 012
       - 日本 021
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
@@ -1639,7 +1617,6 @@ proxy-groups:
       - 新加坡 006
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1694,7 +1671,6 @@ proxy-groups:
       - 美国 191
       - 美国 235
       - 美国 913
-      - 美国 948
       - 美国 184
       - 美国 990
       - 美国 163
@@ -1727,6 +1703,7 @@ proxy-groups:
       - 美国 180
       - 美国 226
       - US美国(v2clash.blog 2026-8.15更新)
+      - US美国(v2clash.blog 2026-5.26更新)
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1747,7 +1724,6 @@ proxy-groups:
       - 日本 030
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
