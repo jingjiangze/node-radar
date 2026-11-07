@@ -907,6 +907,17 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
+    type: vless
+    server: 38.47.96.220
+    port: 11424
+    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+    udp: true
+    network: ws
+    ws-opts:
+      path: Telegram-WangCai2🇨🇳security=tls
+      headers:
+        Host: notls.lukongtou.eu.org
   - name: 英国 008
     type: trojan
     network: ws
@@ -1310,7 +1321,7 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
-  - name: SG VLESS-16 | free-nodes
+  - name: 日本+V2CROSS.COM
     type: vless
     server: 43.163.112.174
     port: 443
@@ -1413,6 +1424,13 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: '🇯🇵 日本 | JPN #1'
+    cipher: aes-256-gcm
+    password: BeaUf9c0AEWH40Pu
+    port: 8388
+    server: 154.36.158.197
+    type: ss
+    udp: true
   - name: '🇹🇼 🇨🇳 台湾 | TWN #1'
     client-fingerprint: chrome
     network: ws
@@ -1576,6 +1594,7 @@ proxy-groups:
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 132
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - 英国 008
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1612,13 +1631,14 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
       - 🇰🇷 KR1@ripaojiedian
-      - SG VLESS-16 | free-nodes
+      - 日本+V2CROSS.COM
       - 日本 029
       - 日本 012
       - 🇹🇼 TW@ripaojiedian
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
       - 日本 020
+      - '🇯🇵 日本 | JPN #1'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - 新加坡 004
       - 🇭🇰 HK3@ripaojiedian
@@ -1708,6 +1728,7 @@ proxy-groups:
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 132
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - 英国 008
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1744,13 +1765,14 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
       - 🇰🇷 KR1@ripaojiedian
-      - SG VLESS-16 | free-nodes
+      - 日本+V2CROSS.COM
       - 日本 029
       - 日本 012
       - 🇹🇼 TW@ripaojiedian
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
       - 日本 020
+      - '🇯🇵 日本 | JPN #1'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - 新加坡 004
       - 🇭🇰 HK3@ripaojiedian
@@ -1767,15 +1789,18 @@ proxy-groups:
       - 日本 011
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - 日本 002
       - 🇯🇵 JP2@ripaojiedian
       - 日本 003
       - 日本 018
+      - 日本+V2CROSS.COM
       - 日本 029
       - 日本 012
       - 日本 020
+      - '🇯🇵 日本 | JPN #1'
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
