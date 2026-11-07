@@ -72,7 +72,8 @@ let i = 0;
 await Promise.all(Array.from({ length: 并发 }, async () => {
   while (i < 目标.length) {
     const n = 目标[i++];
-    结果.push(await 测一个(n));
+    try { 结果.push(await 测一个(n)); }
+    catch (e) { 结果.push({ ...n, 结果: '异常', err: String(e.message || e).slice(0, 40) }); }
   }
 }));
 
