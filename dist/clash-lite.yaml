@@ -255,24 +255,6 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: 🇺🇸 US2@ripaojiedian
-    server: 154.17.9.239
-    port: 443
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
   - name: 美国 284
     type: vless
     network: xhttp
@@ -1083,6 +1065,19 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: 美国 112
+    type: trojan
+    network: ws
+    server: 172.64.148.248
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
   - name: 🇭🇰 HK1@ripaojiedian
     server: 218.102.64.147
     port: 11310
@@ -1153,6 +1148,17 @@ proxies:
     uuid: 326227e2-f2d1-4f43-8715-9da854f5f4c0
     ws-opts:
       path: /326227e2-f2d1-4f43-8715-9da854f5f4c0
+  - name: '🇩🇪 德国 | DEU #5'
+    type: vless
+    server: 199.232.239.239
+    port: 443
+    uuid: a55a4d25-76f0-4f0e-d395-3a92c0b34268
+    udp: true
+    tls: true
+    servername: community.fastly.steamstatic.com
+    client-fingerprint: chrome
+    alpn:
+      - h2
   - name: 韩国 005
     type: trojan
     network: ws
@@ -1234,6 +1240,27 @@ proxies:
     port: 443
     password: humanity
     udp: true
+  - name: HK VLESS-14 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+    client-fingerprint: chrome
+  - name: 日本+V2CROSS.COM
+    type: vless
+    server: 43.163.112.174
+    port: 443
+    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
+      short-id: 0123456789abcdef
   - name: '@V2rayng_Fast 🇩🇪-5'
     type: vless
     server: 172.64.158.170
@@ -1391,17 +1418,6 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
-    type: vless
-    server: 38.47.96.220
-    port: 11424
-    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
-    udp: true
-    network: ws
-    ws-opts:
-      path: Telegram-WangCai2🇨🇳security=tls
-      headers:
-        Host: notls.lukongtou.eu.org
   - name: 日本 029
     type: trojan
     network: ws
@@ -1456,7 +1472,6 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.22更新)
       - 🇺🇸 1693
       - 美国 097
-      - 🇺🇸 US2@ripaojiedian
       - 美国 284
       - 美国 696
       - 美国 150
@@ -1528,6 +1543,7 @@ proxy-groups:
       - '[free18#241] 🇺🇸_美国 (59)'
       - 美国 001
       - 美国 106
+      - 美国 112
       - 🇭🇰 HK1@ripaojiedian
       - '@V2rayng_Fast 🇩🇪-2'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
@@ -1537,6 +1553,7 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-6.9更新)
       - Tel@V2rayng_Fast 🇩🇪
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
+      - '🇩🇪 德国 | DEU #5'
       - 韩国 005
       - '@V2rayng_Fast 🇬🇧-2'
       - 🇰🇷 KR2@ripaojiedian
@@ -1544,6 +1561,8 @@ proxy-groups:
       - 英国 008
       - 🇰🇷 KR1@ripaojiedian
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+      - HK VLESS-14 | free-nodes
+      - 日本+V2CROSS.COM
       - '@V2rayng_Fast 🇩🇪-5'
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
@@ -1557,7 +1576,6 @@ proxy-groups:
       - 韩国 001
       - 🇹🇼 TW@ripaojiedian
       - 🇯🇵 JP2@ripaojiedian
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - 日本 029
   - name: ☝️ 全部-手动
     type: select
@@ -1586,7 +1604,6 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.22更新)
       - 🇺🇸 1693
       - 美国 097
-      - 🇺🇸 US2@ripaojiedian
       - 美国 284
       - 美国 696
       - 美国 150
@@ -1658,6 +1675,7 @@ proxy-groups:
       - '[free18#241] 🇺🇸_美国 (59)'
       - 美国 001
       - 美国 106
+      - 美国 112
       - 🇭🇰 HK1@ripaojiedian
       - '@V2rayng_Fast 🇩🇪-2'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
@@ -1667,6 +1685,7 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-6.9更新)
       - Tel@V2rayng_Fast 🇩🇪
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
+      - '🇩🇪 德国 | DEU #5'
       - 韩国 005
       - '@V2rayng_Fast 🇬🇧-2'
       - 🇰🇷 KR2@ripaojiedian
@@ -1674,6 +1693,8 @@ proxy-groups:
       - 英国 008
       - 🇰🇷 KR1@ripaojiedian
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+      - HK VLESS-14 | free-nodes
+      - 日本+V2CROSS.COM
       - '@V2rayng_Fast 🇩🇪-5'
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
@@ -1687,7 +1708,6 @@ proxy-groups:
       - 韩国 001
       - 🇹🇼 TW@ripaojiedian
       - 🇯🇵 JP2@ripaojiedian
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - 日本 029
   - name: 📍 美国
     type: url-test
@@ -1712,7 +1732,6 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.22更新)
       - 🇺🇸 1693
       - 美国 097
-      - 🇺🇸 US2@ripaojiedian
       - 美国 284
       - 美国 696
       - 美国 150
@@ -1776,6 +1795,7 @@ proxy-groups:
       - '[free18#241] 🇺🇸_美国 (59)'
       - 美国 001
       - 美国 106
+      - 美国 112
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1794,6 +1814,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-3'
       - '@V2rayng_Fast 🇩🇪-4'
       - Tel@V2rayng_Fast 🇩🇪
+      - '🇩🇪 德国 | DEU #5'
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-5'
@@ -1812,12 +1833,12 @@ proxy-groups:
       - 日本 011
       - 日本 003
       - JP日本(v2clash.blog 2026-6.9更新)
+      - 日本+V2CROSS.COM
       - 日本 020
       - 日本 012
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - 🇯🇵 JP2@ripaojiedian
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - 日本 029
   - name: ♻️ 自动选择
     type: url-test
