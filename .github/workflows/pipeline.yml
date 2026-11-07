@@ -179,7 +179,15 @@ jobs:
           # 生成物绝不参与 git 文本合并（会产生重复键 → js-yaml duplicated mapping key）
           mkdir -p /tmp/keep
           for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do [ -f "$f" ] && cp "$f" "/tmp/keep/$(basename $f)"; done
+          # 新鲜度守卫：并发/排队时可能有一个更早启动的运行更晚提交，会把新产物覆盖成旧的
+          # （实测：141 个的精简池被一个旧运行的 410 个覆盖）→ 只允许「更新」的产物写回
+          OURS=$(node -e "try{console.log(Date.parse(require('./dist/summary.json').generatedAt))}catch(e){console.log(0)}")
           git fetch origin ${GITHUB_REF_NAME}
+          THEIRS=$(git show origin/${GITHUB_REF_NAME}:dist/summary.json 2>/dev/null | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{console.log(Date.parse(JSON.parse(s).generatedAt))}catch(e){console.log(0)}})")
+          if [ "$THEIRS" -gt "$OURS" ] 2>/dev/null; then
+            echo "远端产物更新（$THEIRS > $OURS），放弃本次提交，保留远端版本"
+            exit 0
+          fi
           git reset --hard origin/${GITHUB_REF_NAME}
           for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do [ -f "/tmp/keep/$(basename $f)" ] && cp "/tmp/keep/$(basename $f)" "$f"; done
           for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do [ -f "$f" ] && git add -f "$f"; done
