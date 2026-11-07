@@ -409,24 +409,6 @@ proxies:
     port: 8880
     uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
     udp: true
-  - name: 🇺🇸 US2@ripaojiedian
-    server: 154.17.9.239
-    port: 443
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
   - name: US 🇺🇸 | @Raydikalx | A21CA4
     type: vmess
     server: 162.159.45.63
@@ -995,6 +977,12 @@ proxies:
     port: 443
     password: MiTiVPN
     udp: true
+  - name: US美国(v2clash.blog 2026-9.17更新)
+    type: trojan
+    server: 104.21.8.107
+    port: 443
+    password: humanity
+    udp: true
   - name: 韩国 001
     type: vless
     network: ws
@@ -1184,6 +1172,14 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
+  - name: '[free18#261] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: 新加坡 001
     type: trojan
     network: ws
@@ -1364,6 +1360,18 @@ proxies:
       headers:
         Host: ty986gfazs.cainiaohub.xyz
       path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+  - name: SG VLESS-16 | free-nodes
+    type: vless
+    server: 43.163.112.174
+    port: 443
+    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
+      short-id: 0123456789abcdef
   - name: TW台湾(v2clash.blog 2026-10.24更新)
     type: vless
     server: 104.18.255.167
@@ -1466,7 +1474,6 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)
       - 美国 104
       - US美国(v2clash.blog 2026-5.26更新)
-      - 🇺🇸 US2@ripaojiedian
       - US 🇺🇸 | @Raydikalx | A21CA4
       - 美国 101
       - 🇺🇸 703
@@ -1522,6 +1529,7 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.10更新)
       - US美国(v2clash.blog 2026-10.4更新)
       - 🇺🇸@V2rayng_Fast
+      - US美国(v2clash.blog 2026-9.17更新)
       - 韩国 001
       - '@V2rayng_Fast 🇬🇧'
       - 日本 012
@@ -1539,6 +1547,7 @@ proxy-groups:
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - '@V2rayng_Fast 🇩🇪-6'
       - Tel@V2rayng_Fast 🇩🇪
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 新加坡 001
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - DE 🇩🇪 | @Raydikalx | 68E5BF
@@ -1553,6 +1562,7 @@ proxy-groups:
       - 🇭🇰 HK2@ripaojiedian
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
+      - SG VLESS-16 | free-nodes
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1598,7 +1608,6 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)
       - 美国 104
       - US美国(v2clash.blog 2026-5.26更新)
-      - 🇺🇸 US2@ripaojiedian
       - US 🇺🇸 | @Raydikalx | A21CA4
       - 美国 101
       - 🇺🇸 703
@@ -1654,6 +1663,7 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.10更新)
       - US美国(v2clash.blog 2026-10.4更新)
       - 🇺🇸@V2rayng_Fast
+      - US美国(v2clash.blog 2026-9.17更新)
       - 韩国 001
       - '@V2rayng_Fast 🇬🇧'
       - 日本 012
@@ -1671,6 +1681,7 @@ proxy-groups:
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - '@V2rayng_Fast 🇩🇪-6'
       - Tel@V2rayng_Fast 🇩🇪
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 新加坡 001
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - DE 🇩🇪 | @Raydikalx | 68E5BF
@@ -1685,6 +1696,7 @@ proxy-groups:
       - 🇭🇰 HK2@ripaojiedian
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
+      - SG VLESS-16 | free-nodes
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1752,7 +1764,6 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)
       - 美国 104
       - US美国(v2clash.blog 2026-5.26更新)
-      - 🇺🇸 US2@ripaojiedian
       - US 🇺🇸 | @Raydikalx | A21CA4
       - 美国 101
       - 🇺🇸 703
@@ -1801,6 +1812,7 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.10更新)
       - US美国(v2clash.blog 2026-10.4更新)
       - 🇺🇸@V2rayng_Fast
+      - US美国(v2clash.blog 2026-9.17更新)
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
