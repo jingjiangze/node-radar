@@ -5,14 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: '[free18#261] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
   - name: 韩国 005
     type: trojan
     network: ws
@@ -191,24 +183,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 🇺🇸 US2@ripaojiedian
-    server: 154.17.9.239
-    port: 443
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
   - name: 美国 113
     type: trojan
     network: ws
@@ -1134,6 +1108,18 @@ proxies:
       headers:
         Host: per-essex-patterns-bowling.trycloudflare.com
       path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
+  - name: 美国 159
+    type: trojan
+    network: ws
+    server: 198.62.62.23
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.calmlunch.com
+    ws-opts:
+      headers:
+        Host: www.calmlunch.com
+      path: /assignment
   - name: '@V2rayng_Fast 🇩🇪-4'
     type: vless
     server: 185.159.247.44
@@ -1411,18 +1397,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: SG VLESS-16 | free-nodes
-    type: vless
-    server: 43.163.112.174
-    port: 443
-    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
-      short-id: 0123456789abcdef
   - name: 日本 002
     type: trojan
     network: ws
@@ -1489,7 +1463,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - '[free18#261] 🇭🇰_香港 (26)'
       - 韩国 005
       - 美国 104
       - 韩国 009
@@ -1504,7 +1477,6 @@ proxy-groups:
       - 美国 105
       - 🇺🇸US-179.255.132.69-5296
       - 美国 110
-      - 🇺🇸 US2@ripaojiedian
       - 美国 113
       - 美国 016
       - 美国 094
@@ -1592,6 +1564,7 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.2更新)
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 美国 008
+      - 美国 159
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
       - 日本 003
@@ -1617,14 +1590,12 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - '@V2rayng_Fast 🇩🇪-6'
       - 新加坡 001
-      - SG VLESS-16 | free-nodes
       - 日本 002
       - 🇭🇰 HK1@ripaojiedian
       - 日本 029
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - '[free18#261] 🇭🇰_香港 (26)'
       - 韩国 005
       - 美国 104
       - 韩国 009
@@ -1639,7 +1610,6 @@ proxy-groups:
       - 美国 105
       - 🇺🇸US-179.255.132.69-5296
       - 美国 110
-      - 🇺🇸 US2@ripaojiedian
       - 美国 113
       - 美国 016
       - 美国 094
@@ -1727,6 +1697,7 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.2更新)
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 美国 008
+      - 美国 159
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
       - 日本 003
@@ -1752,7 +1723,6 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - '@V2rayng_Fast 🇩🇪-6'
       - 新加坡 001
-      - SG VLESS-16 | free-nodes
       - 日本 002
       - 🇭🇰 HK1@ripaojiedian
       - 日本 029
@@ -1771,7 +1741,6 @@ proxy-groups:
       - 美国 105
       - 🇺🇸US-179.255.132.69-5296
       - 美国 110
-      - 🇺🇸 US2@ripaojiedian
       - 美国 113
       - 美国 016
       - 美国 094
@@ -1843,6 +1812,7 @@ proxy-groups:
       - 美国 687
       - US美国(v2clash.blog 2026-10.2更新)
       - 美国 008
+      - 美国 159
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
