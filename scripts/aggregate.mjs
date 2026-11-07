@@ -194,7 +194,21 @@ const 缺字段 = (p) => {
   }
   return null;
 };
+// 配置合法性：Host/SNI 里有控制字符、path 里有坏的 % 转义，客户端/内核会直接报
+// ERR_INVALID_CHAR / URI malformed（墙内实测抓到 3 个），这类和网络无关，CI 必须自己剔掉
+const 配置合法 = (p) => {
+  const 坏 = /[\u0000-\u001F\u007F-\u009F]/;
+  const host = String((p['ws-opts'] && p['ws-opts'].headers && p['ws-opts'].headers.Host) || '');
+  const sni = String(p.servername || p.sni || '');
+  const path = String((p['ws-opts'] && p['ws-opts'].path) || '');
+  if (坏.test(host) || 坏.test(sni) || 坏.test(path)) return false;
+  if (/\s/.test(host) || /\s/.test(sni)) return false;
+  // % 后面必须是两位 hex，否则 decodeURI 会抛 URI malformed
+  if (/%(?![0-9a-fA-F]{2})/.test(path)) return false;
+  return true;
+};
 const invalid = (p) =>
+  !配置合法(p) ||
   !!缺字段(p) ||
   ((p.type === 'hysteria2' || p.type === 'hysteria') && p.obfs && !p['obfs-password']) ||
   !okReality(p);
