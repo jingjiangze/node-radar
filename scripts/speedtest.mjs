@@ -62,7 +62,7 @@ const names = sample.map((p, i) => `${i}-${String(p.name || p.server).slice(0, 3
 const 清洗 = (v) => {
   if (typeof v === 'string') {
     return v
-      .replace(/[\u0000-\u001F\u007F]/g, '')
+      .replace(/[\u0000-\u001F\u007F-\u009F]/g, '')
       .replace(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/g, '')
       .replace(/(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g, '');
   }
