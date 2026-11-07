@@ -262,23 +262,8 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(speed): 实测速度 + 重排"
           git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，产物下轮重新生成"
 
-  # ---------- ⑤ 接续下一轮（不间断运行的核心）----------
-  chain:
-    needs: [gate, aggregate]
-    if: always() && needs.aggregate.result == 'success' && needs.gate.outputs.allow_chain == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/github-script@v7
-        with:
-          script: |
-            core.info('本轮成功，dispatch 下一轮以保持连续运行');
-            await github.rest.actions.createWorkflowDispatch({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              workflow_id: 'pipeline.yml',
-              ref: 'main',
-              inputs: { budget: '110' },
-            });
+  # （已移除「跑完 dispatch 下一轮」：它会和 10 分钟 cron 叠加造成运行重叠，
+  #   导致旧代码的运行更晚提交、把新产物覆盖掉。现在只靠 cron 驱动，concurrency 保证串行。）
 
   # ---------- ⑥ 汇总 ----------
   report:
