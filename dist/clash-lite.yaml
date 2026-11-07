@@ -1311,6 +1311,15 @@ proxies:
       headers:
         Host: hhlfy.twiladaphne.ndjp.net
       path: /sg-melbi
+  - name: JP - zhuhai.uk 02
+    type: http
+    server: 120.232.204.58
+    port: 40583
+    username: 'null'
+    password: 'null'
+    tls: true
+    sni: 120.232.204.58
+    skip-cert-verify: true
   - name: DE 🇩🇪 | @Raydikalx | F68888
     type: vmess
     server: 136.243.83.105
@@ -1636,6 +1645,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-2'
       - 🇭🇰 HK2@ripaojiedian
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - JP - zhuhai.uk 02
       - DE 🇩🇪 | @Raydikalx | F68888
       - 日本 003
       - '@V2rayng_Fast 🇬🇧-2'
@@ -1771,6 +1781,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-2'
       - 🇭🇰 HK2@ripaojiedian
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - JP - zhuhai.uk 02
       - DE 🇩🇪 | @Raydikalx | F68888
       - 日本 003
       - '@V2rayng_Fast 🇬🇧-2'
@@ -1889,6 +1900,7 @@ proxy-groups:
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - JP - zhuhai.uk 02
       - 日本 003
       - 日本 002
       - 日本 012
