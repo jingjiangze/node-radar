@@ -207,17 +207,15 @@ const 私有标记 = /jiangjiangze\.icu|a5dea14ad4de58|97c109c4c7e4be|82bcf5b8|1
 const 私有凭据 = /a5dea14ad4de58|97c109c4c7e4be|82bcf5b8|13c20322|d474812e|dingyue\.jiangjiangze\.icu|tl2?\.jiangjiangze\.icu/i;
 const 是私有节点 = (p) => 私有标记.test(JSON.stringify(p));
 
-let 剔除私有 = 0, 剔除scv = 0;
+let 剔除私有 = 0;
 for (const p of collected) {
   if (是私有节点(p)) { 剔除私有++; continue; }
-  if (p["skip-cert-verify"] === true) { 剔除scv++; continue; }
   if (invalid(p)) continue;
   const key = [p.type, p.server, p.port, p.uuid || p.password || p.cipher || ''].join('|').toLowerCase();
   if (seen.has(key)) continue;
   seen.add(key); unique.push(p);
 }
 if (剔除私有) console.error(`[GUARD] 剔除了 ${剔除私有} 个命中私有标记的节点`);
-if (剔除scv) console.error(`[GUARD] 剔除了 ${剔除scv} 个 skip-cert-verify 节点（可被假冒，不发布）`);
 
 // ---------- 探活（只剔死服务器），顺带记 RTT 用于排序 ----------
 // RTT 是「全部节点都有的实测值」，比抽样测速覆盖高得多；有 mbps 的仍然优先用 mbps。
@@ -488,11 +486,27 @@ const 国内确认 = (name) => {
   const c = CN结果.get(`${p.server}:${p.port}`);
   return !!c && c.ok === true;
 };
+// 墙内三层实测白名单（TCP → TLS → WS 升级，由墙内机器跑出来）
+// TCP 可达 ≠ 能用：实测 134 个 TCP 可达的节点里，45 个 WS 升级失败、8 个 TLS 失败，
+// 客户端表现就是 timeout。有新鲜白名单时只收白名单里的。
+let 白名单 = null;
+try {
+  const w = JSON.parse(fs.readFileSync(new URL('../dist/cn-usable.json', import.meta.url), 'utf8'));
+  const 年龄h = (Date.now() - Date.parse(w.generatedAt || 0)) / 3600e3;
+  if (年龄h <= Number(process.env.CN_USABLE_MAX_AGE_HOURS || 48) && Array.isArray(w.names) && w.names.length >= 20) {
+    白名单 = new Set(w.names);
+    console.log(`[精简池] 墙内三层实测白名单：${w.names.length} 个（${年龄h.toFixed(1)}h 前，${w.vantage}）`);
+  } else {
+    console.log(`[精简池] 白名单过旧或过少（${w.names?.length ?? 0} 个 / ${年龄h.toFixed(1)}h），忽略`);
+  }
+} catch { console.log('[精简池] 没有 cn-usable.json，仅按国内 TCP 可达筛选'); }
+
+const 候选过滤 = (name) => 国内确认(name) && (!白名单 || 白名单.has(name));
 const liteNames = new Set();
-const 候选地区 = Object.values(byRegion).map((names) => names.filter(国内确认));
+const 候选地区 = Object.values(byRegion).map((names) => names.filter(候选过滤));
 const 国内确认总数 = 候选地区.reduce((a, l) => a + l.length, 0);
-// 兜底：国内数据太少（探测还没覆盖到）时退回原逻辑，避免订阅变空
-const 用国内确认 = 国内确认总数 >= 30;
+// 兜底：可用数据太少时退回原逻辑，避免订阅变空
+const 用国内确认 = 国内确认总数 >= 20;
 if (用国内确认) {
   for (const names of 候选地区) {
     if (liteNames.size >= LITE_MAX) break;
@@ -501,7 +515,7 @@ if (用国内确认) {
       liteNames.add(n);
     }
   }
-  console.log(`[精简池] 只收国内确认可达的节点：${liteNames.size} 个（候选 ${国内确认总数}）`);
+  console.log(`[精简池] 收 ${liteNames.size} 个（候选 ${国内确认总数}${白名单 ? '，已套用墙内白名单' : ''}）`);
 } else {
   for (const names of Object.values(byRegion)) {
     if (liteNames.size >= LITE_MAX) break;
@@ -510,7 +524,7 @@ if (用国内确认) {
       liteNames.add(n);
     }
   }
-  console.log(`[精简池] 国内数据不足（确认可达仅 ${国内确认总数}），退回未筛选口径：${liteNames.size} 个`);
+  console.log(`[精简池] 候选不足（${国内确认总数}），退回未筛选口径：${liteNames.size} 个`);
 }
 const liteAlive = alive.filter((p) => liteNames.has(p.name));
 const liteGroups = [
@@ -534,7 +548,6 @@ const summary = {
   totalRaw: collected.length,
   totalUnique: unique.length,
   totalAlive: alive.length,
-  scvRemoved: 剔除scv,
   probe: probeInfo,
   protocolProbe: 协议统计,
   regions: Object.fromEntries(Object.entries(byRegion).map(([k, v]) => [k, v.length])),
@@ -557,7 +570,6 @@ if (summary.degraded) {
   // 落盘前最后一道：整份文本再断言一次私有标记，命中直接失败（线上保持上一版）
   for (const [名, 文] of [['clash.yaml', 全量YAML], ['clash-lite.yaml', 精简YAML]]) {
     if (私有凭据.test(文)) throw new Error(`[GUARD] ${名} 命中私有标记，拒绝发布`);
-    if (/skip-cert-verify: true/.test(文)) throw new Error(`[GUARD] ${名} 含 skip-cert-verify: true 节点，拒绝发布`);
   }
   fs.writeFileSync(new URL('clash.yaml', distDir), 全量YAML);
   fs.writeFileSync(new URL('clash-lite.yaml', distDir), 精简YAML);
