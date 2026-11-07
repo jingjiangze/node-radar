@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-11-06T09:07:00.311Z",
+  "generatedAt": "2026-11-07T05:12:36.402Z",
   "budget": 40,
   "channels": {
     "github-code": {
-      "产出": 20,
-      "耗时ms": 7223
+      "产出": 0,
+      "耗时ms": 4279
     },
     "github-search": {
-      "产出": 17,
-      "耗时ms": 16816
+      "产出": 11,
+      "耗时ms": 12423
     },
     "seeds": {
       "产出": 40,
-      "耗时ms": 5230
+      "耗时ms": 2735
     },
     "recursive": {
       "产出": 33,
-      "耗时ms": 42
+      "耗时ms": 10
     },
     "telegram": {
       "产出": 0,
-      "耗时ms": 1
+      "耗时ms": 0
     },
     "feed": {
       "产出": 0,
@@ -34,37 +34,17 @@
   "candidates": 40,
   "passed": 8,
   "registry": {
-    "accepted": 13,
-    "candidate": 82,
+    "accepted": 18,
+    "candidate": 92,
     "rejected": 11,
-    "mirror": 1
+    "mirror": 3
   },
-  "acceptedSources": 14,
+  "acceptedSources": 19,
   "newSources": [
     {
-      "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/v2ray.txt",
-      "nodes": 65,
-      "channel": "github-search"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/yaml/Custom_Clash.yaml",
-      "nodes": 34,
-      "channel": "github-code"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.txt",
-      "nodes": 1273,
-      "channel": "github-search"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/yy1588133/proxy-pool/main/v2ray.txt",
-      "nodes": 742,
-      "channel": "github-search"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ua_clash.yaml",
+      "url": "https://raw.githubusercontent.com/guo0914/Free-Node/main/v2ray.txt",
       "nodes": 20,
-      "channel": "github-code"
+      "channel": "github-search"
     },
     {
       "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
@@ -77,8 +57,28 @@
       "channel": "github-search"
     },
     {
+      "url": "https://raw.githubusercontent.com/vincent20240707/free-v2ray-nodes/main/nodes.txt",
+      "nodes": 50,
+      "channel": "github-search"
+    },
+    {
       "url": "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt",
-      "nodes": 399,
+      "nodes": 437,
+      "channel": "seeds"
+    },
+    {
+      "url": "https://fastly.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt",
+      "nodes": 426,
+      "channel": "seeds"
+    },
+    {
+      "url": "https://gcore.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt",
+      "nodes": 412,
+      "channel": "seeds"
+    },
+    {
+      "url": "https://blog.ermao.net/sub/v2ray/ermao.net",
+      "nodes": 499,
       "channel": "seeds"
     }
   ],
@@ -96,11 +96,7 @@
       "reason": "节点不足(0)"
     },
     {
-      "url": "https://raw.githubusercontent.com/Hackl0us/SS-Rule-Snippet/main/LAZY_RULES/clash.yaml",
-      "reason": "节点不足(10)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml",
+      "url": "https://raw.githubusercontent.com/15605875200-spec/abaaba/main/clash.yaml",
       "reason": "节点不足(0)"
     },
     {
@@ -108,15 +104,15 @@
       "reason": "节点不足(0)"
     },
     {
+      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/clash_config.yaml",
+      "reason": "节点不足(0)"
+    },
+    {
       "url": "https://github.com/chengaopan/AutoMergePublicNodes/stargazers",
       "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/githubdulong/Script/master/OpenClash.yaml",
-      "reason": "节点不足(0)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/clash_config.yaml",
+      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/extra_clash_config.yaml",
       "reason": "节点不足(0)"
     },
     {
@@ -124,35 +120,19 @@
       "reason": "节点不足(0)"
     },
     {
-      "url": "https://raw.githubusercontent.com/ZeroDeng01/sublinkPro/main/template/clash.yaml",
-      "reason": "节点不足(0)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/extra_clash_config.yaml",
-      "reason": "节点不足(0)"
+      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/extra_nodes.txt",
+      "reason": "节点不足(1)"
     },
     {
       "url": "https://github.com/chengaopan/AutoMergePublicNodes/watchers",
       "reason": "HTTP 404"
     },
     {
-      "url": "https://raw.githubusercontent.com/Infatuation-Fei/rule/main/Stash/%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF/Config%20for%20Clash.yaml",
-      "reason": "节点不足(0)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/extra_nodes.txt",
-      "reason": "节点不足(1)"
+      "url": "https://raw.githubusercontent.com/guo0914/Free-Node/main/clash.yaml",
+      "reason": "节点不足(12)"
     },
     {
       "url": "https://img.shields.io/github/forks/chengaopan/AutoMergePublicNodes?style=flat",
-      "reason": "节点不足(0)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/dk_clash.yaml",
-      "reason": "节点不足(1)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/yy1588133/proxy-pool/main/clash.yaml",
       "reason": "节点不足(0)"
     },
     {
@@ -160,47 +140,63 @@
       "reason": "节点不足(0)"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/lt_clash.yaml",
-      "reason": "节点不足(4)"
-    },
-    {
       "url": "https://img.shields.io/github/repo-size/chengaopan/AutoMergePublicNodes",
       "reason": "节点不足(0)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/mx_clash.yaml",
-      "reason": "节点不足(3)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/guo0914/Free-Node/main/clash.yaml",
-      "reason": "节点不足(15)"
     },
     {
       "url": "https://github.com/chengaopan/AutoMergePublicNodes/commits",
       "reason": "节点不足(0)"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/id_clash.yaml",
-      "reason": "节点不足(4)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/guo0914/Free-Node/main/v2ray.txt",
-      "reason": "节点不足(7)"
-    },
-    {
       "url": "https://github.com/chengaopan/AutoMergePublicNodes/blob/master/LICENSE.md",
       "reason": "节点不足(0)"
     },
     {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/br_clash.yaml",
-      "reason": "节点不足(4)"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/15605875200-spec/abaaba/main/clash.yaml",
+      "url": "https://ghproxy.cn/https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt",
       "reason": "节点不足(0)"
     },
     {
-      "url": "https://ghproxy.cn/https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt",
+      "url": "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.meta.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://ghproxy.cn/https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.meta.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://fastly.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://testingcf.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://gcore.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://subapi.fxxk.dedyn.io/sub?config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online_Full_NoAuto.ini&emoji=true&expand=true&fdn=false&insert=false&list=false&scv=false&singbox.ipv6=1&target=singbox&tfo=false&tls13=true&udp=true&url=https%3A%2F%2Fraw.githubusercontent.com%2Fchengaopan%2FAutoMergePublicNodes%2Fmaster%2Fsnippets%2Fnodes.meta.yml&xudp=true",
+      "reason": "HTTP 403"
+    },
+    {
+      "url": "https://github.com/chengaopan/AutoMergePublicNodes.git",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://api.star-history.com/chart?legend=top-left&repos=chengaopan%2FAutoMergePublicNodes&sealed_token=Li9iFI3-pxjEQPlzd64Twa3pmFO40yYvTZukmx4RZFh13gJ1Ps_2eQ-FpeFeoZRJB9sMxYcUbfjKwG136bfGvLCJDETT-uONN006wscmp1M-d4vF6FaWRSDIBxpucz_CH2kNHKfQQA1y9BXDLTMSxuOif5nGrGFq2gbCnu3Re4sYRiDYcCDz0GTQ_65U&theme=dark&type=date",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://api.star-history.com/chart?legend=top-left&repos=chengaopan%2FAutoMergePublicNodes&sealed_token=Li9iFI3-pxjEQPlzd64Twa3pmFO40yYvTZukmx4RZFh13gJ1Ps_2eQ-FpeFeoZRJB9sMxYcUbfjKwG136bfGvLCJDETT-uONN006wscmp1M-d4vF6FaWRSDIBxpucz_CH2kNHKfQQA1y9BXDLTMSxuOif5nGrGFq2gbCnu3Re4sYRiDYcCDz0GTQ_65U&type=date",
+      "reason": "节点不足(0)"
+    },
+    {
+      "url": "https://blog.ermao.net/sub/clash/ermao.net",
       "reason": "节点不足(0)"
     }
   ]
