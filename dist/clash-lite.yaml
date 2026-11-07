@@ -462,17 +462,6 @@ proxies:
       headers:
         Host: ip13.freegradely.xyz
       path: github.com/Alvin9999
-  - name: '🇩🇪 德国 | DEU #5'
-    type: vless
-    server: 199.232.239.239
-    port: 443
-    uuid: a55a4d25-76f0-4f0e-d395-3a92c0b34268
-    udp: true
-    tls: true
-    servername: community.fastly.steamstatic.com
-    client-fingerprint: chrome
-    alpn:
-      - h2
   - name: US 🇺🇸 | @Raydikalx | A8EEF5
     type: vmess
     server: 199.232.78.160
@@ -1413,6 +1402,18 @@ proxies:
       path: /
       headers:
         Host: 1.proxy2.us.ci.
+  - name: 日本+V2CROSS.COM
+    type: vless
+    server: 43.163.112.174
+    port: 443
+    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
+      short-id: 0123456789abcdef
   - name: 日本 029
     type: trojan
     network: ws
@@ -1519,7 +1520,6 @@ proxy-groups:
       - 韩国 001
       - 美国 743
       - 美国 740
-      - '🇩🇪 德国 | DEU #5'
       - US 🇺🇸 | @Raydikalx | A8EEF5
       - 日本 012
       - US 🇺🇸 | @Raydikalx | 2D3F12
@@ -1611,6 +1611,7 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - '[freeSub#225] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_50bb1f1f'
+      - 日本+V2CROSS.COM
       - 日本 029
       - 🇰🇷 KR2@ripaojiedian
       - 🇯🇵 JP2@ripaojiedian
@@ -1657,7 +1658,6 @@ proxy-groups:
       - 韩国 001
       - 美国 743
       - 美国 740
-      - '🇩🇪 德国 | DEU #5'
       - US 🇺🇸 | @Raydikalx | A8EEF5
       - 日本 012
       - US 🇺🇸 | @Raydikalx | 2D3F12
@@ -1749,6 +1749,7 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - '[freeSub#225] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_50bb1f1f'
+      - 日本+V2CROSS.COM
       - 日本 029
       - 🇰🇷 KR2@ripaojiedian
       - 🇯🇵 JP2@ripaojiedian
@@ -1848,7 +1849,6 @@ proxy-groups:
     proxies:
       - '@V2rayng_Fast 🇩🇪'
       - '@V2rayng_Fast 🇩🇪-2'
-      - '🇩🇪 德国 | DEU #5'
       - DE 🇩🇪 | @Raydikalx | F68888
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - DE 🇩🇪 | @Raydikalx | 68E5BF
@@ -1887,6 +1887,7 @@ proxy-groups:
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
+      - 日本+V2CROSS.COM
       - 日本 029
       - 🇯🇵 JP2@ripaojiedian
   - name: ♻️ 自动选择
