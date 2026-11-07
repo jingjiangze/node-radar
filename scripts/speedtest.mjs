@@ -92,7 +92,9 @@ const bin = process.env.MIHOMO_BIN || './mihomo';
 try {
   execFileSync(bin, ['-t', '-d', '.', '-f', 'speedtest-config.yaml'], { stdio: 'pipe', timeout: 60000 });
 } catch (e) {
-  console.error('生成的测速配置内核校验不通过，跳过本轮测速：' + String(e.stderr || e.message).slice(0, 200));
+  console.error('生成的测速配置内核校验不通过，跳过本轮测速：');
+  console.error('  stdout: ' + String(e.stdout || '').slice(-600));
+  console.error('  stderr: ' + String(e.stderr || '').slice(-600));
   process.exit(0);
 }
 
