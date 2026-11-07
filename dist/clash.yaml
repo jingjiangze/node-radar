@@ -33412,8 +33412,68 @@ proxies:
     type: ss
     server: 20.107.184.151
     port: 443
-    cipher: chacha20-ietf-poly1305
-    password: zziXHDOFXc4qRjoj
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    udp: true
+    sni: api.yourultimateprofessionalcareerhub.com
+  - name: 🇳🇱NL-51.15.19.206-7449
+    type: vmess
+    server: 51.15.19.206
+    port: 2083
+    uuid: d8d8b6c0-2ec6-11ee-b836-205c6d5f5d78
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: /V2RayyNGvpn
+  - name: 🆔capoit 🔒 VL-XHTTP-N/A ❔ XX 153ms
+    type: vless
+    server: 95.129.234.113
+    port: 8443
+    uuid: 88281d02-b387-4fe3-918e-26ed331e6d08
+    udp: true
+    tls: true
+    servername: tansy-wharf.cdn.cachefleet.com
+    client-fingerprint: firefox
+    alpn:
+      - h2
+  - name: 🎨40@oneclickvpnkeys
+    type: vless
+    server: 5.157.10.148
+    port: 443
+    uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
+    udp: true
+  - name: 🐦63@oneclickvpnkeys
+    type: vless
+    server: 5.157.10.149
+    port: 443
+    uuid: ace33fb8-c593-4b17-8f72-f3359b6e9638
+    udp: true
+  - name: '876'
+    type: trojan
+    server: 208.69.78.222
+    port: 443
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    udp: true
+    sni: yourultimateprofessionalcareerhub.com
+  - name: '🇦🇪[www.v2nodes.com] vless-AE-1... #2'
+    encryption: none
+    network: ws
+    port: 22573
+    server: uae.unixzone.us
+    tls: false
+    type: vless
+    uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+    ws-opts:
+      headers:
+        Host: uae.unixzone.us
+      path: /
+  - name: '[free18#065] 🇺🇸_美国 (16)'
+    type: vless
+    server: 23.95.112.78
+    port: 33607
+    uuid: 52080382-bc5e-4712-81a8-f9da66e3f444
     udp: true
   - name: '@FarazV2ray -52'
     type: ss
