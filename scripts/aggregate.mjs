@@ -207,15 +207,17 @@ const 私有标记 = /jiangjiangze\.icu|a5dea14ad4de58|97c109c4c7e4be|82bcf5b8|1
 const 私有凭据 = /a5dea14ad4de58|97c109c4c7e4be|82bcf5b8|13c20322|d474812e|dingyue\.jiangjiangze\.icu|tl2?\.jiangjiangze\.icu/i;
 const 是私有节点 = (p) => 私有标记.test(JSON.stringify(p));
 
-let 剔除私有 = 0;
+let 剔除私有 = 0, 剔除scv = 0;
 for (const p of collected) {
   if (是私有节点(p)) { 剔除私有++; continue; }
+  if (p["skip-cert-verify"] === true) { 剔除scv++; continue; }
   if (invalid(p)) continue;
   const key = [p.type, p.server, p.port, p.uuid || p.password || p.cipher || ''].join('|').toLowerCase();
   if (seen.has(key)) continue;
   seen.add(key); unique.push(p);
 }
 if (剔除私有) console.error(`[GUARD] 剔除了 ${剔除私有} 个命中私有标记的节点`);
+if (剔除scv) console.error(`[GUARD] 剔除了 ${剔除scv} 个 skip-cert-verify 节点（可被假冒，不发布）`);
 
 // ---------- 探活（只剔死服务器），顺带记 RTT 用于排序 ----------
 // RTT 是「全部节点都有的实测值」，比抽样测速覆盖高得多；有 mbps 的仍然优先用 mbps。
@@ -532,6 +534,7 @@ const summary = {
   totalRaw: collected.length,
   totalUnique: unique.length,
   totalAlive: alive.length,
+  scvRemoved: 剔除scv,
   probe: probeInfo,
   protocolProbe: 协议统计,
   regions: Object.fromEntries(Object.entries(byRegion).map(([k, v]) => [k, v.length])),
@@ -554,6 +557,7 @@ if (summary.degraded) {
   // 落盘前最后一道：整份文本再断言一次私有标记，命中直接失败（线上保持上一版）
   for (const [名, 文] of [['clash.yaml', 全量YAML], ['clash-lite.yaml', 精简YAML]]) {
     if (私有凭据.test(文)) throw new Error(`[GUARD] ${名} 命中私有标记，拒绝发布`);
+    if (/skip-cert-verify: true/.test(文)) throw new Error(`[GUARD] ${名} 含 skip-cert-verify: true 节点，拒绝发布`);
   }
   fs.writeFileSync(new URL('clash.yaml', distDir), 全量YAML);
   fs.writeFileSync(new URL('clash-lite.yaml', distDir), 精简YAML);
