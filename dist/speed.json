@@ -1,102 +1,12 @@
 {
-  "testedAt": "2026-11-07T17:01:22.407Z",
+  "testedAt": "2026-11-07T17:29:19.242Z",
   "vantage": "GitHub Actions (US)",
-  "sample": 35,
+  "sample": 34,
   "ok": 0,
   "medianMbps": 0,
   "results": [
     {
-      "name": "0-🇺🇸 美国 | USA #1",
-      "node": "🇺🇸 美国 | USA #1",
-      "server": "188.114.98.0",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "1-美国 867",
-      "node": "美国 867",
-      "server": "172.64.152.23",
-      "port": 2087,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "2-美国 034",
-      "node": "美国 034",
-      "server": "162.159.137.249",
-      "port": 8080,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "3-美国 858",
-      "node": "美国 858",
-      "server": "199.232.78.150",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "4-🇺🇸[www.v2nodes.com] vless-US",
-      "node": "🇺🇸[www.v2nodes.com] vless-US",
-      "server": "199.232.249.131",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "5-US 🇺🇸 | @Raydikalx | A8EEF5",
-      "node": "US 🇺🇸 | @Raydikalx | A8EEF5",
-      "server": "199.232.78.160",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "6-[free18#247] 🇺🇸_美国 (66)",
-      "node": "[free18#247] 🇺🇸_美国 (66)",
-      "server": "38.145.220.38",
-      "port": 2083,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "7-🇺🇸US-179.255.132.69-5296",
-      "node": "🇺🇸US-179.255.132.69-5296",
-      "server": "179.255.132.69",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "8-韩国 001",
-      "node": "韩国 001",
-      "server": "141.164.42.2",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "9-韩国 005",
-      "node": "韩国 005",
-      "server": "118.218.10.159",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "10-韩国 010",
+      "name": "0-韩国 010",
       "node": "韩国 010",
       "server": "158.247.199.106",
       "port": 443,
@@ -105,7 +15,16 @@
       "mbps": 0
     },
     {
-      "name": "11-韩国 009",
+      "name": "1-韩国 001",
+      "node": "韩国 001",
+      "server": "141.164.42.2",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "2-韩国 009",
       "node": "韩国 009",
       "server": "103.133.240.115",
       "port": 443,
@@ -114,89 +33,26 @@
       "mbps": 0
     },
     {
-      "name": "12-JP日本(v2clash.blog 2026-6.9更新)",
-      "node": "JP日本(v2clash.blog 2026-6.9更新)",
-      "server": "151.101.108.223",
+      "name": "3-韩国 005",
+      "node": "韩国 005",
+      "server": "118.218.10.159",
       "port": 443,
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "13-日本 019",
-      "node": "日本 019",
-      "server": "133.18.140.38",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "14-JP日本(v2clash.blog 2026-10.23更新",
-      "node": "JP日本(v2clash.blog 2026-10.23更新",
-      "server": "172.104.80.248",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "15-日本 030",
-      "node": "日本 030",
-      "server": "146.56.187.1",
+      "name": "4-@V2rayng_Fast 🇩🇪",
+      "node": "@V2rayng_Fast 🇩🇪",
+      "server": "104.26.14.85",
       "port": 8443,
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "16-日本 016",
-      "node": "日本 016",
-      "server": "172.104.80.248",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "17-日本 004",
-      "node": "日本 004",
-      "server": "172.104.86.229",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "18-🇯🇵[www.v2nodes.com] vless-JP",
-      "node": "🇯🇵[www.v2nodes.com] vless-JP",
-      "server": "38.47.96.220",
-      "port": 11424,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "19-日本 021",
-      "node": "日本 021",
-      "server": "198.13.60.163",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "20-DE 🇩🇪 | @Raydikalx | D5F456",
-      "node": "DE 🇩🇪 | @Raydikalx | D5F456",
-      "server": "109.70.74.149",
-      "port": 54041,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "21-@V2rayng_Fast 🇩🇪-2",
-      "node": "@V2rayng_Fast 🇩🇪-2",
+      "name": "5-@V2rayng_Fast 🇩🇪-4",
+      "node": "@V2rayng_Fast 🇩🇪-4",
       "server": "104.16.10.2",
       "port": 443,
       "ok": false,
@@ -204,43 +60,25 @@
       "mbps": 0
     },
     {
-      "name": "22-🇩🇪telegram➠@v2rayNG_Matsuri",
-      "node": "🇩🇪telegram➠@v2rayNG_Matsuri",
-      "server": "188.114.97.6",
-      "port": 443,
+      "name": "6-DE 🇩🇪 | @Raydikalx | E94E3F",
+      "node": "DE 🇩🇪 | @Raydikalx | E94E3F",
+      "server": "109.70.74.149",
+      "port": 54041,
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "23-@V2rayng_Fast 🇩🇪-5",
-      "node": "@V2rayng_Fast 🇩🇪-5",
-      "server": "172.64.158.170",
-      "port": 443,
+      "name": "7-DE 🇩🇪 | @Raydikalx | 68E5BF",
+      "node": "DE 🇩🇪 | @Raydikalx | 68E5BF",
+      "server": "167.233.242.189",
+      "port": 80,
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "24-🇩🇪@vpn_ioss ♻️ سرورهای بیشتر",
-      "node": "🇩🇪@vpn_ioss ♻️ سرورهای بیشتر",
-      "server": "172.67.180.92",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "25-DE 🇩🇪 | @Raydikalx | 4769A2",
-      "node": "DE 🇩🇪 | @Raydikalx | 4769A2",
-      "server": "167.235.28.242",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "26-🇩🇪@vpn_ioss ♻️ سرورهای بیشتر",
+      "name": "8-🇩🇪@vpn_ioss ♻️ سرورهای بیشتر",
       "node": "🇩🇪@vpn_ioss ♻️ سرورهای بیشتر",
       "server": "69.46.46.215",
       "port": 443,
@@ -249,9 +87,171 @@
       "mbps": 0
     },
     {
-      "name": "27-DE 🇩🇪 | @Raydikalx | 5E3474",
-      "node": "DE 🇩🇪 | @Raydikalx | 5E3474",
-      "server": "185.204.170.130",
+      "name": "9-@V2rayng_Fast 🇩🇪-3",
+      "node": "@V2rayng_Fast 🇩🇪-3",
+      "server": "185.159.247.44",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "10-DE 🇩🇪 | @Raydikalx | D5F456",
+      "node": "DE 🇩🇪 | @Raydikalx | D5F456",
+      "server": "109.70.74.149",
+      "port": 54041,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "11-DE 🇩🇪 | @Raydikalx | 4769A2",
+      "node": "DE 🇩🇪 | @Raydikalx | 4769A2",
+      "server": "167.235.28.242",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "12-美国 157",
+      "node": "美国 157",
+      "server": "154.17.6.184",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "13-🇺🇸 868",
+      "node": "🇺🇸 868",
+      "server": "104.16.65.1",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "14-美国 173",
+      "node": "美国 173",
+      "server": "162.159.253.41",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "15-🇺🇸US-179.255.132.69-5296",
+      "node": "🇺🇸US-179.255.132.69-5296",
+      "server": "179.255.132.69",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "16-美国 174",
+      "node": "美国 174",
+      "server": "104.19.64.105",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "17-美国 856",
+      "node": "美国 856",
+      "server": "199.232.245.94",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "18-美国 111",
+      "node": "美国 111",
+      "server": "162.159.60.167",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "19-美国 949",
+      "node": "美国 949",
+      "server": "104.16.111.102",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "20-日本 016",
+      "node": "日本 016",
+      "server": "172.104.80.248",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "21-日本 004",
+      "node": "日本 004",
+      "server": "172.104.86.229",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "22-日本 019",
+      "node": "日本 019",
+      "server": "133.18.140.38",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "23-日本 003",
+      "node": "日本 003",
+      "server": "172.104.120.92",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "24-日本 021",
+      "node": "日本 021",
+      "server": "198.13.60.163",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "25-日本 012",
+      "node": "日本 012",
+      "server": "80.66.196.231",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "26-日本 018",
+      "node": "日本 018",
+      "server": "124.156.208.160",
+      "port": 443,
+      "ok": false,
+      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
+      "mbps": 0
+    },
+    {
+      "name": "27-JP日本(v2clash.blog 2026-10.23更新",
+      "node": "JP日本(v2clash.blog 2026-10.23更新",
+      "server": "172.104.80.248",
       "port": 443,
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
@@ -267,9 +267,9 @@
       "mbps": 0
     },
     {
-      "name": "29-SG VLESS-16 | free-nodes",
-      "node": "SG VLESS-16 | free-nodes",
-      "server": "43.163.112.174",
+      "name": "29-新加坡 003",
+      "node": "新加坡 003",
+      "server": "103.25.202.114",
       "port": 443,
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
@@ -285,18 +285,18 @@
       "mbps": 0
     },
     {
-      "name": "31-新加坡 003",
-      "node": "新加坡 003",
-      "server": "103.25.202.114",
+      "name": "31-🇭🇰[www.v2nodes.com] vless-HK",
+      "node": "🇭🇰[www.v2nodes.com] vless-HK",
+      "server": "188.114.98.0",
       "port": 443,
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
       "mbps": 0
     },
     {
-      "name": "32-🇭🇰[www.v2nodes.com] vless-HK",
-      "node": "🇭🇰[www.v2nodes.com] vless-HK",
-      "server": "188.114.98.0",
+      "name": "32-TW台湾(v2clash.blog 2026-10.24更新",
+      "node": "TW台湾(v2clash.blog 2026-10.24更新",
+      "server": "104.18.255.167",
       "port": 443,
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
@@ -306,15 +306,6 @@
       "name": "33-🇹🇼 🇨🇳 台湾 | TWN #1",
       "node": "🇹🇼 🇨🇳 台湾 | TWN #1",
       "server": "60.248.219.53",
-      "port": 443,
-      "ok": false,
-      "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
-      "mbps": 0
-    },
-    {
-      "name": "34-TW台湾(v2clash.blog 2026-10.24更新",
-      "node": "TW台湾(v2clash.blog 2026-10.24更新",
-      "server": "104.18.255.167",
       "port": 443,
       "ok": false,
       "error": "Command failed: curl -s -o /dev/null -x http://127.0.0.1:789",
