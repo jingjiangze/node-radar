@@ -1,36 +1,36 @@
 {
-  "generatedAt": "2026-11-07T06:20:57.937Z",
-  "totalRaw": 24858,
-  "totalUnique": 16599,
-  "totalAlive": 3203,
+  "generatedAt": "2026-11-07T06:29:20.170Z",
+  "totalRaw": 24814,
+  "totalUnique": 16577,
+  "totalAlive": 3199,
   "probe": {
     "enabled": true,
-    "probed": 16599,
-    "alive": 4642,
-    "ms": 178345
+    "probed": 16577,
+    "alive": 4620,
+    "ms": 178312
   },
   "protocolProbe": {
-    "tls检查": 1551,
-    "tls失败": 602,
-    "ws检查": 1474,
-    "ws路径错": 629
+    "tls检查": 1537,
+    "tls失败": 597,
+    "ws检查": 1461,
+    "ws路径错": 618
   },
   "regions": {
-    "日本": 30,
-    "韩国": 33,
+    "日本": 32,
+    "韩国": 23,
     "台湾": 7,
     "美国": 507,
     "德国": 110,
-    "香港": 32,
-    "英国": 95,
-    "新加坡": 44
+    "英国": 94,
+    "新加坡": 44,
+    "香港": 30
   },
   "byType": {
-    "trojan": 736,
-    "vless": 1575,
-    "vmess": 418,
+    "trojan": 737,
+    "vless": 1570,
+    "vmess": 423,
     "http": 80,
-    "ss": 373,
+    "ss": 368,
     "hysteria2": 19,
     "socks5": 2
   },
@@ -98,7 +98,7 @@
     {
       "source": "mahdibland/V2RayAggregator",
       "kind": "uri-list",
-      "count": 4447,
+      "count": 4403,
       "ok": true
     },
     {
