@@ -242,25 +242,23 @@ jobs:
           SPEED_CONCURRENCY: 8
         run: node scripts/speedtest.mjs
 
-      - name: Rerank
-        run: node scripts/rerank.mjs
-
-      - name: Validate + commit
+      # 注意：这里只提交 speed.json / speed-top.yaml。
+      # clash.yaml / clash-lite.yaml 归 aggregate 所有——测速 job 检出的是它启动那一刻的版本，
+      # 重排后提交会把 aggregate 刚发布的更新内容覆盖回旧的（实测 134 个被盖回 410 个）。
+      # 速度数据由「下一次 aggregate」读取并参与排序，不再就地重排。
+      - name: Commit speed results
         run: |
           set -e
-          ./mihomo -t -d . -f dist/clash-lite.yaml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 生成物绝不参与 git 文本合并（会产生重复键 → js-yaml duplicated mapping key）
-          # 逐个判存在再处理：speed-top.yaml 只有 ≥5 个节点通过时才生成
           mkdir -p /tmp/keep
-          for f in dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml; do [ -f "$f" ] && cp "$f" "/tmp/keep/$(basename $f)"; done
+          for f in dist/speed.json dist/speed-top.yaml; do [ -f "$f" ] && cp "$f" "/tmp/keep/$(basename $f)"; done
           git fetch origin ${GITHUB_REF_NAME}
           git reset --hard origin/${GITHUB_REF_NAME}
-          for f in dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml; do [ -f "/tmp/keep/$(basename $f)" ] && cp "/tmp/keep/$(basename $f)" "$f"; done
-          for f in dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml; do [ -f "$f" ] && git add -f "$f"; done
-          git diff --cached --quiet || git commit -m "chore(speed): 实测速度 + 重排"
-          git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，产物下轮重新生成"
+          for f in dist/speed.json dist/speed-top.yaml; do [ -f "/tmp/keep/$(basename $f)" ] && cp "/tmp/keep/$(basename $f)" "$f"; done
+          for f in dist/speed.json dist/speed-top.yaml; do [ -f "$f" ] && git add -f "$f"; done
+          git diff --cached --quiet || git commit -m "chore(speed): 更新实测速度"
+          git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，下轮重新生成"
 
   # ---------- ⑤ 接续下一轮（持续运行的核心）----------
   # 只在「没有任何其他运行在排队/执行」时才派下一轮：
