@@ -154,6 +154,30 @@ jobs:
           cache: npm
       - run: npm ci
 
+      # 源清单自动刷新：超过 24 小时没更新就跑一轮多渠道发现（每周二的独立任务仍在，这里做兜底+提速）
+      # 失败不影响聚合（用旧源继续合并），只是这轮不加新源
+      - name: Refresh sources (if stale >24h)
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          AGE=$(node -e "
+            const fs=require('fs');
+            try{
+              const a=JSON.parse(fs.readFileSync('sources.auto.json','utf8'));
+              const t=Math.max(0,...a.map(x=>Date.parse(x.verifiedAt||0)));
+              console.log(Math.floor((Date.now()-t)/3600e3));
+            }catch(e){console.log(999)}
+          ")
+          echo "源清单 ${AGE} 小时前更新"
+          if [ "$AGE" -lt 24 ]; then echo "未超过 24h，跳过刷新"; exit 0; fi
+          node scripts/discovery/engine.mjs --budget=60 || echo "发现引擎失败，用现有源继续"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in sources.auto.json sources.candidates.json; do [ -f "$f" ] && git add -f "$f"; done
+          git diff --cached --quiet || git commit -m "chore(sources): 自动刷新公开源清单"
+          git push origin HEAD:${GITHUB_REF_NAME} || echo "源清单推送失败，下轮再试"
+
       - name: Aggregate
         run: node scripts/aggregate.mjs
 
