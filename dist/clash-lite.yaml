@@ -1121,24 +1121,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 日本 003
-    type: trojan
-    network: ws
-    server: 172.104.120.92
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    servername: hhcm.hhxaf.cc.cd
-    skip-cert-verify: false
-    sni: hhcm.hhxaf.cc.cd
-    allowInsecure: '0'
-    fp: chrome
-    security: tls
-    ech: cloudflare-ech.com+https://dns.alidns.com/dns-query
-    insecure: '0'
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
   - name: 日本 004
     type: trojan
     network: ws
@@ -1382,7 +1364,6 @@ proxy-groups:
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 新加坡 003
-      - 日本 003
       - 日本 004
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1505,7 +1486,6 @@ proxy-groups:
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 新加坡 003
-      - 日本 003
       - 日本 004
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1643,7 +1623,6 @@ proxy-groups:
       - 日本 018
       - 日本 012
       - JP日本(v2clash.blog 2026-6.9更新)
-      - 日本 003
       - 日本 004
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
