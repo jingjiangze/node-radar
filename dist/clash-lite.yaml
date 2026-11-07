@@ -5,6 +5,14 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
+  - name: '[free18#260] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
     client-fingerprint: unsafe
     encryption: none
@@ -868,6 +876,17 @@ proxies:
       path: /
       headers:
         Host: dl3.守望者.hаблюдатели.watchers.aгентразведки.偵察探員.wonkacapitano.buzz.
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+    type: vless
+    server: 38.47.96.220
+    port: 11424
+    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+    udp: true
+    network: ws
+    ws-opts:
+      path: Telegram-WangCai2🇨🇳security=tls
+      headers:
+        Host: notls.lukongtou.eu.org
   - name: 美国 187
     type: trojan
     network: ws
@@ -1245,6 +1264,12 @@ proxies:
     port: 443
     uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
     udp: true
+  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
+    type: vless
+    server: 188.114.97.62
+    port: 443
+    uuid: b15f187e-9b34-437c-8243-8651a8ada76c
+    udp: true
   - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
     type: trojan
     server: 172.67.180.92
@@ -1312,6 +1337,24 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: 日本 003
+    type: trojan
+    network: ws
+    server: 172.104.120.92
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    servername: hhcm.hhxaf.cc.cd
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    allowInsecure: '0'
+    fp: chrome
+    security: tls
+    ech: cloudflare-ech.com+https://dns.alidns.com/dns-query
+    insecure: '0'
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
   - name: 新加坡 006
     type: trojan
     network: ws
@@ -1371,6 +1414,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - '[free18#260] 🇭🇰_香港 (26)'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 117
       - 美国 867
@@ -1448,6 +1492,7 @@ proxy-groups:
       - '[free18#245] 🇺🇸_美国 (64)'
       - 美国 191
       - US 🇺🇸 | @Raydikalx | 2D4470
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 美国 187
       - 美国 189
       - DE VLESS-01 | free-nodes
@@ -1487,6 +1532,7 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.14更新)
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - '@V2rayng_Fast 🇩🇪-6'
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - 日本 013
       - DE德国(v2clash.blog 2026-9.12新)
@@ -1494,12 +1540,14 @@ proxy-groups:
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
       - 日本 030
+      - 日本 003
       - 新加坡 006
       - 日本 004
       - 日本 019
   - name: ☝️ 全部-手动
     type: select
     proxies:
+      - '[free18#260] 🇭🇰_香港 (26)'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 117
       - 美国 867
@@ -1577,6 +1625,7 @@ proxy-groups:
       - '[free18#245] 🇺🇸_美国 (64)'
       - 美国 191
       - US 🇺🇸 | @Raydikalx | 2D4470
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 美国 187
       - 美国 189
       - DE VLESS-01 | free-nodes
@@ -1616,6 +1665,7 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.14更新)
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - '@V2rayng_Fast 🇩🇪-6'
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - 日本 013
       - DE德国(v2clash.blog 2026-9.12新)
@@ -1623,6 +1673,7 @@ proxy-groups:
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
       - 日本 030
+      - 日本 003
       - 新加坡 006
       - 日本 004
       - 日本 019
@@ -1637,6 +1688,7 @@ proxy-groups:
       - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 日本 021
       - 日本 012
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 018
       - JP日本(v2clash.blog 2026-6.9更新)
       - JP日本(v2clash.blog 2026-10.14更新)
@@ -1644,6 +1696,7 @@ proxy-groups:
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
       - 日本 030
+      - 日本 003
       - 日本 004
       - 日本 019
   - name: 📍 美国
@@ -1760,6 +1813,7 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | D5F456
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - '@V2rayng_Fast 🇩🇪-6'
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - DE德国(v2clash.blog 2026-9.12新)
   - name: ♻️ 自动选择
