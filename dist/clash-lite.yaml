@@ -5,14 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: '[free18#260] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
   - name: '🇹🇼 🇨🇳 台湾 | TWN #1'
     client-fingerprint: chrome
     network: ws
@@ -662,22 +654,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 949
-    type: vless
-    network: ws
-    server: 104.16.111.102
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: unsafe
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: US美国(v2clash.blog 2026-5.26更新)
     type: vless
     server: 109.176.239.50
@@ -1071,6 +1047,17 @@ proxies:
     reality-opts:
       public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
       short-id: 051f20c2344a2dfd
+  - name: 美国 202
+    type: trojan
+    network: ws
+    server: 104.16.79.73
+    port: 443
+    password: humanity
+    sni: www.creationlong.org
+    ws-opts:
+      headers:
+        Host: www.creationlong.org
+      path: /assignment
   - name: '@V2rayng_Fast 🇩🇪-3'
     type: vless
     server: 185.159.247.44
@@ -1409,7 +1396,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 1118
@@ -1468,7 +1454,6 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)
       - 美国 165
       - 美国 192
-      - 美国 949
       - US美国(v2clash.blog 2026-5.26更新)
       - '[free18#247] 🇺🇸_美国 (66)'
       - 美国 199
@@ -1504,6 +1489,7 @@ proxy-groups:
       - '[free18#248] 🇺🇸_美国 (67)'
       - '[free18#249] 🇺🇸_美国 (68)'
       - '[free18#264] 🇺🇸_美国 (73)'
+      - 美国 202
       - '@V2rayng_Fast 🇩🇪-3'
       - DE VLESS-01 | free-nodes
       - TW台湾(v2clash.blog 2026-10.24更新)
@@ -1542,7 +1528,6 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 1118
@@ -1601,7 +1586,6 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)
       - 美国 165
       - 美国 192
-      - 美国 949
       - US美国(v2clash.blog 2026-5.26更新)
       - '[free18#247] 🇺🇸_美国 (66)'
       - 美国 199
@@ -1637,6 +1621,7 @@ proxy-groups:
       - '[free18#248] 🇺🇸_美国 (67)'
       - '[free18#249] 🇺🇸_美国 (68)'
       - '[free18#264] 🇺🇸_美国 (73)'
+      - 美国 202
       - '@V2rayng_Fast 🇩🇪-3'
       - DE VLESS-01 | free-nodes
       - TW台湾(v2clash.blog 2026-10.24更新)
@@ -1746,7 +1731,6 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)
       - 美国 165
       - 美国 192
-      - 美国 949
       - US美国(v2clash.blog 2026-5.26更新)
       - '[free18#247] 🇺🇸_美国 (66)'
       - 美国 199
@@ -1781,6 +1765,7 @@ proxy-groups:
       - '[free18#248] 🇺🇸_美国 (67)'
       - '[free18#249] 🇺🇸_美国 (68)'
       - '[free18#264] 🇺🇸_美国 (73)'
+      - 美国 202
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
