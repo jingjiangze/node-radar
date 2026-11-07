@@ -130,24 +130,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 🇺🇸 US2@ripaojiedian
-    server: 154.17.9.239
-    port: 443
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
   - name: 美国 094
     type: trojan
     network: ws
@@ -230,7 +212,7 @@ proxies:
     port: 443
     uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
     udp: true
-  - name: '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
+  - name: '🇩🇪 德国 | DEU #5'
     type: vless
     server: 199.232.239.239
     port: 443
@@ -239,6 +221,25 @@ proxies:
     tls: true
     servername: community.fastly.steamstatic.com
     client-fingerprint: chrome
+    alpn:
+      - h2
+  - name: HK VLESS-14 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+    client-fingerprint: chrome
+  - name: '[free18#261] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
     type: vless
     server: 146.75.59.186
@@ -518,6 +519,17 @@ proxies:
     tls: true
     servername: portal.citygrainla.com
     client-fingerprint: firefox
+    reality-opts:
+      public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
+      short-id: 051f20c2344a2dfd
+  - name: '[free18#265] 🇺🇸_美国 (73)'
+    type: vless
+    server: 104.160.44.254
+    port: 443
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: portal.citygrainla.com
     reality-opts:
       public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
       short-id: 051f20c2344a2dfd
@@ -1378,20 +1390,6 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
-  - name: '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-    type: vless
-    server: 104.18.42.98
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    udp: true
-    tls: true
-    servername: jp3.yohototo.top
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /tyxyws
-      headers:
-        Host: jp3.yohototo.top
   - name: 🇭🇰 HK2@ripaojiedian
     server: 218.102.64.147
     port: 9383
@@ -1410,6 +1408,17 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
+    type: vless
+    server: 38.47.96.220
+    port: 11424
+    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+    udp: true
+    network: ws
+    ws-opts:
+      path: Telegram-WangCai2🇨🇳security=tls
+      headers:
+        Host: notls.lukongtou.eu.org
 proxy-groups:
   - name: 🌐 公共节点
     type: select
@@ -1438,7 +1447,6 @@ proxy-groups:
       - 美国 105
       - US美国(v2clash.blog 2026-5.26更新)
       - 日本 011
-      - 🇺🇸 US2@ripaojiedian
       - 美国 094
       - US美国(v2clash.blog 2026-10.22更新)
       - 韩国 001
@@ -1446,7 +1454,9 @@ proxy-groups:
       - 美国 520
       - 美国 113
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
+      - '🇩🇪 德国 | DEU #5'
+      - HK VLESS-14 | free-nodes
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
       - 美国 141
       - DE 🇩🇪 | @Raydikalx | F68888
@@ -1477,6 +1487,7 @@ proxy-groups:
       - 'Channel id: @ShadowProxy66 🇺🇸'
       - 🇺🇸@V2rayng_Fast
       - US VLESS-12 | free-nodes
+      - '[free18#265] 🇺🇸_美国 (73)'
       - US美国(v2clash.blog 2026-10.22更新)-2
       - 🇺🇸 1687
       - 美国 738
@@ -1560,8 +1571,8 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 🇹🇼 TW@ripaojiedian
-      - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 🇭🇰 HK2@ripaojiedian
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
   - name: ☝️ 全部-手动
     type: select
     proxies:
@@ -1576,7 +1587,6 @@ proxy-groups:
       - 美国 105
       - US美国(v2clash.blog 2026-5.26更新)
       - 日本 011
-      - 🇺🇸 US2@ripaojiedian
       - 美国 094
       - US美国(v2clash.blog 2026-10.22更新)
       - 韩国 001
@@ -1584,7 +1594,9 @@ proxy-groups:
       - 美国 520
       - 美国 113
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
+      - '🇩🇪 德国 | DEU #5'
+      - HK VLESS-14 | free-nodes
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
       - 美国 141
       - DE 🇩🇪 | @Raydikalx | F68888
@@ -1615,6 +1627,7 @@ proxy-groups:
       - 'Channel id: @ShadowProxy66 🇺🇸'
       - 🇺🇸@V2rayng_Fast
       - US VLESS-12 | free-nodes
+      - '[free18#265] 🇺🇸_美国 (73)'
       - US美国(v2clash.blog 2026-10.22更新)-2
       - 🇺🇸 1687
       - 美国 738
@@ -1698,8 +1711,8 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 🇹🇼 TW@ripaojiedian
-      - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 🇭🇰 HK2@ripaojiedian
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1720,7 +1733,7 @@ proxy-groups:
       - 日本 002
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
-      - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1733,7 +1746,6 @@ proxy-groups:
       - 美国 101
       - 美国 105
       - US美国(v2clash.blog 2026-5.26更新)
-      - 🇺🇸 US2@ripaojiedian
       - 美国 094
       - US美国(v2clash.blog 2026-10.22更新)
       - 美国 128
@@ -1761,6 +1773,7 @@ proxy-groups:
       - 'Channel id: @ShadowProxy66 🇺🇸'
       - 🇺🇸@V2rayng_Fast
       - US VLESS-12 | free-nodes
+      - '[free18#265] 🇺🇸_美国 (73)'
       - US美国(v2clash.blog 2026-10.22更新)-2
       - 🇺🇸 1687
       - 美国 738
@@ -1816,7 +1829,7 @@ proxy-groups:
     lazy: true
     proxies:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
+      - '🇩🇪 德国 | DEU #5'
       - DE 🇩🇪 | @Raydikalx | F68888
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - '@V2rayng_Fast 🇩🇪'
