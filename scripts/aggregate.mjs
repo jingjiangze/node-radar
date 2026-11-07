@@ -503,7 +503,12 @@ const 国内确认 = (name) => {
   const c = CN结果.get(`${p.server}:${p.port}`);
   return !!c && c.ok === true;
 };
-const 候选过滤 = (name) => 国内确认(name);
+// 不安全节点不进精简池：skip-cert-verify / allowInsecure / insecure = 接受任意证书，
+// 链路上任何人都能冒充目标站点（中间人）。个人订阅按用户要求一律不收。
+const 是不安全 = (p) => p['skip-cert-verify'] === true || p.allowInsecure === true || p.insecure === true;
+const 不安全名 = new Set(alive.filter(是不安全).map((p) => p.name));
+const 安全过滤 = (name) => !不安全名.has(name);
+const 候选过滤 = (name) => 国内确认(name) && 安全过滤(name);
 const liteNames = new Set();
 const 候选地区 = Object.values(byRegion).map((names) => names.filter(候选过滤));
 const 国内确认总数 = 候选地区.reduce((a, l) => a + l.length, 0);
@@ -517,18 +522,18 @@ if (用国内确认) {
       liteNames.add(n);
     }
   }
-  console.log(`[精简池] 收 ${liteNames.size} 个（国内 TCP 可达候选 ${国内确认总数}）`);
+  console.log(`[精简池] 收 ${liteNames.size} 个（国内 TCP 可达候选 ${国内确认总数}，已剔除不安全 ${不安全名.size}）`);
 } else {
   for (const names of Object.values(byRegion)) {
     if (liteNames.size >= LITE_MAX) break;
-    for (const n of names.slice(0, LITE_PER_REGION)) {
+    for (const n of names.filter(安全过滤).slice(0, LITE_PER_REGION)) {
       if (liteNames.size >= LITE_MAX) break;
       liteNames.add(n);
     }
   }
-  console.log(`[精简池] 候选不足（${国内确认总数}），退回未筛选口径：${liteNames.size} 个`);
+  console.log(`[精简池] 候选不足（${国内确认总数}），退回未筛选口径：${liteNames.size} 个（已剔除不安全 ${不安全名.size}）`);
 }
-const liteAlive = alive.filter((p) => liteNames.has(p.name));
+const liteAlive = alive.filter((p) => liteNames.has(p.name) && !是不安全(p));
 const liteGroups = [
   { name: '🌐 公共节点', type: 'select', proxies: ['♻️ 全部-自动', '☝️ 全部-手动', ...Object.keys(byRegion).filter((r) => byRegion[r].filter((n) => liteNames.has(n)).length >= MIN_REGION).map((r) => `📍 ${r}`), 'DIRECT'] },
   { name: '♻️ 全部-自动', type: 'url-test', url: 'https://www.gstatic.com/generate_204', interval: 900, tolerance: 100, lazy: true, proxies: liteAlive.map((p) => p.name) },
@@ -554,6 +559,7 @@ const summary = {
   protocolProbe: 协议统计,
   regions: Object.fromEntries(Object.entries(byRegion).map(([k, v]) => [k, v.length])),
   byType: alive.reduce((a, p) => ((a[p.type] = (a[p.type] || 0) + 1), a), {}),
+  unsafe: { total: 不安全名.size, cnConfirmed: [...不安全名].filter((n) => 国内确认(n)).length },
   sources: stats,
   degraded: alive.length < MIN_HEALTHY,
 };
