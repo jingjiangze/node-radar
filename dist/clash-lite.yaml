@@ -272,20 +272,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: '[AutoMerge#025] 🇸🇬[www.v2nodes.com] vless-SG-9...'
-    type: vless
-    server: 104.18.41.190
-    port: 443
-    uuid: 16e80f38-e97e-4b14-ba89-77d87a3e637f
-    udp: true
-    tls: true
-    servername: ex3r.qzz.io
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /sg-orcl
-      headers:
-        Host: ex3r.qzz.io
   - name: US美国(v2clash.blog 2026-10.22更新)
     type: vless
     server: 172.64.153.61
@@ -833,17 +819,6 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-    type: vless
-    server: 38.47.96.220
-    port: 11424
-    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
-    udp: true
-    network: ws
-    ws-opts:
-      path: Telegram-WangCai2🇨🇳security=tls
-      headers:
-        Host: notls.lukongtou.eu.org
   - name: 日本 017
     type: trojan
     network: ws
@@ -1324,7 +1299,7 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
     network: ws
     port: 8080
     server: 188.114.99.0
@@ -1336,15 +1311,6 @@ proxies:
       headers:
         Host: hhlfy.twiladaphne.ndjp.net
       path: /sg-melbi
-  - name: JP - zhuhai.uk 02
-    type: http
-    server: 120.232.204.58
-    port: 40583
-    username: 'null'
-    password: 'null'
-    tls: true
-    sni: 120.232.204.58
-    skip-cert-verify: true
   - name: DE 🇩🇪 | @Raydikalx | F68888
     type: vmess
     server: 136.243.83.105
@@ -1416,7 +1382,7 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
-  - name: 日本+V2CROSS.COM
+  - name: SG VLESS-16 | free-nodes
     type: vless
     server: 43.163.112.174
     port: 443
@@ -1499,13 +1465,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: '🇯🇵 日本 | JPN #1'
-    cipher: aes-256-gcm
-    password: BeaUf9c0AEWH40Pu
-    port: 8388
-    server: 154.36.158.197
-    type: ss
-    udp: true
   - name: 新加坡 004
     type: trojan
     network: ws
@@ -1581,7 +1540,6 @@ proxy-groups:
       - 美国 095
       - 美国 114
       - 美国 088
-      - '[AutoMerge#025] 🇸🇬[www.v2nodes.com] vless-SG-9...'
       - US美国(v2clash.blog 2026-10.22更新)
       - 🇺🇸 1687
       - 美国 112
@@ -1635,7 +1593,6 @@ proxy-groups:
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 🇰🇷 KR2@ripaojiedian
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 017
       - 美国 013
       - 美国 219
@@ -1678,20 +1635,18 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - '@V2rayng_Fast 🇩🇪-2'
       - 🇭🇰 HK2@ripaojiedian
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
-      - JP - zhuhai.uk 02
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - DE 🇩🇪 | @Raydikalx | F68888
       - 日本 003
       - '@V2rayng_Fast 🇬🇧-2'
       - 日本 002
       - 🇰🇷 KR1@ripaojiedian
-      - 日本+V2CROSS.COM
+      - SG VLESS-16 | free-nodes
       - '[AutoMerge#026] 🇸🇬[www.v2nodes.com] vless-SG-9... #1'
       - 日本 012
       - 🇹🇼 TW@ripaojiedian
       - 🇭🇰 HK1@ripaojiedian
       - 日本 020
-      - '🇯🇵 日本 | JPN #1'
       - 新加坡 004
       - 🇭🇰 HK3@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
@@ -1720,7 +1675,6 @@ proxy-groups:
       - 美国 095
       - 美国 114
       - 美国 088
-      - '[AutoMerge#025] 🇸🇬[www.v2nodes.com] vless-SG-9...'
       - US美国(v2clash.blog 2026-10.22更新)
       - 🇺🇸 1687
       - 美国 112
@@ -1774,7 +1728,6 @@ proxy-groups:
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 🇰🇷 KR2@ripaojiedian
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 017
       - 美国 013
       - 美国 219
@@ -1817,20 +1770,18 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - '@V2rayng_Fast 🇩🇪-2'
       - 🇭🇰 HK2@ripaojiedian
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
-      - JP - zhuhai.uk 02
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - DE 🇩🇪 | @Raydikalx | F68888
       - 日本 003
       - '@V2rayng_Fast 🇬🇧-2'
       - 日本 002
       - 🇰🇷 KR1@ripaojiedian
-      - 日本+V2CROSS.COM
+      - SG VLESS-16 | free-nodes
       - '[AutoMerge#026] 🇸🇬[www.v2nodes.com] vless-SG-9... #1'
       - 日本 012
       - 🇹🇼 TW@ripaojiedian
       - 🇭🇰 HK1@ripaojiedian
       - 日本 020
-      - '🇯🇵 日本 | JPN #1'
       - 新加坡 004
       - 🇭🇰 HK3@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
@@ -1931,21 +1882,17 @@ proxy-groups:
       - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 日本 011
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 017
       - 日本 018
       - 🇯🇵 JP2@ripaojiedian
       - 日本 029
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
-      - JP - zhuhai.uk 02
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 003
       - 日本 002
-      - 日本+V2CROSS.COM
       - 日本 012
       - 日本 020
-      - '🇯🇵 日本 | JPN #1'
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
