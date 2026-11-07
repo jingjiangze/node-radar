@@ -5,65 +5,42 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: 🇯🇵 adi|freenode1020-JP 2
-    server: 139.162.101.90
-    port: 443
-    type: vmess
-    uuid: 21102246-caba-3f49-9a68-49f7476d68f0
-    alterId: 3
-    cipher: auto
+  - name: JP - zhuhai.uk 03
+    type: http
+    server: 120.232.204.58
+    port: 40583
     tls: true
-    network: ws
-    ws-path: mfjc
-    ws-headers:
-      Host: hk117.mfjx-vip.xyz
-  - name: 🇯🇵JP-43.206.225.188-5280
-    type: trojan
-    server: 43.206.225.188
+    skip-cert-verify: true
+  - name: 🇯🇵JP-149.22.87.241-0209
+    type: ss
+    server: 149.22.87.241
     port: 443
-    password: UX82473651
+    cipher: aes-128-gcm
+    password: shadowsocks
     udp: true
-  - name: '🇯🇵 日本 | JPN #1'
-    cipher: aes-256-gcm
-    password: BeaUf9c0AEWH40Pu
-    port: 8388
-    server: 154.36.158.197
+  - name: 🇬🇧 3535
     type: ss
-    udp: true
-  - name: '[free18#026] 🇩🇪_德国 (2)'
-    type: vless
-    server: 179.61.251.244
-    port: 7443
-    uuid: 635e8406-9253-4444-88a2-dad1f0826034
-    udp: true
-    tls: true
-    servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /@Marisa_kristi
-      headers:
-        Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
-  - name: 🇩🇪 2425
-    type: ss
-    server: 193.108.117.84
+    server: 198.244.201.129
     port: 19999
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     udp: true
-  - name: DE 🇩🇪 | @Raydikalx | 3E1586
-    type: vmess
-    server: 109.70.74.149
-    port: 54041
-    uuid: 1aaaf080-c977-4165-9dfe-586906619b48
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 🇩🇪DE_9|2.0MB/s
-    port: 12345
-    server: 141.147.19.47
+  - name: 🇹🇼_TW_台湾_IPV4
+    type: anytls
+    server: user02.godvpn.lol
+    port: 62405
+    password: 4bbfa33a-449a-4a50-8dfc-6d0de880f7bc
+    tls: true
     skip-cert-verify: true
-    type: http
+  - name: 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4
+    type: anytls
+    server: sdf65h46wr.df6h451rh.xin
+    port: 443
+    password: 0324fbc29561
+    tls: true
+    servername: images.ctfassets.net
+    sni: images.ctfassets.net
+    skip-cert-verify: true
 proxy-groups:
   - name: ⚡ 极速
     type: url-test
@@ -71,12 +48,10 @@ proxy-groups:
     interval: 600
     tolerance: 50
     proxies:
-      - 🇯🇵 adi|freenode1020-JP 2
-      - 🇯🇵JP-43.206.225.188-5280
-      - '🇯🇵 日本 | JPN #1'
-      - '[free18#026] 🇩🇪_德国 (2)'
-      - 🇩🇪 2425
-      - DE 🇩🇪 | @Raydikalx | 3E1586
-      - 🇩🇪DE_9|2.0MB/s
+      - JP - zhuhai.uk 03
+      - 🇯🇵JP-149.22.87.241-0209
+      - 🇬🇧 3535
+      - 🇹🇼_TW_台湾_IPV4
+      - 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4
 rules:
   - MATCH,⚡ 极速
