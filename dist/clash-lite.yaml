@@ -169,22 +169,6 @@ proxies:
       headers:
         Host: nbhhh.mrcool.kdns.fr
       path: /proxyip=dc844a1f.tp15333.ip.090227.xyz
-  - name: 美国 238
-    type: vless
-    network: ws
-    server: 172.64.147.226
-    port: 2083
-    uuid: 1189bc23-27f7-47c1-89d4-1e6843a09cb6
-    servername: freetools-h2s.pages.dev
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    client-fingerprint: chrome
-    packet-encoding: xudp
-    ws-opts:
-      headers:
-        Host: freetools-h2s.pages.dev
-      path: /
   - name: 美国 252
     type: vless
     network: ws
@@ -295,6 +279,27 @@ proxies:
       path: /tyxyws
       headers:
         Host: jp3.yohototo.top
+  - name: US美国(v2clash.blog 2026-10.20更新)
+    type: vless
+    server: 172.64.150.43
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: 美国 328
+    type: vless
+    network: ws
+    server: 108.162.194.165
+    port: 2086
+    uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
+    skip-cert-verify: false
+    udp: true
+    encryption: none
+    packet-encoding: xudp
+    ws-opts:
+      headers:
+        Host: arshia.lezzatArshia.ir
+      path: /
+      v2ray-http-upgrade: true
   - name: 美国 254
     type: vless
     network: ws
@@ -311,27 +316,6 @@ proxies:
       headers:
         Host: sd.cbb.j3.ink
       path: /doc/comics
-  - name: 美国 328
-    type: vless
-    network: ws
-    server: 108.162.194.165
-    port: 2086
-    uuid: a0fe052d-6ca1-4a9c-b626-7ecf78f386cb
-    skip-cert-verify: false
-    udp: true
-    encryption: none
-    packet-encoding: xudp
-    ws-opts:
-      headers:
-        Host: arshia.lezzatArshia.ir
-      path: /
-      v2ray-http-upgrade: true
-  - name: US美国(v2clash.blog 2026-10.20更新)
-    type: vless
-    server: 172.64.150.43
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
   - name: 日本 017
     type: trojan
     network: ws
@@ -350,18 +334,6 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: US VLESS-12 | free-nodes
-    type: vless
-    server: 104.160.44.254
-    port: 443
-    uuid: 0a3432cd-74b8-413a-896d-f51492b030bc
-    udp: true
-    tls: true
-    servername: portal.citygrainla.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
-      short-id: 051f20c2344a2dfd
   - name: 美国 108
     type: trojan
     network: ws
@@ -375,6 +347,18 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: US VLESS-12 | free-nodes
+    type: vless
+    server: 104.160.44.254
+    port: 443
+    uuid: 0a3432cd-74b8-413a-896d-f51492b030bc
+    udp: true
+    tls: true
+    servername: portal.citygrainla.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
+      short-id: 051f20c2344a2dfd
   - name: 日本 011
     type: trojan
     network: ws
@@ -467,6 +451,15 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
+  - name: '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
+    type: vless
+    server: 199.232.239.239
+    port: 443
+    uuid: a55a4d25-76f0-4f0e-d395-3a92c0b34268
+    udp: true
+    tls: true
+    servername: community.fastly.steamstatic.com
+    client-fingerprint: chrome
   - name: 美国 749
     type: vmess
     network: ws
@@ -488,28 +481,6 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-  - name: '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
-    type: vless
-    server: 199.232.239.239
-    port: 443
-    uuid: a55a4d25-76f0-4f0e-d395-3a92c0b34268
-    udp: true
-    tls: true
-    servername: community.fastly.steamstatic.com
-    client-fingerprint: chrome
-  - name: 美国 085
-    type: trojan
-    network: ws
-    server: 172.64.38.50
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
   - name: US 🇺🇸 | @Raydikalx | A21CA4
     type: vmess
     server: 162.159.45.63
@@ -523,6 +494,29 @@ proxies:
       path: github.com/Alvin9999
       headers:
         Host: m1.106778.xyz
+  - name: 美国 085
+    type: trojan
+    network: ws
+    server: 172.64.38.50
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: US 🇺🇸 | @Raydikalx | A8EEF5
+    type: vmess
+    server: 199.232.78.160
+    port: 443
+    uuid: 6ba68c69-e108-502d-7b1c-e806fbc3cccd
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: ssl.fastly.com
   - name: 美国 011
     type: vmess
     network: ws
@@ -553,43 +547,6 @@ proxies:
       headers:
         Host: nova-pearl-wave-2d86.nova-4220cc.workers.dev
       path: /?u
-  - name: US 🇺🇸 | @Raydikalx | A8EEF5
-    type: vmess
-    server: 199.232.78.160
-    port: 443
-    uuid: 6ba68c69-e108-502d-7b1c-e806fbc3cccd
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: ssl.fastly.com
-  - name: 美国 014
-    type: vmess
-    network: ws
-    server: 162.159.130.208
-    port: 8080
-    uuid: 55021a7c-bd6c-418e-be95-ceac8ba27b45
-    tls: false
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: widescreen-instruction-breakdown-postage.trycloudflare.com
-      path: 55021a7c-bd6c-418e-be95-ceac8ba27b45-vm
-  - name: 美国 042
-    type: vmess
-    network: ws
-    server: 104.19.42.49
-    port: 2082
-    uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
-    skip-cert-verify: true
-    tls: false
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: ip3.6929198.xyz
-      path: github.com/Alvin9999
   - name: 美国 307
     type: vless
     network: ws
@@ -607,35 +564,20 @@ proxies:
       headers:
         Host: octopusss5.info
       path: /udfyfws
-  - name: 美国 219
-    type: trojan
+  - name: 美国 042
+    type: vmess
     network: ws
-    server: 104.16.174.34
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
+    server: 104.19.42.49
+    port: 2082
+    uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+    skip-cert-verify: true
+    tls: false
+    alterId: 0
+    cipher: auto
     ws-opts:
       headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: 美国 316
-    type: vless
-    network: ws
-    server: 104.16.211.140
-    port: 443
-    uuid: 72d1797c-cef8-410a-b8fd-db9104dc3cb0
-    servername: amooaliii.net
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    client-fingerprint: chrome
-    packet-encoding: xudp
-    encryption: none
-    ws-opts:
-      headers:
-        Host: amooaliii.net
-      path: /jdhfyws
+        Host: ip3.6929198.xyz
+      path: github.com/Alvin9999
   - name: 美国 248
     type: vless
     network: ws
@@ -667,19 +609,6 @@ proxies:
       headers:
         Host: ccs.hostmjj.com
       path: /
-  - name: 美国 008
-    type: vmess
-    network: ws
-    server: 23.227.38.22
-    port: 8080
-    uuid: 9258153a-dc97-4e39-9037-009abfc4fed0
-    tls: false
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: per-essex-patterns-bowling.trycloudflare.com
-      path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
   - name: 美国 302
     type: vless
     network: ws
@@ -726,34 +655,6 @@ proxies:
       headers:
         Host: ip14.freegradely.xyz
       path: github.com/Alvin9999
-  - name: US 🇺🇸 | @Raydikalx | B05884
-    type: vmess
-    server: 199.34.228.160
-    port: 8443
-    uuid: f5f0babe-aea2-4f07-a1fc-3c9820253f49
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: aus.frnhk.xyz
-    network: ws
-    ws-opts:
-      path: /Sydney3
-      headers:
-        Host: aus.frnhk.xyz
-  - name: US 🇺🇸 | @Raydikalx | 4452C9
-    type: vmess
-    server: 66.81.247.246
-    port: 80
-    uuid: 28f8d51a-0e75-4fc3-a36e-03bf4e4d0910
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: 127.0.0.1.太空學員.jосмическийкадет.spacecadet.安靜的地方第天day0ne.wonkacapitano.buzz.
   - name: '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
     type: vless
     server: 45.131.210.30
@@ -818,18 +719,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 美国 009
-    type: trojan
-    network: ws
-    server: 23.227.38.11
-    port: 443
-    password: b17fa17d-13a0-4e8a-a398-8e549ea8b208
-    skip-cert-verify: true
-    sni: syndication-statutes-wanted-logo.trycloudflare.com
-    ws-opts:
-      headers:
-        Host: syndication-statutes-wanted-logo.trycloudflare.com
-      path: /argox-tr
   - name: 韩国 001
     type: vless
     network: ws
@@ -851,33 +740,24 @@ proxies:
       headers:
         Host: t1s1.rittbo.kdns.fr
       path: /
-  - name: 美国 038
-    type: vmess
+  - name: 美国 009
+    type: trojan
     network: ws
-    server: 104.19.55.49
-    port: 2082
-    uuid: 5f3f09ad-89cb-4e94-a7ad-aa8239913555
+    server: 23.227.38.11
+    port: 443
+    password: b17fa17d-13a0-4e8a-a398-8e549ea8b208
     skip-cert-verify: true
-    tls: false
-    alterId: 0
-    cipher: auto
+    sni: syndication-statutes-wanted-logo.trycloudflare.com
     ws-opts:
       headers:
-        Host: ip27.6929198.xyz
-      path: github.com/Alvin9999
-  - name: 美国 743
-    type: vmess
-    network: ws
-    server: 104.19.47.79
-    port: 2086
-    uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
-    skip-cert-verify: true
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: ip14.freegradely.xyz
-      path: github.com/Alvin9999
+        Host: syndication-statutes-wanted-logo.trycloudflare.com
+      path: /argox-tr
+  - name: US美国(v2clash.blog 2026-10.10更新)
+    type: vless
+    server: 162.159.135.234
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
   - name: 🇯🇵[www.v2nodes.com] vless-JP
     client-fingerprint: chrome
     network: ws
@@ -917,24 +797,6 @@ proxies:
       host: nl29.dr-ping.ir
       mode: auto
     udp: true
-  - name: US美国(v2clash.blog 2026-10.10更新)
-    type: vless
-    server: 162.159.135.234
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: US美国(v2clash.blog 2026-10.19更新)-2
-    type: vless
-    server: 188.114.98.0
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: US美国(v2clash.blog 2026-10.9更新)
-    type: vless
-    server: 80.93.202.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    udp: true
   - name: 美国 141
     type: trojan
     network: ws
@@ -946,6 +808,22 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
+  - name: 美国 308
+    type: vless
+    network: ws
+    server: 172.67.74.2
+    port: 443
+    uuid: 7e544a9d-7667-413b-bbb0-b3bb1aac6d77
+    servername: shegeftihaaa.net
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    encryption: none
+    packet-encoding: xudp
+    ws-opts:
+      headers:
+        Host: shegeftihaaa.net
+      path: /rsedgws
   - name: 美国 245
     type: vless
     network: ws
@@ -963,22 +841,6 @@ proxies:
         Host: sd.cbb.j3.ink
       max-early-data: 2560
       path: /home/china
-  - name: 美国 308
-    type: vless
-    network: ws
-    server: 172.67.74.2
-    port: 443
-    uuid: 7e544a9d-7667-413b-bbb0-b3bb1aac6d77
-    servername: shegeftihaaa.net
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    encryption: none
-    packet-encoding: xudp
-    ws-opts:
-      headers:
-        Host: shegeftihaaa.net
-      path: /rsedgws
   - name: 美国 323
     type: vless
     network: ws
@@ -1020,6 +882,20 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
+  - name: '@V2rayng_Fast 🇬🇧'
+    type: vless
+    server: 151.101.56.6
+    port: 443
+    uuid: 9503e890-3702-4847-af0a-2bceac2f0da0
+    udp: true
+  - name: 🇩🇪DE-157.90.20.18-3846
+    type: vmess
+    server: 157.90.20.18
+    port: 443
+    uuid: 6b7cbc41-fb80-41a8-8eb6-b5bdb0e86147
+    alterId: 0
+    cipher: auto
+    udp: true
   - name: 美国 239
     type: vless
     network: ws
@@ -1036,39 +912,6 @@ proxies:
       headers:
         Host: unnes.ac.id.yxls.eu.cc
       path: /ca-cl
-  - name: 美国 686
-    type: vmess
-    network: ws
-    server: 104.19.38.62
-    port: 2086
-    uuid: 29eebb60-b27b-4a9d-bba5-947763d9205e
-    skip-cert-verify: true
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: ip005.3196772.xyz
-      path: github.com/Alvin9999
-  - name: 🇩🇪DE-157.90.20.18-3846
-    type: vmess
-    server: 157.90.20.18
-    port: 443
-    uuid: 6b7cbc41-fb80-41a8-8eb6-b5bdb0e86147
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: '@V2rayng_Fast 🇬🇧'
-    type: vless
-    server: 151.101.56.6
-    port: 443
-    uuid: 9503e890-3702-4847-af0a-2bceac2f0da0
-    udp: true
-  - name: US美国(v2clash.blog 2026-10.3更新)
-    type: vless
-    server: 63.141.128.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    udp: true
   - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
     client-fingerprint: unsafe
     encryption: none
@@ -1083,6 +926,12 @@ proxies:
       headers:
         Host: nautica-cff.kloningstrife002.workers.dev
       path: /138.2.74.219-28616
+  - name: 🇩🇪telegram➠@v2rayNG_Matsuri
+    type: vless
+    server: 188.114.97.6
+    port: 443
+    uuid: 39473ed8-fa83-4ef3-8aa6-92b865b6cb4f
+    udp: true
   - name: 美国 159
     type: trojan
     network: ws
@@ -1095,24 +944,6 @@ proxies:
       headers:
         Host: www.calmlunch.com
       path: /assignment
-  - name: 美国 206
-    type: trojan
-    network: ws
-    server: 104.18.22.208
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.multiplydose.com
-    ws-opts:
-      headers:
-        Host: www.multiplydose.com
-      path: /assignment
-  - name: 🇩🇪telegram➠@v2rayNG_Matsuri
-    type: vless
-    server: 188.114.97.6
-    port: 443
-    uuid: 39473ed8-fa83-4ef3-8aa6-92b865b6cb4f
-    udp: true
   - name: 美国 016
     type: vmess
     network: ws
@@ -1144,24 +975,6 @@ proxies:
     port: 443
     password: humanity
     udp: true
-  - name: US美国(v2clash.blog 2026-10.7更新)
-    type: vless
-    server: 155.46.167.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    udp: true
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-    network: ws
-    port: 8080
-    server: 188.114.99.0
-    servername: hhlfy.twiladaphne.ndjp.net
-    tls: false
-    type: vless
-    uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
-    ws-opts:
-      headers:
-        Host: hhlfy.twiladaphne.ndjp.net
-      path: /sg-melbi
   - name: 美国 715
     type: vmess
     network: ws
@@ -1175,19 +988,18 @@ proxies:
       headers:
         Host: b3.iraniancp.click
       path: /?ed=2048
-  - name: 美国 737
-    type: vmess
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
     network: ws
-    server: 104.19.45.47
-    port: 2086
-    uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
-    skip-cert-verify: true
-    alterId: 0
-    cipher: auto
+    port: 8080
+    server: 188.114.99.0
+    servername: hhlfy.twiladaphne.ndjp.net
+    tls: false
+    type: vless
+    uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
     ws-opts:
       headers:
-        Host: ip13.freegradely.xyz
-      path: github.com/Alvin9999
+        Host: hhlfy.twiladaphne.ndjp.net
+      path: /sg-melbi
   - name: 德国 085
     type: vmess
     network: ws
@@ -1228,36 +1040,6 @@ proxies:
       headers:
         Host: uh-lawyers-instruments-kernel.trycloudflare.com
       path: 34c0bb5e-c120-432d-9c58-bd7d82c7397b-vm
-  - name: '@ShadowProxy66 🇺🇸'
-    type: vless
-    server: 172.67.130.159
-    port: 2096
-    uuid: 214bf4c5-045a-4ddb-944b-e2eef9b33338
-    udp: true
-  - name: '@ShadowProxy66 🇺🇸-2'
-    type: vless
-    server: 172.67.130.159
-    port: 2096
-    uuid: 550d6eb0-1775-44a4-a464-9176e3d74b50
-    udp: true
-  - name: '@ShadowProxy66 🇺🇸-3'
-    type: vless
-    server: 172.67.130.159
-    port: 2096
-    uuid: bdc5e450-3e2d-4001-928e-e3bc6cecb249
-    udp: true
-  - name: 美国 136
-    type: trojan
-    network: ws
-    server: 104.18.152.244
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
   - name: 美国 262
     type: vless
     network: ws
@@ -1275,31 +1057,6 @@ proxies:
       headers:
         Host: wz1.fum.ccwu.cc
       path: /proxyip=sjc.o00o.ooo
-  - name: '🇹🇼 🇨🇳 台湾 | TWN #1'
-    client-fingerprint: chrome
-    network: ws
-    port: 443
-    server: 60.248.219.53
-    servername: ty986gfazs.cainiaohub.xyz
-    tls: true
-    type: vless
-    udp: true
-    uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-    ws-opts:
-      headers:
-        Host: ty986gfazs.cainiaohub.xyz
-      path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-  - name: 美国 173
-    type: trojan
-    network: ws
-    server: 104.16.79.73
-    port: 443
-    password: humanity
-    sni: www.creationlong.org
-    ws-opts:
-      headers:
-        Host: www.creationlong.org
-      path: /assignment
   - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
     type: vless
     server: 91.209.253.250
@@ -1331,12 +1088,44 @@ proxies:
       path: /
       headers:
         Host: u.srilankangrill.online
-  - name: '@V2rayng_Fast 🇩🇪'
+  - name: 美国 208
+    type: trojan
+    network: ws
+    server: 104.18.152.187
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: '@V2rayng_Fast 🇩🇪-2'
     type: vless
     server: 104.16.10.2
     port: 443
     uuid: c4edb87e-8544-4fa4-bd1c-b0cda9a34b46
     udp: true
+  - name: US美国(v2clash.blog 2026-10.23更新)-2
+    type: vless
+    server: 104.18.151.172
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: 美国 257
+    type: vless
+    network: ws
+    server: 104.16.107.139
+    port: 8880
+    uuid: 0b17eb47-587b-4e46-86a7-e1681cbbe76c
+    skip-cert-verify: false
+    tls: false
+    udp: true
+    packet-encoding: xudp
+    ws-opts:
+      headers:
+        Host: orange-math-9c83.371.workers.dev
+      path: /pyip=ProxyIP.JP.CMLiussss.net
   - name: DE 🇩🇪 | @Raydikalx | 3E1586
     type: vmess
     server: 109.70.74.149
@@ -1422,6 +1211,40 @@ proxies:
       path: /ray
       headers:
         Host: lg30.cfcdn3.xyz
+  - name: 美国 220
+    type: vless
+    network: ws
+    server: 108.162.196.3
+    port: 2083
+    uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+    servername: t1s1.rittbo.kdns.fr
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+    encryption: none
+    ech-opts:
+      _dns: https://dns.alidns.com/dns-query
+      enable: true
+      query-server-name: cloudflare-ech.com
+    packet-encoding: xudp
+    ws-opts:
+      headers:
+        Host: t1s1.rittbo.kdns.fr
+      path: /
+  - name: 美国 106
+    type: trojan
+    network: ws
+    server: 162.159.12.212
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
   - name: '🇩🇪 德国 | DEU #1'
     client-fingerprint: ios
     network: ws
@@ -1436,6 +1259,38 @@ proxies:
       headers:
         Host: netheri.global.ssl.fastly.net.
       path: /?Telegram---@pirozi_ArGaP---@pirozi_ArGaP---@pirozi_ArGaP---@pirozi_ArGaP
+  - name: 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+    type: vless
+    server: 146.75.59.186
+    port: 443
+    uuid: 82599a61-3580-4141-b48c-42f4594ae675
+    udp: true
+  - name: 美国 703
+    type: vmess
+    network: ws
+    server: 162.159.137.178
+    port: 80
+    uuid: 88a25bf3-18af-486f-b194-d87e976c230b
+    skip-cert-verify: true
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: 165067316419432025062817003642514.s15.chibaba.filegear-sg.me
+      path: /s15.html
+  - name: 美国 005
+    type: vmess
+    network: ws
+    server: 162.159.137.249
+    port: 8080
+    uuid: 028c8131-9e3e-4836-94ac-ea7f24d4d05a
+    tls: false
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: nest-emily-healing-h.trycloudflare.com
+      path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
   - name: DE 🇩🇪 | @Raydikalx | 166068
     type: vmess
     server: 111.88.74.167
@@ -1451,6 +1306,174 @@ proxies:
       path: /api/v1/gpu-stream/socket
       headers:
         Host: renderer-stream-2-62.mirra.now
+  - name: 🇺🇸 601
+    type: trojan
+    server: 104.16.65.1
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.cordweave.com
+    network: ws
+    ws-opts:
+      path: /
+  - name: 美国 145
+    type: trojan
+    network: ws
+    server: 104.19.64.105
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.calmlunch.com
+    ws-opts:
+      headers:
+        Host: www.calmlunch.com
+      path: /assignment
+  - name: 美国 295
+    type: vless
+    network: ws
+    server: 104.18.45.137
+    port: 443
+    uuid: 72d1797c-cef8-410a-b8fd-db9104dc3cb0
+    servername: amooaliii.net
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+    packet-encoding: xudp
+    encryption: none
+    ws-opts:
+      headers:
+        Host: amooaliii.net
+      path: /jdhfyws
+  - name: 美国 166
+    type: trojan
+    network: ws
+    server: 162.159.153.4
+    port: 443
+    password: humanity
+    sni: www.calmloud.com
+    ws-opts:
+      headers:
+        Host: www.calmloud.com
+      path: /assignment
+  - name: 美国 146
+    type: trojan
+    network: ws
+    server: 104.18.152.161
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 297
+    type: vless
+    network: ws
+    server: 104.18.195.156
+    port: 443
+    uuid: 72d1797c-cef8-410a-b8fd-db9104dc3cb0
+    servername: amooaliii.net
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+    packet-encoding: xudp
+    encryption: none
+    ws-opts:
+      headers:
+        Host: amooaliii.net
+      path: /jdhfyws
+  - name: 美国 112
+    type: trojan
+    network: ws
+    server: 172.64.148.248
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 美国 158
+    type: trojan
+    network: ws
+    server: 104.16.174.46
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 195
+    type: trojan
+    network: ws
+    server: 104.16.174.117
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 001
+    type: vmess
+    network: ws
+    server: 162.159.1.33
+    port: 8080
+    uuid: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96
+    tls: false
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: pcs-referenced-camera-concerns.trycloudflare.com
+      path: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96-vm
+  - name: 美国 740
+    type: vmess
+    network: ws
+    server: 104.19.46.22
+    port: 2086
+    uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
+    skip-cert-verify: true
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: ip13.freegradely.xyz
+      path: github.com/Alvin9999
+  - name: US 🇺🇸 | @Raydikalx | C2EDAF
+    type: vmess
+    server: 141.101.115.19
+    port: 80
+    uuid: 2ac4e269-1576-4f41-8c0d-6242e3c5fd8c
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: 1270.0.1.dl3.烏克爾拯救聖誕老人電影.yркельпасаетcанту.фильм.urkel.烏克爾救援.wonkacapitano.buzz.
+  - name: 美国 688
+    type: vmess
+    network: ws
+    server: 104.19.51.232
+    port: 2086
+    uuid: 29eebb60-b27b-4a9d-bba5-947763d9205e
+    skip-cert-verify: true
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: ip005.dtku47.xyz
+      path: github.com/Alvin9999
   - name: SG 🇸🇬 | @Raydikalx | C62756
     type: vmess
     server: 206.238.239.109
@@ -1480,6 +1503,16 @@ proxies:
       path: /sg-orcl
       headers:
         Host: ex3r.qzz.io
+  - name: DE 🇩🇪 | @Raydikalx | 5E3474
+    type: vmess
+    server: 185.204.170.130
+    port: 443
+    uuid: b8136e5f-8ece-4a06-99af-5a207c749bc4
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 185.204.170.130
   - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
     network: ws
     port: 8080
@@ -1562,7 +1595,7 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: '@V2rayng_Fast 🇩🇪-2'
+  - name: '@V2rayng_Fast 🇩🇪'
     type: vless
     server: 185.159.247.44
     port: 443
@@ -1653,7 +1686,7 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
-  - name: 日本+V2CROSS.COM
+  - name: SG VLESS-16 | free-nodes
     type: vless
     server: 43.163.112.174
     port: 443
@@ -1779,6 +1812,44 @@ proxies:
     port: 443
     uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
     udp: true
+  - name: 🇰🇷 1277
+    type: trojan
+    server: 158.247.255.150
+    port: 48851
+    password: 5t6i121em5lkmsmk
+    udp: true
+    sni: kr002.zestapp778.com
+  - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
+    encryption: none
+    network: ws
+    port: 8080
+    server: 104.21.70.21
+    servername: nautica-cff.kloningstrife002.workers.dev
+    tls: false
+    type: vless
+    uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
+    ws-opts:
+      headers:
+        Host: nautica-cff.kloningstrife002.workers.dev
+      path: /138.2.74.219-28616
+  - name: JP日本(v2clash.blog 2026-6.9更新)
+    type: vless
+    server: 151.101.108.223
+    port: 443
+    uuid: b4a00211-ae46-49bc-8f36-0c4425eb7e86
+    udp: true
+  - name: '@V2rayng_Fast 🇩🇪-3'
+    type: vless
+    server: 172.64.158.170
+    port: 443
+    uuid: d342d11e-d224-4463-b982-532309285094
+    udp: true
+  - name: '@V2rayng_Fast 🇩🇪-4'
+    type: vless
+    server: 167.82.101.119
+    port: 443
+    uuid: ea1fb226-a033-4999-9f86-49ec57629c0d
+    udp: true
   - name: 德国 010
     type: vless
     network: ws
@@ -1794,6 +1865,21 @@ proxies:
       headers:
         Host: kejiland.freewarp.eu.org
       path: /snippets
+  - name: SG 🇸🇬 | @Raydikalx | F0FF0E
+    type: vmess
+    server: 206.238.238.222
+    port: 8443
+    uuid: f5f0babe-aea2-4f07-a1fc-3c9820253f49
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: uk.frnhk.xyz
+    network: ws
+    ws-opts:
+      path: /London31
+      headers:
+        Host: uk.frnhk.xyz
   - name: GB英国(v2clash.blog 2026-10.13更新)
     type: trojan
     server: 104.18.32.47
@@ -1801,18 +1887,6 @@ proxies:
     password: humanity
     udp: true
     skip-cert-verify: true
-  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-    type: vless
-    server: 108.162.192.75
-    port: 443
-    uuid: 073d1d50-8478-47bf-a828-7a1b381931d5
-    udp: true
-  - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-    type: vless
-    server: 69.46.46.215
-    port: 443
-    uuid: 10c3b62f-59da-55cb-b24f-2072ecb4348c
-    udp: true
   - name: JP日本(v2clash.blog 2026-10.14更新)
     type: vless
     server: 172.67.209.127
@@ -1831,7 +1905,7 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: '@V2rayng_Fast 🇩🇪-3'
+  - name: '@V2rayng_Fast 🇩🇪-5'
     type: vless
     server: 104.21.34.106
     port: 443
@@ -1843,63 +1917,12 @@ proxies:
     port: 8880
     uuid: 94977b19-6720-48a6-92fd-00238757ea30
     udp: true
-  - name: '@V2rayng_Fast 🇩🇪-4'
-    type: vless
-    server: 172.64.158.170
-    port: 443
-    uuid: d342d11e-d224-4463-b982-532309285094
-    udp: true
-  - name: '@V2rayng_Fast 🇩🇪-5'
-    type: vless
-    server: 167.82.101.119
-    port: 443
-    uuid: ea1fb226-a033-4999-9f86-49ec57629c0d
-    udp: true
   - name: '@V2rayng_Fast 🇩🇪-6'
     type: vless
     server: 104.26.14.85
     port: 8443
     uuid: f798a2c4-c51b-409d-b349-ca8455b36796
     udp: true
-  - name: '[AutoMerge#008] 🇸🇬[www.v2nodes.com] vless-SG'
-    type: vless
-    server: 77.75.199.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    udp: true
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: vms.lifetime59.workers.dev
-  - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
-    encryption: none
-    network: ws
-    port: 8080
-    server: 104.21.70.21
-    servername: nautica-cff.kloningstrife002.workers.dev
-    tls: false
-    type: vless
-    uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
-    ws-opts:
-      headers:
-        Host: nautica-cff.kloningstrife002.workers.dev
-      path: /138.2.74.219-28616
-  - name: SG 🇸🇬 | @Raydikalx | F0FF0E
-    type: vmess
-    server: 206.238.238.222
-    port: 8443
-    uuid: f5f0babe-aea2-4f07-a1fc-3c9820253f49
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: uk.frnhk.xyz
-    network: ws
-    ws-opts:
-      path: /London31
-      headers:
-        Host: uk.frnhk.xyz
   - name: '[freeSub#225] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_50bb1f1f'
     type: vless
     server: 104.18.1.1
@@ -1914,6 +1937,23 @@ proxies:
       path: /
       headers:
         Host: 1.proxy2.us.ci.
+  - name: '[AutoMerge#008] 🇸🇬[www.v2nodes.com] vless-SG'
+    type: vless
+    server: 77.75.199.30
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    udp: true
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: vms.lifetime59.workers.dev
+  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
+    type: vless
+    server: 108.162.192.75
+    port: 443
+    uuid: 073d1d50-8478-47bf-a828-7a1b381931d5
+    udp: true
   - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
     network: ws
     port: 8880
@@ -1925,25 +1965,6 @@ proxies:
       headers:
         Host: vms.lifetime11.workers.dev
       path: /
-  - name: 🇸🇬[www.v2nodes.com] vless-SG
-    network: ws
-    port: 80
-    server: 104.18.109.147
-    tls: false
-    type: vless
-    uuid: c29d39bd-92a4-45db-bb61-56013998617c
-    ws-opts:
-      headers:
-        Host: www.speedtest.net.www.1google.com.bing.com.visa.com.tls.xv98.ip-ddns.com
-      path: /Telegram-XV2ry2?ed=2048
-  - name: DE VLESS-01 | free-nodes
-    type: vless
-    server: 198.62.62.92
-    port: 443
-    uuid: 4deb5a68-24d4-4ad7-84b2-832ac1dc6328
-    udp: true
-    tls: true
-    servername: FaSEYn-6441.wawawe.online
   - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #10'
     encryption: none
     network: ws
@@ -1957,6 +1978,17 @@ proxies:
       headers:
         Host: web-app-nr6wpa.app-tp57xz.workers.dev
       path: /api/ws
+  - name: 🇸🇬[www.v2nodes.com] vless-SG
+    network: ws
+    port: 80
+    server: 104.18.109.147
+    tls: false
+    type: vless
+    uuid: c29d39bd-92a4-45db-bb61-56013998617c
+    ws-opts:
+      headers:
+        Host: www.speedtest.net.www.1google.com.bing.com.visa.com.tls.xv98.ip-ddns.com
+      path: /Telegram-XV2ry2?ed=2048
   - name: 🇯🇵[www.v2nodes.com] vless-JP-4...
     client-fingerprint: ios
     encryption: none
@@ -1971,6 +2003,40 @@ proxies:
       headers:
         Host: web-app-ji3j1z.app-wuuhuw.workers.dev
       path: /api/ws
+  - name: CA - zhuhai.uk
+    type: vless
+    server: 161.114.15.215
+    port: 30443
+    uuid: e109a3df-a17d-4838-91ae-50e16584c866
+    flow: xtls-rprx-vision
+    tls: true
+    servername: www.bing.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: WiIMUs3m0eRax6TYK7zlhv2muhK5REougscih7_YLAc
+      short-id: f69f548731e1eb71
+  - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+    type: vless
+    server: 69.46.46.215
+    port: 443
+    uuid: 10c3b62f-59da-55cb-b24f-2072ecb4348c
+    udp: true
+  - name: DE VLESS-01 | free-nodes
+    type: vless
+    server: 198.62.62.92
+    port: 443
+    uuid: 4deb5a68-24d4-4ad7-84b2-832ac1dc6328
+    udp: true
+    tls: true
+    servername: FaSEYn-6441.wawawe.online
+  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #4'
+    port: 443
+    server: 188.114.97.62
+    tls: false
+    type: vless
+    uuid: b15f187e-9b34-437c-8243-8651a8ada76c
+    ws-opts:
+      path: /stream/DEVCOP/8651a8ada76c/loc-1
   - name: '🇸🇬[www.v2nodes.com] vless-SG #1'
     client-fingerprint: chrome
     encryption: none
@@ -1985,99 +2051,190 @@ proxies:
       headers:
         Host: powered-by-surena.configfarsi695fcfe8a2e58.workers.dev
       path: /
-  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #4'
-    port: 443
-    server: 188.114.97.62
-    tls: false
+  - name: 🇩🇪
     type: vless
-    uuid: b15f187e-9b34-437c-8243-8651a8ada76c
-    ws-opts:
-      path: /stream/DEVCOP/8651a8ada76c/loc-1
-  - name: JP日本(v2clash.blog 2026-6.9更新)
-    type: vless
-    server: 151.101.108.223
+    server: 64.49.38.9
     port: 443
-    uuid: b4a00211-ae46-49bc-8f36-0c4425eb7e86
+    uuid: f71957f3-29e0-d077-9b51-83da5cf31480
     udp: true
   - name: 🇬🇧telegram➠@v2rayNG_Matsuri
-    type: vless
-    server: 64.177.93.234
-    port: 443
-    uuid: e5e4baed-c67a-489c-9550-289cc168bd13
-    udp: true
-  - name: 🇬🇧telegram➠@v2rayNG_Matsuri-2
     type: vless
     server: 64.177.90.23
     port: 443
     uuid: d5ba050c-a939-4388-8ff5-ce3f65832c6c
     udp: true
-  - name: CA - zhuhai.uk
+  - name: 🇬🇧telegram➠@v2rayNG_Matsuri-2
     type: vless
-    server: 161.114.15.215
-    port: 30443
-    uuid: e109a3df-a17d-4838-91ae-50e16584c866
-    flow: xtls-rprx-vision
-    tls: true
-    servername: www.bing.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: WiIMUs3m0eRax6TYK7zlhv2muhK5REougscih7_YLAc
-      short-id: f69f548731e1eb71
-  - name: 🇬🇧[www.v2nodes.com] ss-GB-1615...
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 142.202.51.22
-    type: ss
-  - name: 🇬🇧GB_1|2.7MB/s
-    password: None
+    server: 64.177.93.234
     port: 443
-    server: 84.17.50.193
-    skip-cert-verify: true
-    tls: true
-    type: http
-  - name: GB 🇬🇧 | @Raydikalx | CE841E
+    uuid: e5e4baed-c67a-489c-9550-289cc168bd13
+    udp: true
+  - name: 🇯🇵 394
+    type: trojan
+    server: 45.32.57.242
+    port: 27242
+    password: i99Cef
+    udp: true
+    sni: download.windowsupdate.com
+  - name: 🇯🇵JP-54.65.177.190-5327
+    type: trojan
+    server: 54.65.177.190
+    port: 443
+    password: UX82473651
+    udp: true
+  - name: 日本低延迟(解锁YouTube,ChatGPT等网站)
+    type: vless
+    server: 103.100.158.109
+    port: 443
+    uuid: 64c1b992-47ff-42ef-8d6d-d7ee13c5b716
+    udp: true
+  - name: 🇯🇵 633
+    type: trojan
+    server: 52.194.44.56
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.cordweave.com
+    network: ws
+    ws-opts:
+      path: /
+  - name: 🇯🇵 adi|freenode1020-JP 11
+    server: 167.179.98.126
+    port: 443
     type: vmess
-    server: 186.190.211.147
-    port: 22324
-    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    uuid: f36fc1ba-0f06-11eb-ac57-560003042795
+    alterId: 46
+    cipher: auto
+    tls: true
+    network: ws
+    ws-path: /uC2RcgzL/
+    ws-headers:
+      Host: britagood.ml
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #5'
+    type: vless
+    server: 103.75.118.228
+    port: 12683
+    uuid: 814bd064-544d-4255-a070-5705c03f6da9
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+  - name: 🇯🇵JP-43.206.225.188-5280
+    type: trojan
+    server: 43.206.225.188
+    port: 443
+    password: UX82473651
+    udp: true
+  - name: 🇯🇵JP-18.179.31.199-5329
+    type: trojan
+    server: 18.179.31.199
+    port: 443
+    password: ND91608427
+    udp: true
+  - name: 🇯🇵 adi|freenode1020-JP 2
+    server: 139.162.101.90
+    port: 443
+    type: vmess
+    uuid: 21102246-caba-3f49-9a68-49f7476d68f0
+    alterId: 3
+    cipher: auto
+    tls: true
+    network: ws
+    ws-path: mfjc
+    ws-headers:
+      Host: hk117.mfjx-vip.xyz
+  - name: 🇯🇵 adi|freenode1020-JP 3
+    server: 52.185.164.224
+    port: 443
+    type: vmess
+    uuid: 0303ab78-20be-3639-9cb4-bb01635b5546
+    alterId: 1
+    cipher: auto
+    tls: false
+    network: ws
+    ws-path: /hls/cctv5phd.m3u8
+    ws-headers:
+      Host: jp-5.azure.vip5.v2ray.ikuuu.pro
+  - name: 🇯🇵 adi|freenode1020-JP 6
+    server: 149.28.30.207
+    port: 443
+    type: vmess
+    uuid: 112b596c-0f0c-11eb-9a3b-560003042b6a
+    alterId: 46
+    cipher: auto
+    tls: true
+    network: ws
+    ws-path: /NoXchYS8/
+    ws-headers:
+      Host: canongood.ml
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
+    type: vless
+    server: 3.114.220.22
+    port: 18007
+    uuid: 814bd064-544d-4255-a070-5705c03f6da9
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+  - name: 🇯🇵 1610
+    type: trojan
+    server: 161.33.31.228
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.cordweave.com
+    network: ws
+    ws-opts:
+      path: /
+  - name: JP日本(v2clash.blog 2026-10.23更新)-2
+    type: vless
+    server: 60.130.209.253
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: 🇰🇷 230
+    type: trojan
+    server: 61.37.18.100
+    port: 24999
+    password: 4eef70e2-f925-490c-8f2d-bea35bb37cba
+    udp: true
+    sni: www.itunes.com
+    skip-cert-verify: true
+  - name: KR 🇰🇷 | @Raydikalx | 168118
+    type: vmess
+    server: 217.142.138.61
+    port: 80
+    uuid: ac1b933d-afff-4487-93ef-f57130a55dff
     alterId: 0
     cipher: auto
     udp: true
-  - name: 🇬🇧GB-172.99.190.149-6421
+  - name: 🇰🇷 Korea, Republic of 31
+    server: 141.164.56.250
+    port: 443
     type: ss
-    server: 172.99.190.149
-    port: 8080
     cipher: aes-256-gcm
-    password: KixLvKzwjekG00rm
+    password: pKEW8JPByTVTLtM
+  - name: KR - zhuhai.uk
+    type: socks5
+    server: 121.169.46.116
+    port: 1090
+    username: VDJjbE0wUWxNMFE2Og
+    password: VDJjbE0wUWxNMFE2Og
+  - name: 🇰🇷 2415
+    type: ss
+    server: 218.237.185.234
+    port: 4652
+    cipher: aes-256-cfb
+    password: qwerREWQ@@
     udp: true
-  - name: '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
-    type: vless
-    server: 23.81.36.148
-    port: 1222
-    uuid: 36c3dcc2-17b6-4478-b8a7-3978e6d5afe9
+  - name: 🇰🇷 854
+    type: trojan
+    server: 154.90.62.70
+    port: 56127
+    password: p5jTPcffLgi4gaNOJd2KUTb9YEPBBD5B
     udp: true
-    tls: true
-    servername: play.google.com
-    client-fingerprint: chrome
-  - name: '🇬🇧[www.v2nodes.com] ss-GB-1616... #1'
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 198.244.202.215
-    type: ss
-  - name: '🇬🇧[www.v2nodes.com] ss-GB-1615... #1'
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 38.114.120.221
-    type: ss
-  - name: 🇬🇧[www.v2nodes.com] ss-GB-1602...
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 185.176.206.9
-    type: ss
+    sni: 154.90.62.70
+    skip-cert-verify: true
   - name: GB 🇬🇧 | @Raydikalx | 1D17F2
     type: vmess
     server: 66.163.117.58
@@ -2093,6 +2250,120 @@ proxies:
       path: /linkvws
       headers:
         Host: aksai.org
+  - name: 🇰🇷KR-211.178.105.134-0243
+    type: ss
+    server: 211.178.105.134
+    port: 6123
+    cipher: aes-256-cfb
+    password: qwerREWQ@@
+    udp: true
+  - name: 🇬🇧GB-185.44.76.188-4894
+    type: trojan
+    server: 185.44.76.188
+    port: 443
+    password: 8697fe6b-1lWNFc1RmRBNk5NQU5KSnga3fa58ac5a3ef0-b4ab-11eb-b65e-1239d0255272
+    udp: true
+  - name: 🇬🇧[www.v2nodes.com] ss-GB-1615...
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 142.202.51.22
+    type: ss
+  - name: 🇬🇧[www.v2nodes.com] ss-GB-1602...
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 185.176.206.9
+    type: ss
+  - name: 🇰🇷KR-144.24.72.126-3288
+    type: trojan
+    server: 144.24.72.126
+    port: 443
+    password: 7118b5f4-0ea4-4c11-be7f-11471cb91e4a
+    udp: true
+  - name: 🇬🇧[www.v2nodes.com] ss-GB-1451...
+    cipher: aes-128-gcm
+    password: shadowsocks
+    port: 443
+    server: 158.173.24.73
+    type: ss
+  - name: GB 🇬🇧 | @Raydikalx | CE841E
+    type: vmess
+    server: 186.190.211.147
+    port: 22324
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
+    type: vless
+    server: 151.245.106.49
+    port: 2053
+    uuid: a2de9567-9646-45a9-a410-7303a43bdb6c
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+  - name: 🇰🇷[www.v2nodes.com] vless-KR-1...
+    network: ws
+    port: 25555
+    server: 152.69.226.63
+    servername: 152.69.226.63
+    tls: false
+    type: vless
+    uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
+    ws-opts:
+      path: /
+  - name: 🇹🇼[www.v2nodes.com] vless-TW-3...
+    client-fingerprint: chrome
+    encryption: none
+    network: ws
+    port: 443
+    server: 188.253.6.249
+    servername: vlso5.1d.mom
+    tls: true
+    type: vless
+    uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
+    ws-opts:
+      headers:
+        Host: vlso5.1d.mom
+      path: /socks5=888:888@hkip.1d.mom:1080
+  - name: '🇬🇧[www.v2nodes.com] ss-GB-1615... #1'
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 38.114.120.221
+    type: ss
+  - name: 🇬🇧GB-172.99.190.149-6421
+    type: ss
+    server: 172.99.190.149
+    port: 8080
+    cipher: aes-256-gcm
+    password: KixLvKzwjekG00rm
+    udp: true
+  - name: KR韩国(v2clash.blog 2026-10.20更新)
+    type: vless
+    server: 168.107.36.135
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: GB 🇬🇧 | @Raydikalx | 4DE8B6
+    type: vmess
+    server: 51.38.71.147
+    port: 2053
+    uuid: 72f2cbe4-2874-45b7-b6aa-b93077c10c72
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: node-uk.connectsuite.org
+  - name: 🇬🇧GB-141.98.101.181-0275
+    type: ss
+    server: 141.98.101.181
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
   - name: 🇬🇧GB-146.70.61.37-0208
     type: ss
     server: 146.70.61.37
@@ -2111,63 +2382,26 @@ proxies:
     network: ws
     ws-opts:
       path: /vmess
-  - name: 🇬🇧GB-185.44.76.188-4894
+  - name: 🇹🇼 228
     type: trojan
-    server: 185.44.76.188
+    server: 188.253.7.44
+    port: 24999
+    password: 4eef70e2-f925-490c-8f2d-bea35bb37cba
+    udp: true
+    sni: www.itunes.com
+    skip-cert-verify: true
+  - name: 🇬🇧GB-132.145.51.172-3255
+    type: trojan
+    server: 132.145.51.172
     port: 443
-    password: 8697fe6b-1lWNFc1RmRBNk5NQU5KSnga3fa58ac5a3ef0-b4ab-11eb-b65e-1239d0255272
+    password: 02e653c9-7c93-46a9-999d-11834bd0c577
     udp: true
-  - name: GB英国(v2clash.blog 2026-10.12更新)
-    type: vless
-    server: 57.129.130.34
-    port: 52014
-    uuid: 53367702-4b8d-431a-a193-34d7d057a065
-    udp: true
-  - name: 🇬🇧 1049
-    type: ss
-    server: 146.70.61.18
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: 🇬🇧 英国 | GBR
-    server: 34.39.80.57
-    port: 50818
-    type: vless
-    uuid: 408c814e-f70a-4d16-b3b3-8182bb70211d
+  - name: 🇬🇧GB_3|1.0MB/s
+    port: 9443
+    server: 84.17.50.129
+    skip-cert-verify: true
     tls: true
-    servername: yingguo.rymaker.cn
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /GunService
-    udp: true
-  - name: GB 🇬🇧 | @Raydikalx | B8FD16
-    type: vmess
-    server: 57.128.164.21
-    port: 80
-    uuid: 10029c03-5d2f-4185-aab2-cbf91eef7361
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /d3d3LmlyYW5ob3N0LmNvbQ==
-      headers:
-        Host: https.http.www.net.com.ramseyv2.ir.
-  - name: GB 🇬🇧 | @Raydikalx | D2ACA3
-    type: vmess
-    server: 57.128.164.21
-    port: 80
-    uuid: bda82bcd-f6e2-46ae-9552-673f0b87ac30
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /d3d3LmlyYW5ob3N0LmNvbQ==
-      headers:
-        Host: https.http.www.net.com.ramseyv2.ir.
+    type: http
   - name: GB 🇬🇧 | @Raydikalx | 4B9793
     type: vmess
     server: 57.129.132.223
@@ -2179,26 +2413,26 @@ proxies:
     network: ws
     ws-opts:
       path: /vmess/
-  - name: 🇬🇧GB-132.145.51.172-3255
-    type: trojan
-    server: 132.145.51.172
-    port: 443
-    password: 02e653c9-7c93-46a9-999d-11834bd0c577
+  - name: GB英国(v2clash.blog 2026-10.12更新)
+    type: vless
+    server: 57.129.130.34
+    port: 52014
+    uuid: 53367702-4b8d-431a-a193-34d7d057a065
     udp: true
-  - name: 🇬🇧GB-172.99.190.149-5829
-    type: ss
-    server: 172.99.190.149
+  - name: 🇹🇼 1368
+    type: trojan
+    server: 125.227.86.45
     port: 443
+    password: 0a9f1f5a397bd427
+    udp: true
+    sni: TG.freecodes
+    skip-cert-verify: true
+  - name: '🇬🇧[www.v2nodes.com] ss-GB-1616... #1'
     cipher: aes-256-gcm
-    password: pKEW8JPByTVTLtM
-    udp: true
-  - name: 🇬🇧GB-51.38.71.175-7441
-    type: trojan
-    server: 51.38.71.175
-    port: 80
-    password: b640d791-ff83-4300-b509-c2a02f97f167
-    udp: true
-    sni: uk1.trojanvh.xyz
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 198.244.202.215
+    type: ss
   - name: 🇬🇧GB_2|1.2MB/s
     password: None
     port: 443
@@ -2206,39 +2440,34 @@ proxies:
     skip-cert-verify: true
     tls: true
     type: http
-  - name: 🇬🇧[www.v2nodes.com] ss-GB-1451...
-    cipher: aes-128-gcm
-    password: shadowsocks
-    port: 443
-    server: 158.173.24.73
-    type: ss
-  - name: 🇬🇧GB_3|1.0MB/s
-    port: 9443
-    server: 84.17.50.129
-    skip-cert-verify: true
-    tls: true
-    type: http
-  - name: '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
-    client-fingerprint: chrome
-    encryption: none
-    network: ws
-    port: 443
-    server: 159.65.51.189
-    servername: ccc.010304.xyz
-    skip-cert-verify: false
-    tls: true
-    type: vless
-    uuid: d342d11e-d224-4463-b982-532309285094
-    ws-opts:
-      headers:
-        Host: ccc.010304.xyz
-      path: /
-  - name: 🇩🇪
-    type: vless
-    server: 64.49.38.9
-    port: 443
-    uuid: f71957f3-29e0-d077-9b51-83da5cf31480
+  - name: 🇬🇧GB-51.38.71.175-7441
+    type: trojan
+    server: 51.38.71.175
+    port: 80
+    password: b640d791-ff83-4300-b509-c2a02f97f167
     udp: true
+    sni: uk1.trojanvh.xyz
+  - name: 🇬🇧 1049
+    type: ss
+    server: 146.70.61.18
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: '[freeSub#017] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850'
+    type: trojan
+    server: 125.227.86.46
+    port: 443
+    password: 0a9f1f5a397bd427
+    udp: true
+    sni: TG.freecodes
+    skip-cert-verify: true
+  - name: 🇰🇷[www.v2nodes.com] ss-KR-1185...
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    port: 8888
+    server: 141.164.45.187
+    type: ss
   - name: 🇬🇧 744
     type: ss
     server: 146.70.46.199
@@ -2246,6 +2475,31 @@ proxies:
     cipher: rc4-md5
     password: 14fFPrbezE3HDZzsMOr6
     udp: true
+  - name: '[free18#226] 🇬🇧_英国 (6)'
+    type: vless
+    server: 51.38.71.147
+    port: 8443
+    uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
+    udp: true
+    tls: true
+    servername: node-uk.connectsuite.org
+    client-fingerprint: chrome
+  - name: '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
+    type: vless
+    server: 23.81.36.148
+    port: 1222
+    uuid: 36c3dcc2-17b6-4478-b8a7-3978e6d5afe9
+    udp: true
+    tls: true
+    servername: play.google.com
+    client-fingerprint: chrome
+  - name: 🇬🇧GB_1|2.7MB/s
+    password: None
+    port: 443
+    server: 84.17.50.193
+    skip-cert-verify: true
+    tls: true
+    type: http
   - name: 🇬🇧 1116
     type: ss
     server: 146.70.46.214
@@ -2253,68 +2507,26 @@ proxies:
     cipher: rc4-md5
     password: 14fFPrbezE3HDZzsMOr6
     udp: true
-  - name: GB 🇬🇧 | @Raydikalx | 6B4B20
-    type: vmess
-    server: 185.92.74.108
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: /api/v1/gpu-stream/socket
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: 🇬🇧GB-141.98.101.181-0275
+  - name: 🇩🇪[www.v2nodes.com] ss-DE-1615...
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 193.108.119.3
     type: ss
-    server: 141.98.101.181
+  - name: 🇩🇪DE-193.108.119.15-0184
+    type: trojan
+    server: 193.108.119.15
     port: 443
-    cipher: aes-128-gcm
-    password: shadowsocks
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
     udp: true
-  - name: 🇬🇧GB-104.239.12.81-0282
+    sni: courses.iloverussia2026.com
+  - name: 🇬🇧GB-172.99.190.149-5829
     type: ss
-    server: 104.239.12.81
-    port: 43385
-    cipher: chacha20-ietf-poly1305
-    password: AwW1fV6oDDQKh8r2znmptv59tPgt4eHVTgFaTqgKS2jiSdikJ7GyGCBYehDaK38S8yMgHFdbJqcTmRJSfYS5CFw345bNhFZa
-    udp: true
-  - name: NL - zhuhai.uk
-    type: http
-    server: 161.129.60.66
-    port: 9443
-    tls: true
-    skip-cert-verify: true
-  - name: 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
-    type: vless
-    server: 213.130.137.160
+    server: 172.99.190.149
     port: 443
-    uuid: b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb
+    cipher: aes-256-gcm
+    password: pKEW8JPByTVTLtM
     udp: true
-    tls: true
-    servername: panel.freesavesafe.com
-    client-fingerprint: firefox
-    skip-cert-verify: true
-    reality-opts:
-      public-key: BvR2i3CJEL9QwNAWKqkkHY3rnqJdOFLyKw5DZ9sA2C8
-      short-id: 812609fa663c57fb
-  - name: '[free18#025] 🇬🇧_英国 (3)'
-    type: vless
-    server: 129.151.64.169
-    port: 31867
-    uuid: adeb038d-f011-4733-b133-3791e76950f7
-    udp: true
-    tls: true
-    servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /@Marisa_kristi
-      headers:
-        Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
   - name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4 (2)
     type: vless
     server: 9.247.23.209
@@ -2326,28 +2538,6 @@ proxies:
     client-fingerprint: chrome
     reality-opts:
       public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-  - name: 🇩🇪DE-108.61.171.167-8131
-    type: trojan
-    server: 108.61.171.167
-    port: 443
-    password: mainssh-niwrhf87
-    udp: true
-    sni: getgrpc.mainssh.xyz
-  - name: 🇩🇪 851
-    type: trojan
-    server: 45.32.157.84
-    port: 443
-    password: Tg3RnK7Xp8B1
-    udp: true
-    sni: ash.d50f6225-23b4-3a7b-9f15-a0fb2fc16803.kailib.com
-    skip-cert-verify: true
-  - name: 🇩🇪 2729
-    type: ss
-    server: 193.108.116.98
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
   - name: '🇩🇪[www.v2nodes.com] ss-DE-1615... #1'
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -2360,18 +2550,6 @@ proxies:
     port: 19999
     server: 193.108.119.2
     type: ss
-  - name: '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    port: 443
-    server: 193.108.119.78
-    type: trojan
-  - name: '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
-    network: tcp
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    port: 443
-    server: 193.108.119.96
-    sni: learn.iloverussia2026.com
-    type: trojan
   - name: DE 🇩🇪 | @Raydikalx | 0A7D80
     type: vmess
     server: 193.108.117.54
@@ -2387,15 +2565,6 @@ proxies:
       path: /linkvws
       headers:
         Host: aidrivercat.org
-  - name: DE 🇩🇪 | @Raydikalx | 78DCAA
-    type: vmess
-    server: 193.108.119.87
-    port: 1270
-    uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
   - name: DE 🇩🇪 | @Raydikalx | 53A099
     type: vmess
     server: 216.106.187.60
@@ -2432,13 +2601,41 @@ proxies:
     cipher: aes-256-gcm
     password: pKEW8JPByTVTLtM
     udp: true
-  - name: 🇩🇪DE-209.250.236.93-7669
+  - name: 🇩🇪DE-95.179.254.136-7372
     type: trojan
-    server: 209.250.236.93
+    server: 95.179.254.136
     port: 443
-    password: Cl150MQWlG
+    password: mainssh-ddoejfv14
     udp: true
-    sni: irancell-ir-4.mmdruby13.store
+    sni: frtgrpc.mainssh.xyz
+  - name: 🇩🇪DE-108.61.171.167-8131
+    type: trojan
+    server: 108.61.171.167
+    port: 443
+    password: mainssh-niwrhf87
+    udp: true
+    sni: getgrpc.mainssh.xyz
+  - name: 🇰🇷 Seoul, 11, South Korea
+    type: ss
+    server: 141.164.45.187
+    port: 7002
+    cipher: aes-256-gcm
+    password: RexnBgU7EV5ADxG
+    udp: true
+  - name: 🇩🇪 1143
+    type: ss
+    server: 213.202.208.199
+    port: 5000
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: 🇩🇪 2384
+    type: ss
+    server: 193.108.117.111
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
   - name: 🇩🇪 2425
     type: ss
     server: 193.108.117.84
@@ -2446,18 +2643,91 @@ proxies:
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     udp: true
-  - name: '[free18#235] 🇩🇪_德国 (30)'
+  - name: 🇩🇪 2539
+    type: ss
+    server: 193.108.118.247
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: 🇩🇪 2649
+    type: ss
+    server: 193.108.119.83
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: 🇩🇪 2729
+    type: ss
+    server: 193.108.116.98
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: '🇰🇷[www.v2nodes.com] vless-KR-1... #2'
     type: vless
-    server: 5.230.216.85
-    port: 443
-    uuid: 5c32201a-6c0e-451b-8f0a-24b4bd40df59
+    server: 3.39.4.109
+    port: 18967
+    uuid: 814bd064-544d-4255-a070-5705c03f6da9
     udp: true
     tls: true
-    servername: files.porsche.com
+    servername: www.apple.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: kBTMVLCNE0jjwuJF6H5-65l5Pe0QToS0Hg-9Tmaa7Sk
-      short-id: 1a2b3c4d
+  - name: NL - zhuhai.uk
+    type: http
+    server: 161.129.60.66
+    port: 9443
+    tls: true
+    skip-cert-verify: true
+  - name: '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
+    client-fingerprint: chrome
+    encryption: none
+    network: ws
+    port: 443
+    server: 159.65.51.189
+    servername: ccc.010304.xyz
+    skip-cert-verify: false
+    tls: true
+    type: vless
+    uuid: d342d11e-d224-4463-b982-532309285094
+    ws-opts:
+      headers:
+        Host: ccc.010304.xyz
+      path: /
+  - name: '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    port: 443
+    server: 193.108.119.78
+    type: trojan
+  - name: '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
+    network: tcp
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    port: 443
+    server: 193.108.119.96
+    sni: learn.iloverussia2026.com
+    type: trojan
+  - name: 🇩🇪DE_9|2.0MB/s
+    port: 12345
+    server: 141.147.19.47
+    skip-cert-verify: true
+    type: http
+  - name: DE 🇩🇪 | @Raydikalx | 78DCAA
+    type: vmess
+    server: 193.108.119.87
+    port: 1270
+    uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+  - name: 🇭🇰 226
+    type: trojan
+    server: 89.185.28.38
+    port: 24999
+    password: 4eef70e2-f925-490c-8f2d-bea35bb37cba
+    udp: true
+    sni: www.itunes.com
+    skip-cert-verify: true
   - name: '[ermaozi#010] 🇩🇪 德国 | DEU 3'
     type: vless
     server: 178.214.109.1
@@ -2470,16 +2740,54 @@ proxies:
     reality-opts:
       public-key: 3p6W4rMBh1HCwbjq4lcbWO0KjkqTshJU5lkTix5nwTc
       short-id: 1cfa55abe4d2dc7a
-  - name: 🇩🇪[www.v2nodes.com] ss-DE-1615...
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 193.108.119.3
-    type: ss
   - name: 🇩🇪DE_2|2.0MB/s
     password: None
     port: 443
     server: 149.36.50.157
+    skip-cert-verify: true
+    tls: true
+    type: http
+  - name: 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
+    type: vless
+    server: 213.130.137.160
+    port: 443
+    uuid: b5ca5ab3-8cbc-4ac3-89da-9cd360589ecb
+    udp: true
+    tls: true
+    servername: panel.freesavesafe.com
+    client-fingerprint: firefox
+    skip-cert-verify: true
+    reality-opts:
+      public-key: BvR2i3CJEL9QwNAWKqkkHY3rnqJdOFLyKw5DZ9sA2C8
+      short-id: 812609fa663c57fb
+  - name: 🇭🇰HK-219.76.13.181-0010
+    type: trojan
+    server: 219.76.13.181
+    port: 443
+    password: SyOxpKxC8u5jgNa3DCZ34y3D9CRenFcaABpYATEeqI2RSaXD76zS8YF0Owl3lZ
+    udp: true
+    sni: arbettp.freetrade.link
+  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
+    type: vless
+    server: 213.108.198.158
+    port: 8442
+    uuid: 35352039-3820-4532-a031-303120313030
+    udp: true
+    tls: true
+    servername: creativecommons.org
+    client-fingerprint: chrome
+  - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #2-2'
+    type: vless
+    server: 156.226.168.221
+    port: 35193
+    uuid: 35cbae61-ee10-4cb9-abb8-4950b35e9851
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+  - name: 🇩🇪DE_1|1.1MB/s
+    port: 9443
+    server: 79.127.156.177
     skip-cert-verify: true
     tls: true
     type: http
@@ -2497,27 +2805,6 @@ proxies:
     skip-cert-verify: true
     tls: true
     type: http
-  - name: DE 🇩🇪 | @Raydikalx | F79465
-    type: vmess
-    server: 31.184.244.6
-    port: 2087
-    uuid: 6b306661-93c7-4653-94d6-a8adb742b82f
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: DE 🇩🇪 | @Raydikalx | 9C2ECE
-    type: vmess
-    server: 31.184.244.6
-    port: 2087
-    uuid: cec08ac6-5261-4cc5-8190-b3c3c82663e5
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: rt.orvexa.ir
   - name: DE 🇩🇪 | @Raydikalx | EE75E7
     type: vmess
     server: 45.138.72.141
@@ -2533,181 +2820,32 @@ proxies:
       path: /api/v1/gpu-stream/socket
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: GB 🇬🇧 | @Raydikalx | 4DE8B6
+  - name: GB 🇬🇧 | @Raydikalx | B8FD16
     type: vmess
-    server: 51.38.71.147
-    port: 2053
-    uuid: 72f2cbe4-2874-45b7-b6aa-b93077c10c72
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: node-uk.connectsuite.org
-  - name: 🇩🇪DE-193.108.119.15-0184
-    type: trojan
-    server: 193.108.119.15
-    port: 443
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    udp: true
-    sni: courses.iloverussia2026.com
-  - name: 🇩🇪 890
-    type: ss
-    server: 169.150.210.233
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: 🇬🇧 1516
-    type: ss
-    server: 98.98.207.163
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: 🇩🇪 2384
-    type: ss
-    server: 193.108.117.111
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: 🇩🇪 2649
-    type: ss
-    server: 193.108.119.83
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: 🇩🇪DE_1|1.1MB/s
-    port: 9443
-    server: 79.127.156.177
-    skip-cert-verify: true
-    tls: true
-    type: http
-  - name: 🇩🇪DE_7|2.1MB/s
-    port: 9443
-    server: 213.177.229.161
-    skip-cert-verify: true
-    tls: true
-    type: http
-  - name: DE 🇩🇪 | @Raydikalx | 41AEF9
-    type: vmess
-    server: 217.60.183.95
-    port: 33744
-    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+    server: 57.128.164.21
+    port: 80
+    uuid: 10029c03-5d2f-4185-aab2-cbf91eef7361
     alterId: 0
     cipher: auto
     udp: true
     network: ws
     ws-opts:
-      path: /ShamanVMESS2026
+      path: /d3d3LmlyYW5ob3N0LmNvbQ==
       headers:
-        Host: de-d21e56c13c.shamanapp.online:33744
-  - name: 🇩🇪 1135
-    type: ss
-    server: 185.226.172.8
-    port: 8008
-    cipher: aes-256-gcm
-    password: XKFKl2rULjIp74
-    udp: true
-  - name: 🇩🇪 2655
-    type: ss
-    server: 57.129.76.233
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: '[free18#203] 🇩🇪_德国 (22)'
-    type: vless
-    server: 45.129.242.56
-    port: 443
-    uuid: ebdfaf99-41d8-4e48-8196-d54510ffb556
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: YURKlEQ3rap4KOXXGsVFZyYev2oDU2gCEbNTXPdKWRY
-      short-id: abcdef
-  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
-    type: vless
-    server: 213.108.198.158
-    port: 8442
-    uuid: 35352039-3820-4532-a031-303120313030
-    udp: true
-    tls: true
-    servername: creativecommons.org
-    client-fingerprint: chrome
-  - name: 🇩🇪[www.v2nodes.com] ss-DE-1616...
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 57.129.83.85
-    type: ss
-  - name: 🇩🇪DE_5|3.5MB/s
-    password: None
-    port: 443
-    server: 152.233.20.206
-    skip-cert-verify: true
-    tls: true
-    type: http
-  - name: 🇩🇪 德国 | DEU 5
-    server: 79.182.39.110
-    port: 443
-    type: vless
-    uuid: 94042dd1-d32a-4797-b88c-dc48459e2b34
-    tls: true
-    reality-opts:
-      public-key: cO2bNRZvYDit8UqQk_zc6BaSBA7LiLMSmMHTwjU531Q
-      short-id: 051e90ed3d657158
-    servername: ac3f32g.de18.h1clayd.click
-    client-fingerprint: chrome
-    network: grpc
-    grpc-opts:
-      grpc-mode: gun
-      grpc-service-name: 01ad85319ae3
-    udp: true
-  - name: DE 🇩🇪 | @Raydikalx | 4C5D05
+        Host: https.http.www.net.com.ramseyv2.ir.
+  - name: GB 🇬🇧 | @Raydikalx | D2ACA3
     type: vmess
-    server: 51.75.74.253
-    port: 10000
-    uuid: 678a8a2c-aca8-11f1-b342-afa6288e22f8
+    server: 57.128.164.21
+    port: 80
+    uuid: bda82bcd-f6e2-46ae-9552-673f0b87ac30
     alterId: 0
     cipher: auto
     udp: true
     network: ws
     ws-opts:
-      path: /vpnjantit
-  - name: eric-de-3
-    type: vless
-    server: 152.53.185.244
-    port: 443
-    uuid: 5538eaaa-ac3d-4414-a1f5-280212949ed9
-    udp: true
-  - name: 英国 025
-    type: ss
-    network: tcp
-    server: 82.38.31.180
-    port: 8080
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    skip-cert-verify: false
-    udp: false
-    cipher: chacha20-ietf-poly1305
-  - name: DE 🇩🇪 | @Raydikalx | 0674D2
-    type: vmess
-    server: 13.140.28.46
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: /api/v1/gpu-stream/socket
+      path: /d3d3LmlyYW5ob3N0LmNvbQ==
       headers:
-        Host: renderer-stream-2-62.mirra.now
+        Host: https.http.www.net.com.ramseyv2.ir.
   - name: DE 🇩🇪 | @Raydikalx | 36C258
     type: vmess
     server: 84.75.76.16
@@ -2746,53 +2884,6 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-  - name: 🆔soskeynet 🔒 VL-TCP- 🇬🇧 GB 133ms
-    type: vless
-    server: 82.39.171.12
-    port: 443
-    uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-    udp: true
-    tls: true
-    servername: yahoo.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-      short-id: c39cc7310a
-  - name: 🇬🇧GB-82.38.31.210-0150
-    type: ss
-    server: 82.38.31.210
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.171-0239
-    type: ss
-    server: 82.38.31.171
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-82.38.31.66-0225
-    type: ss
-    server: 82.38.31.66
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-82.38.31.170-0230
-    type: ss
-    server: 82.38.31.170
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-82.38.31.219-0260
-    type: ss
-    server: 82.38.31.219
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
   - name: 🇩🇪DE-8.209.104.230-0134
     type: vmess
     server: 8.209.104.230
@@ -2808,24 +2899,267 @@ proxies:
       path: /ray
       headers:
         Host: lg30.cfcdn3.xyz
-  - name: eric-de-2
-    type: vless
-    server: 152.53.186.202
+  - name: 🇭🇰HK-20.187.85.198-4822
+    type: trojan
+    server: 20.187.85.198
     port: 443
-    uuid: 5538eaaa-ac3d-4414-a1f5-280212949ed9
+    password: b26e31e5-eac1-45b0-9069-83830bd69521
     udp: true
+    sni: hkt.iamnotagoodman.com
   - name: DE德国(v2clash.blog 2026-10.6更新)
     type: vless
     server: 31.77.109.35
     port: 443
     uuid: 87fd990d-ca93-440a-bbd4-e8281c4a0910
     udp: true
-  - name: 🇩🇪 2539
+  - name: 🇩🇪 890
     type: ss
-    server: 193.108.118.247
-    port: 19999
+    server: 169.150.210.233
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: 🇩🇪 1135
+    type: ss
+    server: 185.226.172.8
+    port: 8008
     cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    password: XKFKl2rULjIp74
+    udp: true
+  - name: '[free18#026] 🇩🇪_德国 (2)'
+    type: vless
+    server: 179.61.251.244
+    port: 7443
+    uuid: 635e8406-9253-4444-88a2-dad1f0826034
+    udp: true
+    tls: true
+    servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /@Marisa_kristi
+      headers:
+        Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  - name: '[free18#203] 🇩🇪_德国 (22)'
+    type: vless
+    server: 45.129.242.56
+    port: 443
+    uuid: ebdfaf99-41d8-4e48-8196-d54510ffb556
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: YURKlEQ3rap4KOXXGsVFZyYev2oDU2gCEbNTXPdKWRY
+      short-id: abcdef
+  - name: DE 🇩🇪 | @Raydikalx | 4B7538
+    type: vmess
+    server: 8.211.1.139
+    port: 443
+    uuid: 7add6c87-86cb-412a-b3ab-d7e0fb276f09
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: bzqHefRtvpQyiUQb.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: bzqHefRtvpQyiUQb.v.3dns.vip
+  - name: 🆔soskeynet 🔒 VL-TCP- 🇬🇧 GB 133ms
+    type: vless
+    server: 82.39.171.12
+    port: 443
+    uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+    udp: true
+    tls: true
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+      short-id: c39cc7310a
+  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #8'
+    port: 25362
+    server: 193.148.253.194
+    tls: false
+    type: vless
+    uuid: 36fb6650-8a50-42b5-9f66-06538806f32c
+  - name: DE 🇩🇪 | @Raydikalx | 0674D2
+    type: vmess
+    server: 13.140.28.46
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: /api/v1/gpu-stream/socket
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: DE 🇩🇪 | @Raydikalx | 41AEF9
+    type: vmess
+    server: 217.60.183.95
+    port: 33744
+    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /ShamanVMESS2026
+      headers:
+        Host: de-d21e56c13c.shamanapp.online:33744
+  - name: 🇩🇪 DE by @oneclickvpnkeys
+    type: vless
+    server: 91.99.168.213
+    port: 443
+    uuid: 14eba471-4623-4ed1-b937-f5b2206749bf
+    udp: true
+    tls: true
+    servername: miro.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: UrGT7bAn2UND3kx81QHACf_6qReN8V6_o70kZerONk4
+      short-id: 1c547814
+    network: grpc
+    grpc-opts:
+      grpc-service-name: Telegram-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers-@HELIX_Servers
+  - name: 🇩🇪DE-94.130.184.57-3169
+    type: vmess
+    server: 94.130.184.57
+    port: 80
+    uuid: c5e523e7-da73-40af-a4a9-c638720c30e1
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /graphql
+  - name: 🇭🇰HK-83.229.121.78-5333
+    type: trojan
+    server: 83.229.121.78
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    udp: true
+  - name: eric-de-2
+    type: vless
+    server: 152.53.186.202
+    port: 443
+    uuid: 5538eaaa-ac3d-4414-a1f5-280212949ed9
+    udp: true
+  - name: '[free18#025] 🇬🇧_英国 (3)'
+    type: vless
+    server: 129.151.64.169
+    port: 31867
+    uuid: adeb038d-f011-4733-b133-3791e76950f7
+    udp: true
+    tls: true
+    servername: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /@Marisa_kristi
+      headers:
+        Host: jln31qtswdkut5.60kohcognywybguuq3ouc818oofnxfvn35daott.workers.dev
+  - name: 🇩🇪 德国 | DEU 5
+    server: 79.182.39.110
+    port: 443
+    type: vless
+    uuid: 94042dd1-d32a-4797-b88c-dc48459e2b34
+    tls: true
+    reality-opts:
+      public-key: cO2bNRZvYDit8UqQk_zc6BaSBA7LiLMSmMHTwjU531Q
+      short-id: 051e90ed3d657158
+    servername: ac3f32g.de18.h1clayd.click
+    client-fingerprint: chrome
+    network: grpc
+    grpc-opts:
+      grpc-mode: gun
+      grpc-service-name: 01ad85319ae3
+    udp: true
+  - name: DE 🇩🇪 | @Raydikalx | 934065
+    type: vmess
+    server: 128.140.109.232
+    port: 80
+    uuid: 05a178f9-e6ba-4006-93d7-3d980cdc3a76
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: DE 🇩🇪 | @Raydikalx | 7CC4F5
+    type: vmess
+    server: 178.63.237.158
+    port: 2053
+    uuid: 2d4dd672-180f-415c-9035-e2fc461dd95a
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: KR 🇰🇷 | @Raydikalx | 9652E1
+    type: vmess
+    server: 43.108.103.167
+    port: 123
+    uuid: 35aa0fda-175a-4aec-c468-0231dee1a121
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: 🇰🇷KR-3.34.6.217-4347
+    type: trojan
+    server: 3.34.6.217
+    port: 443
+    password: xxoo
+    udp: true
+  - name: 🇸🇬SG-202.79.172.53-1853
+    type: vmess
+    server: 202.79.172.53
+    port: 443
+    uuid: 30216206-14b7-40e7-995d-61c1219ba584
+    alterId: 64
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: /path/220128071100
+  - name: 英国 025
+    type: ss
+    network: tcp
+    server: 82.38.31.180
+    port: 8080
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    skip-cert-verify: false
+    udp: false
+    cipher: chacha20-ietf-poly1305
+  - name: GB 🇬🇧 | @Raydikalx | 6B4B20
+    type: vmess
+    server: 185.92.74.108
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: /api/v1/gpu-stream/socket
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: 🇬🇧GB-82.38.31.206-0160
+    type: ss
+    server: 82.38.31.206
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.162-0234
+    type: ss
+    server: 82.38.31.162
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
   - name: GB 🇬🇧 | @Raydikalx | 410E97
     type: vmess
@@ -2838,88 +3172,49 @@ proxies:
     network: ws
     ws-opts:
       path: /vpnjantit
+  - name: 🇬🇧GB-82.38.31.47-0241
+    type: ss
+    server: 82.38.31.47
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: 🇬🇧GB-82.38.31.218-0271
+    type: ss
+    server: 82.38.31.218
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: '[free18#082] 🇭🇰_香港 (4)'
+    type: vless
+    server: 85.155.149.190
+    port: 443
+    uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
+    udp: true
+    tls: true
+    servername: hk1.japancase.site
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: pGCqNljaUIUVC7xpHa9nFnu6vsQ0OX3QyfvYMhLZuWY
+      short-id: bee10b047804c637
+  - name: 🇬🇧 英国 | GBR 2
+    server: 82.148.255.201
+    port: 8443
+    type: vless
+    uuid: 49fdd350-6ffb-4343-b467-14e269bb95de
+    tls: true
+    flow: xtls-rprx-vision
+    reality-opts:
+      public-key: DvNpCmas0_0MO91s70vlkAxZxnnIt1NE0zqCC4trURQ
+      short-id: 2bf10fc0a85601e5
+    servername: 360.yandex.ru
+    client-fingerprint: firefox
+    network: tcp
+    udp: true
   - name: 🇬🇧GB-82.38.31.207-0162
     type: ss
     server: 82.38.31.207
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 英国 024
-    type: ss
-    network: tcp
-    server: 82.38.31.212
-    port: 8080
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    skip-cert-verify: false
-    udp: false
-    cipher: chacha20-ietf-poly1305
-  - name: 🇬🇧GB-82.38.31.191-0172
-    type: ss
-    server: 82.38.31.191
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.217-0168
-    type: ss
-    server: 82.38.31.217
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.202-0192
-    type: ss
-    server: 82.38.31.202
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.186-0157
-    type: ss
-    server: 82.38.31.186
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.184-0224
-    type: ss
-    server: 82.38.31.184
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.49-0233
-    type: ss
-    server: 82.38.31.49
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-178.83.185.156-0280
-    type: ss
-    server: 178.83.185.156
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-82.38.31.162-0234
-    type: ss
-    server: 82.38.31.162
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-82.38.31.176-0274
-    type: ss
-    server: 82.38.31.176
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.190-0294
-    type: ss
-    server: 82.38.31.190
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -2938,9 +3233,23 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: 🇬🇧GB-82.38.31.187-0202
+  - name: 🇬🇧GB-82.38.31.214-0151
     type: ss
-    server: 82.38.31.187
+    server: 82.38.31.214
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.181-0161
+    type: ss
+    server: 82.38.31.181
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.184-0224
+    type: ss
+    server: 82.38.31.184
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -2952,44 +3261,9 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
-  - name: 🇬🇧GB-82.38.31.218-0271
+  - name: 🇬🇧GB-82.38.31.66-0225
     type: ss
-    server: 82.38.31.218
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.189-0295
-    type: ss
-    server: 82.38.31.189
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧 1453
-    type: ss
-    server: 98.98.142.161
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: 🇬🇧GB-82.38.31.214-0151
-    type: ss
-    server: 82.38.31.214
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.159-0237
-    type: ss
-    server: 82.38.31.159
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-82.38.31.47-0241
-    type: ss
-    server: 82.38.31.47
+    server: 82.38.31.66
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
@@ -3001,6 +3275,102 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
+  - name: 🇬🇧GB-82.38.31.189-0295
+    type: ss
+    server: 82.38.31.189
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.202-0192
+    type: ss
+    server: 82.38.31.202
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.49-0233
+    type: ss
+    server: 82.38.31.49
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: 🇬🇧GB-82.38.31.170-0230
+    type: ss
+    server: 82.38.31.170
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: 🇬🇧GB-82.38.31.210-0150
+    type: ss
+    server: 82.38.31.210
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.171-0228
+    type: ss
+    server: 82.38.31.171
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: 🇬🇧GB-82.38.31.199-0267
+    type: ss
+    server: 82.38.31.199
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.190-0294
+    type: ss
+    server: 82.38.31.190
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.186-0157
+    type: ss
+    server: 82.38.31.186
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.187-0202
+    type: ss
+    server: 82.38.31.187
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.159-0237
+    type: ss
+    server: 82.38.31.159
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: '[free18#219] 🇬🇧_英国 (5)'
+    type: vless
+    server: 132.243.167.147
+    port: 443
+    uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
+    udp: true
+    tls: true
+    servername: ch1.japancase.site
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: nIXZmF729Mzn5hq8aWSxsv8wBDawVYmFNzwBytwYfm0
+      short-id: aafcd65859993991
+  - name: 🇬🇧GB-82.38.31.192-0169
+    type: ss
+    server: 82.38.31.192
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
   - name: 🇬🇧GB-82.38.31.46-0235
     type: ss
     server: 82.38.31.46
@@ -3008,37 +3378,56 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
-  - name: 🇬🇧 英国 | GBR 2
-    server: 82.148.255.201
-    port: 8443
+  - name: 🇬🇧GB-82.38.31.179-0297
+    type: ss
+    server: 82.38.31.179
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.194-0165
+    type: ss
+    server: 82.38.31.194
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.171-0239
+    type: ss
+    server: 82.38.31.171
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: 🇬🇧GB-82.38.31.219-0260
+    type: ss
+    server: 82.38.31.219
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-104.239.12.81-0282
+    type: ss
+    server: 104.239.12.81
+    port: 43385
+    cipher: chacha20-ietf-poly1305
+    password: AwW1fV6oDDQKh8r2znmptv59tPgt4eHVTgFaTqgKS2jiSdikJ7GyGCBYehDaK38S8yMgHFdbJqcTmRJSfYS5CFw345bNhFZa
+    udp: true
+  - name: '[free18#254] 🇬🇧_英国 (9)'
     type: vless
-    uuid: 49fdd350-6ffb-4343-b467-14e269bb95de
+    server: 191.44.108.6
+    port: 443
+    uuid: 558b26f6-061b-4079-9b84-ca13b3e90ae3
+    udp: true
     tls: true
-    flow: xtls-rprx-vision
+    servername: c9.qwyak.ru
+    client-fingerprint: chrome
     reality-opts:
-      public-key: DvNpCmas0_0MO91s70vlkAxZxnnIt1NE0zqCC4trURQ
-      short-id: 2bf10fc0a85601e5
-    servername: 360.yandex.ru
-    client-fingerprint: firefox
-    network: tcp
-    udp: true
-  - name: 🇬🇧GB-82.38.31.181-0161
+      public-key: A0QL_j-ReX7AotEj1w8qX9rHRgN2WycTZ43gUvuvZ00
+      short-id: 3cf8d11aa0415d29
+  - name: 🇬🇧GB-82.38.31.191-0172
     type: ss
-    server: 82.38.31.181
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.205-0179
-    type: ss
-    server: 82.38.31.205
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.192-0169
-    type: ss
-    server: 82.38.31.192
+    server: 82.38.31.191
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -3050,379 +3439,6 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
-  - name: SG新加坡(v2clash.blog 2026-10.5更新)
-    type: vless
-    server: 43.174.195.1
-    port: 443
-    uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
-    udp: true
-  - name: 🇯🇵 394
-    type: trojan
-    server: 45.32.57.242
-    port: 27242
-    password: i99Cef
-    udp: true
-    sni: download.windowsupdate.com
-  - name: '[free18#069] 🇯🇵_日本 (3)'
-    type: vless
-    server: 156.246.88.125
-    port: 26518
-    uuid: e01fcb68-3112-49da-b85d-dffb799cfc9b
-    udp: true
-    tls: true
-    servername: github.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 1fa6iCY7vhoQyKu91FeaK04FN-mr1qeHnrtdyLZ79mk
-      short-id: 6caead99
-  - name: 🇯🇵JP-43.206.225.188-5280
-    type: trojan
-    server: 43.206.225.188
-    port: 443
-    password: UX82473651
-    udp: true
-  - name: 🇯🇵JP-54.65.177.190-5327
-    type: trojan
-    server: 54.65.177.190
-    port: 443
-    password: UX82473651
-    udp: true
-  - name: 日本低延迟(解锁YouTube,ChatGPT等网站)
-    type: vless
-    server: 103.100.158.109
-    port: 443
-    uuid: 64c1b992-47ff-42ef-8d6d-d7ee13c5b716
-    udp: true
-  - name: 🇯🇵 adi|freenode1020-JP 2
-    server: 139.162.101.90
-    port: 443
-    type: vmess
-    uuid: 21102246-caba-3f49-9a68-49f7476d68f0
-    alterId: 3
-    cipher: auto
-    tls: true
-    network: ws
-    ws-path: mfjc
-    ws-headers:
-      Host: hk117.mfjx-vip.xyz
-  - name: 🇯🇵 adi|freenode1020-JP 6
-    server: 149.28.30.207
-    port: 443
-    type: vmess
-    uuid: 112b596c-0f0c-11eb-9a3b-560003042b6a
-    alterId: 46
-    cipher: auto
-    tls: true
-    network: ws
-    ws-path: /NoXchYS8/
-    ws-headers:
-      Host: canongood.ml
-  - name: 🇯🇵 adi|freenode1020-JP 11
-    server: 167.179.98.126
-    port: 443
-    type: vmess
-    uuid: f36fc1ba-0f06-11eb-ac57-560003042795
-    alterId: 46
-    cipher: auto
-    tls: true
-    network: ws
-    ws-path: /uC2RcgzL/
-    ws-headers:
-      Host: britagood.ml
-  - name: 🇯🇵JP-18.179.31.199-5329
-    type: trojan
-    server: 18.179.31.199
-    port: 443
-    password: ND91608427
-    udp: true
-  - name: 🇯🇵 633
-    type: trojan
-    server: 52.194.44.56
-    port: 443
-    password: humanity
-    udp: true
-    sni: www.cordweave.com
-    network: ws
-    ws-opts:
-      path: /
-  - name: 🇯🇵 adi|freenode1020-JP 3
-    server: 52.185.164.224
-    port: 443
-    type: vmess
-    uuid: 0303ab78-20be-3639-9cb4-bb01635b5546
-    alterId: 1
-    cipher: auto
-    tls: false
-    network: ws
-    ws-path: /hls/cctv5phd.m3u8
-    ws-headers:
-      Host: jp-5.azure.vip5.v2ray.ikuuu.pro
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
-    type: vless
-    server: 3.114.220.22
-    port: 18007
-    uuid: 814bd064-544d-4255-a070-5705c03f6da9
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-  - name: 🇯🇵 1610
-    type: trojan
-    server: 161.33.31.228
-    port: 443
-    password: humanity
-    udp: true
-    sni: www.cordweave.com
-    network: ws
-    ws-opts:
-      path: /
-  - name: JP日本(v2clash.blog 2026-10.23更新)-2
-    type: vless
-    server: 60.130.209.253
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: KR 🇰🇷 | @Raydikalx | 168118
-    type: vmess
-    server: 217.142.138.61
-    port: 80
-    uuid: ac1b933d-afff-4487-93ef-f57130a55dff
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: KR 🇰🇷 | @Raydikalx | 9652E1
-    type: vmess
-    server: 43.108.103.167
-    port: 123
-    uuid: 35aa0fda-175a-4aec-c468-0231dee1a121
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 🇰🇷 230
-    type: trojan
-    server: 61.37.18.100
-    port: 24999
-    password: 4eef70e2-f925-490c-8f2d-bea35bb37cba
-    udp: true
-    sni: www.itunes.com
-    skip-cert-verify: true
-  - name: 🇰🇷 2929
-    type: ss
-    server: 141.164.45.187
-    port: 8091
-    cipher: aes-256-gcm
-    password: PCnnH6SQSnfoS27
-    udp: true
-  - name: KR - zhuhai.uk
-    type: socks5
-    server: 121.169.46.116
-    port: 1090
-    username: VDJjbE0wUWxNMFE2Og
-    password: VDJjbE0wUWxNMFE2Og
-  - name: 🇰🇷 854
-    type: trojan
-    server: 154.90.62.70
-    port: 56127
-    password: p5jTPcffLgi4gaNOJd2KUTb9YEPBBD5B
-    udp: true
-    sni: 154.90.62.70
-    skip-cert-verify: true
-  - name: 🇰🇷 Korea, Republic of 31
-    server: 141.164.56.250
-    port: 443
-    type: ss
-    cipher: aes-256-gcm
-    password: pKEW8JPByTVTLtM
-  - name: 🇰🇷 2415
-    type: ss
-    server: 218.237.185.234
-    port: 4652
-    cipher: aes-256-cfb
-    password: qwerREWQ@@
-    udp: true
-  - name: 🇰🇷KR-211.178.105.134-0243
-    type: ss
-    server: 211.178.105.134
-    port: 6123
-    cipher: aes-256-cfb
-    password: qwerREWQ@@
-    udp: true
-  - name: 🇰🇷KR-3.34.6.217-4347
-    type: trojan
-    server: 3.34.6.217
-    port: 443
-    password: xxoo
-    udp: true
-  - name: '🇰🇷[www.v2nodes.com] vless-KR-1... #2'
-    type: vless
-    server: 3.39.4.109
-    port: 18967
-    uuid: 814bd064-544d-4255-a070-5705c03f6da9
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-  - name: 🇹🇼[www.v2nodes.com] vless-TW-3...
-    client-fingerprint: chrome
-    encryption: none
-    network: ws
-    port: 443
-    server: 188.253.6.249
-    servername: vlso5.1d.mom
-    tls: true
-    type: vless
-    uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
-    ws-opts:
-      headers:
-        Host: vlso5.1d.mom
-      path: /socks5=888:888@hkip.1d.mom:1080
-  - name: 🇹🇼 228
-    type: trojan
-    server: 188.253.7.44
-    port: 24999
-    password: 4eef70e2-f925-490c-8f2d-bea35bb37cba
-    udp: true
-    sni: www.itunes.com
-    skip-cert-verify: true
-  - name: 🇰🇷KR-144.24.72.126-3288
-    type: trojan
-    server: 144.24.72.126
-    port: 443
-    password: 7118b5f4-0ea4-4c11-be7f-11471cb91e4a
-    udp: true
-  - name: 🇨🇳台湾专线02 gpt专用
-    type: vless
-    server: 59.125.69.23
-    port: 443
-    uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-    udp: true
-    network: ws
-    ws-opts:
-      path: /
-  - name: '[freeSub#017] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850'
-    type: trojan
-    server: 125.227.86.46
-    port: 443
-    password: 0a9f1f5a397bd427
-    udp: true
-    sni: TG.freecodes
-    skip-cert-verify: true
-  - name: 🇹🇼 1368
-    type: trojan
-    server: 125.227.86.45
-    port: 443
-    password: 0a9f1f5a397bd427
-    udp: true
-    sni: TG.freecodes
-    skip-cert-verify: true
-  - name: 🇰🇷 2178
-    type: ss
-    server: 141.164.45.187
-    port: 5498
-    cipher: aes-256-gcm
-    password: lGqs95QkFHo2NV
-    udp: true
-  - name: 🇭🇰HK-83.229.121.78-5333
-    type: trojan
-    server: 83.229.121.78
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    udp: true
-  - name: 🇭🇰 226
-    type: trojan
-    server: 89.185.28.38
-    port: 24999
-    password: 4eef70e2-f925-490c-8f2d-bea35bb37cba
-    udp: true
-    sni: www.itunes.com
-    skip-cert-verify: true
-  - name: '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
-    type: vless
-    server: 151.245.106.49
-    port: 2053
-    uuid: a2de9567-9646-45a9-a410-7303a43bdb6c
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: firefox
-  - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #2-2'
-    type: vless
-    server: 156.226.168.221
-    port: 35193
-    uuid: 35cbae61-ee10-4cb9-abb8-4950b35e9851
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-  - name: 🇰🇷[www.v2nodes.com] vless-KR-1...
-    network: ws
-    port: 25555
-    server: 152.69.226.63
-    servername: 152.69.226.63
-    tls: false
-    type: vless
-    uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
-    ws-opts:
-      path: /
-  - name: 🇭🇰HK-20.187.85.198-4822
-    type: trojan
-    server: 20.187.85.198
-    port: 443
-    password: b26e31e5-eac1-45b0-9069-83830bd69521
-    udp: true
-    sni: hkt.iamnotagoodman.com
-  - name: 🇭🇰HK-219.76.13.181-0010
-    type: trojan
-    server: 219.76.13.181
-    port: 443
-    password: SyOxpKxC8u5jgNa3DCZ34y3D9CRenFcaABpYATEeqI2RSaXD76zS8YF0Owl3lZ
-    udp: true
-    sni: arbettp.freetrade.link
-  - name: KR韩国(v2clash.blog 2026-10.20更新)
-    type: vless
-    server: 168.107.36.135
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: '[free18#082] 🇭🇰_香港 (4)'
-    type: vless
-    server: 85.155.149.190
-    port: 443
-    uuid: db80088c-32a1-4cb8-a907-0f3cb7844152
-    udp: true
-    tls: true
-    servername: hk1.japancase.site
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: pGCqNljaUIUVC7xpHa9nFnu6vsQ0OX3QyfvYMhLZuWY
-      short-id: bee10b047804c637
-  - name: 🇭🇰HK-159.100.206.88-0012
-    type: vmess
-    server: 159.100.206.88
-    port: 443
-    uuid: 91646f9a-b4e9-4aca-bfe3-8892b3e58fe7
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: lg30.cfcdn3.xyz
-    network: ws
-    ws-opts:
-      path: /ray
-      headers:
-        Host: lg30.cfcdn3.xyz
-  - name: 🇸🇬SG-202.79.172.53-1853
-    type: vmess
-    server: 202.79.172.53
-    port: 443
-    uuid: 30216206-14b7-40e7-995d-61c1219ba584
-    alterId: 64
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: /path/220128071100
   - name: 🇯🇵 227
     type: trojan
     server: 161.248.63.7
@@ -3431,15 +3447,6 @@ proxies:
     udp: true
     sni: www.itunes.com
     skip-cert-verify: true
-  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
-    type: vless
-    server: 45.132.75.213
-    port: 2053
-    uuid: f46182d1-e13b-47d3-97e2-fa5426a93e7c
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: firefox
   - name: 🇭🇰香港专线01 下载专用
     type: vless
     server: 103.180.20.108
@@ -3449,12 +3456,23 @@ proxies:
     network: ws
     ws-opts:
       path: /
-  - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 149.88.107.74
+  - name: 🇰🇷 韩国 | KOR 2
+    server: 3.38.104.26
+    port: 8443
     type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 7e68e32f-8015-4f37-9082-70e8b0b58043
+    udp: true
+  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
+    type: vless
+    server: 147.93.173.45
+    port: 10444
+    uuid: 75c5f51b-d548-4eab-a26e-aa10fc3dbc7b
+    udp: true
+    tls: true
+    servername: video.yandex.ru
+    client-fingerprint: safari
+    skip-cert-verify: true
   - name: 🇸🇬[www.v2nodes.com] vless-SG-1...
     client-fingerprint: firefox
     network: tcp
@@ -3464,11 +3482,11 @@ proxies:
     tls: true
     type: vless
     uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  - name: 🇸🇬[www.v2nodes.com] ss-SG-1615...
+  - name: '🇸🇬[www.v2nodes.com] ss-SG-1616... #1'
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     port: 19999
-    server: 15.235.164.133
+    server: 15.235.182.183
     type: ss
   - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
     cipher: aes-256-gcm
@@ -3476,6 +3494,68 @@ proxies:
     port: 19999
     server: 149.88.107.47
     type: ss
+  - name: 🇸🇬SG-109.123.237.41-2732
+    type: vmess
+    server: 109.123.237.41
+    port: 80
+    uuid: 03a77360-808d-11ed-b736-205c6d5f5d78
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /
+  - name: 🇸🇬SG-43.160.197.160-5281
+    type: trojan
+    server: 43.160.197.160
+    port: 443
+    password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+    udp: true
+  - name: 🇸🇬 2811
+    type: trojan
+    server: 86.38.247.109
+    port: 2087
+    password: sshs8_6481354771
+    udp: true
+    sni: ul-singapore1.09vpn.com
+  - name: 🇸🇬[www.v2nodes.com] ss-SG-1616...
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 51.79.228.131
+    type: ss
+  - name: 🇸🇬[www.v2nodes.com] ss-SG-1615...
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 15.235.164.133
+    type: ss
+  - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 149.88.106.74
+    type: ss
+  - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 149.88.107.74
+    type: ss
+  - name: 🇰🇷 韩国 | KOR
+    server: 3.38.104.26
+    port: 443
+    type: vless
+    uuid: 7e68e32f-8015-4f37-9082-70e8b0b58043
+    tls: true
+    flow: xtls-rprx-vision
+    reality-opts:
+      public-key: DHOrfoin7TeRpnIoU3d6qT5Yrq3QPVFp49kApATA4iE
+      short-id: e04a526b0b09c765
+    servername: batteryfit.devrection.com
+    client-fingerprint: chrome
+    network: tcp
+    udp: true
   - name: SG 🇸🇬 | @Raydikalx | 6358C7
     type: vmess
     server: 45.32.120.173
@@ -3484,15 +3564,73 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-  - name: 🇸🇬SG-43.160.197.160-5281
-    type: trojan
-    server: 43.160.197.160
-    port: 443
-    password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
+  - name: 🇸🇬SG-15.235.147.186-0335
+    type: vmess
+    server: 15.235.147.186
+    port: 80
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
     udp: true
-  - name: 🇸🇬 913
+    network: ws
+    ws-opts:
+      path: /
+  - name: 🇸🇬SG-146.190.82.241-2319
+    type: vmess
+    server: 146.190.82.241
+    port: 443
+    uuid: ee76cecf-1219-42be-ae3f-6b8077e4cacc
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: /
+  - name: 🇸🇬SG-51.79.161.232-7436
     type: ss
-    server: 128.199.172.224
+    server: 51.79.161.232
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: 4Hub2f9JyhECyAq2Opm0NS
+    udp: true
+  - name: 🇸🇬SG-15.235.197.4-8029
+    type: trojan
+    server: 15.235.197.4
+    port: 80
+    password: 16bcc187-a1a0-4b8a-8b69-627f38b7cc0d
+    udp: true
+    sni: 15.235.197.4
+  - name: SG新加坡(v2clash.blog 2026-10.5更新)
+    type: vless
+    server: 43.174.195.1
+    port: 443
+    uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
+    udp: true
+  - name: SG新加坡(v2clash.blog 2026-10.13更新)
+    type: vless
+    server: 165.245.182.116
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: 🇸🇬 231
+    type: trojan
+    server: 140.245.63.155
+    port: 24999
+    password: 4eef70e2-f925-490c-8f2d-bea35bb37cba
+    udp: true
+    sni: www.itunes.com
+    skip-cert-verify: true
+  - name: 🇸🇬 749
+    type: ss
+    server: 128.1.186.132
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: 🇸🇬 1409
+    type: ss
+    server: 128.1.186.73
     port: 8080
     cipher: rc4-md5
     password: 14fFPrbezE3HDZzsMOr6
@@ -3507,6 +3645,46 @@ proxies:
     network: ws
     ws-opts:
       path: /
+  - name: 🇸🇬 2301
+    type: ss
+    server: 149.88.106.73
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: '[free18#080] 🇸🇬_新加坡 (11)'
+    type: vless
+    server: 103.106.229.177
+    port: 21001
+    uuid: 67952583-8572-42e1-943d-0602794f885b
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
+      short-id: a51c3ccb2320024a
+  - name: '[free18#083] 🇸🇬_新加坡 (12)'
+    type: vless
+    server: 206.206.76.75
+    port: 443
+    uuid: 32cf52f4-b8d2-4ed5-a37c-0d0a8e743309
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: gSHylaTvEzWj19Bk-zLHXKYUINGWVmo_ybCiD2CRinE
+      short-id: a775360a48ef5cfb
+  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
+    type: vless
+    server: 134.185.81.5
+    port: 47881
+    uuid: 59b203b2-b1bc-4e9c-a9e5-ccb8f691bf72
+    udp: true
+    tls: true
+    servername: www.tesla.com
+    client-fingerprint: chrome
   - name: SG 🇸🇬 | @Raydikalx | 8DCEC7
     type: vmess
     server: 47.237.85.7
@@ -3540,17 +3718,29 @@ proxies:
     network: ws
     ws-opts:
       path: /vmess
-  - name: 🇸🇬 231
+  - name: 🇸🇬SG-18.140.67.76-5802
     type: trojan
-    server: 140.245.63.155
-    port: 24999
-    password: 4eef70e2-f925-490c-8f2d-bea35bb37cba
+    server: 18.140.67.76
+    port: 443
+    password: iyinglong
     udp: true
-    sni: www.itunes.com
-    skip-cert-verify: true
   - name: 🇸🇬 758
     type: ss
     server: 68.183.235.122
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: 🇸🇬 891
+    type: ss
+    server: 68.183.227.236
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: 🇸🇬 913
+    type: ss
+    server: 128.199.172.224
     port: 8080
     cipher: rc4-md5
     password: 14fFPrbezE3HDZzsMOr6
@@ -3569,197 +3759,6 @@ proxies:
     cipher: rc4-md5
     password: 14fFPrbezE3HDZzsMOr6
     udp: true
-  - name: '[free18#080] 🇸🇬_新加坡 (11)'
-    type: vless
-    server: 103.106.229.177
-    port: 21001
-    uuid: 67952583-8572-42e1-943d-0602794f885b
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
-      short-id: a51c3ccb2320024a
-  - name: 🇸🇬[www.v2nodes.com] ss-SG-1616...
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 51.79.228.131
-    type: ss
-  - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 149.88.106.74
-    type: ss
-  - name: 🇸🇬SG-18.140.67.76-5802
-    type: trojan
-    server: 18.140.67.76
-    port: 443
-    password: iyinglong
-    udp: true
-  - name: 🇸🇬SG-54.254.129.246-7420
-    type: ss
-    server: 54.254.129.246
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-    udp: true
-  - name: 🇸🇬 891
-    type: ss
-    server: 68.183.227.236
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: 🇸🇬 2301
-    type: ss
-    server: 149.88.106.73
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: 🇸🇬 2811
-    type: trojan
-    server: 86.38.247.109
-    port: 2087
-    password: sshs8_6481354771
-    udp: true
-    sni: ul-singapore1.09vpn.com
-  - name: '🇸🇬[www.v2nodes.com] ss-SG-1616... #1'
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 15.235.182.183
-    type: ss
-  - name: 🇸🇬SG-15.235.147.186-0335
-    type: vmess
-    server: 15.235.147.186
-    port: 80
-    uuid: 6fea1649-425b-4092-bf53-29792152c925
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /
-  - name: 🇸🇬SG-51.79.161.232-7436
-    type: ss
-    server: 51.79.161.232
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: 4Hub2f9JyhECyAq2Opm0NS
-    udp: true
-  - name: 🇸🇬SG-15.235.197.4-8029
-    type: trojan
-    server: 15.235.197.4
-    port: 80
-    password: 16bcc187-a1a0-4b8a-8b69-627f38b7cc0d
-    udp: true
-    sni: 15.235.197.4
-  - name: 🇸🇬 1409
-    type: ss
-    server: 128.1.186.73
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: '[free18#083] 🇸🇬_新加坡 (12)'
-    type: vless
-    server: 206.206.76.75
-    port: 443
-    uuid: 32cf52f4-b8d2-4ed5-a37c-0d0a8e743309
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: gSHylaTvEzWj19Bk-zLHXKYUINGWVmo_ybCiD2CRinE
-      short-id: a775360a48ef5cfb
-  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
-    type: vless
-    server: 134.185.81.5
-    port: 47881
-    uuid: 59b203b2-b1bc-4e9c-a9e5-ccb8f691bf72
-    udp: true
-    tls: true
-    servername: www.tesla.com
-    client-fingerprint: chrome
-  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
-    type: vless
-    server: 3.0.111.82
-    port: 10574
-    uuid: 814bd064-544d-4255-a070-5705c03f6da9
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-  - name: 🇸🇬SG-146.190.82.241-2319
-    type: vmess
-    server: 146.190.82.241
-    port: 443
-    uuid: ee76cecf-1219-42be-ae3f-6b8077e4cacc
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: /
-  - name: SG新加坡(v2clash.blog 2026-10.13更新)
-    type: vless
-    server: 165.245.182.116
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: 🇸🇬 749
-    type: ss
-    server: 128.1.186.132
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: 🇸🇬SG-109.123.237.41-2732
-    type: vmess
-    server: 109.123.237.41
-    port: 80
-    uuid: 03a77360-808d-11ed-b736-205c6d5f5d78
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /
-  - name: SG新加坡(v2clash.blog 2026-10.12更新)
-    type: vless
-    server: 175.41.179.37
-    port: 51262
-    uuid: 6c6ea474-0cf5-4a3d-bc81-aa2eeb6516d6
-    udp: true
-  - name: 🇸🇬SG-157.230.36.235-2987
-    type: vmess
-    server: 157.230.36.235
-    port: 80
-    uuid: b484d576-b3e3-4ac5-b108-88a300dfe7e3
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /graphql
-  - name: SG新加坡(v2clash.blog 2026-10.20更新)
-    type: vless
-    server: 216.195.195.205
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: SG新加坡(v2clash.blog 2026-10.12更新)-2
-    type: vless
-    server: 142.91.101.39
-    port: 627
-    uuid: aff1ffd0-594c-44c9-9f79-4096fde005ea
-    udp: true
   - name: '[free18#078] 🇸🇬_新加坡 (10)'
     type: vless
     server: 103.106.229.177
@@ -3772,39 +3771,53 @@ proxies:
     reality-opts:
       public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
       short-id: d9a6b52e98121db2
-  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
-    type: vless
-    server: 5.34.177.164
+  - name: 🇸🇬 新加坡 | SGP
+    server: 56.10.9.70
     port: 443
-    uuid: ca678d26-5435-4d13-b378-06c4c3b070ff
-    udp: true
-    tls: true
-    servername: gateway.icloud.com
-    client-fingerprint: chrome
-  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
     type: vless
-    server: 147.93.173.45
-    port: 10444
-    uuid: 75c5f51b-d548-4eab-a26e-aa10fc3dbc7b
-    udp: true
+    uuid: 7e68e32f-8015-4f37-9082-70e8b0b58043
     tls: true
-    servername: video.yandex.ru
-    client-fingerprint: safari
+    flow: xtls-rprx-vision
+    reality-opts:
+      public-key: x8aCD8cJtkDvAjcRrcMG05MNiwh11LaKg70KIRvfN0g
+      short-id: 819a87bf1651bf44
+    servername: browser.56-10-9-32.sslip.io
+    client-fingerprint: chrome
+    network: tcp
+    udp: true
+  - name: 🇸🇬 新加坡 | SGP 2
+    server: 56.10.9.70
+    port: 443
+    type: hysteria2
+    password: 7e68e32f-8015-4f37-9082-70e8b0b58043
+    auth: 7e68e32f-8015-4f37-9082-70e8b0b58043
+    fingerprint: C1:FD:40:94:1F:91:9B:5C:78:96:24:40:97:F2:2D:9D:95:8E:62:5C:D9:58:B7:5F:34:CC:FA:42:18:1F:50:B2
+    sni: www.bing.com
     skip-cert-verify: true
-  - name: 🇭🇰 916
+  - name: 🇸🇬SG-157.230.36.235-2987
+    type: vmess
+    server: 157.230.36.235
+    port: 80
+    uuid: b484d576-b3e3-4ac5-b108-88a300dfe7e3
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /graphql
+  - name: 🇸🇬SG-54.254.129.246-7420
     type: ss
-    server: 103.36.91.32
-    port: 8388
-    cipher: chacha20-ietf
-    password: asd123456
+    server: 54.254.129.246
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
     udp: true
-  - name: 🇭🇰HK_1|1.4MB/s
-    password: None
-    port: 31343
-    server: 120.232.204.58
-    skip-cert-verify: true
-    tls: true
-    type: http
+  - name: SG新加坡(v2clash.blog 2026-10.12更新)
+    type: vless
+    server: 175.41.179.37
+    port: 51262
+    uuid: 6c6ea474-0cf5-4a3d-bc81-aa2eeb6516d6
+    udp: true
   - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #6-2'
     type: vless
     server: 54.251.9.130
@@ -3814,19 +3827,57 @@ proxies:
     tls: true
     servername: www.intel.com
     client-fingerprint: chrome
-  - name: 🇸🇬 2020
-    type: trojan
-    server: 15.235.184.127
+  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
+    type: vless
+    server: 5.34.177.164
     port: 443
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    uuid: ca678d26-5435-4d13-b378-06c4c3b070ff
     udp: true
-    sni: exploredigitaljobplatformandfindonlinework.com
-  - name: 🇰🇷 Seoul, 11, South Korea
+    tls: true
+    servername: gateway.icloud.com
+    client-fingerprint: chrome
+  - name: SG新加坡(v2clash.blog 2026-10.20更新)
+    type: vless
+    server: 216.195.195.205
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: 🇰🇷 2178
     type: ss
     server: 141.164.45.187
-    port: 5001
+    port: 5498
     cipher: aes-256-gcm
-    password: Y6R9pAtvxxzmGC
+    password: lGqs95QkFHo2NV
+    udp: true
+  - name: 🇭🇰HK_1|1.4MB/s
+    password: None
+    port: 31343
+    server: 120.232.204.58
+    skip-cert-verify: true
+    tls: true
+    type: http
+  - name: 🇰🇷 Seoul, 11, South Korea-2
+    type: ss
+    server: 141.164.45.187
+    port: 8008
+    cipher: aes-256-gcm
+    password: XKFKl2rULjIp74
+    udp: true
+  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
+    type: vless
+    server: 3.0.111.82
+    port: 10574
+    uuid: 814bd064-544d-4255-a070-5705c03f6da9
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+  - name: 🇰🇷 Seoul, 11, South Korea-3
+    type: ss
+    server: 141.164.45.187
+    port: 6679
+    cipher: aes-256-gcm
+    password: TEzjfAYq2IjtuoS
     udp: true
   - name: 🇰🇷KR-141.164.45.187-0259
     type: ss
@@ -3842,47 +3893,56 @@ proxies:
     cipher: aes-256-gcm
     password: RexnBgU7EV5ADxG
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-2
+  - name: SG新加坡(v2clash.blog 2026-10.12更新)-2
+    type: vless
+    server: 142.91.101.39
+    port: 627
+    uuid: aff1ffd0-594c-44c9-9f79-4096fde005ea
+    udp: true
+  - name: 🇰🇷 2929
     type: ss
     server: 141.164.45.187
-    port: 6679
+    port: 8091
     cipher: aes-256-gcm
-    password: TEzjfAYq2IjtuoS
+    password: PCnnH6SQSnfoS27
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-3
-    type: ss
-    server: 141.164.45.187
-    port: 7002
-    cipher: aes-256-gcm
-    password: RexnBgU7EV5ADxG
+  - name: 🇸🇬 2020
+    type: trojan
+    server: 15.235.184.127
+    port: 443
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
     udp: true
+    sni: exploredigitaljobplatformandfindonlinework.com
+  - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
+    type: vless
+    server: 45.132.75.213
+    port: 2053
+    uuid: f46182d1-e13b-47d3-97e2-fa5426a93e7c
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
   - name: 🇰🇷 Seoul, 11, South Korea-4
+    type: ss
+    server: 141.164.45.187
+    port: 5001
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
+  - name: 🇰🇷 Seoul, 11, South Korea-5
     type: ss
     server: 141.164.45.187
     port: 8119
     cipher: aes-256-gcm
     password: cdBIDV42DCwnfIN
     udp: true
-  - name: 🇰🇷 Seoul, 11, South Korea-5
+  - name: 🇭🇰 916
     type: ss
-    server: 141.164.45.187
-    port: 8008
-    cipher: aes-256-gcm
-    password: XKFKl2rULjIp74
+    server: 103.36.91.32
+    port: 8388
+    cipher: chacha20-ietf
+    password: asd123456
     udp: true
-  - name: 🇰🇷[www.v2nodes.com] ss-KR-1185...
-    cipher: aes-256-gcm
-    password: Y6R9pAtvxxzmGC
-    port: 8888
-    server: 141.164.45.187
-    type: ss
-  - name: 🇰🇷 1277
-    type: trojan
-    server: 158.247.255.150
-    port: 48851
-    password: 5t6i121em5lkmsmk
-    udp: true
-    sni: kr002.zestapp778.com
   - name: 🇰🇷[www.v2nodes.com] trojan-KR-...
     password: 5t6i121em5lkmsmk
     port: 48851
@@ -3906,11 +3966,11 @@ proxy-groups:
       - ☝️ 全部-手动
       - 📍 美国
       - 📍 韩国
-      - 📍 英国
       - 📍 日本
+      - 📍 英国
       - 📍 德国
-      - 📍 新加坡
       - 📍 香港
+      - 📍 新加坡
       - DIRECT
   - name: ♻️ 全部-自动
     type: url-test
@@ -3919,124 +3979,128 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - 美国 104
-      - 韩国 005
-      - 美国 267
-      - 🇰🇷 KR2@ripaojiedian
-      - 英国 008
-      - 韩国 009
-      - 美国 247
-      - 美国 255
       - 美国 236
-      - 美国 088
-      - 美国 231
-      - 美国 238
-      - 美国 252
-      - 美国 095
-      - 美国 102
-      - 日本 009
-      - 美国 250
+      - US美国(v2clash.blog 2026-10.20更新)
+      - 美国 248
+      - 美国 255
+      - 美国 295
+      - 美国 016
+      - 韩国 009
+      - 美国 246
       - 美国 266
       - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 美国 254
-      - 美国 328
-      - US美国(v2clash.blog 2026-10.20更新)
-      - 日本 017
-      - US美国(v2clash.blog 2026-10.23更新)
-      - US VLESS-12 | free-nodes
-      - 美国 108
-      - 日本 011
-      - 美国 246
-      - 美国 331
-      - 🇺🇸 603
-      - 美国 230
-      - 美国 689
-      - US 🇺🇸 | @Raydikalx | 5A1BD6
-      - 美国 749
-      - DE 🇩🇪 | @Raydikalx | 4769A2
-      - '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
-      - 美国 085
-      - US 🇺🇸 | @Raydikalx | A21CA4
-      - 美国 011
-      - 美国 290
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - 美国 014
-      - 美国 042
-      - 美国 307
-      - 美国 219
-      - 美国 316
-      - 美国 248
-      - 美国 338
-      - 美国 008
-      - 美国 302
-      - US美国(v2clash.blog 2026-10.19更新)
-      - 韩国 010
-      - 美国 744
-      - US 🇺🇸 | @Raydikalx | B05884
-      - US 🇺🇸 | @Raydikalx | 4452C9
-      - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
-      - 美国 097
-      - 美国 207
-      - 美国 310
+      - 英国 008
       - 美国 114
-      - 美国 009
-      - 韩国 001
-      - 美国 038
-      - 美国 743
-      - 🇯🇵[www.v2nodes.com] vless-JP
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
-      - 🇺🇸 美国 | USA
-      - US美国(v2clash.blog 2026-10.10更新)
-      - US美国(v2clash.blog 2026-10.19更新)-2
-      - US美国(v2clash.blog 2026-10.9更新)
-      - 美国 141
-      - 美国 245
-      - 美国 308
-      - 美国 323
-      - 美国 187
-      - 美国 200
-      - 美国 239
-      - 美国 686
-      - 🇩🇪DE-157.90.20.18-3846
-      - '@V2rayng_Fast 🇬🇧'
-      - US美国(v2clash.blog 2026-10.3更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
-      - 美国 159
-      - 美国 206
-      - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - 美国 016
-      - 美国 144
-      - US美国(mibei77.com 米贝节点分享)
-      - US美国(v2clash.blog 2026-10.7更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-      - 美国 715
-      - 美国 737
-      - 德国 085
-      - 美国 746
-      - 美国 013
-      - '@ShadowProxy66 🇺🇸'
-      - '@ShadowProxy66 🇺🇸-2'
-      - '@ShadowProxy66 🇺🇸-3'
-      - 美国 136
+      - 美国 307
+      - US 🇺🇸 | @Raydikalx | A21CA4
+      - 美国 108
+      - 韩国 005
+      - 美国 328
+      - 美国 102
       - 美国 262
-      - '🇹🇼 🇨🇳 台湾 | TWN #1'
-      - 美国 173
+      - 美国 001
+      - 美国 220
+      - 美国 231
+      - 美国 252
+      - 美国 095
+      - 美国 230
+      - 美国 112
+      - 美国 250
+      - 美国 085
+      - 美国 106
+      - US美国(v2clash.blog 2026-10.23更新)
+      - 美国 088
+      - 美国 097
+      - 美国 247
+      - 美国 254
+      - '🇯🇵 日本 | JPN #1'
+      - 美国 267
+      - 美国 104
+      - 日本 018
+      - 🇰🇷 KR2@ripaojiedian
+      - 日本 011
+      - 日本 017
+      - 美国 166
+      - US VLESS-12 | free-nodes
+      - 日本 009
+      - 美国 331
+      - US美国(v2clash.blog 2026-10.19更新)
+      - '@V2rayng_Fast 🇬🇧'
+      - 🇩🇪DE-157.90.20.18-3846
+      - 美国 689
+      - '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
+      - 美国 005
+      - 美国 749
+      - DE 🇩🇪 | @Raydikalx | 166068
+      - 美国 688
+      - US 🇺🇸 | @Raydikalx | A8EEF5
+      - 美国 740
+      - 美国 746
+      - '🇩🇪 德国 | DEU #1'
+      - 美国 208
+      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - 新加坡 001
-      - '[freeSub#420] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_750bc1c1'
-      - '@V2rayng_Fast 🇩🇪'
+      - 韩国 001
+      - 美国 715
+      - US 🇺🇸 | @Raydikalx | 5A1BD6
+      - 美国 009
+      - 🇺🇸 601
+      - 美国 195
+      - 美国 011
+      - US美国(v2clash.blog 2026-10.23更新)-2
+      - 美国 141
+      - 美国 200
+      - 美国 308
+      - 美国 744
+      - 美国 239
+      - 美国 145
+      - 韩国 010
+      - 美国 187
+      - US美国(mibei77.com 米贝节点分享)
+      - US美国(v2clash.blog 2026-10.10更新)
+      - 美国 302
+      - 美国 245
       - DE 🇩🇪 | @Raydikalx | 3E1586
       - DE 🇩🇪 | @Raydikalx | 3639BA
       - DE 🇩🇪 | @Raydikalx | E94E3F
       - DE 🇩🇪 | @Raydikalx | C08069
       - DE 🇩🇪 | @Raydikalx | D5F456
-      - 日本 002
-      - 日本 018
+      - 美国 042
+      - 美国 158
+      - 美国 338
+      - 美国 257
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
+      - 美国 207
+      - 美国 297
+      - 美国 310
+      - 🇩🇪telegram➠@v2rayNG_Matsuri
+      - 美国 290
+      - 美国 703
+      - 美国 144
+      - 美国 146
+      - US 🇺🇸 | @Raydikalx | C2EDAF
+      - DE 🇩🇪 | @Raydikalx | 4769A2
+      - 美国 013
+      - 美国 159
+      - 美国 323
+      - 🇺🇸 603
+      - 🇯🇵[www.v2nodes.com] vless-JP
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
+      - 🇺🇸 美国 | USA
+      - '[freeSub#420] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_750bc1c1'
+      - '@V2rayng_Fast 🇩🇪'
+      - 新加坡 001
+      - 德国 085
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
       - 🇰🇷KR-146.56.166.153-0123
-      - '🇩🇪 德国 | DEU #1'
-      - DE 🇩🇪 | @Raydikalx | 166068
+      - '@V2rayng_Fast 🇩🇪-2'
+      - 日本 003
+      - 日本 002
+      - 日本 012
       - SG 🇸🇬 | @Raydikalx | C62756
       - '[AutoMerge#025] 🇸🇬[www.v2nodes.com] vless-SG-9...'
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - 🇯🇵 JP2@ripaojiedian
@@ -4044,397 +4108,398 @@ proxy-groups:
       - 日本 029
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
-      - '@V2rayng_Fast 🇩🇪-2'
       - 英国 032
       - 🇭🇰 HK2@ripaojiedian
       - DE 🇩🇪 | @Raydikalx | F68888
-      - 日本 003
       - '@V2rayng_Fast 🇬🇧-2'
       - 🇰🇷 KR1@ripaojiedian
-      - 日本+V2CROSS.COM
+      - SG VLESS-16 | free-nodes
       - '[AutoMerge#026] 🇸🇬[www.v2nodes.com] vless-SG-9... #1'
-      - 日本 012
       - 🇹🇼 TW@ripaojiedian
       - 🇭🇰 HK1@ripaojiedian
       - 日本 020
-      - '🇯🇵 日本 | JPN #1'
       - 新加坡 004
       - 🇭🇰 HK3@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
+      - 🇯🇵[www.v2nodes.com] vless-JP-1...
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - '@V2rayng_Fast 🇩🇪-3'
+      - '@V2rayng_Fast 🇩🇪-4'
       - 德国 010
+      - SG 🇸🇬 | @Raydikalx | F0FF0E
       - GB英国(v2clash.blog 2026-10.13更新)
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - JP日本(v2clash.blog 2026-10.14更新)
       - TW台湾(v2clash.blog 2026-10.24更新)
       - Tel@V2rayng_Fast 🇩🇪
-      - '@V2rayng_Fast 🇩🇪-3'
-      - DE德国(v2clash.blog 2026-9.12新)
-      - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
+      - DE德国(v2clash.blog 2026-9.12新)
       - '@V2rayng_Fast 🇩🇪-6'
-      - '[AutoMerge#008] 🇸🇬[www.v2nodes.com] vless-SG'
-      - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - SG 🇸🇬 | @Raydikalx | F0FF0E
       - '[freeSub#225] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_50bb1f1f'
+      - '[AutoMerge#008] 🇸🇬[www.v2nodes.com] vless-SG'
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
-      - 🇸🇬[www.v2nodes.com] vless-SG
-      - DE VLESS-01 | free-nodes
       - '🇩🇪[www.v2nodes.com] vless-DE-1... #10'
+      - 🇸🇬[www.v2nodes.com] vless-SG
       - 🇯🇵[www.v2nodes.com] vless-JP-4...
-      - '🇸🇬[www.v2nodes.com] vless-SG #1'
+      - CA - zhuhai.uk
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+      - DE VLESS-01 | free-nodes
       - '🇩🇪[www.v2nodes.com] vless-DE-1... #4'
-      - JP日本(v2clash.blog 2026-6.9更新)
+      - '🇸🇬[www.v2nodes.com] vless-SG #1'
+      - 🇩🇪
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - CA - zhuhai.uk
-      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
-      - 🇬🇧GB_1|2.7MB/s
-      - GB 🇬🇧 | @Raydikalx | CE841E
-      - 🇬🇧GB-172.99.190.149-6421
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
-      - '🇬🇧[www.v2nodes.com] ss-GB-1616... #1'
-      - '🇬🇧[www.v2nodes.com] ss-GB-1615... #1'
-      - 🇬🇧[www.v2nodes.com] ss-GB-1602...
+      - 🇯🇵 394
+      - 🇯🇵JP-54.65.177.190-5327
+      - 日本低延迟(解锁YouTube,ChatGPT等网站)
+      - 🇯🇵 633
+      - 🇯🇵 adi|freenode1020-JP 11
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #5'
+      - 🇯🇵JP-43.206.225.188-5280
+      - 🇯🇵JP-18.179.31.199-5329
+      - 🇯🇵 adi|freenode1020-JP 2
+      - 🇯🇵 adi|freenode1020-JP 3
+      - 🇯🇵 adi|freenode1020-JP 6
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
+      - 🇯🇵 1610
+      - JP日本(v2clash.blog 2026-10.23更新)-2
+      - 🇰🇷 230
+      - KR 🇰🇷 | @Raydikalx | 168118
+      - 🇰🇷 Korea, Republic of 31
+      - KR - zhuhai.uk
+      - 🇰🇷 2415
+      - 🇰🇷 854
       - GB 🇬🇧 | @Raydikalx | 1D17F2
+      - 🇰🇷KR-211.178.105.134-0243
+      - 🇬🇧GB-185.44.76.188-4894
+      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
+      - 🇬🇧[www.v2nodes.com] ss-GB-1602...
+      - 🇰🇷KR-144.24.72.126-3288
+      - 🇬🇧[www.v2nodes.com] ss-GB-1451...
+      - GB 🇬🇧 | @Raydikalx | CE841E
+      - '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
+      - 🇰🇷[www.v2nodes.com] vless-KR-1...
+      - 🇹🇼[www.v2nodes.com] vless-TW-3...
+      - '🇬🇧[www.v2nodes.com] ss-GB-1615... #1'
+      - 🇬🇧GB-172.99.190.149-6421
+      - KR韩国(v2clash.blog 2026-10.20更新)
+      - GB 🇬🇧 | @Raydikalx | 4DE8B6
+      - 🇬🇧GB-141.98.101.181-0275
       - 🇬🇧GB-146.70.61.37-0208
       - 🇬🇧GB-51.89.138.147-0419
-      - 🇬🇧GB-185.44.76.188-4894
-      - GB英国(v2clash.blog 2026-10.12更新)
-      - 🇬🇧 1049
-      - 🇬🇧 英国 | GBR
-      - GB 🇬🇧 | @Raydikalx | B8FD16
-      - GB 🇬🇧 | @Raydikalx | D2ACA3
-      - GB 🇬🇧 | @Raydikalx | 4B9793
+      - 🇹🇼 228
       - 🇬🇧GB-132.145.51.172-3255
-      - 🇬🇧GB-172.99.190.149-5829
-      - 🇬🇧GB-51.38.71.175-7441
-      - 🇬🇧GB_2|1.2MB/s
-      - 🇬🇧[www.v2nodes.com] ss-GB-1451...
       - 🇬🇧GB_3|1.0MB/s
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
-      - 🇩🇪
+      - GB 🇬🇧 | @Raydikalx | 4B9793
+      - GB英国(v2clash.blog 2026-10.12更新)
+      - 🇹🇼 1368
+      - '🇬🇧[www.v2nodes.com] ss-GB-1616... #1'
+      - 🇬🇧GB_2|1.2MB/s
+      - 🇬🇧GB-51.38.71.175-7441
+      - 🇬🇧 1049
+      - '[freeSub#017] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850'
+      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
       - 🇬🇧 744
+      - '[free18#226] 🇬🇧_英国 (6)'
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
+      - 🇬🇧GB_1|2.7MB/s
       - 🇬🇧 1116
-      - GB 🇬🇧 | @Raydikalx | 6B4B20
-      - 🇬🇧GB-141.98.101.181-0275
-      - 🇬🇧GB-104.239.12.81-0282
-      - NL - zhuhai.uk
-      - 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
-      - '[free18#025] 🇬🇧_英国 (3)'
+      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
+      - 🇩🇪DE-193.108.119.15-0184
+      - 🇬🇧GB-172.99.190.149-5829
       - 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4 (2)
-      - 🇩🇪DE-108.61.171.167-8131
-      - 🇩🇪 851
-      - 🇩🇪 2729
       - '🇩🇪[www.v2nodes.com] ss-DE-1615... #1'
       - '🇩🇪[www.v2nodes.com] ss-DE-1615... #2'
-      - '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
-      - '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
       - DE 🇩🇪 | @Raydikalx | 0A7D80
-      - DE 🇩🇪 | @Raydikalx | 78DCAA
       - DE 🇩🇪 | @Raydikalx | 53A099
       - 🇩🇪DE-193.108.119.29-0205
       - 🇩🇪DE-185.176.204.18-0170
       - 🇩🇪DE-193.108.117.75-5518
-      - 🇩🇪DE-209.250.236.93-7669
+      - 🇩🇪DE-95.179.254.136-7372
+      - 🇩🇪DE-108.61.171.167-8131
+      - 🇰🇷 Seoul, 11, South Korea
+      - 🇩🇪 1143
+      - 🇩🇪 2384
       - 🇩🇪 2425
-      - '[free18#235] 🇩🇪_德国 (30)'
+      - 🇩🇪 2539
+      - 🇩🇪 2649
+      - 🇩🇪 2729
+      - '🇰🇷[www.v2nodes.com] vless-KR-1... #2'
+      - NL - zhuhai.uk
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
+      - '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
+      - '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
+      - 🇩🇪DE_9|2.0MB/s
+      - DE 🇩🇪 | @Raydikalx | 78DCAA
+      - 🇭🇰 226
       - '[ermaozi#010] 🇩🇪 德国 | DEU 3'
-      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
       - 🇩🇪DE_2|2.0MB/s
+      - 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
+      - 🇭🇰HK-219.76.13.181-0010
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #2-2'
+      - 🇩🇪DE_1|1.1MB/s
       - 🇩🇪DE_3|2.0MB/s
       - 🇩🇪DE_8|1.4MB/s
-      - DE 🇩🇪 | @Raydikalx | F79465
-      - DE 🇩🇪 | @Raydikalx | 9C2ECE
       - DE 🇩🇪 | @Raydikalx | EE75E7
-      - GB 🇬🇧 | @Raydikalx | 4DE8B6
-      - 🇩🇪DE-193.108.119.15-0184
-      - 🇩🇪 890
-      - 🇬🇧 1516
-      - 🇩🇪 2384
-      - 🇩🇪 2649
-      - 🇩🇪DE_1|1.1MB/s
-      - 🇩🇪DE_7|2.1MB/s
-      - DE 🇩🇪 | @Raydikalx | 41AEF9
-      - 🇩🇪 1135
-      - 🇩🇪 2655
-      - '[free18#203] 🇩🇪_德国 (22)'
-      - '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
-      - 🇩🇪[www.v2nodes.com] ss-DE-1616...
-      - 🇩🇪DE_5|3.5MB/s
-      - 🇩🇪 德国 | DEU 5
-      - DE 🇩🇪 | @Raydikalx | 4C5D05
-      - eric-de-3
-      - 英国 025
-      - DE 🇩🇪 | @Raydikalx | 0674D2
+      - GB 🇬🇧 | @Raydikalx | B8FD16
+      - GB 🇬🇧 | @Raydikalx | D2ACA3
       - DE 🇩🇪 | @Raydikalx | 36C258
       - DE 🇩🇪 | @Raydikalx | E9A338
       - DE 🇩🇪 | @Raydikalx | F00EF1
-      - 🆔soskeynet 🔒 VL-TCP- 🇬🇧 GB 133ms
-      - 🇬🇧GB-82.38.31.210-0150
-      - 🇬🇧GB-82.38.31.171-0239
-      - 🇬🇧GB-82.38.31.66-0225
-      - 🇬🇧GB-82.38.31.170-0230
-      - 🇬🇧GB-82.38.31.219-0260
       - 🇩🇪DE-8.209.104.230-0134
-      - eric-de-2
+      - 🇭🇰HK-20.187.85.198-4822
       - DE德国(v2clash.blog 2026-10.6更新)
-      - 🇩🇪 2539
-      - GB 🇬🇧 | @Raydikalx | 410E97
-      - 🇬🇧GB-82.38.31.207-0162
-      - 英国 024
-      - 🇬🇧GB-82.38.31.191-0172
-      - 🇬🇧GB-82.38.31.217-0168
-      - 🇬🇧GB-82.38.31.202-0192
-      - 🇬🇧GB-82.38.31.186-0157
-      - 🇬🇧GB-82.38.31.184-0224
-      - 🇬🇧GB-82.38.31.49-0233
-      - 🇬🇧GB-178.83.185.156-0280
+      - 🇩🇪 890
+      - 🇩🇪 1135
+      - '[free18#026] 🇩🇪_德国 (2)'
+      - '[free18#203] 🇩🇪_德国 (22)'
+      - DE 🇩🇪 | @Raydikalx | 4B7538
+      - 🆔soskeynet 🔒 VL-TCP- 🇬🇧 GB 133ms
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #8'
+      - DE 🇩🇪 | @Raydikalx | 0674D2
+      - DE 🇩🇪 | @Raydikalx | 41AEF9
+      - 🇩🇪 DE by @oneclickvpnkeys
+      - 🇩🇪DE-94.130.184.57-3169
+      - 🇭🇰HK-83.229.121.78-5333
+      - eric-de-2
+      - '[free18#025] 🇬🇧_英国 (3)'
+      - 🇩🇪 德国 | DEU 5
+      - DE 🇩🇪 | @Raydikalx | 934065
+      - DE 🇩🇪 | @Raydikalx | 7CC4F5
+      - KR 🇰🇷 | @Raydikalx | 9652E1
+      - 🇰🇷KR-3.34.6.217-4347
+      - 🇸🇬SG-202.79.172.53-1853
+      - 英国 025
+      - GB 🇬🇧 | @Raydikalx | 6B4B20
+      - 🇬🇧GB-82.38.31.206-0160
       - 🇬🇧GB-82.38.31.162-0234
-      - 🇬🇧GB-82.38.31.176-0274
-      - 🇬🇧GB-82.38.31.190-0294
+      - GB 🇬🇧 | @Raydikalx | 410E97
+      - 🇬🇧GB-82.38.31.47-0241
+      - 🇬🇧GB-82.38.31.218-0271
+      - '[free18#082] 🇭🇰_香港 (4)'
+      - 🇬🇧 英国 | GBR 2
+      - 🇬🇧GB-82.38.31.207-0162
       - 🇬🇧GB-82.38.31.208-0175
       - 🇬🇧GB-82.38.31.203-0156
-      - 🇬🇧GB-82.38.31.187-0202
-      - 🇬🇧GB-82.38.31.48-0238
-      - 🇬🇧GB-82.38.31.218-0271
-      - 🇬🇧GB-82.38.31.189-0295
-      - 🇬🇧 1453
       - 🇬🇧GB-82.38.31.214-0151
-      - 🇬🇧GB-82.38.31.159-0237
-      - 🇬🇧GB-82.38.31.47-0241
-      - 🇬🇧GB-82.38.31.35-0240
-      - 🇬🇧GB-82.38.31.46-0235
-      - 🇬🇧 英国 | GBR 2
       - 🇬🇧GB-82.38.31.181-0161
-      - 🇬🇧GB-82.38.31.205-0179
+      - 🇬🇧GB-82.38.31.184-0224
+      - 🇬🇧GB-82.38.31.48-0238
+      - 🇬🇧GB-82.38.31.66-0225
+      - 🇬🇧GB-82.38.31.35-0240
+      - 🇬🇧GB-82.38.31.189-0295
+      - 🇬🇧GB-82.38.31.202-0192
+      - 🇬🇧GB-82.38.31.49-0233
+      - 🇬🇧GB-82.38.31.170-0230
+      - 🇬🇧GB-82.38.31.210-0150
+      - 🇬🇧GB-82.38.31.171-0228
+      - 🇬🇧GB-82.38.31.199-0267
+      - 🇬🇧GB-82.38.31.190-0294
+      - 🇬🇧GB-82.38.31.186-0157
+      - 🇬🇧GB-82.38.31.187-0202
+      - 🇬🇧GB-82.38.31.159-0237
+      - '[free18#219] 🇬🇧_英国 (5)'
       - 🇬🇧GB-82.38.31.192-0169
+      - 🇬🇧GB-82.38.31.46-0235
+      - 🇬🇧GB-82.38.31.179-0297
+      - 🇬🇧GB-82.38.31.194-0165
+      - 🇬🇧GB-82.38.31.171-0239
+      - 🇬🇧GB-82.38.31.219-0260
+      - 🇬🇧GB-104.239.12.81-0282
+      - '[free18#254] 🇬🇧_英国 (9)'
+      - 🇬🇧GB-82.38.31.191-0172
       - 🇬🇧GB-82.38.31.61-0231
-      - SG新加坡(v2clash.blog 2026-10.5更新)
-      - 🇯🇵 394
-      - '[free18#069] 🇯🇵_日本 (3)'
-      - 🇯🇵JP-43.206.225.188-5280
-      - 🇯🇵JP-54.65.177.190-5327
-      - 日本低延迟(解锁YouTube,ChatGPT等网站)
-      - 🇯🇵 adi|freenode1020-JP 2
-      - 🇯🇵 adi|freenode1020-JP 6
-      - 🇯🇵 adi|freenode1020-JP 11
-      - 🇯🇵JP-18.179.31.199-5329
-      - 🇯🇵 633
-      - 🇯🇵 adi|freenode1020-JP 3
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
-      - 🇯🇵 1610
-      - JP日本(v2clash.blog 2026-10.23更新)-2
-      - KR 🇰🇷 | @Raydikalx | 168118
-      - KR 🇰🇷 | @Raydikalx | 9652E1
-      - 🇰🇷 230
-      - 🇰🇷 2929
-      - KR - zhuhai.uk
-      - 🇰🇷 854
-      - 🇰🇷 Korea, Republic of 31
-      - 🇰🇷 2415
-      - 🇰🇷KR-211.178.105.134-0243
-      - 🇰🇷KR-3.34.6.217-4347
-      - '🇰🇷[www.v2nodes.com] vless-KR-1... #2'
-      - 🇹🇼[www.v2nodes.com] vless-TW-3...
-      - 🇹🇼 228
-      - 🇰🇷KR-144.24.72.126-3288
-      - 🇨🇳台湾专线02 gpt专用
-      - '[freeSub#017] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850'
-      - 🇹🇼 1368
-      - 🇰🇷 2178
-      - 🇭🇰HK-83.229.121.78-5333
-      - 🇭🇰 226
-      - '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #2-2'
-      - 🇰🇷[www.v2nodes.com] vless-KR-1...
-      - 🇭🇰HK-20.187.85.198-4822
-      - 🇭🇰HK-219.76.13.181-0010
-      - KR韩国(v2clash.blog 2026-10.20更新)
-      - '[free18#082] 🇭🇰_香港 (4)'
-      - 🇭🇰HK-159.100.206.88-0012
-      - 🇸🇬SG-202.79.172.53-1853
       - 🇯🇵 227
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
       - 🇭🇰香港专线01 下载专用
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
+      - 🇰🇷 韩国 | KOR 2
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
       - 🇸🇬[www.v2nodes.com] vless-SG-1...
-      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
+      - '🇸🇬[www.v2nodes.com] ss-SG-1616... #1'
       - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
-      - SG 🇸🇬 | @Raydikalx | 6358C7
+      - 🇸🇬SG-109.123.237.41-2732
       - 🇸🇬SG-43.160.197.160-5281
-      - 🇸🇬 913
+      - 🇸🇬 2811
+      - 🇸🇬[www.v2nodes.com] ss-SG-1616...
+      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
+      - 🇰🇷 韩国 | KOR
+      - SG 🇸🇬 | @Raydikalx | 6358C7
+      - 🇸🇬SG-15.235.147.186-0335
+      - 🇸🇬SG-146.190.82.241-2319
+      - 🇸🇬SG-51.79.161.232-7436
+      - 🇸🇬SG-15.235.197.4-8029
+      - SG新加坡(v2clash.blog 2026-10.5更新)
+      - SG新加坡(v2clash.blog 2026-10.13更新)
+      - 🇸🇬 231
+      - 🇸🇬 749
+      - 🇸🇬 1409
       - 🇸🇬 1612
+      - 🇸🇬 2301
+      - '[free18#080] 🇸🇬_新加坡 (11)'
+      - '[free18#083] 🇸🇬_新加坡 (12)'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
       - SG 🇸🇬 | @Raydikalx | 8DCEC7
       - 🇸🇬SG-68.183.227.4-0309
       - 🇸🇬SG-15.235.184.36-2700
-      - 🇸🇬 231
+      - 🇸🇬SG-18.140.67.76-5802
       - 🇸🇬 758
+      - 🇸🇬 891
+      - 🇸🇬 913
       - 🇸🇬 1030
       - 🇸🇬 1166
-      - '[free18#080] 🇸🇬_新加坡 (11)'
-      - 🇸🇬[www.v2nodes.com] ss-SG-1616...
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
-      - 🇸🇬SG-18.140.67.76-5802
-      - 🇸🇬SG-54.254.129.246-7420
-      - 🇸🇬 891
-      - 🇸🇬 2301
-      - 🇸🇬 2811
-      - '🇸🇬[www.v2nodes.com] ss-SG-1616... #1'
-      - 🇸🇬SG-15.235.147.186-0335
-      - 🇸🇬SG-51.79.161.232-7436
-      - 🇸🇬SG-15.235.197.4-8029
-      - 🇸🇬 1409
-      - '[free18#083] 🇸🇬_新加坡 (12)'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
-      - 🇸🇬SG-146.190.82.241-2319
-      - SG新加坡(v2clash.blog 2026-10.13更新)
-      - 🇸🇬 749
-      - 🇸🇬SG-109.123.237.41-2732
-      - SG新加坡(v2clash.blog 2026-10.12更新)
-      - 🇸🇬SG-157.230.36.235-2987
-      - SG新加坡(v2clash.blog 2026-10.20更新)
-      - SG新加坡(v2clash.blog 2026-10.12更新)-2
       - '[free18#078] 🇸🇬_新加坡 (10)'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
-      - 🇭🇰 916
-      - 🇭🇰HK_1|1.4MB/s
+      - 🇸🇬 新加坡 | SGP
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇸🇬SG-157.230.36.235-2987
+      - 🇸🇬SG-54.254.129.246-7420
+      - SG新加坡(v2clash.blog 2026-10.12更新)
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #6-2'
-      - 🇸🇬 2020
-      - 🇰🇷 Seoul, 11, South Korea
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
+      - SG新加坡(v2clash.blog 2026-10.20更新)
+      - 🇰🇷 2178
+      - 🇭🇰HK_1|1.4MB/s
+      - 🇰🇷 Seoul, 11, South Korea-2
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
+      - 🇰🇷 Seoul, 11, South Korea-3
       - 🇰🇷KR-141.164.45.187-0259
       - 🇰🇷KR-141.164.45.187-0266
-      - 🇰🇷 Seoul, 11, South Korea-2
-      - 🇰🇷 Seoul, 11, South Korea-3
+      - SG新加坡(v2clash.blog 2026-10.12更新)-2
+      - 🇰🇷 2929
+      - 🇸🇬 2020
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
       - 🇰🇷 Seoul, 11, South Korea-4
       - 🇰🇷 Seoul, 11, South Korea-5
-      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
+      - 🇭🇰 916
       - 🇰🇷 1277
       - 🇰🇷[www.v2nodes.com] trojan-KR-...
       - 🇹🇼 台湾｜02｜HiNet
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - 美国 104
-      - 韩国 005
-      - 美国 267
-      - 🇰🇷 KR2@ripaojiedian
-      - 英国 008
-      - 韩国 009
-      - 美国 247
-      - 美国 255
       - 美国 236
-      - 美国 088
-      - 美国 231
-      - 美国 238
-      - 美国 252
-      - 美国 095
-      - 美国 102
-      - 日本 009
-      - 美国 250
+      - US美国(v2clash.blog 2026-10.20更新)
+      - 美国 248
+      - 美国 255
+      - 美国 295
+      - 美国 016
+      - 韩国 009
+      - 美国 246
       - 美国 266
       - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 美国 254
-      - 美国 328
-      - US美国(v2clash.blog 2026-10.20更新)
-      - 日本 017
-      - US美国(v2clash.blog 2026-10.23更新)
-      - US VLESS-12 | free-nodes
-      - 美国 108
-      - 日本 011
-      - 美国 246
-      - 美国 331
-      - 🇺🇸 603
-      - 美国 230
-      - 美国 689
-      - US 🇺🇸 | @Raydikalx | 5A1BD6
-      - 美国 749
-      - DE 🇩🇪 | @Raydikalx | 4769A2
-      - '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
-      - 美国 085
-      - US 🇺🇸 | @Raydikalx | A21CA4
-      - 美国 011
-      - 美国 290
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - 美国 014
-      - 美国 042
-      - 美国 307
-      - 美国 219
-      - 美国 316
-      - 美国 248
-      - 美国 338
-      - 美国 008
-      - 美国 302
-      - US美国(v2clash.blog 2026-10.19更新)
-      - 韩国 010
-      - 美国 744
-      - US 🇺🇸 | @Raydikalx | B05884
-      - US 🇺🇸 | @Raydikalx | 4452C9
-      - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
-      - 美国 097
-      - 美国 207
-      - 美国 310
+      - 英国 008
       - 美国 114
-      - 美国 009
-      - 韩国 001
-      - 美国 038
-      - 美国 743
-      - 🇯🇵[www.v2nodes.com] vless-JP
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
-      - 🇺🇸 美国 | USA
-      - US美国(v2clash.blog 2026-10.10更新)
-      - US美国(v2clash.blog 2026-10.19更新)-2
-      - US美国(v2clash.blog 2026-10.9更新)
-      - 美国 141
-      - 美国 245
-      - 美国 308
-      - 美国 323
-      - 美国 187
-      - 美国 200
-      - 美国 239
-      - 美国 686
-      - 🇩🇪DE-157.90.20.18-3846
-      - '@V2rayng_Fast 🇬🇧'
-      - US美国(v2clash.blog 2026-10.3更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
-      - 美国 159
-      - 美国 206
-      - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - 美国 016
-      - 美国 144
-      - US美国(mibei77.com 米贝节点分享)
-      - US美国(v2clash.blog 2026-10.7更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-      - 美国 715
-      - 美国 737
-      - 德国 085
-      - 美国 746
-      - 美国 013
-      - '@ShadowProxy66 🇺🇸'
-      - '@ShadowProxy66 🇺🇸-2'
-      - '@ShadowProxy66 🇺🇸-3'
-      - 美国 136
+      - 美国 307
+      - US 🇺🇸 | @Raydikalx | A21CA4
+      - 美国 108
+      - 韩国 005
+      - 美国 328
+      - 美国 102
       - 美国 262
-      - '🇹🇼 🇨🇳 台湾 | TWN #1'
-      - 美国 173
+      - 美国 001
+      - 美国 220
+      - 美国 231
+      - 美国 252
+      - 美国 095
+      - 美国 230
+      - 美国 112
+      - 美国 250
+      - 美国 085
+      - 美国 106
+      - US美国(v2clash.blog 2026-10.23更新)
+      - 美国 088
+      - 美国 097
+      - 美国 247
+      - 美国 254
+      - '🇯🇵 日本 | JPN #1'
+      - 美国 267
+      - 美国 104
+      - 日本 018
+      - 🇰🇷 KR2@ripaojiedian
+      - 日本 011
+      - 日本 017
+      - 美国 166
+      - US VLESS-12 | free-nodes
+      - 日本 009
+      - 美国 331
+      - US美国(v2clash.blog 2026-10.19更新)
+      - '@V2rayng_Fast 🇬🇧'
+      - 🇩🇪DE-157.90.20.18-3846
+      - 美国 689
+      - '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
+      - 美国 005
+      - 美国 749
+      - DE 🇩🇪 | @Raydikalx | 166068
+      - 美国 688
+      - US 🇺🇸 | @Raydikalx | A8EEF5
+      - 美国 740
+      - 美国 746
+      - '🇩🇪 德国 | DEU #1'
+      - 美国 208
+      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - 新加坡 001
-      - '[freeSub#420] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_750bc1c1'
-      - '@V2rayng_Fast 🇩🇪'
+      - 韩国 001
+      - 美国 715
+      - US 🇺🇸 | @Raydikalx | 5A1BD6
+      - 美国 009
+      - 🇺🇸 601
+      - 美国 195
+      - 美国 011
+      - US美国(v2clash.blog 2026-10.23更新)-2
+      - 美国 141
+      - 美国 200
+      - 美国 308
+      - 美国 744
+      - 美国 239
+      - 美国 145
+      - 韩国 010
+      - 美国 187
+      - US美国(mibei77.com 米贝节点分享)
+      - US美国(v2clash.blog 2026-10.10更新)
+      - 美国 302
+      - 美国 245
       - DE 🇩🇪 | @Raydikalx | 3E1586
       - DE 🇩🇪 | @Raydikalx | 3639BA
       - DE 🇩🇪 | @Raydikalx | E94E3F
       - DE 🇩🇪 | @Raydikalx | C08069
       - DE 🇩🇪 | @Raydikalx | D5F456
-      - 日本 002
-      - 日本 018
+      - 美国 042
+      - 美国 158
+      - 美国 338
+      - 美国 257
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
+      - 美国 207
+      - 美国 297
+      - 美国 310
+      - 🇩🇪telegram➠@v2rayNG_Matsuri
+      - 美国 290
+      - 美国 703
+      - 美国 144
+      - 美国 146
+      - US 🇺🇸 | @Raydikalx | C2EDAF
+      - DE 🇩🇪 | @Raydikalx | 4769A2
+      - 美国 013
+      - 美国 159
+      - 美国 323
+      - 🇺🇸 603
+      - 🇯🇵[www.v2nodes.com] vless-JP
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
+      - 🇺🇸 美国 | USA
+      - '[freeSub#420] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_750bc1c1'
+      - '@V2rayng_Fast 🇩🇪'
+      - 新加坡 001
+      - 德国 085
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
       - 🇰🇷KR-146.56.166.153-0123
-      - '🇩🇪 德国 | DEU #1'
-      - DE 🇩🇪 | @Raydikalx | 166068
+      - '@V2rayng_Fast 🇩🇪-2'
+      - 日本 003
+      - 日本 002
+      - 日本 012
       - SG 🇸🇬 | @Raydikalx | C62756
       - '[AutoMerge#025] 🇸🇬[www.v2nodes.com] vless-SG-9...'
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - 🇯🇵 JP2@ripaojiedian
@@ -4442,273 +4507,270 @@ proxy-groups:
       - 日本 029
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
-      - '@V2rayng_Fast 🇩🇪-2'
       - 英国 032
       - 🇭🇰 HK2@ripaojiedian
       - DE 🇩🇪 | @Raydikalx | F68888
-      - 日本 003
       - '@V2rayng_Fast 🇬🇧-2'
       - 🇰🇷 KR1@ripaojiedian
-      - 日本+V2CROSS.COM
+      - SG VLESS-16 | free-nodes
       - '[AutoMerge#026] 🇸🇬[www.v2nodes.com] vless-SG-9... #1'
-      - 日本 012
       - 🇹🇼 TW@ripaojiedian
       - 🇭🇰 HK1@ripaojiedian
       - 日本 020
-      - '🇯🇵 日本 | JPN #1'
       - 新加坡 004
       - 🇭🇰 HK3@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
+      - 🇯🇵[www.v2nodes.com] vless-JP-1...
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - '@V2rayng_Fast 🇩🇪-3'
+      - '@V2rayng_Fast 🇩🇪-4'
       - 德国 010
+      - SG 🇸🇬 | @Raydikalx | F0FF0E
       - GB英国(v2clash.blog 2026-10.13更新)
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - JP日本(v2clash.blog 2026-10.14更新)
       - TW台湾(v2clash.blog 2026-10.24更新)
       - Tel@V2rayng_Fast 🇩🇪
-      - '@V2rayng_Fast 🇩🇪-3'
-      - DE德国(v2clash.blog 2026-9.12新)
-      - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
+      - DE德国(v2clash.blog 2026-9.12新)
       - '@V2rayng_Fast 🇩🇪-6'
-      - '[AutoMerge#008] 🇸🇬[www.v2nodes.com] vless-SG'
-      - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - SG 🇸🇬 | @Raydikalx | F0FF0E
       - '[freeSub#225] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_50bb1f1f'
+      - '[AutoMerge#008] 🇸🇬[www.v2nodes.com] vless-SG'
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
-      - 🇸🇬[www.v2nodes.com] vless-SG
-      - DE VLESS-01 | free-nodes
       - '🇩🇪[www.v2nodes.com] vless-DE-1... #10'
+      - 🇸🇬[www.v2nodes.com] vless-SG
       - 🇯🇵[www.v2nodes.com] vless-JP-4...
-      - '🇸🇬[www.v2nodes.com] vless-SG #1'
+      - CA - zhuhai.uk
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+      - DE VLESS-01 | free-nodes
       - '🇩🇪[www.v2nodes.com] vless-DE-1... #4'
-      - JP日本(v2clash.blog 2026-6.9更新)
+      - '🇸🇬[www.v2nodes.com] vless-SG #1'
+      - 🇩🇪
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - CA - zhuhai.uk
-      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
-      - 🇬🇧GB_1|2.7MB/s
-      - GB 🇬🇧 | @Raydikalx | CE841E
-      - 🇬🇧GB-172.99.190.149-6421
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
-      - '🇬🇧[www.v2nodes.com] ss-GB-1616... #1'
-      - '🇬🇧[www.v2nodes.com] ss-GB-1615... #1'
-      - 🇬🇧[www.v2nodes.com] ss-GB-1602...
+      - 🇯🇵 394
+      - 🇯🇵JP-54.65.177.190-5327
+      - 日本低延迟(解锁YouTube,ChatGPT等网站)
+      - 🇯🇵 633
+      - 🇯🇵 adi|freenode1020-JP 11
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #5'
+      - 🇯🇵JP-43.206.225.188-5280
+      - 🇯🇵JP-18.179.31.199-5329
+      - 🇯🇵 adi|freenode1020-JP 2
+      - 🇯🇵 adi|freenode1020-JP 3
+      - 🇯🇵 adi|freenode1020-JP 6
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
+      - 🇯🇵 1610
+      - JP日本(v2clash.blog 2026-10.23更新)-2
+      - 🇰🇷 230
+      - KR 🇰🇷 | @Raydikalx | 168118
+      - 🇰🇷 Korea, Republic of 31
+      - KR - zhuhai.uk
+      - 🇰🇷 2415
+      - 🇰🇷 854
       - GB 🇬🇧 | @Raydikalx | 1D17F2
+      - 🇰🇷KR-211.178.105.134-0243
+      - 🇬🇧GB-185.44.76.188-4894
+      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
+      - 🇬🇧[www.v2nodes.com] ss-GB-1602...
+      - 🇰🇷KR-144.24.72.126-3288
+      - 🇬🇧[www.v2nodes.com] ss-GB-1451...
+      - GB 🇬🇧 | @Raydikalx | CE841E
+      - '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
+      - 🇰🇷[www.v2nodes.com] vless-KR-1...
+      - 🇹🇼[www.v2nodes.com] vless-TW-3...
+      - '🇬🇧[www.v2nodes.com] ss-GB-1615... #1'
+      - 🇬🇧GB-172.99.190.149-6421
+      - KR韩国(v2clash.blog 2026-10.20更新)
+      - GB 🇬🇧 | @Raydikalx | 4DE8B6
+      - 🇬🇧GB-141.98.101.181-0275
       - 🇬🇧GB-146.70.61.37-0208
       - 🇬🇧GB-51.89.138.147-0419
-      - 🇬🇧GB-185.44.76.188-4894
-      - GB英国(v2clash.blog 2026-10.12更新)
-      - 🇬🇧 1049
-      - 🇬🇧 英国 | GBR
-      - GB 🇬🇧 | @Raydikalx | B8FD16
-      - GB 🇬🇧 | @Raydikalx | D2ACA3
-      - GB 🇬🇧 | @Raydikalx | 4B9793
+      - 🇹🇼 228
       - 🇬🇧GB-132.145.51.172-3255
-      - 🇬🇧GB-172.99.190.149-5829
-      - 🇬🇧GB-51.38.71.175-7441
-      - 🇬🇧GB_2|1.2MB/s
-      - 🇬🇧[www.v2nodes.com] ss-GB-1451...
       - 🇬🇧GB_3|1.0MB/s
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
-      - 🇩🇪
+      - GB 🇬🇧 | @Raydikalx | 4B9793
+      - GB英国(v2clash.blog 2026-10.12更新)
+      - 🇹🇼 1368
+      - '🇬🇧[www.v2nodes.com] ss-GB-1616... #1'
+      - 🇬🇧GB_2|1.2MB/s
+      - 🇬🇧GB-51.38.71.175-7441
+      - 🇬🇧 1049
+      - '[freeSub#017] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850'
+      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
       - 🇬🇧 744
+      - '[free18#226] 🇬🇧_英国 (6)'
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
+      - 🇬🇧GB_1|2.7MB/s
       - 🇬🇧 1116
-      - GB 🇬🇧 | @Raydikalx | 6B4B20
-      - 🇬🇧GB-141.98.101.181-0275
-      - 🇬🇧GB-104.239.12.81-0282
-      - NL - zhuhai.uk
-      - 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
-      - '[free18#025] 🇬🇧_英国 (3)'
+      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
+      - 🇩🇪DE-193.108.119.15-0184
+      - 🇬🇧GB-172.99.190.149-5829
       - 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4 (2)
-      - 🇩🇪DE-108.61.171.167-8131
-      - 🇩🇪 851
-      - 🇩🇪 2729
       - '🇩🇪[www.v2nodes.com] ss-DE-1615... #1'
       - '🇩🇪[www.v2nodes.com] ss-DE-1615... #2'
-      - '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
-      - '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
       - DE 🇩🇪 | @Raydikalx | 0A7D80
-      - DE 🇩🇪 | @Raydikalx | 78DCAA
       - DE 🇩🇪 | @Raydikalx | 53A099
       - 🇩🇪DE-193.108.119.29-0205
       - 🇩🇪DE-185.176.204.18-0170
       - 🇩🇪DE-193.108.117.75-5518
-      - 🇩🇪DE-209.250.236.93-7669
+      - 🇩🇪DE-95.179.254.136-7372
+      - 🇩🇪DE-108.61.171.167-8131
+      - 🇰🇷 Seoul, 11, South Korea
+      - 🇩🇪 1143
+      - 🇩🇪 2384
       - 🇩🇪 2425
-      - '[free18#235] 🇩🇪_德国 (30)'
+      - 🇩🇪 2539
+      - 🇩🇪 2649
+      - 🇩🇪 2729
+      - '🇰🇷[www.v2nodes.com] vless-KR-1... #2'
+      - NL - zhuhai.uk
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
+      - '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
+      - '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
+      - 🇩🇪DE_9|2.0MB/s
+      - DE 🇩🇪 | @Raydikalx | 78DCAA
+      - 🇭🇰 226
       - '[ermaozi#010] 🇩🇪 德国 | DEU 3'
-      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
       - 🇩🇪DE_2|2.0MB/s
+      - 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
+      - 🇭🇰HK-219.76.13.181-0010
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #2-2'
+      - 🇩🇪DE_1|1.1MB/s
       - 🇩🇪DE_3|2.0MB/s
       - 🇩🇪DE_8|1.4MB/s
-      - DE 🇩🇪 | @Raydikalx | F79465
-      - DE 🇩🇪 | @Raydikalx | 9C2ECE
       - DE 🇩🇪 | @Raydikalx | EE75E7
-      - GB 🇬🇧 | @Raydikalx | 4DE8B6
-      - 🇩🇪DE-193.108.119.15-0184
-      - 🇩🇪 890
-      - 🇬🇧 1516
-      - 🇩🇪 2384
-      - 🇩🇪 2649
-      - 🇩🇪DE_1|1.1MB/s
-      - 🇩🇪DE_7|2.1MB/s
-      - DE 🇩🇪 | @Raydikalx | 41AEF9
-      - 🇩🇪 1135
-      - 🇩🇪 2655
-      - '[free18#203] 🇩🇪_德国 (22)'
-      - '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
-      - 🇩🇪[www.v2nodes.com] ss-DE-1616...
-      - 🇩🇪DE_5|3.5MB/s
-      - 🇩🇪 德国 | DEU 5
-      - DE 🇩🇪 | @Raydikalx | 4C5D05
-      - eric-de-3
-      - 英国 025
-      - DE 🇩🇪 | @Raydikalx | 0674D2
+      - GB 🇬🇧 | @Raydikalx | B8FD16
+      - GB 🇬🇧 | @Raydikalx | D2ACA3
       - DE 🇩🇪 | @Raydikalx | 36C258
       - DE 🇩🇪 | @Raydikalx | E9A338
       - DE 🇩🇪 | @Raydikalx | F00EF1
-      - 🆔soskeynet 🔒 VL-TCP- 🇬🇧 GB 133ms
-      - 🇬🇧GB-82.38.31.210-0150
-      - 🇬🇧GB-82.38.31.171-0239
-      - 🇬🇧GB-82.38.31.66-0225
-      - 🇬🇧GB-82.38.31.170-0230
-      - 🇬🇧GB-82.38.31.219-0260
       - 🇩🇪DE-8.209.104.230-0134
-      - eric-de-2
+      - 🇭🇰HK-20.187.85.198-4822
       - DE德国(v2clash.blog 2026-10.6更新)
-      - 🇩🇪 2539
-      - GB 🇬🇧 | @Raydikalx | 410E97
-      - 🇬🇧GB-82.38.31.207-0162
-      - 英国 024
-      - 🇬🇧GB-82.38.31.191-0172
-      - 🇬🇧GB-82.38.31.217-0168
-      - 🇬🇧GB-82.38.31.202-0192
-      - 🇬🇧GB-82.38.31.186-0157
-      - 🇬🇧GB-82.38.31.184-0224
-      - 🇬🇧GB-82.38.31.49-0233
-      - 🇬🇧GB-178.83.185.156-0280
+      - 🇩🇪 890
+      - 🇩🇪 1135
+      - '[free18#026] 🇩🇪_德国 (2)'
+      - '[free18#203] 🇩🇪_德国 (22)'
+      - DE 🇩🇪 | @Raydikalx | 4B7538
+      - 🆔soskeynet 🔒 VL-TCP- 🇬🇧 GB 133ms
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #8'
+      - DE 🇩🇪 | @Raydikalx | 0674D2
+      - DE 🇩🇪 | @Raydikalx | 41AEF9
+      - 🇩🇪 DE by @oneclickvpnkeys
+      - 🇩🇪DE-94.130.184.57-3169
+      - 🇭🇰HK-83.229.121.78-5333
+      - eric-de-2
+      - '[free18#025] 🇬🇧_英国 (3)'
+      - 🇩🇪 德国 | DEU 5
+      - DE 🇩🇪 | @Raydikalx | 934065
+      - DE 🇩🇪 | @Raydikalx | 7CC4F5
+      - KR 🇰🇷 | @Raydikalx | 9652E1
+      - 🇰🇷KR-3.34.6.217-4347
+      - 🇸🇬SG-202.79.172.53-1853
+      - 英国 025
+      - GB 🇬🇧 | @Raydikalx | 6B4B20
+      - 🇬🇧GB-82.38.31.206-0160
       - 🇬🇧GB-82.38.31.162-0234
-      - 🇬🇧GB-82.38.31.176-0274
-      - 🇬🇧GB-82.38.31.190-0294
+      - GB 🇬🇧 | @Raydikalx | 410E97
+      - 🇬🇧GB-82.38.31.47-0241
+      - 🇬🇧GB-82.38.31.218-0271
+      - '[free18#082] 🇭🇰_香港 (4)'
+      - 🇬🇧 英国 | GBR 2
+      - 🇬🇧GB-82.38.31.207-0162
       - 🇬🇧GB-82.38.31.208-0175
       - 🇬🇧GB-82.38.31.203-0156
-      - 🇬🇧GB-82.38.31.187-0202
-      - 🇬🇧GB-82.38.31.48-0238
-      - 🇬🇧GB-82.38.31.218-0271
-      - 🇬🇧GB-82.38.31.189-0295
-      - 🇬🇧 1453
       - 🇬🇧GB-82.38.31.214-0151
-      - 🇬🇧GB-82.38.31.159-0237
-      - 🇬🇧GB-82.38.31.47-0241
-      - 🇬🇧GB-82.38.31.35-0240
-      - 🇬🇧GB-82.38.31.46-0235
-      - 🇬🇧 英国 | GBR 2
       - 🇬🇧GB-82.38.31.181-0161
-      - 🇬🇧GB-82.38.31.205-0179
+      - 🇬🇧GB-82.38.31.184-0224
+      - 🇬🇧GB-82.38.31.48-0238
+      - 🇬🇧GB-82.38.31.66-0225
+      - 🇬🇧GB-82.38.31.35-0240
+      - 🇬🇧GB-82.38.31.189-0295
+      - 🇬🇧GB-82.38.31.202-0192
+      - 🇬🇧GB-82.38.31.49-0233
+      - 🇬🇧GB-82.38.31.170-0230
+      - 🇬🇧GB-82.38.31.210-0150
+      - 🇬🇧GB-82.38.31.171-0228
+      - 🇬🇧GB-82.38.31.199-0267
+      - 🇬🇧GB-82.38.31.190-0294
+      - 🇬🇧GB-82.38.31.186-0157
+      - 🇬🇧GB-82.38.31.187-0202
+      - 🇬🇧GB-82.38.31.159-0237
+      - '[free18#219] 🇬🇧_英国 (5)'
       - 🇬🇧GB-82.38.31.192-0169
+      - 🇬🇧GB-82.38.31.46-0235
+      - 🇬🇧GB-82.38.31.179-0297
+      - 🇬🇧GB-82.38.31.194-0165
+      - 🇬🇧GB-82.38.31.171-0239
+      - 🇬🇧GB-82.38.31.219-0260
+      - 🇬🇧GB-104.239.12.81-0282
+      - '[free18#254] 🇬🇧_英国 (9)'
+      - 🇬🇧GB-82.38.31.191-0172
       - 🇬🇧GB-82.38.31.61-0231
-      - SG新加坡(v2clash.blog 2026-10.5更新)
-      - 🇯🇵 394
-      - '[free18#069] 🇯🇵_日本 (3)'
-      - 🇯🇵JP-43.206.225.188-5280
-      - 🇯🇵JP-54.65.177.190-5327
-      - 日本低延迟(解锁YouTube,ChatGPT等网站)
-      - 🇯🇵 adi|freenode1020-JP 2
-      - 🇯🇵 adi|freenode1020-JP 6
-      - 🇯🇵 adi|freenode1020-JP 11
-      - 🇯🇵JP-18.179.31.199-5329
-      - 🇯🇵 633
-      - 🇯🇵 adi|freenode1020-JP 3
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
-      - 🇯🇵 1610
-      - JP日本(v2clash.blog 2026-10.23更新)-2
-      - KR 🇰🇷 | @Raydikalx | 168118
-      - KR 🇰🇷 | @Raydikalx | 9652E1
-      - 🇰🇷 230
-      - 🇰🇷 2929
-      - KR - zhuhai.uk
-      - 🇰🇷 854
-      - 🇰🇷 Korea, Republic of 31
-      - 🇰🇷 2415
-      - 🇰🇷KR-211.178.105.134-0243
-      - 🇰🇷KR-3.34.6.217-4347
-      - '🇰🇷[www.v2nodes.com] vless-KR-1... #2'
-      - 🇹🇼[www.v2nodes.com] vless-TW-3...
-      - 🇹🇼 228
-      - 🇰🇷KR-144.24.72.126-3288
-      - 🇨🇳台湾专线02 gpt专用
-      - '[freeSub#017] A🟢🇹🇼res[🎬🤖📺🎭]_dokng.com_dec23850'
-      - 🇹🇼 1368
-      - 🇰🇷 2178
-      - 🇭🇰HK-83.229.121.78-5333
-      - 🇭🇰 226
-      - '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #2-2'
-      - 🇰🇷[www.v2nodes.com] vless-KR-1...
-      - 🇭🇰HK-20.187.85.198-4822
-      - 🇭🇰HK-219.76.13.181-0010
-      - KR韩国(v2clash.blog 2026-10.20更新)
-      - '[free18#082] 🇭🇰_香港 (4)'
-      - 🇭🇰HK-159.100.206.88-0012
-      - 🇸🇬SG-202.79.172.53-1853
       - 🇯🇵 227
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
       - 🇭🇰香港专线01 下载专用
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
+      - 🇰🇷 韩国 | KOR 2
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
       - 🇸🇬[www.v2nodes.com] vless-SG-1...
-      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
+      - '🇸🇬[www.v2nodes.com] ss-SG-1616... #1'
       - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
-      - SG 🇸🇬 | @Raydikalx | 6358C7
+      - 🇸🇬SG-109.123.237.41-2732
       - 🇸🇬SG-43.160.197.160-5281
-      - 🇸🇬 913
+      - 🇸🇬 2811
+      - 🇸🇬[www.v2nodes.com] ss-SG-1616...
+      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
+      - 🇰🇷 韩国 | KOR
+      - SG 🇸🇬 | @Raydikalx | 6358C7
+      - 🇸🇬SG-15.235.147.186-0335
+      - 🇸🇬SG-146.190.82.241-2319
+      - 🇸🇬SG-51.79.161.232-7436
+      - 🇸🇬SG-15.235.197.4-8029
+      - SG新加坡(v2clash.blog 2026-10.5更新)
+      - SG新加坡(v2clash.blog 2026-10.13更新)
+      - 🇸🇬 231
+      - 🇸🇬 749
+      - 🇸🇬 1409
       - 🇸🇬 1612
+      - 🇸🇬 2301
+      - '[free18#080] 🇸🇬_新加坡 (11)'
+      - '[free18#083] 🇸🇬_新加坡 (12)'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
       - SG 🇸🇬 | @Raydikalx | 8DCEC7
       - 🇸🇬SG-68.183.227.4-0309
       - 🇸🇬SG-15.235.184.36-2700
-      - 🇸🇬 231
+      - 🇸🇬SG-18.140.67.76-5802
       - 🇸🇬 758
+      - 🇸🇬 891
+      - 🇸🇬 913
       - 🇸🇬 1030
       - 🇸🇬 1166
-      - '[free18#080] 🇸🇬_新加坡 (11)'
-      - 🇸🇬[www.v2nodes.com] ss-SG-1616...
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
-      - 🇸🇬SG-18.140.67.76-5802
-      - 🇸🇬SG-54.254.129.246-7420
-      - 🇸🇬 891
-      - 🇸🇬 2301
-      - 🇸🇬 2811
-      - '🇸🇬[www.v2nodes.com] ss-SG-1616... #1'
-      - 🇸🇬SG-15.235.147.186-0335
-      - 🇸🇬SG-51.79.161.232-7436
-      - 🇸🇬SG-15.235.197.4-8029
-      - 🇸🇬 1409
-      - '[free18#083] 🇸🇬_新加坡 (12)'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
-      - 🇸🇬SG-146.190.82.241-2319
-      - SG新加坡(v2clash.blog 2026-10.13更新)
-      - 🇸🇬 749
-      - 🇸🇬SG-109.123.237.41-2732
-      - SG新加坡(v2clash.blog 2026-10.12更新)
-      - 🇸🇬SG-157.230.36.235-2987
-      - SG新加坡(v2clash.blog 2026-10.20更新)
-      - SG新加坡(v2clash.blog 2026-10.12更新)-2
       - '[free18#078] 🇸🇬_新加坡 (10)'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
-      - 🇭🇰 916
-      - 🇭🇰HK_1|1.4MB/s
+      - 🇸🇬 新加坡 | SGP
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇸🇬SG-157.230.36.235-2987
+      - 🇸🇬SG-54.254.129.246-7420
+      - SG新加坡(v2clash.blog 2026-10.12更新)
       - '🇸🇬[www.v2nodes.com] vless-SG-1... #6-2'
-      - 🇸🇬 2020
-      - 🇰🇷 Seoul, 11, South Korea
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
+      - SG新加坡(v2clash.blog 2026-10.20更新)
+      - 🇰🇷 2178
+      - 🇭🇰HK_1|1.4MB/s
+      - 🇰🇷 Seoul, 11, South Korea-2
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
+      - 🇰🇷 Seoul, 11, South Korea-3
       - 🇰🇷KR-141.164.45.187-0259
       - 🇰🇷KR-141.164.45.187-0266
-      - 🇰🇷 Seoul, 11, South Korea-2
-      - 🇰🇷 Seoul, 11, South Korea-3
+      - SG新加坡(v2clash.blog 2026-10.12更新)-2
+      - 🇰🇷 2929
+      - 🇸🇬 2020
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
       - 🇰🇷 Seoul, 11, South Korea-4
       - 🇰🇷 Seoul, 11, South Korea-5
-      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
+      - 🇭🇰 916
       - 🇰🇷 1277
       - 🇰🇷[www.v2nodes.com] trojan-KR-...
       - 🇹🇼 台湾｜02｜HiNet
@@ -4719,86 +4781,86 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - 美国 104
-      - 美国 267
-      - 美国 247
-      - 美国 255
       - 美国 236
-      - 美国 088
+      - US美国(v2clash.blog 2026-10.20更新)
+      - 美国 248
+      - 美国 255
+      - 美国 295
+      - 美国 016
+      - 美国 246
+      - 美国 266
+      - 美国 114
+      - 美国 307
+      - US 🇺🇸 | @Raydikalx | A21CA4
+      - 美国 108
+      - 美国 328
+      - 美国 102
+      - 美国 262
+      - 美国 001
+      - 美国 220
       - 美国 231
-      - 美国 238
       - 美国 252
       - 美国 095
-      - 美国 102
-      - 美国 250
-      - 美国 266
-      - 美国 254
-      - 美国 328
-      - US美国(v2clash.blog 2026-10.20更新)
-      - US美国(v2clash.blog 2026-10.23更新)
-      - US VLESS-12 | free-nodes
-      - 美国 108
-      - 美国 246
-      - 美国 331
-      - 🇺🇸 603
       - 美国 230
-      - 美国 689
-      - US 🇺🇸 | @Raydikalx | 5A1BD6
-      - 美国 749
+      - 美国 112
+      - 美国 250
       - 美国 085
-      - US 🇺🇸 | @Raydikalx | A21CA4
-      - 美国 011
-      - 美国 290
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - 美国 014
-      - 美国 042
-      - 美国 307
-      - 美国 219
-      - 美国 316
-      - 美国 248
-      - 美国 338
-      - 美国 008
-      - 美国 302
-      - US美国(v2clash.blog 2026-10.19更新)
-      - 美国 744
-      - US 🇺🇸 | @Raydikalx | B05884
-      - US 🇺🇸 | @Raydikalx | 4452C9
+      - 美国 106
+      - US美国(v2clash.blog 2026-10.23更新)
+      - 美国 088
       - 美国 097
-      - 美国 207
-      - 美国 310
-      - 美国 114
-      - 美国 009
-      - 美国 038
-      - 美国 743
-      - 🇺🇸 美国 | USA
-      - US美国(v2clash.blog 2026-10.10更新)
-      - US美国(v2clash.blog 2026-10.19更新)-2
-      - US美国(v2clash.blog 2026-10.9更新)
-      - 美国 141
-      - 美国 245
-      - 美国 308
-      - 美国 323
-      - 美国 187
-      - 美国 200
-      - 美国 239
-      - 美国 686
-      - US美国(v2clash.blog 2026-10.3更新)
-      - 美国 159
-      - 美国 206
-      - 美国 016
-      - 美国 144
-      - US美国(mibei77.com 米贝节点分享)
-      - US美国(v2clash.blog 2026-10.7更新)
-      - 美国 715
-      - 美国 737
+      - 美国 247
+      - 美国 254
+      - 美国 267
+      - 美国 104
+      - 美国 166
+      - US VLESS-12 | free-nodes
+      - 美国 331
+      - US美国(v2clash.blog 2026-10.19更新)
+      - 美国 689
+      - 美国 005
+      - 美国 749
+      - 美国 688
+      - US 🇺🇸 | @Raydikalx | A8EEF5
+      - 美国 740
       - 美国 746
+      - 美国 208
+      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - 美国 715
+      - US 🇺🇸 | @Raydikalx | 5A1BD6
+      - 美国 009
+      - 🇺🇸 601
+      - 美国 195
+      - 美国 011
+      - US美国(v2clash.blog 2026-10.23更新)-2
+      - 美国 141
+      - 美国 200
+      - 美国 308
+      - 美国 744
+      - 美国 239
+      - 美国 145
+      - 美国 187
+      - US美国(mibei77.com 米贝节点分享)
+      - US美国(v2clash.blog 2026-10.10更新)
+      - 美国 302
+      - 美国 245
+      - 美国 042
+      - 美国 158
+      - 美国 338
+      - 美国 257
+      - 美国 207
+      - 美国 297
+      - 美国 310
+      - 美国 290
+      - 美国 703
+      - 美国 144
+      - 美国 146
+      - US 🇺🇸 | @Raydikalx | C2EDAF
       - 美国 013
-      - '@ShadowProxy66 🇺🇸'
-      - '@ShadowProxy66 🇺🇸-2'
-      - '@ShadowProxy66 🇺🇸-3'
-      - 美国 136
-      - 美国 262
-      - 美国 173
+      - 美国 159
+      - 美国 323
+      - 🇺🇸 603
+      - 🇺🇸 美国 | USA
   - name: 📍 韩国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -4806,40 +4868,86 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - 韩国 009
       - 韩国 005
       - 🇰🇷 KR2@ripaojiedian
-      - 韩国 009
-      - 韩国 010
       - 韩国 001
+      - 韩国 010
       - 🇰🇷KR-146.56.166.153-0123
       - 🇰🇷 KR1@ripaojiedian
       - '[freeSub#225] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_50bb1f1f'
-      - KR 🇰🇷 | @Raydikalx | 168118
-      - KR 🇰🇷 | @Raydikalx | 9652E1
       - 🇰🇷 230
-      - 🇰🇷 2929
-      - KR - zhuhai.uk
-      - 🇰🇷 854
+      - KR 🇰🇷 | @Raydikalx | 168118
       - 🇰🇷 Korea, Republic of 31
+      - KR - zhuhai.uk
       - 🇰🇷 2415
+      - 🇰🇷 854
       - 🇰🇷KR-211.178.105.134-0243
-      - 🇰🇷KR-3.34.6.217-4347
-      - '🇰🇷[www.v2nodes.com] vless-KR-1... #2'
       - 🇰🇷KR-144.24.72.126-3288
-      - 🇰🇷 2178
       - '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
       - 🇰🇷[www.v2nodes.com] vless-KR-1...
       - KR韩国(v2clash.blog 2026-10.20更新)
+      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
       - 🇰🇷 Seoul, 11, South Korea
-      - 🇰🇷KR-141.164.45.187-0259
-      - 🇰🇷KR-141.164.45.187-0266
+      - '🇰🇷[www.v2nodes.com] vless-KR-1... #2'
+      - KR 🇰🇷 | @Raydikalx | 9652E1
+      - 🇰🇷KR-3.34.6.217-4347
+      - 🇰🇷 韩国 | KOR 2
+      - 🇰🇷 韩国 | KOR
+      - 🇰🇷 2178
       - 🇰🇷 Seoul, 11, South Korea-2
       - 🇰🇷 Seoul, 11, South Korea-3
+      - 🇰🇷KR-141.164.45.187-0259
+      - 🇰🇷KR-141.164.45.187-0266
+      - 🇰🇷 2929
       - 🇰🇷 Seoul, 11, South Korea-4
       - 🇰🇷 Seoul, 11, South Korea-5
-      - 🇰🇷[www.v2nodes.com] ss-KR-1185...
       - 🇰🇷 1277
       - 🇰🇷[www.v2nodes.com] trojan-KR-...
+  - name: 📍 日本
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '🇯🇵 日本 | JPN #1'
+      - 日本 018
+      - 日本 011
+      - 日本 017
+      - 日本 009
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
+      - 🇯🇵[www.v2nodes.com] vless-JP
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - 日本 003
+      - 日本 002
+      - 日本 012
+      - 🇯🇵 JP2@ripaojiedian
+      - JP 🇯🇵 | @Raydikalx | 102B75
+      - 日本 029
+      - 日本 015
+      - JP日本(v2clash.blog 2026-10.23更新)
+      - 日本 020
+      - 🇯🇵[www.v2nodes.com] vless-JP-1...
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - 🇯🇵[www.v2nodes.com] vless-JP-4...
+      - 🇯🇵 394
+      - 🇯🇵JP-54.65.177.190-5327
+      - 日本低延迟(解锁YouTube,ChatGPT等网站)
+      - 🇯🇵 633
+      - 🇯🇵 adi|freenode1020-JP 11
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #5'
+      - 🇯🇵JP-43.206.225.188-5280
+      - 🇯🇵JP-18.179.31.199-5329
+      - 🇯🇵 adi|freenode1020-JP 2
+      - 🇯🇵 adi|freenode1020-JP 3
+      - 🇯🇵 adi|freenode1020-JP 6
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
+      - 🇯🇵 1610
+      - JP日本(v2clash.blog 2026-10.23更新)-2
+      - 🇯🇵 227
   - name: 📍 英国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -4852,126 +4960,81 @@ proxy-groups:
       - 英国 032
       - '@V2rayng_Fast 🇬🇧-2'
       - GB英国(v2clash.blog 2026-10.13更新)
+      - CA - zhuhai.uk
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - CA - zhuhai.uk
-      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
-      - 🇬🇧GB_1|2.7MB/s
-      - GB 🇬🇧 | @Raydikalx | CE841E
-      - 🇬🇧GB-172.99.190.149-6421
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
-      - '🇬🇧[www.v2nodes.com] ss-GB-1616... #1'
-      - '🇬🇧[www.v2nodes.com] ss-GB-1615... #1'
-      - 🇬🇧[www.v2nodes.com] ss-GB-1602...
       - GB 🇬🇧 | @Raydikalx | 1D17F2
+      - 🇬🇧GB-185.44.76.188-4894
+      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
+      - 🇬🇧[www.v2nodes.com] ss-GB-1602...
+      - 🇬🇧[www.v2nodes.com] ss-GB-1451...
+      - GB 🇬🇧 | @Raydikalx | CE841E
+      - '🇬🇧[www.v2nodes.com] ss-GB-1615... #1'
+      - 🇬🇧GB-172.99.190.149-6421
+      - GB 🇬🇧 | @Raydikalx | 4DE8B6
+      - 🇬🇧GB-141.98.101.181-0275
       - 🇬🇧GB-146.70.61.37-0208
       - 🇬🇧GB-51.89.138.147-0419
-      - 🇬🇧GB-185.44.76.188-4894
+      - 🇬🇧GB-132.145.51.172-3255
+      - 🇬🇧GB_3|1.0MB/s
+      - GB 🇬🇧 | @Raydikalx | 4B9793
       - GB英国(v2clash.blog 2026-10.12更新)
+      - '🇬🇧[www.v2nodes.com] ss-GB-1616... #1'
+      - 🇬🇧GB_2|1.2MB/s
+      - 🇬🇧GB-51.38.71.175-7441
       - 🇬🇧 1049
-      - 🇬🇧 英国 | GBR
+      - 🇬🇧 744
+      - '[free18#226] 🇬🇧_英国 (6)'
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
+      - 🇬🇧GB_1|2.7MB/s
+      - 🇬🇧 1116
+      - 🇬🇧GB-172.99.190.149-5829
+      - NL - zhuhai.uk
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
+      - 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
       - GB 🇬🇧 | @Raydikalx | B8FD16
       - GB 🇬🇧 | @Raydikalx | D2ACA3
-      - GB 🇬🇧 | @Raydikalx | 4B9793
-      - 🇬🇧GB-132.145.51.172-3255
-      - 🇬🇧GB-172.99.190.149-5829
-      - 🇬🇧GB-51.38.71.175-7441
-      - 🇬🇧GB_2|1.2MB/s
-      - 🇬🇧[www.v2nodes.com] ss-GB-1451...
-      - 🇬🇧GB_3|1.0MB/s
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
-      - 🇬🇧 744
-      - 🇬🇧 1116
-      - GB 🇬🇧 | @Raydikalx | 6B4B20
-      - 🇬🇧GB-141.98.101.181-0275
-      - 🇬🇧GB-104.239.12.81-0282
-      - NL - zhuhai.uk
-      - 🆔configfa 🔒 VL-XHTTP- 🇬🇧 GB 122ms
-      - '[free18#025] 🇬🇧_英国 (3)'
-      - GB 🇬🇧 | @Raydikalx | 4DE8B6
-      - 🇬🇧 1516
-      - 英国 025
       - 🆔soskeynet 🔒 VL-TCP- 🇬🇧 GB 133ms
-      - 🇬🇧GB-82.38.31.210-0150
-      - 🇬🇧GB-82.38.31.171-0239
-      - 🇬🇧GB-82.38.31.66-0225
-      - 🇬🇧GB-82.38.31.170-0230
-      - 🇬🇧GB-82.38.31.219-0260
-      - GB 🇬🇧 | @Raydikalx | 410E97
-      - 🇬🇧GB-82.38.31.207-0162
-      - 英国 024
-      - 🇬🇧GB-82.38.31.191-0172
-      - 🇬🇧GB-82.38.31.217-0168
-      - 🇬🇧GB-82.38.31.202-0192
-      - 🇬🇧GB-82.38.31.186-0157
-      - 🇬🇧GB-82.38.31.184-0224
-      - 🇬🇧GB-82.38.31.49-0233
-      - 🇬🇧GB-178.83.185.156-0280
+      - '[free18#025] 🇬🇧_英国 (3)'
+      - 英国 025
+      - GB 🇬🇧 | @Raydikalx | 6B4B20
+      - 🇬🇧GB-82.38.31.206-0160
       - 🇬🇧GB-82.38.31.162-0234
-      - 🇬🇧GB-82.38.31.176-0274
-      - 🇬🇧GB-82.38.31.190-0294
+      - GB 🇬🇧 | @Raydikalx | 410E97
+      - 🇬🇧GB-82.38.31.47-0241
+      - 🇬🇧GB-82.38.31.218-0271
+      - 🇬🇧 英国 | GBR 2
+      - 🇬🇧GB-82.38.31.207-0162
       - 🇬🇧GB-82.38.31.208-0175
       - 🇬🇧GB-82.38.31.203-0156
-      - 🇬🇧GB-82.38.31.187-0202
-      - 🇬🇧GB-82.38.31.48-0238
-      - 🇬🇧GB-82.38.31.218-0271
-      - 🇬🇧GB-82.38.31.189-0295
-      - 🇬🇧 1453
       - 🇬🇧GB-82.38.31.214-0151
-      - 🇬🇧GB-82.38.31.159-0237
-      - 🇬🇧GB-82.38.31.47-0241
-      - 🇬🇧GB-82.38.31.35-0240
-      - 🇬🇧GB-82.38.31.46-0235
-      - 🇬🇧 英国 | GBR 2
       - 🇬🇧GB-82.38.31.181-0161
-      - 🇬🇧GB-82.38.31.205-0179
+      - 🇬🇧GB-82.38.31.184-0224
+      - 🇬🇧GB-82.38.31.48-0238
+      - 🇬🇧GB-82.38.31.66-0225
+      - 🇬🇧GB-82.38.31.35-0240
+      - 🇬🇧GB-82.38.31.189-0295
+      - 🇬🇧GB-82.38.31.202-0192
+      - 🇬🇧GB-82.38.31.49-0233
+      - 🇬🇧GB-82.38.31.170-0230
+      - 🇬🇧GB-82.38.31.210-0150
+      - 🇬🇧GB-82.38.31.171-0228
+      - 🇬🇧GB-82.38.31.199-0267
+      - 🇬🇧GB-82.38.31.190-0294
+      - 🇬🇧GB-82.38.31.186-0157
+      - 🇬🇧GB-82.38.31.187-0202
+      - 🇬🇧GB-82.38.31.159-0237
+      - '[free18#219] 🇬🇧_英国 (5)'
       - 🇬🇧GB-82.38.31.192-0169
+      - 🇬🇧GB-82.38.31.46-0235
+      - 🇬🇧GB-82.38.31.179-0297
+      - 🇬🇧GB-82.38.31.194-0165
+      - 🇬🇧GB-82.38.31.171-0239
+      - 🇬🇧GB-82.38.31.219-0260
+      - 🇬🇧GB-104.239.12.81-0282
+      - '[free18#254] 🇬🇧_英国 (9)'
+      - 🇬🇧GB-82.38.31.191-0172
       - 🇬🇧GB-82.38.31.61-0231
-  - name: 📍 日本
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - 日本 009
-      - '[AutoMerge#016] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 日本 017
-      - 日本 011
-      - 🇯🇵[www.v2nodes.com] vless-JP
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-      - 日本 002
-      - 日本 018
-      - 🇯🇵 JP2@ripaojiedian
-      - JP 🇯🇵 | @Raydikalx | 102B75
-      - 日本 029
-      - 日本 015
-      - JP日本(v2clash.blog 2026-10.23更新)
-      - 日本 003
-      - 日本+V2CROSS.COM
-      - 日本 012
-      - 日本 020
-      - '🇯🇵 日本 | JPN #1'
-      - JP日本(v2clash.blog 2026-10.14更新)
-      - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - 🇯🇵[www.v2nodes.com] vless-JP-4...
-      - JP日本(v2clash.blog 2026-6.9更新)
-      - 🇯🇵 394
-      - '[free18#069] 🇯🇵_日本 (3)'
-      - 🇯🇵JP-43.206.225.188-5280
-      - 🇯🇵JP-54.65.177.190-5327
-      - 日本低延迟(解锁YouTube,ChatGPT等网站)
-      - 🇯🇵 adi|freenode1020-JP 2
-      - 🇯🇵 adi|freenode1020-JP 6
-      - 🇯🇵 adi|freenode1020-JP 11
-      - 🇯🇵JP-18.179.31.199-5329
-      - 🇯🇵 633
-      - 🇯🇵 adi|freenode1020-JP 3
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #6'
-      - 🇯🇵 1610
-      - JP日本(v2clash.blog 2026-10.23更新)-2
-      - 🇯🇵 227
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -4979,152 +5042,86 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - DE 🇩🇪 | @Raydikalx | 4769A2
-      - '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
       - 🇩🇪DE-157.90.20.18-3846
-      - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - 德国 085
+      - '[AutoMerge#052] 🇩🇪 德国 | DEU #5'
+      - DE 🇩🇪 | @Raydikalx | 166068
+      - '🇩🇪 德国 | DEU #1'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - '@V2rayng_Fast 🇩🇪'
       - DE 🇩🇪 | @Raydikalx | 3E1586
       - DE 🇩🇪 | @Raydikalx | 3639BA
       - DE 🇩🇪 | @Raydikalx | E94E3F
       - DE 🇩🇪 | @Raydikalx | C08069
       - DE 🇩🇪 | @Raydikalx | D5F456
-      - '🇩🇪 德国 | DEU #1'
-      - DE 🇩🇪 | @Raydikalx | 166068
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
+      - 🇩🇪telegram➠@v2rayNG_Matsuri
+      - DE 🇩🇪 | @Raydikalx | 4769A2
+      - '@V2rayng_Fast 🇩🇪'
+      - 德国 085
       - '@V2rayng_Fast 🇩🇪-2'
+      - DE 🇩🇪 | @Raydikalx | 5E3474
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - DE 🇩🇪 | @Raydikalx | F68888
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
-      - 德国 010
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-      - Tel@V2rayng_Fast 🇩🇪
       - '@V2rayng_Fast 🇩🇪-3'
-      - DE德国(v2clash.blog 2026-9.12新)
       - '@V2rayng_Fast 🇩🇪-4'
+      - 德国 010
+      - Tel@V2rayng_Fast 🇩🇪
       - '@V2rayng_Fast 🇩🇪-5'
+      - DE德国(v2clash.blog 2026-9.12新)
       - '@V2rayng_Fast 🇩🇪-6'
-      - DE VLESS-01 | free-nodes
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - '🇩🇪[www.v2nodes.com] vless-DE-1... #10'
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+      - DE VLESS-01 | free-nodes
       - '🇩🇪[www.v2nodes.com] vless-DE-1... #4'
       - 🇩🇪
+      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
+      - 🇩🇪DE-193.108.119.15-0184
       - 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4 (2)
-      - 🇩🇪DE-108.61.171.167-8131
-      - 🇩🇪 851
-      - 🇩🇪 2729
       - '🇩🇪[www.v2nodes.com] ss-DE-1615... #1'
       - '🇩🇪[www.v2nodes.com] ss-DE-1615... #2'
-      - '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
-      - '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
       - DE 🇩🇪 | @Raydikalx | 0A7D80
-      - DE 🇩🇪 | @Raydikalx | 78DCAA
       - DE 🇩🇪 | @Raydikalx | 53A099
       - 🇩🇪DE-193.108.119.29-0205
       - 🇩🇪DE-185.176.204.18-0170
       - 🇩🇪DE-193.108.117.75-5518
-      - 🇩🇪DE-209.250.236.93-7669
+      - 🇩🇪DE-95.179.254.136-7372
+      - 🇩🇪DE-108.61.171.167-8131
+      - 🇩🇪 1143
+      - 🇩🇪 2384
       - 🇩🇪 2425
-      - '[free18#235] 🇩🇪_德国 (30)'
+      - 🇩🇪 2539
+      - 🇩🇪 2649
+      - 🇩🇪 2729
+      - '🇩🇪[www.v2nodes.com] trojan-DE-... #2'
+      - '🇩🇪[www.v2nodes.com] trojan-DE-... #1'
+      - 🇩🇪DE_9|2.0MB/s
+      - DE 🇩🇪 | @Raydikalx | 78DCAA
       - '[ermaozi#010] 🇩🇪 德国 | DEU 3'
-      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
       - 🇩🇪DE_2|2.0MB/s
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
+      - 🇩🇪DE_1|1.1MB/s
       - 🇩🇪DE_3|2.0MB/s
       - 🇩🇪DE_8|1.4MB/s
-      - DE 🇩🇪 | @Raydikalx | F79465
-      - DE 🇩🇪 | @Raydikalx | 9C2ECE
       - DE 🇩🇪 | @Raydikalx | EE75E7
-      - 🇩🇪DE-193.108.119.15-0184
-      - 🇩🇪 890
-      - 🇩🇪 2384
-      - 🇩🇪 2649
-      - 🇩🇪DE_1|1.1MB/s
-      - 🇩🇪DE_7|2.1MB/s
-      - DE 🇩🇪 | @Raydikalx | 41AEF9
-      - 🇩🇪 1135
-      - 🇩🇪 2655
-      - '[free18#203] 🇩🇪_德国 (22)'
-      - '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
-      - 🇩🇪[www.v2nodes.com] ss-DE-1616...
-      - 🇩🇪DE_5|3.5MB/s
-      - 🇩🇪 德国 | DEU 5
-      - DE 🇩🇪 | @Raydikalx | 4C5D05
-      - eric-de-3
-      - DE 🇩🇪 | @Raydikalx | 0674D2
       - DE 🇩🇪 | @Raydikalx | 36C258
       - DE 🇩🇪 | @Raydikalx | E9A338
       - DE 🇩🇪 | @Raydikalx | F00EF1
       - 🇩🇪DE-8.209.104.230-0134
-      - eric-de-2
       - DE德国(v2clash.blog 2026-10.6更新)
-      - 🇩🇪 2539
-  - name: 📍 新加坡
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
-      - 新加坡 001
-      - '[freeSub#420] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_750bc1c1'
-      - SG 🇸🇬 | @Raydikalx | C62756
-      - '[AutoMerge#025] 🇸🇬[www.v2nodes.com] vless-SG-9...'
-      - '[AutoMerge#026] 🇸🇬[www.v2nodes.com] vless-SG-9... #1'
-      - 新加坡 004
-      - '[AutoMerge#008] 🇸🇬[www.v2nodes.com] vless-SG'
-      - SG 🇸🇬 | @Raydikalx | F0FF0E
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
-      - 🇸🇬[www.v2nodes.com] vless-SG
-      - '🇸🇬[www.v2nodes.com] vless-SG #1'
-      - SG新加坡(v2clash.blog 2026-10.5更新)
-      - 🇸🇬SG-202.79.172.53-1853
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
-      - 🇸🇬[www.v2nodes.com] vless-SG-1...
-      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
-      - SG 🇸🇬 | @Raydikalx | 6358C7
-      - 🇸🇬SG-43.160.197.160-5281
-      - 🇸🇬 913
-      - 🇸🇬 1612
-      - SG 🇸🇬 | @Raydikalx | 8DCEC7
-      - 🇸🇬SG-68.183.227.4-0309
-      - 🇸🇬SG-15.235.184.36-2700
-      - 🇸🇬 231
-      - 🇸🇬 758
-      - 🇸🇬 1030
-      - 🇸🇬 1166
-      - '[free18#080] 🇸🇬_新加坡 (11)'
-      - 🇸🇬[www.v2nodes.com] ss-SG-1616...
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
-      - 🇸🇬SG-18.140.67.76-5802
-      - 🇸🇬SG-54.254.129.246-7420
-      - 🇸🇬 891
-      - 🇸🇬 2301
-      - 🇸🇬 2811
-      - '🇸🇬[www.v2nodes.com] ss-SG-1616... #1'
-      - 🇸🇬SG-15.235.147.186-0335
-      - 🇸🇬SG-51.79.161.232-7436
-      - 🇸🇬SG-15.235.197.4-8029
-      - 🇸🇬 1409
-      - '[free18#083] 🇸🇬_新加坡 (12)'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
-      - 🇸🇬SG-146.190.82.241-2319
-      - SG新加坡(v2clash.blog 2026-10.13更新)
-      - 🇸🇬 749
-      - 🇸🇬SG-109.123.237.41-2732
-      - SG新加坡(v2clash.blog 2026-10.12更新)
-      - 🇸🇬SG-157.230.36.235-2987
-      - SG新加坡(v2clash.blog 2026-10.20更新)
-      - SG新加坡(v2clash.blog 2026-10.12更新)-2
-      - '[free18#078] 🇸🇬_新加坡 (10)'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #6-2'
-      - 🇸🇬 2020
+      - 🇩🇪 890
+      - 🇩🇪 1135
+      - '[free18#026] 🇩🇪_德国 (2)'
+      - '[free18#203] 🇩🇪_德国 (22)'
+      - DE 🇩🇪 | @Raydikalx | 4B7538
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #8'
+      - DE 🇩🇪 | @Raydikalx | 0674D2
+      - DE 🇩🇪 | @Raydikalx | 41AEF9
+      - 🇩🇪 DE by @oneclickvpnkeys
+      - 🇩🇪DE-94.130.184.57-3169
+      - eric-de-2
+      - 🇩🇪 德国 | DEU 5
+      - DE 🇩🇪 | @Raydikalx | 934065
+      - DE 🇩🇪 | @Raydikalx | 7CC4F5
   - name: 📍 香港
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -5137,16 +5134,84 @@ proxy-groups:
       - 🇭🇰 HK2@ripaojiedian
       - 🇭🇰 HK1@ripaojiedian
       - 🇭🇰 HK3@ripaojiedian
-      - 🇭🇰HK-83.229.121.78-5333
       - 🇭🇰 226
+      - 🇭🇰HK-219.76.13.181-0010
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2-2'
       - 🇭🇰HK-20.187.85.198-4822
-      - 🇭🇰HK-219.76.13.181-0010
+      - 🇭🇰HK-83.229.121.78-5333
       - '[free18#082] 🇭🇰_香港 (4)'
-      - 🇭🇰HK-159.100.206.88-0012
       - 🇭🇰香港专线01 下载专用
-      - 🇭🇰 916
       - 🇭🇰HK_1|1.4MB/s
+      - 🇭🇰 916
+  - name: 📍 新加坡
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - '[freeSub#420] C🟠🇸🇬hos[🎬🤖📺🎭]_dokng.com_750bc1c1'
+      - 新加坡 001
+      - '[AutoMerge#023] 🇸🇬[www.v2nodes.com] vless-SG-1... #7'
+      - SG 🇸🇬 | @Raydikalx | C62756
+      - '[AutoMerge#025] 🇸🇬[www.v2nodes.com] vless-SG-9...'
+      - SG VLESS-16 | free-nodes
+      - '[AutoMerge#026] 🇸🇬[www.v2nodes.com] vless-SG-9... #1'
+      - 新加坡 004
+      - SG 🇸🇬 | @Raydikalx | F0FF0E
+      - '[AutoMerge#008] 🇸🇬[www.v2nodes.com] vless-SG'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #6'
+      - 🇸🇬[www.v2nodes.com] vless-SG
+      - '🇸🇬[www.v2nodes.com] vless-SG #1'
+      - 🇸🇬SG-202.79.172.53-1853
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #4'
+      - 🇸🇬[www.v2nodes.com] vless-SG-1...
+      - '🇸🇬[www.v2nodes.com] ss-SG-1616... #1'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
+      - 🇸🇬SG-109.123.237.41-2732
+      - 🇸🇬SG-43.160.197.160-5281
+      - 🇸🇬 2811
+      - 🇸🇬[www.v2nodes.com] ss-SG-1616...
+      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
+      - SG 🇸🇬 | @Raydikalx | 6358C7
+      - 🇸🇬SG-15.235.147.186-0335
+      - 🇸🇬SG-146.190.82.241-2319
+      - 🇸🇬SG-51.79.161.232-7436
+      - 🇸🇬SG-15.235.197.4-8029
+      - SG新加坡(v2clash.blog 2026-10.5更新)
+      - SG新加坡(v2clash.blog 2026-10.13更新)
+      - 🇸🇬 231
+      - 🇸🇬 749
+      - 🇸🇬 1409
+      - 🇸🇬 1612
+      - 🇸🇬 2301
+      - '[free18#080] 🇸🇬_新加坡 (11)'
+      - '[free18#083] 🇸🇬_新加坡 (12)'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
+      - SG 🇸🇬 | @Raydikalx | 8DCEC7
+      - 🇸🇬SG-68.183.227.4-0309
+      - 🇸🇬SG-15.235.184.36-2700
+      - 🇸🇬SG-18.140.67.76-5802
+      - 🇸🇬 758
+      - 🇸🇬 891
+      - 🇸🇬 913
+      - 🇸🇬 1030
+      - 🇸🇬 1166
+      - '[free18#078] 🇸🇬_新加坡 (10)'
+      - 🇸🇬 新加坡 | SGP
+      - 🇸🇬 新加坡 | SGP 2
+      - 🇸🇬SG-157.230.36.235-2987
+      - 🇸🇬SG-54.254.129.246-7420
+      - SG新加坡(v2clash.blog 2026-10.12更新)
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #6-2'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #2'
+      - SG新加坡(v2clash.blog 2026-10.20更新)
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #8'
+      - SG新加坡(v2clash.blog 2026-10.12更新)-2
+      - 🇸🇬 2020
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #3'
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
