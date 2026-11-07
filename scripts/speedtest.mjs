@@ -7,11 +7,15 @@ import fs from 'node:fs';
 import { spawn, execFileSync } from 'node:child_process';
 import yaml from 'js-yaml';
 
-const SAMPLE = Number(process.env.SAMPLE || 24);
-const TEST_BYTES = Number(process.env.TEST_BYTES || 2000000);
+const SAMPLE = Number(process.env.SAMPLE || 40);
+// 2MB 时代隐含门槛 1.07Mbps（2MB / 15s），而全池实测最高只有 0.6Mbps ⇒ 永远 0 通过、speed.json 全零，
+// 排序退化成纯 RTT。降到 256KB 后门槛 ≈0.17Mbps，能让"慢但活着"的节点留下真实速度。
+const TEST_BYTES = Number(process.env.TEST_BYTES || 262144);
 const PORT = 7890;
 const API = 'http://127.0.0.1:9090';
-const MAX_TIME = 15;
+const MAX_TIME = 12;
+// 至少真下到 64KB 才算通：只看 http_code=200 会把"握手成功但传不动"的节点算成可用
+const MIN_BYTES = Number(process.env.MIN_BYTES || 65536);
 
 const REGIONS = [
   ['香港', /香港|🇭🇰|\bHK\b|\bHKG\b|Hong ?Kong/i],
@@ -126,17 +130,29 @@ await Promise.all(Array.from({ length: 并发 }, async (_, w) => {
       const out = execFileSync('curl', [
         '-s', '-o', '/dev/null', '-x', `http://127.0.0.1:${PORT}`,
         '--max-time', String(MAX_TIME),
-        '-w', '%{http_code} %{speed_download} %{time_total}',
+        '-w', '%{http_code} %{size_download} %{speed_download} %{time_total}',
         `https://speed.cloudflare.com/__down?bytes=${TEST_BYTES}`,
       ], { encoding: 'utf8', timeout: (MAX_TIME + 5) * 1000 });
 
-      const [code, bps, secs] = out.trim().split(/\s+/);
+      const [code, bytes, bps, secs] = out.trim().split(/\s+/);
+      const bytesN = Number(bytes) || 0;
       const mbps = Number(bps) / 1048576;
-      results[i] = { name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: code === '200' && mbps > 0, http: code, mbps: Number(mbps.toFixed(3)), secs: Number(secs) };
-      console.log(`${code} ${mbps.toFixed(2)} MB/s  ${names[i]}`);
+      results[i] = { name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: code === '200' && bytesN >= MIN_BYTES, http: code, bytes: bytesN, mbps: Number(mbps.toFixed(3)), secs: Number(secs), exit: 0 };
+      console.log(`${code} ${mbps.toFixed(2)} MB/s ${bytesN}B  ${names[i]}`);
     } catch (e) {
-      results[i] = { name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: false, error: String(e.message || e).slice(0, 60), mbps: 0 };
-      console.log('FAIL ' + names[i]);
+      // curl 超时/被断时 execFileSync 抛异常，但 e.stdout 里仍有完整的 -w 输出 ——
+      // 旧代码把它整个丢掉，只剩 "Command failed"，真实速度全部丢失。
+      const partial = String(e.stdout || '').trim();
+      const [code, bytes, bps, secs] = partial.split(/\s+/);
+      const bytesN = Number(bytes) || 0;
+      const mbps = Number(bps) / 1048576;
+      if (bytesN > 0) {
+        results[i] = { name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: code === '200' && bytesN >= MIN_BYTES, http: code, bytes: bytesN, mbps: Number(mbps.toFixed(3)), secs: Number(secs), exit: e.status ?? -1 };
+        console.log(`${code} ${mbps.toFixed(2)} MB/s ${bytesN}B (partial, exit ${e.status ?? -1})  ${names[i]}`);
+      } else {
+        results[i] = { name, node: names[i].replace(/^\d+-/, ''), server: sample[i]?.server, port: sample[i]?.port, ok: false, http: code || '000', bytes: 0, mbps: 0, secs: Number(secs || 0), exit: e.status ?? -1, error: String(e.message || e).slice(0, 60) };
+        console.log('FAIL ' + names[i]);
+      }
     }
   }
 }));
