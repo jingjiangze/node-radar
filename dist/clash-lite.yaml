@@ -173,24 +173,6 @@ proxies:
     network: ws
     ws-opts:
       path: /
-  - name: 🇺🇸 US2@ripaojiedian
-    server: 154.17.9.239
-    port: 443
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
   - name: 🇺🇸 720
     type: trojan
     server: 104.18.33.97
@@ -1022,6 +1004,19 @@ proxies:
       headers:
         Host: Bpb-v.PaGES.DEV
       path: /LtZFqGz6qD8jBoHW/MTI5LjE1OS4yNDEuMTcy
+  - name: US 🇺🇸 | @Raydikalx | 676D28
+    type: vmess
+    server: 18.238.109.17
+    port: 80
+    uuid: a150d554-e962-4632-829f-ee583ada3f95
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /htun
+      headers:
+        Host: d7pu5mzr9c4b0.cloudfront.net
   - name: '@V2rayng_Fast 🇩🇪-4'
     type: vless
     server: 104.16.10.2
@@ -1205,29 +1200,24 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: HK VLESS-14 | free-nodes
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
-    client-fingerprint: chrome
-  - name: '[free18#261] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
   - name: '@V2rayng_Fast 🇩🇪-6'
     type: vless
     server: 167.82.101.119
     port: 443
     uuid: ea1fb226-a033-4999-9f86-49ec57629c0d
     udp: true
+  - name: 日本+V2CROSS.COM
+    type: vless
+    server: 43.163.112.174
+    port: 443
+    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
+      short-id: 0123456789abcdef
   - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
     network: ws
     port: 8080
@@ -1483,7 +1473,6 @@ proxy-groups:
       - US美国(v2clash.blog 2026-9.17更新)
       - 美国 114
       - 🇺🇸 711
-      - 🇺🇸 US2@ripaojiedian
       - 🇺🇸 720
       - 美国 150
       - 美国 086
@@ -1562,6 +1551,7 @@ proxy-groups:
       - 美国 137
       - 美国 136
       - 美国 544
+      - US 🇺🇸 | @Raydikalx | 676D28
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇬🇧-2'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
@@ -1579,9 +1569,8 @@ proxy-groups:
       - 🇹🇼 TW@ripaojiedian
       - 日本 002
       - 新加坡 004
-      - HK VLESS-14 | free-nodes
-      - '[free18#261] 🇭🇰_香港 (26)'
       - '@V2rayng_Fast 🇩🇪-6'
+      - 日本+V2CROSS.COM
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
@@ -1619,7 +1608,6 @@ proxy-groups:
       - US美国(v2clash.blog 2026-9.17更新)
       - 美国 114
       - 🇺🇸 711
-      - 🇺🇸 US2@ripaojiedian
       - 🇺🇸 720
       - 美国 150
       - 美国 086
@@ -1698,6 +1686,7 @@ proxy-groups:
       - 美国 137
       - 美国 136
       - 美国 544
+      - US 🇺🇸 | @Raydikalx | 676D28
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇬🇧-2'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
@@ -1715,9 +1704,8 @@ proxy-groups:
       - 🇹🇼 TW@ripaojiedian
       - 日本 002
       - 新加坡 004
-      - HK VLESS-14 | free-nodes
-      - '[free18#261] 🇭🇰_香港 (26)'
       - '@V2rayng_Fast 🇩🇪-6'
+      - 日本+V2CROSS.COM
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
@@ -1780,7 +1768,6 @@ proxy-groups:
       - US美国(v2clash.blog 2026-9.17更新)
       - 美国 114
       - 🇺🇸 711
-      - 🇺🇸 US2@ripaojiedian
       - 🇺🇸 720
       - 美国 150
       - 美国 086
@@ -1849,6 +1836,7 @@ proxy-groups:
       - 美国 137
       - 美国 136
       - 美国 544
+      - US 🇺🇸 | @Raydikalx | 676D28
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1863,6 +1851,7 @@ proxy-groups:
       - 日本 017
       - 日本 018
       - 日本 002
+      - 日本+V2CROSS.COM
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 🇯🇵 JP2@ripaojiedian
