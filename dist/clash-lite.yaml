@@ -5,6 +5,23 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
+  - name: HK VLESS-14 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+    client-fingerprint: chrome
+  - name: '[free18#260] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: 美国 111
     type: trojan
     network: ws
@@ -863,22 +880,6 @@ proxies:
     udp: true
     tfo: false
     client-fingerprint: chrome
-  - name: 美国 951
-    type: vless
-    network: ws
-    server: 104.19.48.107
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: unsafe
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: US美国(v2clash.blog 2026-10.4更新)
     type: vless
     server: 172.67.79.160
@@ -991,6 +992,19 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
+  - name: 美国 037
+    type: vmess
+    network: ws
+    server: 23.227.38.22
+    port: 8080
+    uuid: 9258153a-dc97-4e39-9037-009abfc4fed0
+    tls: false
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: per-essex-patterns-bowling.trycloudflare.com
+      path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
   - name: '@V2rayng_Fast 🇬🇧'
     type: vless
     server: 151.101.56.6
@@ -1324,6 +1338,8 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - HK VLESS-14 | free-nodes
+      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 111
       - 美国 126
       - 美国 030
@@ -1403,7 +1419,6 @@ proxy-groups:
       - 美国 134
       - 美国 193
       - 美国 921
-      - 美国 951
       - US美国(v2clash.blog 2026-10.4更新)
       - 日本 012
       - 美国 142
@@ -1414,6 +1429,7 @@ proxy-groups:
       - 美国 238
       - 美国 246
       - 美国 248
+      - 美国 037
       - '@V2rayng_Fast 🇬🇧'
       - '@V2rayng_Fast 🇩🇪-3'
       - 日本 018
@@ -1450,6 +1466,8 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
+      - HK VLESS-14 | free-nodes
+      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 111
       - 美国 126
       - 美国 030
@@ -1529,7 +1547,6 @@ proxy-groups:
       - 美国 134
       - 美国 193
       - 美国 921
-      - 美国 951
       - US美国(v2clash.blog 2026-10.4更新)
       - 日本 012
       - 美国 142
@@ -1540,6 +1557,7 @@ proxy-groups:
       - 美国 238
       - 美国 246
       - 美国 248
+      - 美国 037
       - '@V2rayng_Fast 🇬🇧'
       - '@V2rayng_Fast 🇩🇪-3'
       - 日本 018
@@ -1650,7 +1668,6 @@ proxy-groups:
       - 美国 134
       - 美国 193
       - 美国 921
-      - 美国 951
       - US美国(v2clash.blog 2026-10.4更新)
       - 美国 142
       - 美国 909
@@ -1660,6 +1677,7 @@ proxy-groups:
       - 美国 238
       - 美国 246
       - 美国 248
+      - 美国 037
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
