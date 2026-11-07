@@ -1554,7 +1554,7 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: SG VLESS-16 | free-nodes
+  - name: 日本+V2CROSS.COM
     type: vless
     server: 43.163.112.174
     port: 443
@@ -1790,7 +1790,7 @@ proxy-groups:
       - 日本 003
       - '@V2rayng_Fast 🇬🇧-2'
       - 日本 002
-      - SG VLESS-16 | free-nodes
+      - 日本+V2CROSS.COM
       - '[AutoMerge#026] 🇸🇬[www.v2nodes.com] vless-SG-9... #1'
       - 日本 012
       - 日本 009
@@ -1927,7 +1927,7 @@ proxy-groups:
       - 日本 003
       - '@V2rayng_Fast 🇬🇧-2'
       - 日本 002
-      - SG VLESS-16 | free-nodes
+      - 日本+V2CROSS.COM
       - '[AutoMerge#026] 🇸🇬[www.v2nodes.com] vless-SG-9... #1'
       - 日本 012
       - 日本 009
@@ -2042,6 +2042,7 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - 日本 003
       - 日本 002
+      - 日本+V2CROSS.COM
       - 日本 012
       - 日本 009
       - 日本 020
