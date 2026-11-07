@@ -5,14 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: '[free18#260] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
   - name: 韩国 005
     type: trojan
     network: ws
@@ -352,6 +344,20 @@ proxies:
     port: 443
     password: MiTiVPN
     udp: true
+  - name: '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+    type: vless
+    server: 104.18.42.98
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    udp: true
+    tls: true
+    servername: jp3.yohototo.top
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /tyxyws
+      headers:
+        Host: jp3.yohototo.top
   - name: 美国 126
     type: trojan
     network: ws
@@ -673,6 +679,22 @@ proxies:
     udp: true
     tfo: false
     client-fingerprint: chrome
+  - name: 美国 948
+    type: vless
+    network: ws
+    server: 104.16.10.9
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    servername: jp3.yohototo.top
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: unsafe
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
   - name: 美国 184
     type: trojan
     network: ws
@@ -1044,12 +1066,6 @@ proxies:
     port: 443
     password: humanity
     udp: true
-  - name: US美国(v2clash.blog 2026-5.26更新)
-    type: vless
-    server: 109.176.239.50
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    udp: true
   - name: 日本 012
     type: trojan
     network: ws
@@ -1121,6 +1137,20 @@ proxies:
     port: 443
     uuid: 9503e890-3702-4847-af0a-2bceac2f0da0
     udp: true
+  - name: '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
+    type: vless
+    server: 146.75.59.186
+    port: 443
+    uuid: a953509f-af22-42d5-a34c-aa29405369b0
+    udp: true
+    tls: true
+    servername: cdn.akamai.steamstatic.com
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ukoijji.global.ssl.fastly.net
   - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
     type: vless
     server: 69.46.46.215
@@ -1345,6 +1375,17 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+    type: vless
+    server: 38.47.96.220
+    port: 11424
+    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+    udp: true
+    network: ws
+    ws-opts:
+      path: Telegram-WangCai2🇨🇳security=tls
+      headers:
+        Host: notls.lukongtou.eu.org
 proxy-groups:
   - name: 🌐 公共节点
     type: select
@@ -1362,7 +1403,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - 韩国 005
       - 美国 867
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
@@ -1392,6 +1432,7 @@ proxy-groups:
       - 🇺🇸@V2rayng_Fast
       - 美国 1119
       - 🇺🇸@V2rayng_Fast-2
+      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 126
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - 美国 113
@@ -1421,6 +1462,7 @@ proxy-groups:
       - 美国 191
       - 美国 235
       - 美国 913
+      - 美国 948
       - 美国 184
       - 美国 990
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -1456,7 +1498,6 @@ proxy-groups:
       - 美国 180
       - 美国 226
       - US美国(v2clash.blog 2026-8.15更新)
-      - US美国(v2clash.blog 2026-5.26更新)
       - 日本 012
       - 日本 021
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
@@ -1464,6 +1505,7 @@ proxy-groups:
       - 韩国 001
       - '@V2rayng_Fast 🇩🇪-5'
       - '@V2rayng_Fast 🇬🇧'
+      - '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - 韩国 010
       - DE 🇩🇪 | @Raydikalx | F68888
@@ -1488,10 +1530,10 @@ proxy-groups:
       - 新加坡 006
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - 韩国 005
       - 美国 867
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
@@ -1521,6 +1563,7 @@ proxy-groups:
       - 🇺🇸@V2rayng_Fast
       - 美国 1119
       - 🇺🇸@V2rayng_Fast-2
+      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 126
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - 美国 113
@@ -1550,6 +1593,7 @@ proxy-groups:
       - 美国 191
       - 美国 235
       - 美国 913
+      - 美国 948
       - 美国 184
       - 美国 990
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -1585,7 +1629,6 @@ proxy-groups:
       - 美国 180
       - 美国 226
       - US美国(v2clash.blog 2026-8.15更新)
-      - US美国(v2clash.blog 2026-5.26更新)
       - 日本 012
       - 日本 021
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
@@ -1593,6 +1636,7 @@ proxy-groups:
       - 韩国 001
       - '@V2rayng_Fast 🇩🇪-5'
       - '@V2rayng_Fast 🇬🇧'
+      - '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - 韩国 010
       - DE 🇩🇪 | @Raydikalx | F68888
@@ -1617,6 +1661,7 @@ proxy-groups:
       - 新加坡 006
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1671,6 +1716,7 @@ proxy-groups:
       - 美国 191
       - 美国 235
       - 美国 913
+      - 美国 948
       - 美国 184
       - 美国 990
       - 美国 163
@@ -1703,7 +1749,6 @@ proxy-groups:
       - 美国 180
       - 美国 226
       - US美国(v2clash.blog 2026-8.15更新)
-      - US美国(v2clash.blog 2026-5.26更新)
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1712,6 +1757,7 @@ proxy-groups:
     lazy: true
     proxies:
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 日本 018
       - 日本 019
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -1724,6 +1770,7 @@ proxy-groups:
       - 日本 030
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
