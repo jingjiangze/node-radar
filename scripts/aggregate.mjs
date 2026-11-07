@@ -473,15 +473,42 @@ const out = {
 // ---------- 精简池 ----------
 // 客户端一次性对所有节点做健康检查会大面积超时（实测：23 个 1.3s 通过，918 个 8s 仍超时），
 // 所以另出一份按地区分层的精简池给订阅使用；全量池仍保留在 clash.yaml。
+//
+// 关键口径：精简池只收「国内探针确认可达」的节点。
+// 之前的版本按 tier 排序但仍把「从未被国内探测」的节点放了进来，实测 396 个里 254 个（64%）
+// 从未测过 → 客户端里大面积 Error（从美国 TCP 通 ≠ 国内能用）。
 const LITE_PER_REGION = 80;
 const LITE_MAX = 900;
+const 按名索引 = new Map(alive.map((p) => [p.name, p]));
+const 国内确认 = (name) => {
+  const p = 按名索引.get(name);
+  if (!p) return false;
+  const c = CN结果.get(`${p.server}:${p.port}`);
+  return !!c && c.ok === true;
+};
 const liteNames = new Set();
-for (const names of Object.values(byRegion)) {
-  if (liteNames.size >= LITE_MAX) break;
-  for (const n of names.slice(0, LITE_PER_REGION)) {
+const 候选地区 = Object.values(byRegion).map((names) => names.filter(国内确认));
+const 国内确认总数 = 候选地区.reduce((a, l) => a + l.length, 0);
+// 兜底：国内数据太少（探测还没覆盖到）时退回原逻辑，避免订阅变空
+const 用国内确认 = 国内确认总数 >= 30;
+if (用国内确认) {
+  for (const names of 候选地区) {
     if (liteNames.size >= LITE_MAX) break;
-    liteNames.add(n);
+    for (const n of names.slice(0, LITE_PER_REGION)) {
+      if (liteNames.size >= LITE_MAX) break;
+      liteNames.add(n);
+    }
   }
+  console.log(`[精简池] 只收国内确认可达的节点：${liteNames.size} 个（候选 ${国内确认总数}）`);
+} else {
+  for (const names of Object.values(byRegion)) {
+    if (liteNames.size >= LITE_MAX) break;
+    for (const n of names.slice(0, LITE_PER_REGION)) {
+      if (liteNames.size >= LITE_MAX) break;
+      liteNames.add(n);
+    }
+  }
+  console.log(`[精简池] 国内数据不足（确认可达仅 ${国内确认总数}），退回未筛选口径：${liteNames.size} 个`);
 }
 const liteAlive = alive.filter((p) => liteNames.has(p.name));
 const liteGroups = [
