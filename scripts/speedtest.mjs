@@ -57,7 +57,20 @@ console.log(`候选 ${all.length}，抽样 ${sample.length}（${buckets.size} �
 
 // ---------- 生成临时配置 ----------
 const names = sample.map((p, i) => `${i}-${String(p.name || p.server).slice(0, 30)}`);
-const proxies = sample.map((p, i) => ({ ...p, name: names[i] }));
+// 净化：源里偶发带控制字符或未配对代理项，dump 出来的 YAML 会让内核解析失败
+// （实测 fatal: yaml: invalid Unicode character escape code）
+const 清洗 = (v) => {
+  if (typeof v === 'string') {
+    return v
+      .replace(/[\u0000-\u001F\u007F]/g, '')
+      .replace(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/g, '')
+      .replace(/(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g, '');
+  }
+  if (Array.isArray(v)) return v.map(清洗);
+  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, 清洗(x)]));
+  return v;
+};
+const proxies = sample.map((p, i) => 清洗({ ...p, name: names[i] }));
 // 并发测速：每个 worker 用自己独立的 select 组（共用一个组会互相切走节点）
 const 并发 = Math.max(1, Number(process.env.SPEED_CONCURRENCY || 8));
 const 组名 = Array.from({ length: 并发 }, (_, i) => `W${i}`);
@@ -73,8 +86,17 @@ const cfg = {
 };
 fs.writeFileSync('speedtest-config.yaml', yaml.dump(cfg, { lineWidth: 4096 }));
 
-// ---------- 启动内核 ----------
+// ---------- 配置自检 ----------
+// 测速是可选增强，绝不能因为某个坏节点让整条流水线卡住：配置过不了内核校验就跳过本轮。
 const bin = process.env.MIHOMO_BIN || './mihomo';
+try {
+  execFileSync(bin, ['-t', '-d', '.', '-f', 'speedtest-config.yaml'], { stdio: 'pipe', timeout: 60000 });
+} catch (e) {
+  console.error('生成的测速配置内核校验不通过，跳过本轮测速：' + String(e.stderr || e.message).slice(0, 200));
+  process.exit(0);
+}
+
+// ---------- 启动内核 ----------
 const proc = spawn(bin, ['-d', '.', '-f', 'speedtest-config.yaml'], { stdio: ['ignore', 'pipe', 'pipe'] });
 let coreLog = '';
 proc.stdout.on('data', (d) => (coreLog += d.toString()));
