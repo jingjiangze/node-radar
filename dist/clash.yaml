@@ -9597,6 +9597,27 @@ proxies:
     port: 8443
     uuid: e6df2095-a73c-4043-8693-8d5a03686870
     udp: true
+  - name: 🇬🇧GB-82.38.31.193-0196
+    type: ss
+    server: 82.38.31.193
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇩🇪 1097
+    type: ss
+    server: 146.70.20.147
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: 🇰🇷 1277
+    type: trojan
+    server: 158.247.255.150
+    port: 48851
+    password: 5t6i121em5lkmsmk
+    udp: true
+    sni: kr002.zestapp778.com
   - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
     encryption: none
     network: ws
@@ -33369,26 +33390,12 @@ proxies:
     cipher: aes-256-gcm
     password: cdBIDV42DCwnfIN
     udp: true
-  - name: 🇬🇧GB-82.38.31.193-0196
-    type: ss
-    server: 82.38.31.193
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
   - name: '@FarazV2ray-38'
     type: ss
     server: 20.107.184.151
     port: 443
     cipher: chacha20-ietf-poly1305
     password: zziXHDOFXc4qRjoj
-    udp: true
-  - name: 🇩🇪 1097
-    type: ss
-    server: 146.70.20.147
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
     udp: true
   - name: '🇨🇭[www.v2nodes.com] trojan-CH-... #4'
     password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
@@ -33429,13 +33436,6 @@ proxies:
     port: 1354
     server: dns27.m3hrzd.ir
     type: ss
-  - name: 🇰🇷 1277
-    type: trojan
-    server: 158.247.255.150
-    port: 48851
-    password: 5t6i121em5lkmsmk
-    udp: true
-    sni: kr002.zestapp778.com
   - name: 🇲🇾[www.v2nodes.com] ss-MY-1525...
     cipher: chacha20-ietf-poly1305
     password: 28789988-887e-4e41-83cd-27bbfb7999ad

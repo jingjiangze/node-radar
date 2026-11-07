@@ -1812,6 +1812,13 @@ proxies:
     port: 443
     uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
     udp: true
+  - name: 🇰🇷 1277
+    type: trojan
+    server: 158.247.255.150
+    port: 48851
+    password: 5t6i121em5lkmsmk
+    udp: true
+    sni: kr002.zestapp778.com
   - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
     encryption: none
     network: ws
@@ -3936,13 +3943,6 @@ proxies:
     cipher: chacha20-ietf
     password: asd123456
     udp: true
-  - name: 🇰🇷 1277
-    type: trojan
-    server: 158.247.255.150
-    port: 48851
-    password: 5t6i121em5lkmsmk
-    udp: true
-    sni: kr002.zestapp778.com
   - name: 🇰🇷[www.v2nodes.com] trojan-KR-...
     password: 5t6i121em5lkmsmk
     port: 48851
