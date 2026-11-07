@@ -17,6 +17,14 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: '[free18#260] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: 韩国 009
     type: trojan
     network: ws
@@ -1272,6 +1280,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 韩国 005
+      - '[free18#260] 🇭🇰_香港 (26)'
       - 韩国 009
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - US 🇺🇸 | @Raydikalx | 5A1BD6
@@ -1398,6 +1407,7 @@ proxy-groups:
     type: select
     proxies:
       - 韩国 005
+      - '[free18#260] 🇭🇰_香港 (26)'
       - 韩国 009
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - US 🇺🇸 | @Raydikalx | 5A1BD6

@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-07T17:17:43.512Z",
-  "totalRaw": 25409,
-  "totalUnique": 16222,
-  "totalAlive": 3157,
+  "generatedAt": "2026-11-07T17:26:32.036Z",
+  "totalRaw": 25406,
+  "totalUnique": 16218,
+  "totalAlive": 3162,
   "probe": {
     "enabled": true,
-    "probed": 16222,
-    "alive": 4754,
-    "ms": 170140
+    "probed": 16218,
+    "alive": 4766,
+    "ms": 169870
   },
   "protocolProbe": {
-    "tls检查": 1700,
-    "tls失败": 631,
-    "ws检查": 1621,
-    "ws路径错": 756
+    "tls检查": 1715,
+    "tls失败": 643,
+    "ws检查": 1617,
+    "ws路径错": 752
   },
   "regions": {
     "韩国": 29,
-    "德国": 115,
-    "美国": 540,
-    "日本": 30,
-    "英国": 84,
-    "新加坡": 45,
-    "香港": 24,
+    "香港": 25,
+    "德国": 114,
+    "美国": 547,
+    "日本": 28,
+    "英国": 79,
+    "新加坡": 46,
     "台湾": 6
   },
   "byType": {
-    "trojan": 730,
-    "vless": 1574,
-    "vmess": 422,
-    "ss": 387,
-    "http": 22,
+    "trojan": 728,
+    "vless": 1583,
+    "vmess": 419,
+    "ss": 386,
+    "http": 23,
     "hysteria2": 20,
-    "anytls": 2
+    "anytls": 3
   },
   "unsafe": {
-    "total": 409,
-    "cnConfirmed": 143
+    "total": 405,
+    "cnConfirmed": 142
   },
   "sources": [
     {
@@ -60,7 +60,7 @@
     {
       "source": "ermaozi01/free_clash_vpn",
       "kind": "clash-yaml",
-      "count": 20,
+      "count": 17,
       "ok": true
     },
     {
