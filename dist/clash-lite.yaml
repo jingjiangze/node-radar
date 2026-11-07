@@ -5,6 +5,15 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
+  - name: HK VLESS-14 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+    client-fingerprint: chrome
   - name: '[free18#261] 🇭🇰_香港 (26)'
     type: vless
     server: 152.175.6.229
@@ -208,6 +217,24 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: 🇺🇸 US2@ripaojiedian
+    server: 154.17.9.239
+    port: 443
+    type: vless
+    uuid: 26524cce-d514-4014-a426-365fb266a14d
+    tls: true
+    alpn:
+      - http/1.1
+    tfo: false
+    skip-cert-verify: true
+    servername: speedtest.danfengno1.kdns.fr
+    client-fingerprint: firefox
+    network: ws
+    ws-opts:
+      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
+      headers:
+        Host: speedtest.danfengno1.kdns.fr
+    udp: true
   - name: 美国 094
     type: trojan
     network: ws
@@ -1042,16 +1069,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: US 🇺🇸 | @Raydikalx | 2D3F12
-    type: vmess
-    server: 199.232.78.170
-    port: 443
-    uuid: 6ba68c69-e108-502d-7b1c-e806fbc3cccd
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: ssl.fastly.com
   - name: JP日本(v2clash.blog 2026-6.9更新)
     type: vless
     server: 151.101.108.223
@@ -1167,17 +1184,6 @@ proxies:
       path: Telegram-WangCai2🇨🇳security=tls
       headers:
         Host: notls.lukongtou.eu.org
-  - name: '🇩🇪 德国 | DEU #5'
-    type: vless
-    server: 199.232.239.239
-    port: 443
-    uuid: a55a4d25-76f0-4f0e-d395-3a92c0b34268
-    udp: true
-    tls: true
-    servername: community.fastly.steamstatic.com
-    client-fingerprint: chrome
-    alpn:
-      - h2
   - name: 日本 015
     type: trojan
     network: ws
@@ -1234,6 +1240,18 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
+  - name: SG VLESS-16 | free-nodes
+    type: vless
+    server: 43.163.112.174
+    port: 443
+    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
+      short-id: 0123456789abcdef
   - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
     network: ws
     port: 8080
@@ -1294,6 +1312,16 @@ proxies:
     port: 443
     uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
     udp: true
+  - name: DE 🇩🇪 | @Raydikalx | 5E3474
+    type: vmess
+    server: 185.204.170.130
+    port: 443
+    uuid: b8136e5f-8ece-4a06-99af-5a207c749bc4
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 185.204.170.130
   - name: 🇯🇵 JP2@ripaojiedian
     server: 45.196.233.54
     port: 18549
@@ -1464,6 +1492,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - HK VLESS-14 | free-nodes
       - '[free18#261] 🇭🇰_香港 (26)'
       - 🇰🇷 KR2@ripaojiedian
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
@@ -1482,6 +1511,7 @@ proxy-groups:
       - 美国 008
       - 韩国 009
       - 美国 104
+      - 🇺🇸 US2@ripaojiedian
       - 美国 094
       - 美国 128
       - '@V2rayng_Fast 🇩🇪-2'
@@ -1563,7 +1593,6 @@ proxy-groups:
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - 🇺🇸 美国 | USA
       - 美国 156
-      - US 🇺🇸 | @Raydikalx | 2D3F12
       - JP日本(v2clash.blog 2026-6.9更新)
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - 韩国 005
@@ -1577,17 +1606,18 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | C08069
       - DE 🇩🇪 | @Raydikalx | D5F456
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-      - '🇩🇪 德国 | DEU #5'
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - 日本 012
       - 日本 002
       - DE 🇩🇪 | @Raydikalx | 4769A2
+      - SG VLESS-16 | free-nodes
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - 🇹🇼 TW@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - 🇰🇷 KR1@ripaojiedian
       - '@V2rayng_Fast 🇩🇪-5'
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - 🇯🇵 JP2@ripaojiedian
       - 韩国 010
       - 日本 020
@@ -1603,6 +1633,7 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
+      - HK VLESS-14 | free-nodes
       - '[free18#261] 🇭🇰_香港 (26)'
       - 🇰🇷 KR2@ripaojiedian
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
@@ -1621,6 +1652,7 @@ proxy-groups:
       - 美国 008
       - 韩国 009
       - 美国 104
+      - 🇺🇸 US2@ripaojiedian
       - 美国 094
       - 美国 128
       - '@V2rayng_Fast 🇩🇪-2'
@@ -1702,7 +1734,6 @@ proxy-groups:
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - 🇺🇸 美国 | USA
       - 美国 156
-      - US 🇺🇸 | @Raydikalx | 2D3F12
       - JP日本(v2clash.blog 2026-6.9更新)
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - 韩国 005
@@ -1716,17 +1747,18 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | C08069
       - DE 🇩🇪 | @Raydikalx | D5F456
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-      - '🇩🇪 德国 | DEU #5'
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - 日本 012
       - 日本 002
       - DE 🇩🇪 | @Raydikalx | 4769A2
+      - SG VLESS-16 | free-nodes
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - 🇹🇼 TW@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - 🇰🇷 KR1@ripaojiedian
       - '@V2rayng_Fast 🇩🇪-5'
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - 🇯🇵 JP2@ripaojiedian
       - 韩国 010
       - 日本 020
@@ -1776,6 +1808,7 @@ proxy-groups:
       - US美国(v2clash.blog 2026-8.15更新)
       - 美国 008
       - 美国 104
+      - 🇺🇸 US2@ripaojiedian
       - 美国 094
       - 美国 128
       - 美国 687
@@ -1846,7 +1879,6 @@ proxy-groups:
       - '[free18#265] 🇺🇸_美国 (73)'
       - 🇺🇸 美国 | USA
       - 美国 156
-      - US 🇺🇸 | @Raydikalx | 2D3F12
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1869,10 +1901,10 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | E94E3F
       - DE 🇩🇪 | @Raydikalx | C08069
       - DE 🇩🇪 | @Raydikalx | D5F456
-      - '🇩🇪 德国 | DEU #5'
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - '@V2rayng_Fast 🇩🇪-5'
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - '@V2rayng_Fast 🇩🇪-6'
       - 🇩🇪DE-157.90.20.18-3859
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
