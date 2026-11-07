@@ -1355,6 +1355,17 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+    type: vless
+    server: 38.47.96.220
+    port: 11424
+    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+    udp: true
+    network: ws
+    ws-opts:
+      path: Telegram-WangCai2🇨🇳security=tls
+      headers:
+        Host: notls.lukongtou.eu.org
 proxy-groups:
   - name: 🌐 公共节点
     type: select
@@ -1498,6 +1509,7 @@ proxy-groups:
       - 新加坡 006
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: ☝️ 全部-手动
     type: select
     proxies:
@@ -1627,6 +1639,7 @@ proxy-groups:
       - 新加坡 006
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1734,6 +1747,7 @@ proxy-groups:
       - 日本 030
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
