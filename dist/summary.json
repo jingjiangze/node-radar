@@ -1,35 +1,35 @@
 {
-  "generatedAt": "2026-11-07T07:34:22.965Z",
-  "totalRaw": 24911,
-  "totalUnique": 16516,
-  "totalAlive": 3193,
+  "generatedAt": "2026-11-07T07:43:46.458Z",
+  "totalRaw": 24886,
+  "totalUnique": 16563,
+  "totalAlive": 3197,
   "probe": {
     "enabled": true,
-    "probed": 16516,
-    "alive": 4626,
-    "ms": 177546
+    "probed": 16563,
+    "alive": 4627,
+    "ms": 178062
   },
   "protocolProbe": {
-    "tls检查": 1527,
+    "tls检查": 1533,
     "tls失败": 611,
-    "ws检查": 1448,
-    "ws路径错": 614
+    "ws检查": 1456,
+    "ws路径错": 610
   },
   "regions": {
-    "美国": 497,
-    "德国": 112,
+    "美国": 492,
+    "台湾": 7,
+    "德国": 113,
     "日本": 32,
-    "韩国": 32,
-    "英国": 84,
-    "香港": 29,
-    "台湾": 5,
-    "新加坡": 41
+    "韩国": 29,
+    "英国": 81,
+    "香港": 28,
+    "新加坡": 42
   },
   "byType": {
-    "vless": 1560,
     "vmess": 428,
-    "trojan": 743,
-    "ss": 383,
+    "vless": 1575,
+    "trojan": 736,
+    "ss": 379,
     "http": 61,
     "hysteria2": 18
   },
@@ -139,7 +139,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 436,
+      "count": 411,
       "ok": true
     },
     {
