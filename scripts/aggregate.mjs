@@ -489,22 +489,7 @@ const 国内确认 = (name) => {
   const c = CN结果.get(`${p.server}:${p.port}`);
   return !!c && c.ok === true;
 };
-// 墙内三层实测白名单（TCP → TLS → WS 升级，由墙内机器跑出来）
-// TCP 可达 ≠ 能用：实测 134 个 TCP 可达的节点里，45 个 WS 升级失败、8 个 TLS 失败，
-// 客户端表现就是 timeout。有新鲜白名单时只收白名单里的。
-let 白名单 = null;
-try {
-  const w = JSON.parse(fs.readFileSync(new URL('../dist/cn-usable.json', import.meta.url), 'utf8'));
-  const 年龄h = (Date.now() - Date.parse(w.generatedAt || 0)) / 3600e3;
-  if (年龄h <= Number(process.env.CN_USABLE_MAX_AGE_HOURS || 48) && Array.isArray(w.names) && w.names.length >= 20) {
-    白名单 = new Set(w.names);
-    console.log(`[精简池] 墙内三层实测白名单：${w.names.length} 个（${年龄h.toFixed(1)}h 前，${w.vantage}）`);
-  } else {
-    console.log(`[精简池] 白名单过旧或过少（${w.names?.length ?? 0} 个 / ${年龄h.toFixed(1)}h），忽略`);
-  }
-} catch { console.log('[精简池] 没有 cn-usable.json，仅按国内 TCP 可达筛选'); }
-
-const 候选过滤 = (name) => 国内确认(name) && (!白名单 || 白名单.has(name));
+const 候选过滤 = (name) => 国内确认(name);
 const liteNames = new Set();
 const 候选地区 = Object.values(byRegion).map((names) => names.filter(候选过滤));
 const 国内确认总数 = 候选地区.reduce((a, l) => a + l.length, 0);
@@ -518,7 +503,7 @@ if (用国内确认) {
       liteNames.add(n);
     }
   }
-  console.log(`[精简池] 收 ${liteNames.size} 个（候选 ${国内确认总数}${白名单 ? '，已套用墙内白名单' : ''}）`);
+  console.log(`[精简池] 收 ${liteNames.size} 个（国内 TCP 可达候选 ${国内确认总数}）`);
 } else {
   for (const names of Object.values(byRegion)) {
     if (liteNames.size >= LITE_MAX) break;
