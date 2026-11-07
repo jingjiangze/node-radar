@@ -1427,18 +1427,6 @@ proxies:
       path: /
       headers:
         Host: 1.proxy2.us.ci.
-  - name: 日本+V2CROSS.COM
-    type: vless
-    server: 43.163.112.174
-    port: 443
-    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
-      short-id: 0123456789abcdef
   - name: 日本 029
     type: trojan
     network: ws
@@ -1455,24 +1443,6 @@ proxies:
   - name: 🇰🇷 KR2@ripaojiedian
     server: 121.154.67.134
     port: 28017
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
-  - name: 🇯🇵 JP2@ripaojiedian
-    server: 45.196.233.54
-    port: 18549
     type: vless
     uuid: 26524cce-d514-4014-a426-365fb266a14d
     tls: true
@@ -1638,10 +1608,8 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - '[freeSub#225] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_50bb1f1f'
-      - 日本+V2CROSS.COM
       - 日本 029
       - 🇰🇷 KR2@ripaojiedian
-      - 🇯🇵 JP2@ripaojiedian
   - name: ☝️ 全部-手动
     type: select
     proxies:
@@ -1778,10 +1746,8 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-10.23更新)
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
       - '[freeSub#225] D🔴🇰🇷hos[🎬🤖📺🎭]_dokng.com_50bb1f1f'
-      - 日本+V2CROSS.COM
       - 日本 029
       - 🇰🇷 KR2@ripaojiedian
-      - 🇯🇵 JP2@ripaojiedian
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1917,9 +1883,7 @@ proxy-groups:
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
-      - 日本+V2CROSS.COM
       - 日本 029
-      - 🇯🇵 JP2@ripaojiedian
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
