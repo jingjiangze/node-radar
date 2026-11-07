@@ -17,7 +17,7 @@ on:
     inputs:
       budget:
         description: "每个探测分片的目标数"
-        default: "110"
+        default: "120"
       force_probe:
         description: "强制跑国内探测（忽略新鲜度）"
         type: boolean
@@ -79,7 +79,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3]
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -92,8 +92,8 @@ jobs:
         timeout-minutes: 35
         run: |
           node scripts/cn-probe-gp.mjs \
-            --resume --shard=${{ matrix.shard }} --shards=4 \
-            --budget=${{ inputs.budget || '110' }} --probes=2 --concurrency=8 --max-age-hours=36 \
+            --resume --shard=${{ matrix.shard }} --shards=8 \
+            --budget=${{ inputs.budget || '120' }} --probes=2 --concurrency=8 --max-age-hours=36 \
             --out=dist/cn-probe-${{ matrix.shard }}.json
       - name: Upload shard
         if: always()
