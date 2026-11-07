@@ -86,19 +86,10 @@ const cfg = {
 };
 fs.writeFileSync('speedtest-config.yaml', yaml.dump(cfg, { lineWidth: 4096 }));
 
-// ---------- 配置自检 ----------
-// 测速是可选增强，绝不能因为某个坏节点让整条流水线卡住：配置过不了内核校验就跳过本轮。
-const bin = process.env.MIHOMO_BIN || './mihomo';
-try {
-  execFileSync(bin, ['-t', '-d', '.', '-f', 'speedtest-config.yaml'], { stdio: 'pipe', timeout: 60000 });
-} catch (e) {
-  console.error('生成的测速配置内核校验不通过，跳过本轮测速：');
-  console.error('  stdout: ' + String(e.stdout || '').slice(-600));
-  console.error('  stderr: ' + String(e.stderr || '').slice(-600));
-  process.exit(0);
-}
-
 // ---------- 启动内核 ----------
+// 不做 -t 预检：预检失败时错误被 execFileSync 吞掉，反而看不到真实原因。
+// 下面的 die() 会把完整内核日志打出来并 exit 0（测速是可选增强，不让 job 变红）。
+const bin = process.env.MIHOMO_BIN || './mihomo';
 const proc = spawn(bin, ['-d', '.', '-f', 'speedtest-config.yaml'], { stdio: ['ignore', 'pipe', 'pipe'] });
 let coreLog = '';
 proc.stdout.on('data', (d) => (coreLog += d.toString()));
