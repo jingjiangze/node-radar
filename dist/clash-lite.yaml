@@ -1221,6 +1221,19 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+    type: vless
+    server: 104.18.42.98
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    udp: true
+    tls: true
+    servername: jp3.yohototo.top
+    network: ws
+    ws-opts:
+      path: /tyxywsfp=chrome
+      headers:
+        Host: jp3.yohototo.top
   - name: 🇰🇷 KR1@ripaojiedian
     server: 109.61.127.247
     port: 443
@@ -1601,6 +1614,7 @@ proxy-groups:
       - 🇰🇷 KR2@ripaojiedian
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - 英国 008
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 🇰🇷 KR1@ripaojiedian
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - HK VLESS-14 | free-nodes
@@ -1736,6 +1750,7 @@ proxy-groups:
       - 🇰🇷 KR2@ripaojiedian
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - 英国 008
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 🇰🇷 KR1@ripaojiedian
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - HK VLESS-14 | free-nodes
@@ -1881,6 +1896,7 @@ proxy-groups:
       - 日本 011
       - 日本 003
       - JP日本(v2clash.blog 2026-6.9更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 日本+V2CROSS.COM
       - 日本 020
       - 日本 002
