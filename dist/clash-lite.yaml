@@ -5,6 +5,14 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
+  - name: '[free18#261] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: 韩国 005
     type: trojan
     network: ws
@@ -183,24 +191,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 🇺🇸 US2@ripaojiedian
-    server: 154.17.9.239
-    port: 443
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
   - name: 美国 113
     type: trojan
     network: ws
@@ -565,6 +555,17 @@ proxies:
       headers:
         Host: ip11.freegradely.xyz
       path: github.com/Alvin9999
+  - name: '🇩🇪 德国 | DEU #5'
+    type: vless
+    server: 199.232.239.239
+    port: 443
+    uuid: a55a4d25-76f0-4f0e-d395-3a92c0b34268
+    udp: true
+    tls: true
+    servername: community.fastly.steamstatic.com
+    client-fingerprint: chrome
+    alpn:
+      - h2
   - name: 美国 049
     type: vmess
     network: ws
@@ -608,7 +609,7 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: '🇺🇸 美国 | USA #2'
+  - name: '🇺🇸[www.v2nodes.com] vless-US-1... #1'
     client-fingerprint: chrome
     network: ws
     port: 443
@@ -616,7 +617,6 @@ proxies:
     servername: cdn.akamai.steamstatic.com
     tls: true
     type: vless
-    udp: true
     uuid: 33751cb1-43ea-458c-8dc5-0b8993746bce
     ws-opts:
       headers:
@@ -1116,6 +1116,18 @@ proxies:
       headers:
         Host: per-essex-patterns-bowling.trycloudflare.com
       path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
+  - name: 美国 159
+    type: trojan
+    network: ws
+    server: 198.62.62.23
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.calmlunch.com
+    ws-opts:
+      headers:
+        Host: www.calmlunch.com
+      path: /assignment
   - name: '@V2rayng_Fast 🇩🇪-4'
     type: vless
     server: 185.159.247.44
@@ -1164,18 +1176,17 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-    network: ws
-    port: 8080
-    server: 188.114.99.0
-    servername: hhlfy.twiladaphne.ndjp.net
-    tls: false
+  - name: '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
     type: vless
+    server: 188.114.99.0
+    port: 8080
     uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+    udp: true
+    network: ws
     ws-opts:
+      path: /sg-melbi
       headers:
         Host: hhlfy.twiladaphne.ndjp.net
-      path: /sg-melbi
   - name: 日本 018
     type: trojan
     network: ws
@@ -1313,7 +1324,7 @@ proxies:
     uuid: 326227e2-f2d1-4f43-8715-9da854f5f4c0
     ws-opts:
       path: /326227e2-f2d1-4f43-8715-9da854f5f4c0
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
     type: vless
     server: 38.47.96.220
     port: 11424
@@ -1384,6 +1395,18 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: SG VLESS-16 | free-nodes
+    type: vless
+    server: 43.163.112.174
+    port: 443
+    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
+      short-id: 0123456789abcdef
   - name: 日本 002
     type: trojan
     network: ws
@@ -1450,6 +1473,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 韩国 005
       - 美国 104
       - 韩国 009
@@ -1464,7 +1488,6 @@ proxy-groups:
       - 美国 105
       - 🇺🇸US-179.255.132.69-5296
       - 美国 110
-      - 🇺🇸 US2@ripaojiedian
       - 美国 113
       - 美国 016
       - 美国 094
@@ -1499,11 +1522,12 @@ proxy-groups:
       - 美国 007
       - '@V2rayng_Fast 🇩🇪'
       - 美国 746
+      - '🇩🇪 德国 | DEU #5'
       - 美国 049
       - 🇺🇸 720
       - '@V2rayng_Fast 🇩🇪-2'
       - 美国 181
-      - '🇺🇸 美国 | USA #2'
+      - '🇺🇸[www.v2nodes.com] vless-US-1... #1'
       - 美国 041
       - 新加坡 004
       - 美国 219
@@ -1551,12 +1575,13 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.2更新)
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 美国 008
+      - 美国 159
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
       - 日本 003
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - 日本 017
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 018
       - 🇯🇵 JP2@ripaojiedian
       - 🇰🇷 KR1@ripaojiedian
@@ -1568,19 +1593,21 @@ proxy-groups:
       - 英国 008
       - 🇹🇼 TW@ripaojiedian
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 020
       - 日本 012
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - '@V2rayng_Fast 🇩🇪-6'
       - 新加坡 001
+      - SG VLESS-16 | free-nodes
       - 日本 002
       - 🇭🇰 HK1@ripaojiedian
       - 日本 029
   - name: ☝️ 全部-手动
     type: select
     proxies:
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 韩国 005
       - 美国 104
       - 韩国 009
@@ -1595,7 +1622,6 @@ proxy-groups:
       - 美国 105
       - 🇺🇸US-179.255.132.69-5296
       - 美国 110
-      - 🇺🇸 US2@ripaojiedian
       - 美国 113
       - 美国 016
       - 美国 094
@@ -1630,11 +1656,12 @@ proxy-groups:
       - 美国 007
       - '@V2rayng_Fast 🇩🇪'
       - 美国 746
+      - '🇩🇪 德国 | DEU #5'
       - 美国 049
       - 🇺🇸 720
       - '@V2rayng_Fast 🇩🇪-2'
       - 美国 181
-      - '🇺🇸 美国 | USA #2'
+      - '🇺🇸[www.v2nodes.com] vless-US-1... #1'
       - 美国 041
       - 新加坡 004
       - 美国 219
@@ -1682,12 +1709,13 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.2更新)
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 美国 008
+      - 美国 159
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
       - 日本 003
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - 日本 017
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 018
       - 🇯🇵 JP2@ripaojiedian
       - 🇰🇷 KR1@ripaojiedian
@@ -1699,13 +1727,14 @@ proxy-groups:
       - 英国 008
       - 🇹🇼 TW@ripaojiedian
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 020
       - 日本 012
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - '@V2rayng_Fast 🇩🇪-6'
       - 新加坡 001
+      - SG VLESS-16 | free-nodes
       - 日本 002
       - 🇭🇰 HK1@ripaojiedian
       - 日本 029
@@ -1724,7 +1753,6 @@ proxy-groups:
       - 美国 105
       - 🇺🇸US-179.255.132.69-5296
       - 美国 110
-      - 🇺🇸 US2@ripaojiedian
       - 美国 113
       - 美国 016
       - 美国 094
@@ -1758,7 +1786,7 @@ proxy-groups:
       - 美国 049
       - 🇺🇸 720
       - 美国 181
-      - '🇺🇸 美国 | USA #2'
+      - '🇺🇸[www.v2nodes.com] vless-US-1... #1'
       - 美国 041
       - 美国 219
       - 美国 114
@@ -1796,6 +1824,7 @@ proxy-groups:
       - 美国 687
       - US美国(v2clash.blog 2026-10.2更新)
       - 美国 008
+      - 美国 159
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1807,6 +1836,7 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | F68888
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '@V2rayng_Fast 🇩🇪'
+      - '🇩🇪 德国 | DEU #5'
       - '@V2rayng_Fast 🇩🇪-2'
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
@@ -1830,10 +1860,10 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-6.9更新)
       - 日本 003
       - 日本 017
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 018
       - 🇯🇵 JP2@ripaojiedian
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 020
       - 日本 012
       - 日本 015
