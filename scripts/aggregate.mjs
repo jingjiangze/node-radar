@@ -173,7 +173,29 @@ const okReality = (p) => {
   if (sid !== undefined && sid !== null && !/^[0-9a-fA-F]{0,16}$/.test(String(sid))) return false;
   return true;
 };
+// 必填字段校验：缺字段会让整份配置加载失败（实测 proxy 3677: '' has unset fields: cipher）
+const 必填 = {
+  ss: ['cipher', 'password'],
+  ssr: ['cipher', 'password', 'protocol', 'obfs'],
+  vmess: ['uuid'],
+  vless: ['uuid'],
+  trojan: ['password'],
+  hysteria: ['auth-str'],
+  hysteria2: ['password'],
+  tuic: ['uuid', 'password'],
+  anytls: ['password'],
+};
+const 缺字段 = (p) => {
+  const 字段 = 必填[p.type];
+  if (!字段) return null;
+  for (const k of 字段) {
+    const v = p[k];
+    if (v === undefined || v === null || String(v).trim() === '') return k;
+  }
+  return null;
+};
 const invalid = (p) =>
+  !!缺字段(p) ||
   ((p.type === 'hysteria2' || p.type === 'hysteria') && p.obfs && !p['obfs-password']) ||
   !okReality(p);
 
