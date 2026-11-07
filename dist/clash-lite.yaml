@@ -18,7 +18,7 @@ proxies:
     http-opts:
       path:
         - /@monacoVPN@monacoVPN@monacoVPN@monacoVPN
-  - name: '[free18#261] 🇭🇰_香港 (26)'
+  - name: '[free18#260] 🇭🇰_香港 (26)'
     type: vless
     server: 152.175.6.229
     port: 31884
@@ -40,6 +40,19 @@ proxies:
       headers:
         Host: ty986gfazs.cainiaohub.xyz
       path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+    type: vless
+    server: 104.18.42.98
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    udp: true
+    tls: true
+    servername: jp3.yohototo.top
+    network: ws
+    ws-opts:
+      path: /tyxywsfp=chrome
+      headers:
+        Host: jp3.yohototo.top
   - name: US美国(v2clash.blog 2026-10.14更新)
     type: vless
     server: 92.53.189.40
@@ -433,7 +446,7 @@ proxies:
     port: 443
     password: humanity
     udp: true
-  - name: '[free18#249] 🇺🇸_美国 (67)'
+  - name: '[free18#248] 🇺🇸_美国 (67)'
     type: vless
     server: 38.145.220.58
     port: 443
@@ -445,7 +458,7 @@ proxies:
     reality-opts:
       public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
       short-id: 66d62ef550107695
-  - name: '[free18#250] 🇺🇸_美国 (68)'
+  - name: '[free18#249] 🇺🇸_美国 (68)'
     type: vless
     server: 38.145.220.58
     port: 2053
@@ -612,7 +625,7 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: '[free18#239] 🇺🇸_美国 (57)'
+  - name: '[free18#238] 🇺🇸_美国 (57)'
     type: vless
     server: 38.34.190.212
     port: 2083
@@ -636,7 +649,7 @@ proxies:
     reality-opts:
       public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
       short-id: 051f20c2344a2dfd
-  - name: '[free18#265] 🇺🇸_美国 (73)'
+  - name: '[free18#264] 🇺🇸_美国 (73)'
     type: vless
     server: 104.160.44.254
     port: 443
@@ -742,7 +755,7 @@ proxies:
     udp: true
     tfo: false
     client-fingerprint: chrome
-  - name: '[free18#248] 🇺🇸_美国 (66)'
+  - name: '[free18#247] 🇺🇸_美国 (66)'
     type: vless
     server: 38.145.220.38
     port: 2083
@@ -1307,7 +1320,7 @@ proxies:
     port: 443
     uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
     udp: true
-  - name: '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #10'
     type: vless
     server: 188.114.99.0
     port: 8080
@@ -1408,18 +1421,6 @@ proxies:
       headers:
         Host: speedtest.danfengno1.kdns.fr
     udp: true
-  - name: 日本+V2CROSS.COM
-    type: vless
-    server: 43.163.112.174
-    port: 443
-    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
-      short-id: 0123456789abcdef
   - name: 🇭🇰 HK1@ripaojiedian
     server: 218.102.64.147
     port: 11310
@@ -1474,8 +1475,9 @@ proxy-groups:
     lazy: true
     proxies:
       - 美国 281
-      - '[free18#261] 🇭🇰_香港 (26)'
+      - '[free18#260] 🇭🇰_香港 (26)'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - US美国(v2clash.blog 2026-10.14更新)
       - 美国 686
       - 美国 742
@@ -1510,8 +1512,8 @@ proxy-groups:
       - 美国 214
       - '@V2rayng_Fast 🇩🇪-2'
       - US美国(v2clash.blog 2026-8.27更新)
-      - '[free18#249] 🇺🇸_美国 (67)'
-      - '[free18#250] 🇺🇸_美国 (68)'
+      - '[free18#248] 🇺🇸_美国 (67)'
+      - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 007
       - '@V2rayng_Fast 🇬🇧'
       - 美国 050
@@ -1528,9 +1530,9 @@ proxy-groups:
       - 美国 011
       - 美国 207
       - US美国(v2clash.blog 2026-10.23更新)
-      - '[free18#239] 🇺🇸_美国 (57)'
+      - '[free18#238] 🇺🇸_美国 (57)'
       - US VLESS-12 | free-nodes
-      - '[free18#265] 🇺🇸_美国 (73)'
+      - '[free18#264] 🇺🇸_美国 (73)'
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - US美国(v2clash.blog 2026-10.19更新)
       - 美国 146
@@ -1541,7 +1543,7 @@ proxy-groups:
       - 🇺🇸 707
       - 美国 041
       - 美国 520
-      - '[free18#248] 🇺🇸_美国 (66)'
+      - '[free18#247] 🇺🇸_美国 (66)'
       - 韩国 010
       - '🇩🇪 德国 | DEU #5'
       - 美国 749
@@ -1594,14 +1596,13 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-5'
       - Tel@V2rayng_Fast 🇩🇪
       - '@V2rayng_Fast 🇩🇪-6'
-      - '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #10'
       - 日本 002
       - 🇹🇼 TW@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - 日本 020
       - 日本 003
       - 🇰🇷 KR1@ripaojiedian
-      - 日本+V2CROSS.COM
       - 🇭🇰 HK1@ripaojiedian
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1609,8 +1610,9 @@ proxy-groups:
     type: select
     proxies:
       - 美国 281
-      - '[free18#261] 🇭🇰_香港 (26)'
+      - '[free18#260] 🇭🇰_香港 (26)'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - US美国(v2clash.blog 2026-10.14更新)
       - 美国 686
       - 美国 742
@@ -1645,8 +1647,8 @@ proxy-groups:
       - 美国 214
       - '@V2rayng_Fast 🇩🇪-2'
       - US美国(v2clash.blog 2026-8.27更新)
-      - '[free18#249] 🇺🇸_美国 (67)'
-      - '[free18#250] 🇺🇸_美国 (68)'
+      - '[free18#248] 🇺🇸_美国 (67)'
+      - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 007
       - '@V2rayng_Fast 🇬🇧'
       - 美国 050
@@ -1663,9 +1665,9 @@ proxy-groups:
       - 美国 011
       - 美国 207
       - US美国(v2clash.blog 2026-10.23更新)
-      - '[free18#239] 🇺🇸_美国 (57)'
+      - '[free18#238] 🇺🇸_美国 (57)'
       - US VLESS-12 | free-nodes
-      - '[free18#265] 🇺🇸_美国 (73)'
+      - '[free18#264] 🇺🇸_美国 (73)'
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - US美国(v2clash.blog 2026-10.19更新)
       - 美国 146
@@ -1676,7 +1678,7 @@ proxy-groups:
       - 🇺🇸 707
       - 美国 041
       - 美国 520
-      - '[free18#248] 🇺🇸_美国 (66)'
+      - '[free18#247] 🇺🇸_美国 (66)'
       - 韩国 010
       - '🇩🇪 德国 | DEU #5'
       - 美国 749
@@ -1729,14 +1731,13 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-5'
       - Tel@V2rayng_Fast 🇩🇪
       - '@V2rayng_Fast 🇩🇪-6'
-      - '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #10'
       - 日本 002
       - 🇹🇼 TW@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - 日本 020
       - 日本 003
       - 🇰🇷 KR1@ripaojiedian
-      - 日本+V2CROSS.COM
       - 🇭🇰 HK1@ripaojiedian
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1774,8 +1775,8 @@ proxy-groups:
       - 美国 181
       - 美国 214
       - US美国(v2clash.blog 2026-8.27更新)
-      - '[free18#249] 🇺🇸_美国 (67)'
-      - '[free18#250] 🇺🇸_美国 (68)'
+      - '[free18#248] 🇺🇸_美国 (67)'
+      - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 007
       - 美国 050
       - 美国 212
@@ -1789,9 +1790,9 @@ proxy-groups:
       - 美国 011
       - 美国 207
       - US美国(v2clash.blog 2026-10.23更新)
-      - '[free18#239] 🇺🇸_美国 (57)'
+      - '[free18#238] 🇺🇸_美国 (57)'
       - US VLESS-12 | free-nodes
-      - '[free18#265] 🇺🇸_美国 (73)'
+      - '[free18#264] 🇺🇸_美国 (73)'
       - US美国(v2clash.blog 2026-10.19更新)
       - 美国 146
       - US 🇺🇸 | @Raydikalx | A8EEF5
@@ -1800,7 +1801,7 @@ proxy-groups:
       - 🇺🇸 707
       - 美国 041
       - 美国 520
-      - '[free18#248] 🇺🇸_美国 (66)'
+      - '[free18#247] 🇺🇸_美国 (66)'
       - 美国 749
       - US美国v2clash.blog 2026-9.10)
       - 美国 106
@@ -1834,6 +1835,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 日本 018
       - 日本 011
       - 日本 029
@@ -1842,11 +1844,10 @@ proxy-groups:
       - 🇯🇵 JP2@ripaojiedian
       - 日本 017
       - JP日本(v2clash.blog 2026-6.9更新)
-      - '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #10'
       - 日本 002
       - 日本 020
       - 日本 003
-      - 日本+V2CROSS.COM
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
   - name: 📍 德国
