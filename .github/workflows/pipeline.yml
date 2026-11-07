@@ -176,7 +176,9 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json 2>/dev/null || true
+          for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do
+            [ -f "$f" ] && git add -f "$f"
+          done
           git diff --cached --quiet || git commit -m "chore(aggregate): 更新公共节点池"
           # 产物是每轮重新生成的：合并时冲突一律以「本地这份」为准（-X ours），
           # 避免多轮同时改 dist/ 时反复 rebase 冲突导致提交被放弃（测速结果曾因此 7 小时没落地）
@@ -233,7 +235,11 @@ jobs:
           ./mihomo -t -d . -f dist/clash-lite.yaml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml 2>/dev/null || true
+          # 逐个判存在再 add：git add 只要有一个路径不存在就整体失败，
+          # speed-top.yaml 只有 ≥5 个节点通过时才生成，曾因此让 speed.json 一直没被提交
+          for f in dist/speed.json dist/speed-top.yaml dist/clash.yaml dist/clash-lite.yaml; do
+            [ -f "$f" ] && git add -f "$f"
+          done
           git diff --cached --quiet || git commit -m "chore(speed): 实测速度 + 重排"
           # 产物是每轮重新生成的：合并时冲突一律以「本地这份」为准（-X ours），
           # 避免多轮同时改 dist/ 时反复 rebase 冲突导致提交被放弃（测速结果曾因此 7 小时没落地）
