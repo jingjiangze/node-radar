@@ -740,6 +740,17 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: '🇩🇪 德国 | DEU #5'
+    type: vless
+    server: 199.232.239.239
+    port: 443
+    uuid: a55a4d25-76f0-4f0e-d395-3a92c0b34268
+    udp: true
+    tls: true
+    servername: community.fastly.steamstatic.com
+    client-fingerprint: chrome
+    alpn:
+      - h2
   - name: 美国 749
     type: vmess
     network: ws
@@ -1281,6 +1292,17 @@ proxies:
     port: 443
     uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
     udp: true
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #10'
+    type: vless
+    server: 188.114.99.0
+    port: 8080
+    uuid: e5cc16a6-ea42-46b2-82ae-ad2157e1641b
+    udp: true
+    network: ws
+    ws-opts:
+      path: /sg-melbi
+      headers:
+        Host: hhlfy.twiladaphne.ndjp.net
   - name: 日本 002
     type: trojan
     network: ws
@@ -1504,6 +1526,7 @@ proxy-groups:
       - 美国 520
       - '[free18#247] 🇺🇸_美国 (66)'
       - 韩国 010
+      - '🇩🇪 德国 | DEU #5'
       - 美国 749
       - US美国v2clash.blog 2026-9.10)
       - 美国 106
@@ -1555,6 +1578,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-5'
       - Tel@V2rayng_Fast 🇩🇪
       - '@V2rayng_Fast 🇩🇪-6'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #10'
       - 日本 002
       - 🇹🇼 TW@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
@@ -1636,6 +1660,7 @@ proxy-groups:
       - 美国 520
       - '[free18#247] 🇺🇸_美国 (66)'
       - 韩国 010
+      - '🇩🇪 德国 | DEU #5'
       - 美国 749
       - US美国v2clash.blog 2026-9.10)
       - 美国 106
@@ -1687,6 +1712,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-5'
       - Tel@V2rayng_Fast 🇩🇪
       - '@V2rayng_Fast 🇩🇪-6'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #10'
       - 日本 002
       - 🇹🇼 TW@ripaojiedian
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
@@ -1799,6 +1825,7 @@ proxy-groups:
       - 🇯🇵 JP2@ripaojiedian
       - 日本 017
       - JP日本(v2clash.blog 2026-6.9更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #10'
       - 日本 002
       - 日本 020
       - 日本 003
@@ -1817,6 +1844,7 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | F68888
       - '@V2rayng_Fast 🇩🇪-3'
       - DE 🇩🇪 | @Raydikalx | 68E5BF
+      - '🇩🇪 德国 | DEU #5'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '@V2rayng_Fast 🇩🇪-4'
