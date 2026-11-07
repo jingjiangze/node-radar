@@ -413,6 +413,22 @@ alive.sort((a, b) => {
 const 有速度 = alive.filter((p) => SPEED.has(p.server + ':' + p.port) || SPEED.has(String(p.name))).length;
 console.log(`[排序] ${alive.length} 个节点按「实测速度优先 → RTT 升序」排好（其中 ${有速度} 个有 MB/s 实测）`);
 
+// ---------- 字段净化 ----------
+// 源里偶发带控制字符（含 C1 区 \u0080-\u009F）或未配对代理项：
+// js-yaml 会把 C1 转义成 \xNN，而 go-yaml 不支持 \x 转义 → 内核报 invalid Unicode character escape code。
+const 清洗字段 = (v) => {
+  if (typeof v === 'string') {
+    return v
+      .replace(/[\u0000-\u001F\u007F-\u009F]/g, '')
+      .replace(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/g, '')
+      .replace(/(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g, '');
+  }
+  if (Array.isArray(v)) return v.map(清洗字段);
+  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, 清洗字段(x)]));
+  return v;
+};
+alive = alive.map((p) => 清洗字段(p));
+
 // ---------- 名字去重 ----------
 const nameCount = new Map();
 for (const p of alive) {
