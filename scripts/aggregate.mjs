@@ -350,7 +350,10 @@ if (process.env.PROTO_PROBE !== '0') {
     while (i < ws节点.length) {
       const p = ws节点[i++];
       const r = await probeWsPath(p);
-      if (r.status === 404) { 协议统计.ws路径错++; p.__wsPathBad = true; }
+      // 只放行 101(升级成功)/400(握手被拒但路径存在)/426(需要升级)。
+      // 之前只把 404 当失败，实测墙内 45 个 ws 失败里 42 个是 403/530/500/521/ECONNRESET 这类
+      // 服务端明确拒绝 —— CI 完全能测出来，不该放过。status===0 是网络层错误（可能视角相关），保留。
+      if (!r.ok && r.status > 0) { 协议统计.ws路径错++; p.__wsPathBad = true; }
     }
   }));
 
