@@ -1173,6 +1173,18 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
+  - name: SG VLESS-16 | free-nodes
+    type: vless
+    server: 43.163.112.174
+    port: 443
+    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
+      short-id: 0123456789abcdef
   - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
     type: vless
     server: 38.47.96.220
@@ -1395,6 +1407,7 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | E94E3F
       - DE 🇩🇪 | @Raydikalx | C08069
       - DE 🇩🇪 | @Raydikalx | D5F456
+      - SG VLESS-16 | free-nodes
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - '@V2rayng_Fast 🇩🇪-6'
@@ -1522,6 +1535,7 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | E94E3F
       - DE 🇩🇪 | @Raydikalx | C08069
       - DE 🇩🇪 | @Raydikalx | D5F456
+      - SG VLESS-16 | free-nodes
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - '@V2rayng_Fast 🇩🇪-6'
