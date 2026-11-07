@@ -5,14 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: '[free18#260] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
   - name: '🇹🇼 🇨🇳 台湾 | TWN #1'
     client-fingerprint: chrome
     network: ws
@@ -350,6 +342,17 @@ proxies:
       headers:
         Host: iopl90nn.bingnet.online
       path: /
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+    type: vless
+    server: 38.47.96.220
+    port: 11424
+    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+    udp: true
+    network: ws
+    ws-opts:
+      path: Telegram-WangCai2🇨🇳security=tls
+      headers:
+        Host: notls.lukongtou.eu.org
   - name: 美国 1117
     type: vless
     network: ws
@@ -372,20 +375,6 @@ proxies:
     port: 443
     uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
     udp: true
-  - name: '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-    type: vless
-    server: 104.18.42.98
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    udp: true
-    tls: true
-    servername: jp3.yohototo.top
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /tyxyws
-      headers:
-        Host: jp3.yohototo.top
   - name: 美国 133
     type: trojan
     network: ws
@@ -1170,6 +1159,12 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
+  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
+    type: vless
+    server: 188.114.97.62
+    port: 443
+    uuid: b15f187e-9b34-437c-8243-8651a8ada76c
+    udp: true
   - name: '@V2rayng_Fast 🇩🇪-5'
     type: vless
     server: 104.26.14.85
@@ -1392,7 +1387,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 1118
@@ -1422,9 +1416,9 @@ proxy-groups:
       - 🇺🇸@V2rayng_Fast-2
       - 美国 030
       - 美国 867
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 美国 1117
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
-      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 133
       - 日本 021
       - 日本 019
@@ -1498,6 +1492,7 @@ proxy-groups:
       - 韩国 001
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - DE 🇩🇪 | @Raydikalx | 4769A2
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
       - '@V2rayng_Fast 🇩🇪-5'
       - DE 🇩🇪 | @Raydikalx | 3E1586
       - DE 🇩🇪 | @Raydikalx | 3639BA
@@ -1523,7 +1518,6 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 1118
@@ -1553,9 +1547,9 @@ proxy-groups:
       - 🇺🇸@V2rayng_Fast-2
       - 美国 030
       - 美国 867
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 美国 1117
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
-      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 133
       - 日本 021
       - 日本 019
@@ -1629,6 +1623,7 @@ proxy-groups:
       - 韩国 001
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - DE 🇩🇪 | @Raydikalx | 4769A2
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
       - '@V2rayng_Fast 🇩🇪-5'
       - DE 🇩🇪 | @Raydikalx | 3E1586
       - DE 🇩🇪 | @Raydikalx | 3639BA
@@ -1659,7 +1654,7 @@ proxy-groups:
     lazy: true
     proxies:
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
       - 日本 021
       - 日本 019
       - 日本 018
@@ -1777,6 +1772,7 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | F68888
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - DE 🇩🇪 | @Raydikalx | 4769A2
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
       - '@V2rayng_Fast 🇩🇪-5'
       - DE 🇩🇪 | @Raydikalx | 3E1586
       - DE 🇩🇪 | @Raydikalx | 3639BA
