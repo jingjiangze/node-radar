@@ -250,6 +250,14 @@ proxies:
     tls: true
     servername: hk010.zestapp778.com
     client-fingerprint: chrome
+  - name: '[free18#261] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
     type: vless
     server: 146.75.59.186
@@ -1373,18 +1381,6 @@ proxies:
     port: 443
     uuid: 39473ed8-fa83-4ef3-8aa6-92b865b6cb4f
     udp: true
-  - name: 日本+V2CROSS.COM
-    type: vless
-    server: 43.163.112.174
-    port: 443
-    uuid: 0dedd47d-47b9-4ed1-9c9f-cbeecad57a68
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: mXQudYHNu0pebcdk1_qn-UgcmwhjaV7y9UrYu3HX7Rg
-      short-id: 0123456789abcdef
   - name: 🇹🇼 TW@ripaojiedian
     server: 45.207.159.60
     port: 53725
@@ -1470,6 +1466,7 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '🇩🇪 德国 | DEU #5'
       - HK VLESS-14 | free-nodes
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
       - US 🇺🇸 | @Raydikalx | 2D3F12
       - 美国 141
@@ -1582,7 +1579,6 @@ proxy-groups:
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - 日本+V2CROSS.COM
       - 🇹🇼 TW@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
@@ -1610,6 +1606,7 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '🇩🇪 德国 | DEU #5'
       - HK VLESS-14 | free-nodes
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
       - US 🇺🇸 | @Raydikalx | 2D3F12
       - 美国 141
@@ -1722,7 +1719,6 @@ proxy-groups:
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
       - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - 日本+V2CROSS.COM
       - 🇹🇼 TW@ripaojiedian
       - 🇭🇰 HK2@ripaojiedian
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
@@ -1746,7 +1742,6 @@ proxy-groups:
       - 日本 002
       - 日本 015
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 日本+V2CROSS.COM
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9-2'
   - name: 📍 美国
     type: url-test
