@@ -93,7 +93,7 @@ jobs:
         run: |
           node scripts/cn-probe-gp.mjs \
             --resume --shard=${{ matrix.shard }} --shards=4 \
-            --budget=${{ inputs.budget || '110' }} --probes=2 --concurrency=8 \
+            --budget=${{ inputs.budget || '110' }} --probes=2 --concurrency=8 --max-age-hours=36 \
             --out=dist/cn-probe-${{ matrix.shard }}.json
       - name: Upload shard
         if: always()
