@@ -1234,6 +1234,14 @@ proxies:
     port: 443
     password: humanity
     udp: true
+  - name: '[free18#261] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: 日本+V2CROSS.COM
     type: vless
     server: 43.163.112.174
@@ -1574,6 +1582,7 @@ proxy-groups:
       - 英国 008
       - 🇰🇷 KR1@ripaojiedian
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 日本+V2CROSS.COM
       - '@V2rayng_Fast 🇩🇪-5'
       - DE 🇩🇪 | @Raydikalx | 4769A2
@@ -1706,6 +1715,7 @@ proxy-groups:
       - 英国 008
       - 🇰🇷 KR1@ripaojiedian
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 日本+V2CROSS.COM
       - '@V2rayng_Fast 🇩🇪-5'
       - DE 🇩🇪 | @Raydikalx | 4769A2
