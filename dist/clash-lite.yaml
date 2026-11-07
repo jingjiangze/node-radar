@@ -5,6 +5,14 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
+  - name: '[free18#261] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: 韩国 005
     type: trojan
     network: ws
@@ -1185,6 +1193,16 @@ proxies:
       path: /sg-melbi
       headers:
         Host: hhlfy.twiladaphne.ndjp.net
+  - name: DE 🇩🇪 | @Raydikalx | 5E3474
+    type: vmess
+    server: 185.204.170.130
+    port: 443
+    uuid: b8136e5f-8ece-4a06-99af-5a207c749bc4
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 185.204.170.130
   - name: 日本 018
     type: trojan
     network: ws
@@ -1471,6 +1489,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 韩国 005
       - 美国 104
       - 韩国 009
@@ -1579,6 +1598,7 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - 日本 017
       - '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - 日本 018
       - 🇯🇵 JP2@ripaojiedian
       - 🇰🇷 KR1@ripaojiedian
@@ -1604,6 +1624,7 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
+      - '[free18#261] 🇭🇰_香港 (26)'
       - 韩国 005
       - 美国 104
       - 韩国 009
@@ -1712,6 +1733,7 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - 日本 017
       - '[ermaozi#020] 🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - 日本 018
       - 🇯🇵 JP2@ripaojiedian
       - 🇰🇷 KR1@ripaojiedian
@@ -1842,6 +1864,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - Tel@V2rayng_Fast 🇩🇪
       - 🇩🇪DE-157.90.20.18-3859
       - '@V2rayng_Fast 🇩🇪-6'
