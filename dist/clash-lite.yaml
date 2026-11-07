@@ -222,24 +222,6 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: 🇺🇸 US2@ripaojiedian
-    server: 154.17.9.239
-    port: 443
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
   - name: 美国 105
     type: trojan
     network: ws
@@ -1076,6 +1058,17 @@ proxies:
       headers:
         Host: ip11.freegradely.xyz
       path: github.com/Alvin9999
+  - name: 🇺🇸 1695
+    type: trojan
+    server: 104.17.175.201
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: /
   - name: 韩国 009
     type: trojan
     network: ws
@@ -1462,7 +1455,6 @@ proxy-groups:
       - 美国 094
       - 美国 113
       - 英国 008
-      - 🇺🇸 US2@ripaojiedian
       - 美国 105
       - 美国 128
       - 美国 687
@@ -1540,6 +1532,7 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.22更新)-2
       - 🇺🇸 1693
       - 美国 746
+      - 🇺🇸 1695
       - 韩国 009
       - 日本 029
       - 新加坡 001
@@ -1594,7 +1587,6 @@ proxy-groups:
       - 美国 094
       - 美国 113
       - 英国 008
-      - 🇺🇸 US2@ripaojiedian
       - 美国 105
       - 美国 128
       - 美国 687
@@ -1672,6 +1664,7 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.22更新)-2
       - 🇺🇸 1693
       - 美国 746
+      - 🇺🇸 1695
       - 韩国 009
       - 日本 029
       - 新加坡 001
@@ -1725,7 +1718,6 @@ proxy-groups:
       - 美国 110
       - 美国 094
       - 美国 113
-      - 🇺🇸 US2@ripaojiedian
       - 美国 105
       - 美国 128
       - 美国 687
@@ -1791,6 +1783,7 @@ proxy-groups:
       - US美国(v2clash.blog 2026-10.22更新)-2
       - 🇺🇸 1693
       - 美国 746
+      - 🇺🇸 1695
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
