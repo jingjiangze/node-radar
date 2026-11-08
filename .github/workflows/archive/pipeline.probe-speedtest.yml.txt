@@ -1,0 +1,369 @@
+name: pipeline
+
+# 持续运行的单一流水线：一轮跑完立刻 dispatch 下一轮，不再等整点 cron。
+#
+#   gate（判断是否需要探测/是否允许接续）
+#     └→ probe(4 分片)  ← 仅当国内数据超过 55 分钟才跑（Globalping 额度按 IP 算，别打爆）
+#          └→ merge-probe
+#               └→ aggregate（TCP → TLS → WS 路径 → 国内剔除 → 排序 → 发布）
+#                    └→ speedtest（并发 8）→ rerank（同轮生效）→ report
+#                         └→ chain（dispatch 下一轮）
+#
+# 限流：最近 60 分钟内的运行数 >= 6 就不再接续，靠 10 分钟 cron 兜底。
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      budget:
+        description: "每个探测分片的目标数"
+        default: "120"
+      force_probe:
+        description: "强制跑国内探测（忽略新鲜度）"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+
+concurrency:
+  group: node-radar-pipeline
+  cancel-in-progress: false
+
+env:
+  NODE_OPTIONS: --max-old-space-size=4096
+
+jobs:
+  # ---------- ⓪ 决策：要不要探测、能不能接续 ----------
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      need_probe: ${{ steps.g.outputs.need_probe }}
+      allow_chain: ${{ steps.g.outputs.allow_chain }}
+      probe_age: ${{ steps.g.outputs.probe_age }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: g
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let age = 9999;
+            try {
+              const j = JSON.parse(fs.readFileSync('dist/cn-probe.json', 'utf8'));
+              age = (Date.now() - Date.parse(j.generatedAt)) / 60000;
+            } catch {}
+            const force = '${{ inputs.force_probe }}' === 'true';
+            const need = force || age >= 55;
+            core.info(`国内数据 ${age === 9999 ? '缺失' : age.toFixed(0) + ' 分钟前'} → ${need ? '本轮探测' : '跳过探测'}`);
+
+            // 最近 60 分钟跑了多少轮（含当前这轮），超过 6 轮就不再接续
+            const runs = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner, repo: context.repo.repo, workflow_id: 'pipeline.yml', per_page: 20,
+            });
+            const 近一小时 = runs.data.workflow_runs.filter(r => Date.now() - Date.parse(r.created_at) < 3600e3).length;
+            const allow = 近一小时 < 6;
+            core.info(`最近 60 分钟已运行 ${近一小时} 轮 → ${allow ? '允许接续' : '达上限，本轮不接续'}`);
+
+            core.setOutput('need_probe', String(need));
+            core.setOutput('allow_chain', String(allow));
+            core.setOutput('probe_age', String(Math.round(age)));
+
+  # ---------- ① 国内可达性探测（4 分片并行，各自独立 IP 额度）----------
+  probe:
+    needs: gate
+    if: needs.gate.outputs.need_probe == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Probe shard ${{ matrix.shard }}
+        continue-on-error: true
+        timeout-minutes: 35
+        run: |
+          node scripts/cn-probe-gp.mjs \
+            --resume --shard=${{ matrix.shard }} --shards=8 \
+            --budget=${{ inputs.budget || '120' }} --probes=2 --concurrency=8 --max-age-hours=36 \
+            --out=dist/cn-probe-${{ matrix.shard }}.json
+      - name: Upload shard
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cn-probe-shard-${{ matrix.shard }}
+          path: dist/cn-probe-${{ matrix.shard }}.json
+          if-no-files-found: ignore
+          retention-days: 2
+
+  # ---------- ② 合并分片 ----------
+  merge-probe:
+    needs: [gate, probe]
+    if: always() && needs.gate.outputs.need_probe == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: cn-probe-shard-*
+          path: dist
+          merge-multiple: true
+      - name: Merge shards
+        run: node scripts/merge-probes.mjs
+      - name: Commit probe results
+        run: |
+          set -e
+          [ -f dist/cn-probe.json ] || { echo "没有探测结果"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 生成物绝不参与 git 文本合并：两个版本的节点列表自动合并会产生重复键，
+          # mihomo 能容忍但 js-yaml 报 duplicated mapping key，后续 rerank 直接崩。
+          # 做法：备份我们的产物 → 硬重置到远端 → 还原 → 提交。
+          mkdir -p /tmp/keep
+          for f in dist/cn-probe.json; do [ -f "$f" ] && cp "$f" "/tmp/keep/$(basename $f)"; done
+          git fetch origin ${GITHUB_REF_NAME}
+          git reset --hard origin/${GITHUB_REF_NAME}
+          for f in dist/cn-probe.json; do [ -f "/tmp/keep/$(basename $f)" ] && cp "/tmp/keep/$(basename $f)" "$f"; done
+          for f in dist/cn-probe.json; do [ -f "$f" ] && git add -f "$f"; done
+          git diff --cached --quiet || git commit -m "chore(probe): 国内可达性结果"
+          git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，产物下轮重新生成"
+
+  # ---------- ③ 聚合发布 ----------
+  aggregate:
+    needs: [gate, merge-probe]
+    if: always() && (needs.merge-probe.result == 'success' || needs.gate.outputs.need_probe != 'true')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      # 源清单自动刷新：超过 24 小时没更新就跑一轮多渠道发现（每周二的独立任务仍在，这里做兜底+提速）
+      # 失败不影响聚合（用旧源继续合并），只是这轮不加新源
+      - name: Refresh sources (if stale >24h)
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          AGE=$(node -e "
+            const fs=require('fs');
+            try{
+              const a=JSON.parse(fs.readFileSync('sources.auto.json','utf8'));
+              const t=Math.max(0,...a.map(x=>Date.parse(x.verifiedAt||0)));
+              console.log(Math.floor((Date.now()-t)/3600e3));
+            }catch(e){console.log(999)}
+          ")
+          echo "源清单 ${AGE} 小时前更新"
+          if [ "$AGE" -lt 24 ]; then echo "未超过 24h，跳过刷新"; exit 0; fi
+          node scripts/discovery/engine.mjs --budget=60 || echo "发现引擎失败，用现有源继续"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in sources.auto.json sources.candidates.json; do [ -f "$f" ] && git add -f "$f"; done
+          git diff --cached --quiet || git commit -m "chore(sources): 自动刷新公开源清单"
+          git push origin HEAD:${GITHUB_REF_NAME} || echo "源清单推送失败，下轮再试"
+
+      - name: Aggregate
+        run: node scripts/aggregate.mjs
+
+      - name: Install mihomo
+        run: |
+          set -e
+          URL=$(curl -sSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+            | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
+          curl -sSL -o mihomo.gz "$URL" && gunzip -f mihomo.gz && chmod +x mihomo
+
+      - name: Validate
+        run: |
+          set -e
+          ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"
+          ./mihomo -t -d . -f dist/clash-lite.yaml && echo "clash-lite.yaml OK"
+
+      - name: Publish
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 生成物绝不参与 git 文本合并（会产生重复键 → js-yaml duplicated mapping key）
+          mkdir -p /tmp/keep
+          for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do [ -f "$f" ] && cp "$f" "/tmp/keep/$(basename $f)"; done
+          # 新鲜度守卫：并发/排队时可能有一个更早启动的运行更晚提交，会把新产物覆盖成旧的
+          # （实测：141 个的精简池被一个旧运行的 410 个覆盖）→ 只允许「更新」的产物写回
+          OURS=$(node -e "try{console.log(Date.parse(require('./dist/summary.json').generatedAt))}catch(e){console.log(0)}")
+          git fetch origin ${GITHUB_REF_NAME}
+          THEIRS=$(git show origin/${GITHUB_REF_NAME}:dist/summary.json 2>/dev/null | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{console.log(Date.parse(JSON.parse(s).generatedAt))}catch(e){console.log(0)}})")
+          if [ "$THEIRS" -gt "$OURS" ] 2>/dev/null; then
+            echo "远端产物更新（$THEIRS > $OURS），放弃本次提交，保留远端版本"
+            exit 0
+          fi
+          git reset --hard origin/${GITHUB_REF_NAME}
+          for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do [ -f "/tmp/keep/$(basename $f)" ] && cp "/tmp/keep/$(basename $f)" "$f"; done
+          for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json sources.health.json; do [ -f "$f" ] && git add -f "$f"; done
+          git diff --cached --quiet || git commit -m "chore(aggregate): 更新公共节点池"
+          git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，产物下轮重新生成"
+
+      - name: Smoke test
+        run: |
+          # raw.githubusercontent 有 CDN 缓存，刚推完可能取到旧版本（旧版本可能含已修的畸形节点）
+          # 所以带 cache-buster 重试几次，只有连续失败才判真失败
+          for i in 1 2 3 4; do
+            if curl -fsSL -m 60 -o published.yaml "https://raw.githubusercontent.com/jingjiangze/node-radar/main/dist/clash.yaml?cb=$(date +%s)-$i"; then
+              if ./mihomo -t -d . -f published.yaml; then
+                echo "published OK ($(wc -c < published.yaml) bytes)"
+                exit 0
+              fi
+              echo "第 $i 次校验失败（可能是 CDN 旧缓存），重试…"
+            else
+              echo "第 $i 次下载失败，重试…"
+            fi
+            sleep 15
+          done
+          echo "发布文件连续 4 次校验失败"
+          exit 1
+
+  # ---------- ④ 测速 + 同轮重排 ----------
+  speedtest:
+    needs: aggregate
+    if: always() && needs.aggregate.result == 'success'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+
+      - name: Install mihomo
+        run: |
+          set -e
+          URL=$(curl -sSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+            | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
+          curl -sSL -o mihomo.gz "$URL" && gunzip -f mihomo.gz && chmod +x mihomo
+
+      - name: Speed test
+        env:
+          MIHOMO_BIN: ./mihomo
+          SAMPLE: 60
+          SPEED_CONCURRENCY: 8
+        run: node scripts/speedtest.mjs
+
+      # 注意：这里只提交 speed.json / speed-top.yaml。
+      # clash.yaml / clash-lite.yaml 归 aggregate 所有——测速 job 检出的是它启动那一刻的版本，
+      # 重排后提交会把 aggregate 刚发布的更新内容覆盖回旧的（实测 134 个被盖回 410 个）。
+      # 速度数据由「下一次 aggregate」读取并参与排序，不再就地重排。
+      - name: Commit speed results
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p /tmp/keep
+          for f in dist/speed.json dist/speed-top.yaml; do [ -f "$f" ] && cp "$f" "/tmp/keep/$(basename $f)"; done
+          git fetch origin ${GITHUB_REF_NAME}
+          git reset --hard origin/${GITHUB_REF_NAME}
+          for f in dist/speed.json dist/speed-top.yaml; do [ -f "/tmp/keep/$(basename $f)" ] && cp "/tmp/keep/$(basename $f)" "$f"; done
+          for f in dist/speed.json dist/speed-top.yaml; do [ -f "$f" ] && git add -f "$f"; done
+          git diff --cached --quiet || git commit -m "chore(speed): 更新实测速度"
+          git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，下轮重新生成"
+
+  # ---------- ⑤ 接续下一轮（持续运行的核心）----------
+  # 只在「没有任何其他运行在排队/执行」时才派下一轮：
+  #   · 没有守卫时，自链式接续会和 cron 叠加 → 多个运行重叠 → 旧代码的运行更晚提交，把新产物覆盖成旧的
+  #   · 有守卫时，既保证不断档（cron 没触发时靠它驱动），又不会重叠
+  chain:
+    needs: [aggregate]
+    if: always() && needs.aggregate.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const runs = await github.rest.actions.listWorkflowRuns({
+              owner: context.repo.owner, repo: context.repo.repo,
+              workflow_id: 'pipeline.yml', per_page: 20,
+            });
+            const 活跃 = runs.data.workflow_runs.filter(
+              (r) => ['queued', 'in_progress'].includes(r.status) && r.id !== context.runId
+            );
+            if (活跃.length) {
+              core.info(`已有 ${活跃.length} 个运行在排队/执行（${活跃.map(r => r.id).join(',')}），跳过接续，避免重叠`);
+              return;
+            }
+            core.info('没有其他运行，dispatch 下一轮以保持连续');
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner, repo: context.repo.repo,
+              workflow_id: 'pipeline.yml', ref: 'main', inputs: { budget: '110' },
+            });
+
+
+  # ---------- ⑥ 汇总 ----------
+  report:
+    needs: [gate, merge-probe, aggregate, speedtest]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Summarize
+        run: |
+          {
+            echo "## 本轮流水线"
+            echo ""
+            echo "| 阶段 | 结果 |"
+            echo "|---|---|"
+            echo "| 国内探测 | ${{ needs.gate.outputs.need_probe == 'true' && needs.merge-probe.result || '跳过（数据新鲜）' }} |"
+            echo "| 聚合发布 | ${{ needs.aggregate.result }} |"
+            echo "| 测速 | ${{ needs.speedtest.result }} |"
+            echo ""
+            node -e "
+              const fs=require('fs');
+              const r=(f)=>{try{return JSON.parse(fs.readFileSync(f,'utf8'))}catch{return null}};
+              const cn=r('dist/cn-probe.json'), sp=r('dist/speed.json'), su=r('dist/summary.json');
+              if(su) console.log('- 聚合：'+su.totalAlive+' 节点存活，'+Object.keys(su.regions||{}).length+' 个地区组');
+              if(cn) console.log('- 国内：覆盖 '+(cn.total||0)+' 个 host:port，可达 '+(cn.ok||0)+'（'+cn.okRate+'%）');
+              if(sp) console.log('- 测速：'+sp.ok+'/'+sp.sample+' 可用，中位 '+sp.medianMbps+' MB/s');
+            "
+          } >> $GITHUB_STEP_SUMMARY
+
+  notify:
+    needs: [aggregate]
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const title = '[auto] 流水线失败';
+            const body = [
+              '本轮流水线失败，线上订阅保持上一版未覆盖。',
+              '',
+              `- 运行：${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+            ].join('\n');
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'pipeline',
+            });
+            const exist = issues.data.find(i => i.title === title);
+            if (exist) {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: exist.number, body });
+            } else {
+              await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, labels: ['pipeline'], body });
+            }
