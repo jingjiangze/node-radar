@@ -5,16 +5,24 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-    client-fingerprint: unsafe
-    encryption: none
+  - name: '[free18#260] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+  - name: 美国 007
+    type: vless
     network: ws
-    port: 443
     server: 172.64.152.19
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
     servername: jp3.yohototo.top
     tls: true
-    type: vless
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    client-fingerprint: unsafe
+    encryption: none
     ws-opts:
       headers:
         Host: jp3.yohototo.top
@@ -242,6 +250,20 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+    client-fingerprint: chrome
+    encryption: none
+    network: ws
+    port: 443
+    server: 104.18.42.98
+    servername: jp3.yohototo.top
+    tls: true
+    type: vless
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
   - name: 美国 135
     type: trojan
     network: ws
@@ -280,20 +302,6 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-    type: vless
-    server: 104.18.42.98
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    udp: true
-    tls: true
-    servername: jp3.yohototo.top
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /tyxyws
-      headers:
-        Host: jp3.yohototo.top
   - name: 美国 111
     type: trojan
     network: ws
@@ -373,20 +381,6 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: '🇹🇼 🇨🇳 台湾 | TWN #1'
-    client-fingerprint: chrome
-    network: ws
-    port: 443
-    server: 60.248.219.53
-    servername: ty986gfazs.cainiaohub.xyz
-    tls: true
-    type: vless
-    udp: true
-    uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
-    ws-opts:
-      headers:
-        Host: ty986gfazs.cainiaohub.xyz
-      path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
   - name: 美国 1119
     type: vless
     network: ws
@@ -443,6 +437,16 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
+  - name: '03 🇺🇸 United States | TG: | mega vpn @vpnsmegabot'
+    type: trojan
+    server: 104.25.239.113
+    port: 2053
+    password: gHQP0D7D15
+    udp: true
+    sni: marvdasht.phonecomparisonblog.org
+    network: ws
+    ws-opts:
+      path: /
   - name: 美国 115
     type: trojan
     network: ws
@@ -855,6 +859,22 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
+  - name: 美国 335
+    type: vless
+    network: ws
+    server: 172.67.71.247
+    port: 443
+    uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
+    servername: octopusss5.info
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+    packet-encoding: xudp
+    ws-opts:
+      headers:
+        Host: octopusss5.info
+      path: /udfyfws
   - name: 美国 951
     type: vless
     network: ws
@@ -871,6 +891,21 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
+  - name: 🇺🇸_US_美国_IPV4 (2)
+    type: vmess
+    server: 172.66.0.1
+    port: 443
+    uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+    cipher: auto
+    alterId: 0
+    tls: true
+    servername: vmess.lbw666.dpdns.org
+    sni: vmess.lbw666.dpdns.org
+    network: ws
+    ws-opts:
+      path: /ws
+      headers:
+        Host: vmess.lbw666.dpdns.org
   - name: 美国 165
     type: trojan
     network: ws
@@ -1032,70 +1067,20 @@ proxies:
       headers:
         Host: nest-emily-healing-h.trycloudflare.com
       path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
-  - name: 美国 175
-    type: trojan
-    network: ws
-    server: 104.18.152.161
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: 美国 950
-    type: vless
-    network: ws
-    server: 104.16.111.195
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: unsafe
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
-  - name: 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
-    type: vless
-    server: 45.76.172.197
-    port: 443
-    uuid: b256c867-a020-48e0-be80-1b079f2613a2
-    udp: true
-    network: ws
-    ws-opts:
-      path: /
-  - name: 美国 036
-    type: vmess
-    network: ws
-    server: 23.227.39.24
-    port: 8080
-    uuid: 9258153a-dc97-4e39-9037-009abfc4fed0
-    tls: false
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: per-essex-patterns-bowling.trycloudflare.com
-      path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
-  - name: '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
-    type: vless
-    server: 146.75.59.186
-    port: 443
-    uuid: a953509f-af22-42d5-a34c-aa29405369b0
-    udp: true
-    tls: true
-    servername: cdn.akamai.steamstatic.com
+  - name: '🇬🇧 英国 | GBR #1'
     client-fingerprint: chrome
     network: ws
+    port: 443
+    server: 146.75.59.186
+    servername: cdn.akamai.steamstatic.com
+    tls: true
+    type: vless
+    udp: true
+    uuid: a953509f-af22-42d5-a34c-aa29405369b0
     ws-opts:
-      path: /
       headers:
         Host: ukoijji.global.ssl.fastly.net
+      path: /
   - name: DE 🇩🇪 | @Raydikalx | 4769A2
     type: vmess
     server: 167.235.28.242
@@ -1173,19 +1158,6 @@ proxies:
       headers:
         Host: t1s1.rittbo.kdns.fr
       path: /
-  - name: '🇩🇪 德国 | DEU #6'
-    network: ws
-    port: 8080
-    server: 104.26.13.31
-    servername: ip.sb
-    tls: false
-    type: vless
-    udp: true
-    uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
-    ws-opts:
-      headers:
-        Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
-      path: /
   - name: DE 🇩🇪 | @Raydikalx | F68888
     type: vmess
     server: 136.243.83.105
@@ -1210,19 +1182,6 @@ proxies:
       headers:
         Host: nautica-cff.kloningstrife002.workers.dev
       path: /138.2.74.219-28616
-  - name: '🇩🇪 德国 | DEU #3'
-    client-fingerprint: chrome
-    network: ws
-    port: 2053
-    server: 104.26.6.109
-    tls: true
-    type: vless
-    udp: true
-    uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
-    ws-opts:
-      headers:
-        Host: pilot4f8f.pages.dev
-      path: /
   - name: DE德国(v2clash.blog 2026-9.12新)
     type: vless
     server: 188.114.97.6
@@ -1415,9 +1374,9 @@ proxy-groups:
     proxies:
       - ♻️ 全部-自动
       - ☝️ 全部-手动
-      - 📍 日本
       - 📍 美国
       - 📍 德国
+      - 📍 日本
       - DIRECT
   - name: ♻️ 全部-自动
     type: url-test
@@ -1426,7 +1385,8 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '[free18#260] 🇭🇰_香港 (26)'
+      - 美国 007
       - 美国 131
       - 美国 1117
       - 美国 1118
@@ -1445,11 +1405,11 @@ proxy-groups:
       - 韩国 009
       - 美国 030
       - 美国 126
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 135
       - 美国 137
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - US美国(v2clash.blog 2026-10.22更新)
-      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 111
       - 美国 139
       - 🇺🇸@V2rayng_Fast-2
@@ -1458,11 +1418,11 @@ proxy-groups:
       - 美国 867
       - US美国(v2clash.blog 2026-10.23更新)
       - US美国(v2clash.blog 2026-10.20更新)
-      - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - 美国 1119
       - 日本 019
       - 美国 133
       - 美国 949
+      - '03 🇺🇸 United States | TG: | mega vpn @vpnsmegabot'
       - 美国 115
       - US美国(v2clash.blog 2026-10.22更新)-2
       - DE VLESS-01 | free-nodes
@@ -1504,7 +1464,9 @@ proxy-groups:
       - '[free18#247] 🇺🇸_美国 (66)'
       - '[free18#264] 🇺🇸_美国 (73)'
       - 美国 162
+      - 美国 335
       - 美国 951
+      - 🇺🇸_US_美国_IPV4 (2)
       - 美国 165
       - 美国 174
       - 美国 236
@@ -1518,11 +1480,7 @@ proxy-groups:
       - 美国 940
       - '[free18#250] 🇺🇸_美国 (69)'
       - 美国 034
-      - 美国 175
-      - 美国 950
-      - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
-      - 美国 036
-      - '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
+      - '🇬🇧 英国 | GBR #1'
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '@V2rayng_Fast 🇩🇪-3'
       - '@V2rayng_Fast 🇩🇪-4'
@@ -1532,10 +1490,8 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-5'
       - 韩国 010
       - 韩国 001
-      - '🇩🇪 德国 | DEU #6'
       - DE 🇩🇪 | @Raydikalx | F68888
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - '🇩🇪 德国 | DEU #3'
       - DE德国(v2clash.blog 2026-9.12新)
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
       - JP日本(v2clash.blog 2026-10.14更新)
@@ -1557,7 +1513,8 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - '[free18#260] 🇭🇰_香港 (26)'
+      - 美国 007
       - 美国 131
       - 美国 1117
       - 美国 1118
@@ -1576,11 +1533,11 @@ proxy-groups:
       - 韩国 009
       - 美国 030
       - 美国 126
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 135
       - 美国 137
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - US美国(v2clash.blog 2026-10.22更新)
-      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 111
       - 美国 139
       - 🇺🇸@V2rayng_Fast-2
@@ -1589,11 +1546,11 @@ proxy-groups:
       - 美国 867
       - US美国(v2clash.blog 2026-10.23更新)
       - US美国(v2clash.blog 2026-10.20更新)
-      - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - 美国 1119
       - 日本 019
       - 美国 133
       - 美国 949
+      - '03 🇺🇸 United States | TG: | mega vpn @vpnsmegabot'
       - 美国 115
       - US美国(v2clash.blog 2026-10.22更新)-2
       - DE VLESS-01 | free-nodes
@@ -1635,7 +1592,9 @@ proxy-groups:
       - '[free18#247] 🇺🇸_美国 (66)'
       - '[free18#264] 🇺🇸_美国 (73)'
       - 美国 162
+      - 美国 335
       - 美国 951
+      - 🇺🇸_US_美国_IPV4 (2)
       - 美国 165
       - 美国 174
       - 美国 236
@@ -1649,11 +1608,7 @@ proxy-groups:
       - 美国 940
       - '[free18#250] 🇺🇸_美国 (69)'
       - 美国 034
-      - 美国 175
-      - 美国 950
-      - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
-      - 美国 036
-      - '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
+      - '🇬🇧 英国 | GBR #1'
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '@V2rayng_Fast 🇩🇪-3'
       - '@V2rayng_Fast 🇩🇪-4'
@@ -1663,10 +1618,8 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-5'
       - 韩国 010
       - 韩国 001
-      - '🇩🇪 德国 | DEU #6'
       - DE 🇩🇪 | @Raydikalx | F68888
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - '🇩🇪 德国 | DEU #3'
       - DE德国(v2clash.blog 2026-9.12新)
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
       - JP日本(v2clash.blog 2026-10.14更新)
@@ -1685,29 +1638,6 @@ proxy-groups:
       - 日本 030
       - 日本 013
       - 新加坡 006
-  - name: 📍 日本
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 日本 018
-      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 日本 019
-      - 日本 021
-      - 日本 012
-      - JP日本(v2clash.blog 2026-6.9更新)
-      - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - JP日本(v2clash.blog 2026-10.14更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
-      - 日本 004
-      - 日本 016
-      - JP日本(v2clash.blog 2026-10.23更新)
-      - 日本 003
-      - 日本 030
-      - 日本 013
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1715,6 +1645,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - 美国 007
       - 美国 131
       - 美国 1117
       - 美国 1118
@@ -1742,6 +1673,7 @@ proxy-groups:
       - 美国 1119
       - 美国 133
       - 美国 949
+      - '03 🇺🇸 United States | TG: | mega vpn @vpnsmegabot'
       - 美国 115
       - US美国(v2clash.blog 2026-10.22更新)-2
       - 美国 134
@@ -1778,7 +1710,9 @@ proxy-groups:
       - '[free18#247] 🇺🇸_美国 (66)'
       - '[free18#264] 🇺🇸_美国 (73)'
       - 美国 162
+      - 美国 335
       - 美国 951
+      - 🇺🇸_US_美国_IPV4 (2)
       - 美国 165
       - 美国 174
       - 美国 236
@@ -1791,10 +1725,6 @@ proxy-groups:
       - 美国 940
       - '[free18#250] 🇺🇸_美国 (69)'
       - 美国 034
-      - 美国 175
-      - 美国 950
-      - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
-      - 美国 036
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1813,14 +1743,34 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-4'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - '@V2rayng_Fast 🇩🇪-5'
-      - '🇩🇪 德国 | DEU #6'
       - DE 🇩🇪 | @Raydikalx | F68888
-      - '🇩🇪 德国 | DEU #3'
       - DE德国(v2clash.blog 2026-9.12新)
       - Tel@V2rayng_Fast 🇩🇪
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - '@V2rayng_Fast 🇩🇪-6'
+  - name: 📍 日本
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - 日本 018
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - 日本 019
+      - 日本 021
+      - 日本 012
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - 🇯🇵[www.v2nodes.com] vless-JP-1...
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
+      - 日本 004
+      - 日本 016
+      - JP日本(v2clash.blog 2026-10.23更新)
+      - 日本 003
+      - 日本 030
+      - 日本 013
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
