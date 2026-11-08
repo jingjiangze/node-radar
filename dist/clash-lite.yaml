@@ -1206,46 +1206,6 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: DE 🇩🇪 | @Raydikalx | 3E1586
-    type: vmess
-    server: 109.70.74.149
-    port: 54041
-    uuid: 1aaaf080-c977-4165-9dfe-586906619b48
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: DE 🇩🇪 | @Raydikalx | 3639BA
-    type: vmess
-    server: 109.70.74.149
-    port: 54041
-    uuid: 1bac4c5a-008e-4711-b853-fea82844768c
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: DE 🇩🇪 | @Raydikalx | E94E3F
-    type: vmess
-    server: 109.70.74.149
-    port: 54041
-    uuid: 9ab56e30-f430-418d-a6ae-1a052a8ac1e4
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: DE 🇩🇪 | @Raydikalx | C08069
-    type: vmess
-    server: 109.70.74.149
-    port: 54041
-    uuid: c07a0757-deeb-4de0-9d56-436a156f3aba
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: DE 🇩🇪 | @Raydikalx | D5F456
-    type: vmess
-    server: 109.70.74.149
-    port: 54041
-    uuid: d440786d-0896-41e2-a381-e81260871b45
-    alterId: 0
-    cipher: auto
-    udp: true
   - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
     client-fingerprint: unsafe
     encryption: none
@@ -1570,11 +1530,6 @@ proxy-groups:
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇩🇪-5'
       - Tel@V2rayng_Fast 🇩🇪
-      - DE 🇩🇪 | @Raydikalx | 3E1586
-      - DE 🇩🇪 | @Raydikalx | 3639BA
-      - DE 🇩🇪 | @Raydikalx | E94E3F
-      - DE 🇩🇪 | @Raydikalx | C08069
-      - DE 🇩🇪 | @Raydikalx | D5F456
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - JP日本(v2clash.blog 2026-10.14更新)
@@ -1706,11 +1661,6 @@ proxy-groups:
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇩🇪-5'
       - Tel@V2rayng_Fast 🇩🇪
-      - DE 🇩🇪 | @Raydikalx | 3E1586
-      - DE 🇩🇪 | @Raydikalx | 3639BA
-      - DE 🇩🇪 | @Raydikalx | E94E3F
-      - DE 🇩🇪 | @Raydikalx | C08069
-      - DE 🇩🇪 | @Raydikalx | D5F456
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - JP日本(v2clash.blog 2026-10.14更新)
@@ -1861,11 +1811,6 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | F68888
       - '@V2rayng_Fast 🇩🇪-5'
       - Tel@V2rayng_Fast 🇩🇪
-      - DE 🇩🇪 | @Raydikalx | 3E1586
-      - DE 🇩🇪 | @Raydikalx | 3639BA
-      - DE 🇩🇪 | @Raydikalx | E94E3F
-      - DE 🇩🇪 | @Raydikalx | C08069
-      - DE 🇩🇪 | @Raydikalx | D5F456
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - '@V2rayng_Fast 🇩🇪-6'
       - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
