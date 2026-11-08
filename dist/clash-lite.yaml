@@ -17,6 +17,15 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: HK VLESS-14 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+    client-fingerprint: chrome
   - name: 日本 018
     type: trojan
     network: ws
@@ -491,18 +500,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: '02 🇺🇸 United States | TG: | mega vpn @vpnsmegabot'
-    type: trojan
-    server: 188.114.96.3
-    port: 2053
-    password: gHQP0D7D15
-    udp: true
-    sni: marvdasht.phonecomparisonblog.org
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: marvdasht.phonecomparisonblog.org
   - name: 美国 858
     type: vless
     network: xhttp
@@ -1101,6 +1098,18 @@ proxies:
     reality-opts:
       public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
       short-id: 051f20c2344a2dfd
+  - name: 美国 920
+    type: vless
+    network: xhttp
+    server: 104.17.163.123
+    port: 8443
+    uuid: 45ab962c-0e61-464b-ddc6-5fdd7338398f
+    servername: jokerv.membergolabi.ir.
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
   - name: 新加坡 003
     type: trojan
     network: ws
@@ -1362,6 +1371,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 韩国 005
+      - HK VLESS-14 | free-nodes
       - 日本 018
       - 韩国 009
       - 日本 021
@@ -1408,7 +1418,6 @@ proxy-groups:
       - 美国 170
       - 美国 1058
       - 美国 236
-      - '02 🇺🇸 United States | TG: | mega vpn @vpnsmegabot'
       - 美国 858
       - US美国(v2clash.blog 2026-10.25更新)
       - 美国 990
@@ -1464,6 +1473,7 @@ proxy-groups:
       - 🇺🇸US-156.146.38.163-6066
       - '@V2rayng_Fast 🇩🇪-3'
       - US VLESS-12 | free-nodes
+      - 美国 920
       - 新加坡 003
       - '@V2rayng_Fast 🇩🇪-4'
       - JP日本(v2clash.blog 2026-10.14更新)
@@ -1492,6 +1502,7 @@ proxy-groups:
     type: select
     proxies:
       - 韩国 005
+      - HK VLESS-14 | free-nodes
       - 日本 018
       - 韩国 009
       - 日本 021
@@ -1538,7 +1549,6 @@ proxy-groups:
       - 美国 170
       - 美国 1058
       - 美国 236
-      - '02 🇺🇸 United States | TG: | mega vpn @vpnsmegabot'
       - 美国 858
       - US美国(v2clash.blog 2026-10.25更新)
       - 美国 990
@@ -1594,6 +1604,7 @@ proxy-groups:
       - 🇺🇸US-156.146.38.163-6066
       - '@V2rayng_Fast 🇩🇪-3'
       - US VLESS-12 | free-nodes
+      - 美国 920
       - 新加坡 003
       - '@V2rayng_Fast 🇩🇪-4'
       - JP日本(v2clash.blog 2026-10.14更新)
@@ -1682,7 +1693,6 @@ proxy-groups:
       - 美国 170
       - 美国 1058
       - 美国 236
-      - '02 🇺🇸 United States | TG: | mega vpn @vpnsmegabot'
       - 美国 858
       - US美国(v2clash.blog 2026-10.25更新)
       - 美国 990
@@ -1728,6 +1738,7 @@ proxy-groups:
       - 美国 240
       - 🇺🇸US-156.146.38.163-6066
       - US VLESS-12 | free-nodes
+      - 美国 920
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
