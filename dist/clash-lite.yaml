@@ -17,15 +17,6 @@ proxies:
       headers:
         Host: www.calmlunch.com
       path: /assignment
-  - name: HK VLESS-14 | free-nodes
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
-    client-fingerprint: chrome
   - name: 日本 018
     type: trojan
     network: ws
@@ -165,20 +156,6 @@ proxies:
       headers:
         Host: nest-emily-healing-h.trycloudflare.com
       path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-    client-fingerprint: chrome
-    encryption: none
-    network: ws
-    port: 443
-    server: 104.18.42.98
-    servername: jp3.yohototo.top
-    tls: true
-    type: vless
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: 美国 1119
     type: vless
     network: ws
@@ -1342,7 +1319,6 @@ proxy-groups:
     lazy: true
     proxies:
       - 美国 173
-      - HK VLESS-14 | free-nodes
       - 日本 018
       - 美国 117
       - 美国 1117
@@ -1355,7 +1331,6 @@ proxy-groups:
       - 美国 951
       - 🇺🇸@V2rayng_Fast-2
       - 美国 034
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 1119
       - 美国 240
       - 日本 019
@@ -1470,7 +1445,6 @@ proxy-groups:
     type: select
     proxies:
       - 美国 173
-      - HK VLESS-14 | free-nodes
       - 日本 018
       - 美国 117
       - 美国 1117
@@ -1483,7 +1457,6 @@ proxy-groups:
       - 美国 951
       - 🇺🇸@V2rayng_Fast-2
       - 美国 034
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 1119
       - 美国 240
       - 日本 019
@@ -1689,7 +1662,6 @@ proxy-groups:
     lazy: true
     proxies:
       - 日本 018
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 日本 019
       - 日本 012
       - JP日本(v2clash.blog 2026-6.9更新)
