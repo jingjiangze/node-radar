@@ -1255,6 +1255,15 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
+  - name: HK VLESS-14 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+    client-fingerprint: chrome
   - name: 日本 030
     type: trojan
     network: ws
@@ -1411,6 +1420,7 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
+      - HK VLESS-14 | free-nodes
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
   - name: ☝️ 全部-手动
@@ -1536,6 +1546,7 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
+      - HK VLESS-14 | free-nodes
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
   - name: 📍 美国
