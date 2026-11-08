@@ -5,6 +5,14 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
+  - name: '[free18#260] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: 美国 143
     type: trojan
     network: ws
@@ -220,6 +228,20 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: 美国 007
+    type: vless
+    network: ws
+    server: 172.64.152.19
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    servername: jp3.yohototo.top
+    tls: true
+    client-fingerprint: unsafe
+    encryption: none
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
   - name: 美国 114
     type: trojan
     network: ws
@@ -727,24 +749,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 日本 003
-    type: trojan
-    network: ws
-    server: 172.104.120.92
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    servername: hhcm.hhxaf.cc.cd
-    skip-cert-verify: false
-    sni: hhcm.hhxaf.cc.cd
-    allowInsecure: '0'
-    fp: chrome
-    security: tls
-    ech: cloudflare-ech.com+https://dns.alidns.com/dns-query
-    insecure: '0'
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
   - name: US美国(v2clash.blog 2026-10.25更新)
     type: trojan
     server: 162.159.152.81
@@ -886,18 +890,6 @@ proxies:
       headers:
         Host: octopusss5.info
       path: /udfyfws
-  - name: '[free18#249] 🇺🇸_美国 (68)'
-    type: vless
-    server: 38.145.220.58
-    port: 2053
-    uuid: a3904b97-75b1-44ea-b56a-06042799d4d0
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
-      short-id: 66d62ef550107695
   - name: 美国 017
     type: vless
     network: ws
@@ -1337,6 +1329,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 143
       - 美国 124
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
@@ -1357,6 +1350,7 @@ proxy-groups:
       - 美国 113
       - 美国 135
       - 美国 157
+      - 美国 007
       - 美国 114
       - 美国 116
       - 美国 134
@@ -1402,7 +1396,6 @@ proxy-groups:
       - 美国 240
       - 美国 913
       - 美国 216
-      - 日本 003
       - US美国(v2clash.blog 2026-10.25更新)
       - 🇺🇸@proxy_kafee
       - 美国 183
@@ -1416,7 +1409,6 @@ proxy-groups:
       - 美国 181
       - 美国 310
       - 美国 335
-      - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 017
       - 美国 170
       - 美国 171
@@ -1464,6 +1456,7 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
+      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 143
       - 美国 124
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
@@ -1484,6 +1477,7 @@ proxy-groups:
       - 美国 113
       - 美国 135
       - 美国 157
+      - 美国 007
       - 美国 114
       - 美国 116
       - 美国 134
@@ -1529,7 +1523,6 @@ proxy-groups:
       - 美国 240
       - 美国 913
       - 美国 216
-      - 日本 003
       - US美国(v2clash.blog 2026-10.25更新)
       - 🇺🇸@proxy_kafee
       - 美国 183
@@ -1543,7 +1536,6 @@ proxy-groups:
       - 美国 181
       - 美国 310
       - 美国 335
-      - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 017
       - 美国 170
       - 美国 171
@@ -1610,6 +1602,7 @@ proxy-groups:
       - 美国 113
       - 美国 135
       - 美国 157
+      - 美国 007
       - 美国 114
       - 美国 116
       - 美国 134
@@ -1665,7 +1658,6 @@ proxy-groups:
       - 美国 181
       - 美国 310
       - 美国 335
-      - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 017
       - 美国 170
       - 美国 171
@@ -1710,7 +1702,6 @@ proxy-groups:
       - 日本 018
       - 日本 012
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 日本 003
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - JP日本(v2clash.blog 2026-10.14更新)
       - 日本 004
