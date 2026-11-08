@@ -1154,6 +1154,14 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: Telegram=@Net2ray
+  - name: DE 🇩🇪 | @Raydikalx | 68E5BF
+    type: vmess
+    server: 167.233.242.189
+    port: 80
+    uuid: 7209d7ee-cfd0-46c0-a580-d92e2f0c801c
+    alterId: 0
+    cipher: auto
+    udp: true
   - name: DE 🇩🇪 | @Raydikalx | 4769A2
     type: vmess
     server: 167.235.28.242
@@ -1399,6 +1407,7 @@ proxy-groups:
       - 韩国 002
       - '@V2rayng_Fast 🇬🇧'
       - DE 🇩🇪 | @Raydikalx | F68888
+      - DE 🇩🇪 | @Raydikalx | 68E5BF
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - DE德国(v2clash.blog 2026-9.12新)
       - 新加坡 002
@@ -1524,6 +1533,7 @@ proxy-groups:
       - 韩国 002
       - '@V2rayng_Fast 🇬🇧'
       - DE 🇩🇪 | @Raydikalx | F68888
+      - DE 🇩🇪 | @Raydikalx | 68E5BF
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - DE德国(v2clash.blog 2026-9.12新)
       - 新加坡 002
@@ -1644,6 +1654,7 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - DE VLESS-01 | free-nodes
       - DE 🇩🇪 | @Raydikalx | F68888
+      - DE 🇩🇪 | @Raydikalx | 68E5BF
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - DE德国(v2clash.blog 2026-9.12新)
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
