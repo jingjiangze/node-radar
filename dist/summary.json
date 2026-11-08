@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-08T08:47:21.925Z",
-  "totalRaw": 24085,
-  "totalUnique": 15396,
-  "totalAlive": 2680,
+  "generatedAt": "2026-11-08T14:43:59.764Z",
+  "totalRaw": 23975,
+  "totalUnique": 15356,
+  "totalAlive": 2610,
   "probe": {
     "enabled": true,
-    "probed": 15396,
-    "alive": 4302,
-    "ms": 164527
+    "probed": 15356,
+    "alive": 4252,
+    "ms": 164431
   },
   "protocolProbe": {
-    "tls检查": 1754,
-    "tls失败": 628,
-    "ws检查": 1325,
-    "ws路径错": 759
+    "tls检查": 1696,
+    "tls失败": 641,
+    "ws检查": 1331,
+    "ws路径错": 768
   },
   "regions": {
-    "香港": 10,
-    "韩国": 16,
-    "日本": 26,
-    "美国": 436,
-    "德国": 109,
-    "英国": 79,
-    "台湾": 6,
-    "新加坡": 35
+    "韩国": 26,
+    "日本": 25,
+    "美国": 421,
+    "德国": 101,
+    "新加坡": 35,
+    "英国": 75,
+    "台湾": 7,
+    "香港": 9
   },
   "byType": {
-    "vless": 1525,
-    "trojan": 367,
+    "vless": 1484,
+    "trojan": 368,
     "vmess": 407,
-    "http": 100,
-    "ss": 260,
-    "hysteria2": 20,
+    "http": 59,
+    "ss": 270,
+    "hysteria2": 21,
     "anytls": 1
   },
   "unsafe": {
-    "total": 298,
-    "cnConfirmed": 81
+    "total": 255,
+    "cnConfirmed": 75
   },
   "sources": [
     {
@@ -54,7 +54,7 @@
     {
       "source": "ermaozi/get_subscribe",
       "kind": "clash-yaml",
-      "count": 467,
+      "count": 417,
       "ok": true
     },
     {
@@ -72,7 +72,7 @@
     {
       "source": "peasoft/NoMoreWalls",
       "kind": "clash-yaml",
-      "count": 138,
+      "count": 142,
       "ok": true
     },
     {
@@ -120,7 +120,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 443,
+      "count": 418,
       "ok": true
     },
     {
@@ -132,7 +132,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 500,
+      "count": 518,
       "ok": true
     },
     {
@@ -144,7 +144,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 616,
+      "count": 611,
       "ok": true
     },
     {
@@ -180,7 +180,7 @@
     {
       "source": "github-code",
       "kind": "clash-yaml",
-      "count": 19,
+      "count": 23,
       "ok": true
     },
     {
@@ -210,13 +210,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 98,
+      "count": 70,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 98,
+      "count": 70,
       "ok": true
     },
     {
