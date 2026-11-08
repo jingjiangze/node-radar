@@ -5,6 +5,14 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
+  - name: '[free18#260] 🇭🇰_香港 (26)'
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
   - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
     type: vless
     server: 108.162.198.5
@@ -412,6 +420,22 @@ proxies:
       headers:
         Host: www.calmlunch.com
       path: /assignment
+  - name: 美国 950
+    type: vless
+    network: ws
+    server: 104.16.111.195
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    servername: jp3.yohototo.top
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: unsafe
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
   - name: 美国 920
     type: vless
     network: xhttp
@@ -1037,12 +1061,6 @@ proxies:
     udp: true
     tfo: false
     client-fingerprint: chrome
-  - name: 🇺🇸Telegram👉@v2rayNG_Matsuri
-    type: trojan
-    server: 167.82.76.7
-    port: 443
-    password: MITIVPN
-    udp: true
   - name: TW台湾(v2clash.blog 2026-10.24更新)
     type: vless
     server: 104.18.255.167
@@ -1094,6 +1112,12 @@ proxies:
     server: 104.16.10.2
     port: 443
     uuid: c4edb87e-8544-4fa4-bd1c-b0cda9a34b46
+    udp: true
+  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
+    type: vless
+    server: 188.114.97.62
+    port: 443
+    uuid: b15f187e-9b34-437c-8243-8651a8ada76c
     udp: true
   - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
     encryption: none
@@ -1377,6 +1401,17 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+    type: vless
+    server: 38.47.96.220
+    port: 11424
+    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
+    udp: true
+    network: ws
+    ws-opts:
+      path: Telegram-WangCai2🇨🇳security=tls
+      headers:
+        Host: notls.lukongtou.eu.org
 proxy-groups:
   - name: 🌐 公共节点
     type: select
@@ -1394,6 +1429,7 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - '[free18#260] 🇭🇰_香港 (26)'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - 美国 116
       - 美国 1119
@@ -1429,6 +1465,7 @@ proxy-groups:
       - 美国 143
       - 美国 130
       - 美国 164
+      - 美国 950
       - 美国 920
       - US美国(v2clash.blog 2026-10.22更新)-2
       - US美国(v2clash.blog 2026-10.9更新)
@@ -1484,13 +1521,13 @@ proxy-groups:
       - 美国 237
       - 美国 951
       - 美国 992
-      - 🇺🇸Telegram👉@v2rayNG_Matsuri
       - TW台湾(v2clash.blog 2026-10.24更新)
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '🇬🇧 英国 | GBR #1'
       - JP日本(v2clash.blog 2026-6.9更新)
       - 日本 019
       - '@V2rayng_Fast 🇩🇪-5'
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇬🇧'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
@@ -1518,9 +1555,11 @@ proxy-groups:
       - 日本 003
       - 新加坡 006
       - 韩国 010
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: ☝️ 全部-手动
     type: select
     proxies:
+      - '[free18#260] 🇭🇰_香港 (26)'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - 美国 116
       - 美国 1119
@@ -1556,6 +1595,7 @@ proxy-groups:
       - 美国 143
       - 美国 130
       - 美国 164
+      - 美国 950
       - 美国 920
       - US美国(v2clash.blog 2026-10.22更新)-2
       - US美国(v2clash.blog 2026-10.9更新)
@@ -1611,13 +1651,13 @@ proxy-groups:
       - 美国 237
       - 美国 951
       - 美国 992
-      - 🇺🇸Telegram👉@v2rayNG_Matsuri
       - TW台湾(v2clash.blog 2026-10.24更新)
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '🇬🇧 英国 | GBR #1'
       - JP日本(v2clash.blog 2026-6.9更新)
       - 日本 019
       - '@V2rayng_Fast 🇩🇪-5'
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇬🇧'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
@@ -1645,6 +1685,7 @@ proxy-groups:
       - 日本 003
       - 新加坡 006
       - 韩国 010
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1661,6 +1702,7 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | F68888
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '@V2rayng_Fast 🇩🇪-5'
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - DE VLESS-01 | free-nodes
@@ -1705,6 +1747,7 @@ proxy-groups:
       - 美国 143
       - 美国 130
       - 美国 164
+      - 美国 950
       - 美国 920
       - US美国(v2clash.blog 2026-10.22更新)-2
       - US美国(v2clash.blog 2026-10.9更新)
@@ -1755,7 +1798,6 @@ proxy-groups:
       - 美国 237
       - 美国 951
       - 美国 992
-      - 🇺🇸Telegram👉@v2rayNG_Matsuri
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1778,6 +1820,7 @@ proxy-groups:
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
       - 日本 003
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
