@@ -17,6 +17,15 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: HK VLESS-14 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+    client-fingerprint: chrome
   - name: 日本 018
     type: trojan
     network: ws
@@ -540,20 +549,6 @@ proxies:
     port: 443
     uuid: 0cc72cd6-29b2-4dcc-af4d-2907d19a0680
     udp: true
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
-    client-fingerprint: unsafe
-    encryption: none
-    network: ws
-    port: 443
-    server: 188.114.97.6
-    servername: nautica-cff.kloningstrife002.workers.dev
-    tls: true
-    type: vless
-    uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
-    ws-opts:
-      headers:
-        Host: nautica-cff.kloningstrife002.workers.dev
-      path: /138.2.74.219-28616
   - name: 🇩🇪telegram➠@v2rayNG_Matsuri
     type: vless
     server: 188.114.97.6
@@ -1224,19 +1219,6 @@ proxies:
     uuid: 326227e2-f2d1-4f43-8715-9da854f5f4c0
     ws-opts:
       path: /326227e2-f2d1-4f43-8715-9da854f5f4c0
-  - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
-    encryption: none
-    network: ws
-    port: 8080
-    server: 104.21.70.21
-    servername: nautica-cff.kloningstrife002.workers.dev
-    tls: false
-    type: vless
-    uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
-    ws-opts:
-      headers:
-        Host: nautica-cff.kloningstrife002.workers.dev
-      path: /138.2.74.219-28616
   - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
     client-fingerprint: chrome
     encryption: none
@@ -1351,6 +1333,7 @@ proxy-groups:
     lazy: true
     proxies:
       - 韩国 005
+      - HK VLESS-14 | free-nodes
       - 日本 018
       - 韩国 009
       - 日本 021
@@ -1402,7 +1385,6 @@ proxy-groups:
       - 美国 990
       - US 🇺🇸 | @Raydikalx | 3E8C43
       - 'Channel id: @ShadowProxy66 🇺🇸'
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - US美国(v2clash.blog 2026-9.17更新)
       - Tel@V2rayng_Fast 🇩🇪
@@ -1466,7 +1448,6 @@ proxy-groups:
       - 日本 004
       - 新加坡 006
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
-      - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - 🇰🇷KR-146.56.166.153-0005
@@ -1480,6 +1461,7 @@ proxy-groups:
     type: select
     proxies:
       - 韩国 005
+      - HK VLESS-14 | free-nodes
       - 日本 018
       - 韩国 009
       - 日本 021
@@ -1531,7 +1513,6 @@ proxy-groups:
       - 美国 990
       - US 🇺🇸 | @Raydikalx | 3E8C43
       - 'Channel id: @ShadowProxy66 🇺🇸'
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - US美国(v2clash.blog 2026-9.17更新)
       - Tel@V2rayng_Fast 🇩🇪
@@ -1595,7 +1576,6 @@ proxy-groups:
       - 日本 004
       - 新加坡 006
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
-      - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - 🇰🇷KR-146.56.166.153-0005
@@ -1616,13 +1596,11 @@ proxy-groups:
       - 日本 021
       - 日本 012
       - JP日本(v2clash.blog 2026-6.9更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - JP日本(v2clash.blog 2026-10.14更新)
       - 日本 019
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
       - 日本 004
-      - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 日本 003
       - 日本 030
