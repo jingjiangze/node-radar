@@ -47,6 +47,15 @@ proxies:
       path: /?ed=2560
       headers:
         Host: tro.baiyi.cloudns.org
+  - name: HK VLESS-14 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+    client-fingerprint: chrome
   - name: US美国(v2clash.blog 2026-10.23更新)
     type: vless
     server: 104.18.41.191
@@ -171,20 +180,6 @@ proxies:
       headers:
         Host: iopl90nn.bingnet.online
       path: /
-  - name: 美国 007
-    type: vless
-    network: ws
-    server: 172.64.152.19
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    tls: true
-    client-fingerprint: unsafe
-    encryption: none
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: 日本 018
     type: trojan
     network: ws
@@ -1075,6 +1070,22 @@ proxies:
     port: 443
     password: MITIVPN
     udp: true
+  - name: 美国 901
+    type: vless
+    network: ws
+    server: 141.193.213.21
+    port: 2083
+    uuid: 36592d47-b9f5-4e8f-949e-45ac05472aab
+    servername: site.check-looks.space
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: site.check-looks.space
+      path: /
   - name: JP日本(v2clash.blog 2026-6.9更新)
     type: vless
     server: 151.101.108.223
@@ -1405,6 +1416,7 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 09 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
+      - HK VLESS-14 | free-nodes
       - US美国(v2clash.blog 2026-10.23更新)
       - 美国 143
       - 美国 1117
@@ -1415,7 +1427,6 @@ proxy-groups:
       - 🇺🇸@V2rayng_Fast
       - 美国 1118
       - 美国 867
-      - 美国 007
       - 日本 018
       - 日本 021
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
@@ -1498,6 +1509,7 @@ proxy-groups:
       - 美国 202
       - 美国 856
       - 🇺🇸Telegram👉@v2rayNG_Matsuri-2
+      - 美国 901
       - JP日本(v2clash.blog 2026-6.9更新)
       - 日本 003
       - DE 🇩🇪 | @Raydikalx | F68888
@@ -1536,6 +1548,7 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 09 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
+      - HK VLESS-14 | free-nodes
       - US美国(v2clash.blog 2026-10.23更新)
       - 美国 143
       - 美国 1117
@@ -1546,7 +1559,6 @@ proxy-groups:
       - 🇺🇸@V2rayng_Fast
       - 美国 1118
       - 美国 867
-      - 美国 007
       - 日本 018
       - 日本 021
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
@@ -1629,6 +1641,7 @@ proxy-groups:
       - 美国 202
       - 美国 856
       - 🇺🇸Telegram👉@v2rayNG_Matsuri-2
+      - 美国 901
       - JP日本(v2clash.blog 2026-6.9更新)
       - 日本 003
       - DE 🇩🇪 | @Raydikalx | F68888
@@ -1722,7 +1735,6 @@ proxy-groups:
       - 🇺🇸@V2rayng_Fast
       - 美国 1118
       - 美国 867
-      - 美国 007
       - 美国 972
       - US美国(v2clash.blog 2026-10.20更新)
       - 美国 141
@@ -1793,6 +1805,7 @@ proxy-groups:
       - 美国 202
       - 美国 856
       - 🇺🇸Telegram👉@v2rayNG_Matsuri-2
+      - 美国 901
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
