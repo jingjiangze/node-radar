@@ -412,22 +412,6 @@ proxies:
       headers:
         Host: www.calmlunch.com
       path: /assignment
-  - name: 美国 950
-    type: vless
-    network: ws
-    server: 104.16.111.195
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: unsafe
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: 美国 920
     type: vless
     network: xhttp
@@ -977,6 +961,21 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
+  - name: 美国 952
+    type: vless
+    network: ws
+    server: 104.27.46.35
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    servername: jp3.yohototo.top
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
   - name: US 🇺🇸 | @Raydikalx | 5A1BD6
     type: vmess
     server: 8.8.8.8
@@ -1430,7 +1429,6 @@ proxy-groups:
       - 美国 143
       - 美国 130
       - 美国 164
-      - 美国 950
       - 美国 920
       - US美国(v2clash.blog 2026-10.22更新)-2
       - US美国(v2clash.blog 2026-10.9更新)
@@ -1480,6 +1478,7 @@ proxy-groups:
       - 美国 161
       - 美国 182
       - 美国 187
+      - 美国 952
       - US 🇺🇸 | @Raydikalx | 5A1BD6
       - 美国 018
       - 美国 237
@@ -1557,7 +1556,6 @@ proxy-groups:
       - 美国 143
       - 美国 130
       - 美国 164
-      - 美国 950
       - 美国 920
       - US美国(v2clash.blog 2026-10.22更新)-2
       - US美国(v2clash.blog 2026-10.9更新)
@@ -1607,6 +1605,7 @@ proxy-groups:
       - 美国 161
       - 美国 182
       - 美国 187
+      - 美国 952
       - US 🇺🇸 | @Raydikalx | 5A1BD6
       - 美国 018
       - 美国 237
@@ -1706,7 +1705,6 @@ proxy-groups:
       - 美国 143
       - 美国 130
       - 美国 164
-      - 美国 950
       - 美国 920
       - US美国(v2clash.blog 2026-10.22更新)-2
       - US美国(v2clash.blog 2026-10.9更新)
@@ -1751,6 +1749,7 @@ proxy-groups:
       - 美国 161
       - 美国 182
       - 美国 187
+      - 美国 952
       - US 🇺🇸 | @Raydikalx | 5A1BD6
       - 美国 018
       - 美国 237
