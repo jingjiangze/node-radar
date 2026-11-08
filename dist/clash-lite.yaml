@@ -5,22 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: 美国 950
-    type: vless
-    network: ws
-    server: 104.16.10.9
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: unsafe
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: 美国 139
     type: trojan
     network: ws
@@ -1022,6 +1006,18 @@ proxies:
     port: 443
     uuid: b4a00211-ae46-49bc-8f36-0c4425eb7e86
     udp: true
+  - name: 美国 168
+    type: trojan
+    network: ws
+    server: 104.16.174.12
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
   - name: TW台湾(v2clash.blog 2026-10.24更新)
     type: vless
     server: 104.18.255.167
@@ -1273,15 +1269,6 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
-  - name: HK VLESS-14 | free-nodes
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
-    client-fingerprint: chrome
   - name: 日本 030
     type: trojan
     network: ws
@@ -1318,7 +1305,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - 美国 950
       - 美国 139
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 日本 019
@@ -1414,6 +1400,7 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
       - JP日本(v2clash.blog 2026-6.9更新)
+      - 美国 168
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 韩国 010
       - DE 🇩🇪 | @Raydikalx | 5E3474
@@ -1440,13 +1427,11 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
-      - HK VLESS-14 | free-nodes
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - 美国 950
       - 美国 139
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 日本 019
@@ -1542,6 +1527,7 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
       - JP日本(v2clash.blog 2026-6.9更新)
+      - 美国 168
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 韩国 010
       - DE 🇩🇪 | @Raydikalx | 5E3474
@@ -1568,7 +1554,6 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
-      - HK VLESS-14 | free-nodes
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
   - name: 📍 美国
@@ -1578,7 +1563,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - 美国 950
       - 美国 139
       - US 🇺🇸 | @Raydikalx | 5A1BD6
       - 美国 145
@@ -1658,6 +1642,7 @@ proxy-groups:
       - 美国 349
       - 美国 252
       - 美国 199
+      - 美国 168
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
