@@ -5,23 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: HK VLESS-14 | free-nodes
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
-    client-fingerprint: chrome
-  - name: '[free18#260] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
   - name: 美国 143
     type: trojan
     network: ws
@@ -422,20 +405,6 @@ proxies:
     password: humanity
     udp: true
     sni: www.cordweave.com
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-    client-fingerprint: chrome
-    encryption: none
-    network: ws
-    port: 443
-    server: 104.18.42.98
-    servername: jp3.yohototo.top
-    tls: true
-    type: vless
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: US美国(v2clash.blog 2026-5.26更新)
     type: vless
     server: 109.176.239.50
@@ -901,6 +870,22 @@ proxies:
     http-opts:
       path:
         - /@monacoVPN@monacoVPN@monacoVPN@monacoVPN
+  - name: 美国 335
+    type: vless
+    network: ws
+    server: 172.67.71.247
+    port: 443
+    uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
+    servername: octopusss5.info
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+    packet-encoding: xudp
+    ws-opts:
+      headers:
+        Host: octopusss5.info
+      path: /udfyfws
   - name: '[free18#249] 🇺🇸_美国 (68)'
     type: vless
     server: 38.145.220.58
@@ -1020,12 +1005,6 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: '@ShadowProxy66 🇺🇸'
-    type: vless
-    server: 172.67.130.159
-    port: 2096
-    uuid: 214bf4c5-045a-4ddb-944b-e2eef9b33338
-    udp: true
   - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
     encryption: none
     network: ws
@@ -1352,8 +1331,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - HK VLESS-14 | free-nodes
-      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 143
       - 美国 124
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
@@ -1390,7 +1367,6 @@ proxy-groups:
       - 美国 165
       - 美国 368
       - 🇺🇸US-179.255.132.69-5707
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - US美国(v2clash.blog 2026-5.26更新)
       - 美国 034
       - 美国 1172
@@ -1433,6 +1409,7 @@ proxy-groups:
       - '[free18#240] 🇺🇸_美国 (59)'
       - 美国 181
       - 美国 310
+      - 美国 335
       - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 017
       - 美国 170
@@ -1445,7 +1422,6 @@ proxy-groups:
       - '[free18#238] 🇺🇸_美国 (57)'
       - 'Channel id: @ShadowProxy66 🇺🇸'
       - 韩国 010
-      - '@ShadowProxy66 🇺🇸'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇬🇧'
       - 韩国 001
@@ -1481,8 +1457,6 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - HK VLESS-14 | free-nodes
-      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 143
       - 美国 124
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
@@ -1519,7 +1493,6 @@ proxy-groups:
       - 美国 165
       - 美国 368
       - 🇺🇸US-179.255.132.69-5707
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - US美国(v2clash.blog 2026-5.26更新)
       - 美国 034
       - 美国 1172
@@ -1562,6 +1535,7 @@ proxy-groups:
       - '[free18#240] 🇺🇸_美国 (59)'
       - 美国 181
       - 美国 310
+      - 美国 335
       - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 017
       - 美国 170
@@ -1574,7 +1548,6 @@ proxy-groups:
       - '[free18#238] 🇺🇸_美国 (57)'
       - 'Channel id: @ShadowProxy66 🇺🇸'
       - 韩国 010
-      - '@ShadowProxy66 🇺🇸'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇬🇧'
       - 韩国 001
@@ -1684,6 +1657,7 @@ proxy-groups:
       - '[free18#240] 🇺🇸_美国 (59)'
       - 美国 181
       - 美国 310
+      - 美国 335
       - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 017
       - 美国 170
@@ -1693,7 +1667,6 @@ proxy-groups:
       - 美国 876
       - '[free18#238] 🇺🇸_美国 (57)'
       - 'Channel id: @ShadowProxy66 🇺🇸'
-      - '@ShadowProxy66 🇺🇸'
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1728,7 +1701,6 @@ proxy-groups:
       - 日本 021
       - 日本 018
       - 日本 012
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 日本 003
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - JP日本(v2clash.blog 2026-10.14更新)
