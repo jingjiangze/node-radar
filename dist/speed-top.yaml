@@ -5,143 +5,64 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: 美国 323
-    type: vless
-    network: ws
-    server: 104.21.7.43
-    port: 2053
-    uuid: f58a9d78-d4cc-c8bc-03d0-2810846a33d1
-    servername: hossein.shhrsbzhsyn.workers.dev
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    client-fingerprint: chrome
-    packet-encoding: xudp
-    encryption: none
-    ws-opts:
-      headers:
-        Host: hossein.shhrsbzhsyn.workers.dev
-      path: /sync
-  - name: 美国 308
-    type: vless
-    network: ws
-    server: 172.67.74.2
-    port: 443
-    uuid: 7e544a9d-7667-413b-bbb0-b3bb1aac6d77
-    servername: shegeftihaaa.net
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    encryption: none
-    packet-encoding: xudp
-    ws-opts:
-      headers:
-        Host: shegeftihaaa.net
-      path: /rsedgws
-  - name: 🇰🇷 Korea, Republic of 31
-    server: 141.164.56.250
-    port: 443
-    type: ss
-    cipher: aes-256-gcm
-    password: pKEW8JPByTVTLtM
-  - name: 🇰🇷 KR2@ripaojiedian
-    server: 121.154.67.134
-    port: 28017
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
-  - name: 🇰🇷KR-146.56.166.153-0123
-    type: vmess
-    server: 146.56.166.153
-    port: 443
-    uuid: 91646f9a-b4e9-4aca-bfe3-8892b3e58fe7
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: lg30.cfcdn3.xyz
-    network: ws
-    ws-opts:
-      path: /ray
-      headers:
-        Host: lg30.cfcdn3.xyz
-  - name: 韩国 001
-    type: vless
-    network: ws
-    server: 141.164.42.2
-    port: 443
-    uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-    servername: t1s1.rittbo.kdns.fr
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    client-fingerprint: chrome
-    encryption: none
-    ech-opts:
-      _dns: https://dns.alidns.com/dns-query
-      enable: true
-      query-server-name: cloudflare-ech.com
-    packet-encoding: xudp
-    ws-opts:
-      headers:
-        Host: t1s1.rittbo.kdns.fr
-      path: /
-  - name: 🇰🇷 KR1@ripaojiedian
-    server: 109.61.127.247
-    port: 443
-    type: vless
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    tls: true
-    alpn:
-      - http/1.1
-    tfo: false
-    skip-cert-verify: true
-    servername: speedtest.danfengno1.kdns.fr
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /danfeng-public-ng3zjr-qba1sq-5pqc-59s5q5st
-      headers:
-        Host: speedtest.danfengno1.kdns.fr
-    udp: true
-  - name: 🇬🇧GB-82.38.31.216-0155
-    type: ss
-    server: 82.38.31.216
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-185.44.76.188-4894
+  - name: 美国 116
     type: trojan
-    server: 185.44.76.188
+    network: ws
+    server: 172.64.53.74
     port: 443
-    password: 8697fe6b-1lWNFc1RmRBNk5NQU5KSnga3fa58ac5a3ef0-b4ab-11eb-b65e-1239d0255272
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: 美国 948
+    type: vless
+    network: ws
+    server: 104.16.10.9
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    servername: jp3.yohototo.top
+    skip-cert-verify: false
+    tls: true
     udp: true
-  - name: 🇬🇧GB-82.38.31.48-0238
-    type: ss
-    server: 82.38.31.48
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-82.38.31.184-0224
-    type: ss
-    server: 82.38.31.184
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
+    tfo: false
+    client-fingerprint: unsafe
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
+  - name: 日本 016
+    type: trojan
+    network: ws
+    server: 172.104.80.248
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: 日本 019
+    type: trojan
+    network: ws
+    server: 133.18.140.38
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: JP日本(v2clash.blog 2026-6.9更新)
+    type: vless
+    server: 151.101.108.223
+    port: 443
+    uuid: b4a00211-ae46-49bc-8f36-0c4425eb7e86
     udp: true
 proxy-groups:
   - name: ⚡ 极速
@@ -150,16 +71,10 @@ proxy-groups:
     interval: 600
     tolerance: 50
     proxies:
-      - 美国 323
-      - 美国 308
-      - 🇰🇷 Korea, Republic of 31
-      - 🇰🇷 KR2@ripaojiedian
-      - 🇰🇷KR-146.56.166.153-0123
-      - 韩国 001
-      - 🇰🇷 KR1@ripaojiedian
-      - 🇬🇧GB-82.38.31.216-0155
-      - 🇬🇧GB-185.44.76.188-4894
-      - 🇬🇧GB-82.38.31.48-0238
-      - 🇬🇧GB-82.38.31.184-0224
+      - 美国 116
+      - 美国 948
+      - 日本 016
+      - 日本 019
+      - JP日本(v2clash.blog 2026-6.9更新)
 rules:
   - MATCH,⚡ 极速
