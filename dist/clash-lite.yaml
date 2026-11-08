@@ -5,6 +5,16 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
+  - name: 06 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
+    type: trojan
+    server: 104.18.35.86
+    port: 8443
+    password: trojan
+    udp: true
+    sni: longwanghen.pages.dev
+    network: ws
+    ws-opts:
+      path: /
   - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
     type: vless
     server: 108.162.192.75
@@ -25,23 +35,18 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
-  - name: HK VLESS-14 | free-nodes
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  - name: 09 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
+    type: trojan
+    server: 104.18.42.98
+    port: 443
+    password: xhl549341
     udp: true
-    tls: true
-    servername: hk010.zestapp778.com
-    client-fingerprint: chrome
-  - name: '[free18#260] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
+    sni: tro.baiyi.cloudns.org
+    network: ws
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: tro.baiyi.cloudns.org
   - name: US美国(v2clash.blog 2026-10.23更新)
     type: vless
     server: 104.18.41.191
@@ -467,6 +472,18 @@ proxies:
     network: ws
     ws-opts:
       path: /
+  - name: 08 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
+    type: trojan
+    server: 104.17.148.22
+    port: 8443
+    password: uFepQ5r4JSusbY
+    udp: true
+    sni: floral-grass-aa1e.dianawpewpek1.workers.dev
+    network: ws
+    ws-opts:
+      path: /?ed=2048
+      headers:
+        Host: floral-grass-aa1e.dianawpewpek1.workers.dev
   - name: '@V2rayng_Fast 🇩🇪'
     type: vless
     server: 167.82.101.119
@@ -1064,6 +1081,24 @@ proxies:
     port: 443
     uuid: b4a00211-ae46-49bc-8f36-0c4425eb7e86
     udp: true
+  - name: 日本 003
+    type: trojan
+    network: ws
+    server: 172.104.120.92
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    servername: hhcm.hhxaf.cc.cd
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    allowInsecure: '0'
+    fp: chrome
+    security: tls
+    ech: cloudflare-ech.com+https://dns.alidns.com/dns-query
+    insecure: '0'
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
   - name: DE 🇩🇪 | @Raydikalx | F68888
     type: vmess
     server: 136.243.83.105
@@ -1149,6 +1184,16 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
+  - name: 04 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
+    type: trojan
+    server: 172.64.152.241
+    port: 443
+    password: xhl549341
+    udp: true
+    sni: tro.baiyi.cloudns.org
+    network: ws
+    ws-opts:
+      path: /
   - name: 韩国 009
     type: trojan
     network: ws
@@ -1356,10 +1401,10 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
+      - 06 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - HK VLESS-14 | free-nodes
-      - '[free18#260] 🇭🇰_香港 (26)'
+      - 09 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
       - US美国(v2clash.blog 2026-10.23更新)
       - 美国 143
       - 美国 1117
@@ -1396,6 +1441,7 @@ proxy-groups:
       - 🇺🇸Telegram👉@v2rayNG_Matsuri
       - 美国 117
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
+      - 08 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
       - '@V2rayng_Fast 🇩🇪'
       - US美国(v2clash.blog 2026-10.13更新)
       - US美国(v2clash.blog 2026-10.22更新)
@@ -1453,6 +1499,7 @@ proxy-groups:
       - 美国 856
       - 🇺🇸Telegram👉@v2rayNG_Matsuri-2
       - JP日本(v2clash.blog 2026-6.9更新)
+      - 日本 003
       - DE 🇩🇪 | @Raydikalx | F68888
       - JP日本(v2clash.blog 2026-10.14更新)
       - '@V2rayng_Fast 🇩🇪-3'
@@ -1463,6 +1510,7 @@ proxy-groups:
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - Tel@V2rayng_Fast 🇩🇪
+      - 04 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
       - 韩国 009
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1484,10 +1532,10 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
+      - 06 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - HK VLESS-14 | free-nodes
-      - '[free18#260] 🇭🇰_香港 (26)'
+      - 09 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
       - US美国(v2clash.blog 2026-10.23更新)
       - 美国 143
       - 美国 1117
@@ -1524,6 +1572,7 @@ proxy-groups:
       - 🇺🇸Telegram👉@v2rayNG_Matsuri
       - 美国 117
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
+      - 08 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
       - '@V2rayng_Fast 🇩🇪'
       - US美国(v2clash.blog 2026-10.13更新)
       - US美国(v2clash.blog 2026-10.22更新)
@@ -1581,6 +1630,7 @@ proxy-groups:
       - 美国 856
       - 🇺🇸Telegram👉@v2rayNG_Matsuri-2
       - JP日本(v2clash.blog 2026-6.9更新)
+      - 日本 003
       - DE 🇩🇪 | @Raydikalx | F68888
       - JP日本(v2clash.blog 2026-10.14更新)
       - '@V2rayng_Fast 🇩🇪-3'
@@ -1591,6 +1641,7 @@ proxy-groups:
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - Tel@V2rayng_Fast 🇩🇪
+      - 04 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
       - 韩国 009
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1646,6 +1697,7 @@ proxy-groups:
       - 日本 012
       - 日本 019
       - JP日本(v2clash.blog 2026-6.9更新)
+      - 日本 003
       - JP日本(v2clash.blog 2026-10.14更新)
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - 日本 016
