@@ -17,15 +17,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: HK VLESS-14 | free-nodes
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
-    client-fingerprint: chrome
   - name: 日本 018
     type: trojan
     network: ws
@@ -903,19 +894,6 @@ proxies:
     udp: true
     tls: true
     servername: FaSEYn-6441.wawawe.online
-  - name: 美国 020
-    type: vless
-    network: ws
-    server: 104.21.0.1
-    port: 8080
-    uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
-    servername: ip.sb
-    tls: false
-    udp: true
-    ws-opts:
-      headers:
-        Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
-      path: /
   - name: 美国 368
     type: vless
     network: ws
@@ -1122,6 +1100,22 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: 美国 951
+    type: vless
+    network: ws
+    server: 104.19.48.107
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    servername: jp3.yohototo.top
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: unsafe
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
   - name: '@V2rayng_Fast 🇩🇪-4'
     type: vless
     server: 172.64.158.170
@@ -1371,7 +1365,6 @@ proxy-groups:
     lazy: true
     proxies:
       - 韩国 005
-      - HK VLESS-14 | free-nodes
       - 日本 018
       - 韩国 009
       - 日本 021
@@ -1455,7 +1448,6 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - US美国(v2clash.blog 2026-10.8更新)
       - DE VLESS-01 | free-nodes
-      - 美国 020
       - 美国 368
       - 美国 1096
       - US美国v2clash.blog 2026-9.10)
@@ -1475,6 +1467,7 @@ proxy-groups:
       - US VLESS-12 | free-nodes
       - 美国 920
       - 新加坡 003
+      - 美国 951
       - '@V2rayng_Fast 🇩🇪-4'
       - JP日本(v2clash.blog 2026-10.14更新)
       - '@V2rayng_Fast 🇩🇪-5'
@@ -1502,7 +1495,6 @@ proxy-groups:
     type: select
     proxies:
       - 韩国 005
-      - HK VLESS-14 | free-nodes
       - 日本 018
       - 韩国 009
       - 日本 021
@@ -1586,7 +1578,6 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - US美国(v2clash.blog 2026-10.8更新)
       - DE VLESS-01 | free-nodes
-      - 美国 020
       - 美国 368
       - 美国 1096
       - US美国v2clash.blog 2026-9.10)
@@ -1606,6 +1597,7 @@ proxy-groups:
       - US VLESS-12 | free-nodes
       - 美国 920
       - 新加坡 003
+      - 美国 951
       - '@V2rayng_Fast 🇩🇪-4'
       - JP日本(v2clash.blog 2026-10.14更新)
       - '@V2rayng_Fast 🇩🇪-5'
@@ -1723,7 +1715,6 @@ proxy-groups:
       - 美国 187
       - 美国 230
       - US美国(v2clash.blog 2026-10.8更新)
-      - 美国 020
       - 美国 368
       - 美国 1096
       - US美国v2clash.blog 2026-9.10)
@@ -1739,6 +1730,7 @@ proxy-groups:
       - 🇺🇸US-156.146.38.163-6066
       - US VLESS-12 | free-nodes
       - 美国 920
+      - 美国 951
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
