@@ -5,14 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: '[free18#260] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
   - name: 美国 007
     type: vless
     network: ws
@@ -1385,7 +1377,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 007
       - 美国 131
       - 美国 1117
@@ -1513,7 +1504,6 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 007
       - 美国 131
       - 美国 1117
