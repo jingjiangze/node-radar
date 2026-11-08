@@ -671,22 +671,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 340
-    type: vless
-    network: ws
-    server: 104.26.12.222
-    port: 443
-    uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
-    servername: octopusss5.info
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    client-fingerprint: chrome
-    packet-encoding: xudp
-    ws-opts:
-      headers:
-        Host: octopusss5.info
-      path: /udfyfws
   - name: US美国(v2clash.blog 2026-10.10更新)
     type: vless
     server: 162.159.135.234
@@ -946,22 +930,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 349
-    type: vless
-    network: ws
-    server: 104.26.13.222
-    port: 443
-    uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
-    servername: octopusss5.info
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    client-fingerprint: chrome
-    packet-encoding: xudp
-    ws-opts:
-      headers:
-        Host: octopusss5.info
-      path: /udfyfws
   - name: 日本 016
     type: trojan
     network: ws
@@ -1022,6 +990,31 @@ proxies:
     port: 443
     uuid: b4a00211-ae46-49bc-8f36-0c4425eb7e86
     udp: true
+  - name: 美国 168
+    type: trojan
+    network: ws
+    server: 104.16.174.12
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: US 🇺🇸 | @Raydikalx | 3E8C43
+    type: vmess
+    server: 52.84.199.28
+    port: 80
+    uuid: a150d554-e962-4632-829f-ee583ada3f95
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /htun
+      headers:
+        Host: d7pu5mzr9c4b0.cloudfront.net
   - name: TW台湾(v2clash.blog 2026-10.24更新)
     type: vless
     server: 104.18.255.167
@@ -1040,6 +1033,16 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: DE 🇩🇪 | @Raydikalx | 5E3474
+    type: vmess
+    server: 185.204.170.130
+    port: 443
+    uuid: b8136e5f-8ece-4a06-99af-5a207c749bc4
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 185.204.170.130
   - name: 🇹🇼 🇨🇳 台湾 | TWN 2
     server: 60.248.219.53
     port: 443
@@ -1263,6 +1266,15 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
+  - name: HK VLESS-14 | free-nodes
+    type: vless
+    server: 152.175.6.229
+    port: 31884
+    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    udp: true
+    tls: true
+    servername: hk010.zestapp778.com
+    client-fingerprint: chrome
   - name: 日本 030
     type: trojan
     network: ws
@@ -1359,7 +1371,6 @@ proxy-groups:
       - 美国 907
       - 美国 909
       - 美国 181
-      - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
       - 美国 208
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
@@ -1387,7 +1398,6 @@ proxy-groups:
       - '@ShadowProxy66 🇺🇸-3'
       - 美国 1177
       - 美国 249
-      - 美国 349
       - 日本 016
       - 美国 252
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1395,8 +1405,11 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
       - JP日本(v2clash.blog 2026-6.9更新)
+      - 美国 168
+      - US 🇺🇸 | @Raydikalx | 3E8C43
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 韩国 010
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - 🇹🇼 🇨🇳 台湾 | TWN 2
       - 日本 021
       - 日本 018
@@ -1420,6 +1433,7 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
+      - HK VLESS-14 | free-nodes
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
   - name: ☝️ 全部-手动
@@ -1485,7 +1499,6 @@ proxy-groups:
       - 美国 907
       - 美国 909
       - 美国 181
-      - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
       - 美国 208
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
@@ -1513,7 +1526,6 @@ proxy-groups:
       - '@ShadowProxy66 🇺🇸-3'
       - 美国 1177
       - 美国 249
-      - 美国 349
       - 日本 016
       - 美国 252
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1521,8 +1533,11 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
       - JP日本(v2clash.blog 2026-6.9更新)
+      - 美国 168
+      - US 🇺🇸 | @Raydikalx | 3E8C43
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 韩国 010
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - 🇹🇼 🇨🇳 台湾 | TWN 2
       - 日本 021
       - 日本 018
@@ -1546,6 +1561,7 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
+      - HK VLESS-14 | free-nodes
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
   - name: 📍 美国
@@ -1607,7 +1623,6 @@ proxy-groups:
       - 美国 907
       - 美国 909
       - 美国 181
-      - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
       - 美国 208
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
@@ -1632,9 +1647,10 @@ proxy-groups:
       - '@ShadowProxy66 🇺🇸-3'
       - 美国 1177
       - 美国 249
-      - 美国 349
       - 美国 252
       - 美国 199
+      - 美国 168
+      - US 🇺🇸 | @Raydikalx | 3E8C43
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1651,6 +1667,7 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
+      - DE 🇩🇪 | @Raydikalx | 5E3474
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - DE VLESS-01 | free-nodes
       - DE 🇩🇪 | @Raydikalx | F68888
