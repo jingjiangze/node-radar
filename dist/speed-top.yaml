@@ -5,35 +5,36 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: 美国 116
+  - name: DE德国(v2clash.blog 2026-9.12新)
+    type: vless
+    server: 188.114.97.6
+    port: 8880
+    uuid: 94977b19-6720-48a6-92fd-00238757ea30
+    udp: true
+  - name: '@V2rayng_Fast 🇩🇪'
+    type: vless
+    server: 172.64.158.170
+    port: 443
+    uuid: d342d11e-d224-4463-b982-532309285094
+    udp: true
+  - name: 日本 004
     type: trojan
     network: ws
-    server: 172.64.53.74
+    server: 172.104.86.229
     port: 443
     password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    servername: tjsp.hhxaf.cc.cd
     skip-cert-verify: false
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
+    sni: tjsp.hhxaf.cc.cd
+    allowInsecure: '0'
+    fp: chrome
+    security: tls
+    ech: cloudflare-ech.com+https://dns.alidns.com/dns-query
+    insecure: '0'
     ws-opts:
       headers:
-        Host: hhcm.hhxaf.cc.cd
+        Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 美国 948
-    type: vless
-    network: ws
-    server: 104.16.10.9
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: unsafe
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: 日本 016
     type: trojan
     network: ws
@@ -46,24 +47,6 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: 日本 019
-    type: trojan
-    network: ws
-    server: 133.18.140.38
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
-  - name: JP日本(v2clash.blog 2026-6.9更新)
-    type: vless
-    server: 151.101.108.223
-    port: 443
-    uuid: b4a00211-ae46-49bc-8f36-0c4425eb7e86
-    udp: true
 proxy-groups:
   - name: ⚡ 极速
     type: url-test
@@ -71,10 +54,9 @@ proxy-groups:
     interval: 600
     tolerance: 50
     proxies:
-      - 美国 116
-      - 美国 948
+      - DE德国(v2clash.blog 2026-9.12新)
+      - '@V2rayng_Fast 🇩🇪'
+      - 日本 004
       - 日本 016
-      - 日本 019
-      - JP日本(v2clash.blog 2026-6.9更新)
 rules:
   - MATCH,⚡ 极速
