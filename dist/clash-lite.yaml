@@ -5,14 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: '[free18#260] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
   - name: 美国 143
     type: trojan
     network: ws
@@ -228,20 +220,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 美国 007
-    type: vless
-    network: ws
-    server: 172.64.152.19
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    tls: true
-    client-fingerprint: unsafe
-    encryption: none
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: 美国 114
     type: trojan
     network: ws
@@ -1027,6 +1005,12 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: '@ShadowProxy66 🇺🇸'
+    type: vless
+    server: 172.67.130.159
+    port: 2096
+    uuid: 214bf4c5-045a-4ddb-944b-e2eef9b33338
+    udp: true
   - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
     encryption: none
     network: ws
@@ -1353,7 +1337,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 143
       - 美国 124
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
@@ -1374,7 +1357,6 @@ proxy-groups:
       - 美国 113
       - 美国 135
       - 美国 157
-      - 美国 007
       - 美国 114
       - 美国 116
       - 美国 134
@@ -1446,6 +1428,7 @@ proxy-groups:
       - '[free18#238] 🇺🇸_美国 (57)'
       - 'Channel id: @ShadowProxy66 🇺🇸'
       - 韩国 010
+      - '@ShadowProxy66 🇺🇸'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇬🇧'
       - 韩国 001
@@ -1481,7 +1464,6 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - 美国 143
       - 美国 124
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
@@ -1502,7 +1484,6 @@ proxy-groups:
       - 美国 113
       - 美国 135
       - 美国 157
-      - 美国 007
       - 美国 114
       - 美国 116
       - 美国 134
@@ -1574,6 +1555,7 @@ proxy-groups:
       - '[free18#238] 🇺🇸_美国 (57)'
       - 'Channel id: @ShadowProxy66 🇺🇸'
       - 韩国 010
+      - '@ShadowProxy66 🇺🇸'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇬🇧'
       - 韩国 001
@@ -1628,7 +1610,6 @@ proxy-groups:
       - 美国 113
       - 美国 135
       - 美国 157
-      - 美国 007
       - 美国 114
       - 美国 116
       - 美国 134
@@ -1693,6 +1674,7 @@ proxy-groups:
       - 美国 876
       - '[free18#238] 🇺🇸_美国 (57)'
       - 'Channel id: @ShadowProxy66 🇺🇸'
+      - '@ShadowProxy66 🇺🇸'
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
