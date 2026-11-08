@@ -5,14 +5,6 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: '[free18#260] 🇭🇰_香港 (26)'
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
   - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
     type: vless
     server: 108.162.198.5
@@ -985,21 +977,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 952
-    type: vless
-    network: ws
-    server: 104.27.46.35
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    servername: jp3.yohototo.top
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
   - name: US 🇺🇸 | @Raydikalx | 5A1BD6
     type: vmess
     server: 8.8.8.8
@@ -1061,6 +1038,12 @@ proxies:
     udp: true
     tfo: false
     client-fingerprint: chrome
+  - name: 🇺🇸Telegram👉@v2rayNG_Matsuri
+    type: trojan
+    server: 167.82.76.7
+    port: 443
+    password: MITIVPN
+    udp: true
   - name: TW台湾(v2clash.blog 2026-10.24更新)
     type: vless
     server: 104.18.255.167
@@ -1412,7 +1395,6 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - 美国 116
       - 美国 1119
@@ -1498,12 +1480,12 @@ proxy-groups:
       - 美国 161
       - 美国 182
       - 美国 187
-      - 美国 952
       - US 🇺🇸 | @Raydikalx | 5A1BD6
       - 美国 018
       - 美国 237
       - 美国 951
       - 美国 992
+      - 🇺🇸Telegram👉@v2rayNG_Matsuri
       - TW台湾(v2clash.blog 2026-10.24更新)
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '🇬🇧 英国 | GBR #1'
@@ -1540,7 +1522,6 @@ proxy-groups:
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - '[free18#260] 🇭🇰_香港 (26)'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - 美国 116
       - 美国 1119
@@ -1626,12 +1607,12 @@ proxy-groups:
       - 美国 161
       - 美国 182
       - 美国 187
-      - 美国 952
       - US 🇺🇸 | @Raydikalx | 5A1BD6
       - 美国 018
       - 美国 237
       - 美国 951
       - 美国 992
+      - 🇺🇸Telegram👉@v2rayNG_Matsuri
       - TW台湾(v2clash.blog 2026-10.24更新)
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '🇬🇧 英国 | GBR #1'
@@ -1770,12 +1751,12 @@ proxy-groups:
       - 美国 161
       - 美国 182
       - 美国 187
-      - 美国 952
       - US 🇺🇸 | @Raydikalx | 5A1BD6
       - 美国 018
       - 美国 237
       - 美国 951
       - 美国 992
+      - 🇺🇸Telegram👉@v2rayNG_Matsuri
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
