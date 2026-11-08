@@ -47,15 +47,14 @@ proxies:
       path: /?ed=2560
       headers:
         Host: tro.baiyi.cloudns.org
-  - name: HK VLESS-14 | free-nodes
+  - name: '[free18#260] 🇭🇰_香港 (26)'
     type: vless
     server: 152.175.6.229
     port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
     udp: true
     tls: true
     servername: hk010.zestapp778.com
-    client-fingerprint: chrome
   - name: US美国(v2clash.blog 2026-10.23更新)
     type: vless
     server: 104.18.41.191
@@ -1402,7 +1401,7 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 09 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
-      - HK VLESS-14 | free-nodes
+      - '[free18#260] 🇭🇰_香港 (26)'
       - US美国(v2clash.blog 2026-10.23更新)
       - 美国 143
       - 美国 1117
@@ -1533,7 +1532,7 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 09 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | | mega vpn @vpnsmegabot
-      - HK VLESS-14 | free-nodes
+      - '[free18#260] 🇭🇰_香港 (26)'
       - US美国(v2clash.blog 2026-10.23更新)
       - 美国 143
       - 美国 1117
