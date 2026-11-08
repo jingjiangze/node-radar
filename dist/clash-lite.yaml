@@ -749,6 +749,24 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
+  - name: 日本 003
+    type: trojan
+    network: ws
+    server: 172.104.120.92
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    servername: hhcm.hhxaf.cc.cd
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    allowInsecure: '0'
+    fp: chrome
+    security: tls
+    ech: cloudflare-ech.com+https://dns.alidns.com/dns-query
+    insecure: '0'
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
   - name: US美国(v2clash.blog 2026-10.25更新)
     type: trojan
     server: 162.159.152.81
@@ -890,6 +908,18 @@ proxies:
       headers:
         Host: octopusss5.info
       path: /udfyfws
+  - name: '[free18#249] 🇺🇸_美国 (68)'
+    type: vless
+    server: 38.145.220.58
+    port: 2053
+    uuid: a3904b97-75b1-44ea-b56a-06042799d4d0
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
+      short-id: 66d62ef550107695
   - name: 美国 017
     type: vless
     network: ws
@@ -997,12 +1027,6 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: '@ShadowProxy66 🇺🇸'
-    type: vless
-    server: 172.67.130.159
-    port: 2096
-    uuid: 214bf4c5-045a-4ddb-944b-e2eef9b33338
-    udp: true
   - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
     encryption: none
     network: ws
@@ -1396,6 +1420,7 @@ proxy-groups:
       - 美国 240
       - 美国 913
       - 美国 216
+      - 日本 003
       - US美国(v2clash.blog 2026-10.25更新)
       - 🇺🇸@proxy_kafee
       - 美国 183
@@ -1409,6 +1434,7 @@ proxy-groups:
       - 美国 181
       - 美国 310
       - 美国 335
+      - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 017
       - 美国 170
       - 美国 171
@@ -1420,7 +1446,6 @@ proxy-groups:
       - '[free18#238] 🇺🇸_美国 (57)'
       - 'Channel id: @ShadowProxy66 🇺🇸'
       - 韩国 010
-      - '@ShadowProxy66 🇺🇸'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇬🇧'
       - 韩国 001
@@ -1523,6 +1548,7 @@ proxy-groups:
       - 美国 240
       - 美国 913
       - 美国 216
+      - 日本 003
       - US美国(v2clash.blog 2026-10.25更新)
       - 🇺🇸@proxy_kafee
       - 美国 183
@@ -1536,6 +1562,7 @@ proxy-groups:
       - 美国 181
       - 美国 310
       - 美国 335
+      - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 017
       - 美国 170
       - 美国 171
@@ -1547,7 +1574,6 @@ proxy-groups:
       - '[free18#238] 🇺🇸_美国 (57)'
       - 'Channel id: @ShadowProxy66 🇺🇸'
       - 韩国 010
-      - '@ShadowProxy66 🇺🇸'
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - '@V2rayng_Fast 🇬🇧'
       - 韩国 001
@@ -1658,6 +1684,7 @@ proxy-groups:
       - 美国 181
       - 美国 310
       - 美国 335
+      - '[free18#249] 🇺🇸_美国 (68)'
       - 美国 017
       - 美国 170
       - 美国 171
@@ -1666,7 +1693,6 @@ proxy-groups:
       - 美国 876
       - '[free18#238] 🇺🇸_美国 (57)'
       - 'Channel id: @ShadowProxy66 🇺🇸'
-      - '@ShadowProxy66 🇺🇸'
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1702,6 +1728,7 @@ proxy-groups:
       - 日本 018
       - 日本 012
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - 日本 003
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - JP日本(v2clash.blog 2026-10.14更新)
       - 日本 004
