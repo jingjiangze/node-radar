@@ -267,19 +267,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-    type: vless
-    server: 104.18.42.98
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    udp: true
-    tls: true
-    servername: jp3.yohototo.top
-    network: ws
-    ws-opts:
-      path: /tyxywsfp=chrome
-      headers:
-        Host: jp3.yohototo.top
   - name: 美国 205
     type: trojan
     network: ws
@@ -1255,15 +1242,19 @@ proxies:
     port: 443
     uuid: d5ba050c-a939-4388-8ff5-ce3f65832c6c
     udp: true
-  - name: HK VLESS-14 | free-nodes
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
     client-fingerprint: chrome
+    network: ws
+    port: 443
+    server: 104.17.210.74
+    servername: jp3.yohototo.top
+    tls: true
+    type: vless
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
   - name: 日本 030
     type: trojan
     network: ws
@@ -1325,7 +1316,6 @@ proxy-groups:
       - 美国 148
       - US美国(v2clash.blog 2026-10.23更新)
       - 美国 176
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 205
       - 美国 971
       - 美国 236
@@ -1420,7 +1410,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-4'
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - HK VLESS-14 | free-nodes
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
   - name: ☝️ 全部-手动
@@ -1451,7 +1441,6 @@ proxy-groups:
       - 美国 148
       - US美国(v2clash.blog 2026-10.23更新)
       - 美国 176
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 美国 205
       - 美国 971
       - 美国 236
@@ -1546,7 +1535,7 @@ proxy-groups:
       - '@V2rayng_Fast 🇩🇪-4'
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - HK VLESS-14 | free-nodes
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
   - name: 📍 美国
@@ -1670,7 +1659,6 @@ proxy-groups:
       - 日本 019
       - 日本 003
       - 日本 012
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
       - 日本 004
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
@@ -1679,6 +1667,7 @@ proxy-groups:
       - 日本 018
       - 日本 013
       - JP日本(v2clash.blog 2026-10.14更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
       - 日本 030
   - name: ♻️ 自动选择
     type: url-test
