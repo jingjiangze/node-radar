@@ -19,10 +19,323 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
+  - name: 美国 131
+    type: trojan
+    network: ws
+    server: 162.159.3.176
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 美国 1117
+    type: vless
+    network: ws
+    server: 104.18.35.15
+    port: 443
+    uuid: d342d11e-d224-4463-b982-532309285094
+    servername: ccc.010304.xyz
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: ccc.010304.xyz
+      path: /fp=chrome
+  - name: 美国 1118
+    type: vless
+    network: ws
+    server: 104.18.37.127
+    port: 443
+    uuid: d342d11e-d224-4463-b982-532309285094
+    servername: ccc.010304.xyz
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: ccc.010304.xyz
+      path: /
   - name: 美国 117
     type: trojan
     network: ws
     server: 104.18.43.29
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 🇺🇸@V2rayng_Fast
+    type: vless
+    server: 162.159.38.119
+    port: 443
+    uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+    udp: true
+  - name: 美国 045
+    type: vmess
+    network: ws
+    server: 162.159.5.6
+    port: 8080
+    uuid: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96
+    tls: false
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: pcs-referenced-camera-concerns.trycloudflare.com
+      path: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96-vm
+  - name: 美国 141
+    type: trojan
+    network: ws
+    server: 172.64.148.248
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: US 🇺🇸 | @Raydikalx | A21CA4
+    type: vmess
+    server: 162.159.45.63
+    port: 8880
+    uuid: 90f8f4dc-8092-4355-9047-05f506f5e9ab
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: github.com/Alvin9999
+      headers:
+        Host: m1.106778.xyz
+  - name: 美国 114
+    type: trojan
+    network: ws
+    server: 172.64.38.50
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: 美国 113
+    type: trojan
+    network: ws
+    server: 172.64.157.230
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: 美国 143
+    type: trojan
+    network: ws
+    server: 104.18.39.91
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
+    type: vless
+    server: 108.162.198.5
+    port: 443
+    uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
+    udp: true
+  - name: 美国 116
+    type: trojan
+    network: ws
+    server: 172.64.53.74
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: 日本 018
+    type: trojan
+    network: ws
+    server: 124.156.208.160
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: 韩国 005
+    type: trojan
+    network: ws
+    server: 118.218.10.159
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 韩国 009
+    type: trojan
+    network: ws
+    server: 103.133.240.115
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: 美国 030
+    type: vmess
+    network: ws
+    server: 162.159.1.33
+    port: 8080
+    uuid: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96
+    tls: false
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: pcs-referenced-camera-concerns.trycloudflare.com
+      path: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96-vm
+  - name: 美国 126
+    type: trojan
+    network: ws
+    server: 162.159.39.153
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: 美国 135
+    type: trojan
+    network: ws
+    server: 162.159.12.212
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 美国 137
+    type: trojan
+    network: ws
+    server: 173.245.58.183
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
+    type: vless
+    server: 108.162.192.75
+    port: 443
+    uuid: 073d1d50-8478-47bf-a828-7a1b381931d5
+    udp: true
+  - name: US美国(v2clash.blog 2026-10.22更新)
+    type: vless
+    server: 172.64.153.61
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+    type: vless
+    server: 104.18.42.98
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    udp: true
+    tls: true
+    servername: jp3.yohototo.top
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /tyxyws
+      headers:
+        Host: jp3.yohototo.top
+  - name: 美国 111
+    type: trojan
+    network: ws
+    server: 162.159.60.167
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: 美国 139
+    type: trojan
+    network: ws
+    server: 162.159.15.39
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 🇺🇸@V2rayng_Fast-2
+    type: trojan
+    server: 162.159.38.200
+    port: 443
+    password: MiTiVPN
+    udp: true
+  - name: '@V2rayng_Fast 🇩🇪'
+    type: vless
+    server: 172.64.158.170
+    port: 443
+    uuid: d342d11e-d224-4463-b982-532309285094
+    udp: true
+  - name: 美国 124
+    type: trojan
+    network: ws
+    server: 172.64.148.165
     port: 8443
     password: eeb6823c-b926-4ea2-866a-5542edd26e59
     skip-cert-verify: false
@@ -48,210 +361,11 @@ proxies:
       headers:
         Host: iopl90nn.bingnet.online
       path: /
-  - name: 美国 030
-    type: vmess
-    network: ws
-    server: 162.159.1.33
-    port: 8080
-    uuid: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96
-    tls: false
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: pcs-referenced-camera-concerns.trycloudflare.com
-      path: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96-vm
-  - name: 美国 131
-    type: trojan
-    network: ws
-    server: 162.159.3.176
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
   - name: US美国(v2clash.blog 2026-10.23更新)
     type: vless
     server: 104.18.41.191
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: 🇺🇸@V2rayng_Fast
-    type: trojan
-    server: 162.159.38.200
-    port: 443
-    password: MiTiVPN
-    udp: true
-  - name: 美国 111
-    type: trojan
-    network: ws
-    server: 162.159.60.167
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
-  - name: 美国 114
-    type: trojan
-    network: ws
-    server: 172.64.38.50
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
-  - name: 🇺🇸@V2rayng_Fast-2
-    type: vless
-    server: 162.159.38.119
-    port: 443
-    uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-    udp: true
-  - name: '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-    type: vless
-    server: 104.18.42.98
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    udp: true
-    tls: true
-    servername: jp3.yohototo.top
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /tyxyws
-      headers:
-        Host: jp3.yohototo.top
-  - name: 美国 139
-    type: trojan
-    network: ws
-    server: 162.159.15.39
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 美国 135
-    type: trojan
-    network: ws
-    server: 162.159.12.212
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 美国 141
-    type: trojan
-    network: ws
-    server: 172.64.148.248
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 韩国 009
-    type: trojan
-    network: ws
-    server: 103.133.240.115
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
-  - name: 美国 137
-    type: trojan
-    network: ws
-    server: 173.245.58.183
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 韩国 005
-    type: trojan
-    network: ws
-    server: 118.218.10.159
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 美国 143
-    type: trojan
-    network: ws
-    server: 104.18.39.91
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 美国 126
-    type: trojan
-    network: ws
-    server: 162.159.39.153
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
-  - name: 美国 124
-    type: trojan
-    network: ws
-    server: 172.64.148.165
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-    type: vless
-    server: 108.162.192.75
-    port: 443
-    uuid: 073d1d50-8478-47bf-a828-7a1b381931d5
     udp: true
   - name: US美国(v2clash.blog 2026-10.20更新)
     type: vless
@@ -259,69 +373,6 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: US美国(v2clash.blog 2026-10.22更新)
-    type: vless
-    server: 172.64.153.61
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: 美国 1117
-    type: vless
-    network: ws
-    server: 104.18.35.15
-    port: 443
-    uuid: d342d11e-d224-4463-b982-532309285094
-    servername: ccc.010304.xyz
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: ccc.010304.xyz
-      path: /fp=chrome
-  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
-    type: vless
-    server: 108.162.198.5
-    port: 443
-    uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
-    udp: true
-  - name: '@V2rayng_Fast 🇩🇪'
-    type: vless
-    server: 172.64.158.170
-    port: 443
-    uuid: d342d11e-d224-4463-b982-532309285094
-    udp: true
-  - name: US 🇺🇸 | @Raydikalx | A21CA4
-    type: vmess
-    server: 162.159.45.63
-    port: 8880
-    uuid: 90f8f4dc-8092-4355-9047-05f506f5e9ab
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: github.com/Alvin9999
-      headers:
-        Host: m1.106778.xyz
-  - name: 美国 1118
-    type: vless
-    network: ws
-    server: 104.18.37.127
-    port: 443
-    uuid: d342d11e-d224-4463-b982-532309285094
-    servername: ccc.010304.xyz
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: ccc.010304.xyz
-      path: /
   - name: '🇹🇼 🇨🇳 台湾 | TWN #1'
     client-fingerprint: chrome
     network: ws
@@ -336,6 +387,33 @@ proxies:
       headers:
         Host: ty986gfazs.cainiaohub.xyz
       path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+  - name: 美国 1119
+    type: vless
+    network: ws
+    server: 104.18.47.73
+    port: 443
+    uuid: d342d11e-d224-4463-b982-532309285094
+    servername: ccc.010304.xyz
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    ws-opts:
+      headers:
+        Host: ccc.010304.xyz
+      path: /
+  - name: 日本 019
+    type: trojan
+    network: ws
+    server: 133.18.140.38
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
   - name: 美国 133
     type: trojan
     network: ws
@@ -349,46 +427,63 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 日本 021
+  - name: 美国 949
+    type: vless
+    network: ws
+    server: 104.16.111.102
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    servername: jp3.yohototo.top
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: unsafe
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
+  - name: 美国 115
     type: trojan
     network: ws
-    server: 198.13.60.163
+    server: 104.16.72.101
+    port: 443
+    password: 6c862415-30d2-4813-8e49-42e99a0bd415
+    sni: space.byu.id.yxls.eu.cc
+    ws-opts:
+      headers:
+        Host: space.byu.id.yxls.eu.cc
+      path: /us-gllc
+  - name: US美国(v2clash.blog 2026-10.22更新)-2
+    type: vless
+    server: 104.17.139.37
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: DE VLESS-01 | free-nodes
+    type: vless
+    server: 198.62.62.92
+    port: 443
+    uuid: 4deb5a68-24d4-4ad7-84b2-832ac1dc6328
+    udp: true
+    tls: true
+    servername: FaSEYn-6441.wawawe.online
+  - name: 美国 134
+    type: trojan
+    network: ws
+    server: 199.193.125.72
     port: 443
     password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: tjsp.hhxaf.cc.cd
+    sni: hhcm.hhxaf.cc.cd
     client-fingerprint: chrome
     ws-opts:
       headers:
-        Host: tjsp.hhxaf.cc.cd
+        Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: '@V2rayng_Fast 🇩🇪-2'
-    type: vless
-    server: 185.159.247.44
-    port: 443
-    uuid: 3ccb1d2a-d169-443a-ad5d-3f5f11759695
-    udp: true
-  - name: US美国(v2clash.blog 2026-10.14更新)
-    type: vless
-    server: 92.53.189.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    udp: true
-  - name: 日本 012
+  - name: 美国 166
     type: trojan
     network: ws
-    server: 80.66.196.231
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 美国 238
-    type: trojan
-    network: ws
-    server: 104.18.152.143
+    server: 104.18.152.159
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -397,42 +492,57 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 1172
-    type: vless
+  - name: 美国 179
+    type: trojan
     network: ws
-    server: 155.212.240.147
-    port: 2087
-    uuid: probabblynot-ch
-    servername: probabblynot.fazelextremeisreal.com
+    server: 104.18.152.155
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 1055
+    type: vless
+    network: xhttp
+    server: 104.17.107.134
+    port: 8443
+    uuid: 99c3a53c-28b3-463f-89d7-63f04505eb32
+    servername: www.66913.ir
     skip-cert-verify: false
     tls: true
     udp: true
     tfo: false
+  - name: 美国 130
+    type: trojan
+    network: ws
+    server: 64.186.250.125
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: hhcm.hhxaf.cc.cd
     client-fingerprint: chrome
     ws-opts:
       headers:
-        Host: probabblynot.fazelextremeisreal.com
+        Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: US 🇺🇸 | @Raydikalx | A8EEF5
-    type: vmess
-    server: 199.232.78.160
-    port: 443
-    uuid: 6ba68c69-e108-502d-7b1c-e806fbc3cccd
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: ssl.fastly.com
-  - name: US美国(v2clash.blog 2026-10.9更新)
-    type: vless
-    server: 45.131.208.4
-    port: 80
-    uuid: 424fa201-3f94-479e-b533-d5257cf9a207
-    udp: true
-  - name: 美国 168
+  - name: 美国 181
     type: trojan
     network: ws
-    server: 104.18.152.77
+    server: 104.18.152.210
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 161
+    type: trojan
+    network: ws
+    server: 104.16.174.6
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -452,51 +562,22 @@ proxies:
       headers:
         Host: www.calmlunch.com
       path: /assignment
-  - name: 美国 174
+  - name: 日本 021
     type: trojan
     network: ws
-    server: 104.19.64.105
+    server: 198.13.60.163
     port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.calmlunch.com
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
     ws-opts:
       headers:
-        Host: www.calmlunch.com
-      path: /assignment
-  - name: 美国 857
-    type: vless
-    network: xhttp
-    server: 199.232.77.215
-    port: 443
-    uuid: 1cbf2f56-926e-4a69-a325-d2794a22d411
-    servername: global.fastly.com
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-  - name: 美国 1055
-    type: vless
-    network: xhttp
-    server: 104.17.107.134
-    port: 8443
-    uuid: 99c3a53c-28b3-463f-89d7-63f04505eb32
-    servername: www.66913.ir
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-  - name: TW台湾(v2clash.blog 2026-10.24更新)
-    type: vless
-    server: 104.18.255.167
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: 美国 166
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 美国 182
     type: trojan
     network: ws
-    server: 104.18.152.159
+    server: 104.17.177.143
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -517,31 +598,93 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 858
+  - name: US美国(v2clash.blog 2026-9.17更新)
+    type: trojan
+    server: 104.18.152.179
+    port: 443
+    password: humanity
+    udp: true
+  - name: US美国(v2clash.blog 2026-8.27更新)
+    type: trojan
+    server: 104.18.152.50
+    port: 443
+    password: humanity
+    udp: true
+  - name: US美国(v2clash.blog 2026-5.26更新)
+    type: vless
+    server: 109.176.239.50
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    udp: true
+  - name: 🇺🇸@proxy_kafee
+    type: vless
+    server: 104.16.72.50
+    port: 443
+    uuid: f0db70ae-559e-4cba-aa00-3a04eb04c3e0
+    udp: true
+  - name: 美国 226
+    type: trojan
+    network: ws
+    server: 104.16.89.120
+    port: 443
+    password: humanity
+    sni: www.creationlong.org
+    ws-opts:
+      headers:
+        Host: www.creationlong.org
+      path: /assignment
+  - name: 美国 229
+    type: trojan
+    network: ws
+    server: 104.18.152.229
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 909
     type: vless
     network: xhttp
-    server: 199.232.78.150
+    server: 104.16.7.70
     port: 443
-    uuid: 1cbf2f56-926e-4a69-a325-d2794a22d411
-    servername: global.fastly.com
+    uuid: 406d8436-0eb9-4eb2-84fb-960e076ffba6
+    servername: de.xn--q9jyb4c.online
     skip-cert-verify: false
     tls: true
     udp: true
     tfo: false
     client-fingerprint: chrome
-  - name: US 🇺🇸 | @Raydikalx | 4452C9
-    type: vmess
-    server: 66.81.247.246
-    port: 80
-    uuid: 28f8d51a-0e75-4fc3-a36e-03bf4e4d0910
-    alterId: 0
-    cipher: auto
+  - name: 美国 992
+    type: vless
+    network: tcp
+    server: 216.24.57.3
+    port: 443
+    uuid: 6a9bd5bf-7fb1-4f42-a49a-141077ea669f
+    servername: mobile.zandix.ir
+    skip-cert-verify: false
+    tls: true
     udp: true
+    tfo: false
+    client-fingerprint: chrome
+  - name: 美国 1172
+    type: vless
     network: ws
+    server: 155.212.240.147
+    port: 2087
+    uuid: probabblynot-ch
+    servername: probabblynot.fazelextremeisreal.com
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
     ws-opts:
-      path: /vmess
       headers:
-        Host: 127.0.0.1.太空學員.jосмическийкадет.spacecadet.安靜的地方第天day0ne.wonkacapitano.buzz.
+        Host: probabblynot.fazelextremeisreal.com
+      path: /
   - name: 🇺🇸US-179.255.132.69-5707
     type: trojan
     server: 179.255.132.69
@@ -549,70 +692,64 @@ proxies:
     password: humanity
     udp: true
     sni: www.cordweave.com
-  - name: 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
-    type: vless
-    server: 146.75.59.186
-    port: 443
-    uuid: 82599a61-3580-4141-b48c-42f4594ae675
-    udp: true
-  - name: '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
-    type: vless
-    server: 146.75.59.186
-    port: 443
-    uuid: a953509f-af22-42d5-a34c-aa29405369b0
-    udp: true
-    tls: true
-    servername: cdn.akamai.steamstatic.com
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: ukoijji.global.ssl.fastly.net
-  - name: 美国 183
+  - name: US美国(mibei77.com 米贝节点分享)
     type: trojan
-    network: ws
-    server: 104.17.121.71
+    server: 104.17.111.1
     port: 443
     password: humanity
-    skip-cert-verify: false
-    sni: www.calmlunch.com
-    ws-opts:
-      headers:
-        Host: www.calmlunch.com
-      path: /assignment
-  - name: 美国 235
+    udp: true
+  - name: US美国(v2clash.blog 2026-9.5)
     type: trojan
-    network: ws
-    server: 104.18.22.208
+    server: 45.130.125.158
     port: 443
     password: humanity
-    skip-cert-verify: false
-    sni: www.multiplydose.com
-    ws-opts:
-      headers:
-        Host: www.multiplydose.com
-      path: /assignment
-  - name: 美国 1166
-    type: vless
-    network: ws
-    server: 155.212.240.10
-    port: 443
-    uuid: f27b6f65-6e59-4f89-b929-afa397ca587f
-    servername: n.bitpulse.me
-    skip-cert-verify: false
-    tls: true
     udp: true
-    tfo: false
+  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
+    type: vless
+    server: 91.209.253.250
+    port: 443
+    uuid: b09dfed1-90fa-4353-8bdf-de1edb2e2d79
+    udp: true
+  - name: '[free18#238] 🇺🇸_美国 (57)'
+    type: vless
+    server: 38.34.190.212
+    port: 2083
+    uuid: a3904b97-75b1-44ea-b56a-06042799d4d0
+    udp: true
+    tls: true
+    servername: www.apple.com
     client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: n.bitpulse.me
-      path: /019bcbad-3813-7cce-8786-3ac0e418f128?ed
-  - name: 美国 184
+    reality-opts:
+      public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
+      short-id: 66d62ef550107695
+  - name: '[free18#248] 🇺🇸_美国 (67)'
+    type: vless
+    server: 38.145.220.58
+    port: 443
+    uuid: a3904b97-75b1-44ea-b56a-06042799d4d0
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
+      short-id: 66d62ef550107695
+  - name: US VLESS-12 | free-nodes
+    type: vless
+    server: 104.160.44.254
+    port: 443
+    uuid: 0a3432cd-74b8-413a-896d-f51492b030bc
+    udp: true
+    tls: true
+    servername: portal.citygrainla.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
+      short-id: 051f20c2344a2dfd
+  - name: 美国 187
     type: trojan
     network: ws
-    server: 104.18.152.149
+    server: 104.16.174.46
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -621,75 +758,16 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 197
+  - name: 美国 191
     type: trojan
     network: ws
-    server: 104.16.174.36
+    server: 104.18.152.144
     port: 443
     password: humanity
-    skip-cert-verify: false
     sni: www.ignitelimit.com
     ws-opts:
       headers:
         Host: www.ignitelimit.com
-      path: /assignment
-  - name: 🇺🇸Telegram👉@v2rayNG_Matsuri
-    type: trojan
-    server: 167.82.76.7
-    port: 443
-    password: MITIVPN
-    udp: true
-  - name: 美国 368
-    type: vless
-    network: ws
-    server: 104.18.1.1
-    port: 2087
-    uuid: 4859c235-2530-4062-9a0b-ea859cbbf861
-    servername: 1.proxy2.us.ci.
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: ios
-    ws-opts:
-      headers:
-        Host: 1.proxy2.us.ci.
-      path: /
-  - name: 美国 988
-    type: vless
-    network: xhttp
-    server: 198.202.24.27
-    port: 443
-    uuid: 64c5f924-1c24-44a5-acff-2e3ebcd2f807
-    servername: nl29.dr-ping.ir
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-  - name: 美国 1048
-    type: vless
-    network: xhttp
-    server: 199.232.237.245
-    port: 443
-    uuid: 8e9cbf76-b74a-46b3-8270-9453e281e613
-    servername: global.fastly.com
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-  - name: 美国 188
-    type: trojan
-    network: ws
-    server: 198.62.62.23
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.calmlunch.com
-    ws-opts:
-      headers:
-        Host: www.calmlunch.com
       path: /assignment
   - name: 美国 850
     type: vless
@@ -706,147 +784,29 @@ proxies:
       headers:
         Host: crm.lotussec.com
       path: /
-  - name: 美国 978
+  - name: TW台湾(v2clash.blog 2026-10.24更新)
     type: vless
-    network: ws
-    server: 104.17.70.206
+    server: 104.18.255.167
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: US美国(v2clash.blog 2026-10.13更新)
+    type: vless
+    server: 209.206.51.240
+    port: 443
+    uuid: 573c6482-37db-454a-8c31-5b45a338a580
+    udp: true
+  - name: US美国(v2clash.blog 2026-10.8更新)
+    type: vless
+    server: 155.46.213.30
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    udp: true
+  - name: '@V2rayng_Fast 🇩🇪-2'
+    type: vless
+    server: 104.26.14.85
     port: 8443
-    uuid: 5f704d93-7e7f-45b5-81f5-08db4a946220
-    servername: free.sahanwickramasinghe.com
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    ws-opts:
-      headers:
-        Host: free.sahanwickramasinghe.com
-      path: /
-  - name: 美国 045
-    type: vmess
-    network: ws
-    server: 162.159.5.6
-    port: 8080
-    uuid: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96
-    tls: false
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: pcs-referenced-camera-concerns.trycloudflare.com
-      path: d9c5ec6a-a8d8-4732-8447-56fbd2f93e96-vm
-  - name: 美国 246
-    type: trojan
-    network: ws
-    server: 104.16.174.22
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: '[free18#238] 🇺🇸_美国 (57)'
-    type: vless
-    server: 38.34.190.212
-    port: 2083
-    uuid: a3904b97-75b1-44ea-b56a-06042799d4d0
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
-      short-id: 66d62ef550107695
-  - name: 美国 163
-    type: trojan
-    network: ws
-    server: 104.17.121.43
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.calmlunch.com
-    ws-opts:
-      headers:
-        Host: www.calmlunch.com
-      path: /assignment
-  - name: 美国 175
-    type: trojan
-    network: ws
-    server: 104.18.152.161
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: 美国 176
-    type: trojan
-    network: ws
-    server: 104.18.152.133
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: 美国 241
-    type: trojan
-    network: ws
-    server: 104.16.174.44
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: US美国(v2clash.blog 2026-8.15更新)
-    type: trojan
-    server: 216.24.57.7
-    port: 443
-    password: humanity
-    udp: true
-  - name: US美国mibei77.com 米贝节点分享)(v2clash.blog 2026-10.9更新)
-    type: vless
-    server: 162.159.249.175
-    port: 443
-    uuid: b940be1b-3998-45d2-bf7b-06e7b6c4987a
-    udp: true
-  - name: 美国 157
-    type: trojan
-    network: ws
-    server: 154.17.6.184
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 美国 856
-    type: vless
-    network: xhttp
-    server: 199.232.245.94
-    port: 443
-    uuid: 1cbf2f56-926e-4a69-a325-d2794a22d411
-    servername: global.fastly.com
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-    type: vless
-    server: 91.209.253.250
-    port: 443
-    uuid: b09dfed1-90fa-4353-8bdf-de1edb2e2d79
+    uuid: f798a2c4-c51b-409d-b349-ca8455b36796
     udp: true
   - name: '[free18#245] 🇺🇸_美国 (64)'
     type: vless
@@ -860,76 +820,33 @@ proxies:
     reality-opts:
       public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
       short-id: 66d62ef550107695
-  - name: 美国 191
-    type: trojan
-    network: ws
-    server: 104.18.152.144
-    port: 443
-    password: humanity
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: US 🇺🇸 | @Raydikalx | 2D4470
-    type: vmess
-    server: 141.101.115.61
-    port: 80
-    uuid: 7496e6b1-7eee-49c5-9f74-56428d3b44d4
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: dl3.守望者.hаблюдатели.watchers.aгентразведки.偵察探員.wonkacapitano.buzz.
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
+  - name: '[free18#247] 🇺🇸_美国 (66)'
     type: vless
-    server: 38.47.96.220
-    port: 11424
-    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
-    udp: true
-    network: ws
-    ws-opts:
-      path: Telegram-WangCai2🇨🇳security=tls
-      headers:
-        Host: notls.lukongtou.eu.org
-  - name: 美国 187
-    type: trojan
-    network: ws
-    server: 104.16.174.46
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: 美国 189
-    type: trojan
-    network: ws
-    server: 104.26.14.137
-    port: 443
-    password: humanity
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: DE VLESS-01 | free-nodes
-    type: vless
-    server: 198.62.62.92
-    port: 443
-    uuid: 4deb5a68-24d4-4ad7-84b2-832ac1dc6328
+    server: 38.145.220.38
+    port: 2083
+    uuid: a3904b97-75b1-44ea-b56a-06042799d4d0
     udp: true
     tls: true
-    servername: FaSEYn-6441.wawawe.online
-  - name: 美国 165
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
+      short-id: 66d62ef550107695
+  - name: '[free18#264] 🇺🇸_美国 (73)'
+    type: vless
+    server: 104.160.44.254
+    port: 443
+    uuid: 32dd0fc0-cf2d-42f0-8680-efc77042550c
+    udp: true
+    tls: true
+    servername: portal.citygrainla.com
+    reality-opts:
+      public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
+      short-id: 051f20c2344a2dfd
+  - name: 美国 162
     type: trojan
     network: ws
-    server: 104.18.152.244
+    server: 104.16.174.12
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -954,22 +871,145 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
-  - name: US 🇺🇸 | @Raydikalx | 676D28
+  - name: 美国 165
+    type: trojan
+    network: ws
+    server: 104.18.152.244
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 174
+    type: trojan
+    network: ws
+    server: 104.19.64.105
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.calmlunch.com
+    ws-opts:
+      headers:
+        Host: www.calmlunch.com
+      path: /assignment
+  - name: 美国 236
+    type: trojan
+    network: ws
+    server: 104.26.15.137
+    port: 443
+    password: humanity
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 368
+    type: vless
+    network: ws
+    server: 104.18.1.1
+    port: 2087
+    uuid: 4859c235-2530-4062-9a0b-ea859cbbf861
+    servername: 1.proxy2.us.ci.
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: ios
+    ws-opts:
+      headers:
+        Host: 1.proxy2.us.ci.
+      path: /
+  - name: 美国 1058
+    type: vless
+    network: xhttp
+    server: 104.18.152.233
+    port: 443
+    uuid: 9f135709-60a1-4a9b-b31c-78d326d8752a
+    servername: www.middle.cc.cd
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+  - name: US 🇺🇸 | @Raydikalx | 4452C9
     type: vmess
-    server: 18.238.109.17
+    server: 66.81.247.246
     port: 80
-    uuid: a150d554-e962-4632-829f-ee583ada3f95
+    uuid: 28f8d51a-0e75-4fc3-a36e-03bf4e4d0910
     alterId: 0
     cipher: auto
     udp: true
     network: ws
     ws-opts:
-      path: /htun
+      path: /vmess
       headers:
-        Host: d7pu5mzr9c4b0.cloudfront.net
-  - name: '[free18#247] 🇺🇸_美国 (66)'
+        Host: 127.0.0.1.太空學員.jосмическийкадет.spacecadet.安靜的地方第天day0ne.wonkacapitano.buzz.
+  - name: 日本 012
+    type: trojan
+    network: ws
+    server: 80.66.196.231
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 美国 157
+    type: trojan
+    network: ws
+    server: 154.17.6.184
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 美国 192
+    type: trojan
+    network: ws
+    server: 104.16.174.101
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 197
+    type: trojan
+    network: ws
+    server: 104.16.174.36
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 940
     type: vless
-    server: 38.145.220.38
+    network: xhttp
+    server: 104.17.147.22
+    port: 2053
+    uuid: 4c41d237-630a-4d02-8ec0-c3b775190ee5
+    servername: digiac.riziro.ir
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+  - name: '[free18#250] 🇺🇸_美国 (69)'
+    type: vless
+    server: 38.145.220.58
     port: 2083
     uuid: a3904b97-75b1-44ea-b56a-06042799d4d0
     udp: true
@@ -979,10 +1019,23 @@ proxies:
     reality-opts:
       public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
       short-id: 66d62ef550107695
-  - name: 美国 179
+  - name: 美国 034
+    type: vmess
+    network: ws
+    server: 162.159.137.249
+    port: 8080
+    uuid: 028c8131-9e3e-4836-94ac-ea7f24d4d05a
+    tls: false
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: nest-emily-healing-h.trycloudflare.com
+      path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
+  - name: 美国 175
     type: trojan
     network: ws
-    server: 104.18.152.155
+    server: 104.18.152.161
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -1007,60 +1060,15 @@ proxies:
       headers:
         Host: jp3.yohototo.top
       path: /tyxyws
-  - name: 美国 1058
+  - name: 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
     type: vless
-    network: xhttp
-    server: 104.18.152.233
+    server: 45.76.172.197
     port: 443
-    uuid: 9f135709-60a1-4a9b-b31c-78d326d8752a
-    servername: www.middle.cc.cd
-    skip-cert-verify: false
-    tls: true
+    uuid: b256c867-a020-48e0-be80-1b079f2613a2
     udp: true
-    tfo: false
-    client-fingerprint: chrome
-  - name: 🇺🇸US-192.236.151.43-5802
-    type: trojan
-    server: 192.236.151.43
-    port: 443
-    password: OnHLrkVqZVtZyulTwC4bHrIbW7GyUDttKVNGEYVR12Y=
-    udp: true
-  - name: US美国(v2clash.blog 2026-8.27更新)
-    type: trojan
-    server: 104.18.152.50
-    port: 443
-    password: humanity
-    udp: true
-  - name: US美国(v2clash.blog 2026-10.13更新)
-    type: vless
-    server: 209.206.51.240
-    port: 443
-    uuid: 573c6482-37db-454a-8c31-5b45a338a580
-    udp: true
-  - name: '[free18#250] 🇺🇸_美国 (69)'
-    type: vless
-    server: 38.145.220.58
-    port: 2083
-    uuid: a3904b97-75b1-44ea-b56a-06042799d4d0
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: bvG7GBU_gOKuBuAagnC07EbQZ_2tJ8OhBNSVGkHSugo
-      short-id: 66d62ef550107695
-  - name: US VLESS-12 | free-nodes
-    type: vless
-    server: 104.160.44.254
-    port: 443
-    uuid: 0a3432cd-74b8-413a-896d-f51492b030bc
-    udp: true
-    tls: true
-    servername: portal.citygrainla.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE
-      short-id: 051f20c2344a2dfd
+    network: ws
+    ws-opts:
+      path: /
   - name: 美国 036
     type: vmess
     network: ws
@@ -1074,31 +1082,20 @@ proxies:
       headers:
         Host: per-essex-patterns-bowling.trycloudflare.com
       path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
-  - name: 美国 037
-    type: vmess
-    network: ws
-    server: 23.227.38.22
-    port: 8080
-    uuid: 9258153a-dc97-4e39-9037-009abfc4fed0
-    tls: false
-    alterId: 0
-    cipher: auto
-    ws-opts:
-      headers:
-        Host: per-essex-patterns-bowling.trycloudflare.com
-      path: 9258153a-dc97-4e39-9037-009abfc4fed0-vm
-  - name: 日本 018
-    type: trojan
-    network: ws
-    server: 124.156.208.160
+  - name: '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
+    type: vless
+    server: 146.75.59.186
     port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: hhcm.hhxaf.cc.cd
+    uuid: a953509f-af22-42d5-a34c-aa29405369b0
+    udp: true
+    tls: true
+    servername: cdn.akamai.steamstatic.com
     client-fingerprint: chrome
+    network: ws
     ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
       path: /
+      headers:
+        Host: ukoijji.global.ssl.fastly.net
   - name: DE 🇩🇪 | @Raydikalx | 4769A2
     type: vmess
     server: 167.235.28.242
@@ -1107,17 +1104,17 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
-  - name: '@V2rayng_Fast 🇬🇧'
-    type: vless
-    server: 151.101.56.6
-    port: 443
-    uuid: 9503e890-3702-4847-af0a-2bceac2f0da0
-    udp: true
   - name: '@V2rayng_Fast 🇩🇪-3'
     type: vless
     server: 104.16.10.2
     port: 443
     uuid: c4edb87e-8544-4fa4-bd1c-b0cda9a34b46
+    udp: true
+  - name: '@V2rayng_Fast 🇩🇪-4'
+    type: vless
+    server: 185.159.247.44
+    port: 443
+    uuid: 3ccb1d2a-d169-443a-ad5d-3f5f11759695
     udp: true
   - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
     type: vless
@@ -1125,18 +1122,36 @@ proxies:
     port: 443
     uuid: 10c3b62f-59da-55cb-b24f-2072ecb4348c
     udp: true
+  - name: '@V2rayng_Fast 🇬🇧'
+    type: vless
+    server: 151.101.56.6
+    port: 443
+    uuid: 9503e890-3702-4847-af0a-2bceac2f0da0
+    udp: true
   - name: JP日本(v2clash.blog 2026-6.9更新)
     type: vless
     server: 151.101.108.223
     port: 443
     uuid: b4a00211-ae46-49bc-8f36-0c4425eb7e86
     udp: true
-  - name: '@V2rayng_Fast 🇩🇪-4'
+  - name: '@V2rayng_Fast 🇩🇪-5'
     type: vless
     server: 167.82.101.119
     port: 443
     uuid: ea1fb226-a033-4999-9f86-49ec57629c0d
     udp: true
+  - name: 韩国 010
+    type: trojan
+    network: ws
+    server: 158.247.199.106
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
   - name: 韩国 001
     type: vless
     network: ws
@@ -1158,17 +1173,18 @@ proxies:
       headers:
         Host: t1s1.rittbo.kdns.fr
       path: /
-  - name: 韩国 010
-    type: trojan
+  - name: '🇩🇪 德国 | DEU #6'
     network: ws
-    server: 158.247.199.106
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
+    port: 8080
+    server: 104.26.13.31
+    servername: ip.sb
+    tls: false
+    type: vless
+    udp: true
+    uuid: 3e06b1db-2efb-446e-ba2d-68850dfd2f9d
     ws-opts:
       headers:
-        Host: hhcm.hhxaf.cc.cd
+        Host: bdfba-cool-tree-b580.v8fz4kbv.workers.dev
       path: /
   - name: DE 🇩🇪 | @Raydikalx | F68888
     type: vmess
@@ -1194,17 +1210,66 @@ proxies:
       headers:
         Host: nautica-cff.kloningstrife002.workers.dev
       path: /138.2.74.219-28616
-  - name: '@V2rayng_Fast 🇩🇪-5'
+  - name: '🇩🇪 德国 | DEU #3'
+    client-fingerprint: chrome
+    network: ws
+    port: 2053
+    server: 104.26.6.109
+    tls: true
     type: vless
-    server: 104.26.14.85
-    port: 8443
-    uuid: f798a2c4-c51b-409d-b349-ca8455b36796
     udp: true
+    uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+    ws-opts:
+      headers:
+        Host: pilot4f8f.pages.dev
+      path: /
+  - name: DE德国(v2clash.blog 2026-9.12新)
+    type: vless
+    server: 188.114.97.6
+    port: 8880
+    uuid: 94977b19-6720-48a6-92fd-00238757ea30
+    udp: true
+  - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
+    network: ws
+    port: 8080
+    server: 188.114.97.6
+    servername: fornewiran.ade-1000.workers.dev
+    tls: false
+    type: vless
+    uuid: 93fa8bdb-9cca-4a3e-8355-b7c12e4f595e
+    ws-opts:
+      headers:
+        Host: fornewiran.ade-1000.workers.dev
+      path: /vl/yLWNcuUuw1jlJpkDhGy?ed=2560
+  - name: JP日本(v2clash.blog 2026-10.14更新)
+    type: vless
+    server: 172.67.209.127
+    port: 8880
+    uuid: 3e553ebf-db9d-4858-b608-03d6ff615a41
+    udp: true
+  - name: 新加坡 003
+    type: trojan
+    network: ws
+    server: 103.25.202.114
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
   - name: Tel@V2rayng_Fast 🇩🇪
     type: vless
     server: 188.114.96.6
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
+    type: trojan
+    server: 172.67.180.92
+    port: 443
+    password: humanity
     udp: true
   - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
     client-fingerprint: unsafe
@@ -1225,12 +1290,6 @@ proxies:
     server: 188.114.97.6
     port: 443
     uuid: 39473ed8-fa83-4ef3-8aa6-92b865b6cb4f
-    udp: true
-  - name: JP日本(v2clash.blog 2026-10.14更新)
-    type: vless
-    server: 172.67.209.127
-    port: 8880
-    uuid: 3e553ebf-db9d-4858-b608-03d6ff615a41
     udp: true
   - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
     port: 443
@@ -1259,56 +1318,20 @@ proxies:
     port: 443
     uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
     udp: true
-  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
-    type: vless
-    server: 188.114.97.62
-    port: 443
-    uuid: b15f187e-9b34-437c-8243-8651a8ada76c
-    udp: true
-  - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    servername: fornewiran.ade-1000.workers.dev
-    tls: false
-    type: vless
-    uuid: 93fa8bdb-9cca-4a3e-8355-b7c12e4f595e
-    ws-opts:
-      headers:
-        Host: fornewiran.ade-1000.workers.dev
-      path: /vl/yLWNcuUuw1jlJpkDhGy?ed=2560
-  - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-    type: trojan
-    server: 172.67.180.92
-    port: 443
-    password: humanity
-    udp: true
-  - name: 日本 013
+  - name: 日本 004
     type: trojan
     network: ws
-    server: 172.104.81.253
+    server: 172.104.86.229
     port: 443
     password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    servername: tjsp.hhxaf.cc.cd
+    skip-cert-verify: false
     sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: DE德国(v2clash.blog 2026-9.12新)
-    type: vless
-    server: 188.114.97.6
-    port: 8880
-    uuid: 94977b19-6720-48a6-92fd-00238757ea30
-    udp: true
-  - name: 新加坡 003
-    type: trojan
-    network: ws
-    server: 103.25.202.114
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
+    allowInsecure: '0'
+    fp: chrome
+    security: tls
+    ech: cloudflare-ech.com+https://dns.alidns.com/dns-query
+    insecure: '0'
     ws-opts:
       headers:
         Host: tjsp.hhxaf.cc.cd
@@ -1331,19 +1354,6 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: 日本 030
-    type: trojan
-    network: ws
-    server: 146.56.187.1
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
   - name: 日本 003
     type: trojan
     network: ws
@@ -1362,6 +1372,31 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: 日本 030
+    type: trojan
+    network: ws
+    server: 146.56.187.1
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 日本 013
+    type: trojan
+    network: ws
+    server: 172.104.81.253
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
   - name: 新加坡 006
     type: trojan
     network: ws
@@ -1373,36 +1408,6 @@ proxies:
     ws-opts:
       headers:
         Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 日本 004
-    type: trojan
-    network: ws
-    server: 172.104.86.229
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    servername: tjsp.hhxaf.cc.cd
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    allowInsecure: '0'
-    fp: chrome
-    security: tls
-    ech: cloudflare-ech.com+https://dns.alidns.com/dns-query
-    insecure: '0'
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 日本 019
-    type: trojan
-    network: ws
-    server: 133.18.140.38
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
       path: /
 proxy-groups:
   - name: 🌐 公共节点
@@ -1422,264 +1427,264 @@ proxy-groups:
     lazy: true
     proxies:
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 美国 117
-      - 美国 867
-      - 美国 030
       - 美国 131
-      - US美国(v2clash.blog 2026-10.23更新)
-      - 🇺🇸@V2rayng_Fast
-      - 美国 111
-      - 美国 114
-      - 🇺🇸@V2rayng_Fast-2
-      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 美国 139
-      - 美国 135
-      - 美国 141
-      - 韩国 009
-      - 美国 137
-      - 韩国 005
-      - 美国 143
-      - 美国 126
-      - 美国 124
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - US美国(v2clash.blog 2026-10.20更新)
-      - US美国(v2clash.blog 2026-10.22更新)
       - 美国 1117
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
-      - '@V2rayng_Fast 🇩🇪'
-      - US 🇺🇸 | @Raydikalx | A21CA4
       - 美国 1118
-      - '🇹🇼 🇨🇳 台湾 | TWN #1'
-      - 美国 133
-      - 日本 021
-      - '@V2rayng_Fast 🇩🇪-2'
-      - US美国(v2clash.blog 2026-10.14更新)
-      - 日本 012
-      - 美国 238
-      - 美国 1172
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - US美国(v2clash.blog 2026-10.9更新)
-      - 美国 168
-      - 美国 171
-      - 美国 174
-      - 美国 857
-      - 美国 1055
-      - TW台湾(v2clash.blog 2026-10.24更新)
-      - 美国 166
-      - 美国 225
-      - 美国 858
-      - US 🇺🇸 | @Raydikalx | 4452C9
-      - 🇺🇸US-179.255.132.69-5707
-      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
-      - '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
-      - 美国 183
-      - 美国 235
-      - 美国 1166
-      - 美国 184
-      - 美国 197
-      - 🇺🇸Telegram👉@v2rayNG_Matsuri
-      - 美国 368
-      - 美国 988
-      - 美国 1048
-      - 美国 188
-      - 美国 850
-      - 美国 978
+      - 美国 117
+      - 🇺🇸@V2rayng_Fast
       - 美国 045
-      - 美国 246
-      - '[free18#238] 🇺🇸_美国 (57)'
-      - 美国 163
-      - 美国 175
-      - 美国 176
-      - 美国 241
-      - US美国(v2clash.blog 2026-8.15更新)
-      - US美国mibei77.com 米贝节点分享)(v2clash.blog 2026-10.9更新)
-      - 美国 157
-      - 美国 856
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-      - '[free18#245] 🇺🇸_美国 (64)'
-      - 美国 191
-      - US 🇺🇸 | @Raydikalx | 2D4470
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-      - 美国 187
-      - 美国 189
-      - DE VLESS-01 | free-nodes
-      - 美国 165
-      - 美国 951
-      - US 🇺🇸 | @Raydikalx | 676D28
-      - '[free18#247] 🇺🇸_美国 (66)'
-      - 美国 179
-      - 美国 950
-      - 美国 1058
-      - 🇺🇸US-192.236.151.43-5802
-      - US美国(v2clash.blog 2026-8.27更新)
-      - US美国(v2clash.blog 2026-10.13更新)
-      - '[free18#250] 🇺🇸_美国 (69)'
-      - US VLESS-12 | free-nodes
-      - 美国 036
-      - 美国 037
+      - 美国 141
+      - US 🇺🇸 | @Raydikalx | A21CA4
+      - 美国 114
+      - 美国 113
+      - 美国 143
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
+      - 美国 116
       - 日本 018
+      - 韩国 005
+      - 韩国 009
+      - 美国 030
+      - 美国 126
+      - 美国 135
+      - 美国 137
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
+      - US美国(v2clash.blog 2026-10.22更新)
+      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - 美国 111
+      - 美国 139
+      - 🇺🇸@V2rayng_Fast-2
+      - '@V2rayng_Fast 🇩🇪'
+      - 美国 124
+      - 美国 867
+      - US美国(v2clash.blog 2026-10.23更新)
+      - US美国(v2clash.blog 2026-10.20更新)
+      - '🇹🇼 🇨🇳 台湾 | TWN #1'
+      - 美国 1119
+      - 日本 019
+      - 美国 133
+      - 美国 949
+      - 美国 115
+      - US美国(v2clash.blog 2026-10.22更新)-2
+      - DE VLESS-01 | free-nodes
+      - 美国 134
+      - 美国 166
+      - 美国 179
+      - 美国 1055
+      - 美国 130
+      - 美国 181
+      - 美国 161
+      - 美国 171
+      - 日本 021
+      - 美国 182
+      - 美国 225
+      - US美国(v2clash.blog 2026-9.17更新)
+      - US美国(v2clash.blog 2026-8.27更新)
+      - US美国(v2clash.blog 2026-5.26更新)
+      - 🇺🇸@proxy_kafee
+      - 美国 226
+      - 美国 229
+      - 美国 909
+      - 美国 992
+      - 美国 1172
+      - 🇺🇸US-179.255.132.69-5707
+      - US美国(mibei77.com 米贝节点分享)
+      - US美国(v2clash.blog 2026-9.5)
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
+      - '[free18#238] 🇺🇸_美国 (57)'
+      - '[free18#248] 🇺🇸_美国 (67)'
+      - US VLESS-12 | free-nodes
+      - 美国 187
+      - 美国 191
+      - 美国 850
+      - TW台湾(v2clash.blog 2026-10.24更新)
+      - US美国(v2clash.blog 2026-10.13更新)
+      - US美国(v2clash.blog 2026-10.8更新)
+      - '@V2rayng_Fast 🇩🇪-2'
+      - '[free18#245] 🇺🇸_美国 (64)'
+      - '[free18#247] 🇺🇸_美国 (66)'
+      - '[free18#264] 🇺🇸_美国 (73)'
+      - 美国 162
+      - 美国 951
+      - 美国 165
+      - 美国 174
+      - 美国 236
+      - 美国 368
+      - 美国 1058
+      - US 🇺🇸 | @Raydikalx | 4452C9
+      - 日本 012
+      - 美国 157
+      - 美国 192
+      - 美国 197
+      - 美国 940
+      - '[free18#250] 🇺🇸_美国 (69)'
+      - 美国 034
+      - 美国 175
+      - 美国 950
+      - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
+      - 美国 036
+      - '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
       - DE 🇩🇪 | @Raydikalx | 4769A2
-      - '@V2rayng_Fast 🇬🇧'
       - '@V2rayng_Fast 🇩🇪-3'
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
-      - JP日本(v2clash.blog 2026-6.9更新)
       - '@V2rayng_Fast 🇩🇪-4'
-      - 韩国 001
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
+      - '@V2rayng_Fast 🇬🇧'
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - '@V2rayng_Fast 🇩🇪-5'
       - 韩国 010
+      - 韩国 001
+      - '🇩🇪 德国 | DEU #6'
       - DE 🇩🇪 | @Raydikalx | F68888
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - '@V2rayng_Fast 🇩🇪-5'
+      - '🇩🇪 德国 | DEU #3'
+      - DE德国(v2clash.blog 2026-9.12新)
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - 新加坡 003
       - Tel@V2rayng_Fast 🇩🇪
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - JP日本(v2clash.blog 2026-10.14更新)
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #6'
       - '@V2rayng_Fast 🇩🇪-6'
-      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-      - 日本 013
-      - DE德国(v2clash.blog 2026-9.12新)
-      - 新加坡 003
+      - 日本 004
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 日本 030
       - 日本 003
+      - 日本 030
+      - 日本 013
       - 新加坡 006
-      - 日本 004
-      - 日本 019
   - name: ☝️ 全部-手动
     type: select
     proxies:
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 美国 117
-      - 美国 867
-      - 美国 030
       - 美国 131
-      - US美国(v2clash.blog 2026-10.23更新)
-      - 🇺🇸@V2rayng_Fast
-      - 美国 111
-      - 美国 114
-      - 🇺🇸@V2rayng_Fast-2
-      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
-      - 美国 139
-      - 美国 135
-      - 美国 141
-      - 韩国 009
-      - 美国 137
-      - 韩国 005
-      - 美国 143
-      - 美国 126
-      - 美国 124
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - US美国(v2clash.blog 2026-10.20更新)
-      - US美国(v2clash.blog 2026-10.22更新)
       - 美国 1117
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
-      - '@V2rayng_Fast 🇩🇪'
-      - US 🇺🇸 | @Raydikalx | A21CA4
       - 美国 1118
-      - '🇹🇼 🇨🇳 台湾 | TWN #1'
-      - 美国 133
-      - 日本 021
-      - '@V2rayng_Fast 🇩🇪-2'
-      - US美国(v2clash.blog 2026-10.14更新)
-      - 日本 012
-      - 美国 238
-      - 美国 1172
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - US美国(v2clash.blog 2026-10.9更新)
-      - 美国 168
-      - 美国 171
-      - 美国 174
-      - 美国 857
-      - 美国 1055
-      - TW台湾(v2clash.blog 2026-10.24更新)
-      - 美国 166
-      - 美国 225
-      - 美国 858
-      - US 🇺🇸 | @Raydikalx | 4452C9
-      - 🇺🇸US-179.255.132.69-5707
-      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
-      - '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
-      - 美国 183
-      - 美国 235
-      - 美国 1166
-      - 美国 184
-      - 美国 197
-      - 🇺🇸Telegram👉@v2rayNG_Matsuri
-      - 美国 368
-      - 美国 988
-      - 美国 1048
-      - 美国 188
-      - 美国 850
-      - 美国 978
+      - 美国 117
+      - 🇺🇸@V2rayng_Fast
       - 美国 045
-      - 美国 246
-      - '[free18#238] 🇺🇸_美国 (57)'
-      - 美国 163
-      - 美国 175
-      - 美国 176
-      - 美国 241
-      - US美国(v2clash.blog 2026-8.15更新)
-      - US美国mibei77.com 米贝节点分享)(v2clash.blog 2026-10.9更新)
-      - 美国 157
-      - 美国 856
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-      - '[free18#245] 🇺🇸_美国 (64)'
-      - 美国 191
-      - US 🇺🇸 | @Raydikalx | 2D4470
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-      - 美国 187
-      - 美国 189
-      - DE VLESS-01 | free-nodes
-      - 美国 165
-      - 美国 951
-      - US 🇺🇸 | @Raydikalx | 676D28
-      - '[free18#247] 🇺🇸_美国 (66)'
-      - 美国 179
-      - 美国 950
-      - 美国 1058
-      - 🇺🇸US-192.236.151.43-5802
-      - US美国(v2clash.blog 2026-8.27更新)
-      - US美国(v2clash.blog 2026-10.13更新)
-      - '[free18#250] 🇺🇸_美国 (69)'
-      - US VLESS-12 | free-nodes
-      - 美国 036
-      - 美国 037
+      - 美国 141
+      - US 🇺🇸 | @Raydikalx | A21CA4
+      - 美国 114
+      - 美国 113
+      - 美国 143
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
+      - 美国 116
       - 日本 018
+      - 韩国 005
+      - 韩国 009
+      - 美国 030
+      - 美国 126
+      - 美国 135
+      - 美国 137
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
+      - US美国(v2clash.blog 2026-10.22更新)
+      - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - 美国 111
+      - 美国 139
+      - 🇺🇸@V2rayng_Fast-2
+      - '@V2rayng_Fast 🇩🇪'
+      - 美国 124
+      - 美国 867
+      - US美国(v2clash.blog 2026-10.23更新)
+      - US美国(v2clash.blog 2026-10.20更新)
+      - '🇹🇼 🇨🇳 台湾 | TWN #1'
+      - 美国 1119
+      - 日本 019
+      - 美国 133
+      - 美国 949
+      - 美国 115
+      - US美国(v2clash.blog 2026-10.22更新)-2
+      - DE VLESS-01 | free-nodes
+      - 美国 134
+      - 美国 166
+      - 美国 179
+      - 美国 1055
+      - 美国 130
+      - 美国 181
+      - 美国 161
+      - 美国 171
+      - 日本 021
+      - 美国 182
+      - 美国 225
+      - US美国(v2clash.blog 2026-9.17更新)
+      - US美国(v2clash.blog 2026-8.27更新)
+      - US美国(v2clash.blog 2026-5.26更新)
+      - 🇺🇸@proxy_kafee
+      - 美国 226
+      - 美国 229
+      - 美国 909
+      - 美国 992
+      - 美国 1172
+      - 🇺🇸US-179.255.132.69-5707
+      - US美国(mibei77.com 米贝节点分享)
+      - US美国(v2clash.blog 2026-9.5)
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
+      - '[free18#238] 🇺🇸_美国 (57)'
+      - '[free18#248] 🇺🇸_美国 (67)'
+      - US VLESS-12 | free-nodes
+      - 美国 187
+      - 美国 191
+      - 美国 850
+      - TW台湾(v2clash.blog 2026-10.24更新)
+      - US美国(v2clash.blog 2026-10.13更新)
+      - US美国(v2clash.blog 2026-10.8更新)
+      - '@V2rayng_Fast 🇩🇪-2'
+      - '[free18#245] 🇺🇸_美国 (64)'
+      - '[free18#247] 🇺🇸_美国 (66)'
+      - '[free18#264] 🇺🇸_美国 (73)'
+      - 美国 162
+      - 美国 951
+      - 美国 165
+      - 美国 174
+      - 美国 236
+      - 美国 368
+      - 美国 1058
+      - US 🇺🇸 | @Raydikalx | 4452C9
+      - 日本 012
+      - 美国 157
+      - 美国 192
+      - 美国 197
+      - 美国 940
+      - '[free18#250] 🇺🇸_美国 (69)'
+      - 美国 034
+      - 美国 175
+      - 美国 950
+      - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
+      - 美国 036
+      - '[NoMoreWalls#280] 🇬🇧 英国 | GBR #1'
       - DE 🇩🇪 | @Raydikalx | 4769A2
-      - '@V2rayng_Fast 🇬🇧'
       - '@V2rayng_Fast 🇩🇪-3'
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
-      - JP日本(v2clash.blog 2026-6.9更新)
       - '@V2rayng_Fast 🇩🇪-4'
-      - 韩国 001
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
+      - '@V2rayng_Fast 🇬🇧'
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - '@V2rayng_Fast 🇩🇪-5'
       - 韩国 010
+      - 韩国 001
+      - '🇩🇪 德国 | DEU #6'
       - DE 🇩🇪 | @Raydikalx | F68888
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - '@V2rayng_Fast 🇩🇪-5'
+      - '🇩🇪 德国 | DEU #3'
+      - DE德国(v2clash.blog 2026-9.12新)
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - 新加坡 003
       - Tel@V2rayng_Fast 🇩🇪
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - JP日本(v2clash.blog 2026-10.14更新)
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #6'
       - '@V2rayng_Fast 🇩🇪-6'
-      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-      - 日本 013
-      - DE德国(v2clash.blog 2026-9.12新)
-      - 新加坡 003
+      - 日本 004
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 日本 030
       - 日本 003
+      - 日本 030
+      - 日本 013
       - 新加坡 006
-      - 日本 004
-      - 日本 019
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1688,22 +1693,21 @@ proxy-groups:
     lazy: true
     proxies:
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - 日本 018
       - '[NoMoreWalls#082] 🇯🇵[www.v2nodes.com] vless-JP-1... #4'
+      - 日本 019
       - 日本 021
       - 日本 012
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-      - 日本 018
       - JP日本(v2clash.blog 2026-6.9更新)
       - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
       - JP日本(v2clash.blog 2026-10.14更新)
-      - 日本 013
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #8'
+      - 日本 004
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 日本 030
       - 日本 003
-      - 日本 004
-      - 日本 019
+      - 日本 030
+      - 日本 013
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1711,86 +1715,86 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - 美国 117
-      - 美国 867
-      - 美国 030
       - 美国 131
-      - US美国(v2clash.blog 2026-10.23更新)
-      - 🇺🇸@V2rayng_Fast
-      - 美国 111
-      - 美国 114
-      - 🇺🇸@V2rayng_Fast-2
-      - 美国 139
-      - 美国 135
-      - 美国 141
-      - 美国 137
-      - 美国 143
-      - 美国 126
-      - 美国 124
-      - US美国(v2clash.blog 2026-10.20更新)
-      - US美国(v2clash.blog 2026-10.22更新)
       - 美国 1117
-      - US 🇺🇸 | @Raydikalx | A21CA4
       - 美国 1118
-      - 美国 133
-      - US美国(v2clash.blog 2026-10.14更新)
-      - 美国 238
-      - 美国 1172
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - US美国(v2clash.blog 2026-10.9更新)
-      - 美国 168
-      - 美国 171
-      - 美国 174
-      - 美国 857
-      - 美国 1055
-      - 美国 166
-      - 美国 225
-      - 美国 858
-      - US 🇺🇸 | @Raydikalx | 4452C9
-      - 🇺🇸US-179.255.132.69-5707
-      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
-      - 美国 183
-      - 美国 235
-      - 美国 1166
-      - 美国 184
-      - 美国 197
-      - 🇺🇸Telegram👉@v2rayNG_Matsuri
-      - 美国 368
-      - 美国 988
-      - 美国 1048
-      - 美国 188
-      - 美国 850
-      - 美国 978
+      - 美国 117
+      - 🇺🇸@V2rayng_Fast
       - 美国 045
-      - 美国 246
-      - '[free18#238] 🇺🇸_美国 (57)'
-      - 美国 163
-      - 美国 175
-      - 美国 176
-      - 美国 241
-      - US美国(v2clash.blog 2026-8.15更新)
-      - US美国mibei77.com 米贝节点分享)(v2clash.blog 2026-10.9更新)
-      - 美国 157
-      - 美国 856
-      - '[free18#245] 🇺🇸_美国 (64)'
-      - 美国 191
-      - US 🇺🇸 | @Raydikalx | 2D4470
-      - 美国 187
-      - 美国 189
-      - 美国 165
-      - 美国 951
-      - US 🇺🇸 | @Raydikalx | 676D28
-      - '[free18#247] 🇺🇸_美国 (66)'
+      - 美国 141
+      - US 🇺🇸 | @Raydikalx | A21CA4
+      - 美国 114
+      - 美国 113
+      - 美国 143
+      - 美国 116
+      - 美国 030
+      - 美国 126
+      - 美国 135
+      - 美国 137
+      - US美国(v2clash.blog 2026-10.22更新)
+      - 美国 111
+      - 美国 139
+      - 🇺🇸@V2rayng_Fast-2
+      - 美国 124
+      - 美国 867
+      - US美国(v2clash.blog 2026-10.23更新)
+      - US美国(v2clash.blog 2026-10.20更新)
+      - 美国 1119
+      - 美国 133
+      - 美国 949
+      - 美国 115
+      - US美国(v2clash.blog 2026-10.22更新)-2
+      - 美国 134
+      - 美国 166
       - 美国 179
-      - 美国 950
-      - 美国 1058
-      - 🇺🇸US-192.236.151.43-5802
+      - 美国 1055
+      - 美国 130
+      - 美国 181
+      - 美国 161
+      - 美国 171
+      - 美国 182
+      - 美国 225
+      - US美国(v2clash.blog 2026-9.17更新)
       - US美国(v2clash.blog 2026-8.27更新)
-      - US美国(v2clash.blog 2026-10.13更新)
-      - '[free18#250] 🇺🇸_美国 (69)'
+      - US美国(v2clash.blog 2026-5.26更新)
+      - 🇺🇸@proxy_kafee
+      - 美国 226
+      - 美国 229
+      - 美国 909
+      - 美国 992
+      - 美国 1172
+      - 🇺🇸US-179.255.132.69-5707
+      - US美国(mibei77.com 米贝节点分享)
+      - US美国(v2clash.blog 2026-9.5)
+      - '[free18#238] 🇺🇸_美国 (57)'
+      - '[free18#248] 🇺🇸_美国 (67)'
       - US VLESS-12 | free-nodes
+      - 美国 187
+      - 美国 191
+      - 美国 850
+      - US美国(v2clash.blog 2026-10.13更新)
+      - US美国(v2clash.blog 2026-10.8更新)
+      - '[free18#245] 🇺🇸_美国 (64)'
+      - '[free18#247] 🇺🇸_美国 (66)'
+      - '[free18#264] 🇺🇸_美国 (73)'
+      - 美国 162
+      - 美国 951
+      - 美国 165
+      - 美国 174
+      - 美国 236
+      - 美国 368
+      - 美国 1058
+      - US 🇺🇸 | @Raydikalx | 4452C9
+      - 美国 157
+      - 美国 192
+      - 美国 197
+      - 美国 940
+      - '[free18#250] 🇺🇸_美国 (69)'
+      - 美国 034
+      - 美国 175
+      - 美国 950
+      - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
       - 美国 036
-      - 美国 037
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1801,21 +1805,22 @@ proxy-groups:
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - '@V2rayng_Fast 🇩🇪'
-      - '@V2rayng_Fast 🇩🇪-2'
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - DE VLESS-01 | free-nodes
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
+      - '@V2rayng_Fast 🇩🇪-2'
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - '@V2rayng_Fast 🇩🇪-3'
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - '@V2rayng_Fast 🇩🇪-4'
-      - DE 🇩🇪 | @Raydikalx | F68888
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - '@V2rayng_Fast 🇩🇪-5'
+      - '🇩🇪 德国 | DEU #6'
+      - DE 🇩🇪 | @Raydikalx | F68888
+      - '🇩🇪 德国 | DEU #3'
+      - DE德国(v2clash.blog 2026-9.12新)
       - Tel@V2rayng_Fast 🇩🇪
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - '@V2rayng_Fast 🇩🇪-6'
-      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-      - DE德国(v2clash.blog 2026-9.12新)
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
