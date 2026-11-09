@@ -140,6 +140,22 @@ proxies:
     port: 443
     uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
     udp: true
+  - name: 美国 1038
+    type: vless
+    network: ws
+    server: 199.181.197.176
+    port: 443
+    uuid: AlfredConfig
+    servername: alfi.yas-nowin.ir
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: alfi.yas-nowin.ir
+      path: /?ed=2048
   - name: 美国 140
     type: trojan
     network: ws
@@ -715,6 +731,22 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
+  - name: 美国 340
+    type: vless
+    network: ws
+    server: 104.26.12.222
+    port: 443
+    uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
+    servername: octopusss5.info
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+    packet-encoding: xudp
+    ws-opts:
+      headers:
+        Host: octopusss5.info
+      path: /udfyfws
   - name: US美国(v2clash.blog 2026-10.10更新)
     type: vless
     server: 162.159.135.234
@@ -992,36 +1024,12 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: 美国 252
-    type: trojan
-    network: ws
-    server: 104.16.174.22
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
   - name: JP日本(v2clash.blog 2026-10.23更新)
     type: vless
     server: 172.104.80.248
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: 美国 199
-    type: trojan
-    network: ws
-    server: 104.18.152.225
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
   - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
     type: vless
     server: 69.46.46.215
@@ -1362,6 +1370,7 @@ proxy-groups:
       - 美国 122
       - 日本 003
       - 🇺🇸@V2rayng_Fast
+      - 美国 1038
       - 美国 140
       - 美国 163
       - 美国 136
@@ -1413,6 +1422,7 @@ proxy-groups:
       - 美国 907
       - 美国 909
       - 美国 181
+      - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
       - 美国 208
       - 🇺🇸US-192.236.151.43-5817
@@ -1442,9 +1452,7 @@ proxy-groups:
       - 美国 1177
       - 美国 249
       - 日本 016
-      - 美国 252
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 美国 199
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -1492,6 +1500,7 @@ proxy-groups:
       - 美国 122
       - 日本 003
       - 🇺🇸@V2rayng_Fast
+      - 美国 1038
       - 美国 140
       - 美国 163
       - 美国 136
@@ -1543,6 +1552,7 @@ proxy-groups:
       - 美国 907
       - 美国 909
       - 美国 181
+      - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
       - 美国 208
       - 🇺🇸US-192.236.151.43-5817
@@ -1572,9 +1582,7 @@ proxy-groups:
       - 美国 1177
       - 美国 249
       - 日本 016
-      - 美国 252
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 美国 199
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -1645,6 +1653,7 @@ proxy-groups:
       - 美国 172
       - 美国 122
       - 🇺🇸@V2rayng_Fast
+      - 美国 1038
       - 美国 140
       - 美国 163
       - 美国 136
@@ -1689,6 +1698,7 @@ proxy-groups:
       - 美国 907
       - 美国 909
       - 美国 181
+      - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
       - 美国 208
       - 🇺🇸US-192.236.151.43-5817
@@ -1714,8 +1724,6 @@ proxy-groups:
       - '@ShadowProxy66 🇺🇸-3'
       - 美国 1177
       - 美国 249
-      - 美国 252
-      - 美国 199
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
