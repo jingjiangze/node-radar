@@ -2,30 +2,21 @@
 
 自动发现、聚合、审计并发布公开 Clash / Mihomo 节点。公共节点池与自建隧道池保持隔离。
 
-## 自动流程
+## 自动流程（2026-11-09 起：只做合并发布）
 
-1. 定时搜索公开 GitHub 订阅源；新源先进入 `sources.candidates.json` 隔离区。
-2. 候选源需要连续 3 轮成功、跨越至少 48 小时且每次至少解析出 5 个节点，才晋升到 `sources.auto.json`。
-3. 聚合人工策展源和已晋升源，解析协议、校验字段、去重并进行 TCP 端口探测。
-4. Mihomo 验证生成的完整订阅与精简订阅。
-5. 从抽样节点逐个切换 Mihomo 代理，访问 Cloudflare Trace，记录真实出口 IP、Cloudflare colo、国家与 WARP 标志。
-6. 对节点端点 IP 和代理实际出口 IP 查询 ASN / 网络归属 / 机房信号，生成 CF 与数据中心审计报告。
-7. 所有门禁通过后，Actions 自动提交订阅和报告到 `main`；失败时保留上一版，不发布本轮产物。
+1. 每周两次搜索公开 GitHub 订阅源；新源先进入 `sources.candidates.json` 隔离区。
+2. 每轮（约 8–10 分钟）：源清单超过 24h 才刷新 → 聚合人工策展源 + 已晋升源 → 解析/校验/去重/TCP 探活 → `mihomo -t` 验证 → 发布 `dist/clash.yaml` / `dist/clash-lite.yaml` / `dist/summary.json` → dispatch 下一轮。
+3. 失败保留上一版、不发布本轮产物；watchdog 每 3 小时检查最近一次成功运行。
+
+> 为什么停掉探测与测速：CI 侧单次健康检查不可信（同一节点能在 1.2s 与超时之间摆动），两层都白烧额度。CN 侧的协议级筛选改由外部服务每天跑一次，结果走独立订阅地址下发，不再回写本仓库。
 
 ## 产物
 
 | 文件 | 用途 |
 |---|---|
-| `dist/clash.yaml` | 全量公开节点池 |
+| `dist/clash.yaml` | 全量公开节点池（合并结果） |
 | `dist/clash-lite.yaml` | 地区分层精简池 |
-| `dist/speed-top.yaml` | 实测高速节点（达到最低数量时生成） |
 | `dist/summary.json` | 源、协议、地区和存活汇总 |
-| `dist/egress-audit.json` | 代理真实出口审计记录 |
-| `dist/cf-egress.json` | 被证据确认的 CF/WARP 出口节点 |
-| `dist/cf-fronted-endpoints.json` | 节点端点位于 Cloudflare 网络的候选 |
-| `dist/cf-egress.yaml` | 有真实出口证据的 CF 专项订阅（样本池，不代表全量） |
-| `dist/datacenter-audit.json` | 节点端点 / 出口 IP 的数据中心信号 |
-| `dist/ip-meta-cache.json` | IP 归属元数据缓存，减少重复查询 |
 
 ## CF 分类口径
 
@@ -53,6 +44,10 @@
 ## 手动运行
 
 在 Actions 中运行 `aggregate-nodes`、`discover-sources` 或 `speedtest`。聚合工作流的最终发布仍受 Mihomo 配置校验和出口审计门禁控制。
+
+## 归档
+
+详见 [`archive/README.md`](archive/README.md)。精简池口径已变：停掉 cn-probe 后没有国内可达数据，`clash-lite.yaml` 退回「按地区取安全节点前 N」，不再要求国内验证。
 
 ## 许可
 
