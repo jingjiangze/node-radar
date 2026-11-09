@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 WorkingDirectory=/opt/poolfilter
-ExecStart=/usr/bin/env node run.mjs
+ExecStart=/usr/local/node-v22.11.0/bin/node run.mjs
 TimeoutStartSec=3600
 Nice=10
 IOSchedulingClass=best-effort
