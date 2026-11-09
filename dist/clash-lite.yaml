@@ -1323,29 +1323,15 @@ proxies:
     port: 443
     uuid: c4edb87e-8544-4fa4-bd1c-b0cda9a34b46
     udp: true
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-    encryption: none
-    network: ws
-    port: 11424
-    server: 38.47.96.220
-    servername: notls.lukongtou.eu.org
-    skip-cert-verify: false
-    tls: true
-    type: vless
-    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
-    ws-opts:
-      headers:
-        Host: notls.lukongtou.eu.org
-      path: Telegram-WangCai2🇨🇳
 proxy-groups:
   - name: 🌐 公共节点
     type: select
     proxies:
       - ♻️ 全部-自动
       - ☝️ 全部-手动
-      - 📍 日本
       - 📍 美国
       - 📍 德国
+      - 📍 日本
       - DIRECT
   - name: ♻️ 全部-自动
     type: url-test
@@ -1480,7 +1466,6 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: ☝️ 全部-手动
     type: select
     proxies:
@@ -1610,29 +1595,6 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-  - name: 📍 日本
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - 日本 019
-      - 日本 003
-      - 日本 012
-      - 日本 004
-      - 日本 016
-      - JP日本(v2clash.blog 2026-10.23更新)
-      - JP日本(v2clash.blog 2026-6.9更新)
-      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]
-      - 日本 021
-      - 日本 018
-      - 日本 013
-      - JP日本(v2clash.blog 2026-10.14更新)
-      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]-2
-      - 日本 030
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1747,6 +1709,27 @@ proxy-groups:
       - ProxyPool | 🇩🇪 德国 | DEU
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
+  - name: 📍 日本
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - 日本 019
+      - 日本 003
+      - 日本 012
+      - 日本 004
+      - 日本 016
+      - JP日本(v2clash.blog 2026-10.23更新)
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]
+      - 日本 021
+      - 日本 018
+      - 日本 013
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]-2
+      - 日本 030
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204

@@ -1,37 +1,37 @@
 {
-  "generatedAt": "2026-11-09T10:49:47.801Z",
-  "totalRaw": 25214,
-  "totalUnique": 15982,
-  "totalAlive": 3060,
+  "generatedAt": "2026-11-09T10:57:36.926Z",
+  "totalRaw": 25222,
+  "totalUnique": 15987,
+  "totalAlive": 3066,
   "probe": {
     "enabled": true,
-    "probed": 15982,
-    "alive": 4707,
-    "ms": 168060
+    "probed": 15987,
+    "alive": 4705,
+    "ms": 167775
   },
   "protocolProbe": {
-    "tls检查": 2098,
-    "tls失败": 621,
-    "ws检查": 1369,
-    "ws路径错": 751
+    "tls检查": 2092,
+    "tls失败": 620,
+    "ws检查": 1373,
+    "ws路径错": 747
   },
   "regions": {
-    "日本": 52,
-    "美国": 510,
-    "韩国": 17,
-    "德国": 141,
-    "新加坡": 62,
+    "美国": 513,
+    "韩国": 23,
+    "德国": 139,
+    "日本": 51,
+    "新加坡": 58,
     "台湾": 6,
     "英国": 101,
-    "香港": 16
+    "香港": 17
   },
   "byType": {
-    "http": 318,
-    "vless": 1674,
-    "vmess": 404,
+    "vless": 1670,
+    "vmess": 408,
     "trojan": 383,
-    "ss": 242,
-    "socks5": 19,
+    "http": 314,
+    "ss": 251,
+    "socks5": 20,
     "hysteria2": 17,
     "ssr": 1,
     "mieru": 1,
@@ -39,7 +39,7 @@
   },
   "unsafe": {
     "total": 494,
-    "cnConfirmed": 91
+    "cnConfirmed": 92
   },
   "sources": [
     {
@@ -93,7 +93,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4402,
+      "count": 4410,
       "ok": true
     },
     {
