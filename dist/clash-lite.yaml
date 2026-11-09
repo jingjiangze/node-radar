@@ -737,18 +737,6 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: 14 🇺🇸 сша | mega vpn @vpnsmegabot
-    type: trojan
-    server: 172.67.118.45
-    port: 2053
-    password: gHQP0D7D15
-    udp: true
-    sni: marvdasht.phonecomparisonblog.org
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: marvdasht.phonecomparisonblog.org
   - name: 美国 208
     type: trojan
     network: ws
@@ -1008,6 +996,22 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
+  - name: 美国 349
+    type: vless
+    network: ws
+    server: 104.26.13.222
+    port: 443
+    uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
+    servername: octopusss5.info
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+    packet-encoding: xudp
+    ws-opts:
+      headers:
+        Host: octopusss5.info
+      path: /udfyfws
   - name: 日本 016
     type: trojan
     network: ws
@@ -1329,9 +1333,9 @@ proxy-groups:
     proxies:
       - ♻️ 全部-自动
       - ☝️ 全部-手动
+      - 📍 日本
       - 📍 美国
       - 📍 德国
-      - 📍 日本
       - DIRECT
   - name: ♻️ 全部-自动
     type: url-test
@@ -1405,7 +1409,6 @@ proxy-groups:
       - 美国 181
       - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
-      - 14 🇺🇸 сша | mega vpn @vpnsmegabot
       - 美国 208
       - 🇺🇸US-192.236.151.43-5817
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
@@ -1433,6 +1436,7 @@ proxy-groups:
       - '@ShadowProxy66 🇺🇸-3'
       - 美国 1177
       - 美国 249
+      - 美国 349
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
@@ -1534,7 +1538,6 @@ proxy-groups:
       - 美国 181
       - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
-      - 14 🇺🇸 сша | mega vpn @vpnsmegabot
       - 美国 208
       - 🇺🇸US-192.236.151.43-5817
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
@@ -1562,6 +1565,7 @@ proxy-groups:
       - '@ShadowProxy66 🇺🇸-3'
       - 美国 1177
       - 美国 249
+      - 美国 349
       - 日本 016
       - JP日本(v2clash.blog 2026-10.23更新)
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
@@ -1595,6 +1599,27 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
+  - name: 📍 日本
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - 日本 019
+      - 日本 003
+      - 日本 012
+      - 日本 004
+      - 日本 016
+      - JP日本(v2clash.blog 2026-10.23更新)
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]
+      - 日本 021
+      - 日本 018
+      - 日本 013
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]-2
+      - 日本 030
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1657,7 +1682,6 @@ proxy-groups:
       - 美国 181
       - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
-      - 14 🇺🇸 сша | mega vpn @vpnsmegabot
       - 美国 208
       - 🇺🇸US-192.236.151.43-5817
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
@@ -1682,6 +1706,7 @@ proxy-groups:
       - '@ShadowProxy66 🇺🇸-3'
       - 美国 1177
       - 美国 249
+      - 美国 349
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1709,27 +1734,6 @@ proxy-groups:
       - ProxyPool | 🇩🇪 德国 | DEU
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
-  - name: 📍 日本
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - 日本 019
-      - 日本 003
-      - 日本 012
-      - 日本 004
-      - 日本 016
-      - JP日本(v2clash.blog 2026-10.23更新)
-      - JP日本(v2clash.blog 2026-6.9更新)
-      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]
-      - 日本 021
-      - 日本 018
-      - 日本 013
-      - JP日本(v2clash.blog 2026-10.14更新)
-      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]-2
-      - 日本 030
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
