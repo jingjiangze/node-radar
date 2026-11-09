@@ -28,10 +28,6 @@
     "url": "https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash"
   },
   {
-    "name": "vxiaov/free_proxies",
-    "url": "https://raw.githubusercontent.com/vxiaov/free_proxies/main/clash/clash.provider.yaml"
-  },
-  {
     "name": "ts-sf/fly",
     "url": "https://raw.githubusercontent.com/ts-sf/fly/main/clash"
   },
@@ -44,7 +40,11 @@
     "url": "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt"
   },
   {
-    "name": "freefq/free",
-    "url": "https://raw.githubusercontent.com/freefq/free/master/v2"
+    "name": "mahdibland/ShadowsocksAggregator",
+    "url": "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml"
+  },
+  {
+    "name": "Ruk1ng001/freeSub",
+    "url": "https://raw.githubusercontent.com/Ruk1ng001/freeSub/main/clash.yaml"
   }
 ]
