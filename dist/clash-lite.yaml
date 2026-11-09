@@ -1085,6 +1085,16 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: 🇩🇪 CA 🇨🇦 | @Raydikalx | A9DE23
+    type: trojan
+    server: 104.17.10.171
+    port: 443
+    password: 883e3cc8-9613-4f2d-8c42-0dd3d429db55
+    udp: true
+    sni: ltf8.jueson.de5.net
+    network: ws
+    ws-opts:
+      path: /
   - name: DE 🇩🇪 | @Raydikalx | 5E3474
     type: vmess
     server: 185.204.170.130
@@ -1534,6 +1544,7 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-6.9更新)
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 韩国 010
+      - 🇩🇪 CA 🇨🇦 | @Raydikalx | A9DE23
       - DE 🇩🇪 | @Raydikalx | 5E3474
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - 日本 021
@@ -1670,6 +1681,7 @@ proxy-groups:
       - JP日本(v2clash.blog 2026-6.9更新)
       - TW台湾(v2clash.blog 2026-10.24更新)
       - 韩国 010
+      - 🇩🇪 CA 🇨🇦 | @Raydikalx | A9DE23
       - DE 🇩🇪 | @Raydikalx | 5E3474
       - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - 日本 021
@@ -1829,6 +1841,7 @@ proxy-groups:
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
+      - 🇩🇪 CA 🇨🇦 | @Raydikalx | A9DE23
       - DE 🇩🇪 | @Raydikalx | 5E3474
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
       - DE VLESS-01 | free-nodes
