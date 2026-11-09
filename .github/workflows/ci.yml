@@ -42,15 +42,16 @@ jobs:
             if (!fs.existsSync(file)) continue;
             JSON.parse(fs.readFileSync(file, 'utf8'));
           }
-          for (const file of ['dist/clash.yaml', 'dist/clash-lite.yaml', 'dist/speed-top.yaml', 'dist/cf-egress.yaml']) {
+          // 2026-11-09：探测/测速两层已归档（archive/scripts），产物只剩合并发布的这三份
+          for (const file of ['dist/clash.yaml', 'dist/clash-lite.yaml']) {
             if (!fs.existsSync(file)) continue;
             const parsed = yaml.load(fs.readFileSync(file, 'utf8'));
-            if (file.endsWith('clash.yaml') && !Array.isArray(parsed?.proxies)) {
+            if (!Array.isArray(parsed?.proxies)) {
               throw new Error(file + ': missing proxies array');
             }
           }
-          for (const file of ['dist/summary.json', 'dist/egress-audit.json', 'dist/cf-egress.json', 'dist/cf-fronted-endpoints.json', 'dist/datacenter-audit.json']) {
+          for (const file of ['dist/summary.json']) {
             if (fs.existsSync(file)) JSON.parse(fs.readFileSync(file, 'utf8'));
           }
-          console.log('source manifests, audit reports and available YAML artifacts are valid');
+          console.log('source manifests and published artifacts are valid');
           NODE
