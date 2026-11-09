@@ -721,6 +721,18 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
+  - name: 08 🇺🇸 сша | mega vpn @vpnsmegabot
+    type: trojan
+    server: 172.67.118.45
+    port: 2053
+    password: gHQP0D7D15
+    udp: true
+    sni: marvdasht.phonecomparisonblog.org
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: marvdasht.phonecomparisonblog.org
   - name: 美国 208
     type: trojan
     network: ws
@@ -1002,18 +1014,6 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: 美国 252
-    type: trojan
-    network: ws
-    server: 104.16.174.22
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
   - name: JP日本(v2clash.blog 2026-10.23更新)
     type: vless
     server: 172.104.80.248
@@ -1440,6 +1440,7 @@ proxy-groups:
       - 美国 181
       - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
+      - 08 🇺🇸 сша | mega vpn @vpnsmegabot
       - 美国 208
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
       - US VLESS-12 | free-nodes
@@ -1468,7 +1469,6 @@ proxy-groups:
       - 美国 249
       - 美国 349
       - 日本 016
-      - 美国 252
       - JP日本(v2clash.blog 2026-10.23更新)
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
@@ -1572,6 +1572,7 @@ proxy-groups:
       - 美国 181
       - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
+      - 08 🇺🇸 сша | mega vpn @vpnsmegabot
       - 美国 208
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
       - US VLESS-12 | free-nodes
@@ -1600,7 +1601,6 @@ proxy-groups:
       - 美国 249
       - 美国 349
       - 日本 016
-      - 美国 252
       - JP日本(v2clash.blog 2026-10.23更新)
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
@@ -1699,6 +1699,7 @@ proxy-groups:
       - 美国 181
       - 美国 340
       - US美国(v2clash.blog 2026-10.10更新)
+      - 08 🇺🇸 сша | mega vpn @vpnsmegabot
       - 美国 208
       - 🇺🇸  ASN 20473美国(US) 加州 洛杉矶AS-VULTR
       - US VLESS-12 | free-nodes
@@ -1723,7 +1724,6 @@ proxy-groups:
       - 美国 1177
       - 美国 249
       - 美国 349
-      - 美国 252
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
