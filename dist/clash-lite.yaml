@@ -1086,6 +1086,20 @@ proxies:
       path: '%2Ftyxyws'
       headers:
         Host: jp3.yohototo.top
+  - name: '🇹🇼 🇨🇳 台湾 | TWN #1'
+    client-fingerprint: chrome
+    network: ws
+    port: 443
+    server: 60.248.219.53
+    servername: ty986gfazs.cainiaohub.xyz
+    tls: true
+    type: vless
+    udp: true
+    uuid: c1c04450-bf71-4049-ad0c-9cf6d94d9f1f
+    ws-opts:
+      headers:
+        Host: ty986gfazs.cainiaohub.xyz
+      path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
   - name: 日本 021
     type: trojan
     network: ws
@@ -1329,9 +1343,9 @@ proxy-groups:
     proxies:
       - ♻️ 全部-自动
       - ☝️ 全部-手动
-      - 📍 日本
       - 📍 美国
       - 📍 德国
+      - 📍 日本
       - DIRECT
   - name: ♻️ 全部-自动
     type: url-test
@@ -1442,6 +1456,7 @@ proxy-groups:
       - 韩国 010
       - DE 🇩🇪 | @Raydikalx | 5E3474
       - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]
+      - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - 日本 021
       - 日本 018
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
@@ -1571,6 +1586,7 @@ proxy-groups:
       - 韩国 010
       - DE 🇩🇪 | @Raydikalx | 5E3474
       - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]
+      - '🇹🇼 🇨🇳 台湾 | TWN #1'
       - 日本 021
       - 日本 018
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
@@ -1594,28 +1610,6 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
-  - name: 📍 日本
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - 日本 019
-      - 日本 003
-      - 日本 012
-      - 日本 004
-      - 日本 016
-      - JP日本(v2clash.blog 2026-10.23更新)
-      - JP日本(v2clash.blog 2026-6.9更新)
-      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]
-      - 日本 021
-      - 日本 018
-      - 日本 013
-      - JP日本(v2clash.blog 2026-10.14更新)
-      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]-2
-      - 日本 030
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: 📍 美国
     type: url-test
@@ -1731,6 +1725,28 @@ proxy-groups:
       - ProxyPool | 🇩🇪 德国 | DEU
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
+  - name: 📍 日本
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - 日本 019
+      - 日本 003
+      - 日本 012
+      - 日本 004
+      - 日本 016
+      - JP日本(v2clash.blog 2026-10.23更新)
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]
+      - 日本 021
+      - 日本 018
+      - 日本 013
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - 🇯🇵 Japan, Inzai (Otsuka) | 🌐 | [BL]-2
+      - 日本 030
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
