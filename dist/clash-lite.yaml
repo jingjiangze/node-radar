@@ -1369,15 +1369,6 @@ proxies:
     port: 443
     uuid: d5ba050c-a939-4388-8ff5-ce3f65832c6c
     udp: true
-  - name: HK VLESS-14 | free-nodes
-    type: vless
-    server: 152.175.6.229
-    port: 31884
-    uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-    udp: true
-    tls: true
-    servername: hk010.zestapp778.com
-    client-fingerprint: chrome
   - name: 日本 030
     type: trojan
     network: ws
@@ -1557,7 +1548,6 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #4'
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - HK VLESS-14 | free-nodes
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
@@ -1693,7 +1683,6 @@ proxy-groups:
       - 🇬🇧telegram➠@v2rayNG_Matsuri
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #4'
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - HK VLESS-14 | free-nodes
       - 日本 030
       - '@V2rayng_Fast 🇩🇪-5'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #9'
