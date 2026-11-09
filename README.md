@@ -53,3 +53,11 @@
 ## 手动运行
 
 在 Actions 中运行 `aggregate-nodes`、`discover-sources` 或 `speedtest`。聚合工作流的最终发布仍受 Mihomo 配置校验和出口审计门禁控制。
+
+## 许可
+
+本项目以 **GNU General Public License v3.0 或更新版本**（`GPL-3.0-or-later`）发布，全文见 [`LICENSE`](LICENSE)。
+
+Copyright (C) 2026 jingjiangze
+
+可以自由使用、修改与再分发；但**分发衍生作品时必须同样以 GPL-3.0-or-later 开源**，并提供对应源代码。本程序不提供任何担保。

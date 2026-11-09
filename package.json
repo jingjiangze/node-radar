@@ -2,7 +2,12 @@
   "name": "node-pool-aggregator",
   "version": "1.0.0",
   "private": true,
+  "license": "GPL-3.0-or-later",
   "type": "module",
-  "scripts": { "aggregate": "node scripts/aggregate.mjs" },
-  "dependencies": { "js-yaml": "^4.1.0" }
+  "scripts": {
+    "aggregate": "node scripts/aggregate.mjs"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
 }
