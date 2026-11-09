@@ -18,6 +18,16 @@
 | `dist/clash-lite.yaml` | 地区分层精简池 |
 | `dist/summary.json` | 源、协议、地区和存活汇总 |
 
+## CN 侧筛选（外部，每天一次）
+
+本仓库只做合并与发布；**节点在国内能不能用，CI 测不出来**。筛选由国内一台常开机器完成，产物独立发布：
+
+```
+dist/clash.yaml ──► poolfilter（百度，04:00）──► pool.jiangjiangze.icu/top20.yaml ──► 路由器 provider
+```
+
+工具与部署说明见 [`tools/poolfilter/`](tools/poolfilter/README.md)。备用链路（路由器测 + GitHub 发）也在那里，暂未启用。
+
 ## CF 分类口径
 
 - `cloudflare-warp-egress`: Cloudflare Trace 的 `warp=on`，表示请求经过 WARP。

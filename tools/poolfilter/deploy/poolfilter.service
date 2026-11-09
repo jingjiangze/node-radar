@@ -1,0 +1,13 @@
+[Unit]
+Description=CN-side protocol filter for the public node pool
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/poolfilter
+ExecStart=/usr/bin/env node run.mjs
+TimeoutStartSec=3600
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
