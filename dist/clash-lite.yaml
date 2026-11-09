@@ -34,6 +34,20 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
+  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
+    client-fingerprint: unsafe
+    encryption: none
+    network: ws
+    port: 443
+    server: 188.114.97.6
+    servername: nautica-cff.kloningstrife002.workers.dev
+    tls: true
+    type: vless
+    uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
+    ws-opts:
+      headers:
+        Host: nautica-cff.kloningstrife002.workers.dev
+      path: /138.2.74.219-28616
   - name: 🇩🇪telegram➠@v2rayNG_Matsuri
     type: vless
     server: 188.114.97.6
@@ -414,6 +428,20 @@ proxies:
     udp: true
     tfo: false
     client-fingerprint: chrome
+  - name: 美国 002
+    type: vless
+    network: ws
+    server: 199.181.197.99
+    port: 443
+    uuid: 70756c73-0000-4000-8000-650000000000
+    servername: parsa-panel-u48we.wotic15356.workers.dev
+    tls: true
+    client-fingerprint: chrome
+    encryption: none
+    ws-opts:
+      headers:
+        Host: parsa-panel-u48we.wotic15356.workers.dev
+      path: /pulse
   - name: US美国(v2clash.blog 2026-9.17更新)
     type: trojan
     server: 104.18.152.179
@@ -992,18 +1020,6 @@ proxies:
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: 美国 199
-    type: trojan
-    network: ws
-    server: 104.18.152.225
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
   - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
     type: vless
     server: 69.46.46.215
@@ -1180,12 +1196,38 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
+  - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
+    encryption: none
+    network: ws
+    port: 8080
+    server: 104.21.70.21
+    servername: nautica-cff.kloningstrife002.workers.dev
+    tls: false
+    type: vless
+    uuid: fc60147e-76b8-4bc5-b691-90b2da79e3d2
+    ws-opts:
+      headers:
+        Host: nautica-cff.kloningstrife002.workers.dev
+      path: /138.2.74.219-28616
   - name: DE德国(v2clash.blog 2026-9.12新)
     type: vless
     server: 188.114.97.6
     port: 8880
     uuid: 94977b19-6720-48a6-92fd-00238757ea30
     udp: true
+  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
+    encryption: none
+    network: ws
+    port: 80
+    server: 104.27.88.172
+    servername: web-app-nr6wpa.app-tp57xz.workers.dev
+    tls: false
+    type: vless
+    uuid: 50414e45-4c5f-5a45-5553-52108a2d5224
+    ws-opts:
+      headers:
+        Host: web-app-nr6wpa.app-tp57xz.workers.dev
+      path: /api/ws
   - name: 新加坡 002
     type: trojan
     network: ws
@@ -1236,6 +1278,19 @@ proxies:
     uuid: 326227e2-f2d1-4f43-8715-9da854f5f4c0
     ws-opts:
       path: /326227e2-f2d1-4f43-8715-9da854f5f4c0
+  - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #6'
+    client-fingerprint: chrome
+    network: ws
+    port: 443
+    server: 188.114.98.0
+    servername: tn1r.eu.cc
+    tls: true
+    type: vless
+    uuid: 22424ee2-6fe3-42ca-9749-6d4c5a8acc82
+    ws-opts:
+      headers:
+        Host: tn1r.eu.cc
+      path: /id-pusat
   - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
     type: vless
     server: 91.209.253.250
@@ -1254,6 +1309,18 @@ proxies:
     port: 443
     uuid: e5e4baed-c67a-489c-9550-289cc168bd13
     udp: true
+  - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
+    network: ws
+    port: 8080
+    server: 188.114.97.6
+    servername: fornewiran.ade-1000.workers.dev
+    tls: false
+    type: vless
+    uuid: 93fa8bdb-9cca-4a3e-8355-b7c12e4f595e
+    ws-opts:
+      headers:
+        Host: fornewiran.ade-1000.workers.dev
+      path: /vl/yLWNcuUuw1jlJpkDhGy?ed=2560
   - name: 🇬🇧telegram➠@v2rayNG_Matsuri-2
     type: vless
     server: 64.177.90.23
@@ -1299,8 +1366,8 @@ proxy-groups:
       - ♻️ 全部-自动
       - ☝️ 全部-手动
       - 📍 美国
-      - 📍 德国
       - 📍 日本
+      - 📍 德国
       - DIRECT
   - name: ♻️ 全部-自动
     type: url-test
@@ -1311,6 +1378,7 @@ proxy-groups:
     proxies:
       - 美国 950
       - 美国 139
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 日本 019
       - US 🇺🇸 | @Raydikalx | 5A1BD6
@@ -1346,6 +1414,7 @@ proxy-groups:
       - 美国 1035
       - 美国 179
       - 美国 918
+      - 美国 002
       - US美国(v2clash.blog 2026-9.17更新)
       - 日本 004
       - US美国(v2clash.blog 2026-10.22更新)
@@ -1401,7 +1470,6 @@ proxy-groups:
       - 日本 016
       - 美国 252
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 美国 199
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -1420,15 +1488,19 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | F68888
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - DE 🇩🇪 | @Raydikalx | 4769A2
+      - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - DE德国(v2clash.blog 2026-9.12新)
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
       - 新加坡 002
       - 韩国 006
       - JP日本(v2clash.blog 2026-10.14更新)
       - 新加坡 005
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #6'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - '@V2rayng_Fast 🇩🇪-4'
       - 🇬🇧telegram➠@v2rayNG_Matsuri
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
       - 日本 030
@@ -1438,6 +1510,7 @@ proxy-groups:
     proxies:
       - 美国 950
       - 美国 139
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
       - 日本 019
       - US 🇺🇸 | @Raydikalx | 5A1BD6
@@ -1473,6 +1546,7 @@ proxy-groups:
       - 美国 1035
       - 美国 179
       - 美国 918
+      - 美国 002
       - US美国(v2clash.blog 2026-9.17更新)
       - 日本 004
       - US美国(v2clash.blog 2026-10.22更新)
@@ -1528,7 +1602,6 @@ proxy-groups:
       - 日本 016
       - 美国 252
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 美国 199
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪-3'
       - JP日本(v2clash.blog 2026-6.9更新)
@@ -1547,15 +1620,19 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | F68888
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - DE 🇩🇪 | @Raydikalx | 4769A2
+      - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - DE德国(v2clash.blog 2026-9.12新)
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
       - 新加坡 002
       - 韩国 006
       - JP日本(v2clash.blog 2026-10.14更新)
       - 新加坡 005
       - '🇭🇰[www.v2nodes.com] vless-HK-1... #2'
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #6'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - '@V2rayng_Fast 🇩🇪-4'
       - 🇬🇧telegram➠@v2rayNG_Matsuri
+      - '🇭🇰[www.v2nodes.com] vless-HK-1... #3'
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
       - 日本 030
@@ -1600,6 +1677,7 @@ proxy-groups:
       - 美国 1035
       - 美国 179
       - 美国 918
+      - 美国 002
       - US美国(v2clash.blog 2026-9.17更新)
       - US美国(v2clash.blog 2026-10.22更新)
       - 美国 050
@@ -1646,7 +1724,28 @@ proxy-groups:
       - 美国 249
       - 美国 349
       - 美国 252
-      - 美国 199
+  - name: 📍 日本
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #7'
+      - 日本 019
+      - 日本 003
+      - 日本 012
+      - 日本 004
+      - 日本 016
+      - JP日本(v2clash.blog 2026-10.23更新)
+      - JP日本(v2clash.blog 2026-6.9更新)
+      - 日本 021
+      - 日本 018
+      - 日本 013
+      - 🇯🇵[www.v2nodes.com] vless-JP-1...
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
+      - 日本 030
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -1670,29 +1769,10 @@ proxy-groups:
       - DE 🇩🇪 | @Raydikalx | 68E5BF
       - DE 🇩🇪 | @Raydikalx | 4769A2
       - DE德国(v2clash.blog 2026-9.12新)
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #9'
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
-  - name: 📍 日本
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - 日本 019
-      - 日本 003
-      - 日本 012
-      - 日本 004
-      - 日本 016
-      - JP日本(v2clash.blog 2026-10.23更新)
-      - JP日本(v2clash.blog 2026-6.9更新)
-      - 日本 021
-      - 日本 018
-      - 日本 013
-      - JP日本(v2clash.blog 2026-10.14更新)
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #3'
-      - 日本 030
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
