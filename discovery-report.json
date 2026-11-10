@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-11-10T05:16:15.145Z",
-  "budget": 100,
+  "generatedAt": "2026-11-10T12:53:31.342Z",
+  "budget": 80,
   "channels": {
     "github-code": {
       "产出": 0,
-      "耗时ms": 4388
+      "耗时ms": 4533
     },
     "github-search": {
-      "产出": 16,
-      "耗时ms": 12629
+      "产出": 19,
+      "耗时ms": 15550
     },
     "seeds": {
       "产出": 40,
-      "耗时ms": 2265
+      "耗时ms": 5997
     },
     "recursive": {
       "产出": 33,
-      "耗时ms": 10
+      "耗时ms": 34
     },
     "telegram": {
       "产出": 0,
@@ -24,7 +24,7 @@
     },
     "feed": {
       "产出": 0,
-      "耗时ms": 0
+      "耗时ms": 1
     },
     "search": {
       "产出": 0,
@@ -35,39 +35,19 @@
       "耗时ms": 0
     }
   },
-  "candidates": 98,
-  "passed": 37,
+  "candidates": 101,
+  "passed": 25,
   "registry": {
-    "accepted": 45,
-    "candidate": 64,
+    "accepted": 49,
+    "candidate": 70,
     "rejected": 51,
-    "mirror": 10
+    "mirror": 7
   },
-  "acceptedSources": 45,
+  "acceptedSources": 49,
   "newSources": [
     {
-      "url": "https://raw.githubusercontent.com/15605875200-spec/abaaba/main/clash.yaml",
-      "nodes": 800,
-      "channel": "github-search"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/v2raynnodes/clashfree/main/clash.yaml",
-      "nodes": 95,
-      "channel": "github-search"
-    },
-    {
       "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/clash_config.yaml",
-      "nodes": 26,
-      "channel": "github-search"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml",
-      "nodes": 49,
-      "channel": "github-search"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.txt",
-      "nodes": 286,
+      "nodes": 35,
       "channel": "github-search"
     },
     {
@@ -76,34 +56,19 @@
       "channel": "github-search"
     },
     {
-      "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
-      "nodes": 10000,
-      "channel": "github-search"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/TheHunterX/oneforallhub-v2ray-configs/main/auto-clash.yaml",
-      "nodes": 100,
+      "url": "https://raw.githubusercontent.com/15605875200-spec/abaaba/main/clash.yaml",
+      "nodes": 800,
       "channel": "github-search"
     },
     {
       "url": "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt",
-      "nodes": 423,
+      "nodes": 445,
       "channel": "seeds"
     },
     {
-      "url": "https://raw.githubusercontent.com/TheHunterX/oneforallhub-v2ray-configs/main/auto-subscription-raw.txt",
-      "nodes": 100,
+      "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
+      "nodes": 10000,
       "channel": "github-search"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/TheHunterX/oneforallhub-v2ray-configs/main/auto-subscription.txt",
-      "nodes": 100,
-      "channel": "github-search"
-    },
-    {
-      "url": "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt",
-      "nodes": 421,
-      "channel": "seeds"
     },
     {
       "url": "https://raw.githubusercontent.com/Andrejewild/hiddify-singbox-configs-ru/main/sub.txt",
@@ -111,8 +76,23 @@
       "channel": "github-search"
     },
     {
+      "url": "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt",
+      "nodes": 423,
+      "channel": "seeds"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.meta.yml",
+      "nodes": 364,
+      "channel": "seeds"
+    },
+    {
       "url": "https://raw.githubusercontent.com/vincent20240707/free-v2ray-nodes/main/nodes.txt",
       "nodes": 50,
+      "channel": "github-search"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xifan001-lab/clash-sub/main/clash.yaml",
+      "nodes": 100,
       "channel": "github-search"
     },
     {
@@ -126,8 +106,8 @@
       "channel": "seeds"
     },
     {
-      "url": "https://testingcf.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
-      "nodes": 332,
+      "url": "https://blog.ermao.net/sub/clash/ermao.net",
+      "nodes": 489,
       "channel": "seeds"
     },
     {
@@ -136,23 +116,33 @@
       "channel": "seeds"
     },
     {
+      "url": "https://blog.ermao.net/sub/reachable/clash/ermao.net",
+      "nodes": 406,
+      "channel": "seeds"
+    },
+    {
+      "url": "https://www.ermao.net/sub/untested/clash/ermao.net",
+      "nodes": 70,
+      "channel": "seeds"
+    },
+    {
       "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_VLESS_RUS_clash_global.yaml",
-      "nodes": 931,
+      "nodes": 231,
       "channel": "direct-sources"
     },
     {
       "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/WHITE-CIDR-RU-all-clash-global.yaml",
-      "nodes": 245,
+      "nodes": 109,
       "channel": "direct-sources"
     },
     {
       "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_SS%2BAll_RUS_clash_global.yaml",
-      "nodes": 162,
+      "nodes": 60,
       "channel": "direct-sources"
     },
     {
       "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Base64/PROXIES_ONLY/BLACK_VLESS_RUS_base64.txt",
-      "nodes": 937,
+      "nodes": 231,
       "channel": "direct-sources"
     },
     {
@@ -179,21 +169,6 @@
       "url": "https://node.freeclashnode.com/uploads/__Y__/__M__/2-__YMD__.yaml",
       "nodes": 1359,
       "channel": "direct-sources"
-    },
-    {
-      "url": "https://nodesub.mlfenx.com/__Y__/__M__/mlfenx-__YMD__.yaml",
-      "nodes": 23,
-      "channel": "direct-sources"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/yaml/Custom_Clash.yaml",
-      "nodes": 34,
-      "channel": "github-code"
-    },
-    {
-      "url": "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/se_clash.yaml",
-      "nodes": 31,
-      "channel": "github-code"
     }
   ],
   "rejectedSample": [
@@ -203,8 +178,18 @@
       "transient": false
     },
     {
+      "url": "https://raw.githubusercontent.com/nichecer/v2ray-node-share/main/nodes.txt",
+      "reason": "节点不足(15)",
+      "transient": false
+    },
+    {
       "url": "https://github.com/chengaopan/AutoMergePublicNodes/actions/workflows/fetch.yml",
       "reason": "节点不足(0)",
+      "transient": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/nichecer/v2ray-node-share/main/sub.txt",
+      "reason": "节点不足(15)",
       "transient": false
     },
     {
@@ -213,13 +198,18 @@
       "transient": false
     },
     {
+      "url": "https://raw.githubusercontent.com/nichecer/clash-node-share/main/clash.yaml",
+      "reason": "节点不足(16)",
+      "transient": false
+    },
+    {
       "url": "https://github.com/chengaopan/AutoMergePublicNodes/stargazers",
       "reason": "HTTP 404",
       "transient": false
     },
     {
-      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/extra_clash_config.yaml",
-      "reason": "节点不足(2)",
+      "url": "https://raw.githubusercontent.com/nichecer/shadowrocket-node-share/main/nodes.txt",
+      "reason": "节点不足(15)",
       "transient": false
     },
     {
@@ -228,8 +218,8 @@
       "transient": false
     },
     {
-      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/extra_nodes.txt",
-      "reason": "节点不足(2)",
+      "url": "https://raw.githubusercontent.com/nichecer/shadowrocket-node-share/main/sub.txt",
+      "reason": "节点不足(15)",
       "transient": false
     },
     {
@@ -243,18 +233,28 @@
       "transient": false
     },
     {
+      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/extra_clash_config.yaml",
+      "reason": "节点不足(3)",
+      "transient": false
+    },
+    {
       "url": "https://github.com/chengaopan/AutoMergePublicNodes/forks",
       "reason": "节点不足(0)",
       "transient": false
     },
     {
-      "url": "https://raw.githubusercontent.com/guo0914/Free-Node/main/clash.yaml",
-      "reason": "节点不足(14)",
+      "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/extra_nodes.txt",
+      "reason": "节点不足(3)",
       "transient": false
     },
     {
       "url": "https://img.shields.io/github/repo-size/chengaopan/AutoMergePublicNodes",
       "reason": "节点不足(0)",
+      "transient": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/guo0914/Free-Node/main/clash.yaml",
+      "reason": "节点不足(19)",
       "transient": false
     },
     {
@@ -270,6 +270,21 @@
     {
       "url": "https://ghproxy.cn/https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt",
       "reason": "节点不足(0)",
+      "transient": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TheHunterX/oneforallhub-v2ray-configs/main/auto-clash.yaml",
+      "reason": "节点不足(7)",
+      "transient": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TheHunterX/oneforallhub-v2ray-configs/main/auto-subscription.txt",
+      "reason": "节点不足(7)",
+      "transient": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TheHunterX/oneforallhub-v2ray-configs/main/fast-subscription.txt",
+      "reason": "节点不足(7)",
       "transient": false
     },
     {
@@ -305,46 +320,6 @@
     {
       "url": "https://www.ermao.net/sub/health.json",
       "reason": "节点不足(0)",
-      "transient": false
-    },
-    {
-      "url": "https://img.shields.io/github/actions/workflow/status/lanzm/MetaFetch/fetch.yml?branch=master&label=Auto+Update&logo=githubactions&logoColor=white&style=flat-square",
-      "reason": "节点不足(0)",
-      "transient": false
-    },
-    {
-      "url": "https://t.me/MetaFetchNodes",
-      "reason": "节点不足(0)",
-      "transient": false
-    },
-    {
-      "url": "https://img.shields.io/badge/Valid_Nodes-286-orange.svg?style=flat-square",
-      "reason": "节点不足(0)",
-      "transient": false
-    },
-    {
-      "url": "https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.meta.yml%60",
-      "reason": "HTTP 404",
-      "transient": false
-    },
-    {
-      "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml%60",
-      "reason": "HTTP 404",
-      "transient": false
-    },
-    {
-      "url": "https://fastly.jsdelivr.net/gh/lanzm/MetaFetch@master/list.b64%60",
-      "reason": "HTTP 404",
-      "transient": false
-    },
-    {
-      "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.b64%60",
-      "reason": "HTTP 404",
-      "transient": false
-    },
-    {
-      "url": "https://www.xrayvip.com/free.yaml",
-      "reason": "节点不足(19)",
       "transient": false
     }
   ],
