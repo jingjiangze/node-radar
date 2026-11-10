@@ -1,38 +1,38 @@
 {
-  "generatedAt": "2026-11-10T00:09:55.022Z",
+  "generatedAt": "2026-11-10T00:19:29.100Z",
   "totalRaw": 25985,
   "totalUnique": 16774,
-  "totalAlive": 3639,
+  "totalAlive": 3648,
   "probe": {
     "enabled": true,
     "probed": 16774,
-    "alive": 5382,
-    "ms": 171257
+    "alive": 5391,
+    "ms": 171470
   },
   "protocolProbe": {
-    "tls检查": 2558,
-    "tls失败": 722,
-    "ws检查": 1740,
-    "ws路径错": 1021
+    "tls检查": 2560,
+    "tls失败": 719,
+    "ws检查": 1745,
+    "ws路径错": 1024
   },
   "regions": {
-    "美国": 656,
+    "美国": 661,
     "德国": 179,
-    "日本": 55,
+    "日本": 56,
+    "香港": 22,
     "英国": 108,
     "台湾": 10,
-    "香港": 22,
-    "新加坡": 67,
+    "新加坡": 69,
     "韩国": 30
   },
   "byType": {
-    "http": 316,
-    "vmess": 470,
+    "vless": 2116,
     "trojan": 403,
-    "vless": 2108,
-    "ss": 301,
-    "socks5": 19,
-    "hysteria2": 20,
+    "vmess": 471,
+    "ss": 300,
+    "socks5": 20,
+    "http": 315,
+    "hysteria2": 21,
     "ssr": 1,
     "anytls": 1
   },
