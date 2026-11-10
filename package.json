@@ -5,7 +5,8 @@
   "license": "GPL-3.0-or-later",
   "type": "module",
   "scripts": {
-    "aggregate": "node scripts/aggregate.mjs"
+    "aggregate": "node scripts/aggregate.mjs",
+    "test": "node --test scripts/test/*.test.mjs"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"

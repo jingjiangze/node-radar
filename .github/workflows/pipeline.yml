@@ -97,24 +97,17 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           for f in sources.auto.json sources.candidates.json; do [ -f "$f" ] && git add -f "$f"; done
           git diff --cached --quiet || git commit -m "chore(sources): 自动刷新公开源清单"
+          # 与每周的 discovery 工作流共用 sources.auto.json，先 rebase 再推，避免非快进被静默丢弃
+          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
           git push origin HEAD:${GITHUB_REF_NAME} || echo "源清单推送失败，下轮再试"
 
       - name: Aggregate
         run: node scripts/aggregate.mjs
 
-      - name: Install mihomo
-        run: |
-          set -e
-          URL=$(curl -sSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
-            | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
-          curl -sSL -o mihomo.gz "$URL" && gunzip -f mihomo.gz && chmod +x mihomo
-
-      - name: Validate
-        run: |
-          set -e
-          ./mihomo -t -d . -f dist/clash.yaml && echo "clash.yaml OK"
-          ./mihomo -t -d . -f dist/clash-lite.yaml && echo "clash-lite.yaml OK"
+      # 统一的 mihomo 安装（按月缓存）+ 统一校验入口：结构与私有凭据 + 内核加载
+      - uses: ./.github/actions/setup-mihomo
+      - name: Validate (structure + mihomo -t)
+        run: node scripts/ci/validate-dist.mjs --require-mihomo
 
       - name: Publish
         run: |
@@ -145,7 +138,7 @@ jobs:
           # 所以带 cache-buster 重试几次，只有连续失败才判真失败
           for i in 1 2 3 4; do
             if curl -fsSL -m 60 -o published.yaml "https://raw.githubusercontent.com/jingjiangze/node-radar/main/dist/clash.yaml?cb=$(date +%s)-$i"; then
-              if ./mihomo -t -d . -f published.yaml; then
+              if mihomo -t -d . -f published.yaml; then
                 echo "published OK ($(wc -c < published.yaml) bytes)"
                 exit 0
               fi

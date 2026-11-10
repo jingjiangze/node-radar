@@ -22,36 +22,47 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Syntax-check pipeline scripts
+
+      # 1) 语法：所有脚本都要过（新增 scripts/lib、scripts/ci、scripts/test 目录）
+      - name: Syntax-check all scripts
         run: |
-          for file in scripts/*.mjs scripts/discovery/*.mjs; do node --check "$file"; done
-      # 发现适配器的离线自测：安全判定 / 归一化 / 候选登记表状态机
+          set -e
+          for dir in scripts scripts/discovery scripts/lib scripts/ci scripts/test; do
+            [ -d "$dir" ] || continue
+            for file in "$dir"/*.mjs; do [ -e "$file" ] && node --check "$file"; done
+          done
+          echo "syntax OK"
+
+      # 2) 单元测试：解析/校验规则（决定哪些节点能进公开产物，写错就会整份配置加载失败）
+      - name: Unit tests (parsers & validators)
+        run: npm test
+
+      # 3) 发现适配器的离线自测：安全判定 / 归一化 / 候选登记表状态机
       - name: Discovery adapters selftest
         run: node scripts/discovery/selftest.mjs
 
-      # 夹具驱动的整链路回归：适配器 → 去重 → 校验 → 登记表 → 产物（两轮，不依赖外网）
+      # 4) 夹具驱动的整链路回归：适配器 → 去重 → 校验 → 登记表 → 产物（两轮，不依赖外网）
       - name: Discovery engine (fixture)
         run: node scripts/discovery/test-engine.mjs
 
-      - name: Validate source manifests and generated YAML
+      # 5) 源清单 JSON 合法性
+      - name: Validate source manifests
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
-          import yaml from 'js-yaml';
           for (const file of ['sources.json', 'sources.auto.json', 'sources.health.json', 'sources.candidates.json']) {
             if (!fs.existsSync(file)) continue;
-            JSON.parse(fs.readFileSync(file, 'utf8'));
+            const j = JSON.parse(fs.readFileSync(file, 'utf8'));
+            if (file === 'sources.auto.json' && !Array.isArray(j)) throw new Error(file + ' 应为数组');
+            console.log(file + ' OK');
           }
-          // 2026-11-09：探测/测速两层已归档（archive/scripts），产物只剩合并发布的这三份
-          for (const file of ['dist/clash.yaml', 'dist/clash-lite.yaml']) {
-            if (!fs.existsSync(file)) continue;
-            const parsed = yaml.load(fs.readFileSync(file, 'utf8'));
-            if (!Array.isArray(parsed?.proxies)) {
-              throw new Error(file + ': missing proxies array');
-            }
-          }
-          for (const file of ['dist/summary.json']) {
-            if (fs.existsSync(file)) JSON.parse(fs.readFileSync(file, 'utf8'));
-          }
-          console.log('source manifests and published artifacts are valid');
           NODE
+
+      # 6) 产物校验：结构与私有凭据在这里查，内核加载在 7) 查
+      - name: Validate dist (structure)
+        run: node scripts/ci/validate-dist.mjs
+
+      # 7) 内核加载校验：PR 阶段就挡住「能生成但内核不认」的改动（原来只有发布路径才拦）
+      - uses: ./.github/actions/setup-mihomo
+      - name: Validate dist (mihomo -t)
+        run: node scripts/ci/validate-dist.mjs --require-mihomo
