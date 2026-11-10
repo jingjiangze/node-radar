@@ -132,6 +132,15 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(aggregate): 更新公共节点池"
           git push origin HEAD:${GITHUB_REF_NAME} || echo "推送失败，产物下轮重新生成"
 
+      # jsDelivr 会缓存 @main 分支文件（s-maxage 12h）：不清的话线上产物最长滞后 12h。
+      # 原来这一步只在 aggregate.yml 里，pipeline.yml 一直没有（本轮补上）。
+      - name: Purge jsDelivr cache
+        run: |
+          for f in dist/clash.yaml dist/clash-lite.yaml dist/summary.json; do
+            curl -s -m 30 "https://purge.jsdelivr.net/gh/jingjiangze/node-radar@main/$f" > /dev/null || true
+            echo "purged $f"
+          done
+
       - name: Smoke test
         run: |
           # raw.githubusercontent 有 CDN 缓存，刚推完可能取到旧版本（旧版本可能含已修的畸形节点）
