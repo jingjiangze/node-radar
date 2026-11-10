@@ -33,10 +33,28 @@
   ],
   "telegramChannels": [],
   "feeds": [],
-  "search": { "enabled": false },
+  "search": {
+    "enabled": false
+  },
   "_说明": {
     "telegramChannels": "填公开频道用户名（不含 @）。留空则跳过该适配器。",
     "feeds": "填 RSS/Atom/JSON Feed 地址。留空则跳过。",
-    "minNodes": "一个订阅至少要解析出这么多节点才允许晋级到 sources.auto.json"
-  }
+    "minNodes": "一个订阅至少要解析出这么多节点才允许晋级到 sources.auto.json",
+    "directSources": "人工核验过的直连订阅地址（网站/电报/paste 里的订阅本体）；同样走校验/评分/镜像归并，坏了自动剔除。",
+    "recursiveSeeds": "递归抓取的种子页（博客/汇总页的 HTML），从中抽订阅链接。"
+  },
+  "directSources": [
+    "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_VLESS_RUS_clash_global.yaml",
+    "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/WHITE-CIDR-RU-all-clash-global.yaml",
+    "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_SS%2BAll_RUS_clash_global.yaml",
+    "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Base64/PROXIES_ONLY/BLACK_VLESS_RUS_base64.txt",
+    "https://gitea.com/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_VLESS_RUS_clash_global.yaml",
+    "https://gitlab.com/avencores/goida-vpn-configs/-/raw/main/githubmirror/1.txt",
+    "https://freenode.yoyapai.com/${Y}/${M}/${D}-yoyapai.com-clash-vpn-mianfeijiedian.yaml",
+    "https://node.freeclashnode.com/uploads/${Y}/${M}/0-${YMD}.yaml",
+    "https://node.freeclashnode.com/uploads/${Y}/${M}/1-${YMD}.yaml",
+    "https://node.freeclashnode.com/uploads/${Y}/${M}/2-${YMD}.yaml",
+    "https://nodesub.mlfenx.com/${Y}/${M}/mlfenx-${YMD}.yaml",
+    "https://www.xrayvip.com/free.yaml"
+  ]
 }

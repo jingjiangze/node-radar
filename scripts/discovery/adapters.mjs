@@ -223,4 +223,20 @@ export const search = {
   },
 };
 
-export const 全部适配器 = [githubCode, githubSearch, seeds, recursive, telegram, feed, search];
+/** H. 人工核验过的直连订阅：网站 / 电报 / paste 里拿到的订阅地址，本身不是「页面里的链接」，
+ *  也不在 GitHub 上 —— 前六类适配器都收不到它们，只能登记在 config.directSources。
+ *  这些 URL 同样走 engine 的统一校验/评分/镜像归并，坏了会被自动剔除。 */
+export const directSources = {
+  name: 'direct-sources',
+  说明: '人工核验过的直连订阅地址（网站/电报/paste）',
+  async run(ctx) {
+    const 列表 = ctx.配置.directSources || [];
+    if (!列表.length) {
+      ctx.日志('[direct-sources] 未配置，跳过');
+      return [];
+    }
+    return 去重(列表).slice(0, ctx.上限.perAdapter ?? 40).map((u) => ({ url: u, note: 'direct' }));
+  },
+};
+
+export const 全部适配器 = [githubCode, githubSearch, seeds, recursive, telegram, feed, search, directSources];

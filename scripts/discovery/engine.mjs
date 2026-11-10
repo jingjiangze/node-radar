@@ -10,6 +10,7 @@ import { 读登记表, 写登记表, 登记候选, 记录结果, 汇总, 标记�
 import { 全部适配器 } from './adapters.mjs';
 import { 估节点数 } from './parse.mjs';
 import { 建夹具抓取 } from './fixtures.mjs';
+import { 日期变体 } from '../lib/date-url.mjs';
 
 const 目录 = path.dirname(fileURLToPath(import.meta.url));
 const 根 = path.resolve(目录, '../..');
@@ -48,7 +49,15 @@ async function gh真实(pathname) {
 }
 
 const 夹具 = FIXTURE ? 建夹具抓取(FIXTURE) : null;
-const 抓取 = 夹具 ? 夹具.抓取 : (url, opt) => 安全抓取(url, opt);
+const 抓取原生 = 夹具 ? 夹具.抓取 : (url, opt) => 安全抓取(url, opt);
+// 动态日期源：今天取不到就退到昨天
+const 抓取 = async (url, opt) => {
+  let last;
+  for (const u of 日期变体(url)) {
+    try { return await 抓取原生(u, opt); } catch (err) { last = err; }
+  }
+  throw last;
+};
 const gh = 夹具 ? 夹具.gh : gh真实;
 
 

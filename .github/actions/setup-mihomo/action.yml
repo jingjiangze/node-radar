@@ -1,0 +1,43 @@
+name: setup-mihomo
+description: 安装 mihomo 内核并加入 PATH（按月缓存，避免三处 workflow 各写一遍下载逻辑）
+
+# 为什么做成 composite action：下载+解压+chmod 这段在 aggregate.yml / pipeline.yml / ci.yml
+# 各有一份，版本选择和校验文件口径已经漂移过（一处校验 speed-top、一处没有）。
+# 现在只留这一份；产物放 .mihomo-bin/，缓存按月轮换（不会永远钉在旧版本）。
+
+runs:
+  using: composite
+  steps:
+    - name: 计算缓存键（按月轮换）
+      id: key
+      shell: bash
+      run: echo "month=$(date -u +%Y-%m)" >> "$GITHUB_OUTPUT"
+
+    - name: 缓存 .mihomo-bin
+      id: cache
+      uses: actions/cache@v4
+      with:
+        path: .mihomo-bin
+        key: mihomo-${{ runner.os }}-${{ steps.key.outputs.month }}
+
+    - name: 下载 mihomo（缓存未命中时）
+      if: steps.cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p .mihomo-bin
+        URL=$(curl -sSL -H "Authorization: Bearer ${{ github.token }}" \
+          https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+          | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);const a=(j.assets||[]).find(x=>/linux-amd64-compatible/.test(x.name)&&/\.gz$/.test(x.name));console.log(a?a.browser_download_url:'')})")
+        if [ -z "$URL" ]; then echo "找不到 linux-amd64-compatible 资产" >&2; exit 1; fi
+        echo "下载 $URL"
+        curl -sSL -o /tmp/mihomo.gz "$URL"
+        gunzip -f /tmp/mihomo.gz
+        mv /tmp/mihomo .mihomo-bin/mihomo
+        chmod +x .mihomo-bin/mihomo
+
+    - name: 加入 PATH
+      shell: bash
+      run: |
+        echo "${{ github.workspace }}/.mihomo-bin" >> "$GITHUB_PATH"
+        ./.mihomo-bin/mihomo -v
