@@ -1,37 +1,37 @@
 {
-  "generatedAt": "2026-11-10T20:17:50.056Z",
-  "totalRaw": 37608,
-  "totalUnique": 19770,
-  "totalAlive": 4435,
+  "generatedAt": "2026-11-10T20:25:53.180Z",
+  "totalRaw": 37643,
+  "totalUnique": 19728,
+  "totalAlive": 4457,
   "probe": {
     "enabled": true,
-    "probed": 19770,
-    "alive": 6575,
-    "ms": 197475
+    "probed": 19728,
+    "alive": 6609,
+    "ms": 196241
   },
   "protocolProbe": {
-    "tls检查": 3301,
-    "tls失败": 796,
-    "ws检查": 2167,
-    "ws路径错": 1344
+    "tls检查": 3316,
+    "tls失败": 804,
+    "ws检查": 2172,
+    "ws路径错": 1348
   },
   "regions": {
-    "美国": 848,
+    "美国": 854,
+    "英国": 136,
     "德国": 214,
-    "香港": 27,
-    "新加坡": 99,
+    "日本": 68,
     "台湾": 9,
-    "日本": 69,
-    "英国": 130,
-    "韩国": 35
+    "香港": 31,
+    "新加坡": 98,
+    "韩国": 38
   },
   "byType": {
-    "vless": 2387,
-    "vmess": 474,
-    "trojan": 532,
+    "vmess": 481,
+    "trojan": 534,
+    "vless": 2394,
+    "ss": 418,
+    "http": 578,
     "socks5": 21,
-    "ss": 411,
-    "http": 579,
     "hysteria2": 29,
     "ssr": 1,
     "anytls": 1
@@ -98,7 +98,7 @@
     {
       "source": "mahdibland/V2RayAggregator",
       "kind": "uri-list",
-      "count": 4515,
+      "count": 4459,
       "ok": true
     },
     {
@@ -176,7 +176,7 @@
     {
       "source": "direct",
       "kind": "uri-list",
-      "count": 184,
+      "count": 244,
       "ok": true
     },
     {
@@ -254,7 +254,7 @@
     {
       "source": "direct",
       "kind": "clash-yaml",
-      "count": 184,
+      "count": 242,
       "ok": true
     },
     {
@@ -278,7 +278,7 @@
     {
       "source": "direct",
       "kind": "clash-yaml",
-      "count": 85,
+      "count": 58,
       "ok": true
     },
     {
