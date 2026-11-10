@@ -1,43 +1,43 @@
 {
-  "generatedAt": "2026-11-10T23:21:50.047Z",
-  "totalRaw": 37936,
-  "totalUnique": 19768,
-  "totalAlive": 4316,
+  "generatedAt": "2026-11-10T23:29:44.776Z",
+  "totalRaw": 38126,
+  "totalUnique": 19812,
+  "totalAlive": 4511,
   "probe": {
     "enabled": true,
-    "probed": 19768,
-    "alive": 6511,
-    "ms": 199940
+    "probed": 19812,
+    "alive": 6699,
+    "ms": 196113
   },
   "protocolProbe": {
-    "tls检查": 3180,
-    "tls失败": 844,
-    "ws检查": 2199,
-    "ws路径错": 1351
+    "tls检查": 3383,
+    "tls失败": 824,
+    "ws检查": 2190,
+    "ws路径错": 1364
   },
   "regions": {
-    "美国": 853,
-    "德国": 200,
-    "日本": 68,
-    "英国": 120,
-    "台湾": 10,
-    "新加坡": 96,
-    "香港": 28,
-    "韩国": 35
+    "美国": 869,
+    "德国": 222,
+    "日本": 67,
+    "香港": 29,
+    "英国": 141,
+    "台湾": 11,
+    "新加坡": 95,
+    "韩国": 36
   },
   "byType": {
-    "vless": 2430,
-    "vmess": 488,
-    "trojan": 542,
-    "ss": 421,
-    "http": 385,
-    "socks5": 20,
-    "hysteria2": 27,
+    "trojan": 536,
+    "vmess": 481,
+    "vless": 2441,
+    "http": 584,
+    "ss": 416,
+    "hysteria2": 28,
+    "socks5": 22,
     "ssr": 1,
     "anytls": 2
   },
   "unsafe": {
-    "total": 604,
+    "total": 789,
     "cnConfirmed": 0
   },
   "sources": [
@@ -128,7 +128,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 418,
+      "count": 423,
       "ok": true
     },
     {
@@ -176,7 +176,7 @@
     {
       "source": "direct",
       "kind": "uri-list",
-      "count": 255,
+      "count": 287,
       "ok": true
     },
     {
@@ -248,7 +248,7 @@
     {
       "source": "direct",
       "kind": "clash-yaml",
-      "count": 255,
+      "count": 287,
       "ok": true
     },
     {
@@ -272,7 +272,7 @@
     {
       "source": "direct",
       "kind": "clash-yaml",
-      "count": 102,
+      "count": 145,
       "ok": true
     },
     {
@@ -362,7 +362,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 340,
+      "count": 418,
       "ok": true
     },
     {
