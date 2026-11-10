@@ -41,3 +41,10 @@ test('占位符重复出现时全部替换', () => {
   const { Y } = 今天();
   assert.equal(展开('${Y}-${Y}-${Y}'), `${Y}-${Y}-${Y}`);
 });
+
+test('__YMD__ 这种 URL 安全占位符（花括号会被 new URL 转义）', () => {
+  const { Y, M, D } = 今天();
+  assert.equal(展开('https://x.example/__Y__/__M__/0-__YMD__.yaml'), `https://x.example/${Y}/${M}/0-${Y}${M}${D}.yaml`);
+  assert.equal(是否动态日期('https://x.example/__YMD__.yaml'), true);
+  assert.equal(日期变体('https://x.example/__YMD__.yaml').length, 2);
+});

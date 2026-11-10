@@ -50,11 +50,11 @@
     "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Base64/PROXIES_ONLY/BLACK_VLESS_RUS_base64.txt",
     "https://gitea.com/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_VLESS_RUS_clash_global.yaml",
     "https://gitlab.com/avencores/goida-vpn-configs/-/raw/main/githubmirror/1.txt",
-    "https://freenode.yoyapai.com/${Y}/${M}/${D}-yoyapai.com-clash-vpn-mianfeijiedian.yaml",
-    "https://node.freeclashnode.com/uploads/${Y}/${M}/0-${YMD}.yaml",
-    "https://node.freeclashnode.com/uploads/${Y}/${M}/1-${YMD}.yaml",
-    "https://node.freeclashnode.com/uploads/${Y}/${M}/2-${YMD}.yaml",
-    "https://nodesub.mlfenx.com/${Y}/${M}/mlfenx-${YMD}.yaml",
+    "https://freenode.yoyapai.com/__Y__/__M__/__D__-yoyapai.com-clash-vpn-mianfeijiedian.yaml",
+    "https://node.freeclashnode.com/uploads/__Y__/__M__/0-__YMD__.yaml",
+    "https://node.freeclashnode.com/uploads/__Y__/__M__/1-__YMD__.yaml",
+    "https://node.freeclashnode.com/uploads/__Y__/__M__/2-__YMD__.yaml",
+    "https://nodesub.mlfenx.com/__Y__/__M__/mlfenx-__YMD__.yaml",
     "https://www.xrayvip.com/free.yaml"
   ]
 }
