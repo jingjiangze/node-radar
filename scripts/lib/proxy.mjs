@@ -136,10 +136,27 @@ export const 允许类型 = new Set([
   'http', 'socks5', 'mieru', 'wireguard', 'snell',
 ]);
 
+// SS 加密算法白名单：公开源里常出现 `chacha20-poly1305`（少了 -ietf）这类写法，
+// 内核直接报 "unknown method: chacha20-poly1305" 并拒绝加载**整份**配置。
+// 实测一次新源引入 1 个这样的节点，就让整轮 4646 个节点无法发布。
+export const 支持的SS加密 = new Set([
+  'aes-128-gcm', 'aes-192-gcm', 'aes-256-gcm',
+  'aes-128-cfb', 'aes-192-cfb', 'aes-256-cfb',
+  'aes-128-ctr', 'aes-192-ctr', 'aes-256-ctr',
+  'rc4-md5', 'chacha20', 'chacha20-ietf', 'xchacha20',
+  'chacha20-ietf-poly1305', 'xchacha20-ietf-poly1305',
+  '2022-blake3-aes-128-gcm', '2022-blake3-aes-256-gcm', '2022-blake3-chacha20-poly1305',
+  'none', 'plain',
+]);
+
 export const invalid = (p) =>
   !允许类型.has(String(p.type || '').toLowerCase()) ||
+  // 端口越界 / server 为空：内核同样会拒绝加载
+  !(Number(p.port) > 0 && Number(p.port) < 65536) ||
+  !String(p.server || '').trim() ||
   !配置合法(p) ||
   !!缺字段(p) ||
+  (p.type === 'ss' && p.cipher && !支持的SS加密.has(String(p.cipher).toLowerCase())) ||
   ((p.type === 'hysteria2' || p.type === 'hysteria') && p.obfs && !p['obfs-password']) ||
   !okReality(p);
 

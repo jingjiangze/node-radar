@@ -117,8 +117,8 @@ test('配置合法：控制字符 / 空白 / 坏的 % 转义全部拦截', () =>
 });
 
 test('invalid：缺 type 的必填表不误伤其它协议', () => {
-  assert.equal(invalid({ type: 'hysteria', 'auth-str': 'x' }), false);
-  assert.equal(invalid({ type: 'hysteria' }), true);
+  assert.equal(invalid({ type: 'hysteria', server: 'a', port: 443, 'auth-str': 'x' }), false);
+  assert.equal(invalid({ type: 'hysteria', server: 'a', port: 443 }), true);
 });
 
 test('dedupeKey：同服务器同端口同身份视为重复，换身份/端口不算', () => {
@@ -137,4 +137,20 @@ test("允许类型：内核不认的协议在入库前就剔掉（否则整份�
   for (const type of ["vmess", "vless", "trojan", "ss", "hysteria2", "http", "socks5", "mieru"]) {
     assert.equal(允许类型.has(type), true, type);
   }
+});
+
+test('SS 加密白名单：chacha20-poly1305（少 -ietf）这类会让内核拒绝整份配置', () => {
+  assert.equal(invalid({ type: 'ss', server: 'a', port: 1, cipher: 'chacha20-poly1305', password: 'p' }), true);
+  assert.equal(invalid({ type: 'ss', server: 'a', port: 1, cipher: 'chacha20-ietf-poly1305', password: 'p' }), false);
+  assert.equal(invalid({ type: 'ss', server: 'a', port: 1, cipher: 'aes-256-gcm', password: 'p' }), false);
+  assert.equal(invalid({ type: 'ss', server: 'a', port: 1, cipher: '2022-blake3-aes-128-gcm', password: 'p' }), false);
+  assert.equal(invalid({ type: 'ss', server: 'a', port: 1, cipher: 'rc4-md5', password: 'p' }), false);
+  assert.equal(invalid({ type: 'ss', server: 'a', port: 1, cipher: 'bogus-cipher', password: 'p' }), true);
+});
+
+test('端口/server 合理性：越界或空 server 直接丢弃', () => {
+  assert.equal(invalid({ type: 'vmess', server: 'a', port: 0, uuid: 'u' }), true);
+  assert.equal(invalid({ type: 'vmess', server: 'a', port: 70000, uuid: 'u' }), true);
+  assert.equal(invalid({ type: 'vmess', server: '  ', port: 443, uuid: 'u' }), true);
+  assert.equal(invalid({ type: 'vmess', server: 'a', port: 443, uuid: 'u' }), false);
 });
