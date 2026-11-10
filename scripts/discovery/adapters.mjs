@@ -116,17 +116,36 @@ export const seeds = {
 /** D. 递归发现：从已抓到的页面继续抽一层（深度 1、单页上限可配） */
 export const recursive = {
   name: 'recursive',
-  说明: '对给定页面抽一层子链接（深度 1），只保留像订阅的',
+  说明: '对给定页面抽子链接；recursiveDepth=2 时会再进一层「文章页」找订阅（yoyapai/freeclashnode 这类按天发布的站，订阅地址在文章里）',
   async run(ctx) {
     const 种子 = ctx.配置.recursiveSeeds || [];
     const perPage = ctx.上限.linksPerPage ?? 100;
+    const 深度 = ctx.配置.recursiveDepth ?? 1;
+    const 二层上限 = ctx.上限.secondHop ?? 4;
+    const 是文章页 = (l) => /(\.html?$|\/free-node\/|\/freenode\/|\/20\d\d\/)/i.test(l);
+    const 同主机 = (a, b) => {
+      try { return new URL(a).hostname === new URL(b).hostname; } catch { return false; }
+    };
     const out = [];
     for (const url of 种子.slice(0, ctx.上限.recursivePages ?? 5)) {
       try {
         const r = await ctx.抓取(url, { maxBytes: 2 * 1024 * 1024, timeoutMs: 15000 });
         const 链接 = 抽链接(r.body).slice(0, perPage);
+        const 二层 = [];
         for (const l of 链接) {
           if (像订阅(l) && !是噪声(l)) out.push({ url: l, note: `recursive:${url}` });
+          else if (深度 >= 2 && 同主机(l, url) && !是噪声(l) && 是文章页(l)) 二层.push(l);
+        }
+        // 深度 2：再进文章页抽一次（限流：每种子最多 二层上限 个）
+        for (const a of 去重(二层).slice(0, 二层上限)) {
+          try {
+            const r2 = await ctx.抓取(a, { maxBytes: 2 * 1024 * 1024, timeoutMs: 15000 });
+            for (const l of 抽链接(r2.body).slice(0, perPage)) {
+              if (像订阅(l) && !是噪声(l)) out.push({ url: l, note: `recursive2:${a}` });
+            }
+          } catch (e) {
+            ctx.日志(`[recursive] 二层 ${a} 失败: ${e.message}`);
+          }
         }
       } catch (e) {
         ctx.日志(`[recursive] ${url} 失败: ${e.message}`);

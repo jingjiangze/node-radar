@@ -61,27 +61,67 @@ export function 计算分数(项) {
 /**
  * 记录一次验证结果。
  * 连续失败 3 次 → rejected（自动隔离，不要求人工审批）；已 accepted 的连挂 2 次 → 降回 candidate。
+ *
+ * transient=true 用于「不是源的问题」的失败：HTTP 429 限流、5xx、超时、DNS 抖动。
+ * 这类只累加 transientFails 并刷新 lastSeen，**不动** status/consecutiveFail ——
+ * 否则 GitLab 的 per-IP 限流（约 40 次请求后整站 429）会把好源在 3 轮内判死。
  */
-export function 记录结果(表, url, { ok, nodes = 0, contentHash = null, reason = null }) {
+export function 记录结果(表, url, { ok, nodes = 0, contentHash = null, reason = null, transient = false }) {
   const 项 = 表.items[url];
   if (!项) return null;
+  项.lastValidatedAt = new Date().toISOString();
   if (ok) {
     项.ok += 1;
     项.consecutiveFail = 0;
+    项.transientFails = 0;
     项.nodes = nodes;
     项.contentHash = contentHash;
     项.rejectReason = null;
     项.mirrorOf = null;
+    项.rejectedAt = null;
     项.status = 'accepted';
+  } else if (transient) {
+    项.transientFails = (项.transientFails || 0) + 1;
+    项.lastTransientReason = (reason || '临时失败').slice(0, 120);
+    // 不改进 status，避免限流把源判死；但记录原因便于排障
   } else {
     项.fail += 1;
     项.consecutiveFail += 1;
     项.rejectReason = reason || '验证失败';
-    if (项.consecutiveFail >= 3) 项.status = 'rejected';
-    else if (项.status === 'accepted' && 项.consecutiveFail >= 2) 项.status = 'candidate';
+    if (项.consecutiveFail >= 3) {
+      项.status = 'rejected';
+      项.rejectedAt = new Date().toISOString();
+    } else if (项.status === 'accepted' && 项.consecutiveFail >= 2) 项.status = 'candidate';
   }
   项.score = 计算分数(项);
   return 项;
+}
+
+/** rejected 满 retryDays 天就放回 candidate，下轮重新参与校验（避免一次误判永久死掉） */
+export function 复活过期拒绝(表, { retryDays = 7, now = Date.now() } = {}) {
+  let n = 0;
+  for (const 项 of Object.values(表.items || {})) {
+    if (项.status !== 'rejected') continue;
+    const t = Date.parse(项.rejectedAt || 项.lastSeen || 0);
+    if (!t || now - t > retryDays * 86400e3) {
+      项.status = 'candidate';
+      项.consecutiveFail = 0;
+      项.rejectedAt = null;
+      项.rejectReason = null;
+      项.revivedAt = new Date(now).toISOString();
+      n++;
+    }
+  }
+  return n;
+}
+
+/** 挑出「该复验的老源」：按 lastValidatedAt 最久优先，跳过本轮已经验过的 */
+export function 取待复验(表, { limit = 20, skip = new Set() } = {}) {
+  return Object.values(表.items || {})
+    .filter((x) => !skip.has(x.url))
+    .filter((x) => x.status === 'accepted' || x.status === 'candidate')
+    .sort((a, b) => Date.parse(a.lastValidatedAt || a.firstSeen || 0) - Date.parse(b.lastValidatedAt || b.firstSeen || 0))
+    .slice(0, limit);
 }
 
 /** 内容哈希相同 = 同一份订阅的镜像；只保留分数最高的一条，其余标 mirror */
