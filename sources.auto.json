@@ -3,33 +3,49 @@
     "name": "github-search",
     "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
     "nodes": 10000,
-    "verifiedAt": "2026-11-09T09:27:46.101Z",
+    "verifiedAt": "2026-11-10T04:18:51.258Z",
     "channel": "github-search",
-    "score": 23.29
+    "score": 25.29
+  },
+  {
+    "name": "seed",
+    "url": "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt",
+    "nodes": 423,
+    "verifiedAt": "2026-11-10T04:18:51.259Z",
+    "channel": "seeds",
+    "score": 20.72
   },
   {
     "name": "seed",
     "url": "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt",
-    "nodes": 431,
-    "verifiedAt": "2026-11-09T09:27:46.101Z",
+    "nodes": 421,
+    "verifiedAt": "2026-11-10T04:18:51.259Z",
     "channel": "seeds",
-    "score": 18.75
+    "score": 20.72
   },
   {
     "name": "seed",
     "url": "https://blog.ermao.net/sub/v2ray/ermao.net",
-    "nodes": 496,
-    "verifiedAt": "2026-11-09T09:27:46.101Z",
+    "nodes": 504,
+    "verifiedAt": "2026-11-10T04:18:51.259Z",
     "channel": "seeds",
-    "score": 16.95
+    "score": 18.98
   },
   {
     "name": "github-search",
     "url": "https://raw.githubusercontent.com/Andrejewild/hiddify-singbox-configs-ru/main/sub.txt",
     "nodes": 20,
-    "verifiedAt": "2026-11-09T09:27:46.101Z",
+    "verifiedAt": "2026-11-10T04:18:51.258Z",
     "channel": "github-search",
-    "score": 14.32
+    "score": 16.32
+  },
+  {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.txt",
+    "nodes": 286,
+    "verifiedAt": "2026-11-10T04:18:51.258Z",
+    "channel": "github-search",
+    "score": 14.16
   },
   {
     "name": "github-search",
@@ -38,6 +54,22 @@
     "verifiedAt": "2026-11-07T07:09:27.954Z",
     "channel": "github-search",
     "score": 14.07
+  },
+  {
+    "name": "direct",
+    "url": "https://gitlab.com/avencores/goida-vpn-configs/-/raw/main/githubmirror/1.txt",
+    "nodes": 4263,
+    "verifiedAt": "2026-11-10T04:18:51.259Z",
+    "channel": "direct-sources",
+    "score": 14.06
+  },
+  {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/vincent20240707/free-v2ray-nodes/main/nodes.txt",
+    "nodes": 50,
+    "verifiedAt": "2026-11-10T04:18:51.259Z",
+    "channel": "github-search",
+    "score": 13.64
   },
   {
     "name": "github-search",
@@ -56,12 +88,12 @@
     "score": 12.03
   },
   {
-    "name": "github-search",
-    "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.txt",
-    "nodes": 254,
-    "verifiedAt": "2026-11-08T08:49:45.235Z",
-    "channel": "github-search",
-    "score": 11.99
+    "name": "direct",
+    "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Base64/PROXIES_ONLY/BLACK_VLESS_RUS_base64.txt",
+    "nodes": 937,
+    "verifiedAt": "2026-11-10T04:18:51.259Z",
+    "channel": "direct-sources",
+    "score": 11.87
   },
   {
     "name": "github-search",
@@ -73,11 +105,11 @@
   },
   {
     "name": "github-search",
-    "url": "https://raw.githubusercontent.com/vincent20240707/free-v2ray-nodes/main/nodes.txt",
-    "nodes": 50,
-    "verifiedAt": "2026-11-09T09:27:46.101Z",
+    "url": "https://raw.githubusercontent.com/guo0914/Free-Node/main/v2ray.txt",
+    "nodes": 20,
+    "verifiedAt": "2026-11-10T04:18:51.258Z",
     "channel": "github-search",
-    "score": 11.64
+    "score": 11.32
   },
   {
     "name": "github-code",
@@ -126,14 +158,6 @@
     "verifiedAt": "2026-11-06T08:54:25.740Z",
     "channel": "github-code",
     "score": 10
-  },
-  {
-    "name": "github-search",
-    "url": "https://raw.githubusercontent.com/guo0914/Free-Node/main/v2ray.txt",
-    "nodes": 20,
-    "verifiedAt": "2026-11-09T09:27:46.101Z",
-    "channel": "github-search",
-    "score": 9.32
   },
   {
     "name": "github-search",
