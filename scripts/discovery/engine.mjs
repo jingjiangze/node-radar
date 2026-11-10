@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { 安全抓取 } from './safety.mjs';
 import { 归一化, 内容键, 内容哈希, 像订阅 } from './normalize.mjs';
-import { 读登记表, 写登记表, 登记候选, 记录结果, 汇总, 标记镜像 } from './registry.mjs';
+import {读登记表, 写登记表, 登记候选, 记录结果, 汇总, 标记镜像, 复活过期拒绝, 取待复验 } from './registry.mjs';
 import { 全部适配器 } from './adapters.mjs';
 import { 估节点数 } from './parse.mjs';
 import { 建夹具抓取 } from './fixtures.mjs';
@@ -132,13 +132,35 @@ const 主 = async () => {
   for (const c of 候选) if (!轮转.includes(c)) 轮转.push(c);
 
   // 3) 校验（预算内）
-  const 待验 = 轮转.slice(0, 上限.validatePerRun);
+  // 3a) 先把「被判死很久」的源放回 candidate：一次限流/抖动不该让好源永久消失
+  const 复活数 = 复活过期拒绝(注册, { retryDays: 配置.rejectedRetryDays ?? 7 });
+  if (复活数) 日志(`复活过期 rejected 源 ${复活数} 个`);
+
+  // 3b) 已登记源滚动复验：登记表不能只进不退。按 lastValidatedAt 最久优先补位，
+  //     这样 accepted 的源也会被定期重测；挂了 3 次就自动降级/剔除。
+  const 本轮新建 = new Set(轮转.slice(0, 上限.validatePerRun).map((c) => c.url));
+  const 复验 = 取待复验(注册, { limit: 上限.revalidateExisting ?? 20, skip: 本轮新建 })
+    .map((x) => ({ url: x.url, channel: x.channel || 'revalidate', note: 'revalidate' }));
+  if (复验.length) 日志(`滚动复验 ${复验.length} 个已登记源`);
+  轮转.push(...复验);
+
+  const 待验 = 轮转.slice(0, 上限.validatePerRun + 复验.length);
   const 已接受URL = new Set(
     (() => { try { return JSON.parse(fs.readFileSync(AUTO, 'utf8')).map((x) => 归一化(x.url)); } catch { return []; } })()
   );
 
+  // 瞬时失败判定：这类错误不是「源坏了」，不能计入连续失败
+  const 是瞬时 = (msg) => /HTTP (429|5\d\d)|timeout|timed out|aborted|ECONNRESET|ETIMEDOUT|EAI_AGAIN|DNS/i.test(String(msg));
+  const 退避host = new Set(); // 本轮已 429 的 host，后续同 host 直接跳过（GitLab 匿名 per-IP 限流实测约 40 次/小时）
+
   const 校验结果 = await 并发映射(待验, 上限.validateConcurrency, async (c) => {
     登记候选(注册, { url: c.url, channel: c.channel });
+    let host = '';
+    try { host = new URL(c.url).hostname; } catch { }
+    if (host && 退避host.has(host)) {
+      记录结果(注册, c.url, { ok: false, reason: `本轮 ${host} 已限流，跳过`, transient: true });
+      return { ...c, ok: false, nodes: 0, reason: `host 限流跳过(${host})` };
+    }
     try {
       const r = await 抓取(c.url, { maxBytes: 5 * 1024 * 1024, timeoutMs: 20000 });
       const n = 估节点数(r.body);
@@ -150,8 +172,11 @@ const 主 = async () => {
       记录结果(注册, c.url, { ok: true, nodes: n, contentHash: hash });
       return { ...c, ok: true, nodes: n, hash };
     } catch (e) {
-      记录结果(注册, c.url, { ok: false, reason: String(e.message).slice(0, 120) });
-      return { ...c, ok: false, nodes: 0, reason: String(e.message).slice(0, 120) };
+      const msg = String(e.message).slice(0, 120);
+      const transient = 是瞬时(msg);
+      if (transient && host && /429/.test(msg)) 退避host.add(host);
+      记录结果(注册, c.url, { ok: false, reason: msg, transient });
+      return { ...c, ok: false, nodes: 0, reason: msg, transient };
     }
   });
 
@@ -199,7 +224,9 @@ const 主 = async () => {
     registry: 汇总(注册),
     acceptedSources: 正式.length,
     newSources: 新增.slice(0, 30).map((x) => ({ url: x.url, nodes: x.nodes, channel: x.channel })),
-    rejectedSample: 校验结果.filter((x) => !x.ok).slice(0, 30).map((x) => ({ url: x.url, reason: x.reason })),
+    rejectedSample: 校验结果.filter((x) => !x.ok).slice(0, 30).map((x) => ({ url: x.url, reason: x.reason, transient: !!x.transient })),
+    revived: 复活数,
+    revalidated: 复验.length,
   };
 
   if (DRY) {

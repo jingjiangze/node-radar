@@ -11,6 +11,24 @@
 
 > 为什么停掉探测与测速：CI 侧单次健康检查不可信（同一节点能在 1.2s 与超时之间摆动），两层都白烧额度。CN 侧的协议级筛选改由外部服务每天跑一次，结果走独立订阅地址下发，不再回写本仓库。
 
+### 新增一个源（三种方式）
+
+1. **直接订阅地址**（网站 / 自建托管 / 电报里拿到的订阅本体）：写进 `scripts/discovery/config.json` 的 `directSources`。
+   按天换文件名的源用 `__Y__ / __M__ / __D__ / __YMD__` 占位（抓取时按北京时间展开，今天取不到自动退到昨天）。
+   *不要用 `${YMD}`*：发现引擎会先过 `new URL()`，花括号会被转义成 `%7B`。
+2. **服务端渲染的汇总页**：写进 `recursiveSeeds`。`recursiveDepth: 2` 会再进一层「文章页」找订阅
+   （很多按天发布的站，订阅地址在文章里）。**JS 渲染的索引页抽不到链接**，加之前先确认页面源码里有。
+3. **GitHub 上的新仓库**：不用手工加 —— `github-search` / `github-code` / `seeds` 每周自动发现，
+   新源先进 `sources.candidates.json` 隔离区，解析出 ≥`minNodes` 个节点才晋级 `sources.auto.json`。
+
+### 源的滚动健康管理
+
+- 每轮额外复验 `limits.revalidateExisting` 个「最久没验过」的已登记源，登记表不会只进不退。
+- 连续 3 次**真失败** → `rejected`；满 `rejectedRetryDays`（默认 7 天）自动复活成 candidate 重试，
+  一次误判不会让源永久消失。
+- 限流 / 超时 / 5xx 记为**瞬时失败**：只累加 `transientFails`、不动状态；同 host 出现 429 后，
+  本轮其余同 host 候选直接跳过（GitLab raw 匿名 per-IP 限流实测约 40 次/小时，会连续 429 近 1 小时）。
+
 ## 产物
 
 | 文件 | 用途 |

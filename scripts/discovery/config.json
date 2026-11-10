@@ -11,7 +11,8 @@
     "linksPerPage": 100,
     "validatePerRun": 80,
     "validateConcurrency": 4,
-    "revalidateExisting": 20
+    "revalidateExisting": 30,
+    "secondHop": 4
   },
   "githubQueries": [
     "免费节点 订阅",
@@ -41,7 +42,10 @@
     "feeds": "填 RSS/Atom/JSON Feed 地址。留空则跳过。",
     "minNodes": "一个订阅至少要解析出这么多节点才允许晋级到 sources.auto.json",
     "directSources": "人工核验过的直连订阅地址（网站/电报/paste 里的订阅本体）；同样走校验/评分/镜像归并，坏了自动剔除。",
-    "recursiveSeeds": "递归抓取的种子页（博客/汇总页的 HTML），从中抽订阅链接。"
+    "recursiveSeeds": "递归种子页：**必须是服务端渲染**、HTML 里能直接看到订阅或文章链接的页面（实测 freeclashnode/freev2ray 的索引页是 JS 渲染，抽不到东西，别加）",
+    "recursiveDepth": "爬取深度。2 = 索引页 → 文章页 → 订阅（按天发布的站订阅在文章里）",
+    "rejectedRetryDays": "被判 rejected 的源多少天后自动复活重试",
+    "revalidateExisting": "每轮额外复验多少个「最久没验过」的已登记源"
   },
   "directSources": [
     "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_VLESS_RUS_clash_global.yaml",
@@ -56,5 +60,7 @@
     "https://node.freeclashnode.com/uploads/__Y__/__M__/2-__YMD__.yaml",
     "https://nodesub.mlfenx.com/__Y__/__M__/mlfenx-__YMD__.yaml",
     "https://www.xrayvip.com/free.yaml"
-  ]
+  ],
+  "recursiveDepth": 2,
+  "rejectedRetryDays": 7
 }
