@@ -4,9 +4,10 @@
 
 ## 自动流程（2026-11-09 起：只做合并发布）
 
-1. 每周两次搜索公开 GitHub 订阅源；新源先进入 `sources.candidates.json` 隔离区。
-2. 每轮（约 8–10 分钟）：源清单超过 24h 才刷新 → 聚合人工策展源 + 已晋升源 → 解析/校验/去重/TCP 探活 → `mihomo -t` 验证 → 发布 `dist/clash.yaml` / `dist/clash-lite.yaml` / `dist/summary.json` → dispatch 下一轮。
+1. 每周一次多渠道发现（`discovery.yml`）：GitHub 代码搜索、GitHub 仓库搜索（含根目录嗅探）、种子源、递归爬取、**Telegram 公开频道**、**RSS/网页 Feed**、**人工核验直连源**；新源先进入 `sources.candidates.json` 隔离区，连续失败 3 次自动剔除。
+2. 每轮（约 8–10 分钟）：源清单超过 24h 才刷新 → 聚合人工策展源 + 已晋升源 → 解析/校验/去重/TCP 探活 → **统一校验入口 `scripts/ci/validate-dist.mjs`（结构 + 私有凭据断言 + `mihomo -t`）** → 发布 `dist/clash.yaml` / `dist/clash-lite.yaml` / `dist/summary.json` → dispatch 下一轮。
 3. 失败保留上一版、不发布本轮产物；watchdog 每 3 小时检查最近一次成功运行。
+4. PR 阶段就跑 `ci.yml`：语法检查 + **解析/校验单测（`npm test`，`scripts/test/`）** + 发现引擎夹具回归 + 产物结构校验 + `mihomo -t`，把「能生成但内核不认」的改动挡在合并之前。
 
 > 为什么停掉探测与测速：CI 侧单次健康检查不可信（同一节点能在 1.2s 与超时之间摆动），两层都白烧额度。CN 侧的协议级筛选改由外部服务每天跑一次，结果走独立订阅地址下发，不再回写本仓库。
 
