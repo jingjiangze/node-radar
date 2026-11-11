@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-11T13:57:50.996Z",
-  "totalRaw": 38978,
+  "generatedAt": "2026-11-11T14:07:04.896Z",
+  "totalRaw": 38899,
   "totalUnique": 20091,
-  "totalAlive": 4574,
+  "totalAlive": 4563,
   "probe": {
     "enabled": true,
     "probed": 20091,
-    "alive": 6828,
-    "ms": 200267
+    "alive": 6729,
+    "ms": 200970
   },
   "protocolProbe": {
-    "tls检查": 3445,
-    "tls失败": 899,
-    "ws检查": 2265,
-    "ws路径错": 1355
+    "tls检查": 3357,
+    "tls失败": 814,
+    "ws检查": 2255,
+    "ws路径错": 1352
   },
   "regions": {
-    "美国": 928,
-    "德国": 219,
-    "英国": 131,
-    "日本": 79,
-    "香港": 51,
+    "美国": 917,
+    "日本": 77,
+    "英国": 132,
+    "德国": 213,
+    "香港": 50,
     "台湾": 7,
-    "新加坡": 105,
+    "新加坡": 107,
     "韩国": 37
   },
   "byType": {
-    "trojan": 606,
-    "vless": 2408,
-    "vmess": 499,
-    "ss": 425,
-    "http": 591,
-    "hysteria2": 21,
-    "socks5": 23,
+    "trojan": 603,
+    "vmess": 480,
+    "vless": 2412,
+    "http": 599,
+    "ss": 424,
+    "socks5": 22,
+    "hysteria2": 22,
     "ssr": 1
   },
   "unsafe": {
-    "total": 767,
+    "total": 765,
     "cnConfirmed": 0
   },
   "sources": [
@@ -331,7 +331,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 419,
+      "count": 340,
       "ok": true
     },
     {
