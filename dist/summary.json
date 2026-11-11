@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-11T13:41:30.364Z",
-  "totalRaw": 38974,
-  "totalUnique": 20089,
-  "totalAlive": 4567,
+  "generatedAt": "2026-11-11T13:50:00.670Z",
+  "totalRaw": 38964,
+  "totalUnique": 20091,
+  "totalAlive": 4595,
   "probe": {
     "enabled": true,
-    "probed": 20089,
-    "alive": 6713,
-    "ms": 200752
+    "probed": 20091,
+    "alive": 6828,
+    "ms": 200110
   },
   "protocolProbe": {
-    "tls检查": 3352,
-    "tls失败": 798,
-    "ws检查": 2251,
-    "ws路径错": 1348
+    "tls检查": 3446,
+    "tls失败": 894,
+    "ws检查": 2253,
+    "ws路径错": 1339
   },
   "regions": {
-    "美国": 920,
-    "德国": 215,
-    "香港": 50,
+    "美国": 923,
+    "德国": 223,
+    "英国": 138,
+    "日本": 80,
+    "香港": 52,
+    "新加坡": 107,
     "台湾": 7,
-    "日本": 79,
-    "英国": 134,
-    "新加坡": 105,
-    "韩国": 36
+    "韩国": 35
   },
   "byType": {
-    "vless": 2423,
-    "trojan": 601,
-    "vmess": 481,
-    "http": 596,
+    "vless": 2436,
+    "vmess": 493,
+    "trojan": 602,
     "ss": 423,
-    "socks5": 21,
+    "http": 597,
+    "socks5": 22,
     "hysteria2": 21,
     "ssr": 1
   },
   "unsafe": {
-    "total": 758,
+    "total": 769,
     "cnConfirmed": 0
   },
   "sources": [
@@ -73,7 +73,7 @@
     {
       "source": "peasoft/NoMoreWalls",
       "kind": "clash-yaml",
-      "count": 135,
+      "count": 125,
       "ok": true
     },
     {
