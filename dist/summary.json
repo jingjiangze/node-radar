@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-11-11T09:54:43.259Z",
-  "totalRaw": 38430,
-  "totalUnique": 19943,
-  "totalAlive": 4487,
+  "generatedAt": "2026-11-11T10:12:21.065Z",
+  "totalRaw": 37901,
+  "totalUnique": 19933,
+  "totalAlive": 4467,
   "probe": {
     "enabled": true,
-    "probed": 19943,
-    "alive": 6636,
-    "ms": 199782
+    "probed": 19933,
+    "alive": 6634,
+    "ms": 199998
   },
   "protocolProbe": {
-    "tls检查": 3301,
-    "tls失败": 807,
-    "ws检查": 2244,
-    "ws路径错": 1342
+    "tls检查": 3299,
+    "tls失败": 823,
+    "ws检查": 2232,
+    "ws路径错": 1344
   },
   "regions": {
-    "美国": 907,
-    "日本": 71,
-    "德国": 214,
-    "英国": 127,
-    "香港": 44,
+    "美国": 899,
+    "英国": 131,
+    "德国": 211,
     "台湾": 8,
-    "新加坡": 98,
-    "韩国": 34
+    "日本": 73,
+    "香港": 43,
+    "新加坡": 96,
+    "韩国": 37
   },
   "byType": {
-    "vmess": 476,
-    "vless": 2432,
+    "vless": 2409,
     "trojan": 601,
-    "ss": 420,
-    "http": 523,
-    "hysteria2": 25,
-    "socks5": 8,
+    "vmess": 472,
+    "http": 525,
+    "ss": 424,
+    "hysteria2": 24,
+    "socks5": 9,
     "ssr": 1,
-    "anytls": 1
+    "anytls": 2
   },
   "unsafe": {
     "total": 706,
@@ -92,7 +92,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4478,
+      "count": 4480,
       "ok": true
     },
     {
@@ -158,7 +158,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 291,
+      "count": 287,
       "ok": true
     },
     {
@@ -175,9 +175,8 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 329,
-      "ok": true
+      "ok": false,
+      "error": "This operation was aborted"
     },
     {
       "source": "direct",
@@ -242,7 +241,7 @@
     {
       "source": "revalidate",
       "kind": "clash-yaml",
-      "count": 25,
+      "count": 23,
       "ok": true
     },
     {
@@ -259,20 +258,18 @@
     {
       "source": "github-code",
       "kind": "clash-yaml",
-      "count": 20,
+      "count": 4,
       "ok": true
     },
     {
       "source": "direct",
-      "kind": "clash-yaml",
-      "count": 95,
-      "ok": true
+      "ok": false,
+      "error": "This operation was aborted"
     },
     {
       "source": "direct",
-      "kind": "clash-yaml",
-      "count": 85,
-      "ok": true
+      "ok": false,
+      "error": "This operation was aborted"
     },
     {
       "source": "github-search",
