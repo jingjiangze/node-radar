@@ -1,38 +1,38 @@
 {
-  "generatedAt": "2026-11-11T01:06:07.745Z",
-  "totalRaw": 38225,
-  "totalUnique": 19835,
-  "totalAlive": 4688,
+  "generatedAt": "2026-11-11T01:16:04.804Z",
+  "totalRaw": 38192,
+  "totalUnique": 19821,
+  "totalAlive": 4701,
   "probe": {
     "enabled": true,
-    "probed": 19835,
-    "alive": 6636,
-    "ms": 197896
+    "probed": 19821,
+    "alive": 6650,
+    "ms": 197017
   },
   "protocolProbe": {
-    "tls检查": 3317,
-    "tls失败": 767,
-    "ws检查": 2185,
-    "ws路径错": 1181
+    "tls检查": 3334,
+    "tls失败": 772,
+    "ws检查": 2182,
+    "ws路径错": 1177
   },
   "regions": {
-    "美国": 890,
-    "德国": 236,
-    "日本": 95,
-    "英国": 157,
+    "美国": 889,
+    "德国": 233,
+    "新加坡": 122,
+    "英国": 158,
     "台湾": 10,
-    "香港": 37,
-    "新加坡": 126,
-    "韩国": 38
+    "日本": 95,
+    "香港": 34,
+    "韩国": 36
   },
   "byType": {
-    "vless": 2597,
+    "vless": 2612,
     "vmess": 482,
-    "trojan": 537,
-    "ss": 425,
-    "http": 591,
-    "hysteria2": 31,
-    "socks5": 22,
+    "trojan": 539,
+    "ss": 427,
+    "http": 588,
+    "socks5": 21,
+    "hysteria2": 29,
     "ssr": 1,
     "anytls": 2
   },
@@ -134,7 +134,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 534,
+      "count": 502,
       "ok": true
     },
     {
@@ -158,7 +158,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 280,
+      "count": 277,
       "ok": true
     },
     {
@@ -320,7 +320,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 399,
+      "count": 414,
       "ok": true
     },
     {
@@ -332,19 +332,19 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 285,
+      "count": 282,
       "ok": true
     },
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 73,
+      "count": 68,
       "ok": true
     },
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 494,
+      "count": 489,
       "ok": true
     },
     {
