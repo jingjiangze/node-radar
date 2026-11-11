@@ -1,43 +1,43 @@
 {
-  "generatedAt": "2026-11-11T07:08:11.144Z",
-  "totalRaw": 39326,
-  "totalUnique": 20020,
-  "totalAlive": 4595,
+  "generatedAt": "2026-11-11T07:18:12.901Z",
+  "totalRaw": 39322,
+  "totalUnique": 20018,
+  "totalAlive": 4616,
   "probe": {
     "enabled": true,
-    "probed": 20020,
-    "alive": 6734,
-    "ms": 199197
+    "probed": 20018,
+    "alive": 6738,
+    "ms": 198580
   },
   "protocolProbe": {
-    "tls检查": 3354,
-    "tls失败": 812,
-    "ws检查": 2253,
-    "ws路径错": 1327
+    "tls检查": 3359,
+    "tls失败": 798,
+    "ws检查": 2244,
+    "ws路径错": 1324
   },
   "regions": {
-    "美国": 919,
-    "德国": 220,
-    "英国": 133,
+    "美国": 923,
+    "英国": 136,
     "香港": 44,
-    "台湾": 10,
-    "韩国": 35,
-    "日本": 69,
-    "新加坡": 109
+    "德国": 223,
+    "日本": 71,
+    "韩国": 33,
+    "新加坡": 110,
+    "台湾": 9
   },
   "byType": {
-    "vmess": 476,
-    "vless": 2460,
-    "trojan": 604,
+    "vless": 2471,
+    "trojan": 605,
+    "vmess": 477,
     "ss": 425,
-    "http": 581,
-    "socks5": 21,
-    "hysteria2": 26,
+    "http": 584,
+    "socks5": 23,
+    "hysteria2": 28,
     "ssr": 1,
-    "anytls": 1
+    "anytls": 2
   },
   "unsafe": {
-    "total": 744,
+    "total": 753,
     "cnConfirmed": 0
   },
   "sources": [
@@ -128,7 +128,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 428,
+      "count": 418,
       "ok": true
     },
     {
@@ -158,7 +158,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 292,
+      "count": 295,
       "ok": true
     },
     {
@@ -332,7 +332,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 297,
+      "count": 300,
       "ok": true
     },
     {
