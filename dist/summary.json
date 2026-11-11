@@ -1,43 +1,42 @@
 {
-  "generatedAt": "2026-11-11T12:27:07.091Z",
-  "totalRaw": 38080,
-  "totalUnique": 19979,
-  "totalAlive": 4458,
+  "generatedAt": "2026-11-11T12:36:48.182Z",
+  "totalRaw": 37965,
+  "totalUnique": 19985,
+  "totalAlive": 4449,
   "probe": {
     "enabled": true,
-    "probed": 19979,
-    "alive": 6642,
-    "ms": 200716
+    "probed": 19985,
+    "alive": 6610,
+    "ms": 199649
   },
   "protocolProbe": {
-    "tls检查": 3312,
-    "tls失败": 835,
-    "ws检查": 2252,
-    "ws路径错": 1349
+    "tls检查": 3289,
+    "tls失败": 807,
+    "ws检查": 2245,
+    "ws路径错": 1354
   },
   "regions": {
-    "美国": 907,
+    "美国": 905,
+    "德国": 215,
+    "日本": 71,
+    "英国": 127,
+    "台湾": 7,
     "香港": 44,
-    "德国": 209,
-    "英国": 125,
     "新加坡": 95,
-    "日本": 75,
-    "台湾": 8,
-    "韩国": 37
+    "韩国": 32
   },
   "byType": {
-    "vless": 2384,
-    "vmess": 480,
-    "trojan": 602,
-    "ss": 420,
-    "http": 537,
-    "hysteria2": 23,
+    "vless": 2387,
+    "vmess": 481,
+    "trojan": 598,
+    "http": 536,
+    "ss": 416,
     "socks5": 10,
-    "ssr": 1,
-    "anytls": 1
+    "hysteria2": 20,
+    "ssr": 1
   },
   "unsafe": {
-    "total": 718,
+    "total": 711,
     "cnConfirmed": 0
   },
   "sources": [
@@ -56,7 +55,7 @@
     {
       "source": "ermaozi/get_subscribe",
       "kind": "clash-yaml",
-      "count": 489,
+      "count": 465,
       "ok": true
     },
     {
@@ -92,7 +91,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4485,
+      "count": 4486,
       "ok": true
     },
     {
@@ -128,7 +127,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 428,
+      "count": 418,
       "ok": true
     },
     {
@@ -278,7 +277,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 59,
+      "count": 56,
       "ok": true
     },
     {
@@ -338,7 +337,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 419,
+      "count": 340,
       "ok": true
     },
     {
