@@ -1,43 +1,43 @@
 {
-  "generatedAt": "2026-11-14T13:00:24.153Z",
-  "totalRaw": 38852,
-  "totalUnique": 20032,
-  "totalAlive": 4178,
+  "generatedAt": "2026-11-14T13:12:33.197Z",
+  "totalRaw": 38697,
+  "totalUnique": 20021,
+  "totalAlive": 4223,
   "probe": {
     "enabled": true,
-    "probed": 20032,
-    "alive": 6341,
-    "ms": 205783
+    "probed": 20021,
+    "alive": 6455,
+    "ms": 205148
   },
   "protocolProbe": {
-    "tls检查": 3141,
-    "tls失败": 839,
-    "ws检查": 2037,
-    "ws路径错": 1324
+    "tls检查": 3224,
+    "tls失败": 926,
+    "ws检查": 2043,
+    "ws路径错": 1306
   },
   "regions": {
-    "美国": 753,
-    "德国": 195,
-    "台湾": 9,
-    "日本": 66,
-    "英国": 130,
+    "美国": 759,
+    "英国": 135,
+    "日本": 68,
+    "德国": 199,
+    "台湾": 8,
     "香港": 33,
-    "新加坡": 78,
-    "韩国": 27
+    "韩国": 24,
+    "新加坡": 82
   },
   "byType": {
-    "vmess": 469,
-    "vless": 2260,
-    "trojan": 477,
-    "http": 470,
-    "ss": 435,
-    "hysteria2": 31,
-    "socks5": 13,
-    "ssr": 1,
-    "anytls": 22
+    "vless": 2274,
+    "trojan": 481,
+    "vmess": 493,
+    "ss": 443,
+    "http": 469,
+    "hysteria2": 28,
+    "socks5": 12,
+    "anytls": 22,
+    "ssr": 1
   },
   "unsafe": {
-    "total": 684,
+    "total": 687,
     "cnConfirmed": 0
   },
   "sources": [
@@ -74,7 +74,7 @@
     {
       "source": "peasoft/NoMoreWalls",
       "kind": "clash-yaml",
-      "count": 136,
+      "count": 129,
       "ok": true
     },
     {
@@ -122,7 +122,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 441,
+      "count": 445,
       "ok": true
     },
     {
@@ -134,7 +134,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 503,
+      "count": 496,
       "ok": true
     },
     {
@@ -146,7 +146,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 441,
+      "count": 445,
       "ok": true
     },
     {
@@ -284,7 +284,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 383,
+      "count": 319,
       "ok": true
     },
     {
@@ -302,19 +302,19 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 80,
+      "count": 72,
       "ok": true
     },
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 479,
+      "count": 405,
       "ok": true
     },
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 402,
+      "count": 401,
       "ok": true
     },
     {
@@ -368,7 +368,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 16,
+      "count": 14,
       "ok": true
     }
   ],
