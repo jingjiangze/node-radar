@@ -1,49 +1,50 @@
 {
-  "generatedAt": "2026-11-14T03:06:50.144Z",
-  "totalRaw": 38747,
-  "totalUnique": 19973,
-  "totalAlive": 4319,
+  "generatedAt": "2026-11-14T09:41:15.768Z",
+  "totalRaw": 39026,
+  "totalUnique": 19957,
+  "totalAlive": 4225,
   "probe": {
     "enabled": true,
-    "probed": 19973,
-    "alive": 6379,
-    "ms": 204733
+    "probed": 19957,
+    "alive": 6322,
+    "ms": 205889
   },
   "protocolProbe": {
-    "tls检查": 3148,
-    "tls失败": 836,
-    "ws检查": 2056,
-    "ws路径错": 1224
+    "tls检查": 3117,
+    "tls失败": 855,
+    "ws检查": 2024,
+    "ws路径错": 1242
   },
   "regions": {
-    "日本": 61,
-    "美国": 769,
-    "英国": 148,
-    "德国": 208,
-    "台湾": 4,
-    "新加坡": 86,
-    "香港": 33,
-    "韩国": 27
+    "美国": 747,
+    "德国": 199,
+    "英国": 134,
+    "日本": 62,
+    "台湾": 6,
+    "新加坡": 83,
+    "香港": 34,
+    "韩国": 28
   },
   "byType": {
-    "vless": 2377,
-    "vmess": 486,
-    "trojan": 475,
-    "ss": 441,
-    "http": 500,
-    "hysteria2": 24,
-    "socks5": 15,
+    "vmess": 481,
+    "vless": 2301,
+    "trojan": 478,
+    "ss": 448,
+    "socks5": 9,
+    "http": 464,
+    "hysteria2": 25,
+    "anytls": 18,
     "ssr": 1
   },
   "unsafe": {
-    "total": 672,
+    "total": 671,
     "cnConfirmed": 0
   },
   "sources": [
     {
       "source": "Pawdroid/Free-servers",
       "kind": "uri-list",
-      "count": 16,
+      "count": 9,
       "ok": true
     },
     {
@@ -61,7 +62,7 @@
     {
       "source": "ermaozi01/free_clash_vpn",
       "kind": "clash-yaml",
-      "count": 22,
+      "count": 24,
       "ok": true
     },
     {
@@ -73,7 +74,7 @@
     {
       "source": "peasoft/NoMoreWalls",
       "kind": "clash-yaml",
-      "count": 135,
+      "count": 136,
       "ok": true
     },
     {
@@ -91,13 +92,13 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4620,
+      "count": 4635,
       "ok": true
     },
     {
       "source": "mahdibland/V2RayAggregator",
       "kind": "uri-list",
-      "count": 4486,
+      "count": 4411,
       "ok": true
     },
     {
@@ -121,7 +122,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 441,
+      "count": 445,
       "ok": true
     },
     {
@@ -145,7 +146,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 452,
+      "count": 445,
       "ok": true
     },
     {
@@ -163,7 +164,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 531,
+      "count": 511,
       "ok": true
     },
     {
@@ -187,7 +188,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 16,
+      "count": 9,
       "ok": true
     },
     {
@@ -205,7 +206,7 @@
     {
       "source": "revalidate",
       "kind": "uri-list",
-      "count": 825,
+      "count": 757,
       "ok": true
     },
     {
@@ -217,7 +218,7 @@
     {
       "source": "revalidate",
       "kind": "uri-list",
-      "count": 1733,
+      "count": 2249,
       "ok": true
     },
     {
@@ -259,19 +260,19 @@
     {
       "source": "revalidate",
       "kind": "uri-list",
-      "count": 49,
+      "count": 50,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 44,
+      "count": 28,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 44,
+      "count": 28,
       "ok": true
     },
     {
@@ -289,13 +290,13 @@
     {
       "source": "revalidate",
       "kind": "clash-yaml",
-      "count": 1057,
+      "count": 1027,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 536,
+      "count": 516,
       "ok": true
     },
     {
@@ -313,7 +314,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 398,
+      "count": 402,
       "ok": true
     },
     {
@@ -361,7 +362,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 27,
+      "count": 29,
       "ok": true
     },
     {
