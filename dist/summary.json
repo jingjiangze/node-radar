@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-15T14:42:45.499Z",
-  "totalRaw": 37974,
-  "totalUnique": 19637,
-  "totalAlive": 4157,
+  "generatedAt": "2026-11-15T14:54:58.630Z",
+  "totalRaw": 37987,
+  "totalUnique": 19632,
+  "totalAlive": 4172,
   "probe": {
     "enabled": true,
-    "probed": 19637,
-    "alive": 6444,
-    "ms": 199779
+    "probed": 19632,
+    "alive": 6533,
+    "ms": 198157
   },
   "protocolProbe": {
-    "tls检查": 3349,
-    "tls失败": 849,
-    "ws检查": 2235,
-    "ws路径错": 1438
+    "tls检查": 3423,
+    "tls失败": 912,
+    "ws检查": 2267,
+    "ws路径错": 1449
   },
   "regions": {
-    "美国": 794,
-    "德国": 196,
-    "日本": 65,
-    "英国": 141,
+    "美国": 806,
+    "德国": 195,
+    "英国": 144,
+    "日本": 64,
     "台湾": 6,
-    "香港": 31,
-    "新加坡": 72,
-    "韩国": 30
+    "香港": 29,
+    "新加坡": 73,
+    "韩国": 27
   },
   "byType": {
-    "http": 339,
-    "vmess": 485,
-    "vless": 2371,
-    "trojan": 484,
-    "ss": 414,
-    "socks5": 36,
+    "vless": 2366,
+    "trojan": 478,
+    "vmess": 515,
+    "ss": 407,
+    "http": 341,
+    "socks5": 37,
     "hysteria2": 27,
     "ssr": 1
   },
   "unsafe": {
-    "total": 555,
+    "total": 587,
     "cnConfirmed": 0
   },
   "sources": [
@@ -91,7 +91,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4682,
+      "count": 4689,
       "ok": true
     },
     {
@@ -115,7 +115,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 455,
+      "count": 439,
       "ok": true
     },
     {
@@ -253,13 +253,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 30,
+      "count": 40,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 30,
+      "count": 40,
       "ok": true
     },
     {
@@ -283,13 +283,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 195,
+      "count": 196,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 195,
+      "count": 196,
       "ok": true
     },
     {
@@ -307,13 +307,13 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 312,
+      "count": 358,
       "ok": true
     },
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 358,
+      "count": 312,
       "ok": true
     },
     {
