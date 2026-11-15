@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-15T15:45:39.242Z",
-  "totalRaw": 37855,
-  "totalUnique": 19638,
-  "totalAlive": 4147,
+  "generatedAt": "2026-11-15T15:56:55.513Z",
+  "totalRaw": 37935,
+  "totalUnique": 19640,
+  "totalAlive": 4134,
   "probe": {
     "enabled": true,
-    "probed": 19638,
-    "alive": 6459,
-    "ms": 199433
+    "probed": 19640,
+    "alive": 6531,
+    "ms": 198403
   },
   "protocolProbe": {
-    "tls检查": 3352,
-    "tls失败": 870,
-    "ws检查": 2236,
-    "ws路径错": 1442
+    "tls检查": 3408,
+    "tls失败": 946,
+    "ws检查": 2262,
+    "ws路径错": 1451
   },
   "regions": {
-    "美国": 786,
-    "德国": 192,
-    "台湾": 6,
-    "日本": 66,
+    "美国": 806,
+    "德国": 188,
     "英国": 141,
-    "香港": 31,
+    "日本": 64,
+    "台湾": 6,
+    "香港": 28,
     "新加坡": 70,
     "韩国": 29
   },
   "byType": {
-    "vless": 2349,
-    "vmess": 496,
-    "trojan": 480,
-    "ss": 416,
+    "trojan": 481,
+    "vless": 2333,
+    "vmess": 505,
+    "ss": 409,
     "http": 342,
-    "hysteria2": 26,
     "socks5": 37,
+    "hysteria2": 26,
     "ssr": 1
   },
   "unsafe": {
-    "total": 568,
+    "total": 593,
     "cnConfirmed": 0
   },
   "sources": [
@@ -91,7 +91,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4691,
+      "count": 4690,
       "ok": true
     },
     {
@@ -115,7 +115,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 455,
+      "count": 439,
       "ok": true
     },
     {
@@ -253,13 +253,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 35,
+      "count": 45,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 35,
+      "count": 45,
       "ok": true
     },
     {
@@ -307,13 +307,13 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 312,
+      "count": 358,
       "ok": true
     },
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 312,
+      "count": 358,
       "ok": true
     },
     {
@@ -325,7 +325,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 42,
+      "count": 27,
       "ok": true
     },
     {
