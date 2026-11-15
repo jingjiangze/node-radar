@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-15T21:08:37.065Z",
-  "totalRaw": 38572,
-  "totalUnique": 19896,
-  "totalAlive": 4499,
+  "generatedAt": "2026-11-15T21:20:39.731Z",
+  "totalRaw": 37027,
+  "totalUnique": 19385,
+  "totalAlive": 4224,
   "probe": {
     "enabled": true,
-    "probed": 19896,
-    "alive": 6966,
-    "ms": 196732
+    "probed": 19385,
+    "alive": 6461,
+    "ms": 195479
   },
   "protocolProbe": {
-    "tls检查": 3749,
-    "tls失败": 937,
-    "ws检查": 2356,
-    "ws路径错": 1530
+    "tls检查": 3325,
+    "tls失败": 879,
+    "ws检查": 2158,
+    "ws路径错": 1358
   },
   "regions": {
-    "美国": 890,
-    "德国": 228,
-    "日本": 61,
-    "新加坡": 78,
+    "美国": 793,
+    "德国": 195,
+    "日本": 60,
     "台湾": 5,
-    "英国": 134,
-    "香港": 35,
-    "韩国": 30
+    "新加坡": 70,
+    "英国": 136,
+    "香港": 30,
+    "韩国": 25
   },
   "byType": {
-    "vless": 2443,
-    "trojan": 498,
-    "vmess": 521,
-    "ss": 442,
-    "http": 539,
-    "socks5": 29,
+    "vmess": 504,
+    "trojan": 481,
+    "vless": 2447,
+    "ss": 415,
+    "http": 327,
+    "socks5": 23,
     "hysteria2": 26,
     "ssr": 1
   },
   "unsafe": {
-    "total": 794,
+    "total": 584,
     "cnConfirmed": 0
   },
   "sources": [
@@ -115,7 +115,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 421,
+      "count": 455,
       "ok": true
     },
     {
@@ -151,13 +151,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 380,
+      "count": 374,
       "ok": true
     },
     {
       "source": "direct",
       "kind": "clash-yaml",
-      "count": 1868,
+      "count": 315,
       "ok": true
     },
     {
@@ -253,19 +253,19 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 35,
+      "count": 29,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 35,
+      "count": 29,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 385,
+      "count": 379,
       "ok": true
     },
     {
@@ -361,7 +361,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 35,
+      "count": 33,
       "ok": true
     },
     {
