@@ -2,42 +2,42 @@
   {
     "name": "seed",
     "url": "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt",
-    "nodes": 445,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 455,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "seeds",
-    "score": 34.8
+    "score": 36.83
   },
   {
     "name": "seed",
     "url": "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt",
-    "nodes": 431,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 430,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "seeds",
-    "score": 34.75
+    "score": 36.75
   },
   {
-    "name": "github-search",
+    "name": "revalidate",
     "url": "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt",
     "nodes": 10000,
-    "verifiedAt": "2026-11-11T12:56:05.377Z",
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "github-search",
-    "score": 33.29
+    "score": 35.29
   },
   {
     "name": "seed",
     "url": "https://blog.ermao.net/sub/v2ray/ermao.net",
-    "nodes": 497,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 518,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "seeds",
-    "score": 32.96
+    "score": 35.02
   },
   {
-    "name": "seed",
-    "url": "https://testingcf.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt",
-    "nodes": 429,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "seeds",
-    "score": 32.74
+    "name": "direct",
+    "url": "https://gitlab.com/avencores/goida-vpn-configs/-/raw/main/githubmirror/1.txt",
+    "nodes": 5232,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "direct-sources",
+    "score": 30.35
   },
   {
     "name": "github-search",
@@ -48,36 +48,28 @@
     "score": 30.32
   },
   {
-    "name": "direct",
-    "url": "https://gitlab.com/avencores/goida-vpn-configs/-/raw/main/githubmirror/1.txt",
-    "nodes": 5012,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "direct-sources",
-    "score": 28.29
-  },
-  {
     "name": "github-search",
     "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.txt",
-    "nodes": 524,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 507,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "github-search",
-    "score": 27.03
-  },
-  {
-    "name": "direct",
-    "url": "https://node.freeclashnode.com/uploads/__Y__/__M__/2-__YMD__.yaml",
-    "nodes": 1304,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "direct-sources",
-    "score": 24.35
+    "score": 28.99
   },
   {
     "name": "direct",
     "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Base64/PROXIES_ONLY/BLACK_VLESS_RUS_base64.txt",
-    "nodes": 299,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 134,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "direct-sources",
-    "score": 24.22
+    "score": 25.07
+  },
+  {
+    "name": "direct",
+    "url": "https://node.freeclashnode.com/uploads/__Y__/__M__/2-__YMD__.yaml",
+    "nodes": 315,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "direct-sources",
+    "score": 24.3
   },
   {
     "name": "github-search",
@@ -90,42 +82,42 @@
   {
     "name": "direct",
     "url": "https://node.freeclashnode.com/uploads/__Y__/__M__/0-__YMD__.yaml",
-    "nodes": 526,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 149,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "direct-sources",
-    "score": 23.04
+    "score": 23.22
   },
   {
     "name": "direct",
     "url": "https://node.freeclashnode.com/uploads/__Y__/__M__/1-__YMD__.yaml",
-    "nodes": 141,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 91,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "direct-sources",
-    "score": 21.14
-  },
-  {
-    "name": "direct",
-    "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_VLESS_RUS_clash_global.yaml",
-    "nodes": 298,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "direct-sources",
-    "score": 19.22
+    "score": 22.51
   },
   {
     "name": "direct",
     "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/WHITE-CIDR-RU-all-clash-global.yaml",
-    "nodes": 109,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 146,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "direct-sources",
-    "score": 17.77
+    "score": 20.19
   },
   {
     "name": "direct",
     "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_SS%2BAll_RUS_clash_global.yaml",
-    "nodes": 80,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 143,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "direct-sources",
-    "score": 17.32
+    "score": 20.16
+  },
+  {
+    "name": "direct",
+    "url": "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_VLESS_RUS_clash_global.yaml",
+    "nodes": 134,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "direct-sources",
+    "score": 20.07
   },
   {
     "name": "revalidate",
@@ -192,6 +184,14 @@
     "score": 14
   },
   {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/xifan001-lab/clash-sub/main/clash.yaml",
+    "nodes": 100,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "github-search",
+    "score": 13.64
+  },
+  {
     "name": "revalidate",
     "url": "https://raw.githubusercontent.com/samur005/free-subs/master/free_subs_small.txt",
     "nodes": 400,
@@ -208,12 +208,44 @@
     "score": 12.58
   },
   {
+    "name": "seed",
+    "url": "https://blog.ermao.net/sub/reachable/clash/ermao.net",
+    "nodes": 301,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "seeds",
+    "score": 12.23
+  },
+  {
     "name": "github-search",
-    "url": "https://raw.githubusercontent.com/xifan001-lab/clash-sub/main/clash.yaml",
-    "nodes": 100,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/v2ray.txt",
+    "nodes": 52,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "github-search",
-    "score": 11.64
+    "score": 11.7
+  },
+  {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/grisha-seleznev/free-vless-keys-russia/main/sub.txt",
+    "nodes": 30,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "github-search",
+    "score": 10.91
+  },
+  {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/grisha-seleznev/free-vless-keys-russia/main/sub_base64.txt",
+    "nodes": 30,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "github-search",
+    "score": 10.91
+  },
+  {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml",
+    "nodes": 51,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "github-search",
+    "score": 10.67
   },
   {
     "name": "github-search",
@@ -225,9 +257,9 @@
   },
   {
     "name": "seed",
-    "url": "https://blog.ermao.net/sub/reachable/clash/ermao.net",
-    "nodes": 319,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "url": "https://www.ermao.net/sub/untested/clash/ermao.net",
+    "nodes": 80,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "seeds",
     "score": 10.32
   },
@@ -240,28 +272,52 @@
     "score": 10.32
   },
   {
-    "name": "revalidate",
-    "url": "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/v2ray.txt",
-    "nodes": 56,
-    "verifiedAt": "2026-11-11T12:56:05.377Z",
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/V2HUBIR/V2HUBIR-Free-V2Ray-Configs-free-Sub/main/sub.txt",
+    "nodes": 200,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "github-search",
-    "score": 9.81
+    "score": 9.64
   },
   {
     "name": "github-search",
-    "url": "https://raw.githubusercontent.com/grisha-seleznev/free-vless-keys-russia/main/sub.txt",
-    "nodes": 53,
-    "verifiedAt": "2026-11-11T12:56:05.377Z",
+    "url": "https://raw.githubusercontent.com/V2HUBIR/V2HUBIR-Free-V2Ray-Configs-free-Sub/main/sub_base64.txt",
+    "nodes": 200,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "github-search",
-    "score": 9.73
+    "score": 9.64
   },
   {
-    "name": "github-search",
-    "url": "https://raw.githubusercontent.com/grisha-seleznev/free-vless-keys-russia/main/sub_base64.txt",
-    "nodes": 53,
-    "verifiedAt": "2026-11-11T12:56:05.377Z",
-    "channel": "github-search",
-    "score": 9.73
+    "name": "seed",
+    "url": "https://fastly.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
+    "nodes": 395,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "seeds",
+    "score": 9.63
+  },
+  {
+    "name": "seed",
+    "url": "https://blog.ermao.net/sub/clash/ermao.net",
+    "nodes": 389,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "seeds",
+    "score": 9.6
+  },
+  {
+    "name": "seed",
+    "url": "https://gcore.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
+    "nodes": 358,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "seeds",
+    "score": 9.48
+  },
+  {
+    "name": "seed",
+    "url": "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
+    "nodes": 312,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "seeds",
+    "score": 9.29
   },
   {
     "name": "github-search",
@@ -273,51 +329,11 @@
   },
   {
     "name": "github-search",
-    "url": "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml",
-    "nodes": 47,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "url": "https://raw.githubusercontent.com/15605875200-spec/abaaba/main/clash.yaml",
+    "nodes": 800,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "github-search",
-    "score": 8.55
-  },
-  {
-    "name": "seed",
-    "url": "https://www.ermao.net/sub/untested/clash/ermao.net",
-    "nodes": 72,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "seeds",
-    "score": 8.17
-  },
-  {
-    "name": "seed",
-    "url": "https://blog.ermao.net/sub/clash/ermao.net",
-    "nodes": 405,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "seeds",
-    "score": 7.66
-  },
-  {
-    "name": "seed",
-    "url": "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
-    "nodes": 402,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "seeds",
-    "score": 7.65
-  },
-  {
-    "name": "seed",
-    "url": "https://fastly.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml",
-    "nodes": 401,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "seeds",
-    "score": 7.65
-  },
-  {
-    "name": "seed",
-    "url": "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.meta.yml",
-    "nodes": 344,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "seeds",
-    "score": 7.43
+    "score": 7.64
   },
   {
     "name": "github-search",
@@ -353,14 +369,6 @@
   },
   {
     "name": "github-search",
-    "url": "https://raw.githubusercontent.com/15605875200-spec/abaaba/main/clash.yaml",
-    "nodes": 800,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
-    "channel": "github-search",
-    "score": 5.64
-  },
-  {
-    "name": "github-search",
     "url": "https://raw.githubusercontent.com/TheHunterX/oneforallhub-v2ray-configs/main/auto-clash.yaml",
     "nodes": 100,
     "verifiedAt": "2026-11-10T05:16:15.144Z",
@@ -376,12 +384,36 @@
     "score": 3.81
   },
   {
+    "name": "revalidate",
+    "url": "https://raw.githubusercontent.com/v2raydog-node/free-nodes/main/nodes.txt",
+    "nodes": 24,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "github-search",
+    "score": 3.58
+  },
+  {
+    "name": "revalidate",
+    "url": "https://raw.githubusercontent.com/v2raydog-node/free-nodes/main/v2ray.txt",
+    "nodes": 24,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "github-search",
+    "score": 3.58
+  },
+  {
+    "name": "revalidate",
+    "url": "https://raw.githubusercontent.com/v2raydog-node/free-nodes/main/clash.yaml",
+    "nodes": 22,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "github-search",
+    "score": 3.46
+  },
+  {
     "name": "github-search",
     "url": "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/clash_config.yaml",
-    "nodes": 34,
-    "verifiedAt": "2026-11-14T13:13:45.914Z",
+    "nodes": 35,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
     "channel": "github-search",
-    "score": 1.09
+    "score": 3.13
   },
   {
     "name": "github-search",
@@ -416,6 +448,14 @@
     "score": 0.32
   },
   {
+    "name": "direct",
+    "url": "https://nodesub.mlfenx.com/__Y__/__M__/mlfenx-__YMD__.yaml",
+    "nodes": 20,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "direct-sources",
+    "score": -4.68
+  },
+  {
     "name": "revalidate",
     "url": "https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/clash.yaml",
     "nodes": 28,
@@ -424,11 +464,27 @@
     "score": -5.19
   },
   {
+    "name": "direct",
+    "url": "https://www.xrayvip.com/free.yaml",
+    "nodes": 24,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "direct-sources",
+    "score": -17.42
+  },
+  {
     "name": "seed",
     "url": "https://blog.ermao.net/sub/unreachable/clash/ermao.net",
     "nodes": 23,
     "verifiedAt": "2026-11-13T13:08:00.635Z",
     "channel": "seeds",
     "score": -20.48
+  },
+  {
+    "name": "github-search",
+    "url": "https://raw.githubusercontent.com/guo0914/Free-Node/main/clash.yaml",
+    "nodes": 21,
+    "verifiedAt": "2026-11-15T14:06:35.815Z",
+    "channel": "github-search",
+    "score": -27.61
   }
 ]
