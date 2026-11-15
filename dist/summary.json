@@ -1,43 +1,42 @@
 {
-  "generatedAt": "2026-11-15T16:44:14.926Z",
-  "totalRaw": 37469,
-  "totalUnique": 19569,
-  "totalAlive": 4143,
+  "generatedAt": "2026-11-15T16:56:52.155Z",
+  "totalRaw": 39152,
+  "totalUnique": 20092,
+  "totalAlive": 4405,
   "probe": {
     "enabled": true,
-    "probed": 19569,
-    "alive": 6588,
-    "ms": 193584
+    "probed": 20092,
+    "alive": 6932,
+    "ms": 200481
   },
   "protocolProbe": {
-    "tls检查": 3427,
-    "tls失败": 990,
-    "ws检查": 2259,
-    "ws路径错": 1455
+    "tls检查": 3741,
+    "tls失败": 916,
+    "ws检查": 2436,
+    "ws路径错": 1611
   },
   "regions": {
-    "美国": 797,
-    "德国": 196,
-    "英国": 136,
-    "新加坡": 70,
-    "日本": 64,
-    "台湾": 8,
-    "香港": 40,
-    "韩国": 32
+    "美国": 885,
+    "德国": 225,
+    "日本": 63,
+    "台湾": 7,
+    "英国": 135,
+    "新加坡": 83,
+    "韩国": 32,
+    "香港": 34
   },
   "byType": {
-    "vless": 2339,
-    "trojan": 490,
-    "vmess": 501,
-    "ss": 427,
-    "http": 306,
-    "socks5": 34,
-    "hysteria2": 43,
-    "ssr": 1,
-    "anytls": 2
+    "vless": 2333,
+    "trojan": 488,
+    "vmess": 519,
+    "ss": 449,
+    "http": 552,
+    "socks5": 37,
+    "hysteria2": 26,
+    "ssr": 1
   },
   "unsafe": {
-    "total": 559,
+    "total": 799,
     "cnConfirmed": 0
   },
   "sources": [
@@ -157,8 +156,8 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 1868,
       "ok": true
     },
     {
@@ -169,8 +168,8 @@
     },
     {
       "source": "direct",
-      "kind": "clash-yaml",
-      "count": 155,
+      "kind": "uri-list",
+      "count": 0,
       "ok": true
     },
     {
@@ -284,13 +283,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 191,
+      "count": 199,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 191,
+      "count": 199,
       "ok": true
     },
     {
@@ -308,7 +307,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 358,
+      "count": 312,
       "ok": true
     },
     {
