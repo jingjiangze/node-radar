@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-15T19:02:42.470Z",
-  "totalRaw": 38911,
-  "totalUnique": 20052,
-  "totalAlive": 4467,
+  "generatedAt": "2026-11-15T19:12:56.256Z",
+  "totalRaw": 38555,
+  "totalUnique": 19883,
+  "totalAlive": 4476,
   "probe": {
     "enabled": true,
-    "probed": 20052,
-    "alive": 6867,
-    "ms": 199939
+    "probed": 19883,
+    "alive": 7015,
+    "ms": 192385
   },
   "protocolProbe": {
-    "tls检查": 3672,
-    "tls失败": 853,
-    "ws检查": 2339,
-    "ws路径错": 1547
+    "tls检查": 3783,
+    "tls失败": 998,
+    "ws检查": 2386,
+    "ws路径错": 1541
   },
   "regions": {
-    "美国": 873,
-    "德国": 227,
-    "英国": 137,
-    "新加坡": 84,
-    "日本": 62,
+    "美国": 902,
+    "德国": 225,
     "台湾": 5,
-    "香港": 34,
-    "韩国": 32
+    "新加坡": 82,
+    "英国": 129,
+    "日本": 60,
+    "香港": 32,
+    "韩国": 29
   },
   "byType": {
-    "vless": 2434,
-    "vmess": 490,
-    "trojan": 485,
-    "ss": 449,
-    "http": 549,
-    "socks5": 33,
-    "hysteria2": 26,
+    "vmess": 530,
+    "trojan": 496,
+    "vless": 2415,
+    "ss": 444,
+    "http": 538,
+    "socks5": 27,
+    "hysteria2": 25,
     "ssr": 1
   },
   "unsafe": {
-    "total": 773,
+    "total": 806,
     "cnConfirmed": 0
   },
   "sources": [
@@ -151,7 +151,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 513,
+      "count": 377,
       "ok": true
     },
     {
@@ -187,7 +187,7 @@
     {
       "source": "revalidate",
       "kind": "uri-list",
-      "count": 602,
+      "count": 599,
       "ok": true
     },
     {
@@ -253,19 +253,19 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 38,
+      "count": 32,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 38,
+      "count": 32,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 518,
+      "count": 382,
       "ok": true
     },
     {
@@ -331,7 +331,7 @@
     {
       "source": "revalidate",
       "kind": "clash-yaml",
-      "count": 942,
+      "count": 873,
       "ok": true
     },
     {
