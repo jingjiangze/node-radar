@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-15T15:33:00.265Z",
-  "totalRaw": 37975,
-  "totalUnique": 19628,
-  "totalAlive": 4173,
+  "generatedAt": "2026-11-15T15:45:39.242Z",
+  "totalRaw": 37855,
+  "totalUnique": 19638,
+  "totalAlive": 4147,
   "probe": {
     "enabled": true,
-    "probed": 19628,
-    "alive": 6511,
-    "ms": 198982
+    "probed": 19638,
+    "alive": 6459,
+    "ms": 199433
   },
   "protocolProbe": {
-    "tls检查": 3394,
-    "tls失败": 889,
-    "ws检查": 2257,
-    "ws路径错": 1449
+    "tls检查": 3352,
+    "tls失败": 870,
+    "ws检查": 2236,
+    "ws路径错": 1442
   },
   "regions": {
-    "美国": 811,
-    "德国": 195,
-    "英国": 144,
+    "美国": 786,
+    "德国": 192,
     "台湾": 6,
     "日本": 66,
-    "新加坡": 72,
-    "韩国": 29,
-    "香港": 31
+    "英国": 141,
+    "香港": 31,
+    "新加坡": 70,
+    "韩国": 29
   },
   "byType": {
-    "vless": 2367,
-    "vmess": 502,
-    "trojan": 478,
-    "ss": 420,
-    "http": 341,
+    "vless": 2349,
+    "vmess": 496,
+    "trojan": 480,
+    "ss": 416,
+    "http": 342,
+    "hysteria2": 26,
     "socks5": 37,
-    "hysteria2": 27,
     "ssr": 1
   },
   "unsafe": {
-    "total": 579,
+    "total": 568,
     "cnConfirmed": 0
   },
   "sources": [
@@ -49,7 +49,7 @@
     {
       "source": "aiboboxx/v2rayfree",
       "kind": "uri-list",
-      "count": 27,
+      "count": 6,
       "ok": true
     },
     {
@@ -283,13 +283,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 196,
+      "count": 191,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 196,
+      "count": 191,
       "ok": true
     },
     {
@@ -307,13 +307,13 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 358,
+      "count": 312,
       "ok": true
     },
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 358,
+      "count": 312,
       "ok": true
     },
     {
@@ -415,7 +415,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 21,
+      "count": 24,
       "ok": true
     }
   ],
