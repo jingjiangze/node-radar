@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-15T20:04:52.338Z",
-  "totalRaw": 38560,
-  "totalUnique": 19900,
-  "totalAlive": 4459,
+  "generatedAt": "2026-11-15T20:17:57.902Z",
+  "totalRaw": 38600,
+  "totalUnique": 19902,
+  "totalAlive": 4448,
   "probe": {
     "enabled": true,
-    "probed": 19900,
-    "alive": 6923,
-    "ms": 197708
+    "probed": 19902,
+    "alive": 6863,
+    "ms": 198333
   },
   "protocolProbe": {
-    "tls检查": 3720,
-    "tls失败": 911,
-    "ws检查": 2369,
-    "ws路径错": 1553
+    "tls检查": 3674,
+    "tls失败": 880,
+    "ws检查": 2350,
+    "ws路径错": 1535
   },
   "regions": {
-    "美国": 883,
-    "德国": 225,
-    "英国": 132,
-    "日本": 62,
+    "美国": 867,
+    "德国": 223,
+    "新加坡": 76,
+    "日本": 65,
     "台湾": 5,
-    "新加坡": 78,
-    "香港": 29,
-    "韩国": 29
+    "英国": 136,
+    "香港": 30,
+    "韩国": 30
   },
   "byType": {
-    "vmess": 503,
-    "trojan": 489,
-    "vless": 2428,
-    "ss": 443,
+    "vmess": 495,
+    "vless": 2424,
+    "trojan": 491,
     "socks5": 27,
+    "ss": 442,
     "http": 542,
     "hysteria2": 26,
     "ssr": 1
   },
   "unsafe": {
-    "total": 782,
+    "total": 771,
     "cnConfirmed": 0
   },
   "sources": [
@@ -151,7 +151,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 377,
+      "count": 380,
       "ok": true
     },
     {
@@ -247,25 +247,25 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 49,
+      "count": 51,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 38,
+      "count": 31,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 38,
+      "count": 31,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 382,
+      "count": 385,
       "ok": true
     },
     {
@@ -313,7 +313,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 312,
+      "count": 358,
       "ok": true
     },
     {
