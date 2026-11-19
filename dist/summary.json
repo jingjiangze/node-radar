@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-19T17:02:44.913Z",
-  "totalRaw": 35867,
-  "totalUnique": 19172,
-  "totalAlive": 3962,
+  "generatedAt": "2026-11-19T17:16:08.458Z",
+  "totalRaw": 35866,
+  "totalUnique": 19169,
+  "totalAlive": 3980,
   "probe": {
     "enabled": true,
-    "probed": 19172,
-    "alive": 6438,
-    "ms": 190697
+    "probed": 19169,
+    "alive": 6391,
+    "ms": 191123
   },
   "protocolProbe": {
-    "tls检查": 3410,
-    "tls失败": 915,
-    "ws检查": 2305,
-    "ws路径错": 1561
+    "tls检查": 3370,
+    "tls失败": 865,
+    "ws检查": 2295,
+    "ws路径错": 1546
   },
   "regions": {
-    "美国": 832,
-    "英国": 127,
-    "德国": 172,
-    "新加坡": 58,
+    "美国": 826,
+    "德国": 177,
+    "日本": 50,
+    "新加坡": 57,
+    "英国": 122,
     "台湾": 7,
-    "日本": 53,
-    "香港": 22,
-    "韩国": 20
+    "香港": 20,
+    "韩国": 21
   },
   "byType": {
+    "vless": 2446,
+    "ss": 416,
     "vmess": 491,
-    "vless": 2425,
-    "trojan": 472,
-    "ss": 411,
-    "http": 109,
+    "trojan": 467,
+    "http": 107,
     "socks5": 27,
     "hysteria2": 25,
-    "ssr": 2
+    "ssr": 1
   },
   "unsafe": {
-    "total": 322,
+    "total": 316,
     "cnConfirmed": 0
   },
   "sources": [
@@ -91,7 +91,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4792,
+      "count": 4793,
       "ok": true
     },
     {
@@ -115,7 +115,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 366,
+      "count": 364,
       "ok": true
     },
     {
@@ -145,7 +145,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 243,
+      "count": 244,
       "ok": true
     },
     {
@@ -217,7 +217,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 248,
+      "count": 249,
       "ok": true
     },
     {
@@ -295,13 +295,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 196,
+      "count": 195,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 196,
+      "count": 195,
       "ok": true
     },
     {
