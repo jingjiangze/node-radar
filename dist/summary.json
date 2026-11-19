@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-19T01:52:35.703Z",
-  "totalRaw": 35766,
+  "generatedAt": "2026-11-19T02:04:57.476Z",
+  "totalRaw": 35800,
   "totalUnique": 19115,
-  "totalAlive": 4352,
+  "totalAlive": 4331,
   "probe": {
     "enabled": true,
     "probed": 19115,
-    "alive": 6555,
-    "ms": 188514
+    "alive": 6452,
+    "ms": 188116
   },
   "protocolProbe": {
-    "tls检查": 3429,
-    "tls失败": 932,
-    "ws检查": 2233,
-    "ws路径错": 1271
+    "tls检查": 3364,
+    "tls失败": 851,
+    "ws检查": 2213,
+    "ws路径错": 1270
   },
   "regions": {
-    "美国": 877,
-    "德国": 190,
-    "日本": 66,
     "新加坡": 69,
+    "美国": 853,
+    "德国": 193,
     "英国": 166,
     "台湾": 7,
-    "香港": 27,
-    "韩国": 22
+    "日本": 64,
+    "韩国": 21,
+    "香港": 28
   },
   "byType": {
-    "vless": 2692,
-    "trojan": 485,
-    "vmess": 531,
-    "ss": 430,
-    "http": 154,
-    "socks5": 32,
+    "vless": 2705,
+    "vmess": 505,
+    "trojan": 481,
+    "ss": 425,
+    "http": 156,
+    "socks5": 31,
     "hysteria2": 27,
     "ssr": 1
   },
   "unsafe": {
-    "total": 382,
+    "total": 361,
     "cnConfirmed": 0
   },
   "sources": [
@@ -49,7 +49,7 @@
     {
       "source": "aiboboxx/v2rayfree",
       "kind": "uri-list",
-      "count": 5,
+      "count": 39,
       "ok": true
     },
     {
