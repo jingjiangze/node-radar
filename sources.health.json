@@ -2,37 +2,37 @@
   "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.229Z"
+    "at": "2026-11-19T23:58:17.247Z"
   },
   "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/sub": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.274Z"
+    "at": "2026-11-19T23:58:17.315Z"
   },
   "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.326Z"
+    "at": "2026-11-19T23:58:17.411Z"
   },
   "https://raw.githubusercontent.com/ermaozi01/free_clash_vpn/main/subscribe/clash.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.395Z"
+    "at": "2026-11-19T23:58:17.454Z"
   },
   "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.525Z"
+    "at": "2026-11-19T23:58:17.547Z"
   },
   "https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.613Z"
+    "at": "2026-11-19T23:58:17.625Z"
   },
   "https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.695Z"
+    "at": "2026-11-19T23:58:17.676Z"
   },
   "https://raw.githubusercontent.com/vxiaov/free_proxies/main/clash/clash.provider.yaml": {
     "fails": 0,
@@ -42,57 +42,57 @@
   "https://raw.githubusercontent.com/ts-sf/fly/main/clash": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.770Z"
+    "at": "2026-11-19T23:58:17.726Z"
   },
   "https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/sub.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.884Z"
+    "at": "2026-11-19T23:58:17.829Z"
   },
   "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:34.933Z"
+    "at": "2026-11-19T23:58:17.877Z"
   },
   "https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/clash_config.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.754Z"
+    "at": "2026-11-19T23:58:22.639Z"
   },
   "https://raw.githubusercontent.com/LinVireo/SmartSub/main/collected_nodes.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:36.601Z"
+    "at": "2026-11-19T23:58:19.026Z"
   },
   "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:36.676Z"
+    "at": "2026-11-19T23:58:19.094Z"
   },
   "https://raw.githubusercontent.com/ID-10086/freenode/main/adiclash.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:37.991Z"
+    "at": "2026-11-19T23:58:21.061Z"
   },
   "https://raw.githubusercontent.com/yy1588133/proxy-pool/main/v2ray.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:37.684Z"
+    "at": "2026-11-19T23:58:20.853Z"
   },
   "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/yaml/Custom_Clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:38.754Z"
+    "at": "2026-11-19T23:58:21.795Z"
   },
   "https://raw.githubusercontent.com/clashconfig/online/main/Dark_Clash.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:38.833Z"
+    "at": "2026-11-19T23:58:21.880Z"
   },
   "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:35.172Z"
+    "at": "2026-11-19T23:58:18.023Z"
   },
   "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/ua_clash.yaml": {
     "fails": 0,
@@ -102,32 +102,32 @@
   "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0314clash.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:38.920Z"
+    "at": "2026-11-19T23:58:21.953Z"
   },
   "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0308clash.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.023Z"
+    "at": "2026-11-19T23:58:22.032Z"
   },
   "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/main/config/countries/se_clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.332Z"
+    "at": "2026-11-19T23:58:22.246Z"
   },
   "https://raw.githubusercontent.com/v2raynnodes/v2rayfree/main/v2ray.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.619Z"
+    "at": "2026-11-19T23:58:22.520Z"
   },
   "https://raw.githubusercontent.com/Andrejewild/hiddify-singbox-configs-ru/main/sub.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:36.745Z"
+    "at": "2026-11-19T23:58:19.161Z"
   },
   "https://blog.ermao.net/sub/v2ray/ermao.net": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:35.616Z"
+    "at": "2026-11-19T23:58:18.550Z"
   },
   "https://fastly.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt": {
     "fails": 0,
@@ -142,7 +142,7 @@
   "https://raw.githubusercontent.com/vincent20240707/free-v2ray-nodes/main/nodes.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:37.284Z"
+    "at": "2026-11-19T23:58:20.146Z"
   },
   "https://raw.githubusercontent.com/guo0914/Free-Node/main/v2ray.txt": {
     "fails": 0,
@@ -192,32 +192,32 @@
   "https://raw.githubusercontent.com/grisha-seleznev/free-vless-keys-russia/main/sub.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.410Z"
+    "at": "2026-11-19T23:58:22.310Z"
   },
   "https://raw.githubusercontent.com/grisha-seleznev/free-vless-keys-russia/main/sub_base64.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.480Z"
+    "at": "2026-11-19T23:58:22.381Z"
   },
   "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:35.013Z"
+    "at": "2026-11-19T23:58:17.941Z"
   },
   "https://raw.githubusercontent.com/Ruk1ng001/freeSub/main/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:35.097Z"
+    "at": "2026-11-19T23:58:17.959Z"
   },
   "https://raw.githubusercontent.com/samur005/free-subs/master/free_subs.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:37.780Z"
+    "at": "2026-11-19T23:58:20.933Z"
   },
   "https://raw.githubusercontent.com/samur005/free-subs/master/free_subs_small.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.552Z"
+    "at": "2026-11-19T23:58:22.453Z"
   },
   "https://raw.githubusercontent.com/TheHunterX/oneforallhub-v2ray-configs/main/auto-subscription-raw.txt": {
     "fails": 3,
@@ -232,7 +232,7 @@
   "https://gitlab.com/avencores/goida-vpn-configs/-/raw/main/githubmirror/1.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:35.982Z"
+    "at": "2026-11-19T23:58:18.905Z"
   },
   "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Base64/PROXIES_ONLY/BLACK_VLESS_RUS_base64.txt": {
     "fails": 3,
@@ -242,7 +242,7 @@
   "https://node.freeclashnode.com/uploads/__Y__/__M__/2-__YMD__.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:36.994Z"
+    "at": "2026-11-19T23:58:19.722Z"
   },
   "https://freenode.yoyapai.com/__Y__/__M__/__D__-yoyapai.com-clash-vpn-mianfeijiedian.yaml": {
     "fails": 3,
@@ -252,12 +252,12 @@
   "https://node.freeclashnode.com/uploads/__Y__/__M__/0-__YMD__.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:37.184Z"
+    "at": "2026-11-19T23:58:20.076Z"
   },
   "https://node.freeclashnode.com/uploads/__Y__/__M__/1-__YMD__.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:37.342Z"
+    "at": "2026-11-19T23:58:20.479Z"
   },
   "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_VLESS_RUS_clash_global.yaml": {
     "fails": 3,
@@ -272,7 +272,7 @@
   "https://nodesub.mlfenx.com/__Y__/__M__/mlfenx-__YMD__.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.883Z"
+    "at": "2026-11-19T23:58:23.759Z"
   },
   "https://codeberg.org/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_SS%2BAll_RUS_clash_global.yaml": {
     "fails": 3,
@@ -282,22 +282,22 @@
   "https://blog.ermao.net/sub/reachable/clash/ermao.net": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:37.603Z"
+    "at": "2026-11-19T23:58:20.784Z"
   },
   "https://raw.githubusercontent.com/lanzm/MetaFetch/master/list.meta.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:37.860Z"
+    "at": "2026-11-19T23:58:20.974Z"
   },
   "https://www.ermao.net/sub/untested/clash/ermao.net": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:38.256Z"
+    "at": "2026-11-19T23:58:21.335Z"
   },
   "https://blog.ermao.net/sub/clash/ermao.net": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:38.596Z"
+    "at": "2026-11-19T23:58:21.662Z"
   },
   "https://fastly.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml": {
     "fails": 0,
@@ -307,12 +307,12 @@
   "https://cdn.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:38.666Z"
+    "at": "2026-11-19T23:58:21.730Z"
   },
   "https://raw.githubusercontent.com/15605875200-spec/abaaba/main/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.711Z"
+    "at": "2026-11-19T23:58:22.602Z"
   },
   "https://raw.githubusercontent.com/v2raynnodes/clashfree/main/clash.yaml": {
     "fails": 3,
@@ -337,12 +337,12 @@
   "https://testingcf.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:38.623Z"
+    "at": "2026-11-19T23:58:21.691Z"
   },
   "https://raw.githubusercontent.com/xifan001-lab/clash-sub/main/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:38.337Z"
+    "at": "2026-11-19T23:58:21.403Z"
   },
   "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.meta.yml": {
     "fails": 0,
@@ -352,12 +352,12 @@
   "https://testingcf.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:35.682Z"
+    "at": "2026-11-19T23:58:18.612Z"
   },
   "https://raw.githubusercontent.com/yy1588133/proxy-pool/main/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.069Z"
+    "at": "2026-11-19T23:58:22.893Z"
   },
   "https://gitea.com/igareck/vpn-configs-for-russia/raw/branch/main/Export/Clash/GLOBAL/BLACK_VLESS_RUS_clash_global.yaml": {
     "fails": 0,
@@ -367,22 +367,22 @@
   "https://raw.githubusercontent.com/nichecer/v2ray-node-share/main/nodes.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:41.178Z"
+    "at": "2026-11-19T23:58:23.975Z"
   },
   "https://raw.githubusercontent.com/nichecer/v2ray-node-share/main/sub.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:41.270Z"
+    "at": "2026-11-19T23:58:24.050Z"
   },
   "https://raw.githubusercontent.com/nichecer/shadowrocket-node-share/main/nodes.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.974Z"
+    "at": "2026-11-19T23:58:23.832Z"
   },
   "https://raw.githubusercontent.com/nichecer/shadowrocket-node-share/main/sub.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:41.064Z"
+    "at": "2026-11-19T23:58:23.903Z"
   },
   "https://blog.ermao.net/sub/unreachable/clash/ermao.net": {
     "fails": 0,
@@ -392,22 +392,22 @@
   "https://raw.githubusercontent.com/Billow001/free-nodes-sub/main/mobile_sub.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.166Z"
+    "at": "2026-11-19T23:58:22.962Z"
   },
   "https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:41.344Z"
+    "at": "2026-11-19T23:58:24.123Z"
   },
   "https://raw.githubusercontent.com/V2HUBIR/V2HUBIR-Free-V2Ray-Configs-free-Sub/main/sub.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.155Z"
+    "at": "2026-11-19T23:58:22.110Z"
   },
   "https://raw.githubusercontent.com/V2HUBIR/V2HUBIR-Free-V2Ray-Configs-free-Sub/main/sub_base64.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.273Z"
+    "at": "2026-11-19T23:58:22.181Z"
   },
   "https://gcore.jsdelivr.net/gh/chengaopan/AutoMergePublicNodes@master/list.meta.yml": {
     "fails": 0,
@@ -417,56 +417,56 @@
   "https://raw.githubusercontent.com/v2raydog-node/free-nodes/main/nodes.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.475Z"
+    "at": "2026-11-19T23:58:23.317Z"
   },
   "https://raw.githubusercontent.com/v2raydog-node/free-nodes/main/v2ray.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.550Z"
+    "at": "2026-11-19T23:58:23.384Z"
   },
   "https://raw.githubusercontent.com/v2raydog-node/free-nodes/main/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.592Z"
+    "at": "2026-11-19T23:58:23.455Z"
   },
   "https://www.xrayvip.com/free.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:41.826Z"
+    "at": "2026-11-19T23:58:24.515Z"
   },
   "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.829Z"
+    "at": "2026-11-19T23:58:22.686Z"
   },
   "https://raw.githubusercontent.com/zhangdunlong/free-v2ray-nodes/main/nodes_base64.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.909Z"
+    "at": "2026-11-19T23:58:22.751Z"
   },
   "https://raw.githubusercontent.com/zhangdunlong/free-v2ray-nodes/main/unique_nodes.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:39.978Z"
+    "at": "2026-11-19T23:58:22.815Z"
   },
   "https://raw.githubusercontent.com/longyang1233/free-nodes-sub/main/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.393Z"
+    "at": "2026-11-19T23:58:23.248Z"
   },
   "https://raw.githubusercontent.com/nichecer/clash-node-share/main/clash.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:41.456Z"
+    "at": "2026-11-19T23:58:24.190Z"
   },
   "https://raw.githubusercontent.com/haiwanai/free-nodes/main/sub.txt": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.242Z"
+    "at": "2026-11-19T23:58:23.107Z"
   },
   "https://raw.githubusercontent.com/haiwanai/free-nodes/main/sub.yaml": {
     "fails": 0,
     "ok": true,
-    "at": "2026-11-19T23:45:40.324Z"
+    "at": "2026-11-19T23:58:23.174Z"
   }
 }
