@@ -5,49 +5,10 @@ log-level: warning
 unified-delay: true
 tcp-concurrent: true
 proxies:
-  - name: 美国 110
+  - name: 美国 177
     type: trojan
     network: ws
-    server: 172.64.157.230
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
-  - name: 美国 121
-    type: trojan
-    network: ws
-    server: 172.64.148.165
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 美国 140
-    type: trojan
-    network: ws
-    server: 104.18.39.91
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 美国 179
-    type: trojan
-    network: ws
-    server: 104.17.177.143
+    server: 104.18.152.219
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -56,13 +17,12 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 222
+  - name: 美国 186
     type: trojan
     network: ws
-    server: 104.16.174.185
+    server: 104.26.14.137
     port: 443
     password: humanity
-    skip-cert-verify: false
     sni: www.ignitelimit.com
     ws-opts:
       headers:
@@ -80,145 +40,126 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 423
+  - name: 美国 333
+    type: vless
+    network: ws
+    server: 172.67.71.247
+    port: 443
+    uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
+    servername: octopusss5.info
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+    packet-encoding: xudp
+    ws-opts:
+      headers:
+        Host: octopusss5.info
+      path: /udfyfws
+  - name: 美国 516
     type: vless
     network: xhttp
-    server: 199.232.239.239
+    server: 167.82.76.31
     port: 443
-    uuid: 0c3bd755-6aa1-4281-97c5-5b507582c030
-    servername: community.fastly.steamstatic.com
+    uuid: 4e932df2-a06a-4043-861c-87fe8d217aae
+    servername: cdn.akamai.steamstatic.com
     skip-cert-verify: false
     tls: true
     udp: true
     tfo: false
     client-fingerprint: chrome
-  - name: 美国 483
+  - name: 美国 589
     type: vless
-    network: ws
-    server: 104.16.6.70
+    network: xhttp
+    server: 199.232.78.143
     port: 443
-    uuid: 30693e15-1014-443b-88dd-1232b55a06b6
-    servername: mos.rfiksma.top
+    uuid: 854860c4-b5e8-453c-a047-90d451fe9c58
+    servername: default.ssl.fastly.net
     skip-cert-verify: false
     tls: true
     udp: true
     tfo: false
     client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: mos.rfiksma.top
-      path: /
-  - name: 美国 596
+  - name: 美国 601
     type: vless
-    network: ws
-    server: 173.245.49.114
+    network: xhttp
+    server: 104.17.107.134
     port: 8443
-    uuid: 9443badf-414f-4b12-b19a-7cc2c7431163
-    servername: moz.ar-marz.fun
+    uuid: 99c3a53c-28b3-463f-89d7-63f04505eb32
+    servername: www.66913.ir
     skip-cert-verify: false
     tls: true
     udp: true
     tfo: false
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: moz.ar-marz.fun
-      path: /man
-  - name: US 🇺🇸 | @Raydikalx | A8EEF5
+  - name: US 🇺🇸 | @Raydikalx | 5A1BD6
     type: vmess
-    server: 199.232.78.160
-    port: 443
-    uuid: 6ba68c69-e108-502d-7b1c-e806fbc3cccd
+    server: 8.8.8.8
+    port: 53
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     udp: true
-    tls: true
-    servername: ssl.fastly.com
-  - name: 🇺🇸US-185.230.230.18-0068
+  - name: 🇺🇸US-45.86.51.18-0132
     type: ss
-    server: 185.230.230.18
+    server: 45.86.51.18
     port: 19999
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     udp: true
-  - name: '[OpenRay] 🇺🇸US-324'
+  - name: '[OpenRay] 🇺🇸US-281'
     type: vless
-    server: 162.216.231.214
+    server: 151.101.3.6
     port: 443
-    uuid: d6e67dbc-f432-4778-91da-94c33f7ac87a
+    uuid: a0144f3b-b7d4-47c3-b0bc-413194f001a8
     udp: true
     tls: true
-    servername: lockheart.info
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: iQCvXMQZR-eT2MVmXP7c99cvcle22mVWuKem_345BWM
-  - name: '[OpenRay] 🇺🇸US-1202'
-    type: trojan
-    server: 66.163.122.46
-    port: 443
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    udp: true
-    sni: searchnationwidecareerchangehelperandguidancetoday.com
-  - name: '[OpenRay] 🇺🇸US-2825'
-    type: trojan
-    server: 216.24.57.6
-    port: 443
-    password: 3b91d95b-0478-451a-a372-4f417417f650
-    udp: true
-    sni: unnes.ac.id.r3xxe.eu.cc
-    network: ws
-    ws-opts:
-      path: /br-orcl
-      headers:
-        Host: unnes.ac.id.r3xxe.eu.cc
+    servername: apps.apple.com
+    client-fingerprint: firefox
+    alpn:
+      - h3
   - name: 🇺🇸Telegram👉@v2rayNG_Matsuri
     type: trojan
-    server: 199.232.78.101
+    server: 167.82.76.7
     port: 443
     password: MITIVPN
     udp: true
-  - name: US美国(v2clash.blog 2026-8.27更新)
+  - name: US美国(mibei77.com 米贝节点分享)
     type: trojan
-    server: 104.18.152.50
+    server: 104.17.111.1
     port: 443
     password: humanity
     udp: true
-  - name: US美国(v2clash.blog 2026-9.5)
-    type: trojan
-    server: 45.130.125.158
-    port: 443
-    password: humanity
-    udp: true
-  - name: 'Channel id: @ShadowProxy66 🇺🇸'
+  - name: 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
     type: vless
-    server: 199.232.245.208
+    server: 146.75.59.186
     port: 443
-    uuid: 0cc72cd6-29b2-4dcc-af4d-2907d19a0680
+    uuid: 82599a61-3580-4141-b48c-42f4594ae675
     udp: true
-  - name: 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇬🇧 🇷🇺 | [BL]
+  - name: 🇺🇸
     type: vless
-    server: 45.135.235.255
+    server: 172.66.46.251
     port: 443
-    uuid: 4dd8d557-dbe3-4c6f-a3ee-168da9a03d1b
+    uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
+    udp: true
+  - name: 🇺🇸 United States - Unknown | 151.101.2.165:80 11
+    type: vless
+    server: 151.101.2.165
+    port: 80
+    uuid: 2be30745-21f4-423e-e4a4-76b749cb7454
+    udp: true
+  - name: 🇺🇸 US | 146.75.59.186
+    type: vless
+    server: 146.75.59.186
+    port: 443
+    uuid: 8d2cbffd-43d0-458d-906b-7c54b7b51f38
     udp: true
     tls: true
-    client-fingerprint: safari
+    servername: cdn.akamai.steamstatic.com
     network: ws
     ws-opts:
-      path: /
+      path: /?Telegram—@pirozi_ArGaP—@pirozi_ArGaP—@pirozi_ArGaP—@pirozi_ArGaP
       headers:
-        Host: worker3.paneger955.workers.dev
-  - name: '[10712][US][0][VLESS][None][v2ray_outlineir][2023-12-03][202'
-    type: vless
-    server: 188.114.96.3
-    port: 2052
-    uuid: c255f68f-18f7-488a-b7fc-06a5676564f0
-    udp: true
-    network: ws
-    ws-opts:
-      path: tel.mehrosaboran
-      headers:
-        Host: jp10.vlessx.xyz
+        Host: ukoijji.global.ssl.fastly.net
   - name: 🇺🇸 机场推荐:dafei.de 美国 89_IPV4
     type: vmess
     server: 188.114.99.137
@@ -235,6 +176,20 @@ proxies:
       path: /hls/cctv5phd.m3u8
       headers:
         Host: guanwang.awsno.com
+  - name: 美国 025
+    type: vmess
+    network: ws
+    server: 172.64.229.21
+    port: 443
+    uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
+    skip-cert-verify: false
+    tls: true
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: vmess.lbw666.dpdns.org
+      path: /
   - name: 美国 030
     type: vmess
     network: ws
@@ -326,6 +281,19 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: 美国 110
+    type: trojan
+    network: ws
+    server: 172.64.157.230
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
   - name: 美国 111
     type: trojan
     network: ws
@@ -339,17 +307,6 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: 美国 112
-    type: trojan
-    network: ws
-    server: 104.16.72.101
-    port: 443
-    password: 6c862415-30d2-4813-8e49-42e99a0bd415
-    sni: space.byu.id.yxls.eu.cc
-    ws-opts:
-      headers:
-        Host: space.byu.id.yxls.eu.cc
-      path: /us-gllc
   - name: 美国 113
     type: trojan
     network: ws
@@ -363,11 +320,24 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: 美国 128
+  - name: 美国 121
     type: trojan
     network: ws
-    server: 162.159.3.176
-    port: 443
+    server: 172.64.148.165
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 美国 130
+    type: trojan
+    network: ws
+    server: 172.64.229.114
+    port: 8443
     password: eeb6823c-b926-4ea2-866a-5542edd26e59
     skip-cert-verify: false
     sni: tjsp.hhxaf.cc.cd
@@ -389,10 +359,10 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 美国 134
+  - name: 美国 136
     type: trojan
     network: ws
-    server: 173.245.58.183
+    server: 162.159.15.39
     port: 8443
     password: eeb6823c-b926-4ea2-866a-5542edd26e59
     skip-cert-verify: false
@@ -415,33 +385,35 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: 美国 160
+  - name: 美国 140
     type: trojan
     network: ws
-    server: 104.17.121.43
+    server: 104.18.39.91
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 美国 158
+    type: trojan
+    network: ws
+    server: 104.16.174.6
     port: 443
     password: humanity
     skip-cert-verify: false
-    sni: www.calmlunch.com
+    sni: www.ignitelimit.com
     ws-opts:
       headers:
-        Host: www.calmlunch.com
+        Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 161
+  - name: 美国 159
     type: trojan
     network: ws
-    server: 104.18.9.83
-    port: 443
-    password: humanity
-    sni: www.calmlunch.com
-    ws-opts:
-      headers:
-        Host: www.calmlunch.com
-      path: /assignment
-  - name: 美国 162
-    type: trojan
-    network: ws
-    server: 104.18.152.244
+    server: 104.16.174.12
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -462,17 +434,17 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 165
+  - name: 美国 164
     type: trojan
     network: ws
-    server: 104.18.152.77
+    server: 162.159.91.211
     port: 443
     password: humanity
     skip-cert-verify: false
-    sni: www.ignitelimit.com
+    sni: www.calmlunch.com
     ws-opts:
       headers:
-        Host: www.ignitelimit.com
+        Host: www.calmlunch.com
       path: /assignment
   - name: 美国 167
     type: trojan
@@ -484,17 +456,6 @@ proxies:
     ws-opts:
       headers:
         Host: www.ignitelimit.com
-      path: /assignment
-  - name: 美国 168
-    type: trojan
-    network: ws
-    server: 104.16.71.213
-    port: 443
-    password: humanity
-    sni: www.calmlunch.com
-    ws-opts:
-      headers:
-        Host: www.calmlunch.com
       path: /assignment
   - name: 美国 170
     type: trojan
@@ -544,10 +505,10 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 176
+  - name: 美国 175
     type: trojan
     network: ws
-    server: 104.18.152.155
+    server: 104.16.174.37
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -556,10 +517,22 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 177
+  - name: 美国 178
     type: trojan
     network: ws
-    server: 104.18.152.219
+    server: 104.18.152.210
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 179
+    type: trojan
+    network: ws
+    server: 104.17.177.143
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -580,10 +553,10 @@ proxies:
       headers:
         Host: www.calmlunch.com
       path: /assignment
-  - name: 美国 182
+  - name: 美国 181
     type: trojan
     network: ws
-    server: 104.16.174.124
+    server: 104.18.152.149
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -592,10 +565,10 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 184
+  - name: 美国 182
     type: trojan
     network: ws
-    server: 104.16.174.46
+    server: 104.16.174.124
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -616,12 +589,24 @@ proxies:
       headers:
         Host: www.calmlunch.com
       path: /assignment
-  - name: 美国 186
+  - name: 美国 188
     type: trojan
     network: ws
-    server: 104.26.14.137
+    server: 104.18.152.144
     port: 443
     password: humanity
+    sni: www.ignitelimit.com
+    ws-opts:
+      headers:
+        Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 189
+    type: trojan
+    network: ws
+    server: 104.16.174.101
+    port: 443
+    password: humanity
+    skip-cert-verify: false
     sni: www.ignitelimit.com
     ws-opts:
       headers:
@@ -631,29 +616,6 @@ proxies:
     type: trojan
     network: ws
     server: 104.18.152.225
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: 美国 192
-    type: trojan
-    network: ws
-    server: 162.159.153.4
-    port: 443
-    password: humanity
-    sni: www.calmloud.com
-    ws-opts:
-      headers:
-        Host: www.calmloud.com
-      path: /assignment
-  - name: 美国 194
-    type: trojan
-    network: ws
-    server: 104.16.174.36
     port: 443
     password: humanity
     skip-cert-verify: false
@@ -673,6 +635,17 @@ proxies:
     ws-opts:
       headers:
         Host: www.ignitelimit.com
+      path: /assignment
+  - name: 美国 199
+    type: trojan
+    network: ws
+    server: 104.16.79.73
+    port: 443
+    password: humanity
+    sni: www.creationlong.org
+    ws-opts:
+      headers:
+        Host: www.creationlong.org
       path: /assignment
   - name: 美国 213
     type: trojan
@@ -721,18 +694,6 @@ proxies:
       headers:
         Host: www.calmloud.com
       path: /assignment
-  - name: 美国 232
-    type: trojan
-    network: ws
-    server: 104.18.22.208
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.multiplydose.com
-    ws-opts:
-      headers:
-        Host: www.multiplydose.com
-      path: /assignment
   - name: 美国 233
     type: trojan
     network: ws
@@ -779,18 +740,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 238
-    type: trojan
-    network: ws
-    server: 104.16.174.44
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
   - name: 美国 239
     type: trojan
     network: ws
@@ -827,27 +776,6 @@ proxies:
       headers:
         Host: www.ignitelimit.com
       path: /assignment
-  - name: 美国 245
-    type: trojan
-    network: ws
-    server: 104.16.174.34
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    sni: www.ignitelimit.com
-    ws-opts:
-      headers:
-        Host: www.ignitelimit.com
-      path: /assignment
-  - name: 美国 287
-    type: vmess
-    network: tcp
-    server: 67.220.95.3
-    port: 18000
-    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-    tls: false
-    alterId: 0
-    cipher: aes-128-gcm
   - name: 美国 307
     type: vless
     network: http
@@ -877,38 +805,6 @@ proxies:
       headers:
         Host: octopusss5.info
       path: /udfyfws
-  - name: 美国 333
-    type: vless
-    network: ws
-    server: 172.67.71.247
-    port: 443
-    uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
-    servername: octopusss5.info
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    client-fingerprint: chrome
-    packet-encoding: xudp
-    ws-opts:
-      headers:
-        Host: octopusss5.info
-      path: /udfyfws
-  - name: 美国 340
-    type: vless
-    network: ws
-    server: 104.26.13.222
-    port: 443
-    uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
-    servername: octopusss5.info
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    client-fingerprint: chrome
-    packet-encoding: xudp
-    ws-opts:
-      headers:
-        Host: octopusss5.info
-      path: /udfyfws
   - name: 美国 366
     type: vless
     network: ws
@@ -925,26 +821,10 @@ proxies:
       headers:
         Host: fast.145779.xyz
       path: /ws-tesla
-  - name: 美国 368
-    type: vless
-    network: ws
-    server: 198.202.24.142
-    port: 2083
-    uuid: a6ad7987-f17e-41fa-a752-72db9a725eb2
-    servername: vipfree.dr-ping.ir
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: vipfree.dr-ping.ir
-      path: /
-  - name: 美国 409
+  - name: 美国 408
     type: vless
     network: xhttp
-    server: 104.18.139.67
+    server: 104.18.138.67
     port: 443
     uuid: 0280c276-641b-49af-b699-4931c30ac137
     servername: norway.xn--nlqaa425dbaab446bbabd698meae.online.
@@ -984,6 +864,113 @@ proxies:
       headers:
         Host: finalnsdger.global.ssl.fastly.net.
       path: /
+  - name: 美国 423
+    type: vless
+    network: xhttp
+    server: 199.232.239.239
+    port: 443
+    uuid: 0c3bd755-6aa1-4281-97c5-5b507582c030
+    servername: community.fastly.steamstatic.com
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+  - name: 美国 439
+    type: vless
+    network: ws
+    server: 104.17.3.81
+    port: 443
+    uuid: 12d67d2b-ae5c-4d56-9f14-d71d96f7826f
+    servername: natan.srpcom.cloud
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    ws-opts:
+      headers:
+        Host: natan.srpcom.cloud
+      path: /vlessws
+  - name: 美国 452
+    type: vless
+    network: xhttp
+    server: 199.232.245.94
+    port: 443
+    uuid: 1cbf2f56-926e-4a69-a325-d2794a22d411
+    servername: global.fastly.com
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+  - name: 美国 453
+    type: vless
+    network: xhttp
+    server: 199.232.77.215
+    port: 443
+    uuid: 1cbf2f56-926e-4a69-a325-d2794a22d411
+    servername: global.fastly.com
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+  - name: 美国 454
+    type: vless
+    network: xhttp
+    server: 199.232.78.150
+    port: 443
+    uuid: 1cbf2f56-926e-4a69-a325-d2794a22d411
+    servername: global.fastly.com
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+  - name: 美国 483
+    type: vless
+    network: ws
+    server: 104.16.6.70
+    port: 443
+    uuid: 30693e15-1014-443b-88dd-1232b55a06b6
+    servername: mos.rfiksma.top
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: mos.rfiksma.top
+      path: /
+  - name: 美国 499
+    type: vless
+    network: xhttp
+    server: 199.232.78.199
+    port: 443
+    uuid: 42ff4e55-0214-45db-a2a7-02d81afa13e5
+    servername: steamstatic.com
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+  - name: 美国 514
+    type: vless
+    network: ws
+    server: 104.16.10.104
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    servername: jp3.yohototo.top
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: unsafe
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
   - name: 🇸🇬[www.v2nodes.com] vless-SG-3...
     type: vless
     server: 188.114.98.0
@@ -995,20 +982,6 @@ proxies:
       path: /?TELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI?ed=2560fp=chromesecurity=tls
       headers:
         Host: party-5cn.pages.dev
-  - name: '[OpenRay] 🇬🇧GB-39'
-    type: vless
-    server: 185.193.29.123
-    port: 443
-    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
-    udp: true
-    tls: true
-    servername: notls.lukongtou.eu.org
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /Telegram-WangCai2🇨🇳
-      headers:
-        Host: notls.lukongtou.eu.org
   - name: '[OpenRay] 🇩🇪DE-226'
     type: trojan
     server: 185.158.133.107
@@ -1028,6 +1001,18 @@ proxies:
     tls: true
     servername: 145.baklajann.ru
   - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
+    type: trojan
+    server: 172.67.180.92
+    port: 443
+    password: humanity
+    udp: true
+  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
+    type: vless
+    server: 108.162.192.75
+    port: 443
+    uuid: 073d1d50-8478-47bf-a828-7a1b381931d5
+    udp: true
+  - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
     type: vless
     server: 69.46.46.215
     port: 443
@@ -1045,13 +1030,13 @@ proxies:
     port: 443
     uuid: 39473ed8-fa83-4ef3-8aa6-92b865b6cb4f
     udp: true
-  - name: '@V2rayng_Fast 🇩🇪-2'
+  - name: TW台湾(v2clash.blog 2026-10.24更新)
     type: vless
-    server: 185.159.247.44
+    server: 104.18.255.167
     port: 443
-    uuid: 3ccb1d2a-d169-443a-ad5d-3f5f11759695
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
+  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
     type: vless
     server: 108.162.198.5
     port: 443
@@ -1063,7 +1048,7 @@ proxies:
     port: 8880
     uuid: 94977b19-6720-48a6-92fd-00238757ea30
     udp: true
-  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
+  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
     type: vless
     server: 91.209.253.250
     port: 443
@@ -1075,7 +1060,7 @@ proxies:
     port: 443
     uuid: b4a00211-ae46-49bc-8f36-0c4425eb7e86
     udp: true
-  - name: '@V2rayng_Fast 🇩🇪-3'
+  - name: '@V2rayng_Fast 🇩🇪-2'
     type: vless
     server: 172.64.158.170
     port: 443
@@ -1087,17 +1072,23 @@ proxies:
     port: 443
     uuid: dc7d45c9-c942-41e3-b880-9a7fd5b64e2f
     udp: true
-  - name: '@V2rayng_Fast 🇩🇪-4'
+  - name: '@V2rayng_Fast 🇩🇪-3'
     type: vless
     server: 199.232.78.159
     port: 443
     uuid: e0454af2-6fe9-4983-a55d-05e1da202602
     udp: true
-  - name: '@V2rayng_Fast 🇩🇪-5'
+  - name: '@V2rayng_Fast 🇩🇪-4'
     type: vless
     server: 167.82.101.119
     port: 443
     uuid: ea1fb226-a033-4999-9f86-49ec57629c0d
+    udp: true
+  - name: '@V2rayng_Fast 🇩🇪-5'
+    type: vless
+    server: 104.26.14.85
+    port: 8443
+    uuid: f798a2c4-c51b-409d-b349-ca8455b36796
     udp: true
   - name: 🇩🇪 Germany | 🌐 | [BL]
     type: vless
@@ -1108,100 +1099,20 @@ proxies:
     tls: true
     servername: mama120.baklajann.ru
     client-fingerprint: chrome
+  - name: 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇬🇧 🇷🇺 | [BL]
+    type: vless
+    server: 45.135.235.255
+    port: 443
+    uuid: 4dd8d557-dbe3-4c6f-a3ee-168da9a03d1b
+    udp: true
+    tls: true
+    client-fingerprint: safari
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: worker3.paneger955.workers.dev
   - name: 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]
-    type: vless
-    server: 185.18.250.2
-    port: 443
-    uuid: 5c9e3f77-5bde-4732-af3c-6a5d3ecee37a
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: worker3.wewotes286.workers.dev
-  - name: 🌐 Anycast-IP | 🇩🇪 🇬🇧 🇷🇺 | [BL]
-    type: vless
-    server: 185.18.250.2
-    port: 443
-    uuid: 1058c340-5e14-45ff-bd10-ebd64a225be2
-    udp: true
-    tls: true
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: worker3.nojisoj4574.workers.dev
-  - name: 🇬🇧 United Kingdom - Unknown | 194.36.55.63:8880
-    type: vless
-    server: 194.36.55.63
-    port: 8880
-    uuid: fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf
-    udp: true
-    network: ws
-    ws-opts:
-      path: /Telegram🇨🇳
-      headers:
-        Host: jp.laoyoutiao.link
-  - name: 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-    type: trojan
-    server: 172.67.180.92
-    port: 443
-    password: humanity
-    udp: true
-  - name: (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-    type: vless
-    server: 108.162.192.75
-    port: 443
-    uuid: 073d1d50-8478-47bf-a828-7a1b381931d5
-    udp: true
-  - name: JP日本(v2clash.blog 2026-10.14更新)
-    type: vless
-    server: 172.67.209.127
-    port: 8880
-    uuid: 3e553ebf-db9d-4858-b608-03d6ff615a41
-    udp: true
-  - name: TW台湾(v2clash.blog 2026-10.24更新)
-    type: vless
-    server: 104.18.255.167
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: Tel@V2rayng_Fast 🇩🇪
-    type: vless
-    server: 188.114.96.6
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
-  - name: '@V2rayng_Fast 🇩🇪-6'
-    type: vless
-    server: 104.26.14.85
-    port: 8443
-    uuid: f798a2c4-c51b-409d-b349-ca8455b36796
-    udp: true
-  - name: '[OpenRay] 🇬🇧GB-7'
-    type: ss
-    server: 136.148.77.250
-    port: 8388
-    cipher: aes-256-gcm
-    password: itzvpn@321
-    udp: true
-  - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
-    client-fingerprint: chrome
-    network: ws
-    port: 443
-    server: 104.16.10.9
-    servername: jp3.yohototo.top
-    tls: true
-    type: vless
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    ws-opts:
-      headers:
-        Host: jp3.yohototo.top
-      path: /tyxyws
-  - name: 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]-2
     type: vless
     server: 154.197.64.252
     port: 443
@@ -1253,6 +1164,74 @@ proxies:
       path: /
       headers:
         Host: worker3.daticah6555.workers.dev
+  - name: 🇬🇧 United Kingdom - Unknown | 194.36.55.63:8880
+    type: vless
+    server: 194.36.55.63
+    port: 8880
+    uuid: fab7bf9c-ddb9-4563-8a04-fb01ce6c0fbf
+    udp: true
+    network: ws
+    ws-opts:
+      path: /Telegram🇨🇳
+      headers:
+        Host: jp.laoyoutiao.link
+  - name: '@V2rayng_Fast 🇩🇪-6'
+    type: vless
+    server: 185.159.247.44
+    port: 443
+    uuid: 3ccb1d2a-d169-443a-ad5d-3f5f11759695
+    udp: true
+  - name: JP日本(v2clash.blog 2026-10.14更新)
+    type: vless
+    server: 172.67.209.127
+    port: 8880
+    uuid: 3e553ebf-db9d-4858-b608-03d6ff615a41
+    udp: true
+  - name: Tel@V2rayng_Fast 🇩🇪
+    type: vless
+    server: 188.114.96.6
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]-2
+    type: vless
+    server: 185.18.250.2
+    port: 443
+    uuid: 5c9e3f77-5bde-4732-af3c-6a5d3ecee37a
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: worker3.wewotes286.workers.dev
+  - name: 🌐 Anycast-IP | 🇩🇪 🇬🇧 🇷🇺 | [BL]
+    type: vless
+    server: 185.18.250.2
+    port: 443
+    uuid: 1058c340-5e14-45ff-bd10-ebd64a225be2
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: worker3.nojisoj4574.workers.dev
+  - name: 🇯🇵[www.v2nodes.com] vless-JP-1...
+    client-fingerprint: chrome
+    network: ws
+    port: 443
+    server: 104.16.10.9
+    servername: jp3.yohototo.top
+    tls: true
+    type: vless
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    ws-opts:
+      headers:
+        Host: jp3.yohototo.top
+      path: /tyxyws
   - name: SG VLESS-11 | free-nodes
     type: vless
     server: 172.64.154.113
@@ -1267,12 +1246,20 @@ proxies:
       path: /proxyip=ProxyIP.JP.CMLiussss.net
       headers:
         Host: freeceshi6.frii.site
-  - name: 🇬🇧telegram➠@v2rayNG_Matsuri
+  - name: '[OpenRay] 🇬🇧GB-39'
     type: vless
-    server: 64.177.93.234
+    server: 185.193.29.123
     port: 443
-    uuid: e5e4baed-c67a-489c-9550-289cc168bd13
+    uuid: 1d16c6e0-1bbe-435b-b661-90043fee999c
     udp: true
+    tls: true
+    servername: notls.lukongtou.eu.org
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /Telegram-WangCai2🇨🇳
+      headers:
+        Host: notls.lukongtou.eu.org
   - name: DE TROJAN-22 | free-nodes
     type: trojan
     server: russia.com
@@ -1283,18 +1270,18 @@ proxies:
     network: ws
     ws-opts:
       path: /tr?ed=2560
+  - name: 🇬🇧telegram➠@v2rayNG_Matsuri
+    type: vless
+    server: 64.177.93.234
+    port: 443
+    uuid: e5e4baed-c67a-489c-9550-289cc168bd13
+    udp: true
   - name: 🇬🇧telegram➠@v2rayNG_Matsuri-2
     type: vless
     server: 64.177.90.23
     port: 443
     uuid: d5ba050c-a939-4388-8ff5-ce3f65832c6c
     udp: true
-  - name: '[zhuhaiuk#006] MX - zhuhai.uk'
-    type: socks5
-    server: 72.57.228.30
-    port: 62000
-    username: UBXich0K
-    password: VvUAFi2E
   - name: 日本 013
     type: trojan
     network: ws
@@ -1307,6 +1294,18 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: '[zhuhaiuk#006] MX - zhuhai.uk'
+    type: socks5
+    server: 72.57.228.30
+    port: 62000
+    username: UBXich0K
+    password: VvUAFi2E
+  - name: '[zhuhaiuk#013] MX - zhuhai.uk 02'
+    type: socks5
+    server: 94.194.164.147
+    port: 62000
+    username: rVkkraqT
+    password: 2j7CCZQb
   - name: '[OpenRay] 🇯🇵JP-110'
     type: vless
     server: 69.17.3.150
@@ -1331,12 +1330,6 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: '[zhuhaiuk#013] MX - zhuhai.uk 02'
-    type: socks5
-    server: 94.194.164.147
-    port: 62000
-    username: rVkkraqT
-    password: 2j7CCZQb
   - name: GB 🇬🇧 | @Raydikalx | CF8DE1
     type: vmess
     server: 142.202.51.42
@@ -1346,6 +1339,20 @@ proxies:
     cipher: auto
     udp: true
     tls: true
+  - name: 🇬🇧GB-172.99.190.149-6206
+    type: ss
+    server: 172.99.190.149
+    port: 443
+    cipher: aes-256-gcm
+    password: pKEW8JPByTVTLtM
+    udp: true
+  - name: 🇬🇧GB-172.99.190.149-6798
+    type: ss
+    server: 172.99.190.149
+    port: 8080
+    cipher: aes-256-gcm
+    password: KixLvKzwjekG00rm
+    udp: true
   - name: GB 🇬🇧 | @Raydikalx | 3E5525
     type: vmess
     server: 149.7.16.228
@@ -1355,18 +1362,212 @@ proxies:
     cipher: auto
     udp: true
     tls: true
+  - name: 🇬🇧GB-146.70.61.37-0128
+    type: ss
+    server: 146.70.61.37
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
   - name: 🇬🇧GB-185.44.76.188-5255
     type: trojan
     server: 185.44.76.188
     port: 443
     password: 8697fe6b-1lWNFc1RmRBNk5NQU5KSnga3fa58ac5a3ef0-b4ab-11eb-b65e-1239d0255272
     udp: true
-  - name: 🇬🇧GB-172.99.190.149-6798
+  - name: 🇬🇧GB-51.38.71.175-7818
+    type: trojan
+    server: 51.38.71.175
+    port: 80
+    password: b640d791-ff83-4300-b509-c2a02f97f167
+    udp: true
+    sni: uk1.trojanvh.xyz
+  - name: 🇬🇧[www.v2nodes.com] ss-GB-9184...
+    cipher: aes-128-gcm
+    password: shadowsocks
+    port: 443
+    server: 141.98.101.181
     type: ss
-    server: 172.99.190.149
+  - name: 🇬🇧GB-141.98.101.179-0217
+    type: ss
+    server: 141.98.101.179
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: 🇬🇧GB-141.98.101.182-0218
+    type: ss
+    server: 141.98.101.182
+    port: 443
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: '[OpenRay] 🇬🇧GB-125'
+    type: ss
+    server: 146.70.46.214
     port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: 🇩🇪
+    type: vless
+    server: 64.49.38.9
+    port: 443
+    uuid: f71957f3-29e0-d077-9b51-83da5cf31480
+    udp: true
+  - name: 🇬🇧[www.v2nodes.com] ss-GB-8004...
+    cipher: aes-128-gcm
+    password: shadowsocks
+    port: 443
+    server: 141.98.101.178
+    type: ss
+  - name: '[OpenRay] 🇬🇧GB-73'
+    type: vless
+    server: 45.91.93.47
+    port: 443
+    uuid: 8197b9b9-8945-460f-99c9-325ef8a8a7c3
+    udp: true
+    tls: true
+    servername: uk2.gofizz.in
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: WgTZR-o6VbFYeqb7iZNBh-izcWAQlpotOyxibJnAXVc
+      short-id: f51489cb3d7e8be2
+  - name: '[OpenRay] 🇬🇧GB-190'
+    type: ss
+    server: 146.70.46.199
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: NL - zhuhai.uk
+    type: ss
+    server: 141.148.242.33
+    port: 45819
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 7fKwr3+1Uzm9cJFq51+fsvP+L5hE0w1PhLsO/vuuowY=
+  - name: 🇬🇧[www.v2nodes.com] ss-GB-1615...
     cipher: aes-256-gcm
-    password: KixLvKzwjekG00rm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 142.202.51.22
+    type: ss
+  - name: GB 🇬🇧 | @Raydikalx | B8FD16
+    type: vmess
+    server: 57.128.164.21
+    port: 80
+    uuid: 10029c03-5d2f-4185-aab2-cbf91eef7361
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /d3d3LmlyYW5ob3N0LmNvbQ==
+      headers:
+        Host: https.http.www.net.com.ramseyv2.ir.
+  - name: GB 🇬🇧 | @Raydikalx | D2ACA3
+    type: vmess
+    server: 57.128.164.21
+    port: 80
+    uuid: bda82bcd-f6e2-46ae-9552-673f0b87ac30
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /d3d3LmlyYW5ob3N0LmNvbQ==
+      headers:
+        Host: https.http.www.net.com.ramseyv2.ir.
+  - name: GB 🇬🇧 | @Raydikalx | 1D17F2
+    type: vmess
+    server: 66.163.117.58
+    port: 443
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: aksai.org
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: aksai.org
+  - name: 🇬🇧[www.v2nodes.com] ss-GB-1616...
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 198.244.201.129
+    type: ss
+  - name: 英国 059
+    type: vless
+    network: ws
+    server: 51.38.71.147
+    port: 443
+    uuid: fda89998-7e9a-4494-857a-cd0d00661b58
+    servername: uk1.connectsuite.org
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: uk1.connectsuite.org
+      path: /cdn-cgi/ws
+  - name: 🇬🇧GB-132.145.51.172-3616
+    type: trojan
+    server: 132.145.51.172
+    port: 443
+    password: 02e653c9-7c93-46a9-999d-11834bd0c577
+    udp: true
+  - name: '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
+    type: vless
+    server: 136.176.68.34
+    port: 443
+    uuid: dbf3f074-3b18-43f3-b82a-debd8c879c69
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+  - name: '🇬🇧[www.v2nodes.com] vless-GB-1... #3'
+    type: vless
+    server: 51.89.194.151
+    port: 2053
+    uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: firefox
+  - name: '[OpenRay] 🇬🇧GB-75'
+    type: vless
+    server: 157.228.155.238
+    port: 443
+    uuid: 4d852af3-a121-41aa-9aed-4ca40a6f7b4d
+    udp: true
+    tls: true
+    servername: addons.mozilla.org
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 5BDht3tAZdKEKpJymGlRK9JugOnieA-kMSWz_0FoE0I
+      short-id: 6f76ad09
+  - name: '[OpenRay] 🇩🇪DE-124'
+    type: vless
+    server: 93.123.101.198
+    port: 443
+    uuid: a346c521-7a7f-452b-9356-a4893feb5982
+    udp: true
+    tls: true
+    servername: de14-r.bankai.party
+    client-fingerprint: safari
+    reality-opts:
+      public-key: FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0
+  - name: '[OpenRay] 🇩🇪DE-203'
+    type: ss
+    server: 213.202.208.199
+    port: 5000
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
     udp: true
   - name: GB英国(v2clash.blog 2026-10.12更新)
     type: vless
@@ -1399,51 +1600,32 @@ proxies:
     udp: true
     tls: true
     servername: node-uk.connectsuite.org
-  - name: 🇬🇧GB-141.98.101.179-0217
-    type: ss
-    server: 141.98.101.179
-    port: 443
-    cipher: aes-128-gcm
-    password: shadowsocks
-    udp: true
-  - name: '[OpenRay] 🇬🇧GB-24'
+  - name: 英国 049
     type: vless
-    server: 178.214.116.21
-    port: 8443
-    uuid: 2cbba076-cadf-4f45-9335-ab1dc46c8d04
-    udp: true
+    network: tcp
+    server: 31.77.227.10
+    port: 52006
+    uuid: bc659d88-a1e0-4c65-a49a-7b51b26a7a7f
+    servername: fr.setlisting.ru
+    skip-cert-verify: false
     tls: true
-    servername: stream-fr1.deployr.cc
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: IGtnuAu6O-sJ4rxJiFDeolk8Sn08rNJbZIb0EBgzvDA
-      short-id: ba49f287f968d315
-  - name: '[OpenRay] 🇬🇧GB-125'
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+    flow: xtls-rprx-vision-udp443
+  - name: '[free18#143] 🇬🇧_英国 (62)'
     type: ss
-    server: 146.70.46.214
+    server: 129.151.85.67
+    port: 61312
+    cipher: 2022-blake3-chacha20-poly1305
+    password: nwDYta2/EsXhz961zgcHEDq/CzydqTgLEfmE3BHj3uU=
+    udp: true
+  - name: '[OpenRay] 🇬🇧GB-20'
+    type: ss
+    server: 57.129.138.142
     port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: 🇬🇧[www.v2nodes.com] ss-GB-8004...
-    cipher: aes-128-gcm
-    password: shadowsocks
-    port: 443
-    server: 141.98.101.178
-    type: ss
-  - name: 🇬🇧GB-141.98.101.182-0218
-    type: ss
-    server: 141.98.101.182
-    port: 443
-    cipher: aes-128-gcm
-    password: shadowsocks
-    udp: true
-  - name: 🇬🇧GB-172.99.190.149-6206
-    type: ss
-    server: 172.99.190.149
-    port: 443
-    cipher: aes-256-gcm
-    password: pKEW8JPByTVTLtM
+    cipher: chacha20-ietf-poly1305
+    password: fwxkzn0tmurzsvrw
     udp: true
   - name: '[OpenRay] 🇩🇪DE-30'
     type: vless
@@ -1457,183 +1639,12 @@ proxies:
     reality-opts:
       public-key: Du5pk4KuMNA1sRcSpmuoLuC0HmxDBmFljFNfUzqxKiM
       short-id: cd0a1986719e44c8
-  - name: GB 🇬🇧 | @Raydikalx | 1D17F2
-    type: vmess
-    server: 66.163.117.58
-    port: 443
-    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: aksai.org
-    network: ws
-    ws-opts:
-      path: /linkvws
-      headers:
-        Host: aksai.org
-  - name: 🇬🇧GB-51.38.71.175-7818
-    type: trojan
-    server: 51.38.71.175
-    port: 80
-    password: b640d791-ff83-4300-b509-c2a02f97f167
-    udp: true
-    sni: uk1.trojanvh.xyz
-  - name: 🇬🇧[www.v2nodes.com] ss-GB-1616...
+  - name: 🇩🇪[www.v2nodes.com] ss-DE-1615...
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     port: 19999
-    server: 198.244.201.129
+    server: 193.108.119.3
     type: ss
-  - name: GB 🇬🇧 | @Raydikalx | B8FD16
-    type: vmess
-    server: 57.128.164.21
-    port: 80
-    uuid: 10029c03-5d2f-4185-aab2-cbf91eef7361
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /d3d3LmlyYW5ob3N0LmNvbQ==
-      headers:
-        Host: https.http.www.net.com.ramseyv2.ir.
-  - name: GB 🇬🇧 | @Raydikalx | D2ACA3
-    type: vmess
-    server: 57.128.164.21
-    port: 80
-    uuid: bda82bcd-f6e2-46ae-9552-673f0b87ac30
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /d3d3LmlyYW5ob3N0LmNvbQ==
-      headers:
-        Host: https.http.www.net.com.ramseyv2.ir.
-  - name: 🇬🇧GB-146.70.61.37-0128
-    type: ss
-    server: 146.70.61.37
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: '[OpenRay] 🇬🇧GB-55'
-    type: vless
-    server: 51.89.194.151
-    port: 2053
-    uuid: 8e790f25-1d71-4601-9fb0-d503931dcfca
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: xPEBx4wUmwAAv4ikUALNBf5wH6TRhyeQ0Q2pcNELsV0
-      short-id: d051f678212f9d54
-  - name: '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
-    type: vless
-    server: 136.176.68.34
-    port: 443
-    uuid: dbf3f074-3b18-43f3-b82a-debd8c879c69
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-  - name: '[OpenRay] 🇬🇧GB-37'
-    type: vless
-    server: 83.147.18.3
-    port: 443
-    uuid: 9f61cdf4-810d-4052-bbc7-2da0c8e20104
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    reality-opts:
-      public-key: 3iVJAIGPx6JMlhlRmfpGrHkSmLpHJ4CPvBBH7KsFrFA
-      short-id: fd8cf7e1173f0edb
-  - name: '[OpenRay] 🇬🇧GB-75'
-    type: vless
-    server: 157.228.155.238
-    port: 443
-    uuid: 4d852af3-a121-41aa-9aed-4ca40a6f7b4d
-    udp: true
-    tls: true
-    servername: addons.mozilla.org
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 5BDht3tAZdKEKpJymGlRK9JugOnieA-kMSWz_0FoE0I
-      short-id: 6f76ad09
-  - name: 🇩🇪
-    type: vless
-    server: 64.49.38.9
-    port: 443
-    uuid: f71957f3-29e0-d077-9b51-83da5cf31480
-    udp: true
-  - name: 🇬🇧[www.v2nodes.com] ss-GB-1615...
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 142.202.51.22
-    type: ss
-  - name: '[OpenRay] 🇬🇧GB-73'
-    type: vless
-    server: 45.91.93.47
-    port: 443
-    uuid: 8197b9b9-8945-460f-99c9-325ef8a8a7c3
-    udp: true
-    tls: true
-    servername: uk2.gofizz.in
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: WgTZR-o6VbFYeqb7iZNBh-izcWAQlpotOyxibJnAXVc
-      short-id: f51489cb3d7e8be2
-  - name: '[OpenRay] 🇩🇪DE-169'
-    type: vless
-    server: 195.63.128.21
-    port: 3443
-    uuid: fa937345-6d3e-4ff4-8127-1a836987a0db
-    udp: true
-    tls: true
-    servername: usa.cloudhouse1.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: FjYOR9Qnr2TivOR5BZZoIci_FW2h4phuJ1EPZB5NcQU
-      short-id: 777851fefbc1520e
-  - name: '[OpenRay] 🇩🇪DE-218'
-    type: vless
-    server: 195.63.128.21
-    port: 20443
-    uuid: fa937345-6d3e-4ff4-8127-1a836987a0db
-    udp: true
-    tls: true
-    servername: germany.cloudhouse1.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 00n0EAgpY0J966ZIr6LzA4bBhezLRoowNmCXjELfy0I
-      short-id: 73ca8049b875fe8d
-  - name: '[OpenRay] 🇩🇪DE-246'
-    type: vless
-    server: 195.63.128.21
-    port: 14443
-    uuid: fa937345-6d3e-4ff4-8127-1a836987a0db
-    udp: true
-    tls: true
-    servername: england.cloudhouse1.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: KGxtfPbpQkMnKiR1dysy3bm-S4fz0xuxqjMnxAeaACc
-      short-id: 1529bcdb0b29f4e5
-  - name: '@V2rayng_Fast 🇩🇪-7'
-    type: vless
-    server: 3.166.17.55
-    port: 443
-    uuid: 2b262080-f68a-4108-9ac3-d89140faaf6f
-    udp: true
-  - name: NL - zhuhai.uk
-    type: ss
-    server: 141.148.242.33
-    port: 45819
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 7fKwr3+1Uzm9cJFq51+fsvP+L5hE0w1PhLsO/vuuowY=
   - name: '🇩🇪[www.v2nodes.com] ss-DE-1615... #1'
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
@@ -1649,6 +1660,124 @@ proxies:
     cipher: auto
     udp: true
     tls: true
+  - name: DE 🇩🇪 | @Raydikalx | 78DCAA
+    type: vmess
+    server: 193.108.119.87
+    port: 1270
+    uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+  - name: 🇩🇪DE-193.108.119.96-0125
+    type: trojan
+    server: 193.108.119.96
+    port: 443
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    udp: true
+    sni: learn.iloverussia2026.com
+  - name: 🇩🇪DE-193.108.119.78-0491
+    type: trojan
+    server: 193.108.119.78
+    port: 443
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    udp: true
+  - name: 🇩🇪DE-193.108.117.75-5895
+    type: ss
+    server: 193.108.117.75
+    port: 443
+    cipher: aes-256-gcm
+    password: pKEW8JPByTVTLtM
+    udp: true
+  - name: '[OpenRay] 🇩🇪DE-13'
+    type: vless
+    server: 37.114.37.192
+    port: 443
+    uuid: 955d8dc7-5e3b-40ac-b2bb-bd8aa20fc7e6
+    udp: true
+    tls: true
+    servername: api-mod.storagedirectguide.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: eyEGQfdxyhZG0bCKlwp8hSihdc5WHTGmw4umrW4_bxY
+    network: grpc
+    grpc-opts:
+      grpc-service-name: api-mod
+  - name: '[OpenRay] 🇩🇪DE-28'
+    type: ss
+    server: 193.108.118.247
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: '[OpenRay] 🇬🇧GB-29'
+    type: vless
+    server: 82.39.171.12
+    port: 443
+    uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+    udp: true
+    tls: true
+    servername: yahoo.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+      short-id: c39cc7310a
+  - name: '[OpenRay] 🇩🇪DE-56'
+    type: ss
+    server: 193.108.117.84
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: '[OpenRay] 🇩🇪DE-127'
+    type: ss
+    server: 193.108.116.98
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: '[OpenRay] 🇩🇪DE-154'
+    type: vless
+    server: 213.199.57.127
+    port: 2087
+    uuid: 0f82d566-1273-43c5-a73c-229997b3b4b0
+    udp: true
+    tls: true
+    servername: blog.api.www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Y8U3PhV0K8jT4PBHq-rhCA4eUtOXa1CNB9waCvZbZSc
+      short-id: '42'
+  - name: '[OpenRay] 🇩🇪DE-222'
+    type: ss
+    server: 193.108.119.83
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: '[OpenRay] 🇩🇪DE-278'
+    type: trojan
+    server: 193.108.119.34
+    port: 443
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    udp: true
+    sni: cdn.iloverussia2026.com
+  - name: '[OpenRay] 🇬🇧GB-217'
+    type: vless
+    server: 31.58.213.235
+    port: 443
+    uuid: fd90e601-a56c-42b8-aab7-aa02d26fcb04
+    udp: true
+    tls: true
+    servername: app.streamru3.net
+    client-fingerprint: firefox
+  - name: '[OpenRay] 🇩🇪DE-368'
+    type: ss
+    server: 193.108.117.111
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
   - name: DE 🇩🇪 | @Raydikalx | 0A7D80
     type: vmess
     server: 193.108.117.54
@@ -1689,115 +1818,6 @@ proxies:
       path: /linkvws
       headers:
         Host: kentspark.org
-  - name: 🇩🇪DE-193.108.119.96-0125
-    type: trojan
-    server: 193.108.119.96
-    port: 443
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    udp: true
-    sni: learn.iloverussia2026.com
-  - name: 🇩🇪DE-193.108.119.78-0491
-    type: trojan
-    server: 193.108.119.78
-    port: 443
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    udp: true
-  - name: 🇬🇧GB-132.145.51.172-3616
-    type: trojan
-    server: 132.145.51.172
-    port: 443
-    password: 02e653c9-7c93-46a9-999d-11834bd0c577
-    udp: true
-  - name: '[OpenRay] 🇩🇪DE-13'
-    type: vless
-    server: 37.114.37.192
-    port: 443
-    uuid: 955d8dc7-5e3b-40ac-b2bb-bd8aa20fc7e6
-    udp: true
-    tls: true
-    servername: api-mod.storagedirectguide.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: eyEGQfdxyhZG0bCKlwp8hSihdc5WHTGmw4umrW4_bxY
-    network: grpc
-    grpc-opts:
-      grpc-service-name: api-mod
-  - name: '[OpenRay] 🇩🇪DE-21'
-    type: trojan
-    server: 193.108.119.29
-    port: 443
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    udp: true
-    sni: blog.iloverussia2026.com
-  - name: '[OpenRay] 🇩🇪DE-56'
-    type: ss
-    server: 193.108.117.84
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: '[OpenRay] 🇩🇪DE-89'
-    type: trojan
-    server: 193.108.119.193
-    port: 443
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    udp: true
-    sni: resources.iloverussia2026.com
-  - name: '[OpenRay] 🇩🇪DE-158'
-    type: trojan
-    server: 193.108.119.134
-    port: 443
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    udp: true
-    sni: api.iloverussia2026.com
-  - name: '[OpenRay] 🇩🇪DE-222'
-    type: ss
-    server: 193.108.119.83
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: '[OpenRay] 🇬🇧GB-190'
-    type: ss
-    server: 146.70.46.199
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: '[OpenRay] 🇩🇪DE-278'
-    type: trojan
-    server: 193.108.119.34
-    port: 443
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    udp: true
-    sni: cdn.iloverussia2026.com
-  - name: 🇩🇪[www.v2nodes.com] ss-DE-1615...
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 193.108.119.3
-    type: ss
-  - name: 德国 052
-    type: vless
-    network: xhttp
-    server: 94.237.83.139
-    port: 443
-    uuid: V2XNET-V2XNET
-    servername: 3x-ui-upgrade2.seenode.app
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-  - name: DE 🇩🇪 | @Raydikalx | 78DCAA
-    type: vmess
-    server: 193.108.119.87
-    port: 1270
-    uuid: 5c040f1d-45db-43bd-8d46-e4950e433735
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
   - name: 🇩🇪DE-193.108.119.15-0252
     type: trojan
     server: 193.108.119.15
@@ -1805,13 +1825,13 @@ proxies:
     password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
     udp: true
     sni: courses.iloverussia2026.com
-  - name: 🇩🇪DE-193.108.117.75-5895
-    type: ss
-    server: 193.108.117.75
+  - name: 🇩🇪DE-95.179.246.122-7751
+    type: trojan
+    server: 95.179.246.122
     port: 443
-    cipher: aes-256-gcm
-    password: pKEW8JPByTVTLtM
+    password: mainssh-niwrhf87
     udp: true
+    sni: getgrpc.mainssh.xyz
   - name: '🇬🇧[www.v2nodes.com] vless-GB-1... #2'
     type: vless
     server: 130.12.242.106
@@ -1828,73 +1848,91 @@ proxies:
     cipher: rc4-md5
     password: 14fFPrbezE3HDZzsMOr6
     udp: true
-  - name: '[OpenRay] 🇩🇪DE-124'
-    type: vless
-    server: 93.123.101.198
+  - name: '[OpenRay] 🇩🇪DE-21'
+    type: trojan
+    server: 193.108.119.29
     port: 443
-    uuid: a346c521-7a7f-452b-9356-a4893feb5982
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    udp: true
+    sni: blog.iloverussia2026.com
+  - name: '[OpenRay] 🇩🇪DE-89'
+    type: trojan
+    server: 193.108.119.193
+    port: 443
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    udp: true
+    sni: resources.iloverussia2026.com
+  - name: '[OpenRay] 🇩🇪DE-158'
+    type: trojan
+    server: 193.108.119.134
+    port: 443
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    udp: true
+    sni: api.iloverussia2026.com
+  - name: 🇩🇪DE_1|1.1MB/s|A004-260618 [3e8f024655d9]
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    port: 8080
+    server: 169.150.210.233
+    sub_tag: A004-260618
+    type: ss
+    udp: true
+  - name: Бесплатный VPN tg:VLESSFORU 🇩🇪
+    type: vless
+    server: 217.60.12.99
+    port: 443
+    uuid: a6142d9d-3f9f-47b7-b7e9-1245dd6a15d6
     udp: true
     tls: true
-    servername: de14-r.bankai.party
+    servername: 217.60.12.99
+    client-fingerprint: ios
+  - name: 🇩🇪 Germany - Unknown | 178.162.254.203:443
+    type: vless
+    server: 178.162.254.203
+    port: 443
+    uuid: 3e383398-adb6-440a-8372-7ec94094b155
+    udp: true
+    tls: true
+    servername: mediarivo.de
     client-fingerprint: safari
     reality-opts:
-      public-key: FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0
-  - name: '[OpenRay] 🇩🇪DE-189'
+      public-key: x9Yrn8m9YdZqdiJ9r4UXIx-bctY7GAt4pS61VTaCR2Y
+      short-id: 32589f86ea0baa11
+  - name: 德国 039
     type: vless
-    server: 84.32.100.177
-    port: 8443
-    uuid: 2cbba076-cadf-4f45-9335-ab1dc46c8d04
-    udp: true
-    tls: true
-    servername: cdn-482.veltacdn.cc
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: yJZgUPduM3ePryc6rU0Cr9yoVvucTENzinJQSazx5mo
-      short-id: f27e655c75ba2c81
-  - name: '[OpenRay] 🇩🇪DE-203'
-    type: ss
-    server: 213.202.208.199
-    port: 5000
-    cipher: aes-256-gcm
-    password: Y6R9pAtvxxzmGC
-    udp: true
-  - name: '[OpenRay] 🇩🇪DE-210'
-    type: vless
-    server: 195.63.128.21
-    port: 9443
-    uuid: fa937345-6d3e-4ff4-8127-1a836987a0db
-    udp: true
-    tls: true
-    servername: singapour.cloudhouse1.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: HwHSknL4SAIWY3xMfnvpcbCpE_QmF_DOxb2mkyxQ3Xg
-      short-id: 0929498c442d0ff3
-  - name: 🇩🇪 Germany - Unknown | 178.162.244.224:443
-    type: vless
-    server: 178.162.244.224
-    port: 443
-    uuid: 83a85a41-fb7f-43e0-9c15-d199509a9624
-    udp: true
-  - name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
-    type: vless
-    server: 163.245.42.87
-    port: 443
-    uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
-    flow: xtls-rprx-vision
-    tls: true
-    servername: mother-earth.fyi
-    sni: mother-earth.fyi
+    network: tcp
+    server: 92.119.165.51
+    port: 6443
+    uuid: 68a67906-5b37-4779-a6cc-58a1655f18b4
+    servername: zug-net.locallynet.org
     skip-cert-verify: false
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-  - name: 🇬🇧[www.v2nodes.com] ss-GB-9184...
-    cipher: aes-128-gcm
-    password: shadowsocks
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+    flow: xtls-rprx-vision
+  - name: 德国 052
+    type: vless
+    network: xhttp
+    server: 94.237.83.139
     port: 443
-    server: 141.98.101.181
-    type: ss
+    uuid: V2XNET-V2XNET
+    servername: 3x-ui-upgrade2.seenode.app
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
+    client-fingerprint: chrome
+  - name: 德国 070
+    type: vless
+    network: tcp
+    server: 3.126.31.60
+    port: 443
+    uuid: fa12c1f5-24be-4119-8506-aad16f3bcd35
+    skip-cert-verify: false
+    tls: true
+    udp: true
+    tfo: false
   - name: DE 🇩🇪 | @Raydikalx | C43E68
     type: vmess
     server: 162.19.192.89
@@ -1921,11 +1959,11 @@ proxies:
       path: /
       headers:
         Host: 407a2bc6d452ff93e6d7b73078539d9e.mobgslb.tbcache.com
-  - name: DE 🇩🇪 | @Raydikalx | 238226
+  - name: DE 🇩🇪 | @Raydikalx | 7E0FB0
     type: vmess
     server: 162.19.192.89
-    port: 16641
-    uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a
+    port: 16626
+    uuid: 62e0878c-ff8c-4a67-b18f-89886e24750c
     alterId: 0
     cipher: auto
     udp: true
@@ -1933,7 +1971,7 @@ proxies:
     ws-opts:
       path: /
       headers:
-        Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com
+        Host: 706a0a2fb2f7729acf9a103060a7abc3.mobgslb.tbcache.com
   - name: DE 🇩🇪 | @Raydikalx | 9B59E1
     type: vmess
     server: 162.19.192.89
@@ -1957,32 +1995,18 @@ proxies:
     udp: true
     tls: true
     servername: 185.204.170.130
-  - name: DE 🇩🇪 | @Raydikalx | 41AEF9
-    type: vmess
-    server: 217.60.183.95
-    port: 33744
-    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
-    alterId: 0
-    cipher: auto
+  - name: 🆔capoit 🔓 VL-WS-N/A 🇩🇪 DE 153ms
+    type: vless
+    server: 57.129.41.216
+    port: 80
+    uuid: 18535741-e8b3-4b43-9348-785b55936751
     udp: true
     network: ws
     ws-opts:
-      path: /ShamanVMESS2026
+      path: /vless/
       headers:
-        Host: de-d21e56c13c.shamanapp.online:33744
-  - name: 🆔ar14n24b 🔒 VL-TCP- 🇩🇪 DE 145ms
-    type: vless
-    server: 195.26.26.172
-    port: 443
-    uuid: 7d01efa0-fd13-4574-887c-435082a278cb
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: BDotlcSZPRi1TqUoG_AHZwGy3cX_YaBgP1kyRbbu6Hg
-      short-id: af7790af199fcc
-  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
+        Host: ov-germany1.09vpn.com
+  - name: '🇩🇪[www.v2nodes.com] vless-DE-1... #1'
     type: vless
     server: 31.58.213.31
     port: 443
@@ -1991,6 +2015,36 @@ proxies:
     tls: true
     servername: app.streamru2.net
     client-fingerprint: firefox
+  - name: '[OpenRay] 🇩🇪DE-14'
+    type: ss
+    server: 178.162.254.38
+    port: 8388
+    cipher: aes-256-gcm
+    password: itzvpn@321
+    udp: true
+  - name: '[OpenRay] 🇩🇪DE-16'
+    type: vless
+    server: 87.120.92.68
+    port: 443
+    uuid: d596f92b-a7ce-47d2-8392-a274d9f57bec
+    udp: true
+    tls: true
+    servername: cloudiva.abrdns.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: XLAE_KCFdlZkGcFndCnzEqsNHX1FByaGihkyEyrmDlo
+      short-id: c1440935cc28
+  - name: '[OpenRay] 🇩🇪DE-17'
+    type: vless
+    server: 57.129.41.216
+    port: 80
+    uuid: 7d74eae4-8a06-4306-a923-ad686f30bf26
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vless/
+      headers:
+        Host: ov-germany1.09vpn.com
   - name: '[OpenRay] 🇬🇧GB-21'
     type: vless
     server: 31.58.213.31
@@ -2000,56 +2054,53 @@ proxies:
     tls: true
     servername: app.streamru2.net
     client-fingerprint: firefox
-  - name: '[OpenRay] 🇩🇪DE-38'
-    type: ss
-    server: 185.226.172.8
-    port: 8008
-    cipher: aes-256-gcm
-    password: XKFKl2rULjIp74
-    udp: true
-  - name: '[OpenRay] 🇬🇧GB-217'
+  - name: '[OpenRay] 🇩🇪DE-81'
     type: vless
-    server: 31.58.213.235
-    port: 443
-    uuid: fd90e601-a56c-42b8-aab7-aa02d26fcb04
+    server: 57.129.41.216
+    port: 80
+    uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
     udp: true
-    tls: true
-    servername: app.streamru3.net
-    client-fingerprint: firefox
-  - name: '[OpenRay] 🇩🇪DE-364'
-    type: ss
-    server: 57.129.76.233
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: '[OpenRay] 🇩🇪DE-368'
-    type: ss
-    server: 193.108.117.111
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: 🇩🇪DE_1|1.1MB/s|A004-260618 [3e8f024655d9]
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    port: 8080
-    server: 169.150.210.233
-    sub_tag: A004-260618
-    type: ss
-    udp: true
-  - name: 🇩🇪 Germany - Unknown | 178.162.254.203:443
+    network: ws
+    ws-opts:
+      path: /vless/
+  - name: '[OpenRay] 🇩🇪DE-110'
     type: vless
-    server: 178.162.254.203
-    port: 443
-    uuid: 3e383398-adb6-440a-8372-7ec94094b155
+    server: 57.129.41.216
+    port: 80
+    uuid: 7d90f043-ed7f-40c9-ac2f-352987904958
     udp: true
-    tls: true
-    servername: mediarivo.de
-    client-fingerprint: safari
-    reality-opts:
-      public-key: x9Yrn8m9YdZqdiJ9r4UXIx-bctY7GAt4pS61VTaCR2Y
-      short-id: 32589f86ea0baa11
+    network: ws
+    ws-opts:
+      path: /vless/
+      headers:
+        Host: OV-Germany1.09vpn.com
+  - name: '[OpenRay] 🇩🇪DE-370'
+    type: ss
+    server: 213.202.208.199
+    port: 7001
+    cipher: aes-256-gcm
+    password: RexnBgU7EV5ADxG
+    udp: true
+  - name: 🇩🇪 Germany - Unknown | 178.162.244.224:443
+    type: vless
+    server: 178.162.244.224
+    port: 443
+    uuid: 83a85a41-fb7f-43e0-9c15-d199509a9624
+    udp: true
+  - name: '🇩🇪 德国 | DEU #5'
+    cipher: 2022-blake3-chacha20-poly1305
+    password: FmB4HBM/+63LZr+sjxs5zkFIvZmB//5BPqdf8W+wntg=
+    port: 59924
+    server: 79.76.105.62
+    type: ss
+    udp: true
+  - name: 🇩🇪 德国 | DEU 10
+    server: 129.159.0.53
+    port: 59924
+    type: ss
+    cipher: 2022-blake3-chacha20-poly1305
+    password: zpdYERRY+i9wkj3G766aELYAVoITvCv9kKrIGG8ykzY=
+    udp: true
   - name: 日本 040
     type: vless
     network: ws
@@ -2065,27 +2116,11 @@ proxies:
       headers:
         Host: arvancloud.ir
       path: /
-  - name: 英国 059
-    type: vless
-    network: ws
-    server: 51.38.71.147
-    port: 443
-    uuid: fda89998-7e9a-4494-857a-cd0d00661b58
-    servername: uk1.connectsuite.org
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: uk1.connectsuite.org
-      path: /cdn-cgi/ws
-  - name: DE 🇩🇪 | @Raydikalx | 7E0FB0
+  - name: DE 🇩🇪 | @Raydikalx | 238226
     type: vmess
     server: 162.19.192.89
-    port: 16626
-    uuid: 62e0878c-ff8c-4a67-b18f-89886e24750c
+    port: 16641
+    uuid: 9d5c15a3-166c-4d65-8a0b-d7a7a7c8863a
     alterId: 0
     cipher: auto
     udp: true
@@ -2093,7 +2128,20 @@ proxies:
     ws-opts:
       path: /
       headers:
-        Host: 706a0a2fb2f7729acf9a103060a7abc3.mobgslb.tbcache.com
+        Host: 7d56482dc5251e2efaca623dcbc64e3d.mobgslb.tbcache.com
+  - name: DE 🇩🇪 | @Raydikalx | 41AEF9
+    type: vmess
+    server: 217.60.183.95
+    port: 33744
+    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /ShamanVMESS2026
+      headers:
+        Host: de-d21e56c13c.shamanapp.online:33744
   - name: DE 🇩🇪 | @Raydikalx | 4C5D05
     type: vmess
     server: 51.75.74.253
@@ -2105,69 +2153,50 @@ proxies:
     network: ws
     ws-opts:
       path: /vpnjantit
-  - name: 🆔capoit 🔓 VL-WS-N/A 🇩🇪 DE 153ms
-    type: vless
-    server: 57.129.41.216
-    port: 80
-    uuid: 18535741-e8b3-4b43-9348-785b55936751
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vless/
-      headers:
-        Host: ov-germany1.09vpn.com
-  - name: '[OpenRay] 🇩🇪DE-17'
-    type: vless
-    server: 57.129.41.216
-    port: 80
-    uuid: 7d74eae4-8a06-4306-a923-ad686f30bf26
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vless/
-      headers:
-        Host: ov-germany1.09vpn.com
-  - name: '[OpenRay] 🇩🇪DE-28'
+  - name: 🇬🇧GB-82.38.31.47-0161
     type: ss
-    server: 193.108.118.247
+    server: 82.38.31.47
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: '[OpenRay] 🇩🇪DE-38'
+    type: ss
+    server: 185.226.172.8
+    port: 8008
+    cipher: aes-256-gcm
+    password: XKFKl2rULjIp74
+    udp: true
+  - name: '[OpenRay] 🇸🇬SG-42'
+    type: trojan
+    server: 194.9.62.42
+    port: 8443
+    password: f426d3c9-fb43-43c0-868b-898dfa451a74
+    udp: true
+    sni: likejennie.pages.dev
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: likejennie.pages.dev
+  - name: '[OpenRay] 🇩🇪DE-364'
+    type: ss
+    server: 57.129.76.233
     port: 19999
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     udp: true
-  - name: '[OpenRay] 🇩🇪DE-81'
+  - name: '@V2rayng_Fast 🇩🇪-7'
     type: vless
-    server: 57.129.41.216
-    port: 80
-    uuid: 3cfa0d9b-6279-4b73-8533-09ad84e49c80
+    server: 3.166.17.55
+    port: 443
+    uuid: 2b262080-f68a-4108-9ac3-d89140faaf6f
     udp: true
-    network: ws
-    ws-opts:
-      path: /vless/
-  - name: '[OpenRay] 🇩🇪DE-127'
-    type: ss
-    server: 193.108.116.98
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: '[OpenRay] 🇩🇪DE-154'
+  - name: DE德国(v2clash.blog 2026-10.20更新)
     type: vless
-    server: 213.199.57.127
-    port: 2087
-    uuid: 0f82d566-1273-43c5-a73c-229997b3b4b0
-    udp: true
-    tls: true
-    servername: blog.api.www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Y8U3PhV0K8jT4PBHq-rhCA4eUtOXa1CNB9waCvZbZSc
-      short-id: '42'
-  - name: '[OpenRay] 🇩🇪DE-370'
-    type: ss
-    server: 213.202.208.199
-    port: 7001
-    cipher: aes-256-gcm
-    password: RexnBgU7EV5ADxG
+    server: 152.53.197.166
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
   - name: DE德国(v2clash.blog 2026-10.6更新)
     type: vless
@@ -2175,81 +2204,50 @@ proxies:
     port: 443
     uuid: 87fd990d-ca93-440a-bbd4-e8281c4a0910
     udp: true
-  - name: DE - zhuhai.uk 03
-    type: ss
-    server: 92.5.114.103
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: GmAn0fXarz+xB3bw2aCzwnZxcNuDx8xpqI+vGufI3jI=
-  - name: '[zhuhaiuk#009] DE - zhuhai.uk 02'
-    type: http
-    server: 167.172.172.190
-    port: 443
-    username: testuser1
-    password: e4b72b531a2d10900519
-    tls: true
-    sni: a7acacbe.acsnet.co
-  - name: 德国 039
+  - name: 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
     type: vless
-    network: tcp
-    server: 92.119.165.51
-    port: 6443
-    uuid: 68a67906-5b37-4779-a6cc-58a1655f18b4
-    servername: zug-net.locallynet.org
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
+    server: 163.245.42.87
+    port: 443
+    uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
     flow: xtls-rprx-vision
-  - name: 德国 070
-    type: vless
-    network: tcp
-    server: 3.126.31.60
-    port: 443
-    uuid: fa12c1f5-24be-4119-8506-aad16f3bcd35
-    skip-cert-verify: false
     tls: true
-    udp: true
-    tfo: false
-  - name: 🇬🇧GB-82.38.31.205-0081
+    servername: mother-earth.fyi
+    sni: mother-earth.fyi
+    skip-cert-verify: false
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  - name: 🇬🇧GB-82.38.31.180-0085
     type: ss
-    server: 82.38.31.205
+    server: 82.38.31.180
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: 🇬🇧GB-82.38.31.207-0082
+  - name: 🇬🇧GB-82.38.31.191-0099
     type: ss
-    server: 82.38.31.207
+    server: 82.38.31.191
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: 🇬🇧GB-82.38.31.189-0090
+  - name: 🇬🇧GB-82.38.31.206-0080
     type: ss
-    server: 82.38.31.189
+    server: 82.38.31.206
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: 🇬🇧GB-82.38.31.190-0066
+  - name: 🇬🇧GB-82.38.31.210-0070
     type: ss
-    server: 82.38.31.190
+    server: 82.38.31.210
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: 🇬🇧GB-82.38.31.187-0076
+  - name: 🇬🇧GB-82.38.31.199-0192
     type: ss
-    server: 82.38.31.187
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.176-0209
-    type: ss
-    server: 82.38.31.176
+    server: 82.38.31.199
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -2261,44 +2259,19 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: 🇩🇪DE-95.179.254.136-7749
-    type: trojan
-    server: 95.179.254.136
-    port: 443
-    password: mainssh-ddoejfv14
-    udp: true
-    sni: frtgrpc.mainssh.xyz
-  - name: '[OpenRay] 🇩🇪DE-8'
-    type: vless
-    server: 152.53.127.214
-    port: 443
-    uuid: 711c018e-2692-4aa8-93f3-544d83fcd16c
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    reality-opts:
-      public-key: HyVSZ2OyySwXT-xRhTAqoiuYflIaj_b0Jxm7S1Iq9hs
-      short-id: 7a76f3c4b9dd
-  - name: '[OpenRay] 🇬🇧GB-72'
+  - name: 🇬🇧GB-82.38.31.219-0199
     type: ss
-    server: 82.38.31.220
+    server: 82.38.31.219
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: '[OpenRay] 🇬🇧GB-159'
+  - name: 🇬🇧GB-82.38.31.216-0065
     type: ss
-    server: 82.38.31.165
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧telegram➠@v2rayNG_Matsuri-3
-    type: ss
-    server: 193.29.139.230
+    server: 82.38.31.216
     port: 8080
     cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
+    password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
   - name: '@V2rayng_Fast 🇬🇧'
     type: vless
@@ -2306,9 +2279,161 @@ proxies:
     port: 443
     uuid: 9503e890-3702-4847-af0a-2bceac2f0da0
     udp: true
-  - name: 🇬🇧GB-82.38.31.191-0099
+  - name: DE - zhuhai.uk 03
     type: ss
-    server: 82.38.31.191
+    server: 92.5.114.103
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: GmAn0fXarz+xB3bw2aCzwnZxcNuDx8xpqI+vGufI3jI=
+  - name: 🇬🇧GB-82.38.31.179-0091
+    type: ss
+    server: 82.38.31.179
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.205-0081
+    type: ss
+    server: 82.38.31.205
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.181-0101
+    type: ss
+    server: 82.38.31.181
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.192-0077
+    type: ss
+    server: 82.38.31.192
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.189-0090
+    type: ss
+    server: 82.38.31.189
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.61-0174
+    type: ss
+    server: 82.38.31.61
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: 🇬🇧GB-82.38.31.48-0160
+    type: ss
+    server: 82.38.31.48
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: 🇬🇧GB-82.38.31.187-0076
+    type: ss
+    server: 82.38.31.187
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: '[OpenRay] 🇯🇵JP-14'
+    type: vless
+    server: 217.60.27.93
+    port: 443
+    uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+    udp: true
+    tls: true
+    servername: tgde.blog-forme.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 2VsrxDroL0paeyBtGkQ5zfhMOXqwti5kDZPkvh1xJgs
+      short-id: 8424ce89ccd55f65
+  - name: '[OpenRay] 🇯🇵JP-82'
+    type: vless
+    server: 217.60.27.93
+    port: 22443
+    uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
+    udp: true
+    tls: true
+    servername: nl16.blog-forme.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: b4IjSqjLCM2MZyRiqv-VBsRB1D7CrRaQCDXaUIfp6mA
+      short-id: 646903b46c069439
+  - name: '[free18#082] 🇬🇧_英国 (50)'
+    type: ss
+    server: 82.38.31.213
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: '[zhuhaiuk#009] DE - zhuhai.uk 02'
+    type: http
+    server: 167.172.172.190
+    port: 443
+    username: testuser1
+    password: e4b72b531a2d10900519
+    tls: true
+    sni: a7acacbe.acsnet.co
+  - name: GB 🇬🇧 | @Raydikalx | 410E97
+    type: vmess
+    server: 77.68.12.207
+    port: 10000
+    uuid: f8c2b4dc-aca4-11f1-90d8-d7e65112c6d1
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vpnjantit
+  - name: '[OpenRay] 🇬🇧GB-24'
+    type: vless
+    server: 178.214.116.21
+    port: 8443
+    uuid: 2cbba076-cadf-4f45-9335-ab1dc46c8d04
+    udp: true
+    tls: true
+    servername: stream-fr1.deployr.cc
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: IGtnuAu6O-sJ4rxJiFDeolk8Sn08rNJbZIb0EBgzvDA
+      short-id: ba49f287f968d315
+  - name: 🇰🇷 South Korea, Cheonan-si | [BL]
+    type: vless
+    server: 144.31.215.244
+    port: 2096
+    uuid: fbe22815-0718-4eae-816f-e91c67d15b54
+    udp: true
+    tls: true
+    servername: stc4ef0.rumedia-cdn.com
+    client-fingerprint: edge
+    network: ws
+    ws-opts:
+      path: /cdn/v3/live
+      headers:
+        Host: stc4ef0.rumedia-cdn.com
+  - name: 🇬🇧GB-82.38.31.194-0063
+    type: ss
+    server: 82.38.31.194
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.203-0087
+    type: ss
+    server: 82.38.31.203
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.217-0079
+    type: ss
+    server: 82.38.31.217
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -2327,114 +2452,6 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
-  - name: 🇬🇧GB-82.38.31.66-0170
-    type: ss
-    server: 82.38.31.66
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-82.38.31.216-0065
-    type: ss
-    server: 82.38.31.216
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: '[OpenRay] 🇯🇵JP-14'
-    type: vless
-    server: 217.60.27.93
-    port: 443
-    uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
-    udp: true
-    tls: true
-    servername: tgde.blog-forme.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 2VsrxDroL0paeyBtGkQ5zfhMOXqwti5kDZPkvh1xJgs
-      short-id: 8424ce89ccd55f65
-  - name: '[OpenRay] 🇸🇬SG-42'
-    type: trojan
-    server: 194.9.62.42
-    port: 8443
-    password: f426d3c9-fb43-43c0-868b-898dfa451a74
-    udp: true
-    sni: likejennie.pages.dev
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: likejennie.pages.dev
-  - name: '[free18#082] 🇬🇧_英国 (50)'
-    type: ss
-    server: 82.38.31.213
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: '[OpenRay] 🇬🇧GB-70'
-    type: ss
-    server: 98.98.207.163
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: '[OpenRay] 🇯🇵JP-82'
-    type: vless
-    server: 217.60.27.93
-    port: 22443
-    uuid: 549766c3-fa5f-471e-8031-ffc1f8d5064f
-    udp: true
-    tls: true
-    servername: nl16.blog-forme.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: b4IjSqjLCM2MZyRiqv-VBsRB1D7CrRaQCDXaUIfp6mA
-      short-id: 646903b46c069439
-  - name: 🇬🇧[www.v2nodes.com] ss-GB-1621...
-    cipher: chacha20-ietf-poly1305
-    password: 8nrpt2il04ptci2j
-    port: 8080
-    server: 54.37.240.40
-    type: ss
-  - name: 英国 049
-    type: vless
-    network: tcp
-    server: 31.77.227.10
-    port: 52006
-    uuid: bc659d88-a1e0-4c65-a49a-7b51b26a7a7f
-    servername: fr.setlisting.ru
-    skip-cert-verify: false
-    tls: true
-    udp: true
-    tfo: false
-    client-fingerprint: chrome
-    flow: xtls-rprx-vision-udp443
-  - name: GB 🇬🇧 | @Raydikalx | 410E97
-    type: vmess
-    server: 77.68.12.207
-    port: 10000
-    uuid: f8c2b4dc-aca4-11f1-90d8-d7e65112c6d1
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vpnjantit
-  - name: 🇬🇧GB-82.38.31.203-0087
-    type: ss
-    server: 82.38.31.203
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.179-0091
-    type: ss
-    server: 82.38.31.179
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
   - name: 🇬🇧GB-82.38.31.162-0166
     type: ss
     server: 82.38.31.162
@@ -2442,66 +2459,19 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
-  - name: 🇬🇧GB-82.38.31.184-0084
+  - name: 🇬🇧GB-82.38.31.66-0170
     type: ss
-    server: 82.38.31.184
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: '[OpenRay] 🇬🇧GB-29'
-    type: vless
-    server: 82.39.171.12
-    port: 443
-    uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-    udp: true
-    tls: true
-    servername: yahoo.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-      short-id: c39cc7310a
-  - name: 🇬🇧GB-82.38.31.180-0085
-    type: ss
-    server: 82.38.31.180
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.212-0067
-    type: ss
-    server: 82.38.31.212
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: 🇬🇧GB-82.38.31.49-0162
-    type: ss
-    server: 82.38.31.49
+    server: 82.38.31.66
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
-  - name: 🇬🇧GB-82.38.31.47-0161
+  - name: 🇬🇧GB-178.83.185.156-0159
     type: ss
-    server: 82.38.31.47
+    server: 178.83.185.156
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: 🇬🇧GB-82.38.31.48-0160
-    type: ss
-    server: 82.38.31.48
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: '[OpenRay] 🇬🇧GB-201'
-    type: ss
-    server: 82.38.31.178
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
     udp: true
   - name: '[OpenRay] 🇬🇧GB-246'
     type: vless
@@ -2517,6 +2487,26 @@ proxies:
     network: grpc
     grpc-opts:
       grpc-service-name: vlgrpc
+  - name: 🇬🇧GB-82.38.31.190-0066
+    type: ss
+    server: 82.38.31.190
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: 🇬🇧GB-82.38.31.35-0164
+    type: ss
+    server: 82.38.31.35
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: TW台湾(v2clash.blog 2026-9.22更新)
+    type: vless
+    server: 89.46.42.92
+    port: 2053
+    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
+    udp: true
   - name: '[OpenRay] 🇹🇼TW-18'
     type: vless
     server: 103.118.211.38
@@ -2529,26 +2519,6 @@ proxies:
     reality-opts:
       public-key: PA1xWXjxZLn68I-6cjWVdqc0dYhWbu9W5c1GpjEOZgE
       short-id: 8a9442353eebbe0f
-  - name: TW台湾(v2clash.blog 2026-9.22更新)
-    type: vless
-    server: 89.46.42.92
-    port: 2053
-    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-    udp: true
-  - name: 🇰🇷 South Korea, Cheonan-si | [BL]
-    type: vless
-    server: 144.31.215.244
-    port: 2096
-    uuid: fbe22815-0718-4eae-816f-e91c67d15b54
-    udp: true
-    tls: true
-    servername: stc4ef0.rumedia-cdn.com
-    client-fingerprint: edge
-    network: ws
-    ws-opts:
-      path: /cdn/v3/live
-      headers:
-        Host: stc4ef0.rumedia-cdn.com
   - name: '[OpenRay] 🇯🇵JP-148'
     type: vless
     server: 217.60.25.100
@@ -2561,20 +2531,6 @@ proxies:
     reality-opts:
       public-key: wh9zHZTegXrUKKsAKvM7habKnQ7QK3ii71NRjlKVLWc
       short-id: 76f3d7039ad727bf
-  - name: '[OpenRay] 🇸🇬SG-177'
-    type: vless
-    server: 43.174.195.1
-    port: 443
-    uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
-    udp: true
-    tls: true
-    servername: kv.074167.xyz
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '%2F'
-      headers:
-        Host: kv.074167.xyz
   - name: 🇯🇵JP日本丨yoyapai.com
     type: vless
     server: 2.27.27.64
@@ -2590,12 +2546,32 @@ proxies:
     reality-opts:
       public-key: qBtxq4RZxDLCJT8i48iaGMhacv8MOI0yhIFiuwYJm08
       short-id: 825d392c67e4
+  - name: '[OpenRay] 🇸🇬SG-177'
+    type: vless
+    server: 43.174.195.1
+    port: 443
+    uuid: 24916ad0-847d-4522-9e17-f4347dee57fd
+    udp: true
+    tls: true
+    servername: kv.074167.xyz
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '%2F'
+      headers:
+        Host: kv.074167.xyz
   - name: '[free18#166] 🇯🇵_日本 (10)'
     type: vless
     server: 31.76.91.98
     port: 443
     uuid: 7072eeba-94fd-4fb3-92f2-a4506dd84cd8
     udp: true
+  - name: 🇯🇵[www.v2nodes.com] ss-JP-5141...
+    cipher: aes-128-gcm
+    password: shadowsocks
+    port: 443
+    server: 149.22.87.204
+    type: ss
   - name: 🇯🇵[www.v2nodes.com] ss-JP-9223...
     cipher: aes-128-gcm
     password: shadowsocks
@@ -2620,18 +2596,6 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: 日本 015
-    type: trojan
-    network: ws
-    server: 172.104.81.253
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
   - name: 日本 018
     type: trojan
     network: ws
@@ -2644,51 +2608,45 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: 日本 024
-    type: trojan
+  - name: '[OpenRay] 🇯🇵JP-17'
+    type: vless
+    server: 154.31.114.162
+    port: 8443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    udp: true
+    tls: true
+    servername: jp3.yohototo.top
     network: ws
-    server: 149.28.21.106
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
     ws-opts:
+      path: /tyxyws
       headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: '🇯🇵[www.v2nodes.com] vless-JP-1... #1'
+        Host: jp3.yohototo.top
+  - name: '[OpenRay] 🇸🇬SG-49'
     type: vless
-    server: 103.75.118.228
-    port: 12683
-    uuid: 814bd064-544d-4255-a070-5705c03f6da9
+    server: 43.170.8.95
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
     udp: true
     tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-  - name: '[OpenRay] 🇯🇵JP-69'
-    type: vless
-    server: 103.75.118.228
-    port: 11452
-    uuid: 814bd064-544d-4255-a070-5705c03f6da9
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: qq
-    reality-opts:
-      public-key: k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0
-      short-id: 48050fab
+    servername: jp3.yohototo.top
+    client-fingerprint: firefox
+    network: ws
+    ws-opts:
+      path: /tyxyws
+      headers:
+        Host: jp3.yohototo.top
   - name: JP日本(v2clash.blog 2026-10.23更新)
     type: vless
     server: 172.104.80.248
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
-  - name: 🇯🇵[www.v2nodes.com] ss-JP-5141...
-    cipher: aes-128-gcm
-    password: shadowsocks
+  - name: 日本低延迟(解锁YouTube,ChatGPT等网站)
+    type: vless
+    server: 103.100.158.109
     port: 443
-    server: 149.22.87.204
-    type: ss
+    uuid: 64c1b992-47ff-42ef-8d6d-d7ee13c5b716
+    udp: true
   - name: 🇯🇵[www.v2nodes.com] ss-JP-1291...
     cipher: aes-128-gcm
     password: shadowsocks
@@ -2709,6 +2667,30 @@ proxies:
     security: tls
     ech: cloudflare-ech.com+https://dns.alidns.com/dns-query
     insecure: '0'
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 日本 015
+    type: trojan
+    network: ws
+    server: 172.104.81.253
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 日本 024
+    type: trojan
+    network: ws
+    server: 149.28.21.106
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
     ws-opts:
       headers:
         Host: tjsp.hhxaf.cc.cd
@@ -2735,6 +2717,11 @@ proxies:
     cipher: aes-128-gcm
     password: Bwlqh7GcFB
     udp: true
+  - name: C🟠🇯🇵hos[🤖💬✈️🔍]_dokng.com_e7a3bbb0
+    port: 18454
+    server: 168.110.21.56
+    type: vless
+    uuid: ff8fc3f9-0c1b-4a6f-97cb-ed1cde4de62d
   - name: '[OpenRay] 🇯🇵JP-27'
     type: vless
     server: 3.113.213.171
@@ -2749,18 +2736,32 @@ proxies:
       path: /tyxyws
       headers:
         Host: jp3.yohototo.top
-  - name: '[OpenRay] 🇯🇵JP-107'
+  - name: 🇯🇵 机场推荐:dafei.de 日本 58
     type: vless
-    server: 158.101.151.157
-    port: 443
-    uuid: 66171cbe-0b4b-4b24-99f6-d5a822f4dc9a
+    server: 158.101.154.245
+    port: 47001
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
     udp: true
     tls: true
-    servername: www.microsoft.com
+    servername: sni.111000.indevs.in
     client-fingerprint: chrome
-    reality-opts:
-      public-key: 99eQkMBHqOEKororOWKFlmH8M0o9VaVpV9w1vQIxhz8
-      short-id: 684c7531e599dec0
+    network: ws
+    ws-opts:
+      path: /?ed=2560&Telegram🇨🇳 @WangCai2
+      headers:
+        Host: sni.111000.indevs.in
+  - name: 🇯🇵 adi|freenode1020-JP 3
+    server: 52.185.164.224
+    port: 443
+    type: vmess
+    uuid: 0303ab78-20be-3639-9cb4-bb01635b5546
+    alterId: 1
+    cipher: auto
+    tls: false
+    network: ws
+    ws-path: /hls/cctv5phd.m3u8
+    ws-headers:
+      Host: jp-5.azure.vip5.v2ray.ikuuu.pro
   - name: 日本 020
     type: trojan
     network: ws
@@ -2793,48 +2794,23 @@ proxies:
       path: /tyxyws
       headers:
         Host: jp3.yohototo.top
-  - name: 日本低延迟(解锁YouTube,ChatGPT等网站)
-    type: vless
-    server: 103.100.158.109
-    port: 443
-    uuid: 64c1b992-47ff-42ef-8d6d-d7ee13c5b716
-    udp: true
-  - name: 🇯🇵 adi|freenode1020-JP 3
-    server: 52.185.164.224
-    port: 443
-    type: vmess
-    uuid: 0303ab78-20be-3639-9cb4-bb01635b5546
-    alterId: 1
-    cipher: auto
-    tls: false
-    network: ws
-    ws-path: /hls/cctv5phd.m3u8
-    ws-headers:
-      Host: jp-5.azure.vip5.v2ray.ikuuu.pro
   - name: '[NoMoreWalls#213] 🇯🇵JP_2|1.2MB/s'
     type: socks5
     server: 43.133.21.24
     port: 3001
     udp: true
-  - name: 🇯🇵[www.v2nodes.com] ss-JP-1544...
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
-    port: 80
-    server: 84.247.155.196
-    type: ss
-  - name: '[OpenRay] 🇯🇵JP-12'
+  - name: '[OpenRay] 🇯🇵JP-107'
     type: vless
-    server: 152.69.200.216
+    server: 158.101.151.157
     port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+    uuid: 66171cbe-0b4b-4b24-99f6-d5a822f4dc9a
     udp: true
     tls: true
-    servername: jp3.yohototo.top
-    network: ws
-    ws-opts:
-      path: /tyxyws
-      headers:
-        Host: jp3.yohototo.top
+    servername: www.microsoft.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 99eQkMBHqOEKororOWKFlmH8M0o9VaVpV9w1vQIxhz8
+      short-id: 684c7531e599dec0
   - name: '[OpenRay] 🇯🇵JP-123'
     type: ss
     server: 64.176.57.251
@@ -2842,20 +2818,6 @@ proxies:
     cipher: aes-256-gcm
     password: YKwDz3mFpT9vGcL8nBs5dHrA2sxM
     udp: true
-  - name: 🇯🇵 机场推荐:dafei.de 日本 31
-    type: vless
-    server: 138.2.39.24
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    udp: true
-    tls: true
-    servername: sni.111000.indevs.in
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.indevs.in
   - name: JP日本丨yoyapai.com
     type: vless
     server: 64.176.62.54
@@ -2871,12 +2833,6 @@ proxies:
     reality-opts:
       public-key: d1LjsQHtTCj7kHx2LHFisVDPc_xOtKnugy5YRFKXqUs
       short-id: '39'
-  - name: JP - zhuhai.uk 02
-    type: socks5
-    server: 103.248.150.238
-    port: 42000
-    username: tB4vN7qP
-    password: J5rM2xL9
   - name: 日本 021
     type: trojan
     network: ws
@@ -2889,6 +2845,20 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
+  - name: 🇯🇵 机场推荐:dafei.de 日本 31
+    type: vless
+    server: 138.2.39.24
+    port: 443
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    udp: true
+    tls: true
+    servername: sni.111000.indevs.in
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /?ed=2560&Telegram🇨🇳 @WangCai2
+      headers:
+        Host: sni.111000.indevs.in
   - name: '[OpenRay] 🇯🇵JP-3'
     type: vless
     server: 103.201.131.202
@@ -2902,31 +2872,6 @@ proxies:
       path: /tyxyws
       headers:
         Host: jp3.yohototo.top
-  - name: JP 🇯🇵 | @Raydikalx | E6D44D
-    type: vmess
-    server: 140.238.55.84
-    port: 2083
-    uuid: ac251237-576f-40c8-a543-554960c958b1
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: or.521166.xyz
-    network: ws
-    ws-opts:
-      path: /or3
-  - name: '[OpenRay] 🇯🇵JP-11'
-    type: vless
-    server: 50.7.159.242
-    port: 8443
-    uuid: f18c5f6d-2bac-4a99-8c92-a6e6e7aea9b4
-    udp: true
-    tls: true
-    servername: jp.atlanta-api.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 7Axhce2tfEGSbpq0YmPhnH_OWxmm_u0yAqsRwzALbw0
-      short-id: 82e5031a63512212
   - name: '[OpenRay] 🇯🇵JP-156'
     type: vless
     server: 45.66.129.12
@@ -2955,18 +2900,72 @@ proxies:
       headers:
         Host: notls.lukongtou.eu.org
       path: Telegram-WangCai2🇨🇳
-  - name: D🔴🇯🇵hos_dokng.com_4900a88a
-    password: EGJDy5Kg
-    port: 42000
-    server: 103.248.150.50
-    type: socks5
-    username: paZFN3JA
+  - name: '[OpenRay] 🇯🇵JP-11'
+    type: vless
+    server: 50.7.159.242
+    port: 8443
+    uuid: f18c5f6d-2bac-4a99-8c92-a6e6e7aea9b4
+    udp: true
+    tls: true
+    servername: jp.atlanta-api.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 7Axhce2tfEGSbpq0YmPhnH_OWxmm_u0yAqsRwzALbw0
+      short-id: 82e5031a63512212
   - name: JP日本(v2clash.blog 2026-10.23更新)-2
     type: vless
     server: 60.130.209.253
     port: 443
     uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
     udp: true
+  - name: JP 🇯🇵 | @Raydikalx | E6D44D
+    type: vmess
+    server: 140.238.55.84
+    port: 2083
+    uuid: ac251237-576f-40c8-a543-554960c958b1
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: or.521166.xyz
+    network: ws
+    ws-opts:
+      path: /or3
+  - name: '[OpenRay] 🇰🇷KR-38'
+    type: vless
+    server: 43.108.48.169
+    port: 40701
+    uuid: cdb7d825-9892-4d6f-80b8-7add83159dac
+    udp: true
+    tls: true
+    servername: amazon.com
+    reality-opts:
+      public-key: TWuVILeiSXfCSMZPsqNHtRquNALPRaW5Z51I63zdLEA
+      short-id: 7ef3a8ab2886
+  - name: '[OpenRay] 🇰🇷KR-63'
+    type: vless
+    server: 141.164.43.178
+    port: 443
+    uuid: 583cc910-b57c-4dd0-a4a7-cea51a30b032
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: GR_zPAgxF9PZ70Z9UpSmMlcd2STyoAC0fZTSHkTTCGE
+      short-id: ca193e889d958f81
+  - name: 韩国 009
+    type: trojan
+    network: ws
+    server: 103.133.240.115
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
   - name: 韩国 010
     type: trojan
     network: ws
@@ -2979,25 +2978,71 @@ proxies:
       headers:
         Host: hhcm.hhxaf.cc.cd
       path: /
-  - name: KR 🇰🇷 | @Raydikalx | E9F97A
-    type: vmess
-    server: 140.238.2.250
+  - name: 日本 032
+    type: trojan
+    network: ws
+    server: 146.56.187.1
+    port: 8443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    skip-cert-verify: false
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 🇰🇷 Korea, Republic of 31
+    server: 141.164.56.250
     port: 443
-    uuid: 41a7089a-040b-4538-8b8d-010902405bde
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: '[OpenRay] 🇰🇷KR-38'
+    type: ss
+    cipher: aes-256-gcm
+    password: pKEW8JPByTVTLtM
+  - name: KR - zhuhai.uk
+    type: socks5
+    server: 183.106.215.208
+    port: 1080
+  - name: '[zhuhaiuk#019] KR - zhuhai.uk'
+    type: socks5
+    server: 121.169.46.116
+    port: 1090
+    username: Og%3D%3D
+    password: Og%3D%3D
+  - name: 韩国 005
+    type: trojan
+    network: ws
+    server: 118.218.10.159
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 韩国 013
+    type: trojan
+    network: ws
+    server: 54.180.151.15
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: hhcm.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: hhcm.hhxaf.cc.cd
+      path: /
+  - name: '[OpenRay] 🇰🇷KR-31'
     type: vless
-    server: 43.108.48.169
-    port: 40701
-    uuid: cdb7d825-9892-4d6f-80b8-7add83159dac
+    server: 47.80.19.173
+    port: 2053
+    uuid: 319d5ffb-57e8-4bbd-ac0c-5d55d0c253de
     udp: true
     tls: true
-    servername: amazon.com
+    servername: gateway.icloud.com
+    client-fingerprint: chrome
     reality-opts:
-      public-key: TWuVILeiSXfCSMZPsqNHtRquNALPRaW5Z51I63zdLEA
-      short-id: 7ef3a8ab2886
+      public-key: DfFU5OG93GxB1x25Dl2BTkxKsBTFF4Su4PXYPbYvmms
+      short-id: 3c4041d3
   - name: 韩国 001
     type: vless
     network: ws
@@ -3019,116 +3064,21 @@ proxies:
       headers:
         Host: t1s1.rittbo.kdns.fr
       path: /
-  - name: 韩国 016
+  - name: KR 🇰🇷 | @Raydikalx | 7E8798
     type: vmess
-    network: ws
-    server: 132.145.80.230
-    port: 80
-    uuid: 5155860e-d07d-46c3-9128-3afbd84626c7
-    udp: true
+    server: 129.154.61.196
+    port: 800
+    uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
     alterId: 0
     cipher: auto
-    ws-opts:
-      headers:
-        Host: kr02.a0a.xyz
-      path: /cctv13.m3u8
-  - name: KR - zhuhai.uk
-    type: socks5
-    server: 183.106.215.208
-    port: 1080
-  - name: '[OpenRay] 🇯🇵JP-180'
-    type: ss
-    server: 84.247.155.196
-    port: 443
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
     udp: true
-  - name: 韩国 009
-    type: trojan
-    network: ws
-    server: 103.133.240.115
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
-  - name: 🇰🇷 Korea, Republic of 31
-    server: 141.164.56.250
-    port: 443
+  - name: '[OpenRay] 🇰🇷KR-8'
     type: ss
-    cipher: aes-256-gcm
-    password: pKEW8JPByTVTLtM
-  - name: '[OpenRay] 🇰🇷KR-63'
-    type: vless
-    server: 141.164.43.178
-    port: 443
-    uuid: 583cc910-b57c-4dd0-a4a7-cea51a30b032
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: GR_zPAgxF9PZ70Z9UpSmMlcd2STyoAC0fZTSHkTTCGE
-      short-id: ca193e889d958f81
-  - name: 日本 032
-    type: trojan
-    network: ws
-    server: 146.56.187.1
-    port: 8443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    skip-cert-verify: false
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 韩国 013
-    type: trojan
-    network: ws
-    server: 54.180.151.15
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: hhcm.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: hhcm.hhxaf.cc.cd
-      path: /
-  - name: '[OpenRay] 🇰🇷KR-36'
-    type: ss
-    server: 218.237.185.234
-    port: 4652
+    server: 49.254.204.134
+    port: 1774
     cipher: aes-256-cfb
-    password: qwerREWQ@@
+    password: 1234!@#$
     udp: true
-  - name: 韩国 005
-    type: trojan
-    network: ws
-    server: 118.218.10.159
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: '[OpenRay] 🇰🇷KR-31'
-    type: vless
-    server: 47.80.19.173
-    port: 2053
-    uuid: 319d5ffb-57e8-4bbd-ac0c-5d55d0c253de
-    udp: true
-    tls: true
-    servername: gateway.icloud.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: DfFU5OG93GxB1x25Dl2BTkxKsBTFF4Su4PXYPbYvmms
-      short-id: 3c4041d3
   - name: 🇨🇳台湾专线02 gpt专用
     type: vless
     server: 59.125.69.23
@@ -3138,22 +3088,11 @@ proxies:
     network: ws
     ws-opts:
       path: /
-  - name: 日本 037
-    type: vmess
-    network: tcp
-    server: 146.56.112.110
-    port: 8888
-    uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
-    udp: true
-    alterId: 0
-    cipher: auto
-  - name: KR 🇰🇷 | @Raydikalx | 7E8798
-    type: vmess
-    server: 129.154.61.196
-    port: 800
-    uuid: a915b1d6-cf28-4dc8-e4b4-e09c48c37ec0
-    alterId: 0
-    cipher: auto
+  - name: 🇰🇷KR-144.24.72.126-3649
+    type: trojan
+    server: 144.24.72.126
+    port: 443
+    password: 7118b5f4-0ea4-4c11-be7f-11471cb91e4a
     udp: true
   - name: 🇹🇼[www.v2nodes.com] vless-TW-1...
     client-fingerprint: chrome
@@ -3168,48 +3107,20 @@ proxies:
       headers:
         Host: ty986gfazs.cainiaohub.xyz
       path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
-  - name: 🇰🇷KR-211.178.105.134-0235
+  - name: '[OpenRay] 🇰🇷KR-36'
     type: ss
-    server: 211.178.105.134
-    port: 6123
+    server: 218.237.185.234
+    port: 4652
     cipher: aes-256-cfb
     password: qwerREWQ@@
     udp: true
-  - name: TW 🇹🇼 | @Raydikalx | 353960
-    type: vmess
-    server: 103.160.180.26
-    port: 22222
-    uuid: a5206a55-d5bd-41b9-92a5-bd27a90355ff
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: 🇭🇰HK-219.76.13.181-7466
+  - name: 🇭🇰HK-20.187.85.198-5183
     type: trojan
-    server: 219.76.13.181
+    server: 20.187.85.198
     port: 443
-    password: SyOxpKxC8u5jgNa3DCZ34y3D9CRenFcaABpYATEeqI2RSaXD76zS8YF0Owl3lZ
+    password: b26e31e5-eac1-45b0-9069-83830bd69521
     udp: true
-    sni: arbettp.freetrade.link
-  - name: '[OpenRay] 🇰🇷KR-5'
-    type: vless
-    server: 168.107.36.135
-    port: 443
-    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-    udp: true
-    tls: true
-    servername: jp3.yohototo.top
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /tyxyws
-      headers:
-        Host: jp3.yohototo.top
-  - name: KR韩国(v2clash.blog 2026-10.20更新)
-    type: vless
-    server: 168.107.36.135
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
-    udp: true
+    sni: hkt.iamnotagoodman.com
   - name: HK 🇭🇰 | @Raydikalx | EEF194
     type: vmess
     server: 47.243.80.106
@@ -3240,6 +3151,23 @@ proxies:
       path: /ws-vmess
       headers:
         Host: wwafj5LHl6bI8aU9.v.3dns.vip
+  - name: '🇭🇰 香港 | HKG #2'
+    type: vless
+    server: 8.217.1.203
+    port: 8443
+    uuid: 8b17beac-b143-447d-aa68-14cbb121a602
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+  - name: TW 🇹🇼 | @Raydikalx | 353960
+    type: vmess
+    server: 103.160.180.26
+    port: 22222
+    uuid: a5206a55-d5bd-41b9-92a5-bd27a90355ff
+    alterId: 0
+    cipher: auto
+    udp: true
   - name: HK 🇭🇰 | @Raydikalx | 48EBAF
     type: vmess
     server: 47.76.57.83
@@ -3270,19 +3198,13 @@ proxies:
       path: /ws-vmess
       headers:
         Host: VAH4URdZL3jDX5r2.v.3dns.vip
-  - name: 🇰🇷KR-144.24.72.126-3649
+  - name: 🇭🇰HK-219.76.13.181-7466
     type: trojan
-    server: 144.24.72.126
+    server: 219.76.13.181
     port: 443
-    password: 7118b5f4-0ea4-4c11-be7f-11471cb91e4a
+    password: SyOxpKxC8u5jgNa3DCZ34y3D9CRenFcaABpYATEeqI2RSaXD76zS8YF0Owl3lZ
     udp: true
-  - name: 🇭🇰HK-20.187.85.198-5183
-    type: trojan
-    server: 20.187.85.198
-    port: 443
-    password: b26e31e5-eac1-45b0-9069-83830bd69521
-    udp: true
-    sni: hkt.iamnotagoodman.com
+    sni: arbettp.freetrade.link
   - name: '[OpenRay] 🇭🇰HK-5'
     type: vless
     server: 140.235.36.221
@@ -3295,12 +3217,12 @@ proxies:
     reality-opts:
       public-key: 9hl6jLaUS7QJtOnrsN_9I43CNV08Fr1mcHN8uTteeHQ
       short-id: 2a2d17fb
-  - name: HK - zhuhai.uk
+  - name: JP - zhuhai.uk 02
     type: socks5
-    server: 47.242.19.215
-    port: 8899
-    username: admin
-    password: admin
+    server: 103.248.150.238
+    port: 42000
+    username: tB4vN7qP
+    password: J5rM2xL9
   - name: HK 🇭🇰 | @Raydikalx | ACC2C3
     type: vmess
     server: 47.244.120.197
@@ -3312,21 +3234,33 @@ proxies:
     network: ws
     ws-opts:
       path: /arki
-  - name: '🇭🇰 香港 | HKG #7'
+  - name: HK - zhuhai.uk
+    type: socks5
+    server: 47.242.19.215
+    port: 8899
+    username: admin
+    password: admin
+  - name: 🇰🇷KR-211.178.105.134-0235
+    type: ss
+    server: 211.178.105.134
+    port: 6123
+    cipher: aes-256-cfb
+    password: qwerREWQ@@
+    udp: true
+  - name: '[OpenRay] 🇰🇷KR-5'
     type: vless
-    server: 8.217.1.203
-    port: 8443
-    uuid: 8b17beac-b143-447d-aa68-14cbb121a602
+    server: 168.107.36.135
+    port: 443
+    uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
     udp: true
     tls: true
-    servername: www.apple.com
+    servername: jp3.yohototo.top
     client-fingerprint: chrome
-  - name: 🇰🇷[www.v2nodes.com] ss-KR-1126...
-    cipher: chacha20-ietf-poly1305
-    password: '12242'
-    port: 10099
-    server: 115.161.136.145
-    type: ss
+    network: ws
+    ws-opts:
+      path: /tyxyws
+      headers:
+        Host: jp3.yohototo.top
   - name: '[OpenRay] 🇭🇰HK-34'
     type: vless
     server: 62.60.232.226
@@ -3339,6 +3273,18 @@ proxies:
     reality-opts:
       public-key: 2kIZnJhcwmSnHlJ6I6kz5srz0R-9uUMJAAMAuS_U2xE
       short-id: 1a60e2b1ca53aa6d
+  - name: KR韩国(v2clash.blog 2026-10.20更新)
+    type: vless
+    server: 168.107.36.135
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: D🔴🇯🇵hos_dokng.com_4900a88a
+    password: EGJDy5Kg
+    port: 42000
+    server: 103.248.150.50
+    type: socks5
+    username: paZFN3JA
   - name: HK 🇭🇰 | @Raydikalx | 432BF0
     type: vmess
     server: 64.118.129.151
@@ -3347,6 +3293,21 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
+  - name: 日本 037
+    type: vmess
+    network: tcp
+    server: 146.56.112.110
+    port: 8888
+    uuid: e7c302f3-90d6-42dd-9d7d-94a3683a3707
+    udp: true
+    alterId: 0
+    cipher: auto
+  - name: 🇯🇵[www.v2nodes.com] ss-JP-1544...
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    port: 80
+    server: 84.247.155.196
+    type: ss
   - name: 🇭🇰香港专线01 下载专用
     type: vless
     server: 103.180.20.108
@@ -3356,11 +3317,39 @@ proxies:
     network: ws
     ws-opts:
       path: /
+  - name: HK 🇭🇰 | @Raydikalx | F125F6
+    type: vmess
+    server: 156.245.232.239
+    port: 35043
+    uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 156.245.232.239
+  - name: 🇰🇷[www.v2nodes.com] vless-KR-1...
+    network: ws
+    port: 25555
+    server: 152.69.226.63
+    tls: false
+    type: vless
+    uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
+    ws-opts:
+      path: /
   - name: 🇸🇬[www.v2nodes.com] ss-SG-1616...
     cipher: aes-256-gcm
     password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
     port: 19999
     server: 51.79.228.131
+    type: ss
+  - name: 🇸🇬[www.v2nodes.com] ss-SG-1615...
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 15.235.164.133
     type: ss
   - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
     cipher: aes-256-gcm
@@ -3368,6 +3357,145 @@ proxies:
     port: 19999
     server: 149.88.107.74
     type: ss
+  - name: SG 🇸🇬 | @Raydikalx | 083E88
+    type: vmess
+    server: 13.249.231.85
+    port: 443
+    uuid: a84c132a-3151-40fe-947b-4dd9a7d2122c
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: d7pu5mzr9c4b0.cloudfront.net
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: d7pu5mzr9c4b0.cloudfront.net
+  - name: '[OpenRay] 🇸🇬SG-33'
+    type: vless
+    server: 103.106.229.37
+    port: 21004
+    uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    reality-opts:
+      public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
+      short-id: 2df2bd9d8366cef1
+  - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 149.88.106.74
+    type: ss
+  - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    port: 19999
+    server: 149.88.107.47
+    type: ss
+  - name: 🇸🇬SG-68.183.227.4-0251
+    type: ss
+    server: 68.183.227.4
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: 🇸🇬SG-146.190.82.241-2690
+    type: vmess
+    server: 146.190.82.241
+    port: 443
+    uuid: ee76cecf-1219-42be-ae3f-6b8077e4cacc
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: /
+  - name: '[OpenRay] 🇸🇬SG-7'
+    type: vless
+    server: 140.245.113.33
+    port: 443
+    uuid: f4ca59b2-767d-3425-8dfc-95a96a0e6802
+    udp: true
+    tls: true
+    servername: learn.microsoft.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: tF9nKF6amexok5wKbieQ2QRKQI5_ZTFE6MUj1hUBBkY
+      short-id: c940a3b6d60b8611
+  - name: '[OpenRay] 🇸🇬SG-72'
+    type: vless
+    server: 103.106.229.177
+    port: 21004
+    uuid: 67952583-8572-42e1-943d-0602794f885b
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
+      short-id: 4e0418d648f86141
+  - name: '[OpenRay] 🇸🇬SG-130'
+    type: ss
+    server: 128.1.186.132
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: '[OpenRay] 🇸🇬SG-170'
+    type: vless
+    server: 103.106.229.37
+    port: 21003
+    uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
+      short-id: bab49aa4c2a88d27
+  - name: 新加坡 005
+    type: trojan
+    network: ws
+    server: 139.162.62.195
+    port: 443
+    password: eeb6823c-b926-4ea2-866a-5542edd26e59
+    sni: tjsp.hhxaf.cc.cd
+    client-fingerprint: chrome
+    ws-opts:
+      headers:
+        Host: tjsp.hhxaf.cc.cd
+      path: /
+  - name: 🇸🇬SG-54.254.129.246-7797
+    type: ss
+    server: 54.254.129.246
+    port: 443
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: SG新加坡(v2clash.blog 2026-10.13更新)
+    type: vless
+    server: 165.245.182.116
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+  - name: '🇸🇬 新加坡 | SGP #4'
+    cipher: 2022-blake3-chacha20-poly1305
+    password: to7FeiLLqmwqAG+Tn64PJ6Rexv6hExiiR6zlNfCSAaY=
+    port: 56927
+    server: 161.118.242.81
+    type: ss
+    udp: true
+  - name: '🇸🇬 新加坡 | SGP #2'
+    cipher: 2022-blake3-chacha20-poly1305
+    password: GMhXRpy/pfPMVrZeCAxOxI5MpuH3llOtZKoeNLUT0n8=
+    port: 56927
+    server: 158.178.230.120
+    type: ss
+    udp: true
   - name: SG 🇸🇬 | @Raydikalx | 0335AF
     type: vmess
     server: 15.235.144.92
@@ -3385,6 +3513,24 @@ proxies:
     alterId: 0
     cipher: auto
     udp: true
+  - name: 🇸🇬SG-149.88.106.73-0146
+    type: ss
+    server: 149.88.106.73
+    port: 19999
+    cipher: aes-256-gcm
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    udp: true
+  - name: 🇸🇬SG-15.235.184.36-3061
+    type: vmess
+    server: 15.235.184.36
+    port: 80
+    uuid: 7ce525f5-3a9b-4627-ae0e-3ca0b57519e3
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: ws
+    ws-opts:
+      path: /vmess
   - name: 🇸🇬SG-51.79.161.232-7813
     type: ss
     server: 51.79.161.232
@@ -3392,6 +3538,25 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 4Hub2f9JyhECyAq2Opm0NS
     udp: true
+  - name: 🇸🇬SG-15.235.197.4-8406
+    type: trojan
+    server: 15.235.197.4
+    port: 80
+    password: 16bcc187-a1a0-4b8a-8b69-627f38b7cc0d
+    udp: true
+    sni: 15.235.197.4
+  - name: '[OpenRay] 🇸🇬SG-9'
+    type: vless
+    server: 103.106.229.37
+    port: 21002
+    uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
+      short-id: 3ab8d93dd9b1a5be
   - name: '[OpenRay] 🇸🇬SG-23'
     type: vless
     server: 45.76.191.30
@@ -3418,61 +3583,6 @@ proxies:
     reality-opts:
       public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
       short-id: a51c3ccb2320024a
-  - name: '🇸🇬 新加坡 | SGP #4'
-    cipher: 2022-blake3-chacha20-poly1305
-    password: to7FeiLLqmwqAG+Tn64PJ6Rexv6hExiiR6zlNfCSAaY=
-    port: 56927
-    server: 161.118.242.81
-    type: ss
-    udp: true
-  - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 149.88.106.74
-    type: ss
-  - name: 新加坡 005
-    type: trojan
-    network: ws
-    server: 139.162.62.195
-    port: 443
-    password: eeb6823c-b926-4ea2-866a-5542edd26e59
-    sni: tjsp.hhxaf.cc.cd
-    client-fingerprint: chrome
-    ws-opts:
-      headers:
-        Host: tjsp.hhxaf.cc.cd
-      path: /
-  - name: 🇸🇬SG-68.183.227.4-0251
-    type: ss
-    server: 68.183.227.4
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: '[OpenRay] 🇸🇬SG-33'
-    type: vless
-    server: 103.106.229.37
-    port: 21004
-    uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    reality-opts:
-      public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
-      short-id: 2df2bd9d8366cef1
-  - name: '[OpenRay] 🇸🇬SG-55'
-    type: vless
-    server: 188.166.182.158
-    port: 8443
-    uuid: ec88e991-7f74-4615-a488-c3a91cc6f362
-    udp: true
-    tls: true
-    servername: www.bing.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: PQ8fVzaFrD3ANIzDmgE67H6FhCkQUbNymBkqe35fPjw
-      short-id: 6f903d8e630fc0aa
   - name: '[OpenRay] 🇸🇬SG-125'
     type: vless
     server: 103.106.229.37
@@ -3485,12 +3595,12 @@ proxies:
     reality-opts:
       public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
       short-id: ab39fc68ab3dee81
-  - name: '[OpenRay] 🇸🇬SG-130'
+  - name: '[OpenRay] 🇸🇬SG-129'
     type: ss
-    server: 128.1.186.132
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
+    server: 129.150.59.74
+    port: 14384
+    cipher: 2022-blake3-aes-256-gcm
+    password: sUR6Ny8Y6PSvHhl/DUxconwxg6VZyFdsdfaVCvEatJo=
     udp: true
   - name: '[OpenRay] 🇸🇬SG-149'
     type: ss
@@ -3499,11 +3609,27 @@ proxies:
     cipher: rc4-md5
     password: 14fFPrbezE3HDZzsMOr6
     udp: true
-  - name: SG新加坡(v2clash.blog 2026-10.12更新)
+  - name: '[OpenRay] 🇸🇬SG-150'
+    type: ss
+    server: 128.199.172.224
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: 🇸🇬[www.v2nodes.com] vless-SG-1...
+    client-fingerprint: chrome
+    port: 8443
+    server: 207.148.124.12
+    servername: www.bing.com
+    tls: true
     type: vless
-    server: 175.41.179.37
-    port: 51262
-    uuid: 6c6ea474-0cf5-4a3d-bc81-aa2eeb6516d6
+    uuid: bcdb425f-80bc-4ec8-92a5-8edf53639c01
+  - name: '🇸🇬 新加坡 | SGP #7'
+    cipher: 2022-blake3-chacha20-poly1305
+    password: TlIl4pvlkROaoDMfiB/8bjOx4cXMnCc7rXLWwqPJDTc=
+    port: 56927
+    server: 129.221.200.94
+    type: ss
     udp: true
   - name: 新加坡 002
     type: trojan
@@ -3517,47 +3643,17 @@ proxies:
       headers:
         Host: tjsp.hhxaf.cc.cd
       path: /
-  - name: '[OpenRay] 🇸🇬SG-7'
-    type: vless
-    server: 140.245.113.33
+  - name: 🇸🇬SG-43.160.197.160-5641
+    type: trojan
+    server: 43.160.197.160
     port: 443
-    uuid: f4ca59b2-767d-3425-8dfc-95a96a0e6802
+    password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
     udp: true
-    tls: true
-    servername: learn.microsoft.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: tF9nKF6amexok5wKbieQ2QRKQI5_ZTFE6MUj1hUBBkY
-      short-id: c940a3b6d60b8611
-  - name: '🇸🇬 新加坡 | SGP #2'
-    cipher: 2022-blake3-chacha20-poly1305
-    password: GMhXRpy/pfPMVrZeCAxOxI5MpuH3llOtZKoeNLUT0n8=
-    port: 56927
-    server: 158.178.230.120
-    type: ss
-    udp: true
-  - name: SG 🇸🇬 | @Raydikalx | 083E88
-    type: vmess
-    server: 13.249.231.85
+  - name: 🇸🇬SG-18.140.67.76-6179
+    type: trojan
+    server: 18.140.67.76
     port: 443
-    uuid: a84c132a-3151-40fe-947b-4dd9a7d2122c
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: d7pu5mzr9c4b0.cloudfront.net
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: d7pu5mzr9c4b0.cloudfront.net
-  - name: SG 🇸🇬 | @Raydikalx | B5390E
-    type: vmess
-    server: 195.133.135.238
-    port: 10086
-    uuid: b831381d-6324-4d53-ad4f-8cda48b30811
-    alterId: 0
-    cipher: auto
+    password: iyinglong
     udp: true
   - name: 🇸🇬SG_1|1.9MB/s
     type: ss
@@ -3566,75 +3662,6 @@ proxies:
     cipher: 2022-blake3-chacha20-poly1305
     password: 8SrAY2kEk9UHKSgUJjQvfdTJP9oPlSPVP1wICL7n3hk=
     udp: true
-  - name: '[OpenRay] 🇸🇬SG-9'
-    type: vless
-    server: 103.106.229.37
-    port: 21002
-    uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
-      short-id: 3ab8d93dd9b1a5be
-  - name: 🇸🇬 Singapore - Unknown | 178.128.209.238:443
-    type: vless
-    server: 178.128.209.238
-    port: 443
-    uuid: a17ee8bd-2f80-4cb8-b4d9-644a69be8751
-    udp: true
-    tls: true
-    servername: mqtt.googleapis.com
-  - name: 🇸🇬[www.v2nodes.com] ss-SG-1615...
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 15.235.164.133
-    type: ss
-  - name: '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    port: 19999
-    server: 149.88.107.47
-    type: ss
-  - name: 🇸🇬SG-149.88.106.73-0146
-    type: ss
-    server: 149.88.106.73
-    port: 19999
-    cipher: aes-256-gcm
-    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-    udp: true
-  - name: 🇸🇬SG-146.190.82.241-2690
-    type: vmess
-    server: 146.190.82.241
-    port: 443
-    uuid: ee76cecf-1219-42be-ae3f-6b8077e4cacc
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: /
-  - name: 🇸🇬SG-15.235.184.36-3061
-    type: vmess
-    server: 15.235.184.36
-    port: 80
-    uuid: 7ce525f5-3a9b-4627-ae0e-3ca0b57519e3
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: ws
-    ws-opts:
-      path: /vmess
-  - name: 🇸🇬SG-15.235.197.4-8406
-    type: trojan
-    server: 15.235.197.4
-    port: 80
-    password: 16bcc187-a1a0-4b8a-8b69-627f38b7cc0d
-    udp: true
-    sni: 15.235.197.4
   - name: '[OpenRay] 🇸🇬SG-2'
     type: vless
     server: 103.106.229.177
@@ -3647,49 +3674,20 @@ proxies:
     reality-opts:
       public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
       short-id: f3602a3a1cf928b7
-  - name: '[OpenRay] 🇸🇬SG-44'
-    type: vless
-    server: 188.166.182.158
-    port: 443
-    uuid: 1ab92b9c-9a46-4a06-9a12-1c118fd138f6
-    udp: true
-    tls: true
-    servername: www.bing.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 8aRRz5a2rhOHIRjE3o3qckxmQNWh-IVGTv16Snyze2M
-      short-id: c44f5e04e67b2c74
-  - name: '[OpenRay] 🇸🇬SG-72'
-    type: vless
-    server: 103.106.229.177
-    port: 21004
-    uuid: 67952583-8572-42e1-943d-0602794f885b
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
-      short-id: 4e0418d648f86141
-  - name: '[OpenRay] 🇸🇬SG-86'
+  - name: '[OpenRay] 🇸🇬SG-5'
     type: ss
-    server: 68.183.235.240
+    server: 128.1.186.73
     port: 8080
     cipher: rc4-md5
     password: 14fFPrbezE3HDZzsMOr6
     udp: true
-  - name: '[OpenRay] 🇸🇬SG-170'
-    type: vless
-    server: 103.106.229.37
-    port: 21003
-    uuid: 41b1c169-5905-4d98-b6a6-56896c25737c
+  - name: '[OpenRay] 🇸🇬SG-182'
+    type: ss
+    server: 68.183.227.45
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
     udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU
-      short-id: bab49aa4c2a88d27
   - name: '[OpenRay] 🇸🇬SG-198'
     type: vless
     server: 103.106.229.177
@@ -3702,12 +3700,51 @@ proxies:
     reality-opts:
       public-key: IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA
       short-id: d9a6b52e98121db2
-  - name: SG新加坡(v2clash.blog 2026-10.13更新)
+  - name: SG新加坡(v2clash.blog 2026-10.12更新)
     type: vless
-    server: 165.245.182.116
-    port: 443
-    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    server: 175.41.179.37
+    port: 51262
+    uuid: 6c6ea474-0cf5-4a3d-bc81-aa2eeb6516d6
     udp: true
+  - name: 🇸🇬 Singapore - Unknown | 178.128.209.238:443
+    type: vless
+    server: 178.128.209.238
+    port: 443
+    uuid: a17ee8bd-2f80-4cb8-b4d9-644a69be8751
+    udp: true
+    tls: true
+    servername: mqtt.googleapis.com
+  - name: '[OpenRay] 🇸🇬SG-55'
+    type: vless
+    server: 188.166.182.158
+    port: 8443
+    uuid: ec88e991-7f74-4615-a488-c3a91cc6f362
+    udp: true
+    tls: true
+    servername: www.bing.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: PQ8fVzaFrD3ANIzDmgE67H6FhCkQUbNymBkqe35fPjw
+      short-id: 6f903d8e630fc0aa
+  - name: '[OpenRay] 🇸🇬SG-86'
+    type: ss
+    server: 68.183.235.240
+    port: 8080
+    cipher: rc4-md5
+    password: 14fFPrbezE3HDZzsMOr6
+    udp: true
+  - name: '[OpenRay] 🇸🇬SG-44'
+    type: vless
+    server: 188.166.182.158
+    port: 443
+    uuid: 1ab92b9c-9a46-4a06-9a12-1c118fd138f6
+    udp: true
+    tls: true
+    servername: www.bing.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 8aRRz5a2rhOHIRjE3o3qckxmQNWh-IVGTv16Snyze2M
+      short-id: c44f5e04e67b2c74
   - name: '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
     client-fingerprint: chrome
     network: ws
@@ -3721,60 +3758,38 @@ proxies:
       headers:
         Host: free-server.techsonic.dev
       path: /free-server.techsonic.dev
-  - name: 🇸🇬SG-18.140.67.76-6179
-    type: trojan
-    server: 18.140.67.76
-    port: 443
-    password: iyinglong
-    udp: true
-  - name: '[OpenRay] 🇸🇬SG-5'
-    type: ss
-    server: 128.1.186.73
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: '[OpenRay] 🇸🇬SG-150'
-    type: ss
-    server: 128.199.172.224
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: '[OpenRay] 🇸🇬SG-182'
-    type: ss
-    server: 68.183.227.45
-    port: 8080
-    cipher: rc4-md5
-    password: 14fFPrbezE3HDZzsMOr6
-    udp: true
-  - name: 🇸🇬SG-43.160.197.160-5641
-    type: trojan
-    server: 43.160.197.160
-    port: 443
-    password: 38f169d6-d202-4b1b-8db8-e6eb1648f5cf
-    udp: true
-  - name: '[OpenRay] 🇸🇬SG-129'
-    type: ss
-    server: 129.150.59.74
-    port: 14384
-    cipher: 2022-blake3-aes-256-gcm
-    password: sUR6Ny8Y6PSvHhl/DUxconwxg6VZyFdsdfaVCvEatJo=
-    udp: true
-  - name: 🇯🇵 机场推荐:dafei.de 日本 58
+  - name: 🇸🇬
     type: vless
-    server: 158.101.154.245
-    port: 47001
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    server: 67.159.52.51
+    port: 443
+    uuid: a0fa7e19-70ec-41e0-b0cc-bcc984d4201a
     udp: true
     tls: true
-    servername: sni.111000.indevs.in
+    servername: snp.bsh-net.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: iE4sTz-Q2Frkm7WM32P1wm4at49Wpaj5vo-2FsLcN1M
+      short-id: 8854f17e2a5af2d8
+  - name: SG 🇸🇬 | @Raydikalx | B5390E
+    type: vmess
+    server: 195.133.135.238
+    port: 10086
+    uuid: b831381d-6324-4d53-ad4f-8cda48b30811
+    alterId: 0
+    cipher: auto
+    udp: true
+  - name: '[OpenRay] 🇸🇬SG-41'
+    type: vless
+    server: 194.233.67.103
+    port: 2053
+    uuid: 100cfbe2-afd5-40cf-84df-063b010ee759
+    udp: true
+    tls: true
+    servername: www.apple.com
     client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: /?ed=2560&Telegram🇨🇳 @WangCai2
-      headers:
-        Host: sni.111000.indevs.in
+    reality-opts:
+      public-key: un_9X4oh5ODWIcXl_jiuUaox4XOJE7oZpSPWGb46tRI
+      short-id: 07a66150eac3db28
   - name: 🇸🇬 机场推荐:dafei.de 新加坡 16
     type: vless
     server: 5.34.176.119
@@ -3789,45 +3804,6 @@ proxies:
       path: /?ed=2560&Telegram🇨🇳 @WangCai2
       headers:
         Host: sni.111000.indevs.in
-  - name: 🇸🇬[www.v2nodes.com] vless-SG-1...
-    client-fingerprint: chrome
-    port: 8443
-    server: 207.148.124.12
-    servername: www.bing.com
-    tls: true
-    type: vless
-    uuid: bcdb425f-80bc-4ec8-92a5-8edf53639c01
-  - name: 🇸🇬SG-54.254.129.246-7797
-    type: ss
-    server: 54.254.129.246
-    port: 443
-    cipher: aes-256-cfb
-    password: amazonskr05
-    udp: true
-  - name: '[OpenRay] 🇸🇬SG-41'
-    type: vless
-    server: 194.233.67.103
-    port: 2053
-    uuid: 100cfbe2-afd5-40cf-84df-063b010ee759
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: un_9X4oh5ODWIcXl_jiuUaox4XOJE7oZpSPWGb46tRI
-      short-id: 07a66150eac3db28
-  - name: 🇸🇬
-    type: vless
-    server: 67.159.52.51
-    port: 443
-    uuid: a0fa7e19-70ec-41e0-b0cc-bcc984d4201a
-    udp: true
-    tls: true
-    servername: snp.bsh-net.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: iE4sTz-Q2Frkm7WM32P1wm4at49Wpaj5vo-2FsLcN1M
-      short-id: 8854f17e2a5af2d8
   - name: '[OpenRay] 🇸🇬SG-29'
     type: vless
     server: 140.235.140.27
@@ -3840,15 +3816,6 @@ proxies:
     reality-opts:
       public-key: 6QnOHCd5C9ICGOqlgZXRKRd55QzhVS4QSslfzYmuzVc
       short-id: 34399c91
-  - name: 🇰🇷[www.v2nodes.com] vless-KR-1...
-    network: ws
-    port: 25555
-    server: 152.69.226.63
-    tls: false
-    type: vless
-    uuid: 27c5483f-17f4-48ae-9a04-def53d88440d
-    ws-opts:
-      path: /
   - name: '[OpenRay] 🇸🇬SG-39'
     type: vless
     server: 38.180.191.58
@@ -3861,6 +3828,13 @@ proxies:
     reality-opts:
       public-key: _aA3dORko2Woz1sPXldNPwMKHBfPhVe3E0hWVQiyUE0
       short-id: 58353fbc247bb0a3
+  - name: 🇸🇬[www.v2nodes.com] trojan-SG-...
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    port: 443
+    server: 15.235.184.127
+    skip-cert-verify: false
+    sni: exploredigitaljobplatformandfindonlinework.com
+    type: trojan
   - name: 🇸🇬 Singapore, Singapore | [BL]
     type: vless
     server: 84.32.23.59
@@ -3873,20 +3847,25 @@ proxies:
     reality-opts:
       public-key: eLJZDr57FFoNrBKhF3Lx5aZBoqc_1sVRrPMZLgy3Kgk
       short-id: 492a
-  - name: 🇸🇬[www.v2nodes.com] trojan-SG-...
-    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-    port: 443
-    server: 15.235.184.127
-    skip-cert-verify: false
-    sni: exploredigitaljobplatformandfindonlinework.com
-    type: trojan
-  - name: '🇸🇬 新加坡 | SGP #2-2'
-    cipher: chacha20-ietf-poly1305
-    password: 7e68e32f-8015-4f37-9082-70e8b0b58043
-    port: 8443
-    server: 18.143.179.74
+  - name: '[OpenRay] 🇯🇵JP-180'
     type: ss
+    server: 84.247.155.196
+    port: 443
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
     udp: true
+  - name: '[OpenRay] 🇹🇼TW-10'
+    type: vless
+    server: 85.237.207.221
+    port: 443
+    uuid: b59bcb5b-5150-4c6b-9227-681886197014
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: lJz7AGWUC-ZTEIJaU5y1GRrROWJ9J_VzQRyrYPmOygs
+      short-id: fd2fa5e06670120b
   - name: HK 🇭🇰 | @Raydikalx | 6A0ADC
     type: vmess
     server: 156.239.224.107
@@ -3898,19 +3877,13 @@ proxies:
     network: ws
     ws-opts:
       path: /
-  - name: HK 🇭🇰 | @Raydikalx | F125F6
-    type: vmess
-    server: 156.245.232.239
-    port: 35043
-    uuid: b15e481d-17e4-41a8-84c2-23d4f0514d9a
-    alterId: 0
-    cipher: auto
+  - name: '🇸🇬 新加坡 | SGP #2-2'
+    cipher: chacha20-ietf-poly1305
+    password: 7e68e32f-8015-4f37-9082-70e8b0b58043
+    port: 8443
+    server: 18.143.179.74
+    type: ss
     udp: true
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: 156.245.232.239
   - name: '[OpenRay] 🇭🇰HK-85'
     type: vless
     server: 45.192.193.54
@@ -3948,58 +3921,44 @@ proxies:
       path: /
       headers:
         Host: spsudu.pages.dev
-  - name: '🇸🇬 新加坡 | SGP #7'
-    cipher: 2022-blake3-chacha20-poly1305
-    password: TlIl4pvlkROaoDMfiB/8bjOx4cXMnCc7rXLWwqPJDTc=
-    port: 56927
-    server: 129.221.200.94
-    type: ss
+  - name: '[OpenRay] 🇯🇵JP-93'
+    type: vless
+    server: 217.60.27.153
+    port: 443
+    uuid: 12776e55-6230-48b9-b069-1bb8a04b4237
     udp: true
+    tls: true
+    servername: music.3apes.online
+    reality-opts:
+      public-key: q4_o7NvD6vQg4hYsyO29Q6PVufjTJHDUbQTqstre9EQ
   - name: 🇭🇰[www.v2nodes.com] ss-HK-1621...
     cipher: aes-256-gcm
     password: AMok40FfaM+Ikwre16psBpVk6JHxsQZw
     port: 8388
     server: 209.248.57.105
     type: ss
-  - name: '[zhuhaiuk#019] KR - zhuhai.uk'
-    type: socks5
-    server: 121.169.46.116
-    port: 1090
-    username: Og%3D%3D
-    password: Og%3D%3D
-  - name: HK 🇭🇰 | @Raydikalx | C8BB96
+  - name: 日本 003
     type: vmess
-    server: 366-1095.rabbitpro-in-3.com
-    port: 29008
-    uuid: e351d6d8-c167-3e07-8fda-3f2f4ec0760b
+    network: ws
+    server: 168.138.43.75
+    port: 80
+    uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
+    skip-cert-verify: false
+    tls: false
+    alterId: 0
+    cipher: auto
+    ws-opts:
+      headers:
+        Host: jp01.a0a.xyz
+      path: /
+  - name: KR 🇰🇷 | @Raydikalx | E9F97A
+    type: vmess
+    server: 140.238.2.250
+    port: 443
+    uuid: 41a7089a-040b-4538-8b8d-010902405bde
     alterId: 0
     cipher: auto
     udp: true
-  - name: HK 🇭🇰 | @Raydikalx | E5CF14
-    type: vmess
-    server: 366-1095.rabbitpro-in-3.com
-    port: 29009
-    uuid: e351d6d8-c167-3e07-8fda-3f2f4ec0760b
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: HK 🇭🇰 | @Raydikalx | 7878A9
-    type: vmess
-    server: 366-1095.rabbitpro-in-3.com
-    port: 27113
-    uuid: e351d6d8-c167-3e07-8fda-3f2f4ec0760b
-    alterId: 0
-    cipher: auto
-    udp: true
-  - name: '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
-    type: vless
-    server: 156.226.168.221
-    port: 35193
-    uuid: 35cbae61-ee10-4cb9-abb8-4950b35e9851
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: firefox
 proxy-groups:
   - name: 🌐 公共节点
     type: select
@@ -4007,9 +3966,9 @@ proxy-groups:
       - ♻️ 全部-自动
       - ☝️ 全部-手动
       - 📍 美国
-      - 📍 英国
       - 📍 新加坡
       - 📍 德国
+      - 📍 英国
       - 📍 日本
       - 📍 香港
       - 📍 韩国
@@ -4021,27 +3980,24 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - 美国 110
-      - 美国 121
-      - 美国 140
-      - 美国 179
-      - 美国 222
+      - 美国 177
+      - 美国 186
       - 美国 226
-      - 美国 423
-      - 美国 483
-      - 美国 596
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - 🇺🇸US-185.230.230.18-0068
-      - '[OpenRay] 🇺🇸US-324'
-      - '[OpenRay] 🇺🇸US-1202'
-      - '[OpenRay] 🇺🇸US-2825'
+      - 美国 333
+      - 美国 516
+      - 美国 589
+      - 美国 601
+      - US 🇺🇸 | @Raydikalx | 5A1BD6
+      - 🇺🇸US-45.86.51.18-0132
+      - '[OpenRay] 🇺🇸US-281'
       - 🇺🇸Telegram👉@v2rayNG_Matsuri
-      - US美国(v2clash.blog 2026-8.27更新)
-      - US美国(v2clash.blog 2026-9.5)
-      - 'Channel id: @ShadowProxy66 🇺🇸'
-      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇬🇧 🇷🇺 | [BL]
-      - '[10712][US][0][VLESS][None][v2ray_outlineir][2023-12-03][202'
+      - US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - 🇺🇸
+      - 🇺🇸 United States - Unknown | 151.101.2.165:80 11
+      - 🇺🇸 US | 146.75.59.186
       - 🇺🇸 机场推荐:dafei.de 美国 89_IPV4
+      - 美国 025
       - 美国 030
       - 美国 032
       - 美国 033
@@ -4049,404 +4005,402 @@ proxy-groups:
       - 美国 038
       - 美国 041
       - 美国 108
+      - 美国 110
       - 美国 111
-      - 美国 112
       - 美国 113
-      - 美国 128
+      - 美国 121
+      - 美国 130
       - 美国 132
-      - 美国 134
+      - 美国 136
       - 美国 138
-      - 美国 160
-      - 美国 161
-      - 美国 162
+      - 美国 140
+      - 美国 158
+      - 美国 159
       - 美国 163
-      - 美国 165
+      - 美国 164
       - 美国 167
-      - 美国 168
       - 美国 170
       - 美国 171
       - 美国 172
       - 美国 173
-      - 美国 176
-      - 美国 177
+      - 美国 175
+      - 美国 178
+      - 美国 179
       - 美国 180
+      - 美国 181
       - 美国 182
-      - 美国 184
       - 美国 185
-      - 美国 186
+      - 美国 188
+      - 美国 189
       - 美国 190
-      - 美国 192
-      - 美国 194
       - 美国 196
+      - 美国 199
       - 美国 213
       - 美国 221
       - 美国 223
       - 美国 227
-      - 美国 232
       - 美国 233
       - 美国 234
       - 美国 235
       - 美国 237
-      - 美国 238
       - 美国 239
       - 美国 240
       - 美国 243
-      - 美国 245
-      - 美国 287
       - 美国 307
       - 美国 331
-      - 美国 333
-      - 美国 340
       - 美国 366
-      - 美国 368
-      - 美国 409
+      - 美国 408
       - 美国 416
       - 美国 417
+      - 美国 423
+      - 美国 439
+      - 美国 452
+      - 美国 453
+      - 美国 454
+      - 美国 483
+      - 美国 499
+      - 美国 514
       - 🇸🇬[www.v2nodes.com] vless-SG-3...
-      - '[OpenRay] 🇬🇧GB-39'
       - '[OpenRay] 🇩🇪DE-226'
       - '[OpenRay] 🇩🇪DE-281'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - '@V2rayng_Fast 🇩🇪-2'
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - DE德国(v2clash.blog 2026-9.12新)
+      - TW台湾(v2clash.blog 2026-10.24更新)
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
+      - DE德国(v2clash.blog 2026-9.12新)
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - JP日本(v2clash.blog 2026-6.9更新)
-      - '@V2rayng_Fast 🇩🇪-3'
+      - '@V2rayng_Fast 🇩🇪-2'
       - 🇩🇪𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - '@V2rayng_Fast 🇩🇪-3'
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
       - 🇩🇪 Germany | 🌐 | [BL]
+      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇬🇧 🇷🇺 | [BL]
       - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]
-      - 🌐 Anycast-IP | 🇩🇪 🇬🇧 🇷🇺 | [BL]
-      - 🇬🇧 United Kingdom - Unknown | 194.36.55.63:8880
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-      - JP日本(v2clash.blog 2026-10.14更新)
-      - TW台湾(v2clash.blog 2026-10.24更新)
-      - Tel@V2rayng_Fast 🇩🇪
-      - '@V2rayng_Fast 🇩🇪-6'
-      - '[OpenRay] 🇬🇧GB-7'
-      - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]-2
       - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]
       - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]-2
       - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]-3
+      - 🇬🇧 United Kingdom - Unknown | 194.36.55.63:8880
+      - '@V2rayng_Fast 🇩🇪-6'
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - Tel@V2rayng_Fast 🇩🇪
+      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]-2
+      - 🌐 Anycast-IP | 🇩🇪 🇬🇧 🇷🇺 | [BL]
+      - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - SG VLESS-11 | free-nodes
-      - 🇬🇧telegram➠@v2rayNG_Matsuri
+      - '[OpenRay] 🇬🇧GB-39'
       - DE TROJAN-22 | free-nodes
+      - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - '[zhuhaiuk#006] MX - zhuhai.uk'
       - 日本 013
+      - '[zhuhaiuk#006] MX - zhuhai.uk'
+      - '[zhuhaiuk#013] MX - zhuhai.uk 02'
       - '[OpenRay] 🇯🇵JP-110'
       - 日本 014
-      - '[zhuhaiuk#013] MX - zhuhai.uk 02'
       - GB 🇬🇧 | @Raydikalx | CF8DE1
-      - GB 🇬🇧 | @Raydikalx | 3E5525
-      - 🇬🇧GB-185.44.76.188-5255
+      - 🇬🇧GB-172.99.190.149-6206
       - 🇬🇧GB-172.99.190.149-6798
+      - GB 🇬🇧 | @Raydikalx | 3E5525
+      - 🇬🇧GB-146.70.61.37-0128
+      - 🇬🇧GB-185.44.76.188-5255
+      - 🇬🇧GB-51.38.71.175-7818
+      - 🇬🇧[www.v2nodes.com] ss-GB-9184...
+      - 🇬🇧GB-141.98.101.179-0217
+      - 🇬🇧GB-141.98.101.182-0218
+      - '[OpenRay] 🇬🇧GB-125'
+      - 🇩🇪
+      - 🇬🇧[www.v2nodes.com] ss-GB-8004...
+      - '[OpenRay] 🇬🇧GB-73'
+      - '[OpenRay] 🇬🇧GB-190'
+      - NL - zhuhai.uk
+      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
+      - GB 🇬🇧 | @Raydikalx | B8FD16
+      - GB 🇬🇧 | @Raydikalx | D2ACA3
+      - GB 🇬🇧 | @Raydikalx | 1D17F2
+      - 🇬🇧[www.v2nodes.com] ss-GB-1616...
+      - 英国 059
+      - 🇬🇧GB-132.145.51.172-3616
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #3'
+      - '[OpenRay] 🇬🇧GB-75'
+      - '[OpenRay] 🇩🇪DE-124'
+      - '[OpenRay] 🇩🇪DE-203'
       - GB英国(v2clash.blog 2026-10.12更新)
       - 🇬🇧 英国 | GBR
       - GB 🇬🇧 | @Raydikalx | 4DE8B6
-      - 🇬🇧GB-141.98.101.179-0217
-      - '[OpenRay] 🇬🇧GB-24'
-      - '[OpenRay] 🇬🇧GB-125'
-      - 🇬🇧[www.v2nodes.com] ss-GB-8004...
-      - 🇬🇧GB-141.98.101.182-0218
-      - 🇬🇧GB-172.99.190.149-6206
+      - 英国 049
+      - '[free18#143] 🇬🇧_英国 (62)'
+      - '[OpenRay] 🇬🇧GB-20'
       - '[OpenRay] 🇩🇪DE-30'
-      - GB 🇬🇧 | @Raydikalx | 1D17F2
-      - 🇬🇧GB-51.38.71.175-7818
-      - 🇬🇧[www.v2nodes.com] ss-GB-1616...
-      - GB 🇬🇧 | @Raydikalx | B8FD16
-      - GB 🇬🇧 | @Raydikalx | D2ACA3
-      - 🇬🇧GB-146.70.61.37-0128
-      - '[OpenRay] 🇬🇧GB-55'
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
-      - '[OpenRay] 🇬🇧GB-37'
-      - '[OpenRay] 🇬🇧GB-75'
-      - 🇩🇪
-      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
-      - '[OpenRay] 🇬🇧GB-73'
-      - '[OpenRay] 🇩🇪DE-169'
-      - '[OpenRay] 🇩🇪DE-218'
-      - '[OpenRay] 🇩🇪DE-246'
-      - '@V2rayng_Fast 🇩🇪-7'
-      - NL - zhuhai.uk
+      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
       - '🇩🇪[www.v2nodes.com] ss-DE-1615... #1'
       - DE 🇩🇪 | @Raydikalx | F6099A
+      - DE 🇩🇪 | @Raydikalx | 78DCAA
+      - 🇩🇪DE-193.108.119.96-0125
+      - 🇩🇪DE-193.108.119.78-0491
+      - 🇩🇪DE-193.108.117.75-5895
+      - '[OpenRay] 🇩🇪DE-13'
+      - '[OpenRay] 🇩🇪DE-28'
+      - '[OpenRay] 🇬🇧GB-29'
+      - '[OpenRay] 🇩🇪DE-56'
+      - '[OpenRay] 🇩🇪DE-127'
+      - '[OpenRay] 🇩🇪DE-154'
+      - '[OpenRay] 🇩🇪DE-222'
+      - '[OpenRay] 🇩🇪DE-278'
+      - '[OpenRay] 🇬🇧GB-217'
+      - '[OpenRay] 🇩🇪DE-368'
       - DE 🇩🇪 | @Raydikalx | 0A7D80
       - DE 🇩🇪 | @Raydikalx | 60BAE9
       - DE 🇩🇪 | @Raydikalx | 53A099
-      - 🇩🇪DE-193.108.119.96-0125
-      - 🇩🇪DE-193.108.119.78-0491
-      - 🇬🇧GB-132.145.51.172-3616
-      - '[OpenRay] 🇩🇪DE-13'
-      - '[OpenRay] 🇩🇪DE-21'
-      - '[OpenRay] 🇩🇪DE-56'
-      - '[OpenRay] 🇩🇪DE-89'
-      - '[OpenRay] 🇩🇪DE-158'
-      - '[OpenRay] 🇩🇪DE-222'
-      - '[OpenRay] 🇬🇧GB-190'
-      - '[OpenRay] 🇩🇪DE-278'
-      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
-      - 德国 052
-      - DE 🇩🇪 | @Raydikalx | 78DCAA
       - 🇩🇪DE-193.108.119.15-0252
-      - 🇩🇪DE-193.108.117.75-5895
+      - 🇩🇪DE-95.179.246.122-7751
       - '🇬🇧[www.v2nodes.com] vless-GB-1... #2'
       - '[OpenRay] 🇩🇪DE-4'
-      - '[OpenRay] 🇩🇪DE-124'
-      - '[OpenRay] 🇩🇪DE-189'
-      - '[OpenRay] 🇩🇪DE-203'
-      - '[OpenRay] 🇩🇪DE-210'
-      - 🇩🇪 Germany - Unknown | 178.162.244.224:443
-      - 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
-      - 🇬🇧[www.v2nodes.com] ss-GB-9184...
+      - '[OpenRay] 🇩🇪DE-21'
+      - '[OpenRay] 🇩🇪DE-89'
+      - '[OpenRay] 🇩🇪DE-158'
+      - 🇩🇪DE_1|1.1MB/s|A004-260618 [3e8f024655d9]
+      - Бесплатный VPN tg:VLESSFORU 🇩🇪
+      - 🇩🇪 Germany - Unknown | 178.162.254.203:443
+      - 德国 039
+      - 德国 052
+      - 德国 070
       - DE 🇩🇪 | @Raydikalx | C43E68
       - DE 🇩🇪 | @Raydikalx | 6CC48B
-      - DE 🇩🇪 | @Raydikalx | 238226
+      - DE 🇩🇪 | @Raydikalx | 7E0FB0
       - DE 🇩🇪 | @Raydikalx | 9B59E1
       - DE 🇩🇪 | @Raydikalx | 5E3474
-      - DE 🇩🇪 | @Raydikalx | 41AEF9
-      - 🆔ar14n24b 🔒 VL-TCP- 🇩🇪 DE 145ms
-      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
-      - '[OpenRay] 🇬🇧GB-21'
-      - '[OpenRay] 🇩🇪DE-38'
-      - '[OpenRay] 🇬🇧GB-217'
-      - '[OpenRay] 🇩🇪DE-364'
-      - '[OpenRay] 🇩🇪DE-368'
-      - 🇩🇪DE_1|1.1MB/s|A004-260618 [3e8f024655d9]
-      - 🇩🇪 Germany - Unknown | 178.162.254.203:443
-      - 日本 040
-      - 英国 059
-      - DE 🇩🇪 | @Raydikalx | 7E0FB0
-      - DE 🇩🇪 | @Raydikalx | 4C5D05
       - 🆔capoit 🔓 VL-WS-N/A 🇩🇪 DE 153ms
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #1'
+      - '[OpenRay] 🇩🇪DE-14'
+      - '[OpenRay] 🇩🇪DE-16'
       - '[OpenRay] 🇩🇪DE-17'
-      - '[OpenRay] 🇩🇪DE-28'
+      - '[OpenRay] 🇬🇧GB-21'
       - '[OpenRay] 🇩🇪DE-81'
-      - '[OpenRay] 🇩🇪DE-127'
-      - '[OpenRay] 🇩🇪DE-154'
+      - '[OpenRay] 🇩🇪DE-110'
       - '[OpenRay] 🇩🇪DE-370'
+      - 🇩🇪 Germany - Unknown | 178.162.244.224:443
+      - '🇩🇪 德国 | DEU #5'
+      - 🇩🇪 德国 | DEU 10
+      - 日本 040
+      - DE 🇩🇪 | @Raydikalx | 238226
+      - DE 🇩🇪 | @Raydikalx | 41AEF9
+      - DE 🇩🇪 | @Raydikalx | 4C5D05
+      - 🇬🇧GB-82.38.31.47-0161
+      - '[OpenRay] 🇩🇪DE-38'
+      - '[OpenRay] 🇸🇬SG-42'
+      - '[OpenRay] 🇩🇪DE-364'
+      - '@V2rayng_Fast 🇩🇪-7'
+      - DE德国(v2clash.blog 2026-10.20更新)
       - DE德国(v2clash.blog 2026-10.6更新)
-      - DE - zhuhai.uk 03
-      - '[zhuhaiuk#009] DE - zhuhai.uk 02'
-      - 德国 039
-      - 德国 070
-      - 🇬🇧GB-82.38.31.205-0081
-      - 🇬🇧GB-82.38.31.207-0082
-      - 🇬🇧GB-82.38.31.189-0090
-      - 🇬🇧GB-82.38.31.190-0066
-      - 🇬🇧GB-82.38.31.187-0076
-      - 🇬🇧GB-82.38.31.176-0209
-      - 🇬🇧GB-82.38.31.218-0222
-      - 🇩🇪DE-95.179.254.136-7749
-      - '[OpenRay] 🇩🇪DE-8'
-      - '[OpenRay] 🇬🇧GB-72'
-      - '[OpenRay] 🇬🇧GB-159'
-      - 🇬🇧telegram➠@v2rayNG_Matsuri-3
-      - '@V2rayng_Fast 🇬🇧'
+      - 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
+      - 🇬🇧GB-82.38.31.180-0085
       - 🇬🇧GB-82.38.31.191-0099
+      - 🇬🇧GB-82.38.31.206-0080
+      - 🇬🇧GB-82.38.31.210-0070
+      - 🇬🇧GB-82.38.31.199-0192
+      - 🇬🇧GB-82.38.31.218-0222
+      - 🇬🇧GB-82.38.31.219-0199
+      - 🇬🇧GB-82.38.31.216-0065
+      - '@V2rayng_Fast 🇬🇧'
+      - DE - zhuhai.uk 03
+      - 🇬🇧GB-82.38.31.179-0091
+      - 🇬🇧GB-82.38.31.205-0081
+      - 🇬🇧GB-82.38.31.181-0101
+      - 🇬🇧GB-82.38.31.192-0077
+      - 🇬🇧GB-82.38.31.189-0090
+      - 🇬🇧GB-82.38.31.61-0174
+      - 🇬🇧GB-82.38.31.48-0160
+      - 🇬🇧GB-82.38.31.187-0076
+      - '[OpenRay] 🇯🇵JP-14'
+      - '[OpenRay] 🇯🇵JP-82'
+      - '[free18#082] 🇬🇧_英国 (50)'
+      - '[zhuhaiuk#009] DE - zhuhai.uk 02'
+      - GB 🇬🇧 | @Raydikalx | 410E97
+      - '[OpenRay] 🇬🇧GB-24'
+      - 🇰🇷 South Korea, Cheonan-si | [BL]
+      - 🇬🇧GB-82.38.31.194-0063
+      - 🇬🇧GB-82.38.31.203-0087
+      - 🇬🇧GB-82.38.31.217-0079
       - 🇬🇧GB-82.38.31.208-0062
       - 🇬🇧GB-82.38.31.193-0073
-      - 🇬🇧GB-82.38.31.66-0170
-      - 🇬🇧GB-82.38.31.216-0065
-      - '[OpenRay] 🇯🇵JP-14'
-      - '[OpenRay] 🇸🇬SG-42'
-      - '[free18#082] 🇬🇧_英国 (50)'
-      - '[OpenRay] 🇬🇧GB-70'
-      - '[OpenRay] 🇯🇵JP-82'
-      - 🇬🇧[www.v2nodes.com] ss-GB-1621...
-      - 英国 049
-      - GB 🇬🇧 | @Raydikalx | 410E97
-      - 🇬🇧GB-82.38.31.203-0087
-      - 🇬🇧GB-82.38.31.179-0091
       - 🇬🇧GB-82.38.31.162-0166
-      - 🇬🇧GB-82.38.31.184-0084
-      - '[OpenRay] 🇬🇧GB-29'
-      - 🇬🇧GB-82.38.31.180-0085
-      - 🇬🇧GB-82.38.31.212-0067
-      - 🇬🇧GB-82.38.31.49-0162
-      - 🇬🇧GB-82.38.31.47-0161
-      - 🇬🇧GB-82.38.31.48-0160
-      - '[OpenRay] 🇬🇧GB-201'
+      - 🇬🇧GB-82.38.31.66-0170
+      - 🇬🇧GB-178.83.185.156-0159
       - '[OpenRay] 🇬🇧GB-246'
-      - '[OpenRay] 🇹🇼TW-18'
+      - 🇬🇧GB-82.38.31.190-0066
+      - 🇬🇧GB-82.38.31.35-0164
       - TW台湾(v2clash.blog 2026-9.22更新)
-      - 🇰🇷 South Korea, Cheonan-si | [BL]
+      - '[OpenRay] 🇹🇼TW-18'
       - '[OpenRay] 🇯🇵JP-148'
-      - '[OpenRay] 🇸🇬SG-177'
       - 🇯🇵JP日本丨yoyapai.com
+      - '[OpenRay] 🇸🇬SG-177'
       - '[free18#166] 🇯🇵_日本 (10)'
+      - 🇯🇵[www.v2nodes.com] ss-JP-5141...
       - 🇯🇵[www.v2nodes.com] ss-JP-9223...
       - 日本 005
-      - 日本 015
       - 日本 018
-      - 日本 024
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #1'
-      - '[OpenRay] 🇯🇵JP-69'
+      - '[OpenRay] 🇯🇵JP-17'
+      - '[OpenRay] 🇸🇬SG-49'
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 🇯🇵[www.v2nodes.com] ss-JP-5141...
+      - 日本低延迟(解锁YouTube,ChatGPT等网站)
       - 🇯🇵[www.v2nodes.com] ss-JP-1291...
       - 日本 006
+      - 日本 015
+      - 日本 024
       - JP 🇯🇵 | @Raydikalx | 81424E
       - 🇯🇵JP-168.138.205.100-0196
+      - C🟠🇯🇵hos[🤖💬✈️🔍]_dokng.com_e7a3bbb0
       - '[OpenRay] 🇯🇵JP-27'
-      - '[OpenRay] 🇯🇵JP-107'
+      - 🇯🇵 机场推荐:dafei.de 日本 58
+      - 🇯🇵 adi|freenode1020-JP 3
       - 日本 020
       - 🇯🇵JP-18.179.31.199-5691
       - '[OpenRay] 🇯🇵JP-135'
-      - 日本低延迟(解锁YouTube,ChatGPT等网站)
-      - 🇯🇵 adi|freenode1020-JP 3
       - '[NoMoreWalls#213] 🇯🇵JP_2|1.2MB/s'
-      - 🇯🇵[www.v2nodes.com] ss-JP-1544...
-      - '[OpenRay] 🇯🇵JP-12'
+      - '[OpenRay] 🇯🇵JP-107'
       - '[OpenRay] 🇯🇵JP-123'
-      - 🇯🇵 机场推荐:dafei.de 日本 31
       - JP日本丨yoyapai.com
-      - JP - zhuhai.uk 02
       - 日本 021
+      - 🇯🇵 机场推荐:dafei.de 日本 31
       - '[OpenRay] 🇯🇵JP-3'
-      - JP 🇯🇵 | @Raydikalx | E6D44D
-      - '[OpenRay] 🇯🇵JP-11'
       - '[OpenRay] 🇯🇵JP-156'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #2'
-      - D🔴🇯🇵hos_dokng.com_4900a88a
+      - '[OpenRay] 🇯🇵JP-11'
       - JP日本(v2clash.blog 2026-10.23更新)-2
-      - 韩国 010
-      - KR 🇰🇷 | @Raydikalx | E9F97A
+      - JP 🇯🇵 | @Raydikalx | E6D44D
       - '[OpenRay] 🇰🇷KR-38'
-      - 韩国 001
-      - 韩国 016
-      - KR - zhuhai.uk
-      - '[OpenRay] 🇯🇵JP-180'
-      - 韩国 009
-      - 🇰🇷 Korea, Republic of 31
       - '[OpenRay] 🇰🇷KR-63'
+      - 韩国 009
+      - 韩国 010
       - 日本 032
-      - 韩国 013
-      - '[OpenRay] 🇰🇷KR-36'
+      - 🇰🇷 Korea, Republic of 31
+      - KR - zhuhai.uk
+      - '[zhuhaiuk#019] KR - zhuhai.uk'
       - 韩国 005
+      - 韩国 013
       - '[OpenRay] 🇰🇷KR-31'
-      - 🇨🇳台湾专线02 gpt专用
-      - 日本 037
+      - 韩国 001
       - KR 🇰🇷 | @Raydikalx | 7E8798
+      - '[OpenRay] 🇰🇷KR-8'
+      - 🇨🇳台湾专线02 gpt专用
+      - 🇰🇷KR-144.24.72.126-3649
       - 🇹🇼[www.v2nodes.com] vless-TW-1...
-      - 🇰🇷KR-211.178.105.134-0235
-      - TW 🇹🇼 | @Raydikalx | 353960
-      - 🇭🇰HK-219.76.13.181-7466
-      - '[OpenRay] 🇰🇷KR-5'
-      - KR韩国(v2clash.blog 2026-10.20更新)
+      - '[OpenRay] 🇰🇷KR-36'
+      - 🇭🇰HK-20.187.85.198-5183
       - HK 🇭🇰 | @Raydikalx | EEF194
       - HK 🇭🇰 | @Raydikalx | 9A6EAB
+      - '🇭🇰 香港 | HKG #2'
+      - TW 🇹🇼 | @Raydikalx | 353960
       - HK 🇭🇰 | @Raydikalx | 48EBAF
       - HK 🇭🇰 | @Raydikalx | 3F1EE8
-      - 🇰🇷KR-144.24.72.126-3649
-      - 🇭🇰HK-20.187.85.198-5183
+      - 🇭🇰HK-219.76.13.181-7466
       - '[OpenRay] 🇭🇰HK-5'
-      - HK - zhuhai.uk
+      - JP - zhuhai.uk 02
       - HK 🇭🇰 | @Raydikalx | ACC2C3
-      - '🇭🇰 香港 | HKG #7'
-      - 🇰🇷[www.v2nodes.com] ss-KR-1126...
+      - HK - zhuhai.uk
+      - 🇰🇷KR-211.178.105.134-0235
+      - '[OpenRay] 🇰🇷KR-5'
       - '[OpenRay] 🇭🇰HK-34'
+      - KR韩国(v2clash.blog 2026-10.20更新)
+      - D🔴🇯🇵hos_dokng.com_4900a88a
       - HK 🇭🇰 | @Raydikalx | 432BF0
+      - 日本 037
+      - 🇯🇵[www.v2nodes.com] ss-JP-1544...
       - 🇭🇰香港专线01 下载专用
+      - HK 🇭🇰 | @Raydikalx | F125F6
+      - 🇰🇷[www.v2nodes.com] vless-KR-1...
       - 🇸🇬[www.v2nodes.com] ss-SG-1616...
+      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
       - '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
+      - SG 🇸🇬 | @Raydikalx | 083E88
+      - '[OpenRay] 🇸🇬SG-33'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
+      - 🇸🇬SG-68.183.227.4-0251
+      - 🇸🇬SG-146.190.82.241-2690
+      - '[OpenRay] 🇸🇬SG-7'
+      - '[OpenRay] 🇸🇬SG-72'
+      - '[OpenRay] 🇸🇬SG-130'
+      - '[OpenRay] 🇸🇬SG-170'
+      - 新加坡 005
+      - 🇸🇬SG-54.254.129.246-7797
+      - SG新加坡(v2clash.blog 2026-10.13更新)
+      - '🇸🇬 新加坡 | SGP #4'
+      - '🇸🇬 新加坡 | SGP #2'
       - SG 🇸🇬 | @Raydikalx | 0335AF
       - SG 🇸🇬 | @Raydikalx | 6358C7
+      - 🇸🇬SG-149.88.106.73-0146
+      - 🇸🇬SG-15.235.184.36-3061
       - 🇸🇬SG-51.79.161.232-7813
+      - 🇸🇬SG-15.235.197.4-8406
+      - '[OpenRay] 🇸🇬SG-9'
       - '[OpenRay] 🇸🇬SG-23'
       - '[OpenRay] 🇸🇬SG-119'
-      - '🇸🇬 新加坡 | SGP #4'
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
-      - 新加坡 005
-      - 🇸🇬SG-68.183.227.4-0251
-      - '[OpenRay] 🇸🇬SG-33'
-      - '[OpenRay] 🇸🇬SG-55'
       - '[OpenRay] 🇸🇬SG-125'
-      - '[OpenRay] 🇸🇬SG-130'
-      - '[OpenRay] 🇸🇬SG-149'
-      - SG新加坡(v2clash.blog 2026-10.12更新)
-      - 新加坡 002
-      - '[OpenRay] 🇸🇬SG-7'
-      - '🇸🇬 新加坡 | SGP #2'
-      - SG 🇸🇬 | @Raydikalx | 083E88
-      - SG 🇸🇬 | @Raydikalx | B5390E
-      - 🇸🇬SG_1|1.9MB/s
-      - '[OpenRay] 🇸🇬SG-9'
-      - 🇸🇬 Singapore - Unknown | 178.128.209.238:443
-      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
-      - 🇸🇬SG-149.88.106.73-0146
-      - 🇸🇬SG-146.190.82.241-2690
-      - 🇸🇬SG-15.235.184.36-3061
-      - 🇸🇬SG-15.235.197.4-8406
-      - '[OpenRay] 🇸🇬SG-2'
-      - '[OpenRay] 🇸🇬SG-44'
-      - '[OpenRay] 🇸🇬SG-72'
-      - '[OpenRay] 🇸🇬SG-86'
-      - '[OpenRay] 🇸🇬SG-170'
-      - '[OpenRay] 🇸🇬SG-198'
-      - SG新加坡(v2clash.blog 2026-10.13更新)
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
-      - 🇸🇬SG-18.140.67.76-6179
-      - '[OpenRay] 🇸🇬SG-5'
-      - '[OpenRay] 🇸🇬SG-150'
-      - '[OpenRay] 🇸🇬SG-182'
-      - 🇸🇬SG-43.160.197.160-5641
       - '[OpenRay] 🇸🇬SG-129'
-      - 🇯🇵 机场推荐:dafei.de 日本 58
-      - 🇸🇬 机场推荐:dafei.de 新加坡 16
+      - '[OpenRay] 🇸🇬SG-149'
+      - '[OpenRay] 🇸🇬SG-150'
       - 🇸🇬[www.v2nodes.com] vless-SG-1...
-      - 🇸🇬SG-54.254.129.246-7797
-      - '[OpenRay] 🇸🇬SG-41'
+      - '🇸🇬 新加坡 | SGP #7'
+      - 新加坡 002
+      - 🇸🇬SG-43.160.197.160-5641
+      - 🇸🇬SG-18.140.67.76-6179
+      - 🇸🇬SG_1|1.9MB/s
+      - '[OpenRay] 🇸🇬SG-2'
+      - '[OpenRay] 🇸🇬SG-5'
+      - '[OpenRay] 🇸🇬SG-182'
+      - '[OpenRay] 🇸🇬SG-198'
+      - SG新加坡(v2clash.blog 2026-10.12更新)
+      - 🇸🇬 Singapore - Unknown | 178.128.209.238:443
+      - '[OpenRay] 🇸🇬SG-55'
+      - '[OpenRay] 🇸🇬SG-86'
+      - '[OpenRay] 🇸🇬SG-44'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
       - 🇸🇬
+      - SG 🇸🇬 | @Raydikalx | B5390E
+      - '[OpenRay] 🇸🇬SG-41'
+      - 🇸🇬 机场推荐:dafei.de 新加坡 16
       - '[OpenRay] 🇸🇬SG-29'
-      - 🇰🇷[www.v2nodes.com] vless-KR-1...
       - '[OpenRay] 🇸🇬SG-39'
-      - 🇸🇬 Singapore, Singapore | [BL]
       - 🇸🇬[www.v2nodes.com] trojan-SG-...
-      - '🇸🇬 新加坡 | SGP #2-2'
+      - 🇸🇬 Singapore, Singapore | [BL]
+      - '[OpenRay] 🇯🇵JP-180'
+      - '[OpenRay] 🇹🇼TW-10'
       - HK 🇭🇰 | @Raydikalx | 6A0ADC
-      - HK 🇭🇰 | @Raydikalx | F125F6
+      - '🇸🇬 新加坡 | SGP #2-2'
       - '[OpenRay] 🇭🇰HK-85'
       - 🇸🇬[www.v2nodes.com] vless-SG
       - '[free18#382] 🇯🇵_日本 (13)'
-      - '🇸🇬 新加坡 | SGP #7'
+      - '[OpenRay] 🇯🇵JP-93'
       - 🇭🇰[www.v2nodes.com] ss-HK-1621...
-      - '[zhuhaiuk#019] KR - zhuhai.uk'
-      - HK 🇭🇰 | @Raydikalx | C8BB96
-      - HK 🇭🇰 | @Raydikalx | E5CF14
-      - HK 🇭🇰 | @Raydikalx | 7878A9
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
+      - 日本 003
+      - KR 🇰🇷 | @Raydikalx | E9F97A
   - name: ☝️ 全部-手动
     type: select
     proxies:
-      - 美国 110
-      - 美国 121
-      - 美国 140
-      - 美国 179
-      - 美国 222
+      - 美国 177
+      - 美国 186
       - 美国 226
-      - 美国 423
-      - 美国 483
-      - 美国 596
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - 🇺🇸US-185.230.230.18-0068
-      - '[OpenRay] 🇺🇸US-324'
-      - '[OpenRay] 🇺🇸US-1202'
-      - '[OpenRay] 🇺🇸US-2825'
+      - 美国 333
+      - 美国 516
+      - 美国 589
+      - 美国 601
+      - US 🇺🇸 | @Raydikalx | 5A1BD6
+      - 🇺🇸US-45.86.51.18-0132
+      - '[OpenRay] 🇺🇸US-281'
       - 🇺🇸Telegram👉@v2rayNG_Matsuri
-      - US美国(v2clash.blog 2026-8.27更新)
-      - US美国(v2clash.blog 2026-9.5)
-      - 'Channel id: @ShadowProxy66 🇺🇸'
-      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇬🇧 🇷🇺 | [BL]
-      - '[10712][US][0][VLESS][None][v2ray_outlineir][2023-12-03][202'
+      - US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - 🇺🇸
+      - 🇺🇸 United States - Unknown | 151.101.2.165:80 11
+      - 🇺🇸 US | 146.75.59.186
       - 🇺🇸 机场推荐:dafei.de 美国 89_IPV4
+      - 美国 025
       - 美国 030
       - 美国 032
       - 美国 033
@@ -4454,380 +4408,381 @@ proxy-groups:
       - 美国 038
       - 美国 041
       - 美国 108
+      - 美国 110
       - 美国 111
-      - 美国 112
       - 美国 113
-      - 美国 128
+      - 美国 121
+      - 美国 130
       - 美国 132
-      - 美国 134
+      - 美国 136
       - 美国 138
-      - 美国 160
-      - 美国 161
-      - 美国 162
+      - 美国 140
+      - 美国 158
+      - 美国 159
       - 美国 163
-      - 美国 165
+      - 美国 164
       - 美国 167
-      - 美国 168
       - 美国 170
       - 美国 171
       - 美国 172
       - 美国 173
-      - 美国 176
-      - 美国 177
+      - 美国 175
+      - 美国 178
+      - 美国 179
       - 美国 180
+      - 美国 181
       - 美国 182
-      - 美国 184
       - 美国 185
-      - 美国 186
+      - 美国 188
+      - 美国 189
       - 美国 190
-      - 美国 192
-      - 美国 194
       - 美国 196
+      - 美国 199
       - 美国 213
       - 美国 221
       - 美国 223
       - 美国 227
-      - 美国 232
       - 美国 233
       - 美国 234
       - 美国 235
       - 美国 237
-      - 美国 238
       - 美国 239
       - 美国 240
       - 美国 243
-      - 美国 245
-      - 美国 287
       - 美国 307
       - 美国 331
-      - 美国 333
-      - 美国 340
       - 美国 366
-      - 美国 368
-      - 美国 409
+      - 美国 408
       - 美国 416
       - 美国 417
+      - 美国 423
+      - 美国 439
+      - 美国 452
+      - 美国 453
+      - 美国 454
+      - 美国 483
+      - 美国 499
+      - 美国 514
       - 🇸🇬[www.v2nodes.com] vless-SG-3...
-      - '[OpenRay] 🇬🇧GB-39'
       - '[OpenRay] 🇩🇪DE-226'
       - '[OpenRay] 🇩🇪DE-281'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - '@V2rayng_Fast 🇩🇪-2'
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - DE德国(v2clash.blog 2026-9.12新)
+      - TW台湾(v2clash.blog 2026-10.24更新)
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
+      - DE德国(v2clash.blog 2026-9.12新)
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
       - JP日本(v2clash.blog 2026-6.9更新)
-      - '@V2rayng_Fast 🇩🇪-3'
+      - '@V2rayng_Fast 🇩🇪-2'
       - 🇩🇪𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - '@V2rayng_Fast 🇩🇪-3'
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
       - 🇩🇪 Germany | 🌐 | [BL]
+      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇬🇧 🇷🇺 | [BL]
       - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]
-      - 🌐 Anycast-IP | 🇩🇪 🇬🇧 🇷🇺 | [BL]
-      - 🇬🇧 United Kingdom - Unknown | 194.36.55.63:8880
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-      - JP日本(v2clash.blog 2026-10.14更新)
-      - TW台湾(v2clash.blog 2026-10.24更新)
-      - Tel@V2rayng_Fast 🇩🇪
-      - '@V2rayng_Fast 🇩🇪-6'
-      - '[OpenRay] 🇬🇧GB-7'
-      - 🇯🇵[www.v2nodes.com] vless-JP-1...
-      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]-2
       - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]
       - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]-2
       - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]-3
+      - 🇬🇧 United Kingdom - Unknown | 194.36.55.63:8880
+      - '@V2rayng_Fast 🇩🇪-6'
+      - JP日本(v2clash.blog 2026-10.14更新)
+      - Tel@V2rayng_Fast 🇩🇪
+      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]-2
+      - 🌐 Anycast-IP | 🇩🇪 🇬🇧 🇷🇺 | [BL]
+      - 🇯🇵[www.v2nodes.com] vless-JP-1...
       - SG VLESS-11 | free-nodes
-      - 🇬🇧telegram➠@v2rayNG_Matsuri
+      - '[OpenRay] 🇬🇧GB-39'
       - DE TROJAN-22 | free-nodes
+      - 🇬🇧telegram➠@v2rayNG_Matsuri
       - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - '[zhuhaiuk#006] MX - zhuhai.uk'
       - 日本 013
+      - '[zhuhaiuk#006] MX - zhuhai.uk'
+      - '[zhuhaiuk#013] MX - zhuhai.uk 02'
       - '[OpenRay] 🇯🇵JP-110'
       - 日本 014
-      - '[zhuhaiuk#013] MX - zhuhai.uk 02'
       - GB 🇬🇧 | @Raydikalx | CF8DE1
-      - GB 🇬🇧 | @Raydikalx | 3E5525
-      - 🇬🇧GB-185.44.76.188-5255
+      - 🇬🇧GB-172.99.190.149-6206
       - 🇬🇧GB-172.99.190.149-6798
+      - GB 🇬🇧 | @Raydikalx | 3E5525
+      - 🇬🇧GB-146.70.61.37-0128
+      - 🇬🇧GB-185.44.76.188-5255
+      - 🇬🇧GB-51.38.71.175-7818
+      - 🇬🇧[www.v2nodes.com] ss-GB-9184...
+      - 🇬🇧GB-141.98.101.179-0217
+      - 🇬🇧GB-141.98.101.182-0218
+      - '[OpenRay] 🇬🇧GB-125'
+      - 🇩🇪
+      - 🇬🇧[www.v2nodes.com] ss-GB-8004...
+      - '[OpenRay] 🇬🇧GB-73'
+      - '[OpenRay] 🇬🇧GB-190'
+      - NL - zhuhai.uk
+      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
+      - GB 🇬🇧 | @Raydikalx | B8FD16
+      - GB 🇬🇧 | @Raydikalx | D2ACA3
+      - GB 🇬🇧 | @Raydikalx | 1D17F2
+      - 🇬🇧[www.v2nodes.com] ss-GB-1616...
+      - 英国 059
+      - 🇬🇧GB-132.145.51.172-3616
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #3'
+      - '[OpenRay] 🇬🇧GB-75'
+      - '[OpenRay] 🇩🇪DE-124'
+      - '[OpenRay] 🇩🇪DE-203'
       - GB英国(v2clash.blog 2026-10.12更新)
       - 🇬🇧 英国 | GBR
       - GB 🇬🇧 | @Raydikalx | 4DE8B6
-      - 🇬🇧GB-141.98.101.179-0217
-      - '[OpenRay] 🇬🇧GB-24'
-      - '[OpenRay] 🇬🇧GB-125'
-      - 🇬🇧[www.v2nodes.com] ss-GB-8004...
-      - 🇬🇧GB-141.98.101.182-0218
-      - 🇬🇧GB-172.99.190.149-6206
+      - 英国 049
+      - '[free18#143] 🇬🇧_英国 (62)'
+      - '[OpenRay] 🇬🇧GB-20'
       - '[OpenRay] 🇩🇪DE-30'
-      - GB 🇬🇧 | @Raydikalx | 1D17F2
-      - 🇬🇧GB-51.38.71.175-7818
-      - 🇬🇧[www.v2nodes.com] ss-GB-1616...
-      - GB 🇬🇧 | @Raydikalx | B8FD16
-      - GB 🇬🇧 | @Raydikalx | D2ACA3
-      - 🇬🇧GB-146.70.61.37-0128
-      - '[OpenRay] 🇬🇧GB-55'
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
-      - '[OpenRay] 🇬🇧GB-37'
-      - '[OpenRay] 🇬🇧GB-75'
-      - 🇩🇪
-      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
-      - '[OpenRay] 🇬🇧GB-73'
-      - '[OpenRay] 🇩🇪DE-169'
-      - '[OpenRay] 🇩🇪DE-218'
-      - '[OpenRay] 🇩🇪DE-246'
-      - '@V2rayng_Fast 🇩🇪-7'
-      - NL - zhuhai.uk
+      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
       - '🇩🇪[www.v2nodes.com] ss-DE-1615... #1'
       - DE 🇩🇪 | @Raydikalx | F6099A
+      - DE 🇩🇪 | @Raydikalx | 78DCAA
+      - 🇩🇪DE-193.108.119.96-0125
+      - 🇩🇪DE-193.108.119.78-0491
+      - 🇩🇪DE-193.108.117.75-5895
+      - '[OpenRay] 🇩🇪DE-13'
+      - '[OpenRay] 🇩🇪DE-28'
+      - '[OpenRay] 🇬🇧GB-29'
+      - '[OpenRay] 🇩🇪DE-56'
+      - '[OpenRay] 🇩🇪DE-127'
+      - '[OpenRay] 🇩🇪DE-154'
+      - '[OpenRay] 🇩🇪DE-222'
+      - '[OpenRay] 🇩🇪DE-278'
+      - '[OpenRay] 🇬🇧GB-217'
+      - '[OpenRay] 🇩🇪DE-368'
       - DE 🇩🇪 | @Raydikalx | 0A7D80
       - DE 🇩🇪 | @Raydikalx | 60BAE9
       - DE 🇩🇪 | @Raydikalx | 53A099
-      - 🇩🇪DE-193.108.119.96-0125
-      - 🇩🇪DE-193.108.119.78-0491
-      - 🇬🇧GB-132.145.51.172-3616
-      - '[OpenRay] 🇩🇪DE-13'
-      - '[OpenRay] 🇩🇪DE-21'
-      - '[OpenRay] 🇩🇪DE-56'
-      - '[OpenRay] 🇩🇪DE-89'
-      - '[OpenRay] 🇩🇪DE-158'
-      - '[OpenRay] 🇩🇪DE-222'
-      - '[OpenRay] 🇬🇧GB-190'
-      - '[OpenRay] 🇩🇪DE-278'
-      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
-      - 德国 052
-      - DE 🇩🇪 | @Raydikalx | 78DCAA
       - 🇩🇪DE-193.108.119.15-0252
-      - 🇩🇪DE-193.108.117.75-5895
+      - 🇩🇪DE-95.179.246.122-7751
       - '🇬🇧[www.v2nodes.com] vless-GB-1... #2'
       - '[OpenRay] 🇩🇪DE-4'
-      - '[OpenRay] 🇩🇪DE-124'
-      - '[OpenRay] 🇩🇪DE-189'
-      - '[OpenRay] 🇩🇪DE-203'
-      - '[OpenRay] 🇩🇪DE-210'
-      - 🇩🇪 Germany - Unknown | 178.162.244.224:443
-      - 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
-      - 🇬🇧[www.v2nodes.com] ss-GB-9184...
+      - '[OpenRay] 🇩🇪DE-21'
+      - '[OpenRay] 🇩🇪DE-89'
+      - '[OpenRay] 🇩🇪DE-158'
+      - 🇩🇪DE_1|1.1MB/s|A004-260618 [3e8f024655d9]
+      - Бесплатный VPN tg:VLESSFORU 🇩🇪
+      - 🇩🇪 Germany - Unknown | 178.162.254.203:443
+      - 德国 039
+      - 德国 052
+      - 德国 070
       - DE 🇩🇪 | @Raydikalx | C43E68
       - DE 🇩🇪 | @Raydikalx | 6CC48B
-      - DE 🇩🇪 | @Raydikalx | 238226
+      - DE 🇩🇪 | @Raydikalx | 7E0FB0
       - DE 🇩🇪 | @Raydikalx | 9B59E1
       - DE 🇩🇪 | @Raydikalx | 5E3474
-      - DE 🇩🇪 | @Raydikalx | 41AEF9
-      - 🆔ar14n24b 🔒 VL-TCP- 🇩🇪 DE 145ms
-      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
-      - '[OpenRay] 🇬🇧GB-21'
-      - '[OpenRay] 🇩🇪DE-38'
-      - '[OpenRay] 🇬🇧GB-217'
-      - '[OpenRay] 🇩🇪DE-364'
-      - '[OpenRay] 🇩🇪DE-368'
-      - 🇩🇪DE_1|1.1MB/s|A004-260618 [3e8f024655d9]
-      - 🇩🇪 Germany - Unknown | 178.162.254.203:443
-      - 日本 040
-      - 英国 059
-      - DE 🇩🇪 | @Raydikalx | 7E0FB0
-      - DE 🇩🇪 | @Raydikalx | 4C5D05
       - 🆔capoit 🔓 VL-WS-N/A 🇩🇪 DE 153ms
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #1'
+      - '[OpenRay] 🇩🇪DE-14'
+      - '[OpenRay] 🇩🇪DE-16'
       - '[OpenRay] 🇩🇪DE-17'
-      - '[OpenRay] 🇩🇪DE-28'
+      - '[OpenRay] 🇬🇧GB-21'
       - '[OpenRay] 🇩🇪DE-81'
-      - '[OpenRay] 🇩🇪DE-127'
-      - '[OpenRay] 🇩🇪DE-154'
+      - '[OpenRay] 🇩🇪DE-110'
       - '[OpenRay] 🇩🇪DE-370'
+      - 🇩🇪 Germany - Unknown | 178.162.244.224:443
+      - '🇩🇪 德国 | DEU #5'
+      - 🇩🇪 德国 | DEU 10
+      - 日本 040
+      - DE 🇩🇪 | @Raydikalx | 238226
+      - DE 🇩🇪 | @Raydikalx | 41AEF9
+      - DE 🇩🇪 | @Raydikalx | 4C5D05
+      - 🇬🇧GB-82.38.31.47-0161
+      - '[OpenRay] 🇩🇪DE-38'
+      - '[OpenRay] 🇸🇬SG-42'
+      - '[OpenRay] 🇩🇪DE-364'
+      - '@V2rayng_Fast 🇩🇪-7'
+      - DE德国(v2clash.blog 2026-10.20更新)
       - DE德国(v2clash.blog 2026-10.6更新)
-      - DE - zhuhai.uk 03
-      - '[zhuhaiuk#009] DE - zhuhai.uk 02'
-      - 德国 039
-      - 德国 070
-      - 🇬🇧GB-82.38.31.205-0081
-      - 🇬🇧GB-82.38.31.207-0082
-      - 🇬🇧GB-82.38.31.189-0090
-      - 🇬🇧GB-82.38.31.190-0066
-      - 🇬🇧GB-82.38.31.187-0076
-      - 🇬🇧GB-82.38.31.176-0209
-      - 🇬🇧GB-82.38.31.218-0222
-      - 🇩🇪DE-95.179.254.136-7749
-      - '[OpenRay] 🇩🇪DE-8'
-      - '[OpenRay] 🇬🇧GB-72'
-      - '[OpenRay] 🇬🇧GB-159'
-      - 🇬🇧telegram➠@v2rayNG_Matsuri-3
-      - '@V2rayng_Fast 🇬🇧'
+      - 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
+      - 🇬🇧GB-82.38.31.180-0085
       - 🇬🇧GB-82.38.31.191-0099
+      - 🇬🇧GB-82.38.31.206-0080
+      - 🇬🇧GB-82.38.31.210-0070
+      - 🇬🇧GB-82.38.31.199-0192
+      - 🇬🇧GB-82.38.31.218-0222
+      - 🇬🇧GB-82.38.31.219-0199
+      - 🇬🇧GB-82.38.31.216-0065
+      - '@V2rayng_Fast 🇬🇧'
+      - DE - zhuhai.uk 03
+      - 🇬🇧GB-82.38.31.179-0091
+      - 🇬🇧GB-82.38.31.205-0081
+      - 🇬🇧GB-82.38.31.181-0101
+      - 🇬🇧GB-82.38.31.192-0077
+      - 🇬🇧GB-82.38.31.189-0090
+      - 🇬🇧GB-82.38.31.61-0174
+      - 🇬🇧GB-82.38.31.48-0160
+      - 🇬🇧GB-82.38.31.187-0076
+      - '[OpenRay] 🇯🇵JP-14'
+      - '[OpenRay] 🇯🇵JP-82'
+      - '[free18#082] 🇬🇧_英国 (50)'
+      - '[zhuhaiuk#009] DE - zhuhai.uk 02'
+      - GB 🇬🇧 | @Raydikalx | 410E97
+      - '[OpenRay] 🇬🇧GB-24'
+      - 🇰🇷 South Korea, Cheonan-si | [BL]
+      - 🇬🇧GB-82.38.31.194-0063
+      - 🇬🇧GB-82.38.31.203-0087
+      - 🇬🇧GB-82.38.31.217-0079
       - 🇬🇧GB-82.38.31.208-0062
       - 🇬🇧GB-82.38.31.193-0073
-      - 🇬🇧GB-82.38.31.66-0170
-      - 🇬🇧GB-82.38.31.216-0065
-      - '[OpenRay] 🇯🇵JP-14'
-      - '[OpenRay] 🇸🇬SG-42'
-      - '[free18#082] 🇬🇧_英国 (50)'
-      - '[OpenRay] 🇬🇧GB-70'
-      - '[OpenRay] 🇯🇵JP-82'
-      - 🇬🇧[www.v2nodes.com] ss-GB-1621...
-      - 英国 049
-      - GB 🇬🇧 | @Raydikalx | 410E97
-      - 🇬🇧GB-82.38.31.203-0087
-      - 🇬🇧GB-82.38.31.179-0091
       - 🇬🇧GB-82.38.31.162-0166
-      - 🇬🇧GB-82.38.31.184-0084
-      - '[OpenRay] 🇬🇧GB-29'
-      - 🇬🇧GB-82.38.31.180-0085
-      - 🇬🇧GB-82.38.31.212-0067
-      - 🇬🇧GB-82.38.31.49-0162
-      - 🇬🇧GB-82.38.31.47-0161
-      - 🇬🇧GB-82.38.31.48-0160
-      - '[OpenRay] 🇬🇧GB-201'
+      - 🇬🇧GB-82.38.31.66-0170
+      - 🇬🇧GB-178.83.185.156-0159
       - '[OpenRay] 🇬🇧GB-246'
-      - '[OpenRay] 🇹🇼TW-18'
+      - 🇬🇧GB-82.38.31.190-0066
+      - 🇬🇧GB-82.38.31.35-0164
       - TW台湾(v2clash.blog 2026-9.22更新)
-      - 🇰🇷 South Korea, Cheonan-si | [BL]
+      - '[OpenRay] 🇹🇼TW-18'
       - '[OpenRay] 🇯🇵JP-148'
-      - '[OpenRay] 🇸🇬SG-177'
       - 🇯🇵JP日本丨yoyapai.com
+      - '[OpenRay] 🇸🇬SG-177'
       - '[free18#166] 🇯🇵_日本 (10)'
+      - 🇯🇵[www.v2nodes.com] ss-JP-5141...
       - 🇯🇵[www.v2nodes.com] ss-JP-9223...
       - 日本 005
-      - 日本 015
       - 日本 018
-      - 日本 024
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #1'
-      - '[OpenRay] 🇯🇵JP-69'
+      - '[OpenRay] 🇯🇵JP-17'
+      - '[OpenRay] 🇸🇬SG-49'
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 🇯🇵[www.v2nodes.com] ss-JP-5141...
+      - 日本低延迟(解锁YouTube,ChatGPT等网站)
       - 🇯🇵[www.v2nodes.com] ss-JP-1291...
       - 日本 006
+      - 日本 015
+      - 日本 024
       - JP 🇯🇵 | @Raydikalx | 81424E
       - 🇯🇵JP-168.138.205.100-0196
+      - C🟠🇯🇵hos[🤖💬✈️🔍]_dokng.com_e7a3bbb0
       - '[OpenRay] 🇯🇵JP-27'
-      - '[OpenRay] 🇯🇵JP-107'
+      - 🇯🇵 机场推荐:dafei.de 日本 58
+      - 🇯🇵 adi|freenode1020-JP 3
       - 日本 020
       - 🇯🇵JP-18.179.31.199-5691
       - '[OpenRay] 🇯🇵JP-135'
-      - 日本低延迟(解锁YouTube,ChatGPT等网站)
-      - 🇯🇵 adi|freenode1020-JP 3
       - '[NoMoreWalls#213] 🇯🇵JP_2|1.2MB/s'
-      - 🇯🇵[www.v2nodes.com] ss-JP-1544...
-      - '[OpenRay] 🇯🇵JP-12'
+      - '[OpenRay] 🇯🇵JP-107'
       - '[OpenRay] 🇯🇵JP-123'
-      - 🇯🇵 机场推荐:dafei.de 日本 31
       - JP日本丨yoyapai.com
-      - JP - zhuhai.uk 02
       - 日本 021
+      - 🇯🇵 机场推荐:dafei.de 日本 31
       - '[OpenRay] 🇯🇵JP-3'
-      - JP 🇯🇵 | @Raydikalx | E6D44D
-      - '[OpenRay] 🇯🇵JP-11'
       - '[OpenRay] 🇯🇵JP-156'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #2'
-      - D🔴🇯🇵hos_dokng.com_4900a88a
+      - '[OpenRay] 🇯🇵JP-11'
       - JP日本(v2clash.blog 2026-10.23更新)-2
-      - 韩国 010
-      - KR 🇰🇷 | @Raydikalx | E9F97A
+      - JP 🇯🇵 | @Raydikalx | E6D44D
       - '[OpenRay] 🇰🇷KR-38'
-      - 韩国 001
-      - 韩国 016
-      - KR - zhuhai.uk
-      - '[OpenRay] 🇯🇵JP-180'
-      - 韩国 009
-      - 🇰🇷 Korea, Republic of 31
       - '[OpenRay] 🇰🇷KR-63'
+      - 韩国 009
+      - 韩国 010
       - 日本 032
-      - 韩国 013
-      - '[OpenRay] 🇰🇷KR-36'
+      - 🇰🇷 Korea, Republic of 31
+      - KR - zhuhai.uk
+      - '[zhuhaiuk#019] KR - zhuhai.uk'
       - 韩国 005
+      - 韩国 013
       - '[OpenRay] 🇰🇷KR-31'
-      - 🇨🇳台湾专线02 gpt专用
-      - 日本 037
+      - 韩国 001
       - KR 🇰🇷 | @Raydikalx | 7E8798
+      - '[OpenRay] 🇰🇷KR-8'
+      - 🇨🇳台湾专线02 gpt专用
+      - 🇰🇷KR-144.24.72.126-3649
       - 🇹🇼[www.v2nodes.com] vless-TW-1...
-      - 🇰🇷KR-211.178.105.134-0235
-      - TW 🇹🇼 | @Raydikalx | 353960
-      - 🇭🇰HK-219.76.13.181-7466
-      - '[OpenRay] 🇰🇷KR-5'
-      - KR韩国(v2clash.blog 2026-10.20更新)
+      - '[OpenRay] 🇰🇷KR-36'
+      - 🇭🇰HK-20.187.85.198-5183
       - HK 🇭🇰 | @Raydikalx | EEF194
       - HK 🇭🇰 | @Raydikalx | 9A6EAB
+      - '🇭🇰 香港 | HKG #2'
+      - TW 🇹🇼 | @Raydikalx | 353960
       - HK 🇭🇰 | @Raydikalx | 48EBAF
       - HK 🇭🇰 | @Raydikalx | 3F1EE8
-      - 🇰🇷KR-144.24.72.126-3649
-      - 🇭🇰HK-20.187.85.198-5183
+      - 🇭🇰HK-219.76.13.181-7466
       - '[OpenRay] 🇭🇰HK-5'
-      - HK - zhuhai.uk
+      - JP - zhuhai.uk 02
       - HK 🇭🇰 | @Raydikalx | ACC2C3
-      - '🇭🇰 香港 | HKG #7'
-      - 🇰🇷[www.v2nodes.com] ss-KR-1126...
+      - HK - zhuhai.uk
+      - 🇰🇷KR-211.178.105.134-0235
+      - '[OpenRay] 🇰🇷KR-5'
       - '[OpenRay] 🇭🇰HK-34'
+      - KR韩国(v2clash.blog 2026-10.20更新)
+      - D🔴🇯🇵hos_dokng.com_4900a88a
       - HK 🇭🇰 | @Raydikalx | 432BF0
+      - 日本 037
+      - 🇯🇵[www.v2nodes.com] ss-JP-1544...
       - 🇭🇰香港专线01 下载专用
+      - HK 🇭🇰 | @Raydikalx | F125F6
+      - 🇰🇷[www.v2nodes.com] vless-KR-1...
       - 🇸🇬[www.v2nodes.com] ss-SG-1616...
+      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
       - '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
+      - SG 🇸🇬 | @Raydikalx | 083E88
+      - '[OpenRay] 🇸🇬SG-33'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
+      - 🇸🇬SG-68.183.227.4-0251
+      - 🇸🇬SG-146.190.82.241-2690
+      - '[OpenRay] 🇸🇬SG-7'
+      - '[OpenRay] 🇸🇬SG-72'
+      - '[OpenRay] 🇸🇬SG-130'
+      - '[OpenRay] 🇸🇬SG-170'
+      - 新加坡 005
+      - 🇸🇬SG-54.254.129.246-7797
+      - SG新加坡(v2clash.blog 2026-10.13更新)
+      - '🇸🇬 新加坡 | SGP #4'
+      - '🇸🇬 新加坡 | SGP #2'
       - SG 🇸🇬 | @Raydikalx | 0335AF
       - SG 🇸🇬 | @Raydikalx | 6358C7
+      - 🇸🇬SG-149.88.106.73-0146
+      - 🇸🇬SG-15.235.184.36-3061
       - 🇸🇬SG-51.79.161.232-7813
+      - 🇸🇬SG-15.235.197.4-8406
+      - '[OpenRay] 🇸🇬SG-9'
       - '[OpenRay] 🇸🇬SG-23'
       - '[OpenRay] 🇸🇬SG-119'
-      - '🇸🇬 新加坡 | SGP #4'
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
-      - 新加坡 005
-      - 🇸🇬SG-68.183.227.4-0251
-      - '[OpenRay] 🇸🇬SG-33'
-      - '[OpenRay] 🇸🇬SG-55'
       - '[OpenRay] 🇸🇬SG-125'
-      - '[OpenRay] 🇸🇬SG-130'
-      - '[OpenRay] 🇸🇬SG-149'
-      - SG新加坡(v2clash.blog 2026-10.12更新)
-      - 新加坡 002
-      - '[OpenRay] 🇸🇬SG-7'
-      - '🇸🇬 新加坡 | SGP #2'
-      - SG 🇸🇬 | @Raydikalx | 083E88
-      - SG 🇸🇬 | @Raydikalx | B5390E
-      - 🇸🇬SG_1|1.9MB/s
-      - '[OpenRay] 🇸🇬SG-9'
-      - 🇸🇬 Singapore - Unknown | 178.128.209.238:443
-      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
-      - 🇸🇬SG-149.88.106.73-0146
-      - 🇸🇬SG-146.190.82.241-2690
-      - 🇸🇬SG-15.235.184.36-3061
-      - 🇸🇬SG-15.235.197.4-8406
-      - '[OpenRay] 🇸🇬SG-2'
-      - '[OpenRay] 🇸🇬SG-44'
-      - '[OpenRay] 🇸🇬SG-72'
-      - '[OpenRay] 🇸🇬SG-86'
-      - '[OpenRay] 🇸🇬SG-170'
-      - '[OpenRay] 🇸🇬SG-198'
-      - SG新加坡(v2clash.blog 2026-10.13更新)
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
-      - 🇸🇬SG-18.140.67.76-6179
-      - '[OpenRay] 🇸🇬SG-5'
-      - '[OpenRay] 🇸🇬SG-150'
-      - '[OpenRay] 🇸🇬SG-182'
-      - 🇸🇬SG-43.160.197.160-5641
       - '[OpenRay] 🇸🇬SG-129'
-      - 🇯🇵 机场推荐:dafei.de 日本 58
-      - 🇸🇬 机场推荐:dafei.de 新加坡 16
+      - '[OpenRay] 🇸🇬SG-149'
+      - '[OpenRay] 🇸🇬SG-150'
       - 🇸🇬[www.v2nodes.com] vless-SG-1...
-      - 🇸🇬SG-54.254.129.246-7797
-      - '[OpenRay] 🇸🇬SG-41'
+      - '🇸🇬 新加坡 | SGP #7'
+      - 新加坡 002
+      - 🇸🇬SG-43.160.197.160-5641
+      - 🇸🇬SG-18.140.67.76-6179
+      - 🇸🇬SG_1|1.9MB/s
+      - '[OpenRay] 🇸🇬SG-2'
+      - '[OpenRay] 🇸🇬SG-5'
+      - '[OpenRay] 🇸🇬SG-182'
+      - '[OpenRay] 🇸🇬SG-198'
+      - SG新加坡(v2clash.blog 2026-10.12更新)
+      - 🇸🇬 Singapore - Unknown | 178.128.209.238:443
+      - '[OpenRay] 🇸🇬SG-55'
+      - '[OpenRay] 🇸🇬SG-86'
+      - '[OpenRay] 🇸🇬SG-44'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
       - 🇸🇬
+      - SG 🇸🇬 | @Raydikalx | B5390E
+      - '[OpenRay] 🇸🇬SG-41'
+      - 🇸🇬 机场推荐:dafei.de 新加坡 16
       - '[OpenRay] 🇸🇬SG-29'
-      - 🇰🇷[www.v2nodes.com] vless-KR-1...
       - '[OpenRay] 🇸🇬SG-39'
-      - 🇸🇬 Singapore, Singapore | [BL]
       - 🇸🇬[www.v2nodes.com] trojan-SG-...
-      - '🇸🇬 新加坡 | SGP #2-2'
+      - 🇸🇬 Singapore, Singapore | [BL]
+      - '[OpenRay] 🇯🇵JP-180'
+      - '[OpenRay] 🇹🇼TW-10'
       - HK 🇭🇰 | @Raydikalx | 6A0ADC
-      - HK 🇭🇰 | @Raydikalx | F125F6
+      - '🇸🇬 新加坡 | SGP #2-2'
       - '[OpenRay] 🇭🇰HK-85'
       - 🇸🇬[www.v2nodes.com] vless-SG
       - '[free18#382] 🇯🇵_日本 (13)'
-      - '🇸🇬 新加坡 | SGP #7'
+      - '[OpenRay] 🇯🇵JP-93'
       - 🇭🇰[www.v2nodes.com] ss-HK-1621...
-      - '[zhuhaiuk#019] KR - zhuhai.uk'
-      - HK 🇭🇰 | @Raydikalx | C8BB96
-      - HK 🇭🇰 | @Raydikalx | E5CF14
-      - HK 🇭🇰 | @Raydikalx | 7878A9
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
+      - 日本 003
+      - KR 🇰🇷 | @Raydikalx | E9F97A
   - name: 📍 美国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -4835,26 +4790,24 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - 美国 110
-      - 美国 121
-      - 美国 140
-      - 美国 179
-      - 美国 222
+      - 美国 177
+      - 美国 186
       - 美国 226
-      - 美国 423
-      - 美国 483
-      - 美国 596
-      - US 🇺🇸 | @Raydikalx | A8EEF5
-      - 🇺🇸US-185.230.230.18-0068
-      - '[OpenRay] 🇺🇸US-324'
-      - '[OpenRay] 🇺🇸US-1202'
-      - '[OpenRay] 🇺🇸US-2825'
+      - 美国 333
+      - 美国 516
+      - 美国 589
+      - 美国 601
+      - US 🇺🇸 | @Raydikalx | 5A1BD6
+      - 🇺🇸US-45.86.51.18-0132
+      - '[OpenRay] 🇺🇸US-281'
       - 🇺🇸Telegram👉@v2rayNG_Matsuri
-      - US美国(v2clash.blog 2026-8.27更新)
-      - US美国(v2clash.blog 2026-9.5)
-      - 'Channel id: @ShadowProxy66 🇺🇸'
-      - '[10712][US][0][VLESS][None][v2ray_outlineir][2023-12-03][202'
+      - US美国(mibei77.com 米贝节点分享)
+      - 🇺🇸𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - 🇺🇸
+      - 🇺🇸 United States - Unknown | 151.101.2.165:80 11
+      - 🇺🇸 US | 146.75.59.186
       - 🇺🇸 机场推荐:dafei.de 美国 89_IPV4
+      - 美国 025
       - 美国 030
       - 美国 032
       - 美国 033
@@ -4862,146 +4815,61 @@ proxy-groups:
       - 美国 038
       - 美国 041
       - 美国 108
+      - 美国 110
       - 美国 111
-      - 美国 112
       - 美国 113
-      - 美国 128
+      - 美国 121
+      - 美国 130
       - 美国 132
-      - 美国 134
+      - 美国 136
       - 美国 138
-      - 美国 160
-      - 美国 161
-      - 美国 162
+      - 美国 140
+      - 美国 158
+      - 美国 159
       - 美国 163
-      - 美国 165
+      - 美国 164
       - 美国 167
-      - 美国 168
       - 美国 170
       - 美国 171
       - 美国 172
       - 美国 173
-      - 美国 176
-      - 美国 177
+      - 美国 175
+      - 美国 178
+      - 美国 179
       - 美国 180
+      - 美国 181
       - 美国 182
-      - 美国 184
       - 美国 185
-      - 美国 186
+      - 美国 188
+      - 美国 189
       - 美国 190
-      - 美国 192
-      - 美国 194
       - 美国 196
+      - 美国 199
       - 美国 213
       - 美国 221
       - 美国 223
       - 美国 227
-      - 美国 232
       - 美国 233
       - 美国 234
       - 美国 235
       - 美国 237
-      - 美国 238
       - 美国 239
       - 美国 240
       - 美国 243
-      - 美国 245
-      - 美国 287
       - 美国 307
       - 美国 331
-      - 美国 333
-      - 美国 340
       - 美国 366
-      - 美国 368
-      - 美国 409
+      - 美国 408
       - 美国 416
       - 美国 417
-  - name: 📍 英国
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 1800
-    tolerance: 100
-    lazy: true
-    proxies:
-      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇬🇧 🇷🇺 | [BL]
-      - '[OpenRay] 🇬🇧GB-39'
-      - 🌐 Anycast-IP | 🇩🇪 🇬🇧 🇷🇺 | [BL]
-      - 🇬🇧 United Kingdom - Unknown | 194.36.55.63:8880
-      - '[OpenRay] 🇬🇧GB-7'
-      - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]
-      - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]-2
-      - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]-3
-      - 🇬🇧telegram➠@v2rayNG_Matsuri
-      - 🇬🇧telegram➠@v2rayNG_Matsuri-2
-      - '[zhuhaiuk#006] MX - zhuhai.uk'
-      - '[zhuhaiuk#013] MX - zhuhai.uk 02'
-      - GB 🇬🇧 | @Raydikalx | CF8DE1
-      - GB 🇬🇧 | @Raydikalx | 3E5525
-      - 🇬🇧GB-185.44.76.188-5255
-      - 🇬🇧GB-172.99.190.149-6798
-      - GB英国(v2clash.blog 2026-10.12更新)
-      - 🇬🇧 英国 | GBR
-      - GB 🇬🇧 | @Raydikalx | 4DE8B6
-      - 🇬🇧GB-141.98.101.179-0217
-      - '[OpenRay] 🇬🇧GB-24'
-      - '[OpenRay] 🇬🇧GB-125'
-      - 🇬🇧[www.v2nodes.com] ss-GB-8004...
-      - 🇬🇧GB-141.98.101.182-0218
-      - 🇬🇧GB-172.99.190.149-6206
-      - GB 🇬🇧 | @Raydikalx | 1D17F2
-      - 🇬🇧GB-51.38.71.175-7818
-      - 🇬🇧[www.v2nodes.com] ss-GB-1616...
-      - GB 🇬🇧 | @Raydikalx | B8FD16
-      - GB 🇬🇧 | @Raydikalx | D2ACA3
-      - 🇬🇧GB-146.70.61.37-0128
-      - '[OpenRay] 🇬🇧GB-55'
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
-      - '[OpenRay] 🇬🇧GB-37'
-      - '[OpenRay] 🇬🇧GB-75'
-      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
-      - '[OpenRay] 🇬🇧GB-73'
-      - NL - zhuhai.uk
-      - 🇬🇧GB-132.145.51.172-3616
-      - '[OpenRay] 🇬🇧GB-190'
-      - '🇬🇧[www.v2nodes.com] vless-GB-1... #2'
-      - 🇬🇧[www.v2nodes.com] ss-GB-9184...
-      - '[OpenRay] 🇬🇧GB-21'
-      - '[OpenRay] 🇬🇧GB-217'
-      - 英国 059
-      - DE - zhuhai.uk 03
-      - '[zhuhaiuk#009] DE - zhuhai.uk 02'
-      - 🇬🇧GB-82.38.31.205-0081
-      - 🇬🇧GB-82.38.31.207-0082
-      - 🇬🇧GB-82.38.31.189-0090
-      - 🇬🇧GB-82.38.31.190-0066
-      - 🇬🇧GB-82.38.31.187-0076
-      - 🇬🇧GB-82.38.31.176-0209
-      - 🇬🇧GB-82.38.31.218-0222
-      - '[OpenRay] 🇬🇧GB-72'
-      - '[OpenRay] 🇬🇧GB-159'
-      - 🇬🇧telegram➠@v2rayNG_Matsuri-3
-      - '@V2rayng_Fast 🇬🇧'
-      - 🇬🇧GB-82.38.31.191-0099
-      - 🇬🇧GB-82.38.31.208-0062
-      - 🇬🇧GB-82.38.31.193-0073
-      - 🇬🇧GB-82.38.31.66-0170
-      - 🇬🇧GB-82.38.31.216-0065
-      - '[free18#082] 🇬🇧_英国 (50)'
-      - '[OpenRay] 🇬🇧GB-70'
-      - 🇬🇧[www.v2nodes.com] ss-GB-1621...
-      - 英国 049
-      - GB 🇬🇧 | @Raydikalx | 410E97
-      - 🇬🇧GB-82.38.31.203-0087
-      - 🇬🇧GB-82.38.31.179-0091
-      - 🇬🇧GB-82.38.31.162-0166
-      - 🇬🇧GB-82.38.31.184-0084
-      - '[OpenRay] 🇬🇧GB-29'
-      - 🇬🇧GB-82.38.31.180-0085
-      - 🇬🇧GB-82.38.31.212-0067
-      - 🇬🇧GB-82.38.31.49-0162
-      - 🇬🇧GB-82.38.31.47-0161
-      - 🇬🇧GB-82.38.31.48-0160
-      - '[OpenRay] 🇬🇧GB-201'
-      - '[OpenRay] 🇬🇧GB-246'
+      - 美国 423
+      - 美国 439
+      - 美国 452
+      - 美国 453
+      - 美国 454
+      - 美国 483
+      - 美国 499
+      - 美国 514
   - name: 📍 新加坡
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -5013,63 +4881,64 @@ proxy-groups:
       - SG VLESS-11 | free-nodes
       - '[OpenRay] 🇸🇬SG-42'
       - '[OpenRay] 🇸🇬SG-177'
+      - '[OpenRay] 🇸🇬SG-49'
       - 🇸🇬[www.v2nodes.com] ss-SG-1616...
+      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
       - '🇸🇬[www.v2nodes.com] ss-SG-1615... #2'
+      - SG 🇸🇬 | @Raydikalx | 083E88
+      - '[OpenRay] 🇸🇬SG-33'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
+      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
+      - 🇸🇬SG-68.183.227.4-0251
+      - 🇸🇬SG-146.190.82.241-2690
+      - '[OpenRay] 🇸🇬SG-7'
+      - '[OpenRay] 🇸🇬SG-72'
+      - '[OpenRay] 🇸🇬SG-130'
+      - '[OpenRay] 🇸🇬SG-170'
+      - 新加坡 005
+      - 🇸🇬SG-54.254.129.246-7797
+      - SG新加坡(v2clash.blog 2026-10.13更新)
+      - '🇸🇬 新加坡 | SGP #4'
+      - '🇸🇬 新加坡 | SGP #2'
       - SG 🇸🇬 | @Raydikalx | 0335AF
       - SG 🇸🇬 | @Raydikalx | 6358C7
+      - 🇸🇬SG-149.88.106.73-0146
+      - 🇸🇬SG-15.235.184.36-3061
       - 🇸🇬SG-51.79.161.232-7813
+      - 🇸🇬SG-15.235.197.4-8406
+      - '[OpenRay] 🇸🇬SG-9'
       - '[OpenRay] 🇸🇬SG-23'
       - '[OpenRay] 🇸🇬SG-119'
-      - '🇸🇬 新加坡 | SGP #4'
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #1'
-      - 新加坡 005
-      - 🇸🇬SG-68.183.227.4-0251
-      - '[OpenRay] 🇸🇬SG-33'
-      - '[OpenRay] 🇸🇬SG-55'
       - '[OpenRay] 🇸🇬SG-125'
-      - '[OpenRay] 🇸🇬SG-130'
-      - '[OpenRay] 🇸🇬SG-149'
-      - SG新加坡(v2clash.blog 2026-10.12更新)
-      - 新加坡 002
-      - '[OpenRay] 🇸🇬SG-7'
-      - '🇸🇬 新加坡 | SGP #2'
-      - SG 🇸🇬 | @Raydikalx | 083E88
-      - SG 🇸🇬 | @Raydikalx | B5390E
-      - 🇸🇬SG_1|1.9MB/s
-      - '[OpenRay] 🇸🇬SG-9'
-      - 🇸🇬 Singapore - Unknown | 178.128.209.238:443
-      - 🇸🇬[www.v2nodes.com] ss-SG-1615...
-      - '🇸🇬[www.v2nodes.com] ss-SG-1615... #3'
-      - 🇸🇬SG-149.88.106.73-0146
-      - 🇸🇬SG-146.190.82.241-2690
-      - 🇸🇬SG-15.235.184.36-3061
-      - 🇸🇬SG-15.235.197.4-8406
-      - '[OpenRay] 🇸🇬SG-2'
-      - '[OpenRay] 🇸🇬SG-44'
-      - '[OpenRay] 🇸🇬SG-72'
-      - '[OpenRay] 🇸🇬SG-86'
-      - '[OpenRay] 🇸🇬SG-170'
-      - '[OpenRay] 🇸🇬SG-198'
-      - SG新加坡(v2clash.blog 2026-10.13更新)
-      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
-      - 🇸🇬SG-18.140.67.76-6179
-      - '[OpenRay] 🇸🇬SG-5'
-      - '[OpenRay] 🇸🇬SG-150'
-      - '[OpenRay] 🇸🇬SG-182'
-      - 🇸🇬SG-43.160.197.160-5641
       - '[OpenRay] 🇸🇬SG-129'
-      - 🇸🇬 机场推荐:dafei.de 新加坡 16
+      - '[OpenRay] 🇸🇬SG-149'
+      - '[OpenRay] 🇸🇬SG-150'
       - 🇸🇬[www.v2nodes.com] vless-SG-1...
-      - 🇸🇬SG-54.254.129.246-7797
-      - '[OpenRay] 🇸🇬SG-41'
+      - '🇸🇬 新加坡 | SGP #7'
+      - 新加坡 002
+      - 🇸🇬SG-43.160.197.160-5641
+      - 🇸🇬SG-18.140.67.76-6179
+      - 🇸🇬SG_1|1.9MB/s
+      - '[OpenRay] 🇸🇬SG-2'
+      - '[OpenRay] 🇸🇬SG-5'
+      - '[OpenRay] 🇸🇬SG-182'
+      - '[OpenRay] 🇸🇬SG-198'
+      - SG新加坡(v2clash.blog 2026-10.12更新)
+      - 🇸🇬 Singapore - Unknown | 178.128.209.238:443
+      - '[OpenRay] 🇸🇬SG-55'
+      - '[OpenRay] 🇸🇬SG-86'
+      - '[OpenRay] 🇸🇬SG-44'
+      - '🇸🇬[www.v2nodes.com] vless-SG-1... #1'
       - 🇸🇬
+      - SG 🇸🇬 | @Raydikalx | B5390E
+      - '[OpenRay] 🇸🇬SG-41'
+      - 🇸🇬 机场推荐:dafei.de 新加坡 16
       - '[OpenRay] 🇸🇬SG-29'
       - '[OpenRay] 🇸🇬SG-39'
-      - 🇸🇬 Singapore, Singapore | [BL]
       - 🇸🇬[www.v2nodes.com] trojan-SG-...
+      - 🇸🇬 Singapore, Singapore | [BL]
       - '🇸🇬 新加坡 | SGP #2-2'
       - 🇸🇬[www.v2nodes.com] vless-SG
-      - '🇸🇬 新加坡 | SGP #7'
   - name: 📍 德国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -5080,83 +4949,170 @@ proxy-groups:
       - '[OpenRay] 🇩🇪DE-226'
       - '[OpenRay] 🇩🇪DE-281'
       - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
+      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
       - '@V2rayng_Fast 🇩🇪'
       - 🇩🇪telegram➠@v2rayNG_Matsuri
-      - '@V2rayng_Fast 🇩🇪-2'
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-      - DE德国(v2clash.blog 2026-9.12新)
       - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-2
-      - '@V2rayng_Fast 🇩🇪-3'
+      - DE德国(v2clash.blog 2026-9.12新)
+      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
+      - '@V2rayng_Fast 🇩🇪-2'
       - 🇩🇪𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
+      - '@V2rayng_Fast 🇩🇪-3'
       - '@V2rayng_Fast 🇩🇪-4'
       - '@V2rayng_Fast 🇩🇪-5'
       - 🇩🇪 Germany | 🌐 | [BL]
       - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]
-      - 🇩🇪@vpn_ioss ♻️ سرورهای بیشتر عضو شو-2
-      - (@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪-3
-      - Tel@V2rayng_Fast 🇩🇪
       - '@V2rayng_Fast 🇩🇪-6'
+      - Tel@V2rayng_Fast 🇩🇪
       - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇷🇺 | [BL]-2
       - DE TROJAN-22 | free-nodes
-      - '[OpenRay] 🇩🇪DE-30'
       - 🇩🇪
-      - '[OpenRay] 🇩🇪DE-169'
-      - '[OpenRay] 🇩🇪DE-218'
-      - '[OpenRay] 🇩🇪DE-246'
-      - '@V2rayng_Fast 🇩🇪-7'
+      - '[OpenRay] 🇩🇪DE-124'
+      - '[OpenRay] 🇩🇪DE-203'
+      - '[OpenRay] 🇩🇪DE-30'
+      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
       - '🇩🇪[www.v2nodes.com] ss-DE-1615... #1'
       - DE 🇩🇪 | @Raydikalx | F6099A
+      - DE 🇩🇪 | @Raydikalx | 78DCAA
+      - 🇩🇪DE-193.108.119.96-0125
+      - 🇩🇪DE-193.108.119.78-0491
+      - 🇩🇪DE-193.108.117.75-5895
+      - '[OpenRay] 🇩🇪DE-13'
+      - '[OpenRay] 🇩🇪DE-28'
+      - '[OpenRay] 🇩🇪DE-56'
+      - '[OpenRay] 🇩🇪DE-127'
+      - '[OpenRay] 🇩🇪DE-154'
+      - '[OpenRay] 🇩🇪DE-222'
+      - '[OpenRay] 🇩🇪DE-278'
+      - '[OpenRay] 🇩🇪DE-368'
       - DE 🇩🇪 | @Raydikalx | 0A7D80
       - DE 🇩🇪 | @Raydikalx | 60BAE9
       - DE 🇩🇪 | @Raydikalx | 53A099
-      - 🇩🇪DE-193.108.119.96-0125
-      - 🇩🇪DE-193.108.119.78-0491
-      - '[OpenRay] 🇩🇪DE-13'
+      - 🇩🇪DE-193.108.119.15-0252
+      - 🇩🇪DE-95.179.246.122-7751
+      - '[OpenRay] 🇩🇪DE-4'
       - '[OpenRay] 🇩🇪DE-21'
-      - '[OpenRay] 🇩🇪DE-56'
       - '[OpenRay] 🇩🇪DE-89'
       - '[OpenRay] 🇩🇪DE-158'
-      - '[OpenRay] 🇩🇪DE-222'
-      - '[OpenRay] 🇩🇪DE-278'
-      - 🇩🇪[www.v2nodes.com] ss-DE-1615...
+      - 🇩🇪DE_1|1.1MB/s|A004-260618 [3e8f024655d9]
+      - Бесплатный VPN tg:VLESSFORU 🇩🇪
+      - 🇩🇪 Germany - Unknown | 178.162.254.203:443
+      - 德国 039
       - 德国 052
-      - DE 🇩🇪 | @Raydikalx | 78DCAA
-      - 🇩🇪DE-193.108.119.15-0252
-      - 🇩🇪DE-193.108.117.75-5895
-      - '[OpenRay] 🇩🇪DE-4'
-      - '[OpenRay] 🇩🇪DE-124'
-      - '[OpenRay] 🇩🇪DE-189'
-      - '[OpenRay] 🇩🇪DE-203'
-      - '[OpenRay] 🇩🇪DE-210'
-      - 🇩🇪 Germany - Unknown | 178.162.244.224:443
-      - 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
+      - 德国 070
       - DE 🇩🇪 | @Raydikalx | C43E68
       - DE 🇩🇪 | @Raydikalx | 6CC48B
-      - DE 🇩🇪 | @Raydikalx | 238226
+      - DE 🇩🇪 | @Raydikalx | 7E0FB0
       - DE 🇩🇪 | @Raydikalx | 9B59E1
       - DE 🇩🇪 | @Raydikalx | 5E3474
+      - 🆔capoit 🔓 VL-WS-N/A 🇩🇪 DE 153ms
+      - '🇩🇪[www.v2nodes.com] vless-DE-1... #1'
+      - '[OpenRay] 🇩🇪DE-14'
+      - '[OpenRay] 🇩🇪DE-16'
+      - '[OpenRay] 🇩🇪DE-17'
+      - '[OpenRay] 🇩🇪DE-81'
+      - '[OpenRay] 🇩🇪DE-110'
+      - '[OpenRay] 🇩🇪DE-370'
+      - 🇩🇪 Germany - Unknown | 178.162.244.224:443
+      - '🇩🇪 德国 | DEU #5'
+      - 🇩🇪 德国 | DEU 10
+      - DE 🇩🇪 | @Raydikalx | 238226
       - DE 🇩🇪 | @Raydikalx | 41AEF9
-      - 🆔ar14n24b 🔒 VL-TCP- 🇩🇪 DE 145ms
-      - '🇩🇪[www.v2nodes.com] vless-DE-1... #3'
+      - DE 🇩🇪 | @Raydikalx | 4C5D05
       - '[OpenRay] 🇩🇪DE-38'
       - '[OpenRay] 🇩🇪DE-364'
-      - '[OpenRay] 🇩🇪DE-368'
-      - 🇩🇪DE_1|1.1MB/s|A004-260618 [3e8f024655d9]
-      - 🇩🇪 Germany - Unknown | 178.162.254.203:443
-      - DE 🇩🇪 | @Raydikalx | 7E0FB0
-      - DE 🇩🇪 | @Raydikalx | 4C5D05
-      - 🆔capoit 🔓 VL-WS-N/A 🇩🇪 DE 153ms
-      - '[OpenRay] 🇩🇪DE-17'
-      - '[OpenRay] 🇩🇪DE-28'
-      - '[OpenRay] 🇩🇪DE-81'
-      - '[OpenRay] 🇩🇪DE-127'
-      - '[OpenRay] 🇩🇪DE-154'
-      - '[OpenRay] 🇩🇪DE-370'
+      - '@V2rayng_Fast 🇩🇪-7'
+      - DE德国(v2clash.blog 2026-10.20更新)
       - DE德国(v2clash.blog 2026-10.6更新)
-      - 德国 039
-      - 德国 070
-      - 🇩🇪DE-95.179.254.136-7749
-      - '[OpenRay] 🇩🇪DE-8'
+      - 🇩🇪_DE_德国->🇫🇷_FR_法国_IPV4
+  - name: 📍 英国
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 1800
+    tolerance: 100
+    lazy: true
+    proxies:
+      - 🌐 Anycast-IP | 🇨🇦 🇩🇪 🇬🇧 🇷🇺 | [BL]
+      - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]
+      - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]-2
+      - 🌐 Anycast-IP | 🇨🇦 🇬🇧 🇷🇺 | [BL]-3
+      - 🇬🇧 United Kingdom - Unknown | 194.36.55.63:8880
+      - 🌐 Anycast-IP | 🇩🇪 🇬🇧 🇷🇺 | [BL]
+      - '[OpenRay] 🇬🇧GB-39'
+      - 🇬🇧telegram➠@v2rayNG_Matsuri
+      - 🇬🇧telegram➠@v2rayNG_Matsuri-2
+      - '[zhuhaiuk#006] MX - zhuhai.uk'
+      - '[zhuhaiuk#013] MX - zhuhai.uk 02'
+      - GB 🇬🇧 | @Raydikalx | CF8DE1
+      - 🇬🇧GB-172.99.190.149-6206
+      - 🇬🇧GB-172.99.190.149-6798
+      - GB 🇬🇧 | @Raydikalx | 3E5525
+      - 🇬🇧GB-146.70.61.37-0128
+      - 🇬🇧GB-185.44.76.188-5255
+      - 🇬🇧GB-51.38.71.175-7818
+      - 🇬🇧[www.v2nodes.com] ss-GB-9184...
+      - 🇬🇧GB-141.98.101.179-0217
+      - 🇬🇧GB-141.98.101.182-0218
+      - '[OpenRay] 🇬🇧GB-125'
+      - 🇬🇧[www.v2nodes.com] ss-GB-8004...
+      - '[OpenRay] 🇬🇧GB-73'
+      - '[OpenRay] 🇬🇧GB-190'
+      - NL - zhuhai.uk
+      - 🇬🇧[www.v2nodes.com] ss-GB-1615...
+      - GB 🇬🇧 | @Raydikalx | B8FD16
+      - GB 🇬🇧 | @Raydikalx | D2ACA3
+      - GB 🇬🇧 | @Raydikalx | 1D17F2
+      - 🇬🇧[www.v2nodes.com] ss-GB-1616...
+      - 英国 059
+      - 🇬🇧GB-132.145.51.172-3616
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #1'
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #3'
+      - '[OpenRay] 🇬🇧GB-75'
+      - GB英国(v2clash.blog 2026-10.12更新)
+      - 🇬🇧 英国 | GBR
+      - GB 🇬🇧 | @Raydikalx | 4DE8B6
+      - 英国 049
+      - '[free18#143] 🇬🇧_英国 (62)'
+      - '[OpenRay] 🇬🇧GB-20'
+      - '[OpenRay] 🇬🇧GB-29'
+      - '[OpenRay] 🇬🇧GB-217'
+      - '🇬🇧[www.v2nodes.com] vless-GB-1... #2'
+      - '[OpenRay] 🇬🇧GB-21'
+      - 🇬🇧GB-82.38.31.47-0161
+      - 🇬🇧GB-82.38.31.180-0085
+      - 🇬🇧GB-82.38.31.191-0099
+      - 🇬🇧GB-82.38.31.206-0080
+      - 🇬🇧GB-82.38.31.210-0070
+      - 🇬🇧GB-82.38.31.199-0192
+      - 🇬🇧GB-82.38.31.218-0222
+      - 🇬🇧GB-82.38.31.219-0199
+      - 🇬🇧GB-82.38.31.216-0065
+      - '@V2rayng_Fast 🇬🇧'
+      - DE - zhuhai.uk 03
+      - 🇬🇧GB-82.38.31.179-0091
+      - 🇬🇧GB-82.38.31.205-0081
+      - 🇬🇧GB-82.38.31.181-0101
+      - 🇬🇧GB-82.38.31.192-0077
+      - 🇬🇧GB-82.38.31.189-0090
+      - 🇬🇧GB-82.38.31.61-0174
+      - 🇬🇧GB-82.38.31.48-0160
+      - 🇬🇧GB-82.38.31.187-0076
+      - '[free18#082] 🇬🇧_英国 (50)'
+      - '[zhuhaiuk#009] DE - zhuhai.uk 02'
+      - GB 🇬🇧 | @Raydikalx | 410E97
+      - '[OpenRay] 🇬🇧GB-24'
+      - 🇬🇧GB-82.38.31.194-0063
+      - 🇬🇧GB-82.38.31.203-0087
+      - 🇬🇧GB-82.38.31.217-0079
+      - 🇬🇧GB-82.38.31.208-0062
+      - 🇬🇧GB-82.38.31.193-0073
+      - 🇬🇧GB-82.38.31.162-0166
+      - 🇬🇧GB-82.38.31.66-0170
+      - 🇬🇧GB-178.83.185.156-0159
+      - '[OpenRay] 🇬🇧GB-246'
+      - 🇬🇧GB-82.38.31.190-0066
+      - 🇬🇧GB-82.38.31.35-0164
   - name: 📍 日本
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -5176,46 +5132,47 @@ proxy-groups:
       - '[OpenRay] 🇯🇵JP-148'
       - 🇯🇵JP日本丨yoyapai.com
       - '[free18#166] 🇯🇵_日本 (10)'
+      - 🇯🇵[www.v2nodes.com] ss-JP-5141...
       - 🇯🇵[www.v2nodes.com] ss-JP-9223...
       - 日本 005
-      - 日本 015
       - 日本 018
-      - 日本 024
-      - '🇯🇵[www.v2nodes.com] vless-JP-1... #1'
-      - '[OpenRay] 🇯🇵JP-69'
+      - '[OpenRay] 🇯🇵JP-17'
       - JP日本(v2clash.blog 2026-10.23更新)
-      - 🇯🇵[www.v2nodes.com] ss-JP-5141...
+      - 日本低延迟(解锁YouTube,ChatGPT等网站)
       - 🇯🇵[www.v2nodes.com] ss-JP-1291...
       - 日本 006
+      - 日本 015
+      - 日本 024
       - JP 🇯🇵 | @Raydikalx | 81424E
       - 🇯🇵JP-168.138.205.100-0196
+      - C🟠🇯🇵hos[🤖💬✈️🔍]_dokng.com_e7a3bbb0
       - '[OpenRay] 🇯🇵JP-27'
-      - '[OpenRay] 🇯🇵JP-107'
+      - 🇯🇵 机场推荐:dafei.de 日本 58
+      - 🇯🇵 adi|freenode1020-JP 3
       - 日本 020
       - 🇯🇵JP-18.179.31.199-5691
       - '[OpenRay] 🇯🇵JP-135'
-      - 日本低延迟(解锁YouTube,ChatGPT等网站)
-      - 🇯🇵 adi|freenode1020-JP 3
       - '[NoMoreWalls#213] 🇯🇵JP_2|1.2MB/s'
-      - 🇯🇵[www.v2nodes.com] ss-JP-1544...
-      - '[OpenRay] 🇯🇵JP-12'
+      - '[OpenRay] 🇯🇵JP-107'
       - '[OpenRay] 🇯🇵JP-123'
-      - 🇯🇵 机场推荐:dafei.de 日本 31
       - JP日本丨yoyapai.com
-      - JP - zhuhai.uk 02
       - 日本 021
+      - 🇯🇵 机场推荐:dafei.de 日本 31
       - '[OpenRay] 🇯🇵JP-3'
-      - JP 🇯🇵 | @Raydikalx | E6D44D
-      - '[OpenRay] 🇯🇵JP-11'
       - '[OpenRay] 🇯🇵JP-156'
       - '🇯🇵[www.v2nodes.com] vless-JP-1... #2'
-      - D🔴🇯🇵hos_dokng.com_4900a88a
+      - '[OpenRay] 🇯🇵JP-11'
       - JP日本(v2clash.blog 2026-10.23更新)-2
-      - '[OpenRay] 🇯🇵JP-180'
+      - JP 🇯🇵 | @Raydikalx | E6D44D
       - 日本 032
+      - JP - zhuhai.uk 02
+      - D🔴🇯🇵hos_dokng.com_4900a88a
       - 日本 037
-      - 🇯🇵 机场推荐:dafei.de 日本 58
+      - 🇯🇵[www.v2nodes.com] ss-JP-1544...
+      - '[OpenRay] 🇯🇵JP-180'
       - '[free18#382] 🇯🇵_日本 (13)'
+      - '[OpenRay] 🇯🇵JP-93'
+      - 日本 003
   - name: 📍 香港
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -5223,27 +5180,23 @@ proxy-groups:
     tolerance: 100
     lazy: true
     proxies:
-      - 🇭🇰HK-219.76.13.181-7466
+      - 🇭🇰HK-20.187.85.198-5183
       - HK 🇭🇰 | @Raydikalx | EEF194
       - HK 🇭🇰 | @Raydikalx | 9A6EAB
+      - '🇭🇰 香港 | HKG #2'
       - HK 🇭🇰 | @Raydikalx | 48EBAF
       - HK 🇭🇰 | @Raydikalx | 3F1EE8
-      - 🇭🇰HK-20.187.85.198-5183
+      - 🇭🇰HK-219.76.13.181-7466
       - '[OpenRay] 🇭🇰HK-5'
-      - HK - zhuhai.uk
       - HK 🇭🇰 | @Raydikalx | ACC2C3
-      - '🇭🇰 香港 | HKG #7'
+      - HK - zhuhai.uk
       - '[OpenRay] 🇭🇰HK-34'
       - HK 🇭🇰 | @Raydikalx | 432BF0
       - 🇭🇰香港专线01 下载专用
-      - HK 🇭🇰 | @Raydikalx | 6A0ADC
       - HK 🇭🇰 | @Raydikalx | F125F6
+      - HK 🇭🇰 | @Raydikalx | 6A0ADC
       - '[OpenRay] 🇭🇰HK-85'
       - 🇭🇰[www.v2nodes.com] ss-HK-1621...
-      - HK 🇭🇰 | @Raydikalx | C8BB96
-      - HK 🇭🇰 | @Raydikalx | E5CF14
-      - HK 🇭🇰 | @Raydikalx | 7878A9
-      - '🇭🇰[www.v2nodes.com] vless-HK-1... #1'
   - name: 📍 韩国
     type: url-test
     url: https://www.gstatic.com/generate_204
@@ -5252,27 +5205,26 @@ proxy-groups:
     lazy: true
     proxies:
       - 🇰🇷 South Korea, Cheonan-si | [BL]
-      - 韩国 010
-      - KR 🇰🇷 | @Raydikalx | E9F97A
       - '[OpenRay] 🇰🇷KR-38'
-      - 韩国 001
-      - 韩国 016
-      - KR - zhuhai.uk
-      - 韩国 009
-      - 🇰🇷 Korea, Republic of 31
       - '[OpenRay] 🇰🇷KR-63'
-      - 韩国 013
-      - '[OpenRay] 🇰🇷KR-36'
+      - 韩国 009
+      - 韩国 010
+      - 🇰🇷 Korea, Republic of 31
+      - KR - zhuhai.uk
+      - '[zhuhaiuk#019] KR - zhuhai.uk'
       - 韩国 005
+      - 韩国 013
       - '[OpenRay] 🇰🇷KR-31'
+      - 韩国 001
       - KR 🇰🇷 | @Raydikalx | 7E8798
+      - '[OpenRay] 🇰🇷KR-8'
+      - 🇰🇷KR-144.24.72.126-3649
+      - '[OpenRay] 🇰🇷KR-36'
       - 🇰🇷KR-211.178.105.134-0235
       - '[OpenRay] 🇰🇷KR-5'
       - KR韩国(v2clash.blog 2026-10.20更新)
-      - 🇰🇷KR-144.24.72.126-3649
-      - 🇰🇷[www.v2nodes.com] ss-KR-1126...
       - 🇰🇷[www.v2nodes.com] vless-KR-1...
-      - '[zhuhaiuk#019] KR - zhuhai.uk'
+      - KR 🇰🇷 | @Raydikalx | E9F97A
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
