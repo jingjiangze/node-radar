@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-20T17:29:13.351Z",
-  "totalRaw": 38396,
-  "totalUnique": 19896,
-  "totalAlive": 4454,
+  "generatedAt": "2026-11-20T17:38:27.088Z",
+  "totalRaw": 36725,
+  "totalUnique": 19307,
+  "totalAlive": 3999,
   "probe": {
     "enabled": true,
-    "probed": 19896,
-    "alive": 7040,
-    "ms": 194352
+    "probed": 19307,
+    "alive": 6550,
+    "ms": 192243
   },
   "protocolProbe": {
-    "tls检查": 3890,
-    "tls失败": 957,
-    "ws检查": 2448,
-    "ws路径错": 1629
+    "tls检查": 3458,
+    "tls失败": 918,
+    "ws检查": 2422,
+    "ws路径错": 1633
   },
   "regions": {
-    "德国": 228,
-    "美国": 974,
-    "台湾": 8,
-    "英国": 144,
-    "日本": 61,
-    "新加坡": 64,
-    "香港": 25,
-    "韩国": 25
+    "美国": 845,
+    "德国": 189,
+    "日本": 52,
+    "英国": 146,
+    "台湾": 7,
+    "新加坡": 59,
+    "韩国": 22,
+    "香港": 22
   },
   "byType": {
-    "trojan": 478,
-    "vless": 2442,
-    "vmess": 503,
-    "http": 488,
-    "ss": 449,
-    "hysteria2": 38,
-    "socks5": 55,
+    "vless": 2430,
+    "vmess": 500,
+    "trojan": 472,
+    "ss": 430,
+    "http": 94,
+    "socks5": 33,
+    "hysteria2": 39,
     "anytls": 1
   },
   "unsafe": {
-    "total": 713,
+    "total": 315,
     "cnConfirmed": 0
   },
   "sources": [
@@ -91,7 +91,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4867,
+      "count": 4869,
       "ok": true
     },
     {
@@ -156,14 +156,14 @@
     },
     {
       "source": "direct",
-      "kind": "clash-yaml",
-      "count": 1481,
+      "kind": "uri-list",
+      "count": 0,
       "ok": true
     },
     {
       "source": "direct",
-      "kind": "clash-yaml",
-      "count": 196,
+      "kind": "uri-list",
+      "count": 0,
       "ok": true
     },
     {
@@ -283,13 +283,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 13,
+      "count": 15,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 13,
+      "count": 15,
       "ok": true
     },
     {
