@@ -1,43 +1,42 @@
 {
-  "generatedAt": "2026-11-20T18:01:35.912Z",
-  "totalRaw": 36749,
-  "totalUnique": 19318,
-  "totalAlive": 4151,
+  "generatedAt": "2026-11-20T18:10:43.598Z",
+  "totalRaw": 38497,
+  "totalUnique": 19916,
+  "totalAlive": 4457,
   "probe": {
     "enabled": true,
-    "probed": 19318,
-    "alive": 6975,
-    "ms": 184946
+    "probed": 19916,
+    "alive": 6947,
+    "ms": 194573
   },
   "protocolProbe": {
-    "tls检查": 3770,
-    "tls失败": 1209,
-    "ws检查": 2500,
-    "ws路径错": 1615
+    "tls检查": 3818,
+    "tls失败": 873,
+    "ws检查": 2426,
+    "ws路径错": 1617
   },
   "regions": {
-    "美国": 872,
-    "英国": 139,
-    "德国": 197,
-    "新加坡": 59,
+    "美国": 954,
+    "德国": 233,
+    "英国": 135,
     "台湾": 7,
-    "日本": 55,
+    "日本": 60,
+    "新加坡": 67,
     "香港": 25,
-    "韩国": 23
+    "韩国": 25
   },
   "byType": {
-    "trojan": 484,
-    "vmess": 539,
-    "vless": 2515,
-    "http": 96,
-    "ss": 442,
-    "socks5": 31,
-    "hysteria2": 42,
-    "ssr": 1,
+    "vless": 2468,
+    "trojan": 475,
+    "vmess": 488,
+    "ss": 444,
+    "http": 488,
+    "socks5": 53,
+    "hysteria2": 40,
     "anytls": 1
   },
   "unsafe": {
-    "total": 336,
+    "total": 698,
     "cnConfirmed": 0
   },
   "sources": [
@@ -146,7 +145,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 275,
+      "count": 265,
       "ok": true
     },
     {
@@ -157,14 +156,14 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 1481,
       "ok": true
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 196,
       "ok": true
     },
     {
@@ -175,8 +174,8 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 88,
       "ok": true
     },
     {
@@ -200,7 +199,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 280,
+      "count": 270,
       "ok": true
     },
     {
@@ -290,7 +289,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 15,
+      "count": 16,
       "ok": true
     },
     {
@@ -314,7 +313,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 29,
+      "count": 31,
       "ok": true
     },
     {
