@@ -1,48 +1,48 @@
 {
-  "generatedAt": "2026-11-20T07:05:57.868Z",
-  "totalRaw": 37364,
-  "totalUnique": 19521,
-  "totalAlive": 4219,
+  "generatedAt": "2026-11-20T07:15:11.066Z",
+  "totalRaw": 37296,
+  "totalUnique": 19511,
+  "totalAlive": 4206,
   "probe": {
     "enabled": true,
-    "probed": 19521,
-    "alive": 6778,
-    "ms": 191214
+    "probed": 19511,
+    "alive": 6739,
+    "ms": 192340
   },
   "protocolProbe": {
-    "tls检查": 3634,
-    "tls失败": 962,
-    "ws检查": 2468,
-    "ws路径错": 1597
+    "tls检查": 3604,
+    "tls失败": 927,
+    "ws检查": 2460,
+    "ws路径错": 1606
   },
   "regions": {
-    "美国": 855,
-    "德国": 208,
-    "英国": 160,
-    "新加坡": 67,
-    "台湾": 8,
-    "日本": 57,
+    "美国": 857,
+    "英国": 156,
+    "德国": 207,
+    "日本": 54,
+    "新加坡": 65,
+    "台湾": 7,
     "韩国": 22,
-    "香港": 21
+    "香港": 19
   },
   "byType": {
-    "vless": 2518,
+    "vmess": 506,
+    "vless": 2507,
     "trojan": 476,
-    "vmess": 511,
-    "ss": 429,
-    "http": 198,
-    "socks5": 46,
+    "ss": 434,
+    "http": 199,
+    "socks5": 43,
     "hysteria2": 41
   },
   "unsafe": {
-    "total": 402,
+    "total": 400,
     "cnConfirmed": 0
   },
   "sources": [
     {
       "source": "Pawdroid/Free-servers",
       "kind": "uri-list",
-      "count": 9,
+      "count": 6,
       "ok": true
     },
     {
@@ -114,7 +114,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 366,
+      "count": 353,
       "ok": true
     },
     {
@@ -126,7 +126,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 389,
+      "count": 349,
       "ok": true
     },
     {
@@ -144,7 +144,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 253,
+      "count": 246,
       "ok": true
     },
     {
@@ -198,7 +198,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 258,
+      "count": 251,
       "ok": true
     },
     {
@@ -282,13 +282,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 9,
+      "count": 10,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 9,
+      "count": 10,
       "ok": true
     },
     {
