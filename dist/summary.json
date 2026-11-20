@@ -1,41 +1,41 @@
 {
-  "generatedAt": "2026-11-20T04:39:58.503Z",
-  "totalRaw": 36574,
+  "generatedAt": "2026-11-20T04:53:09.219Z",
+  "totalRaw": 36573,
   "totalUnique": 19256,
-  "totalAlive": 4286,
+  "totalAlive": 4251,
   "probe": {
     "enabled": true,
     "probed": 19256,
-    "alive": 6583,
-    "ms": 190410
+    "alive": 6476,
+    "ms": 191744
   },
   "protocolProbe": {
-    "tls检查": 3458,
-    "tls失败": 905,
-    "ws检查": 2274,
-    "ws路径错": 1392
+    "tls检查": 3384,
+    "tls失败": 836,
+    "ws检查": 2245,
+    "ws路径错": 1389
   },
   "regions": {
-    "美国": 883,
-    "日本": 54,
-    "德国": 207,
-    "英国": 139,
-    "新加坡": 68,
+    "美国": 854,
+    "德国": 205,
+    "英国": 140,
+    "新加坡": 67,
+    "日本": 58,
     "台湾": 8,
-    "韩国": 21,
-    "香港": 25
+    "韩国": 20,
+    "香港": 26
   },
   "byType": {
-    "vless": 2560,
-    "trojan": 478,
-    "vmess": 524,
-    "ss": 435,
+    "trojan": 479,
+    "vmess": 493,
+    "vless": 2559,
+    "ss": 432,
     "http": 203,
-    "socks5": 46,
+    "socks5": 45,
     "hysteria2": 40
   },
   "unsafe": {
-    "total": 409,
+    "total": 383,
     "cnConfirmed": 0
   },
   "sources": [
@@ -90,7 +90,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4852,
+      "count": 4851,
       "ok": true
     },
     {
