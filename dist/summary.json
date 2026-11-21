@@ -1,43 +1,43 @@
 {
-  "generatedAt": "2026-11-21T17:25:23.879Z",
-  "totalRaw": 37410,
-  "totalUnique": 19465,
-  "totalAlive": 4228,
+  "generatedAt": "2026-11-21T17:34:41.560Z",
+  "totalRaw": 39211,
+  "totalUnique": 19942,
+  "totalAlive": 4520,
   "probe": {
     "enabled": true,
-    "probed": 19465,
-    "alive": 6719,
-    "ms": 191698
+    "probed": 19942,
+    "alive": 6999,
+    "ms": 194133
   },
   "protocolProbe": {
-    "tls检查": 3598,
-    "tls失败": 940,
-    "ws检查": 2376,
-    "ws路径错": 1551
+    "tls检查": 3859,
+    "tls失败": 916,
+    "ws检查": 2375,
+    "ws路径错": 1563
   },
   "regions": {
-    "美国": 866,
-    "德国": 223,
-    "日本": 54,
-    "英国": 121,
-    "台湾": 8,
-    "新加坡": 66,
-    "香港": 29,
-    "韩国": 23
+    "美国": 959,
+    "英国": 136,
+    "德国": 230,
+    "新加坡": 72,
+    "日本": 60,
+    "台湾": 7,
+    "香港": 30,
+    "韩国": 22
   },
   "byType": {
-    "trojan": 484,
-    "vless": 2434,
-    "vmess": 531,
-    "http": 237,
-    "ss": 442,
-    "socks5": 58,
+    "trojan": 479,
+    "vmess": 519,
+    "vless": 2441,
+    "ss": 463,
+    "http": 510,
+    "socks5": 66,
     "anytls": 1,
     "hysteria2": 40,
     "ssr": 1
   },
   "unsafe": {
-    "total": 481,
+    "total": 749,
     "cnConfirmed": 0
   },
   "sources": [
@@ -145,8 +145,8 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 1530,
       "ok": true
     },
     {
@@ -157,8 +157,8 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 200,
       "ok": true
     },
     {
@@ -169,8 +169,8 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 75,
       "ok": true
     },
     {
@@ -278,13 +278,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 26,
+      "count": 24,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 26,
+      "count": 24,
       "ok": true
     },
     {
