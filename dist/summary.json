@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-21T12:07:10.843Z",
-  "totalRaw": 39164,
-  "totalUnique": 20282,
-  "totalAlive": 4536,
+  "generatedAt": "2026-11-21T12:15:56.372Z",
+  "totalRaw": 39158,
+  "totalUnique": 20273,
+  "totalAlive": 4535,
   "probe": {
     "enabled": true,
-    "probed": 20282,
-    "alive": 6880,
-    "ms": 201979
+    "probed": 20273,
+    "alive": 6923,
+    "ms": 200459
   },
   "protocolProbe": {
-    "tls检查": 3700,
-    "tls失败": 868,
-    "ws检查": 2274,
-    "ws路径错": 1476
+    "tls检查": 3722,
+    "tls失败": 923,
+    "ws检查": 2280,
+    "ws路径错": 1465
   },
   "regions": {
-    "美国": 919,
-    "日本": 57,
-    "德国": 241,
-    "英国": 134,
-    "新加坡": 70,
+    "美国": 918,
+    "德国": 244,
+    "英国": 127,
+    "新加坡": 73,
+    "日本": 58,
     "台湾": 8,
-    "韩国": 24,
-    "香港": 28
+    "香港": 28,
+    "韩国": 24
   },
   "byType": {
-    "trojan": 478,
-    "vmess": 505,
-    "vless": 2489,
-    "ss": 458,
-    "http": 502,
+    "trojan": 484,
+    "vmess": 517,
+    "vless": 2462,
+    "http": 505,
+    "ss": 462,
+    "socks5": 62,
     "hysteria2": 42,
-    "socks5": 61,
     "ssr": 1
   },
   "unsafe": {
-    "total": 690,
+    "total": 693,
     "cnConfirmed": 0
   },
   "sources": [
@@ -115,7 +115,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 328,
+      "count": 343,
       "ok": true
     },
     {
@@ -133,7 +133,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 243,
+      "count": 246,
       "ok": true
     },
     {
@@ -181,7 +181,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 248,
+      "count": 251,
       "ok": true
     },
     {
@@ -205,7 +205,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 318,
+      "count": 320,
       "ok": true
     },
     {
@@ -277,13 +277,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 34,
+      "count": 23,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 34,
+      "count": 23,
       "ok": true
     },
     {
@@ -391,25 +391,25 @@
     {
       "source": "revalidate",
       "kind": "clash-yaml",
-      "count": 23,
+      "count": 22,
       "ok": true
     },
     {
       "source": "direct",
       "kind": "clash-yaml",
-      "count": 18,
+      "count": 20,
       "ok": true
     },
     {
       "source": "revalidate",
       "kind": "uri-list",
-      "count": 23,
+      "count": 19,
       "ok": true
     },
     {
       "source": "revalidate",
       "kind": "uri-list",
-      "count": 23,
+      "count": 19,
       "ok": true
     },
     {
