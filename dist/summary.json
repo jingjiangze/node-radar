@@ -1,50 +1,50 @@
 {
-  "generatedAt": "2026-11-21T23:08:53.437Z",
-  "totalRaw": 39119,
-  "totalUnique": 19850,
-  "totalAlive": 4507,
+  "generatedAt": "2026-11-21T23:16:55.049Z",
+  "totalRaw": 39244,
+  "totalUnique": 19893,
+  "totalAlive": 4526,
   "probe": {
     "enabled": true,
-    "probed": 19850,
-    "alive": 6844,
-    "ms": 195252
+    "probed": 19893,
+    "alive": 6856,
+    "ms": 194626
   },
   "protocolProbe": {
-    "tls检查": 3732,
-    "tls失败": 854,
-    "ws检查": 2275,
-    "ws路径错": 1483
+    "tls检查": 3739,
+    "tls失败": 836,
+    "ws检查": 2293,
+    "ws路径错": 1494
   },
   "regions": {
-    "美国": 936,
-    "德国": 230,
-    "日本": 60,
-    "香港": 33,
-    "新加坡": 72,
-    "英国": 145,
+    "美国": 944,
+    "德国": 231,
+    "英国": 152,
     "台湾": 8,
-    "韩国": 24
+    "日本": 64,
+    "新加坡": 75,
+    "香港": 34,
+    "韩国": 23
   },
   "byType": {
-    "vless": 2449,
-    "trojan": 469,
-    "vmess": 504,
+    "trojan": 468,
+    "vless": 2460,
+    "vmess": 510,
     "ss": 469,
-    "http": 513,
-    "hysteria2": 37,
-    "anytls": 1,
+    "http": 515,
     "socks5": 64,
+    "hysteria2": 38,
+    "anytls": 1,
     "ssr": 1
   },
   "unsafe": {
-    "total": 743,
+    "total": 749,
     "cnConfirmed": 0
   },
   "sources": [
     {
       "source": "Pawdroid/Free-servers",
       "kind": "uri-list",
-      "count": 10,
+      "count": 15,
       "ok": true
     },
     {
@@ -116,7 +116,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 301,
+      "count": 328,
       "ok": true
     },
     {
@@ -128,7 +128,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 301,
+      "count": 328,
       "ok": true
     },
     {
@@ -200,7 +200,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 254,
+      "count": 320,
       "ok": true
     },
     {
