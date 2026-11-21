@@ -1,39 +1,39 @@
 {
-  "generatedAt": "2026-11-21T20:38:55.659Z",
-  "totalRaw": 39130,
-  "totalUnique": 19846,
-  "totalAlive": 4503,
+  "generatedAt": "2026-11-21T20:49:10.239Z",
+  "totalRaw": 39247,
+  "totalUnique": 19879,
+  "totalAlive": 4516,
   "probe": {
     "enabled": true,
-    "probed": 19846,
-    "alive": 6873,
-    "ms": 195134
+    "probed": 19879,
+    "alive": 6881,
+    "ms": 194663
   },
   "protocolProbe": {
-    "tls检查": 3735,
-    "tls失败": 890,
-    "ws检查": 2281,
-    "ws路径错": 1480
+    "tls检查": 3752,
+    "tls失败": 869,
+    "ws检查": 2290,
+    "ws路径错": 1496
   },
   "regions": {
-    "美国": 941,
-    "日本": 60,
+    "美国": 944,
+    "新加坡": 75,
     "德国": 237,
-    "香港": 30,
-    "新加坡": 74,
-    "英国": 144,
+    "英国": 138,
+    "日本": 59,
     "台湾": 9,
-    "韩国": 21
+    "香港": 33,
+    "韩国": 24
   },
   "byType": {
+    "vmess": 524,
+    "vless": 2426,
     "trojan": 480,
-    "vless": 2412,
-    "vmess": 523,
-    "ss": 470,
-    "http": 515,
-    "hysteria2": 40,
-    "socks5": 61,
+    "ss": 463,
+    "http": 518,
+    "socks5": 62,
     "anytls": 1,
+    "hysteria2": 41,
     "ssr": 1
   },
   "unsafe": {
@@ -92,7 +92,7 @@
     {
       "source": "ALIILAPRO/v2rayNG-Config",
       "kind": "uri-list",
-      "count": 4881,
+      "count": 4880,
       "ok": true
     },
     {
@@ -116,7 +116,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 301,
+      "count": 328,
       "ok": true
     },
     {
@@ -128,7 +128,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 301,
+      "count": 328,
       "ok": true
     },
     {
@@ -200,7 +200,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 254,
+      "count": 320,
       "ok": true
     },
     {
@@ -242,13 +242,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 192,
+      "count": 191,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 192,
+      "count": 191,
       "ok": true
     },
     {
