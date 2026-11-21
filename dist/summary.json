@@ -1,43 +1,43 @@
 {
-  "generatedAt": "2026-11-21T16:22:08.272Z",
-  "totalRaw": 37179,
-  "totalUnique": 19846,
-  "totalAlive": 4256,
+  "generatedAt": "2026-11-21T16:33:01.164Z",
+  "totalRaw": 38859,
+  "totalUnique": 20301,
+  "totalAlive": 4482,
   "probe": {
     "enabled": true,
-    "probed": 19846,
-    "alive": 6756,
-    "ms": 191046
+    "probed": 20301,
+    "alive": 6764,
+    "ms": 204245
   },
   "protocolProbe": {
-    "tls检查": 3563,
-    "tls失败": 1046,
-    "ws检查": 2273,
-    "ws路径错": 1454
+    "tls检查": 3601,
+    "tls失败": 819,
+    "ws检查": 2250,
+    "ws路径错": 1463
   },
   "regions": {
-    "美国": 833,
-    "德国": 218,
-    "英国": 119,
-    "新加坡": 66,
-    "台湾": 7,
-    "日本": 56,
-    "香港": 31,
-    "韩国": 24
+    "美国": 889,
+    "英国": 132,
+    "日本": 58,
+    "德国": 227,
+    "新加坡": 73,
+    "台湾": 8,
+    "香港": 30,
+    "韩国": 25
   },
   "byType": {
-    "trojan": 480,
-    "vmess": 538,
-    "vless": 2465,
-    "ss": 441,
-    "http": 234,
-    "socks5": 56,
-    "hysteria2": 40,
+    "trojan": 469,
+    "vmess": 496,
+    "vless": 2443,
+    "http": 503,
+    "ss": 465,
+    "hysteria2": 41,
     "anytls": 1,
+    "socks5": 63,
     "ssr": 1
   },
   "unsafe": {
-    "total": 428,
+    "total": 679,
     "cnConfirmed": 0
   },
   "sources": [
@@ -116,7 +116,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 328,
+      "count": 301,
       "ok": true
     },
     {
@@ -145,8 +145,8 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 1530,
       "ok": true
     },
     {
@@ -157,8 +157,8 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 200,
       "ok": true
     },
     {
@@ -169,8 +169,8 @@
     },
     {
       "source": "direct",
-      "kind": "uri-list",
-      "count": 0,
+      "kind": "clash-yaml",
+      "count": 75,
       "ok": true
     },
     {
@@ -212,7 +212,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 352,
+      "count": 254,
       "ok": true
     },
     {
