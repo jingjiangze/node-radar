@@ -1,43 +1,43 @@
 {
-  "generatedAt": "2026-11-22T06:03:33.952Z",
-  "totalRaw": 39209,
-  "totalUnique": 19762,
-  "totalAlive": 4501,
+  "generatedAt": "2026-11-22T06:13:08.860Z",
+  "totalRaw": 39400,
+  "totalUnique": 19759,
+  "totalAlive": 4488,
   "probe": {
     "enabled": true,
-    "probed": 19762,
-    "alive": 6874,
-    "ms": 192457
+    "probed": 19759,
+    "alive": 6870,
+    "ms": 193575
   },
   "protocolProbe": {
-    "tls检查": 3751,
-    "tls失败": 922,
-    "ws检查": 2272,
-    "ws路径错": 1451
+    "tls检查": 3743,
+    "tls失败": 941,
+    "ws检查": 2273,
+    "ws路径错": 1441
   },
   "regions": {
-    "美国": 951,
-    "德国": 240,
-    "新加坡": 75,
-    "英国": 148,
-    "台湾": 8,
+    "美国": 939,
+    "德国": 241,
+    "英国": 140,
     "日本": 65,
-    "香港": 34,
-    "韩国": 24
+    "新加坡": 77,
+    "台湾": 10,
+    "香港": 36,
+    "韩国": 23
   },
   "byType": {
-    "vless": 2433,
-    "vmess": 515,
-    "trojan": 467,
-    "http": 520,
-    "ss": 467,
-    "socks5": 60,
+    "http": 517,
+    "vmess": 528,
+    "trojan": 466,
+    "vless": 2406,
+    "ss": 469,
     "hysteria2": 37,
-    "anytls": 1,
+    "socks5": 62,
+    "anytls": 2,
     "ssr": 1
   },
   "unsafe": {
-    "total": 777,
+    "total": 774,
     "cnConfirmed": 0
   },
   "sources": [
@@ -116,7 +116,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 301,
+      "count": 352,
       "ok": true
     },
     {
@@ -128,7 +128,7 @@
     {
       "source": "seed",
       "kind": "uri-list",
-      "count": 301,
+      "count": 352,
       "ok": true
     },
     {
@@ -140,7 +140,7 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 265,
+      "count": 266,
       "ok": true
     },
     {
@@ -188,7 +188,7 @@
     {
       "source": "github-search",
       "kind": "clash-yaml",
-      "count": 270,
+      "count": 271,
       "ok": true
     },
     {
@@ -200,7 +200,7 @@
     {
       "source": "seed",
       "kind": "clash-yaml",
-      "count": 254,
+      "count": 341,
       "ok": true
     },
     {
