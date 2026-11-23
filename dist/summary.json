@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-11-23T00:10:01.080Z",
-  "totalRaw": 37373,
-  "totalUnique": 19673,
-  "totalAlive": 4554,
+  "generatedAt": "2026-11-23T00:18:29.055Z",
+  "totalRaw": 37396,
+  "totalUnique": 19672,
+  "totalAlive": 4561,
   "probe": {
     "enabled": true,
-    "probed": 19673,
-    "alive": 6720,
-    "ms": 192472
+    "probed": 19672,
+    "alive": 6686,
+    "ms": 193032
   },
   "protocolProbe": {
-    "tls检查": 3588,
-    "tls失败": 909,
-    "ws检查": 2284,
-    "ws路径错": 1257
+    "tls检查": 3561,
+    "tls失败": 876,
+    "ws检查": 2289,
+    "ws路径错": 1249
   },
   "regions": {
-    "美国": 890,
+    "美国": 893,
+    "德国": 260,
     "新加坡": 77,
-    "德国": 261,
     "英国": 158,
-    "台湾": 9,
-    "日本": 78,
-    "香港": 32,
-    "韩国": 25
+    "日本": 81,
+    "台湾": 11,
+    "香港": 31,
+    "韩国": 27
   },
   "byType": {
-    "vmess": 518,
-    "trojan": 437,
-    "vless": 2726,
-    "ss": 458,
-    "http": 328,
-    "socks5": 53,
+    "vmess": 512,
+    "trojan": 436,
+    "vless": 2744,
+    "http": 327,
+    "ss": 453,
+    "socks5": 55,
     "hysteria2": 33,
     "ssr": 1
   },
   "unsafe": {
-    "total": 577,
+    "total": 574,
     "cnConfirmed": 0
   },
   "sources": [
@@ -361,13 +361,13 @@
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 44,
+      "count": 38,
       "ok": true
     },
     {
       "source": "github-search",
       "kind": "uri-list",
-      "count": 44,
+      "count": 38,
       "ok": true
     },
     {
@@ -403,19 +403,19 @@
     {
       "source": "direct",
       "kind": "clash-yaml",
-      "count": 17,
+      "count": 23,
       "ok": true
     },
     {
       "source": "revalidate",
       "kind": "uri-list",
-      "count": 17,
+      "count": 27,
       "ok": true
     },
     {
       "source": "revalidate",
       "kind": "uri-list",
-      "count": 17,
+      "count": 27,
       "ok": true
     },
     {
@@ -445,7 +445,7 @@
     {
       "source": "revalidate",
       "kind": "clash-yaml",
-      "count": 18,
+      "count": 27,
       "ok": true
     },
     {
