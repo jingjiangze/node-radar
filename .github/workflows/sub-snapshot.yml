@@ -1,0 +1,49 @@
+name: sub-snapshot
+
+on:
+  schedule:
+    - cron: "47 4 * * *"   # txt snapshot (30 min after the CF cron)
+    - cron: "47 16 * * *"  # yaml snapshot
+  workflow_dispatch:
+    inputs:
+      kind:
+        description: "txt or yaml"
+        required: true
+        default: "txt"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Refresh snapshot via GitHub OIDC
+        run: |
+          set -euo pipefail
+          KIND="${{ github.event.inputs.kind }}"
+          if [ -z "$KIND" ]; then
+            if [ "${{ github.event.schedule }}" = "47 4 * * *" ]; then KIND=txt; else KIND=yaml; fi
+          fi
+          OIDC=$(curl -fsS -H "Authorization: bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=sub-refresh" | jq -r .value)
+          echo "refreshing ${KIND}"
+          curl -fsS -X POST "https://sub.jiangjiangze.icu/refresh?kind=${KIND}" \
+            -H "Authorization: Bearer ${OIDC}" -w "\nHTTP %{http_code}\n"
+
+      - name: Verify snapshot
+        run: |
+          set -euo pipefail
+          KIND="${{ github.event.inputs.kind }}"
+          if [ -z "$KIND" ]; then
+            if [ "${{ github.event.schedule }}" = "47 4 * * *" ]; then KIND=txt; else KIND=yaml; fi
+          fi
+          if [ "$KIND" = "yaml" ]; then
+            curl -fsS "https://sub.jiangjiangze.icu/dingyue.yaml" -o /tmp/snap.yaml
+            grep -q "proxies:" /tmp/snap.yaml
+            echo "yaml proxies=$(grep -c 'type: vless' /tmp/snap.yaml || true)"
+          else
+            curl -fsS "https://sub.jiangjiangze.icu/dingyue.txt" -o /tmp/snap.txt
+            base64 -d /tmp/snap.txt | grep -q "vless://"
+            echo "txt vless=$(base64 -d /tmp/snap.txt | grep -c 'vless://' || true)"
+          fi
